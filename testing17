@@ -2040,7 +2040,7 @@ local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 local hakimuon = hakiuse + 10
-if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakimuon then
+if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakimuon and not _G.onhaki then
 wait()
  local Players = game:GetService("Players")
 local cache = {}

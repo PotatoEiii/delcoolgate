@@ -910,7 +910,7 @@ local a2wtalight = Tabs.Player:AddSlider("Slider", {
     })
 
 
-local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Magma", Default = false })
+local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Light", Default = false })
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then
 _G.CampLight = true

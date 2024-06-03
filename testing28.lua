@@ -696,11 +696,6 @@ for i,e in pairs(game.Players:GetChildren()) do
 plrchoose = string.lower(e.Name)
 if string.find(plrchoose, plrlow) then
 	SelectedKillPlayer = e.Name
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer then
-v = SelectedBody
-end
-end
 end
 end
 end)

@@ -615,18 +615,6 @@ end)
 
 
 local quakerer = Tabs.PVP:AddSection("Quake Kill All")
-local tytyttyty = Tabs.PVP:AddSlider("Slider", {
-    Title = "Quake Multiple",
-    Description = "Change this for adjusting Quake per hit",
-    Default = 3,
-    Min = 1,
-    Max = 5,
-    Rounding = 0,
-    Callback = function(quarw)
-            quaketime = tonumber(quarw)
-        end
-    })
-
 local quakeall = Tabs.PVP:AddToggle("quakealltoggle", {Title = "Quake Kill All", Default = false })
 quakeall:OnChanged(function()
 if Options.quakealltoggle.Value == true then
@@ -671,10 +659,8 @@ local vptt = xr.VTCebvc
 		if _G.quakerty == true and cc.HumanoidRootPart.Position.Y < 211000 then
     			for i,vv in pairs(game:GetService("Workspace"):GetChildren()) do
       				if vv.Name == Choosequake then
-                repeat task.wait(0.3)
-for i = 1,quaketime do
+                repeat task.wait(0.1)
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-end
 until _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name or cc.Humanoid.Health == 0
 Choosequake = ""
 				end
@@ -768,18 +754,6 @@ end)
 
 local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Chosen Player")
 local CONMEMAYCAMP2 = Tabs.Player:AddSection("Quake Camp")
-local tytzytyty = Tabs.Player:AddSlider("Slider", {
-    Title = "Quake Multiple",
-    Description = "Change this for adjusting Quake per hit",
-    Default = 3,
-    Min = 1,
-    Max = 5,
-    Rounding = 0,
-    Callback = function(quarwt)
-            quaketimet = tonumber(quarwt)
-        end
-    })
-
 local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -798,11 +772,9 @@ local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake
 local vptt = xr.VTCebvc
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == SelectedKillPlayer then
-task.wait(0.3)
+task.wait(0.1)
     pcall(function()
-for i = 1,quaketimet do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-end
 end)
 end
 end

@@ -881,6 +881,118 @@ end)
 
 
 
+
+
+
+local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
+local awtalight = Tabs.Player:AddSlider("Slider", {
+    Title = "Light Multiple",
+    Description = "Change this for adjusting Light per hit",
+    Default = 5,
+    Min = 1,
+    Max = 10,
+    Rounding = 0,
+    Callback = function(lightwt)
+            lighttimet = tonumber(lightwt)
+        end
+    })
+
+local a2wtalight = Tabs.Player:AddSlider("Slider", {
+    Title = "Teleport Distance",
+    Description = "Change this for adjusting camp distance",
+    Default = 15,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(dislaitg)
+            lightdis = tonumber(dislaitg)
+        end
+    })
+
+
+local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Magma", Default = false })
+lightsec:OnChanged(function()
+if Options.lightsectoggle.Value == true then
+_G.CampLight = true
+else
+_G.CampLight = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampLight then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == SelectedKillPlayer and _G.CampLight == true and v.Humanoid.Health > 0 then
+    pcall(function()
+local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
+local lightcode = x.VTCrv
+repeat task.wait()
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(v,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
+wait()
+for i = 1,lighttimet do
+local args = {
+    [1] = lightcode,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+end
+until v.Humanoid.Health == 0 or not _G.CampLight or v.Name ~= SelectedKillPlayer
+end)
+end
+end
+end)
+end
+end)
+end
+end)
+
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampLight then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == SelectedKillPlayer and _G.CampLight == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,lightdis,0)
+end
+until c.Humanoid.Health == 0 or not _G.CampLight or c.Name ~= SelectedKillPlayer
+end
+end
+end)
+end
+end)
+end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 spawn(function()
 while wait() do
 pcall(function()

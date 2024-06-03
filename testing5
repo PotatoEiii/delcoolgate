@@ -838,7 +838,7 @@ local a2wta = Tabs.Player:AddSlider("Slider", {
     })
 
 
-local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Quake", Default = false })
+local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true

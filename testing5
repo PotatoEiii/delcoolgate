@@ -838,9 +838,9 @@ local a2wta = Tabs.Player:AddSlider("Slider", {
     })
 
 
-local qweqwettt = Tabs.Player:AddToggle("qweqwettttoggle", {Title = "Camp Quake", Default = false })
-qweqwettt:OnChanged(function()
-if Options.qweqwettttoggle.Value == true then
+local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Quake", Default = false })
+magmamgggg:OnChanged(function()
+if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
 else
 _G.CampMagma = false
@@ -853,7 +853,7 @@ pcall(function()
 if _G.CampMagma then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer and v.Humanoid.Health > 0 then
+if v.Name == SelectedKillPlayer then
 repeat task.wait(0.3)
     pcall(function()
 local args = {

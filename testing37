@@ -777,7 +777,19 @@ end
 end
 end)
 
-local CONMEMAYCAMP3 = Tabs.Player:AddSection("Fruit Camp")
+local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
+local awta = Tabs.Player:AddSlider("Slider", {
+    Title = "Magma Multiple",
+    Description = "Change this for adjusting Magma per hit",
+    Default = 10,
+    Min = 1,
+    Max = 10,
+    Rounding = 0,
+    Callback = function(magamwt)
+            magmatimet = tonumber(magamwt)
+        end
+    })
+
 local a2wta = Tabs.Player:AddSlider("Slider", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -789,6 +801,8 @@ local a2wta = Tabs.Player:AddSlider("Slider", {
             magdis = tonumber(distancecapmag)
         end
     })
+
+
 local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
@@ -818,6 +832,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 wait()
+for i = 1,magmatimet do
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "MagmaPower1",
@@ -828,6 +843,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+end
 until v.Humanoid.Health == 0 or not _G.CampMagma or v.Name ~= SelectedKillPlayer
 end)
 end
@@ -859,6 +875,37 @@ end)
 end
 end)
 
+
+
+
+
+
+local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
+local awtalight = Tabs.Player:AddSlider("Slider", {
+    Title = "Light Multiple",
+    Description = "Change this for adjusting Light per hit",
+    Default = 5,
+    Min = 1,
+    Max = 5,
+    Rounding = 0,
+    Callback = function(lightwt)
+            lighttimet = tonumber(lightwt)
+        end
+    })
+
+local a2wtalight = Tabs.Player:AddSlider("Slider", {
+    Title = "Teleport Distance",
+    Description = "Change this for adjusting camp distance",
+    Default = 15,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(dislaitg)
+            lightdis = tonumber(dislaitg)
+        end
+    })
+
+
 local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Light", Default = false })
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then
@@ -881,6 +928,7 @@ local lightcode = x.VTCrv
 repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
 wait()
+for i = 1,lighttimet do
 local args = {
     [1] = lightcode,
     [2] = "LightPower2",
@@ -891,6 +939,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+end
 until v.Humanoid.Health == 0 or not _G.CampLight or v.Name ~= SelectedKillPlayer
 end)
 end
@@ -911,7 +960,7 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == SelectedKillPlayer and _G.CampLight == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,lightdis,0)
 end
 until c.Humanoid.Health == 0 or not _G.CampLight or c.Name ~= SelectedKillPlayer
 end

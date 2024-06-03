@@ -2075,7 +2075,7 @@ for i = 1, regenspeed do
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
     end
-wait(0.1)
+task.wait(1)
         local args = {
         [1] = "Off",
         [2] = hakigoc

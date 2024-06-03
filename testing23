@@ -2040,7 +2040,7 @@ local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 local hakimuon = hakiuse + 10
-if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakimuon and not _G.onhaki then
+if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakimuon then
 wait()
  local Players = game:GetService("Players")
 local cache = {}
@@ -2061,14 +2061,13 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1, regenspeed do
+for i = 1, regenspeed do wait()
     local args = {
         [1] = "Off",
         [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
     local args = {
         [1] = "On",
         [2] = hakigoc
@@ -2076,7 +2075,7 @@ wait()
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
     end
-task.wait(0.1)
+wait(0.1)
         local args = {
         [1] = "Off",
         [2] = hakigoc
@@ -3934,21 +3933,8 @@ local hakispeedt = Tabs.Haki:AddSlider("Slider", {
         end
     })
 
-local farmhaki = Tabs.Haki:AddToggle("hakifarmtoggle", {Title = "Auto Farm Haki", Default = false })
+local farmhaki = Tabs.Haki:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
 farmhaki:OnChanged(function()
-if Options.hakifarmtoggle.Value == true then
-_G.farmhakinek = true
-else
-_G.farmhakinek = false
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.farmhakinek then
-pcall(function()
-
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 _G.concu = true
@@ -3956,7 +3942,7 @@ while _G.concu do wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*hakitarget
 local sll =  slv/100*90
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and _G.farmhakinek == true then
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and Options.hakifarm.Value == true then
 local Players = game:GetService("Players")
 local cache = {}
 function lol(name)
@@ -3993,7 +3979,7 @@ for i = 1, hakispeed do
     
     workspace.UserData["User_"..Final].III:FireServer(unpack(args))
 end
-elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and _G.farmhakinek == true then
+elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and Options.hakifarm.Value == true then
         local args = {
         [1] = "Off",
         [2] = 1
@@ -4003,7 +3989,7 @@ elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and _G.farmh
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= sll
 _G.concu = true
-elseif _G.farmhakinek == false then
+elseif Options.hakifarm.Value == false then
 _G.concu = false
         local args = {
         [1] = "Off",
@@ -4012,11 +3998,6 @@ _G.concu = false
     
     workspace.UserData["User_"..Final].III:FireServer(unpack(args))
 end
-end
-
-end)
-end
-end)
 end
 end)
 

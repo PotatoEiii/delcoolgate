@@ -848,7 +848,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 end
-until v.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= SelectedKillPlayer
+until v.Humanoid.Health == 0 or not _G.CampMagma or v.Name ~= SelectedKillPlayer
 end)
 end
 end

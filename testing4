@@ -838,9 +838,9 @@ local a2wta = Tabs.Player:AddSlider("Slider", {
     })
 
 
-local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
-quakecampchose:OnChanged(function()
-if Options.quakecampchosetoggle.Value == true then
+local qweqwettt = Tabs.Player:AddToggle("qweqwettttoggle", {Title = "Camp Quake", Default = false })
+qweqwettt:OnChanged(function()
+if Options.qweqwettttoggle.Value == true then
 _G.CampMagma = true
 else
 _G.CampMagma = false
@@ -853,7 +853,7 @@ pcall(function()
 if _G.CampMagma then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer then
+if v.Name == SelectedKillPlayer and v.Humanoid.Health > 0 then
 repeat task.wait(0.3)
     pcall(function()
 local args = {
@@ -880,7 +880,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 end
 end)
-until v.Humanoid.Health == 0
+until v.Humanoid.Health == 0 or not _G.CampMagma
 end
 end
 end)
@@ -899,7 +899,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == SelectedKillPlayer then
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
-until v.Humanoid.Health == 0
+until v.Humanoid.Health == 0 or not _G.CampMagma
 end
 end
 end)
@@ -2335,7 +2335,7 @@ end)
 spawn(function() -- autofarm velocity
     while wait(0) do
         pcall(function()
-            if _G.autocannonslow or _G.autocannonplr or getgenv().bgtyhn or getgenv().fishing or getgenv().tret or getgenv().e or getgenv().c or getgenv().a or getgenv().t or getgenv().emladepnwwhat or getgenv().emladepnhat then
+            if _G.CampMagma or _G.autocannonslow or _G.autocannonplr or getgenv().bgtyhn or getgenv().fishing or getgenv().tret or getgenv().e or getgenv().c or getgenv().a or getgenv().t or getgenv().emladepnwwhat or getgenv().emladepnhat then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -2344,7 +2344,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.autocannonslow == false or _G.autocannonplr == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false or  getgenv().e == false or getgenv().c == false or getgenv().a == false or getgenv().t == false or getgenv().emladepnwwhat == false or getgenv().emladepnhat == false then
+            elseif _G.CampMagma == false or _G.autocannonslow == false or _G.autocannonplr == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false or  getgenv().e == false or getgenv().c == false or getgenv().a == false or getgenv().t == false or getgenv().emladepnwwhat == false or getgenv().emladepnhat == false then
                 --if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)

@@ -29,7 +29,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 
-local listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist'))()
+local listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
 local gethwid = game:GetService("RbxAnalyticsService"):GetClientId()

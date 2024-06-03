@@ -816,9 +816,9 @@ local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
 local awta = Tabs.Player:AddSlider("Slider", {
     Title = "Magma Multiple",
     Description = "Change this for adjusting Magma per hit",
-    Default = 3,
+    Default = 10,
     Min = 1,
-    Max = 5,
+    Max = 10,
     Rounding = 0,
     Callback = function(magamwt)
             magmatimet = tonumber(magamwt)
@@ -855,7 +855,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
     pcall(function()
-repeat task.wait(0.3)
+repeat task.wait(0.1)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "MagmaPower1",

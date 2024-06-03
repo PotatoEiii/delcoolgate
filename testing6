@@ -853,9 +853,9 @@ pcall(function()
 if _G.CampMagma then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer then
-repeat task.wait(0.3)
+if v.Name == SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
     pcall(function()
+repeat task.wait(0.3)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "MagmaPower1",
@@ -879,8 +879,8 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 end
+until v.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= SelectedKillPlayer
 end)
-until v.Humanoid.Health == 0 or not _G.CampMagma
 end
 end
 end)
@@ -895,11 +895,11 @@ while wait() do
 pcall(function()
 if _G.CampMagma then
 pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer then
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 repeat task.wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
-until v.Humanoid.Health == 0 or not _G.CampMagma
+if c.Name == SelectedKillPlayer and _G.CampMagma == true and c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
+until c.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= SelectedKillPlayer
 end
 end
 end)

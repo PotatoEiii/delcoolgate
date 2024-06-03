@@ -896,9 +896,11 @@ pcall(function()
 if _G.CampMagma then
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == SelectedKillPlayer and _G.CampMagma == true then
 repeat task.wait()
-if c.Name == SelectedKillPlayer and _G.CampMagma == true and c.Humanoid.Health > 0 then
+if c.Humanoid.Health > 0 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
+end
 until c.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= SelectedKillPlayer
 end
 end

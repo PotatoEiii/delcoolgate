@@ -781,9 +781,9 @@ local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
 local awta = Tabs.Player:AddSlider("Slider", {
     Title = "Magma Multiple",
     Description = "Change this for adjusting Magma per hit",
-    Default = 10,
+    Default = 3,
     Min = 1,
-    Max = 10,
+    Max = 3,
     Rounding = 0,
     Callback = function(magamwt)
             magmatimet = tonumber(magamwt)
@@ -881,18 +881,6 @@ end)
 
 
 local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
-local awtalight = Tabs.Player:AddSlider("Slider", {
-    Title = "Light Multiple",
-    Description = "Change this for adjusting Light per hit",
-    Default = 5,
-    Min = 1,
-    Max = 5,
-    Rounding = 0,
-    Callback = function(lightwt)
-            lighttimet = tonumber(lightwt)
-        end
-    })
-
 local a2wtalight = Tabs.Player:AddSlider("Slider", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -928,7 +916,6 @@ local lightcode = x.VTCrv
 repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
 wait()
-for i = 1,lighttimet do
 local args = {
     [1] = lightcode,
     [2] = "LightPower2",
@@ -939,7 +926,6 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-end
 until v.Humanoid.Health == 0 or not _G.CampLight or v.Name ~= SelectedKillPlayer
 end)
 end

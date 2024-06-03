@@ -696,6 +696,11 @@ for i,e in pairs(game.Players:GetChildren()) do
 plrchoose = string.lower(e.Name)
 if string.find(plrchoose, plrlow) then
 	SelectedKillPlayer = e.Name
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == SelectedKillPlayer then
+v = SelectedBody
+end
+end
 end
 end
 end)
@@ -770,14 +775,13 @@ if _G.AutoQuake then
 pcall(function()
 local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vptt = xr.VTCebvc
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer then
-task.wait(0.1)
-    pcall(function()
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+while task.wait(0.1) do
+if _G.AutoQuake then
+												pcall(function()
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,SelectedBody.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end)
-end
-end
+											end
+											end
 end)
 end
 end)

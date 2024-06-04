@@ -693,6 +693,8 @@ for i,e in pairs(game.Players:GetChildren()) do
 plrchoose = string.lower(string.sub(tostring(e.Name),1,plrnum))
 if plrlow == plrchoose then
 SelectedKillPlayer = e.Name
+elseif plrlow ~= plrchoose then
+SelectedKillPlayer = ""
   end
 end
 end)

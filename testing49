@@ -688,11 +688,12 @@ local plrsec = Tabs.Player:AddSection("About Player")
 
     plrts:OnChanged(function()
 plrlow = string.lower(plrts.Value)
+plrnum = string.len(tostring(plrlow))
 for i,e in pairs(game.Players:GetChildren()) do
-plrchoose = string.lower(e.Name)
-if string.find(plrchoose, plrlow) then
-	SelectedKillPlayer = e.Name
-end
+plrchoose = string.lower(string.sub(tostring(e.Name),1,plrnum))
+if plrlow == plrchoose then
+SelectedKillPlayer = e.Name
+  end
 end
 end)
 

@@ -2536,7 +2536,7 @@ for i,v in pairs(game.Players:GetChildren()) do
 			if c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
 Choose2 = c.Name
 	pcall(function()
-                repeat task.wait(0.1)
+                repeat task.wait(0.2)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = c.HumanoidRootPart.CFrame
@@ -2568,7 +2568,7 @@ for i,d in pairs(game.Players:GetChildren()) do
 			if b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 and b.Name ~= Choose2 then
 Choose3 = b.Name
 	pcall(function()
-                repeat task.wait(0.12)
+                repeat task.wait(0.22)
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
                           			e.CFrame = b.HumanoidRootPart.CFrame
@@ -2600,7 +2600,7 @@ for i,f in pairs(game.Players:GetChildren()) do
 			if h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 and h.Name ~= Choose2 and h.Name ~= Choose3 then
 Choose4 = h.Name
 	pcall(function()
-                repeat task.wait(0.14)
+                repeat task.wait(0.24)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = h.HumanoidRootPart.CFrame
@@ -2632,7 +2632,7 @@ for i,g in pairs(game.Players:GetChildren()) do
 			if j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 and j.Name ~= Choose2 and j.Name ~= Choose3 and j.Name ~= Choose4 then
 Choose5 = j.Name
 	pcall(function()
-                repeat task.wait(0.16)
+                repeat task.wait(0.26)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = j.HumanoidRootPart.CFrame

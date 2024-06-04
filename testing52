@@ -674,7 +674,6 @@ end)
 end
 end)
 
-SelectedKillPlayer = ""
 local plrsec = Tabs.Player:AddSection("About Player")
 
     local plrts = Tabs.Player:AddInput("plrts", {

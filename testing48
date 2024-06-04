@@ -2513,14 +2513,14 @@ spawn(function() -- autofarm cannon
                      end
                 end
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Angry ") 
+                    if string.find(v.Name, "Angry") 
                     or string.find(v.Name, "Bandit") 
                     or string.find(v.Name, "Thief")
                     or string.find(v.Name, "Bruno") 
                     or string.find(v.Name, "Bucky") 
-                    or string.find(v.Name, " Vokun") 
-                    or string.find(v.Name, "Fred")  
-                    or string.find(v.Name, "Cave ") 
+                    or string.find(v.Name, "Vokun") 
+                    or string.find(v.Name, "Fr")  
+                    or string.find(v.Name, "Cave") 
                     or string.find(v.Name, "Thug") 
                     or string.find(v.Name, "Gunslinger")
                     or string.find(v.Name, "Gunner") 

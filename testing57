@@ -3318,10 +3318,10 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
-repeat task.wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true
+repeat task.wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true or game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge13")
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge14")
-wait(2)
+wait()
 end)
 end
 end

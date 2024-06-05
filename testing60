@@ -3440,9 +3440,9 @@ task.wait()
 end
 if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then task.wait()
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-end
 amongus()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
 wait(15)
 until not getgenv().farmstats or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 end)

@@ -2804,6 +2804,80 @@ _G.autogetexp = false
 end
 end)
 
+local autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = false })
+    autoclaimchal:OnChanged(function()
+if Options.autoclaimchalToggle.Value == true then
+_G.autochallenge = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Claim Challenge Is Turned On",
+    Duration = 5
+})
+else
+_G.autochallenge = false
+end
+end)
+
+spawn(function()
+while wait() do
+if _G.autochallenge then
+pcall(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+if game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Daily1")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Daily2")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Daily3")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Daily4")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Weekly1")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Weekly2")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Weekly3")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.MonthlyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Monthly1")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.MonthlyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Monthly2")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge1")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge2")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge3")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge4")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_6"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge6")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_7"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge7")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_8"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge8")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_9"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge9")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_10"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge10")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_11"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge11")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge13")
+elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge14")
+end
+end)
+end
+end
+end)
+
+
+
+
+
         spawn(function()
             while wait() do
                 if _G.autogetexp then

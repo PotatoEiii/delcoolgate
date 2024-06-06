@@ -1646,6 +1646,16 @@ _G.storeffrt = false
 end
 end)
 
+local aurastq = Tabs.Fruit:AddToggle("aurastqtoggle", {Title = "Auto Store Aura Fruit", Default = false })
+aurastq:OnChanged(function()
+if Options.aurastqtoggle.Value == true then
+_G.aurasto = true
+else
+_G.aurasto = false
+end
+end)
+
+
 spawn(function()
 while wait() do
 pcall(function()
@@ -1780,6 +1790,32 @@ end)
 end
 end)
 
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+if _G.aurasto then
+            pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name,"Fruit") then
+local d = v.Data.Value
+local c = string.len(d)
+local b = tonumber(c) - 1
+if string.sub(d,b) == ",1" then
+repeat wait()
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name)
+x.Parent = game.Players.LocalPlayer.Character
+wait()
+storedf()
+until x.Parent ~= game.Players.LocalPlayer.Character
+end
+end
+end
+end)
+end
+end)
+end
+end)
 
 spawn(function()
     while task.wait() do

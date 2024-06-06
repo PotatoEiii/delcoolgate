@@ -3381,7 +3381,7 @@ end
 end)
 
 local StatsFF = Tabs.Main:AddSection("Stats Farming")
-local statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer", Default = false })
+local statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
 getgenv().farmstats = true
@@ -3390,6 +3390,14 @@ getgenv().farmstats = false
 end
 end)
 
+local statsfarmslow = Tabs.Main:AddToggle("statsfarmslowtoggle", {Title = "Auto Farm Mixer (Normal)", Default = false })
+statsfarmslow:OnChanged(function()
+if Options.statsfarmslowtoggle.Value == true then
+getgenv().farmslowstats = true
+else
+getgenv().farmslowstats = false
+end
+end)
 
 local statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
@@ -3425,7 +3433,7 @@ end)
 
 spawn(function()
 while wait() do
-if getgenv().farmstats then
+if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
@@ -3435,7 +3443,7 @@ workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challeng
 elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge14")
 end
-until not getgenv().farmstats
+until not getgenv().farmstats and not getgenv().farmslowstats
 end)
 end
 end
@@ -3481,6 +3489,38 @@ workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("C
 end
 task.wait(15)
 until not getgenv().farmstats or game.Players.LocalPlayer.Character.Humanoid.Health == 0
+end)
+end
+end
+end)
+
+spawn(function()
+while task.wait() do
+if getgenv().farmslowstats then
+pcall(function()
+local user = tostring(game.Players.LocalPlayer.Name)
+repeat task.wait()
+for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
+if v.Name == "Barrel" and getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+amongus()
+end
+task.wait(0.2)
+end
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v.Name == "Crate" and getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+amongus()
+end
+task.wait(0.2)
+end
+if getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then task.wait()
+game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+amongus()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+task.wait(15)
+until not getgenv().farmslowstats or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 end)
 end
 end

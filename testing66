@@ -1628,6 +1628,15 @@ getgenv().pickkk = false
 end
 end)
 
+local openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
+openboxunc:OnChanged(function()
+if Options.openboxunctoggle.Value == true then
+_G.opencommon = true
+else
+_G.opencommon = false
+end
+end)
+
 local openboxrare = Tabs.Fruit:AddToggle("openboxraretoggle", {Title = "Auto Open Rare/Ultra Box", Default = false })
 openboxrare:OnChanged(function()
 if Options.openboxraretoggle.Value == true then
@@ -1673,7 +1682,22 @@ end)
 end
 end)
 
-
+spawn(function()
+while wait() do
+pcall(function()
+if _G.opencommon then
+            pcall(function()
+                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v:IsA("Tool") and string.find(v.Name, "ommon") then
+                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+                                        end
+                                    end
+            end)
+end
+end)
+end
+end)
 
 
 

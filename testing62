@@ -3465,14 +3465,14 @@ if v.Name == "Barrel" and getgenv().farmstats == true and not game.Players.Local
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-task.wait()
+wait()
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" and getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-task.wait()
+wait()
 end
 if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then task.wait()
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)

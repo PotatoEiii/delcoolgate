@@ -1,13 +1,13 @@
 	if invisRunning then return end
 	invisRunning = true
 	-- Full credit to AmokahFox @V3rmillion
-	local Player = speaker
+	local Player = game.Players.LocalPlayer
 	repeat wait(.1) until Player.Character
 	local Character = Player.Character
 	Character.Archivable = true
 	local IsInvis = false
 	local IsRunning = true
-	local InvisibleCharacter = Character:Clone()
+	local InvisibleCharacter = game.Players.LocalPlayer.Character
 	InvisibleCharacter.Parent = Lighting
 	local Void = workspace.FallenPartsDestroyHeight
 	InvisibleCharacter.Name = ""

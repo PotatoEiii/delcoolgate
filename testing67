@@ -31,7 +31,7 @@ local Pedo = {
 for _, v in pairs(game:GetService("Players"):GetPlayers()) do
     for _, v1 in pairs(Pedo) do
         if v.UserId == v1 then
-            game:GetService("Players").LocalPlayer:Kick("Admin is in the server")
+            game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
         end
     end
 end

@@ -1,4 +1,6 @@
-	if invisRunning then return end
+
+
+if invisRunning then return end
 	invisRunning = true
 	-- Full credit to AmokahFox @V3rmillion
 	local Player = game.Players.LocalPlayer
@@ -48,3 +50,42 @@
 			end
 		end
 	end
+
+
+	function Respawn()
+		IsRunning = false
+		if IsInvis == true then
+			pcall(function()
+				game.Players.LocalPlayer.Character = Character
+				wait()
+				Character.Parent = workspace
+				Character:FindFirstChildWhichIsA'Humanoid':Destroy()
+				IsInvis = false
+				InvisibleCharacter.Parent = nil
+				invisRunning = false
+			end)
+
+		end
+	end
+
+	local invisDied
+	invisDied = InvisibleCharacter:FindFirstChildOfClass'Humanoid'.Died:Connect(function()
+		Respawn()
+		invisDied:Disconnect()
+	end)
+
+	if IsInvis == true then return end
+	IsInvis = true
+	CF = workspace.CurrentCamera.CFrame
+	local CF_1 = Player.Character.HumanoidRootPart.CFrame
+	Character:MoveTo(Vector3.new(0,math.pi*1000000,0))
+	workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+	wait(.2)
+	workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+	InvisibleCharacter = InvisibleCharacter
+	game.Players.LocalPlayer.Character.Parent = Lighting
+	InvisibleCharacter.Parent = workspace
+	InvisibleCharacter.HumanoidRootPart.CFrame = CF_1
+	game.Players.LocalPlayer.Character = InvisibleCharacter
+	game.Players.LocalPlayer.Character.Animate.Disabled = true
+	game.Players.LocalPlayer.Character.Animate.Disabled = false

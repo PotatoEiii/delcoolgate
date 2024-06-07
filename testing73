@@ -647,7 +647,7 @@ SelectedKillPlayer = e.Name
 end
 end)
 
-local targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Player", Default = false })
+local targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false })
 targetallpcho:OnChanged(function()
 if Options.targetallpchotoggle.Value == true then
 getgenv().targeting = true

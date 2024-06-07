@@ -432,7 +432,7 @@ Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Be
 })
 
 local wqettt = Tabs.Gems:AddDropdown("Dropdown", {
-        Title = "Select Fruit To Fast Roll Affinity",
+        Title = "Select Fruit To Exchange",
         Values = {"DFT1", "DFT2"},
         Multi = false,
         Default = "",

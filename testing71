@@ -712,6 +712,53 @@ SelectedKillPlayer = e.Name
 end
 end)
 
+local targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Player", Default = false })
+targetallpcho:OnChanged(function()
+if Options.targetallpchotoggle.Value == true then
+getgenv().qwetargeet = true
+else
+getgenv().qwetargeet = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.qwetargeet then wait()
+pcall(function()
+repeat wait()
+getgenv().targeting = true
+wait(5)
+getgenv().targeting = false
+wait()
+until _G.qwetargeet == false
+getgenv().targeting = false
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if getgenv().targeting then
+wait()
+for i,v in pairs(game.Players:GetChildren()) do
+	if v.Name ~= game.Players.LocalPlayer.Name then
+		for i,c in pairs(game.Workspace:GetChildren()) do
+			if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+repeat task.wait()
+SelectedKillPlayer = c.Name
+until c.Humanoid.Health == 0 or not getgenv().targeting
+			end
+		end
+	end
+end
+end
+end)
+end
+end)
 
 
 local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })

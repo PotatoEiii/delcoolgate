@@ -794,18 +794,6 @@ end
 end)
 
 local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
-local awta = Tabs.Player:AddSlider("Slider", {
-    Title = "Magma Multiple",
-    Description = "Change this for adjusting Magma per hit",
-    Default = 3,
-    Min = 1,
-    Max = 3,
-    Rounding = 0,
-    Callback = function(magamwt)
-            magmatimet = tonumber(magamwt)
-        end
-    })
-
 local a2wta = Tabs.Player:AddSlider("Slider", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -847,8 +835,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.15)
-for i = 1,magmatimet do
+task.wait()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "MagmaPower1",
@@ -859,7 +846,6 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-end
 until v.Humanoid.Health == 0 or not _G.CampMagma or v.Name ~= SelectedKillPlayer
 end)
 end

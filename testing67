@@ -10,7 +10,23 @@ local Pedo = {
     2350183594, -- icydragonwingsis
     835620275, -- Silvers_Rayleig
     137621, -- mariobros38
-    295337577 -- ModeratorDaMarcuses
+    295337577, -- ModeratorDaMarcuses
+    1338963426, -- happypandamagic2
+    1276541545, -- VanitasThePlague
+    587649463, -- happypandamagic
+    245586741, -- Tiptop98
+    174941504, -- FoxKingFab
+    136099207,-- CudlessTheCat
+    94825741, -- NATSUDRAGN331
+    358051152, -- VortexFragmented
+    529455640, -- vlonedd
+    281482099, -- Quixotize
+    355207559, -- Elianmc1s
+    5084487, -- Americanflag
+    928623624, -- TrashPanda2361
+    30049170, -- Farquanetta
+    474452017 -- Bige0n
+
 }
 
 for _, v in pairs(game:GetService("Players"):GetPlayers()) do

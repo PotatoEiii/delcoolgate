@@ -5518,18 +5518,9 @@ for i, v in pairs(security) do
 if not string.find(v, currenthwid) then
 _G.kicksecurity = true
 end
-end
-end)
-end
-
-spawn(function()
-while wait() do
-pcall(function()
 if _G.kicksecurity then
-pcall(function()
 game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Is Outdated")
-end)
+end
 end
 end)
 end
-end)

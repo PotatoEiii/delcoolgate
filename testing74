@@ -5509,3 +5509,17 @@ end
 toClipboard("https://discord.gg/ecpbhm8G3w")
 end
 end
+
+spawn(function()
+while wait() do
+pcall(function()
+local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
+for _, v in pairs(security) do
+if string.find(v,
+
+
+
+end
+end)
+end
+end)

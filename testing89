@@ -5559,7 +5559,9 @@ end
 
 
 _G.kicksecurity = false
+_G.securityalltrue = true
 while wait() do
+repeat wait()
 pcall(function()
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
 local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -5623,14 +5625,18 @@ elseif _G.name == "Đặng Bá Dương" then
 if currenthwid ~= security[15] then
 _G.kicksecurity = true
 end
+wait(2)
 end
 end)
+until _G.securityalltrue == false
 end
 
 while wait() do
+repeat wait()
 if _G.kicksecurity == true then
 game.Players.LocalPlayer:Kick("SALUNA Notify: Your HWID Is Outdated")
 end
+until _G.securityalltrue == false
 end
 
 

@@ -300,12 +300,13 @@ Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nWe hope you will have a nice experience by using this script!"
 })
 
+userinfor = "Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..plr .."\nUser ID: "..plrid .."\nCombo: " ..getgenv().firstfruit .." & "..getgenv().secondfruit
 local info2 = Tabs.Info:AddSection("Information")
 local plr = game.Players.LocalPlayer.Character.Name
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..plr .."\nUser ID: "..plrid .."\nCombo: " ..getgenv().firstfruit .." & "..getgenv().secondfruit
+Content = tostring(userinfor)
 })
 
 local Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)

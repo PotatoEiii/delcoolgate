@@ -116,11 +116,11 @@ _G.kicksecurity = true
 end
 end
 end)
-until _G.TRUE = false
+until _G.TRUE == false
 
 repeat wait()
 if _G.kicksecurity == true then
 game.Players.LocalPlayer:Kick("SALUNA Notify: Your HWID Is Outdated")
 end
-until _G.TRUE = false
+until _G.TRUE == false
 

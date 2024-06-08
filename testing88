@@ -5546,7 +5546,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,ga
 end)
 
 else
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Wasn't Whitelisted")
+game.Players.LocalPlayer:Kick("SALUNA Notify: Your HWID Wasn't Whitelisted")
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
@@ -5557,11 +5557,12 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
 end
 
-while wait(5) do
+
+_G.kicksecurity = false
+while wait() do
 pcall(function()
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
 local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
-
 if _G.name == "Irenkiss Trần" then
 if currenthwid ~= security[1] then
 _G.kicksecurity = true
@@ -5622,13 +5623,15 @@ elseif _G.name == "Đặng Bá Dương" then
 if currenthwid ~= security[4] then
 _G.kicksecurity = true
 end
-if _G.kicksecurity then
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Is Outdated")
-end
 end
 end)
 end
 
+while wait() do
+if _G.kicksecurity == true then
+game.Players.LocalPlayer:Kick("SALUNA Notify: Your HWID Is Outdated")
+end
+end
 
 
 

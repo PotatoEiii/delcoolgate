@@ -5556,3 +5556,81 @@ end
 toClipboard("https://discord.gg/ecpbhm8G3w")
 end
 end
+
+while wait(5) do
+pcall(function()
+local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
+local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
+
+if _G.name == "Irenkiss Trần" then
+if currenthwid ~= security[1] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Nguyễn Ngọc Khôi" then
+if currenthwid ~= security[2] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Hiếu Trung" then
+if currenthwid ~= security[3] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Khoa GK" then
+if currenthwid ~= security[4] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Huy Tú" then
+if currenthwid ~= security[5] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Huy Tú (2)" then
+if currenthwid ~= security[6] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Nguyễn Anh Tiến" then
+if currenthwid ~= security[7] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Tài Nhớt" then
+if currenthwid ~= security[8] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Lâm Quốc Bảo" then
+if currenthwid ~= security[9] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Anh Long" then
+if currenthwid ~= security[10] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Duy Pham" then
+if currenthwid ~= security[11] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Trần Minh Đạt" then
+if currenthwid ~= security[12] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Huyy Niee" then
+if currenthwid ~= security[13] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Huyy Niee (2)" then
+if currenthwid ~= security[14] then
+_G.kicksecurity = true
+end
+elseif _G.name == "Đặng Bá Dương" then
+if currenthwid ~= security[4] then
+_G.kicksecurity = true
+end
+if _G.kicksecurity then
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Is Outdated")
+end
+end
+end)
+end
+
+
+
+
+
+

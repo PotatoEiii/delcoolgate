@@ -313,7 +313,7 @@ User Name: ]]..plr ..[[
 
 User ID: ]]..plrid ..[[
 
-Combo: ]]..getgenv().firstfruit .." & "..getgenv().secondfruit
+Combo: ]]..getgenv().firstfruit .." & "..getgenv().secondfruit..""
 })
 
 local Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)

@@ -5620,7 +5620,7 @@ if currenthwid ~= security[14] then
 _G.kicksecurity = true
 end
 elseif _G.name == "Đặng Bá Dương" then
-if currenthwid ~= security[4] then
+if currenthwid ~= security[15] then
 _G.kicksecurity = true
 end
 end

@@ -1,3 +1,4 @@
+_G.TRUE = true
 _G.kicksecurity = false
 local listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
 if _G.WhiteListed then
@@ -49,7 +50,7 @@ _G.name = "Đặng Bá Dương"
 _G.facebookid = "baduonggg.2706"
 end
 
-while wait() do
+repeat wait()
 pcall(function()
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
 local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -115,10 +116,11 @@ _G.kicksecurity = true
 end
 end
 end)
-end
+until _G.TRUE = false
 
-while wait() do
+repeat wait()
 if _G.kicksecurity == true then
 game.Players.LocalPlayer:Kick("SALUNA Notify: Your HWID Is Outdated")
 end
-end
+until _G.TRUE = false
+

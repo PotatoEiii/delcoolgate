@@ -303,10 +303,9 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 local info2 = Tabs.Info:AddSection("Information")
 local plr = game.Players.LocalPlayer.Character.Name
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-local userinfo = tostring("Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..plr .."\nUser ID: "..plrid
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = userinfo
+Content = "Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..plr .."\nUser ID: "..plrid
 })
 
 local Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)

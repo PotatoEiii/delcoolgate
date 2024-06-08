@@ -5510,15 +5510,26 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
 end
 
-spawn(function()
-while wait() do
+while wait(5) do
 pcall(function()
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
 for _, v in pairs(security) do
-if string.find(v,
+if not string.find(v, game:GetService("RbxAnalyticsService"):GetClientId()) then
+_G.kicksecurity = true
+elseif string.find(v, game:GetService("RbxAnalyticsService"):GetClientId()) then
+_G.kicksecurity = false
+end
+end
+end)
+end
 
-
-
+spawn(function()
+while wait() do
+pcall(function()
+if _G.kicksecurity then
+pcall(function()
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Is Outdated")
+end)
 end
 end)
 end

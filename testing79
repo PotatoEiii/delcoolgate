@@ -55,35 +55,50 @@ _G.WhiteListed = true
 if _G.WhiteListed then
 local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
 if currenthwid == listed[1] then
-_G.name = "Saluna"
+_G.name = "Irenkiss Trần"
+_G.facebookid = "IrenkissWantPeace"
 elseif currenthwid == listed[2] then
 _G.name = "Nguyễn Ngọc Khôi"
+_G.facebookid = "ng.khoi.07"
 elseif currenthwid == listed[3] then
 _G.name = "Hiếu Trung"
+_G.facebookid = "cao.hieu.77312"
 elseif currenthwid == listed[4] then
 _G.name = "Khoa GK"
+_G.facebookid = "khoa.gk.75"
 elseif currenthwid == listed[5] then
 _G.name = "Huy Tú"
+_G.facebookid = "100041333672880"
 elseif currenthwid == listed[6] then
 _G.name = "Huy Tú (2)"
+_G.facebookid = "100041333672880"
 elseif currenthwid == listed[7] then
 _G.name = "Nguyễn Anh Tiến"
+_G.facebookid = "TienSama2x"
 elseif currenthwid == listed[8] then
 _G.name = "Tài Nhớt"
+_G.facebookid = "KakutoChan"
 elseif currenthwid == listed[9] then
 _G.name = "Lâm Quốc Bảo"
+_G.facebookid = "theayma8"
 elseif currenthwid == listed[10] then
 _G.name = "Anh Long"
+_G.facebookid = "100086491617614"
 elseif currenthwid == listed[11] then
 _G.name = "Duy Pham"
+_G.facebookid = "61557719982076"
 elseif currenthwid == listed[12] then
 _G.name = "Trần Minh Đạt"
+_G.facebookid = "dat15112006"
 elseif currenthwid == listed[13] then
 _G.name = "Huyy Niee"
+_G.facebookid = "teobo.huy"
 elseif currenthwid == listed[14] then
 _G.name = "Huyy Niee (2)"
+_G.facebookid = "teobo.huy"
 elseif currenthwid == listed[15] then
 _G.name = "Đặng Bá Dương"
+_G.facebookid = "baduonggg.2706"
 end
 
     local vu = game:GetService("VirtualUser")
@@ -290,7 +305,7 @@ local plr = game.Players.LocalPlayer.Character.Name
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "Register Name:".._G.name.."\nUser Name: "..plr .."\nUser ID: "..plrid .."\nCombo: " ..getgenv().firstfruit .." & "..getgenv().secondfruit
+Content = "Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..plr .."\nUser ID: "..plrid .."\nCombo: " ..getgenv().firstfruit .." & "..getgenv().secondfruit
 })
 
 local Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)

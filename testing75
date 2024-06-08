@@ -5513,11 +5513,10 @@ end
 while wait(5) do
 pcall(function()
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua'))()
-for _, v in pairs(security) do
-if not string.find(v, game:GetService("RbxAnalyticsService"):GetClientId()) then
+local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
+for i, v in pairs(security) do
+if not string.find(v, currenthwid) then
 _G.kicksecurity = true
-elseif string.find(v, game:GetService("RbxAnalyticsService"):GetClientId()) then
-_G.kicksecurity = false
 end
 end
 end)

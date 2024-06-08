@@ -306,9 +306,13 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
 Title = "User Information",
 Content = [[Register Name: ]].._G.name..[[
+
 Facebook ID: ]].._G.facebookid..[[
+
 User Name: ]]..plr ..[[
+
 User ID: ]]..plrid ..[[
+
 Combo: ]]..getgenv().firstfruit .." & "..getgenv().secondfruit
 })
 

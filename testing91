@@ -99,7 +99,7 @@ _G.facebookid = "teobo.huy"
 elseif currenthwid == listed[15] then
 _G.name = "Đặng Bá Dương"
 _G.facebookid = "baduonggg.2706"
-elseif currenthwid == listed[15] then
+elseif currenthwid == listed[16] then
 _G.name = "Cậu Ngân Hà"
 _G.facebookid = "100014813557316"
 end

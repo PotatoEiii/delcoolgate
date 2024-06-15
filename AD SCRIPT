@@ -4,12 +4,12 @@ https://discord.com/api/webhooks/1249262772789710858/T9QhECTAkZGBL9kXDHv0esG6ih6
 
 ------SCRIPT:
 
-local po = game:WaitForChild("CoreGui"):WaitForChild("RobloxPromptGui"):WaitForChild("promptOverlay")
-po.ChildAdded:connect(function(a)
-if a.Name == 'ErrorPrompt' then
-
-while task.wait(5) do
+_G.autorj = true
+spawn(function()
+while true do wait()
+if _G.autorj then
 pcall(function()
+if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
 PlaceId, JobId = game.PlaceId, game.JobId
@@ -49,12 +49,14 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
         end
     else
         notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
-    end 
-end) 
-end
+    end          
 
 end
 end)
+end
+end
+end)
+
 repeat wait()
 spawn(function()
 loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()

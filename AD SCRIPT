@@ -4,15 +4,6 @@ https://discord.com/api/webhooks/1249262772789710858/T9QhECTAkZGBL9kXDHv0esG6ih6
 
 ------SCRIPT:
 
-repeat wait()
-spawn(function()
-loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
-end)
-wait(60)
-game.Players.LocalPlayer:Kick()
-until Joebiden
-
------AutoRJ
 local po,ts = game:WaitForChild("CoreGui"):WaitForChild("RobloxPromptGui"):WaitForChild("promptOverlay"),game:GetService('TeleportService')
 po.ChildAdded:connect(function(a)
 if a.Name == 'ErrorPrompt' then
@@ -25,3 +16,10 @@ end end end) end
 
 end
 end)
+repeat wait()
+spawn(function()
+loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
+end)
+wait(60)
+game.Players.LocalPlayer:Kick()
+until Joebiden

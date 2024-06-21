@@ -1,6 +1,6 @@
 -------excutor:
 https://www.mediafire.com/file/8635gxt65z6co7x/Fluxus%2528By_xShido%2529.apk/file
-https://www.mediafire.com/file/g6e95dxvjkedvvw/32Bits+Fluxus2.625.apk/file -- 32bit flux
+https://www.mediafire.com/file/l4ixeo6fumgispd/64Bits+Fluxus2.625.apk/file -- 64bit flux
 
 ------SCRIPT:
 repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden

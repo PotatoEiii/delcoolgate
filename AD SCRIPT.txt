@@ -3,6 +3,8 @@ https://download2291.mediafire.com/16huhxvrrulgu5Z3mNj1av5PdoQP4eSnSLE0YR_MQFtx6
 
 https://download2438.mediafire.com/ydffux5u3byglVNUlwWfRhiv4CdFaMBsv-OjqSgMOCChxqbbJN7Rql7aNn2ZcbsrhpVDLqFIRKOaINKNAgfuh6uEmVQOxhvsRUbMJs6pQa9vV1I0wTus04qh3mQaHZDiWE-afoyroV8AC0epWNfyiXNaxURzQZeUVuVW-ucyfZOk/l4ixeo6fumgispd/64Bits+Fluxus2.625.apk
 
+https://s4-webhot-r-6-c.happymod.to/downloadfile/mod/40236d3d0fb9f63b9b676cd44579899d/L3TkhLK5TBFxc4C3SKQ6L3Prd3F1jfIwbZ1tRAd5LX3ydH79kP4ue6Z1feQ2aX7mPb72hL1ieJwySZ89MD2zPYK7UMAxNpJ1g3==
+
 https://statics.liteapks.com/SWAP%20-%20No%20ROOT/SWAP%20-%20No%20ROOT%20vv4.3.0%20%28PREMIUM%29.apk
 ------SCRIPT:
 repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden

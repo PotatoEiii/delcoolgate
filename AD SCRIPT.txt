@@ -1,7 +1,9 @@
 -------excutor:
-https://www.mediafire.com/file/8635gxt65z6co7x/Fluxus%2528By_xShido%2529.apk/file
-https://www.mediafire.com/file/l4ixeo6fumgispd/64Bits+Fluxus2.625.apk/file -- 64bit flux
+https://download2291.mediafire.com/16huhxvrrulgu5Z3mNj1av5PdoQP4eSnSLE0YR_MQFtx6YpMirbf9E74XHFb4dHMURyuLYd138yZMj3biJht9gZ9Qppfj-mNeUHsWX0dWLxQ5JXCJrmfGoqGBWQbIBvyTgl7gPzPTCuPfOMildMYAYUxs_UyY79744m7xOJLzAG2/8635gxt65z6co7x/duongsexhack.apk
 
+https://download2438.mediafire.com/ydffux5u3byglVNUlwWfRhiv4CdFaMBsv-OjqSgMOCChxqbbJN7Rql7aNn2ZcbsrhpVDLqFIRKOaINKNAgfuh6uEmVQOxhvsRUbMJs6pQa9vV1I0wTus04qh3mQaHZDiWE-afoyroV8AC0epWNfyiXNaxURzQZeUVuVW-ucyfZOk/l4ixeo6fumgispd/64Bits+Fluxus2.625.apk
+
+https://statics.liteapks.com/SWAP%20-%20No%20ROOT/SWAP%20-%20No%20ROOT%20vv4.3.0%20%28PREMIUM%29.apk
 ------SCRIPT:
 repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden
 

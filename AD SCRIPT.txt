@@ -28,6 +28,8 @@ https://discord.com/api/webhooks/1252644432809951292/zeOAvNe4wxpZui0JBaszl-suArC
 https://discord.com/api/webhooks/1252637204434522234/nw-DgVNPMQm2tr3heinrkRkeb9QaYTil2TaFBetnUt1IfbbONeYEDd11PviKSmW2aHai -- máy 8 (TuyGaNhungYeuEm)
 https://discord.com/api/webhooks/1252752382467768451/iSS-XiZjyd4BqPnK0U0LepFJ2PN9ETT4RwbJSAdjuOOcR_w_HsONtW7zargeUxABbtqR -- máy 9 (Limited)
 https://discord.com/api/webhooks/1252753267822166169/uNXnRmMSrGT2x0GWQKvDvWmrM2KwtvfBr0v9KovWp_Y-TBnePJ9gCK-VXSQNCrZy4IKP -- máy 10 (Shawn Ngu)
+https://discord.com/api/webhooks/1254259311081816064/jw7HZpcVh8cx3wcpTd2k55izKKQdVTfXlMBw_1MrgN7vZiWfFQLnYHYEit2Vl5rXvRic -- máy 11 (Clone 7)
+https://discord.com/api/webhooks/1254259094043361380/GgphFwP8ly4sLyAvLFB742Dwkg5oufjEWczJzEJPrOuKMSiMsEoM-0170JCMd0L7D5Py -- máy 12 (Clone 6)
 
 -----AUTO RJ:
 _G.autorj = true

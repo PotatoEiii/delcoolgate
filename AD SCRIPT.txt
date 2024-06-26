@@ -15,6 +15,10 @@ https://download2434.mediafire.com/ziocf6gtgpxgHkKWJoaGsZXlQJOJEbq6h3SYSsnhRucSp
 ------SCRIPT:
 repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(20)until Joebiden
 
+-----
+pkg install -y python tsu libexpat openssl && pip install requests && echo "Completed."`
+su -c "export PATH=$PATH:/data/data/com.termux/files/usr/bin && python /storage/emulated/0/download/ugphonelauncher.py"
+
 -------webhook:
 https://discord.com/api/webhooks/1252635755365404764/fagLV6QwN4t5uNUqRAxxpNvn7aLDzBcBd0Z_txKnSuhzegNrgQz3rhyzKNhkud2uYOg3 -- máy 1 (ACE)
 https://discord.com/api/webhooks/1252636569802637424/RpujDev4UXCusYmcaCccwbLoR158h2Af_tInMLwigWFO-yXCsPUxsMzC9rIHpSGf5dod -- máy 2 (DarkEsper)

@@ -281,7 +281,7 @@ local Window = Fluent:CreateWindow({
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
-    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+    MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
 })
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
@@ -549,67 +549,6 @@ end
 end)
 end
 end)
-
-
-
-local Miscc2 = Tabs.Misc:AddSection("Hide/Show UI Position")
-local tytytytytt = Tabs.Misc:AddSlider("Slider", {
-    Title = "UI Position X",
-    Description = "Change this for adjusting X Position",
-    Default = 5,
-    Min = 1,
-    Max = 999,
-    Rounding = 0,
-    Callback = function(toggle1)
-if toggle1 < 10 then
-toqw = tostring(toggle1)
-ttt1 = "0.00"..toqw
-togglepositionX = tonumber(ttt1)
-elseif toggle1 >= 10 and toggle1 < 100 then
-toqw = tostring(toggle1)
-ttt1 = "0.0"..toqw
-togglepositionX = tonumber(ttt1)
-elseif toggle1 >= 100 and toggle1 < 1000 then
-toqw = tostring(toggle1)
-ttt1 = "0."..toqw
-togglepositionX = tonumber(ttt1)
-end
-game.CoreGui.BBB.hideUI.Position = UDim2.new(togglepositionX, 1, togglepositionY, 1)
-        end
-    })
-
-local tytytytytt2 = Tabs.Misc:AddSlider("Slider", {
-    Title = "UI Position Y",
-    Description = "Change this for adjusting X Position",
-    Default = 155,
-    Min = 1,
-    Max = 999,
-    Rounding = 0,
-    Callback = function(toggle2)
-if toggle2 < 10 then
-toqw2 = tostring(toggle2)
-ttt2 = "0.00"..toqw2
-togglepositionY = tonumber(ttt2)
-elseif toggle2 >= 10 and toggle2 < 100 then
-toqw2 = tostring(toggle2)
-ttt2 = "0.0"..toqw2
-togglepositionY = tonumber(ttt2)
-elseif toggle2 >= 100 and toggle2 < 1000 then
-toqw2 = tostring(toggle2)
-ttt2 = "0."..toqw2
-togglepositionY = tonumber(ttt2)
-end
-game.CoreGui.BBB.hideUI.Position = UDim2.new(togglepositionX, 1, togglepositionY, 1)
-        end
-    })
-
-
-
-
-
-
-
-
 
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
 local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
@@ -5553,9 +5492,9 @@ hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
 hideUI.Size = UDim2.new(0.079, 0, 0.136, 0)
 hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 hideUI.MouseButton1Up:Connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
 
 

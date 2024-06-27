@@ -2,9 +2,6 @@ _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
-game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.new(255,0,0)
-game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
-game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 local Pedo = {
     1135910299, -- Havelic
     520944, -- Oblivic
@@ -55,6 +52,11 @@ _G.WhiteListed = true
             end
         end
 if _G.WhiteListed then
+
+game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.new(255,0,0)
+game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
+game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
+
 local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
 if currenthwid == listed[1] then
 _G.name = "Irenkiss Trần"

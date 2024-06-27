@@ -1919,7 +1919,7 @@ repeat wait()
                     wait(0.5)
                     game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 wait()
-until not game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball")
+until not _G.autocannon
 wait()
                 end
             end

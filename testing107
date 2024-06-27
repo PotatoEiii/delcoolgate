@@ -2737,7 +2737,7 @@ end
 end)
 
 spawn(function()
-while true do wait()
+while wait() do
 if _G.autorj then
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
@@ -4093,7 +4093,7 @@ end
 end)
 
 spawn(function()
-while true do wait()
+while wait() do
 if _G.rejoinifhaki0 then
 pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)

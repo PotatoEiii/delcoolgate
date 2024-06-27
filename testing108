@@ -4742,94 +4742,102 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
 _G.budget = Valuezx
 end)
 
-local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
-    DF11Toggle:OnChanged(function(gg)
+local DF11Toggle = Tabs.Affinity:AddToggle("DF1Togglell", {Title = "Auto Roll Affinity (DF1)", Default = false })
+    DF11Toggle:OnChanged(function()
+if Options.DF1Togglell.Value == true then
+_G.configquay = true
+else
+_G.configquay = false
+end
+end)
 
+            spawn(function()
+            while wait() do
+                if _G.configquay then
+                    pcall(function()
 
-while Options.DF1Toggle.Value do wait()
-pcall(function()
-if Options.DF1Toggle.Value == true then
+if _G.configquay == true then
 _G.quayfirstdf = true
 else
 _G.quayfirstdf = false
 end
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-if _G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
+if G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
 _G.defspin = true
 else
 _G.defspin = false
 end
-if _G.targetmelee == true and _G.targetdef == false and _G.targetsword == false and _G.targetsnip == false and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
+if G.targetmelee == true and _G.targetdef == false and _G.targetsword == false and _G.targetsnip == false and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
 _G.meleespin = true
 else
 _G.meleespin = false
 end
-if _G.targetsnip == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo then
+if G.targetsnip == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < _G.trqpwo then
 _G.sniperspin = true
 
 else
 _G.sniperspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
 _G.swordspin = true
 
 else
 _G.swordspin = false
 end
-if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
+if G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
 _G.defmeleespin = true
 
 else
 _G.defmeleespin = false
 end
-if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo then
+if G.targetsword == false and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < _G.trqpwo then
 _G.defsnipspin = true
 else
 _G.defsnipspin = false
 
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
 _G.defswordspin = true
 else
 _G.defswordspin = false
 end
-if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo then
+if G.targetsword == false and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < _G.trqpwo then
 _G.meleesnipspin = true
 else
 _G.meleesnipspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
 _G.meleeswordspin = true
 else
 _G.meleeswordspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < _G.trqpwo then
 _G.swordsnipspin = true
 else
 _G.swordsnipspin = false
 end
-if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
+if G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
 _G.defmeleesnipspin = true
 else
 _G.defmeleesnipspin = false
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
 _G.defmeleeswordspin = true
 else
 _G.defmeleeswordspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < _G.trqpwo then
 _G.meleesnipswordspin = true
 else
 _G.meleesnipswordspin = false
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
 _G.defswordsnip = true
 else
 _G.defswordsnip = false
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..plrid].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
+if G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User"..plrid].Data.DFT1Sword.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Sniper.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Melee.Value < G.trqpwo and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
 _G.allspin = true
 else
 _G.allspin = false
@@ -4837,7 +4845,10 @@ end
 
 end)
 end
+end
 end)
+
+
 
             spawn(function()
             while wait() do
@@ -5117,93 +5128,103 @@ local retw2 = Tabs.Affinity:AddDropdown("Dropdown", {
 _G.budget2 = Valuezx2
 end)
 
-local DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
-    DF22Toggle:OnChanged(function(tt)
+local DF22Toggle = Tabs.Affinity:AddToggle("DF2Togglety", {Title = "Auto Roll Affinity (DF2)", Default = false })
+    DF22Toggle:OnChanged(function()
+if Options.DF2Togglety.Value == true then
+_G.configquay2 = true
+else
+_G.configquay2 = false
+end
+end)
 
-while Options.DF2Toggle.Value do wait()
-pcall(function()
-if Options.DF2Toggle.Value == true then
+            spawn(function()
+            while wait() do
+                if _G.configquay2 then
+                    pcall(function()
+
+
+if _G.configquay2 == true then
 _G.quayfirstdf2 = true
 else
 _G.quayfirstdf2 = false
 end
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-if _G.targetdef2 == true and _G.targetsnip2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
+if G.targetdef2 == true and _G.targetsnip2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.defspin2 = true
 else
 _G.defspin2 = false
 end
-if _G.targetmelee2 == true and _G.targetdef2 == false and _G.targetsword2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
+if G.targetmelee2 == true and _G.targetdef2 == false and _G.targetsword2 == false and _G.targetsnip2 == false and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.meleespin2 = true
 else
 _G.meleespin2 = false
 end
-if _G.targetsnip2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 then
+if G.targetsnip2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.sniperspin2 = true
 
 else
 _G.sniperspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.swordspin2 = true
 
 else
 _G.swordspin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
+if G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleespin2 = true
 
 else
 _G.defmeleespin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 then
+if G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.defsnipspin2 = true
 else
 _G.defsnipspin2 = false
 
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.defswordspin2 = true
 else
 _G.defswordspin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 then
+if G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.meleesnipspin2 = true
 else
 _G.meleesnipspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.meleeswordspin2 = true
 else
 _G.meleeswordspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.swordsnipspin2 = true
 else
 _G.swordsnipspin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
+if G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleesnipspin2 = true
 else
 _G.defmeleesnipspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleeswordspin2 = true
 else
 _G.defmeleeswordspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.meleesnipswordspin2 = true
 else
 _G.meleesnipswordspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.defswordsnip2 = true
 else
 _G.defswordsnip2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..plrid].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
+if G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User"..plrid].Data.DFT2Sword.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Sniper.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Melee.Value < G.trqpwo2 and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.allspin2 = true
 else
 _G.allspin2 = false
@@ -5211,7 +5232,9 @@ end
 
 end)
 end
+end
 end)
+
 
             spawn(function()
             while wait() do

@@ -112,6 +112,12 @@ _G.facebookid = "61560483452261"
 elseif currenthwid == listed[18] then
 _G.name = "Phan Van Long"
 _G.facebookid = "100039356352586"
+elseif currenthwid == listed[19] then
+_G.name = "Lê Trường Giang"
+_G.facebookid = "61560880736193"
+elseif currenthwid == listed[20] then
+_G.name = "Irenkiss Test"
+_G.facebookid = "Irenkiss Test"
 end
 
     local vu = game:GetService("VirtualUser")

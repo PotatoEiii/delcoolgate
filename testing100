@@ -1916,9 +1916,7 @@ spawn(function()
 repeat wait()
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
-                    wait(0.5)
-                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
-wait()
+wait(0.1)
 until not _G.autocannon
 wait()
                 end

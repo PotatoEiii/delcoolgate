@@ -435,7 +435,7 @@ wait(7)
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
 wait(5)
 
-game.Players.LocalPlayer:Kick("Hoping Server For Duping. Please wait...")
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
@@ -4153,6 +4153,7 @@ if _G.rejoinifhaki0 then
 pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value == 0 then
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
 PlaceId, JobId = game.PlaceId, game.JobId
@@ -4534,6 +4535,7 @@ local mgfrrr2 = Tabs.Server:AddSection("Rejoin/Hop")
                     {
                         Title = "OK",
                         Callback = function()
+game.Players.LocalPlayer:Kick("Rejoining, Please Wait...")
             local ts = game:GetService("TeleportService")
             local p = game:GetService("Players").LocalPlayer
             ts:Teleport(game.PlaceId, p)            
@@ -4560,6 +4562,7 @@ end
                     {
                         Title = "OK",
                         Callback = function()
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
 PlaceId, JobId = game.PlaceId, game.JobId
@@ -4623,6 +4626,7 @@ end
                     {
                         Title = "OK",
                         Callback = function()
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
             local PlaceID = game.PlaceId
             local AllIDs = {}
             local foundAnything = ""

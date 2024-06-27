@@ -5540,24 +5540,56 @@ SaveManager:LoadAutoloadConfig()
 local BBB = Instance.new("ScreenGui")
 BBB.Name = "BBB"
 BBB.Parent = game.CoreGui
-local hideUI = Instance.new("TextButton")
+
+local hideUI = Instance.new("ImageButton")
 hideUI.Name = "hideUI"
-hideUI.Parent = BBB
+hideUI.Parent = game.CoreGui.BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.BackgroundTransparency = 1
 hideUI.ClipsDescendants = true
 hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0.079, 0, 0.069, 0)
-hideUI.AutoButtonColor = false
-hideUI.TextWrapped = true
-hideUI.TextScaled = true
-hideUI.Font = Enum.Font.SourceSans
-hideUI.Text = "HIDE/SHOW UI"
-hideUI.TextColor3 = Color3.fromRGB(0, 0, 0)
-hideUI.TextSize = 14
+hideUI.Size = UDim2.new(0.079, 0, 0.136, 0)
+hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
+
+
+local UIS = game:GetService('UserInputService')
+local frame = game.CoreGui.BBB.hideUI
+local dragToggle = nil
+local dragSpeed = 0.12
+local dragStart = nil
+local startPos = nil
+
+local function updateInput(input)
+ local delta = input.Position - dragStart
+ local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+
+UIS.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  if dragToggle then
+   updateInput(input)
+  end
+ end
 end)
 
 else

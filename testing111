@@ -4742,9 +4742,9 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
 _G.budget = Valuezx
 end)
 
-local DF11Toggle = Tabs.Affinity:AddToggle("DF1Togglell", {Title = "Auto Roll Affinity (DF1)", Default = false })
-    DF11Toggle:OnChanged(function()
-if Options.DF1Togglell.Value == true then
+local dffirstexchangett = Tabs.Gems:AddToggle("dffirstexchangetttoggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
+dffirstexchangett:OnChanged(function()
+if Options.dffirstexchangetttoggle.Value == true then
 _G.quayfirstdf = true
 else
 _G.quayfirstdf = false
@@ -4757,7 +4757,6 @@ if _G.quayfirstdf then
 pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-repeat task.wait()
 if G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
 _G.defspin = true
 else
@@ -4837,7 +4836,6 @@ _G.allspin = true
 else
 _G.allspin = false
 end
-until not _G.quayfirstdf
 end)
 end
 end
@@ -5124,9 +5122,9 @@ local retw2 = Tabs.Affinity:AddDropdown("Dropdown", {
 _G.budget2 = Valuezx2
 end)
 
-local DF22Toggle = Tabs.Affinity:AddToggle("DF2Togglety", {Title = "Auto Roll Affinity (DF2)", Default = false })
-    DF22Toggle:OnChanged(function()
-if Options.DF2Togglety.Value == true then
+local dfsecondexchangett = Tabs.Gems:AddToggle("dfsecondexchangetttoggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
+dfsecondexchangett:OnChanged(function()
+if Options.dfsecondexchangetttoggle.Value == true then
 _G.quayfirstdf2 = true
 else
 _G.quayfirstdf2 = false
@@ -5139,7 +5137,6 @@ if _G.quayfirstdf2 then
 pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-repeat task.wait()
 if G.targetdef2 == true and _G.targetsnip2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.defspin2 = true
 else
@@ -5219,7 +5216,6 @@ _G.allspin2 = true
 else
 _G.allspin2 = false
 end
-until not _G.quayfirstdf2
 end)
 end
 end

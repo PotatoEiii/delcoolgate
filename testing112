@@ -4742,9 +4742,9 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
 _G.budget = Valuezx
 end)
 
-local dffirstexchangett = Tabs.Gems:AddToggle("dffirstexchangetttoggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
-dffirstexchangett:OnChanged(function()
-if Options.dffirstexchangetttoggle.Value == true then
+local quaydf1 = Tabs.Affinity:AddToggle("quaydf1toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
+quaydf1:OnChanged(function()
+if Options.quaydf1toggle.Value == true then
 _G.quayfirstdf = true
 else
 _G.quayfirstdf = false
@@ -5122,9 +5122,9 @@ local retw2 = Tabs.Affinity:AddDropdown("Dropdown", {
 _G.budget2 = Valuezx2
 end)
 
-local dfsecondexchangett = Tabs.Gems:AddToggle("dfsecondexchangetttoggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
-dfsecondexchangett:OnChanged(function()
-if Options.dfsecondexchangetttoggle.Value == true then
+local quaydf2 = Tabs.Affinity:AddToggle("quaydf2toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
+quaydf1:OnChanged(function()
+if Options.quaydf2toggle.Value == true then
 _G.quayfirstdf2 = true
 else
 _G.quayfirstdf2 = false

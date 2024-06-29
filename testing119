@@ -2937,6 +2937,28 @@ getgenv().vtt = false
 end
 end)
 
+local chairtp = Tabs.Teleport:AddToggle("chairtptoggle", {Title = "Auto Teleport Safe Zone", Default = false })
+chairtp:OnChanged(function()
+if Options.chairtptoggle.Value == true then
+getgenv().vttchair = true
+else
+getgenv().vttchair = false
+end
+end)
+
+spawn(function()
+while wait() do
+if getgenv().vttchair then
+pcall(function()
+repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+until game.Players.LocalPlayer.Character.Humanoid.Sit = true or not getgenv().vttchair
+end)
+end
+end
+end)
+
+
 spawn(function()
 while wait() do
 if getgenv().vtt then

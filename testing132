@@ -3180,7 +3180,7 @@ Fluent:Notify({
 })
 end
 wait()
-MobsTPdr:SetValue("")
+Options.MobsTPdr:SetValue("")
 end)
 
 

@@ -3071,7 +3071,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Alta
 
 local Tmrt = Tabs.Teleport:AddSection("Teleport")
 
-local MobsTP = Tabs.Teleport:AddDropdown("Dropdown", {
+local MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
         Values = {"Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
@@ -3178,6 +3178,7 @@ Fluent:Notify({
     Content = "Teleported to " ..Mobbb,
     Duration = 1
 })
+Options.MobsTPdr.Value = ""
 end
 end)
 

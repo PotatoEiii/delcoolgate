@@ -2952,7 +2952,7 @@ if getgenv().chawq then
 pcall(function()
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
-until not getgenv().chawq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+until not getgenv().chawq or game.Players.LocalPlayer.Character.Humanoid.Sit == true or game.Players.LocalPlayer.Character:FindFirstChild("Compass")
 end)
 end
 end
@@ -2966,7 +2966,7 @@ if getgenv().vtt then
 pcall(function()
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-until not getgenv().vtt
+until not getgenv().vtt or game.Players.LocalPlayer.Character:FindFirstChild("Compass")
 end)
 end
 end
@@ -2980,7 +2980,7 @@ if getgenv().bgtyhn then
 pcall(function()
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
-until not getgenv().bgtyhn
+until not getgenv().bgtyhn or game.Players.LocalPlayer.Character:FindFirstChild("Compass")
 end)
 end
 end

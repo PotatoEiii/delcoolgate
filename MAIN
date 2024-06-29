@@ -1,4 +1,3 @@
-
 _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
@@ -334,25 +333,6 @@ Title = "Server Information",
 Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
-local info3 = Tabs.Info:AddSection("Discord")
-Tabs.Info:AddParagraph({
-Title = "Discord Information",
-Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
-})
-
-Tabs.Info:AddButton({
-        Title = "Discord Saluna Hub",
-        Description = "Copy Discord Invite Link",
-        Callback = function()
-everyClipboard = toclipboard
-function toClipboard(txt)
-    if everyClipboard then
-        everyClipboard(tostring(txt))
-    end
-end
-toClipboard("https://discord.gg/ecpbhm8G3w")    
-end
-    })
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
 Tabs.Gems:AddParagraph({
@@ -492,6 +472,7 @@ end)
 end
 end)
 
+
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
@@ -556,6 +537,68 @@ end
 end)
 end
 end)
+
+local mgfrrr = Tabs.Misc:AddSection("Boost")
+    Tabs.Misc:AddButton({
+        Title = "Low-Graphic Mode",
+        Description = "Use to reduce lag",
+        Callback = function()
+            Window:Dialog({
+                Title = "Low-Graphic Mode",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterTransparency = 0
+	game:GetService("Lighting").GlobalShadows = false
+	game:GetService("Lighting").FogEnd = 9e9
+	settings().Rendering.QualityLevel = 1
+	for i,v in pairs(game:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") then
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+			v.Lifetime = NumberRange.new(0)
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1
+			v.BlastRadius = 1
+		end
+	end
+	for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
+		if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
+			v.Enabled = false
+		end
+	end
+	workspace.DescendantAdded:Connect(function(child)
+		coroutine.wrap(function()
+			if child:IsA('ForceField') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Sparkles') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Smoke') or child:IsA('Fire') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			end
+		end)()
+	end)                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
 
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
 local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
@@ -4521,67 +4564,27 @@ end)
 end
 end)
 
-local mgfrrr = Tabs.Server:AddSection("Boost")
-    Tabs.Server:AddButton({
-        Title = "Low-Graphic Mode",
-        Description = "Use to reduce lag",
+local info3 = Tabs.Server:AddSection("Discord")
+Tabs.Server:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
+
+Tabs.Server:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
         Callback = function()
-            Window:Dialog({
-                Title = "Low-Graphic Mode",
-                Content = "Do you want to use?",
-                Buttons = {
-                    {
-                        Title = "OK",
-                        Callback = function()
-workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
-	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
-	workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
-	workspace:FindFirstChildOfClass('Terrain').WaterTransparency = 0
-	game:GetService("Lighting").GlobalShadows = false
-	game:GetService("Lighting").FogEnd = 9e9
-	settings().Rendering.QualityLevel = 1
-	for i,v in pairs(game:GetDescendants()) do
-		if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-			v.Material = "Plastic"
-			v.Reflectance = 0
-		elseif v:IsA("Decal") then
-			v.Transparency = 1
-		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-			v.Lifetime = NumberRange.new(0)
-		elseif v:IsA("Explosion") then
-			v.BlastPressure = 1
-			v.BlastRadius = 1
-		end
-	end
-	for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
-		if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
-			v.Enabled = false
-		end
-	end
-	workspace.DescendantAdded:Connect(function(child)
-		coroutine.wrap(function()
-			if child:IsA('ForceField') then
-				game:GetService('RunService').Heartbeat:Wait()
-				child:Destroy()
-			elseif child:IsA('Sparkles') then
-				game:GetService('RunService').Heartbeat:Wait()
-				child:Destroy()
-			elseif child:IsA('Smoke') or child:IsA('Fire') then
-				game:GetService('RunService').Heartbeat:Wait()
-				child:Destroy()
-			end
-		end)()
-	end)                        end
-                    },
-                    {
-                        Title = "Cancel",
-                        Callback = function()
-                        end
-                    }
-                }
-            })
-        end
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
     })
+
+
 
 local mgfrrr2 = Tabs.Server:AddSection("Rejoin/Hop")
     Tabs.Server:AddButton({

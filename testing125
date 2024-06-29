@@ -2951,11 +2951,11 @@ while wait() do
 if getgenv().chawq then
 pcall(function()
 repeat task.wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
 end
 until not getgenv().chawq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
-if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and game.Players.LocalPlayer.Character.Humanoid.Sit == true or game.Players.LocalPlayer.Character.Humanoid.Sit == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")  then
 game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
 end)
@@ -2970,7 +2970,7 @@ while wait() do
 if getgenv().vtt then
 pcall(function()
 repeat task.wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 until not getgenv().vtt
@@ -2986,7 +2986,7 @@ while wait() do
 if getgenv().bgtyhn then
 pcall(function()
 repeat task.wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
 end
 until not getgenv().bgtyhn

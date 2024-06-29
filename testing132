@@ -3179,8 +3179,6 @@ Fluent:Notify({
     Duration = 1
 })
 end
-wait()
-Options.MobsTPdr:SetValue("")
 end)
 
 

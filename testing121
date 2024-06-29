@@ -2937,6 +2937,29 @@ getgenv().vtt = false
 end
 end)
 
+local chairrr = Tabs.Teleport:AddToggle("chairrrtoggle", {Title = "Auto Teleport Chair", Default = false })
+chairrr:OnChanged(function()
+if Options.chairrrtoggle.Value == true then
+getgenv().chawq = true
+else
+getgenv().chawq = false
+end
+end)
+
+spawn(function()
+while wait() do
+if getgenv().chawq then
+pcall(function()
+repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+until not getgenv().chawq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+end)
+end
+end
+end)
+
+
+
 spawn(function()
 while wait() do
 if getgenv().vtt then

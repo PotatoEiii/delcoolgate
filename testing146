@@ -1940,7 +1940,7 @@ spawn(function()
 repeat wait()
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
-wait(0.75)
+wait(1)
 until not _G.autocannon
 wait()
                 end
@@ -1948,24 +1948,6 @@ wait()
         end)
     end
 end)
-
-spawn(function()
-    while task.wait() do
-        pcall(function()
-            if _G.autocannon then
-for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
-if c.Name == ("CannonBall") then
-wait(4)
-c:Destroy()
-end
-end
-            end
-        end)
-    end
-end)
-
-
-
 
 spawn(function()
     while task.wait(0) do

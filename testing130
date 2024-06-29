@@ -3178,8 +3178,8 @@ Fluent:Notify({
     Content = "Teleported to " ..Mobbb,
     Duration = 1
 })
-Options.MobsTPdr.Value = ""
 end
+Options.MobsTPdr:SetValue("")
 end)
 
 

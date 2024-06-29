@@ -595,15 +595,6 @@ end
 end)
 
 local Miscc2 = Tabs.Misc:AddSection("Useful Misc")
-local randomtp = Tabs.Misc:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
-randomtp:OnChanged(function()
-if Options.randomtptoggle.Value == true then
-getgenv().bgtyhn = true
-else
-getgenv().bgtyhn = false
-end
-end)
-
 Tabs.Misc:AddButton({
         Title = "Fix Cam",
         Description = "Reset Camera (If Error)",
@@ -619,17 +610,6 @@ Tabs.Misc:AddButton({
 	game.Players.LocalPlayer.Character.Head.Anchored = false       
 end
     })
-
-spawn(function()
-while wait() do
-if getgenv().bgtyhn then
-pcall(function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
-end)
-end
-end
-end)
-
 local plrsec = Tabs.Player:AddSection("About Player")
 
     local plrts = Tabs.Player:AddInput("plrts", {
@@ -2938,7 +2918,27 @@ wait(5)
 	end)
 
 
+local Usefull11 = Tabs.Teleport:AddSection("Useful Teleport")
+local randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
+randomtp:OnChanged(function()
+if Options.randomtptoggle.Value == true then
+getgenv().bgtyhn = true
+else
+getgenv().bgtyhn = false
+end
+end)
 
+spawn(function()
+while wait() do
+if getgenv().bgtyhn then
+pcall(function()
+repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+until not getgenv().bgtyhn
+end)
+end
+end
+end)
 
 local Safe = Tabs.Teleport:AddSection("Special Teleport")
 

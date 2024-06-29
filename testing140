@@ -4785,7 +4785,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
         Multi = true,
         Default = {""},
     })
-    dqwww:SetValue()
+
 
 
     wrrrrr:OnChanged(function(Valuer)
@@ -4821,7 +4821,6 @@ end)
         Multi = true,
         Default = {""},
     })
-    dtqzxcwww:SetValue()
 
  
     wwwwww:OnChanged(function(Valuerr)
@@ -5160,7 +5159,6 @@ local Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
         Multi = true,
         Default = {""},
     })
-    vqw44:SetValue()
 
 
     wrrrrr2:OnChanged(function(Valuer2)
@@ -5197,7 +5195,6 @@ end)
         Multi = true,
         Default = {""},
     })
-    tyumm1z:SetValue()
 
 
     wwrwwww2:OnChanged(function(Valuerr2)

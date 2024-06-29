@@ -2047,6 +2047,52 @@ _G.autocannonplr = false
 end
 end)
 
+local Reeaaz = Tabs.Farm:AddSection("Auto Reset")
+
+local rssli = Tabs.Player:AddSlider("rssliderzz", {
+    Title = "Reset Time",
+    Description = "Adjust reset time",
+    Default = 900,
+    Min = 100,
+    Max = 200,
+    Rounding = -1,
+    Callback = function(casd)
+            rstimehaha = tonumber(casd)
+        end
+    })
+
+local autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset", Default = false })
+autoreset:OnChanged(function()
+if Options.autoresettoggle.Value == true then
+_G.resetzxcm = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Reset Is Turned On",
+    Duration = 5
+})
+else
+_G.resetzxcm = false
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Reset Is Turned Off",
+    Duration = 5
+})
+end
+end)
+
+spawn(function()
+while wait() do
+if _G.resetzxcm then
+pcall(function()
+task.wait(rstimehaha)
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
+end)
+end
+end
+end)
+
+
 local Cannon = Tabs.Farm:AddSection("Auto Buso (Only 1 Allowed)")
 
 local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
@@ -2758,6 +2804,11 @@ Fluent:Notify({
 })
 else
 _G.autorj = false
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Reconnect Is Turned Off",
+    Duration = 5
+})
 end
 end)
 
@@ -2825,6 +2876,11 @@ Fluent:Notify({
 })
 else
 _G.autospawn = false
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn Is Turned Off",
+    Duration = 5
+})
 end
 end)
 
@@ -2855,6 +2911,11 @@ Fluent:Notify({
 })
 else
 _G.autogetexp = false
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Get Expertise Quest Is Turned Off",
+    Duration = 5
+})
 end
 end)
 
@@ -2869,6 +2930,11 @@ Fluent:Notify({
 })
 else
 _G.autochallenge = false
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Claim Challenge Is Turned Off",
+    Duration = 5
+})
 end
 end)
 

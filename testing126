@@ -2922,9 +2922,10 @@ local Usefull11 = Tabs.Teleport:AddSection("Useful Teleport")
 local randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
 randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
-getgenv().bgtyhn = true
+getgenv().banana = true
 else
 getgenv().bgtyhn = false
+getgenv().banana = false
 end
 end)
 
@@ -2934,6 +2935,7 @@ if Options.tpsafeplatetoggle.Value == true then
 getgenv().vtt = true
 else
 getgenv().vtt = false
+getgenv().tprandom = false
 end
 end)
 
@@ -2943,6 +2945,7 @@ if Options.chairrrtoggle.Value == true then
 getgenv().chawq = true
 else
 getgenv().chawq = false
+getgenv().tpchaiq = false
 end
 end)
 
@@ -2950,14 +2953,27 @@ spawn(function()
 while wait() do
 if getgenv().chawq then
 pcall(function()
-repeat task.wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
-end
-until not getgenv().chawq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
-if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and game.Players.LocalPlayer.Character.Humanoid.Sit == true or game.Players.LocalPlayer.Character.Humanoid.Sit == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")  then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+getgenv().tpchaiq = true
+else
+getgenv().tpchaiq = false
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
+end
+end)
+end
+end
+end)
+
+spawn(function()
+while wait() do
+if getgenv().tpchaiq then
+pcall(function()
+repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+end
+until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
 end
@@ -2969,16 +2985,41 @@ spawn(function()
 while wait() do
 if getgenv().vtt then
 pcall(function()
-repeat task.wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+getgenv().tprandom = true
+else
+getgenv().tprandom = false
 end
-until not getgenv().vtt
 end)
 end
 end
 end)
 
+spawn(function()
+while wait() do
+if getgenv().tprandom then
+pcall(function()
+repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+until not getgenv().tprandom
+end)
+end
+end
+end)
+
+spawn(function()
+while wait() do
+if getgenv().banana then
+pcall(function()
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+getgenv().bgtyh = true
+else
+getgenv().bgtyh = false
+end
+end)
+end
+end
+end)
 
 
 spawn(function()

@@ -4270,7 +4270,7 @@ end)
 
 
 local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
-local hakitargett = Tabs.Haki:AddSlider("Slider", {
+local hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
     Default = 55,
@@ -4282,7 +4282,7 @@ local hakitargett = Tabs.Haki:AddSlider("Slider", {
         end
     })
 
-local hakispeedt = Tabs.Haki:AddSlider("Slider", {
+local hakispeedt = Tabs.Haki:AddSlider("hakispeedsli", {
     Title = "Haki Speed",
     Description = "Change this for adjusting haki's speed",
     Default = 20,

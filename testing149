@@ -2055,7 +2055,7 @@ local rssli = Tabs.Farm:AddSlider("rssliderzz", {
     Default = 900,
     Min = 100,
     Max = 2000,
-    Rounding = -2,
+    Rounding = 0,
     Callback = function(casd)
             rstimehaha = tonumber(casd)
         end
@@ -4819,7 +4819,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
     Default = 2,
     Min = 1,
     Max = 2,
-    Rounding = 1,
+    Rounding = 0.1,
     Callback = function(treotttt)
             _G.trqpwo = tonumber(treotttt)
         end

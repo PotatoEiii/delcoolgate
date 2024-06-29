@@ -497,7 +497,7 @@ Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"
 })
 
-local wqettt = Tabs.Gems:AddDropdown("Dropdown", {
+local wqettt = Tabs.Gems:AddDropdown("bentauga11", {
         Title = "Select Fruit To Exchange",
         Values = {"DFT1", "DFT2"},
         Multi = false,
@@ -678,7 +678,7 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
-local bringdis = Tabs.Player:AddSlider("Slider", {
+local bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",
     Default = 4,
@@ -744,7 +744,7 @@ end
 end)
 
 local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
-local a2wta = Tabs.Player:AddSlider("Slider", {
+local a2wta = Tabs.Player:AddSlider("Slitpcamp", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
     Default = 15,
@@ -833,7 +833,7 @@ end)
 
 
 local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
-local a2wtalight = Tabs.Player:AddSlider("Slider", {
+local a2wtalight = Tabs.Player:AddSlider("lighttpsli", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
     Default = 15,
@@ -964,7 +964,7 @@ end)
 
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
 
-local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
+local drinkstype = Tabs.Shop:AddDropdown("banlongdiem", {
         Title = "Select Drinks",
         Values = {"Smoothie","Cider","Juice","Lemonade","Smoothie+","Cider+","Juice+","Lemonade+"},
         Multi = false,
@@ -2033,7 +2033,7 @@ end
 end)
 
 local Cannon = Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
-local regentargetslider = Tabs.Farm:AddSlider("Slider", {
+local regentargetslider = Tabs.Farm:AddSlider("Autobusosli", {
     Title = "Regen Target (%)",
     Description = "Change this for adjusting regen target",
     Default = 70,
@@ -2045,7 +2045,7 @@ local regentargetslider = Tabs.Farm:AddSlider("Slider", {
         end
     })
 
-local regenspeedslider = Tabs.Farm:AddSlider("Slider", {
+local regenspeedslider = Tabs.Farm:AddSlider("Autorzsli", {
     Title = "Regen Speed",
     Description = "Change this for adjusting regen speed",
     Default = 20,
@@ -3183,7 +3183,7 @@ end)
 
 
 local Wep = Tabs.Weapon:AddSection("Equipment")
-local weapontype = Tabs.Weapon:AddDropdown("Dropdown", {
+local weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
         Values = {"Melee","Sniper","Sword","Utility"},
         Multi = false,
@@ -3353,7 +3353,7 @@ end)
 
 local InstantWeapon = Tabs.Weapon:AddSection("Instant Weapon")
 local Yorusec = Tabs.Weapon:AddSection("Yoru Spam")
-local YoruSpeed = Tabs.Weapon:AddSlider("Slider", {
+local YoruSpeed = Tabs.Weapon:AddSlider("Yorusli", {
     Title = "Yoru Speed",
     Description = "Change this for adjusting Yoru's speed",
     Default = 50,
@@ -3365,7 +3365,7 @@ local YoruSpeed = Tabs.Weapon:AddSlider("Slider", {
         end
     })
 
-local YoruMulti = Tabs.Weapon:AddSlider("Slider", {
+local YoruMulti = Tabs.Weapon:AddSlider("Yorumilsz", {
     Title = "Yoru Multi Hit",
     Description = "Change this for adjusting Yoru's hits",
     Default = 200,
@@ -3421,7 +3421,7 @@ end
 end)
 
 local Cestussec = Tabs.Weapon:AddSection("Cestus Spam")
-local CestusSpeed = Tabs.Weapon:AddSlider("Slider", {
+local CestusSpeed = Tabs.Weapon:AddSlider("cestussli", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
     Default = 50,
@@ -3433,7 +3433,7 @@ local CestusSpeed = Tabs.Weapon:AddSlider("Slider", {
         end
     })
 
-local CestusMulti = Tabs.Weapon:AddSlider("Slider", {
+local CestusMulti = Tabs.Weapon:AddSlider("cesmulza", {
     Title = "Cestus Multi Hit",
     Description = "Change this for adjusting Cestus's hits",
     Default = 200,
@@ -4381,7 +4381,7 @@ end
 end)
 
 local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
-local hakiadvancespeed = Tabs.Haki:AddSlider("Slider", {
+local hakiadvancespeed = Tabs.Haki:AddSlider("advanceslihaki", {
     Title = "Advanced Haki Speed",
     Description = "Change Advanced Haki Speed",
     Default = 999,
@@ -4761,7 +4761,7 @@ end
 
 local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
-local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
+local Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
     Title = "1st Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 2,
@@ -4774,7 +4774,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     })
 
 
-     local wrrrrr = Tabs.Affinity:AddDropdown("MultiDropdown", {
+     local wrrrrr = Tabs.Affinity:AddDropdown("dqwww", {
         Title = "Lock Affinity (DF1)",
         Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -4810,7 +4810,7 @@ end
 end)
 
 
-    local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
+    local wwwwww = Tabs.Affinity:AddDropdown("dtqzxcwww", {
         Title = "Target Affinity (DF1)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -4844,7 +4844,7 @@ end
 			end
 end)
 
-local ret = Tabs.Affinity:AddDropdown("Dropdown", {
+local ret = Tabs.Affinity:AddDropdown("vxe1", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
@@ -5136,7 +5136,7 @@ wait(12)
 
 local af2 = Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
 
-local Lucysecond = Tabs.Affinity:AddSlider("Slider", {
+local Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 2,
@@ -5148,7 +5148,7 @@ local Lucysecond = Tabs.Affinity:AddSlider("Slider", {
         end
     })
 
-     local wrrrrr2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
+     local wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
         Title = "Lock Affinity (DF2)",
         Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -5184,7 +5184,7 @@ end)
 
 
 
-    local wwrwwww2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
+    local wwrwwww2 = Tabs.Affinity:AddDropdown("tyumm1z", {
         Title = "Target Affinity (DF2)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -5219,7 +5219,7 @@ end
 end)
 
 
-local retw2 = Tabs.Affinity:AddDropdown("Dropdown", {
+local retw2 = Tabs.Affinity:AddDropdown("ccas24ff", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,

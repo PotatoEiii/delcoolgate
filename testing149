@@ -2054,8 +2054,8 @@ local rssli = Tabs.Farm:AddSlider("rssliderzz", {
     Description = "Adjust reset time",
     Default = 900,
     Min = 100,
-    Max = 200,
-    Rounding = -1,
+    Max = 2000,
+    Rounding = -2,
     Callback = function(casd)
             rstimehaha = tonumber(casd)
         end

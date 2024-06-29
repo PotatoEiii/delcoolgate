@@ -2049,7 +2049,7 @@ end)
 
 local Reeaaz = Tabs.Farm:AddSection("Auto Reset")
 
-local rssli = Tabs.Player:AddSlider("rssliderzz", {
+local rssli = Tabs.Farm:AddSlider("rssliderzz", {
     Title = "Reset Time",
     Description = "Adjust reset time",
     Default = 900,

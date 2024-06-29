@@ -3011,9 +3011,9 @@ while wait() do
 if getgenv().banana then
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-getgenv().bgtyh = true
+getgenv().bgtyhn = true
 else
-getgenv().bgtyh = false
+getgenv().bgtyhn = false
 end
 end)
 end

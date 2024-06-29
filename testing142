@@ -1942,7 +1942,7 @@ repeat wait()
                     Plr.Character.Humanoid:EquipTool(tool)
 wait(0.2)
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
-wait(0.6)
+wait(0.75)
 until not _G.autocannon
 wait()
                 end

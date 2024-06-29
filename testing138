@@ -4781,18 +4781,19 @@ local Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
         Multi = true,
         Default = {""},
     })
-dqwww:SetValue({""
-    })
+
+
+
     wrrrrr:OnChanged(function(Valuer)
         local Values = {"None"}
 _G.keepdef = false
 _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
-for Valuer, State in next, Valuer do
-table.insert(Values, Valuer)
-end
-for _, n in pairs(Values) do
+        for Valuer, State in next, Valuer do
+            table.insert(Values, Valuer)
+        end
+			for _, n in pairs(Values) do
 if string.find(n, "Defense") then
 _G.keepdef = true
 end
@@ -4805,21 +4806,19 @@ end
 if string.find(n, "Sword") then
 _G.keepsword = true
 end
-end
+			end
 end)
 
 
-local wwwwww = Tabs.Affinity:AddDropdown("dtqzxcwww", {
-Title = "Target Affinity (DF1)",
-Description = "You can choose the target affinity.",
-Values = {"Defense", "Melee", "Sniper", "Sword"},
-Multi = true,
-Default = {""},
+    local wwwwww = Tabs.Affinity:AddDropdown("dtqzxcwww", {
+        Title = "Target Affinity (DF1)",
+        Description = "You can choose the target affinity.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {""},
     })
 
- dtqzxcwww:SetValue({""
-    })
-
+ 
     wwwwww:OnChanged(function(Valuerr)
         local Valuess = {"None"}
 _G.targetdef = false
@@ -5157,8 +5156,6 @@ local Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
         Default = {""},
     })
 
-    vqw44:SetValue({""
-    })
 
     wrrrrr2:OnChanged(function(Valuer2)
         local Values2 = {"None"}
@@ -5194,8 +5191,7 @@ end)
         Multi = true,
         Default = {""},
     })
-    tyumm1z:SetValue({""
-    })
+
 
     wwrwwww2:OnChanged(function(Valuerr2)
         local Valuess2 = {"None"}
@@ -5666,5 +5662,3 @@ end
 toClipboard("https://discord.gg/ecpbhm8G3w")
 end
 end
-
-

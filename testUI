@@ -16,6 +16,15 @@ SALUNAFRAMEcorner.Name = "SALUNAFRAMEcorner"
 SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
 SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)
 
+local Owner = Instance.new("ImageLabel")
+Owner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
+Owner.Name = "Owner"
+Owner.BackgroundTransparency = 1
+Owner.Position = UDim2.new(0.638, 0, 0.383, 0)
+Owner.Size = UDim2.new(0.276, 0, 0.518, 0)
+Owner.Image = "http://www.roblox.com/asset/?id=18274868035"
+
+
 local Tieude = Instance.new("TextLabel")
 Tieude.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
 Tieude.Name = "Tieude"

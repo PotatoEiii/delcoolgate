@@ -27,6 +27,24 @@ Tieude.TextScaled = true
 Tieude.FontFace.Bold = true
 Tieude.FontFace = Font.fromName("Merriweather")
 
+local SALUNA = Instance.new("TextLabel")
+SALUNA.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
+SALUNA.Name = "SALUNA"
+SALUNA.BackgroundTransparency = 1
+SALUNA.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SALUNA.Position = UDim2.new(0.519, 0, 0.371, 0)
+SALUNA.Size = UDim2.new(0.119, 0, 0.537, 0)
+SALUNA.Text = [[S
+A
+L
+U
+N
+A]]
+SALUNA.TextColor3 = Color3.fromRGB(255, 255, 0)
+SALUNA.TextScaled = true
+SALUNA.FontFace.Bold = true
+SALUNA.FontFace = Font.fromName("Merriweather")
+
 local DISCORD = Instance.new("TextButton")
 DISCORD.Name = "DISCORD"
 DISCORD.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME

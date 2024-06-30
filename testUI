@@ -12,8 +12,20 @@ SALUNAFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
 SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
 
 local SALUNAFRAMEcorner = Instance.new("UICorner")
+SALUNAFRAMEcorner.Name = "SALUNAFRAMEcorner"
 SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
 SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)
+
+local Tieude = Instance.new("TextLabel")
+Tieude.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
+Tieude.Name = "Tieude"
+Tieude.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+Tieude.Position = UDim2.new(0.081, 0, 0.103, 0)
+Tieude.Size = UDim2.new(0.833, 0, 0.177, 0)
+Tieude.Text = "Welcome To Saluna Hub"
+Tieude.TextScaled = true
+Tieude.FontFace.Bold = true
+Tieude.FontFace = Font.fromName("Merriweather")
 
 local DISCORD = Instance.new("TextButton")
 DISCORD.Name = "DISCORD"

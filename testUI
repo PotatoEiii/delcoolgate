@@ -24,21 +24,38 @@ Owner.Position = UDim2.new(0.638, 0, 0.383, 0)
 Owner.Size = UDim2.new(0.276, 0, 0.518, 0)
 Owner.Image = "http://www.roblox.com/asset/?id=18274868035"
 
+local OwnerCorner = Instance.new("UICorner")
+OwnerCorner.Name = "OwnerCorner"
+OwnerCorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME.Owner
+OwnerCorner.CornerRadius = UDim.new(0.1,0)
+
+
 local DiscordImage = Instance.new("ImageLabel")
 DiscordImage.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
 DiscordImage.Name = "DiscordImage"
 DiscordImage.BackgroundTransparency = 1
 DiscordImage.Position = UDim2.new(0.397, 0, 0.403, 0)
-DiscordImage.Size = UDim2.new(0.12, 0, 0.17, 0)
+DiscordImage.Size = UDim2.new(0.12, 0, 0.146, 0)
 DiscordImage.Image = "http://www.roblox.com/asset/?id=17056354120"
+
+local DiscordCorner = Instance.new("UICorner")
+DiscordCorner.Name = "DiscordCorner"
+DiscordCorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME.DiscordImage
+DiscordCorner.CornerRadius = UDim.new(0.2,0)
 
 local FacebookImage = Instance.new("ImageLabel")
 FacebookImage.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
 FacebookImage.Name = "FacebookImage"
 FacebookImage.BackgroundTransparency = 1
 FacebookImage.Position = UDim2.new(0.397, 0, 0.71, 0)
-FacebookImage.Size = UDim2.new(0.12, 0, 0.17, 0)
+FacebookImage.Size = UDim2.new(0.12, 0, 0.146, 0)
 FacebookImage.Image = "http://www.roblox.com/asset/?id=5265119620"
+
+local FacebookCorner = Instance.new("UICorner")
+FacebookCorner.Name = "FacebookCorner"
+FacebookCorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME.FacebookImage
+FacebookCorner.CornerRadius = UDim.new(0.2,0)
+
 
 local Tieude = Instance.new("TextLabel")
 Tieude.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME

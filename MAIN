@@ -2085,8 +2085,10 @@ while wait() do
 if _G.resetzxcm then
 pcall(function()
 task.wait(rstimehaha)
+if _G.resetzxcm then
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
+end
 end)
 end
 end

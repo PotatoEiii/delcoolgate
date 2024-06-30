@@ -1,0 +1,16 @@
+local SALUNAUI = Instance.new("ScreenGui")
+SALUNAUI.Name = "SALUNAUI"
+SALUNAUI.Parent = game.CoreGui
+
+local SALUNAFRAME = Instance.new("Frame")
+SALUNAFRAME.Name = "SALUNAFRAME"
+SALUNAFRAME.Parent = game.CoreGui.SALUNAUI
+SALUNAFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SALUNAFRAME.BackgroundTransparency = 0
+SALUNAFRAME.ClipsDescendants = true
+SALUNAFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
+SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
+
+local SALUNAFRAMEcorner = Instance.new("UICorner")
+SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
+SALUNAFRAMEcorner.CornerRadius = (0.15, 0)

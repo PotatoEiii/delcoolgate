@@ -68,6 +68,11 @@ Tieude.TextScaled = true
 Tieude.FontFace.Bold = true
 Tieude.FontFace = Font.fromName("Merriweather")
 
+local TieudeCorner = Instance.new("UICorner")
+TieudeCorner.Name = "TieudeCorner"
+TieudeCorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME.Tieude
+TieudeCorner.CornerRadius = UDim.new(0,15)
+
 local SALUNA = Instance.new("TextLabel")
 SALUNA.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
 SALUNA.Name = "SALUNA"
@@ -97,6 +102,11 @@ DISCORD.TextScaled = true
 DISCORD.FontFace.Bold = true
 DISCORD.FontFace = Font.fromName("Merriweather")
 
+local DisCorner = Instance.new("UICorner")
+DisCorner.Name = "DisCorner"
+DisCorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME.DISCORD
+DisCorner.CornerRadius = UDim.new(0,13)
+
 local FACEBOOK = Instance.new("TextButton")
 FACEBOOK.Name = "FACEBOOK"
 FACEBOOK.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
@@ -107,3 +117,8 @@ FACEBOOK.Text = "Facebook"
 FACEBOOK.TextScaled = true
 FACEBOOK.FontFace.Bold = true
 FACEBOOK.FontFace = Font.fromName("Merriweather")
+
+local FBCorner = Instance.new("UICorner")
+FBCorner.Name = "FBCorner"
+FBCorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME.FACEBOOK
+FBCorner.CornerRadius = UDim.new(0,13)

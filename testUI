@@ -13,4 +13,4 @@ SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
 
 local SALUNAFRAMEcorner = Instance.new("UICorner")
 SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SALUNAFRAME
-SALUNAFRAMEcorner.CornerRadius = (0.15, 0)
+SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)

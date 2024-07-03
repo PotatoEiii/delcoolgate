@@ -5670,13 +5670,17 @@ hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.BackgroundTransparency = 1
 hideUI.ClipsDescendants = true
 hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0.079, 0, 0.136, 0)
+hideUI.Size = UDim2.new(0.078, 0, 0.136, 0)
 hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
+
+local hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = game.CoreGui.BBB.hideUI
+hideUICorner.CornerRadius = UDim.new(1,0)
 
 
 local UIS = game:GetService('UserInputService')

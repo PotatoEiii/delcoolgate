@@ -27,7 +27,7 @@ Cancel.Parent = game.CoreGui.SALUNAUI.SSS
 Cancel.Name = "Cancel"
 Cancel.BackgroundTransparency = 1
 Cancel.Position = UDim2.new(0.814, 0, 0.06, 0)
-Cancel.Size = UDim2.new(0.081, 0, 0.1, 0)
+Cancel.Size = UDim2.new(0.048, 0, 0.1, 0)
 Cancel.Image = "http://www.roblox.com/asset/?id=7729954373"
 
 local Owner = Instance.new("ImageLabel")
@@ -49,7 +49,7 @@ DiscordImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 DiscordImage.Name = "DiscordImage"
 DiscordImage.BackgroundTransparency = 1
 DiscordImage.Position = UDim2.new(0.397, 0, 0.403, 0)
-DiscordImage.Size = UDim2.new(0.12, 0, 0.146, 0)
+DiscordImage.Size = UDim2.new(0.098, 0, 0.148, 0)
 DiscordImage.Image = "http://www.roblox.com/asset/?id=17056354120"
 
 local DiscordCorner = Instance.new("UICorner")
@@ -62,7 +62,7 @@ FacebookImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 FacebookImage.Name = "FacebookImage"
 FacebookImage.BackgroundTransparency = 1
 FacebookImage.Position = UDim2.new(0.397, 0, 0.71, 0)
-FacebookImage.Size = UDim2.new(0.12, 0, 0.146, 0)
+FacebookImage.Size = UDim2.new(0.098, 0, {0.148, 0)
 FacebookImage.Image = "http://www.roblox.com/asset/?id=5265119620"
 
 local FacebookCorner = Instance.new("UICorner")

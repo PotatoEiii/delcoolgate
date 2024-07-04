@@ -673,7 +673,7 @@ local plrsec = Tabs.Player:AddSection("About Player")
         Default = "",
         Placeholder = "Insert Here",
         Numeric = false, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
+        Finished = false, -- Only calls callback when you press enter
         Callback = function()
         end
     })
@@ -1037,7 +1037,7 @@ end)
         Default = "",
         Placeholder = "Insert Here",
         Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
+        Finished = false, -- Only calls callback when you press enter
         Callback = function()
         end
     })

@@ -695,9 +695,7 @@ if Options.targetallpchotoggle.Value == true then
 getgenv().targeting = true
 else
 getgenv().targeting = false
-if _G.plrlow == _G.plrchoose then
 _G.SelectedKillPlayer = _G.anh
-end
 end
 end)
 

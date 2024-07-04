@@ -785,11 +785,11 @@ spawn(function()
 while wait() do
 if _G.AutoQuake then
 pcall(function()
-local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-local vptt = xr.VTCebvc
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == SelectedKillPlayer then
 repeat task.wait(0.15)
+local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+local vptt = xr.VTCebvc
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 until _G.AutoQuake == false or v.Humanoid.Health == 0
 end

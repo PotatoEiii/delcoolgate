@@ -678,13 +678,14 @@ local plrsec = Tabs.Player:AddSection("About Player")
         end
     })
     plrts:OnChanged(function()
-plrlow = string.lower(plrts.Value)
-plrnum = string.len(tostring(plrlow))
+plrlow = string.lower(tostring(plrts.Value))
+plrnum = string.len(plrlow)
 for i,e in pairs(game.Players:GetChildren()) do
-plrchoose = string.lower(string.sub(tostring(e.Name),1,plrnum))
+anh = tostring(e.Name)
+plrchoose = string.lower(string.sub(anh,1,plrnum))
 if plrlow == plrchoose then
-SelectedKillPlayer = e.Name
-  end
+SelectedKillPlayer = anh
+end
 end
 end)
 
@@ -703,13 +704,13 @@ pcall(function()
 if getgenv().targeting then
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
-	if v.Name ~= game.Players.LocalPlayer.Name then
-		for i,c in pairs(game.Workspace:GetChildren()) do
-			if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+if v.Name ~= game.Players.LocalPlayer.Name then
+for i,c in pairs(game.Workspace:GetChildren()) do
+if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
 SelectedKillPlayer = c.Name
-			end
-		end
-	end
+end
+end
+end
 end
 until not getgenv().targeting
 end

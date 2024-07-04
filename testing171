@@ -708,7 +708,7 @@ for i,c in pairs(game.Workspace:GetChildren()) do
 if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
 repeat task.wait()
 _G.SelectedKillPlayer = c.Name
-until not getgenv().targeting or c.Name ~= v.Name or c.Humanoid.Health <= 0
+until not getgenv().targeting or c.Name ~= v.Name or c.Humanoid.Health == 0
 end
 end
 end

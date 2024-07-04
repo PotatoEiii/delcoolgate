@@ -4664,7 +4664,6 @@ local mgfrrr2 = Tabs.Server:AddSection("Rejoin/Hop")
                     {
                         Title = "OK",
                         Callback = function()
-game.Players.LocalPlayer:Kick("Rejoining, Please Wait...")
             local ts = game:GetService("TeleportService")
             local p = game:GetService("Players").LocalPlayer
             ts:Teleport(game.PlaceId, p)            

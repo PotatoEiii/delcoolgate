@@ -695,6 +695,9 @@ if Options.targetallpchotoggle.Value == true then
 getgenv().targeting = true
 else
 getgenv().targeting = false
+if plrlow == plrchoose then
+SelectedKillPlayer = anh
+end
 end
 end)
 
@@ -713,9 +716,6 @@ end
 end
 end
 until getgenv().targeting == false
-if plrlow == plrchoose then
-SelectedKillPlayer = anh
-end
 end
 end)
 end

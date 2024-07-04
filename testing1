@@ -919,9 +919,9 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == SelectedKillPlayer and _G.CampLight == true and v.Humanoid.Health > 0 then
     pcall(function()
+repeat task.wait()
 local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
 local lightcode = x.VTCrv
-repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
 task.wait(0.05)
 local args = {

@@ -678,13 +678,14 @@ local plrsec = Tabs.Player:AddSection("About Player")
         end
     })
     plrts:OnChanged(function()
-plrlow = string.lower(plrts.Value)
-plrnum = string.len(tostring(plrlow))
+_G.plrlow = string.lower(tostring(plrts.Value))
+_G.plrnum = string.len(_G.plrlow)
 for i,e in pairs(game.Players:GetChildren()) do
-plrchoose = string.lower(string.sub(tostring(e.Name),1,plrnum))
-if plrlow == plrchoose then
-SelectedKillPlayer = e.Name
-  end
+_G.anh = tostring(e.Name)
+_G.plrchoose = string.lower(string.sub(_G.anh,1,_G.plrnum))
+if _G.plrlow == _G.plrchoose then
+_G.SelectedKillPlayer = _G.anh
+end
 end
 end)
 
@@ -701,17 +702,17 @@ spawn(function()
 while wait() do
 pcall(function()
 if getgenv().targeting then
-repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
-	if v.Name ~= game.Players.LocalPlayer.Name then
-		for i,c in pairs(game.Workspace:GetChildren()) do
-			if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
-SelectedKillPlayer = c.Name
-			end
-		end
-	end
+if v.Name ~= game.Players.LocalPlayer.Name then
+for i,c in pairs(game.Workspace:GetChildren()) do
+if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+repeat task.wait()
+_G.SelectedKillPlayer = c.Name
+until not getgenv().targeting or c.Name ~= v.Name or c.Humanoid.Health == 0
 end
-until not getgenv().targeting
+end
+end
+end
 end
 end)
 end
@@ -731,7 +732,7 @@ Tabs.Player:AddButton({
         Title = "Teleport To Player",
         Description = "Teleport To Chosen Player",
         Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
 local bringdis = Tabs.Player:AddSlider("bringsl", {
@@ -761,7 +762,7 @@ pcall(function()
                 if _G.BringPlayer then
                     pcall(function()
 repeat task.wait()
-                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+                        game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 until not _G.BringPlayer
                     end)
                 end
@@ -785,15 +786,12 @@ spawn(function()
 while wait() do
 if _G.AutoQuake then
 pcall(function()
+repeat task.wait(0.15)
 local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vptt = xr.VTCebvc
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer then
-repeat task.wait(0.15)
+local v = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-until _G.AutoQuake == false or v.Humanoid.Health == 0
-end
-end
+until _G.AutoQuake == false
 end)
 end
 end
@@ -828,7 +826,7 @@ pcall(function()
 if _G.CampMagma then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
+if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
     pcall(function()
 repeat task.wait()
 local args = {
@@ -852,7 +850,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampMagma or v.Name ~= SelectedKillPlayer
+until v.Humanoid.Health == 0 or not _G.CampMagma or v.Name ~= _G.SelectedKillPlayer
 end)
 end
 end
@@ -869,12 +867,12 @@ pcall(function()
 if _G.CampMagma then
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == SelectedKillPlayer and _G.CampMagma == true then
+if c.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
 end
-until c.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= SelectedKillPlayer
+until c.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= _G.SelectedKillPlayer
 end
 end
 end)
@@ -917,11 +915,11 @@ pcall(function()
 if _G.CampLight then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == SelectedKillPlayer and _G.CampLight == true and v.Humanoid.Health > 0 then
+if v.Name == _G.SelectedKillPlayer and _G.CampLight == true and v.Humanoid.Health > 0 then
     pcall(function()
+repeat task.wait()
 local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
 local lightcode = x.VTCrv
-repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
 task.wait(0.05)
 local args = {
@@ -934,7 +932,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampLight or v.Name ~= SelectedKillPlayer
+until v.Humanoid.Health == 0 or not _G.CampLight or v.Name ~= _G.SelectedKillPlayer
 end)
 end
 end
@@ -951,12 +949,12 @@ pcall(function()
 if _G.CampLight then
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == SelectedKillPlayer and _G.CampLight == true then
+if c.Name == _G.SelectedKillPlayer and _G.CampLight == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,lightdis,0)
 end
-until c.Humanoid.Health == 0 or not _G.CampLight or c.Name ~= SelectedKillPlayer
+until c.Humanoid.Health == 0 or not _G.CampLight or c.Name ~= _G.SelectedKillPlayer
 end
 end
 end)
@@ -986,8 +984,8 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
-if getgenv().viewplrr == true and plr2.Name == SelectedKillPlayer then
+local plr2 = game.Players:FindFirstChild(_G.SelectedKillPlayer)
+if getgenv().viewplrr == true and plr2.Name == _G.SelectedKillPlayer then
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..plr2.Name,
@@ -996,7 +994,7 @@ Fluent:Notify({
 pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
-until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer
+until getgenv().viewplrr == false or plr2.Name ~= _G.SelectedKillPlayer
 end)
 end
 end)
@@ -1006,12 +1004,12 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
-if getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer then
+local plr2 = game.Players:FindFirstChild(_G.SelectedKillPlayer)
+if getgenv().viewplrr == false or plr2.Name ~= _G.SelectedKillPlayer then
 pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-until getgenv().viewplrr == true or plr2.Name == SelectedKillPlayer
+until getgenv().viewplrr == true or plr2.Name == _G.SelectedKillPlayer
 end)
 end
 end)
@@ -4660,10 +4658,8 @@ local mgfrrr2 = Tabs.Server:AddSection("Rejoin/Hop")
                     {
                         Title = "OK",
                         Callback = function()
-game.Players.LocalPlayer:Kick("Rejoining, Please Wait...")
-            local ts = game:GetService("TeleportService")
-            local p = game:GetService("Players").LocalPlayer
-            ts:Teleport(game.PlaceId, p)            
+game.Players.LocalPlayer:Kick("Rejoining Server, Please Wait...")
+game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
 end
                     },
                     {

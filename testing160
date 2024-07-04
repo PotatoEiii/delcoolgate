@@ -712,7 +712,10 @@ end
 end
 end
 end
-until not getgenv().targeting
+until getgenv().targeting == false
+if plrlow == plrchoose then
+SelectedKillPlayer = anh
+end
 end
 end)
 end

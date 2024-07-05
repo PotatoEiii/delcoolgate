@@ -778,8 +778,8 @@ end)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
-                                name.Font = "SourceSansBold"
-                                name.FontSize = "Size14"
+                                name.FontFace = Font.fromName("Merriweather")
+                                name.FontSize = "Size18"
                                 name.TextWrapped = true
                                 name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                                 name.Size = UDim2.new(1,0,1,0)
@@ -787,9 +787,9 @@ end)
                                 name.BackgroundTransparency = 1
                                 name.TextStrokeTransparency = 0.5
                                 if v.Team == game.Players.LocalPlayer.Team then
-                                    name.TextColor3 = Color3.new(0, 254, 252)
+                                    name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 else
-                                    name.TextColor3 = Color3.new(0, 254, 252)
+                                    name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 end
                             else
                                 v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')

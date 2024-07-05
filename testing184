@@ -751,9 +751,9 @@ local plrsightzxcsz = Tabs.Player:AddSection("Players' Sight")
 local plresp = Tabs.Player:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()
 if Options.plresptoggle.Value == true then
-ESPPlayer = true
+_G.ESPPlayer = true
 else
-ESPPlayer = false
+_G.ESPPlayer = false
 end
 end)
 
@@ -768,7 +768,7 @@ end)
             for i,v in pairs(game:GetService'Players':GetChildren()) do
                 pcall(function()
                     if not isnil(v.Character) then
-                        if ESPPlayer then
+                        if _G.ESPPlayer then
                             if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
                                 local bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
@@ -793,7 +793,7 @@ end)
                             else
                                 v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                             end
-                        else
+                        elseif _G.ESPPlayer == false then
                             if v.Character.Head:FindFirstChild('NameEsp'..Number) then
                                 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
                             end
@@ -806,7 +806,7 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-if ESPPlayer then
+if _G.ESPPlayer then
 UpdatePlayerChams()
 end
 end)

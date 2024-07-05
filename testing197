@@ -855,6 +855,7 @@ if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.Transparency = 1
 v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
 end
+end
 end)
 end
 end)

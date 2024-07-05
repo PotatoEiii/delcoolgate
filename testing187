@@ -793,10 +793,6 @@ end)
                             else
                                 v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                             end
-                        else
-                            if v.Character.Head:FindFirstChild('NameEsp'..Number) then
-                                v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
-                            end
                         end
                     end
                 end)

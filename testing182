@@ -753,8 +753,8 @@ local bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",
     Default = 4,
-    Min = -50,
-    Max = 50,
+    Min = -20,
+    Max = 20,
     Rounding = 0,
     Callback = function(dis1t)
             distancebring = tonumber(dis1t)*(-1)
@@ -788,9 +788,6 @@ repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
-v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-v.Character.HumanoidRootPart.Anchored = true
-v.Character.HumanoidRootPart.Transparency = 0.9
 end
 end
 until not _G.BringAllPlayer
@@ -809,9 +806,6 @@ pcall(function()
                     pcall(function()
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
-game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
-game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Transparency = 0.9
 until not _G.BringPlayer
                     end)
                 end

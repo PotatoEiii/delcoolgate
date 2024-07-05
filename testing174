@@ -762,13 +762,18 @@ pcall(function()
                 if _G.BringPlayer then
                     pcall(function()
 repeat task.wait()
-                        game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+
 until not _G.BringPlayer
                     end)
                 end
 end)
             end
         end)
+
+
 
 
 local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Chosen Player")

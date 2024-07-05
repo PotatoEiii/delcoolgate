@@ -766,6 +766,7 @@ game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CF
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Transparency = 0.9
 until not _G.BringPlayer
                     end)
                 end

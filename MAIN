@@ -549,6 +549,17 @@ end
 end)
 end
 end)
+local cqwezzz = Tabs.Misc:AddSection("Other Scripts")
+
+    Tabs.Misc:AddButton({
+        Title = "Infinite Yield",
+        Description = "Open Infinite Yield GUI",
+        Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end
+    })
+
+
 
 local mgfrrr = Tabs.Misc:AddSection("Boost")
     Tabs.Misc:AddButton({
@@ -735,12 +746,15 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
+
+local bringadeksoaet = Tabs.Player:AddSection("Bring Player")
+
 local bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",
     Default = 4,
-    Min = -50,
-    Max = 50,
+    Min = -20,
+    Max = 20,
     Rounding = 0,
     Callback = function(dis1t)
             distancebring = tonumber(dis1t)*(-1)
@@ -756,19 +770,50 @@ _G.BringPlayer = false
 end
 end)
 
+local disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring All Player", Default = false })
+disbringallplr:OnChanged(function()
+if Options.disbringallplrtoggle.Value == true then
+_G.BringAllPlayer = true
+else
+_G.BringAllPlayer = false
+end
+end)
+
+        spawn(function()
+            while wait() do
+pcall(function()
+                if _G.BringAllPlayer then
+                    pcall(function()
+repeat task.wait()
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+end
+end
+until not _G.BringAllPlayer
+                    end)
+                end
+end)
+            end
+        end)
+
+
+
         spawn(function()
             while wait() do
 pcall(function()
                 if _G.BringPlayer then
                     pcall(function()
 repeat task.wait()
-                        game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 until not _G.BringPlayer
                     end)
                 end
 end)
             end
         end)
+
+
 
 
 local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Chosen Player")
@@ -2032,10 +2077,11 @@ end)
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                         v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
+                        v.Character.HumanoidRootPart.Anchored = true
                         if v.Character.Humanoid.Health == 0 then
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1
@@ -2508,7 +2554,7 @@ end)
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                     end
@@ -2604,6 +2650,8 @@ spawn(function() -- autofarm cannon
                     	v.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -2615,7 +2663,7 @@ spawn(function() -- autofarm cannon
                     and v:FindFirstChild("HumanoidRootPart") then
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)

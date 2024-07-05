@@ -746,6 +746,9 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
+
+local bringadeksoaet = Tabs.Player:AddSection("Bring Player")
+
 local bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",

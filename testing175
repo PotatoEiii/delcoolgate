@@ -765,7 +765,7 @@ repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
 until not _G.BringPlayer
                     end)
                 end
@@ -2041,6 +2041,7 @@ end)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                         v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
+                        v.Character.HumanoidRootPart.Anchored = true
                         if v.Character.Humanoid.Health == 0 then
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1

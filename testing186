@@ -809,8 +809,10 @@ pcall(function()
 if ESPPlayer then
 UpdatePlayerChams()
 else
+for i,v in pairs(game:GetService'Players':GetChildren()) do
 if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
+end
 end
 end
 end)

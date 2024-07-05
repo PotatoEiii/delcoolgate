@@ -800,7 +800,7 @@ end)
         end
 
 spawn(function()
-while wait() do
+while task.wait() do
 pcall(function()
 if ESPPlayer then
 UpdatePlayerChams()

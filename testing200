@@ -817,7 +817,17 @@ end)
 end
 end)
 
-
+local sizehahaqw = Tabs.Player:AddSlider("sizehahaqwqweqwzz", {
+    Title = "HitBox Players",
+    Description = "Adjust players' hitbox",
+    Default = 10,
+    Min = 0,
+    Max = 1000,
+    Rounding = 0,
+    Callback = function(concachitbox)
+            fathitbox = tonumber(concachitbox)
+        end
+    })
 
 local hitboxasdmpo = Tabs.Player:AddToggle("hitboxasdmpotoggle", {Title = "Bring Chosen Player", Default = false })
 hitboxasdmpo:OnChanged(function()

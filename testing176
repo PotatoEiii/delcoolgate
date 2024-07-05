@@ -549,6 +549,17 @@ end
 end)
 end
 end)
+local cqwezzz = Tabs.Misc:AddSection("Other Scripts")
+
+    Tabs.Misc:AddButton({
+        Title = "Infinite Yield",
+        Description = "Open Infinite Yield GUI",
+        Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end
+    })
+
+
 
 local mgfrrr = Tabs.Misc:AddSection("Boost")
     Tabs.Misc:AddButton({

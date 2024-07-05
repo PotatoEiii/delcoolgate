@@ -767,6 +767,38 @@ _G.BringPlayer = false
 end
 end)
 
+local disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring All Player", Default = false })
+disbringallplr:OnChanged(function()
+if Options.disbringallplrtoggle.Value == true then
+_G.BringAllPlayer = true
+else
+_G.BringAllPlayer = false
+end
+end)
+
+        spawn(function()
+            while wait() do
+pcall(function()
+                if _G.BringAllPlayer then
+                    pcall(function()
+repeat task.wait()
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+v.Character.HumanoidRootPart.Anchored = true
+v.Character.HumanoidRootPart.Transparency = 0.9
+end
+end
+until not _G.BringAllPlayer
+                    end)
+                end
+end)
+            end
+        end)
+
+
+
         spawn(function()
             while wait() do
 pcall(function()
@@ -774,7 +806,6 @@ pcall(function()
                     pcall(function()
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
-game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Transparency = 0.9
@@ -2049,7 +2080,7 @@ end)
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                         v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
@@ -2526,7 +2557,7 @@ end)
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                     end
@@ -2622,6 +2653,8 @@ spawn(function() -- autofarm cannon
                     	v.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -2633,7 +2666,7 @@ spawn(function() -- autofarm cannon
                     and v:FindFirstChild("HumanoidRootPart") then
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)

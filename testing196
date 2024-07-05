@@ -792,7 +792,7 @@ end)
                                     name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 end
                             else
-                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m')
                             end
                         end
                     end
@@ -816,6 +816,49 @@ end
 end)
 end
 end)
+
+local sizehahaqw = Tabs.Player:AddSlider("sizehahaqwqweqwzz", {
+    Title = "HitBox Players",
+    Description = "Adjust players' hitbox",
+    Default = 10,
+    Min = 0,
+    Max = 1000,
+    Rounding = 0,
+    Callback = function(concachitbox)
+            fathitbox = tonumber(concachitbox)
+        end
+    })
+
+local hitboxasdmpo = Tabs.Player:AddToggle("hitboxasdmpotoggle", {Title = "Bring Chosen Player", Default = false })
+hitboxasdmpo:OnChanged(function()
+if Options.hitboxasdmpotoggle.Value == true then
+_G.Hitboxplr = true
+else
+_G.Hitboxplr = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.Hitboxplr then
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+end
+end
+else
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+v.Character.HumanoidRootPart.Transparency = 1
+v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+end
+end)
+end
+end)
+
 
 local bringadeksoaet = Tabs.Player:AddSection("Bring Player")
 
@@ -2146,7 +2189,7 @@ end)
             if _G.autocannonplrbring then
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
-                        v.Character.HumanoidRootPart.Transparency = 0.9
+                        v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
@@ -2623,7 +2666,7 @@ end)
             if _G.autocannonplr then
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
-                        v.Character.HumanoidRootPart.Transparency = 0.9
+                        v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)

@@ -779,7 +779,7 @@ end)
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
                                 name.FontFace = Font.fromName("Merriweather")
-                                name.FontSize = "Size18"
+                                name.FontSize = "Size14"
                                 name.TextWrapped = true
                                 name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                                 name.Size = UDim2.new(1,0,1,0)

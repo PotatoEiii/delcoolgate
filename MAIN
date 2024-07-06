@@ -951,7 +951,7 @@ spawn(function()
 while wait() do
 if _G.AutoQuake then
 pcall(function()
-repeat wait(0.15)
+repeat task.wait(0.15)
 local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vptt = xr.VTCebvc
 local v = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character

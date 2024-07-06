@@ -190,48 +190,6 @@ local Players = game:GetService("Players")
     SafeZoneOuterSpace.Anchored = true
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
-local setreadonly = setreadonly or make_writable
-
-
-setreadonly(mta, false)
-
-mta.__namecall = newcclosure(function(self, ...)
-    local args = {...}
-    local arguments = args
-    local a = {}
-    for i = 1, #arguments - 1 do
-        a[i] = arguments[i]
-    end
-    local method = getnamecallmethod() 
-
-    if method == 'FireServer' or method == "InvokeServer" then
-        if self.Name == 'Drown' and _G.nowaterdamage then
-            if args[1] then
-                return nil
-            end
-        end
-    end
-    
-    return namecall(self, ...)    
-end)
-
-local attackremote = {}    
-
-local a
-a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
-            attackremote[self.Name] = args[1]
-            return a(self,unpack(args))
-        elseif self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-            attackremote[self.Name] = ""
-        end
-    end
-      return a(self,...)
-end)
-
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     local args = {...}
     local method = getnamecallmethod()
@@ -301,7 +259,6 @@ local Window = Fluent:CreateWindow({
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
 })
---Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
     Info = Window:AddTab({ Title = "About", Icon = "rbxassetid://4871684504" }),
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),

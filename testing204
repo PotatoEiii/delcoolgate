@@ -747,6 +747,16 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 end
     })
 
+local 100scriptzz = Tabs.PVP:AddSection("Skills")
+local 100chargingzz = Tabs.PVP:AddToggle("100chargingzztoggle", {Title = "100% Charging", Default = false })
+100chargingzz:OnChanged(function()
+if Options.100chargingzztoggle.Value == true then
+_G.auto100rate = true
+else
+_G.auto100rate = false
+end
+end)
+
 local plrsightzxcsz = Tabs.PVP:AddSection("Players' Sight")
 local plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()

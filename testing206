@@ -5092,8 +5092,8 @@ _G.keepdef = false
 _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
+local Values = {"None"}
 wait()
-        local Values = {"None"}
         for Valuer, State in next, Valuer do
             table.insert(Values, Valuer)
         end
@@ -5128,8 +5128,8 @@ _G.targetdef = false
 _G.targetmelee = false
 _G.targetsnip = false
 _G.targetsword = false
+local Valuess = {"None"}
 wait()
-        local Valuess = {"None"}
 for Valuerr, State in next, Valuerr do
 table.insert(Valuess, Valuerr)
 end
@@ -5467,8 +5467,8 @@ _G.keepdef2 = false
 _G.keepmelee2 = false
 _G.keepsnip2 = false
 _G.keepsword2 = false
+local Values2 = {"None"}
 wait()
-        local Values2 = {"None"}
         for Valuer2, State in next, Valuer2 do
             table.insert(Values2, Valuer2)
         end
@@ -5504,8 +5504,8 @@ _G.targetdef2 = false
 _G.targetmelee2 = false
 _G.targetsnip2 = false
 _G.targetsword2 = false
+local Valuess2 = {"None"}
 wait()
-        local Valuess2 = {"None"}
         for Valuerr2, State in next, Valuerr2 do
             table.insert(Valuess2, Valuerr2)
         end

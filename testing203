@@ -747,8 +747,8 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 end
     })
 
-local plrsightzxcsz = Tabs.Player:AddSection("Players' Sight")
-local plresp = Tabs.Player:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
+local plrsightzxcsz = Tabs.PVP:AddSection("Players' Sight")
+local plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()
 if Options.plresptoggle.Value == true then
 ESPPlayer = true
@@ -817,7 +817,7 @@ end)
 end
 end)
 
-local sizehahaqw = Tabs.Player:AddSlider("sizehahaqwqweqwzz", {
+local sizehahaqw = Tabs.PVP:AddSlider("sizehahaqwqweqwzz", {
     Title = "HitBox Players",
     Description = "Adjust players' hitbox",
     Default = 10,
@@ -829,7 +829,7 @@ local sizehahaqw = Tabs.Player:AddSlider("sizehahaqwqweqwzz", {
         end
     })
 
-local hitboxasdmpo = Tabs.Player:AddToggle("hitboxasdmpotoggle", {Title = "Hitbox Players", Default = false })
+local hitboxasdmpo = Tabs.PVP:AddToggle("hitboxasdmpotoggle", {Title = "Hitbox Players", Default = false })
 hitboxasdmpo:OnChanged(function()
 if Options.hitboxasdmpotoggle.Value == true then
 _G.Hitboxplr = true

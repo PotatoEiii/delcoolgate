@@ -930,7 +930,7 @@ end
 end
 end)
 
-local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
+local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp (Use Skill Before Turn On)")
 local a2wta = Tabs.Player:AddSlider("Slitpcamp", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -1019,7 +1019,7 @@ end)
 
 
 
-local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
+local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp (Use Skill Before Turn On)")
 local a2wtalight = Tabs.Player:AddSlider("lighttpsli", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",

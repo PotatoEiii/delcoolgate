@@ -930,6 +930,107 @@ end
 end
 end)
 
+
+
+
+
+
+local okgeriogg = Tabs.Player:AddSection("Vamp Camp (Use Skill Before Turn On)")
+local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
+    Title = "Teleport Distance",
+    Description = "Change this for adjusting camp distance",
+    Default = 15,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(distancecagreva)
+            vampdis = tonumber(distancecagreva)
+        end
+    })
+
+
+local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp", Default = false })
+vamppppp:OnChanged(function()
+if Options.vamppppptoggle.Value == true then
+_G.CampVamp = true
+else
+_G.CampVamp = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampVamp then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true and v.Humanoid.Health > 0 then
+    pcall(function()
+repeat task.wait()
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "VampirePower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-391.38922119140625, 213, -232.140625, 0.5274614095687866, -0.7214826345443726, 0.4486061632633209, -1.4901161193847656e-08, 0.5280334949493408, 0.8492236733436584, -0.8495790362358093, -0.44793272018432617, 0.2785172760486603),
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [9] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "VampirePower5",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+until v.Humanoid.Health == 0 or not _G.CampVamp or v.Name ~= _G.SelectedKillPlayer
+end)
+end
+end
+end)
+end
+end)
+end
+end)
+
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampVamp then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,vampdis,0)
+end
+until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer
+end
+end
+end)
+end
+end)
+end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
 local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp (Use Skill Before Turn On)")
 local a2wta = Tabs.Player:AddSlider("Slitpcamp", {
     Title = "Teleport Distance",
@@ -1074,6 +1175,8 @@ end
 end)
 end
 end)
+
+
 
 
 spawn(function()

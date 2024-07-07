@@ -48,7 +48,7 @@ if game.placeId == 8569358381 or game.placeId == 3237168 then
         end
     )
 
-    local listed = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist"))()
+    local listed = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist.lua"))()
     _G.WhiteListed = false
     for _, v1 in pairs(listed) do
         local gethwid = game:GetService("RbxAnalyticsService"):GetClientId()

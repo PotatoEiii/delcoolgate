@@ -1,0 +1,34 @@
+        local Rarefruit = {
+            "Candy Fruit",
+            "Chilly Fruit",
+            "Flare Fruit",
+            "Gas Fruit",
+            "Gravity Fruit",
+            "Hollow Fruit",
+            "Light Fruit",
+            "Magma Fruit",
+            "Ope Fruit",
+            "Plasma Fruit",
+            "Rumble Fruit",
+            "Sand Fruit",
+            "Smoke Fruit",
+            "Snow Fruit",
+            "Venom Fruit",
+            "Dark Fruit",
+            "Phoenix Fruit",
+            "Quake Fruit",
+            "Vampire Fruit"
+        }
+for _, fruitz in pairs(Rarefruit) do
+for i, player in pairs(game.Players:GetChildren()) do 
+for i, backpack in pairs(player:GetChildren()) do
+if backpack.Name == "Backpack" then 
+for i, v in pairs(backpack:GetChildren()) do
+if v.Name == fruitz then
+_G.testcuopfruit = player.Name
+end
+end
+end
+end
+end
+end

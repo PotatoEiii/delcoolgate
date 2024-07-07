@@ -939,6 +939,96 @@ end)
 
 
 
+
+local stringochab = Tabs.Player:AddSection("String Camp (Use Skill Before Turn On)")
+
+local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String", Default = false })
+stringggg:OnChanged(function()
+if Options.stringgggtoggle.Value == true then
+_G.CampString = true
+else
+_G.CampString = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampString then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampString == true and v.Humanoid.Health > 0 and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+    pcall(function()
+repeat task.wait()
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "StringPower8",
+    [3] = "Start",
+    [4] = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Torso.CFrame,
+    [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.Torso
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
+wait(5)
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "StringPower7"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
+until v.Humanoid.Health == 0 or not _G.CampString or v.Name ~= _G.SelectedKillPlayer
+end)
+end
+end
+end)
+end
+end)
+end
+end)
+
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampString then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+end
+until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+end
+end
+end)
+end
+end)
+end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 local okgeriogg = Tabs.Player:AddSection("Vamp Camp (Use Skill Before Turn On)")
 local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",

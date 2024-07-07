@@ -1,4 +1,4 @@
-        local Rarefruit = {
+local Rarefruit = {
             "Candy Fruit",
             "Chilly Fruit",
             "Flare Fruit",
@@ -17,7 +17,8 @@
             "Dark Fruit",
             "Phoenix Fruit",
             "Quake Fruit",
-            "Vampire Fruit"
+            "Vampire Fruit",
+            "String Fruit"
         }
 for _, fruitz in pairs(Rarefruit) do
 for i, player in pairs(game.Players:GetChildren()) do 
@@ -26,6 +27,7 @@ if backpack.Name == "Backpack" then
 for i, v in pairs(backpack:GetChildren()) do
 if v.Name == fruitz then
 _G.testcuopfruit = player.Name
+_G.fruitname = v.Name
 end
 end
 end
@@ -33,4 +35,4 @@ end
 end
 end
 wait()
-print(_G.testcuopfruit)
+print(_G.testcuopfruit .." & " .. _G.fruitname)

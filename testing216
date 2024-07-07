@@ -2833,7 +2833,7 @@ elseif not game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not g
 if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 end)
 end
@@ -3493,7 +3493,7 @@ if getgenv().bgtyhn then
 pcall(function()
 repeat task.wait()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 until not getgenv().bgtyhn
 end)

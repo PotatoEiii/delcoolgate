@@ -653,6 +653,8 @@ _G.anh = tostring(e.Name)
 _G.plrchoose = string.lower(string.sub(_G.anh,1,_G.plrnum))
 if _G.plrlow == _G.plrchoose then
 _G.SelectedKillPlayer = _G.anh
+else
+_G.SelectedKillPlayer = ""
 end
 end
 end)

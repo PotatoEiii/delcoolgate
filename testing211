@@ -980,7 +980,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
-wait(5)
+wait(3)
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "StringPower7"

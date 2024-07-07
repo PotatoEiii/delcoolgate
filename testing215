@@ -1617,7 +1617,7 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
             end
         )
 
-        local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp (Use Skill Before Turn On)")
+        local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
         local a2wtalight =
             Tabs.Player:AddSlider(
             "lighttpsli",

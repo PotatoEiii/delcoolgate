@@ -941,6 +941,17 @@ end)
 
 
 local stringochab = Tabs.Player:AddSection("String Camp (Use Skill Before Turn On)")
+local zxcbfgggg = Tabs.Player:AddSlider("erwcxgbbdcxx", {
+    Title = "Bring-camp Distance",
+    Description = "Change this for adjusting camp distance",
+    Default = 10,
+    Min = -20,
+    Max = 20,
+    Rounding = 0,
+    Callback = function(xzcbfgrr)
+            disstring = tonumber(xzcbfgrr)*(-1)
+        end
+    })
 
 local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String", Default = false })
 stringggg:OnChanged(function()
@@ -1007,7 +1018,25 @@ end)
 end
 end)
 
-
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampString then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,disstring)
+end
+until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer
+end
+end
+end)
+end
+end)
+end
+end)
 
 
 

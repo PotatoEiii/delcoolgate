@@ -934,6 +934,12 @@ end
 end
 end)
 
+
+
+
+
+
+
 local stringochab = Tabs.Player:AddSection("String Camp (Use Skill Before Turn On)")
 local zxcbfgggg = Tabs.Player:AddSlider("erwcxgbbdcxx", {
     Title = "Bring-camp Distance",
@@ -1032,7 +1038,25 @@ end)
 end
 end)
 
-local okgerioggz = Tabs.Info:AddSection("Dark Camp")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 local okgeriogg = Tabs.Player:AddSection("Vamp Camp (Use Skill Before Turn On)")
 local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {

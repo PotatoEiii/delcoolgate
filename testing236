@@ -934,7 +934,7 @@ end
 end)
 
 disstring = -10
-local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String (Use Skill Before Turn On)", Default = false })
+local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String (Use Skill To Activate)", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true
@@ -1034,7 +1034,7 @@ local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     })
 
 
-local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp (Use Skill Before Turn On)", Default = false })
+local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp (Use Skill To Activate)", Default = false })
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
@@ -1104,7 +1104,7 @@ end)
 end
 end)
 
-local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma (Use Skill Before Turn On)", Default = false })
+local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma (Use Skill To Activate)", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true

@@ -907,7 +907,7 @@ end)
 
 
 
-local CONMEMAYCAMP = Tabs.Player:AddSection("---------------")
+local CONMEMAYCAMP = Tabs.Player:AddSection("Non-Teleport Camp")
 local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then

@@ -1322,50 +1322,22 @@ end)
 end
 end)
 
-local asdew = Tabs.Player:AddSection("Dark Camp")
-local a2wtadark = Tabs.Player:AddSlider("darktpsli", {
-    Title = "Teleport Distance",
-    Description = "Change this for adjusting camp distance",
-    Default = 15,
-    Min = 0,
-    Max = 100,
-    Rounding = 0,
-    Callback = function(disyaga)
-            darkdis = tonumber(disyaga)
-        end
-    })
-
-
-local darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Camp Dark", Default = false })
-darksec:OnChanged(function()
-if Options.darksectoggle.Value == true then
-_G.CampDark = true
-else
-_G.CampDark = false
-end
-end)
 
 
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.CampDark then
-pcall(function()
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == _G.SelectedKillPlayer and _G.CampDark == true then
-repeat task.wait()
-if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,darkdis,0)
-end
-until c.Humanoid.Health == 0 or not _G.CampDark or c.Name ~= _G.SelectedKillPlayer
-end
-end
-end)
-end
-end)
-end
-end)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 spawn(function()
@@ -6018,6 +5990,7 @@ local c10 = Tabs.Fruit:AddSection("                                             
 local c11 = Tabs.Teleport:AddSection("                                                -----")
 local c12 = Tabs.Teleport:AddSection("                                                -----")
 local c13 = Tabs.Player:AddSection("                                                -----")
+local c14 = Tabs.Player:AddSection("                                                -----")
 local c15 = Tabs.Automatic:AddSection("                                                -----")
 local c16 = Tabs.Automatic:AddSection("                                                -----")
 local c17 = Tabs.Webhook:AddSection("                                                -----")

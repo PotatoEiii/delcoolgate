@@ -907,8 +907,7 @@ end)
 
 
 
-local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Chosen Player")
-local CONMEMAYCAMP2 = Tabs.Player:AddSection("Quake Camp")
+local CONMEMAYCAMP = Tabs.Player:AddSection("---------------")
 local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -934,26 +933,8 @@ end
 end
 end)
 
-
-
-
-
-
-
-local stringochab = Tabs.Player:AddSection("String Camp (Use Skill Before Turn On)")
-local zxcbfgggg = Tabs.Player:AddSlider("erwcxgbbdcxx", {
-    Title = "Bring-camp Distance",
-    Description = "Change this for adjusting camp distance",
-    Default = 10,
-    Min = -20,
-    Max = 20,
-    Rounding = 0,
-    Callback = function(xzcbfgrr)
-            disstring = tonumber(xzcbfgrr)*(-1)
-        end
-    })
-
-local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String", Default = false })
+disstring = -10
+local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String (Use Skill Before Turn On)", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true
@@ -1039,26 +1020,7 @@ end
 end)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-local okgeriogg = Tabs.Player:AddSection("Vamp Camp (Use Skill Before Turn On)")
+local okgeriogg = Tabs.Player:AddSection("Teleport Camp")
 local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -1067,12 +1029,12 @@ local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Max = 100,
     Rounding = 0,
     Callback = function(distancecagreva)
-            vampdis = tonumber(distancecagreva)
+            campdis = tonumber(distancecagreva)
         end
     })
 
 
-local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp", Default = false })
+local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp (Use Skill Before Turn On)", Default = false })
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
@@ -1131,7 +1093,7 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,vampdis,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
 end
 until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer
 end
@@ -1142,33 +1104,7 @@ end)
 end
 end)
 
-
-
-
-
-
-
-
-
-
-
-
-
-local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp (Use Skill Before Turn On)")
-local a2wta = Tabs.Player:AddSlider("Slitpcamp", {
-    Title = "Teleport Distance",
-    Description = "Change this for adjusting camp distance",
-    Default = 15,
-    Min = 0,
-    Max = 100,
-    Rounding = 0,
-    Callback = function(distancecapmag)
-            magdis = tonumber(distancecapmag)
-        end
-    })
-
-
-local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma", Default = false })
+local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma (Use Skill Before Turn On)", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
@@ -1227,7 +1163,7 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,magdis,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
 end
 until c.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= _G.SelectedKillPlayer
 end
@@ -1237,25 +1173,6 @@ end
 end)
 end
 end)
-
-
-
-
-
-
-local CONMEMAYCAMP4 = Tabs.Player:AddSection("Light Camp")
-local a2wtalight = Tabs.Player:AddSlider("lighttpsli", {
-    Title = "Teleport Distance",
-    Description = "Change this for adjusting camp distance",
-    Default = 15,
-    Min = 0,
-    Max = 100,
-    Rounding = 0,
-    Callback = function(dislaitg)
-            lightdis = tonumber(dislaitg)
-        end
-    })
-
 
 local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Light", Default = false })
 lightsec:OnChanged(function()
@@ -1311,7 +1228,7 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampLight == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,lightdis,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
 end
 until c.Humanoid.Health == 0 or not _G.CampLight or c.Name ~= _G.SelectedKillPlayer
 end
@@ -1321,23 +1238,6 @@ end
 end)
 end
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 spawn(function()

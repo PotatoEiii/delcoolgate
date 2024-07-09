@@ -1068,7 +1068,7 @@ local args = {
     [1] = vtcccq,
     [2] = "DarkPower4",
     [3] = "StopCharging",
-    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,100,0),
+    [4] = CFrame.new(-9995.6953125, 16955.89453125, 74290.9609375, -0.337478369474411, 0.6550238132476807, 0.6760562658309937, -0, 0.7181901335716248, -0.6958468556404114, -0.9413332939147949, -0.2348332554101944, -0.24237363040447235),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
     [6] = 100
 }

@@ -5976,7 +5976,6 @@ local c10 = Tabs.Fruit:AddSection("                                             
 local c11 = Tabs.Teleport:AddSection("                                                -----")
 local c12 = Tabs.Teleport:AddSection("                                                -----")
 local c13 = Tabs.Player:AddSection("                                                -----")
-local c14 = Tabs.Player:AddSection("                                                -----")
 local c15 = Tabs.Automatic:AddSection("                                                -----")
 local c16 = Tabs.Automatic:AddSection("                                                -----")
 local c17 = Tabs.Webhook:AddSection("                                                -----")

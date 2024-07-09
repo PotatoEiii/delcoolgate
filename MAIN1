@@ -908,7 +908,7 @@ end)
 
 
 local CONMEMAYCAMP = Tabs.Player:AddSection("Non-Teleport Camp")
-local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
+local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
@@ -934,7 +934,7 @@ end
 end)
 
 disstring = -10
-local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String (Use Skill To Activate)", Default = false })
+local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp (Use Skill To Activate)", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true
@@ -990,7 +990,7 @@ repeat task.wait()
 if c.Humanoid.Health > 0 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
 end
-until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end
 end
 end)
@@ -1010,7 +1010,7 @@ repeat task.wait()
 if c.Humanoid.Health > 0 then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,disstring)
 end
-until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer
+until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer
 end
 end
 end)
@@ -1033,8 +1033,78 @@ local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
         end
     })
 
+local darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
+darksec:OnChanged(function()
+if Options.darksectoggle.Value == true then
+_G.CampDark = true
+else
+_G.CampDark = false
+end
+end)
 
-local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp (Use Skill To Activate)", Default = false })
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampDark then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampDark == true and v.Humanoid.Health > 0 then
+    pcall(function()
+repeat task.wait()
+local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
+local vtcccq = x.VTCjebaj
+local args = {
+    [1] = vtcccq,
+    [2] = "DarkPower4",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-102.340569, 213, 215.227097, -0.982314944, -0.125758141, 0.138716429, -0, 0.74086374, 0.671655476, -0.187236086, 0.659777224, -0.727761507),
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
+task.wait(0.1)
+local args = {
+    [1] = vtcccq,
+    [2] = "DarkPower4",
+    [3] = "StopCharging",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,100,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
+until v.Humanoid.Health == 0 or not _G.CampDark or v.Name ~= _G.SelectedKillPlayer
+end)
+end
+end
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampDark then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.CampDark == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+end
+until c.Humanoid.Health == 0 or not _G.CampDark or c.Name ~= _G.SelectedKillPlayer
+end
+end
+end)
+end
+end)
+end
+end)
+
+local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp (Use Skill To Activate)", Default = false })
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
@@ -1104,7 +1174,7 @@ end)
 end
 end)
 
-local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma (Use Skill To Activate)", Default = false })
+local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp (Use Skill To Activate)", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
@@ -1174,7 +1244,7 @@ end)
 end
 end)
 
-local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Light", Default = false })
+local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then
 _G.CampLight = true
@@ -2805,7 +2875,7 @@ end)
 spawn(function() -- autofarm velocity
     while wait(0) do
         pcall(function()
-            if getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or _G.CampVamp or _G.autocannonplr or _G.CampLight or _G.CampMagma or _G.autocannonslow or _G.autocannonplr or getgenv().bgtyhn or getgenv().fishing or getgenv().tret or getgenv().e or getgenv().c or getgenv().a or getgenv().t or getgenv().emladepnwwhat or getgenv().emladepnhat then
+            if _G.CampDark or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or _G.CampVamp or _G.autocannonplr or _G.CampLight or _G.CampMagma or _G.autocannonslow or _G.autocannonplr or getgenv().bgtyhn or getgenv().fishing or getgenv().tret or getgenv().e or getgenv().c or getgenv().a or getgenv().t or getgenv().emladepnwwhat or getgenv().emladepnhat then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -2814,7 +2884,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif getgenv().vtt == false or getgenv().farmslowstats == false or _G.CampVamp == false or getgenv().farmstats == false or _G.autocannonplr == false or _G.CampLight == false or _G.CampMagma == false or _G.autocannonslow == false or _G.autocannonplr == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false or  getgenv().e == false or getgenv().c == false or getgenv().a == false or getgenv().t == false or getgenv().emladepnwwhat == false or getgenv().emladepnhat == false then
+            elseif _G.CampDark == false or getgenv().vtt == false or getgenv().farmslowstats == false or _G.CampVamp == false or getgenv().farmstats == false or _G.autocannonplr == false or _G.CampLight == false or _G.CampMagma == false or _G.autocannonslow == false or _G.autocannonplr == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false or  getgenv().e == false or getgenv().c == false or getgenv().a == false or getgenv().t == false or getgenv().emladepnwwhat == false or getgenv().emladepnhat == false then
                 --if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)

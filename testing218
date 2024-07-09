@@ -1001,6 +1001,25 @@ end)
 end
 end)
 
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampDark then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.CampDark == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,darkdis,0)
+end
+until c.Humanoid.Health == 0 or not _G.CampDark or c.Name ~= _G.SelectedKillPlayer
+end
+end
+end)
+end
+end)
+end
+end)
 
 
 

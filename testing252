@@ -1094,6 +1094,8 @@ if c.Name == _G.SelectedKillPlayer and _G.CampDark == true then
 repeat task.wait()
 if c.HumanoidRootPart.Position.Y > 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+elseif c.HumanoidRootPart.Position.Y < 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 until c.Humanoid.Health == 0 or not _G.CampDark or c.Name ~= _G.SelectedKillPlayer
 end
@@ -1164,6 +1166,8 @@ if c.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
 repeat task.wait()
 if c.HumanoidRootPart.Position.Y > 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+elseif c.HumanoidRootPart.Position.Y < 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 until c.Humanoid.Health == 0 or not _G.CampVamp or c.Name ~= _G.SelectedKillPlayer
 end
@@ -1234,6 +1238,8 @@ if c.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
 repeat task.wait()
 if c.HumanoidRootPart.Position.Y > 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+elseif c.HumanoidRootPart.Position.Y < 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 until c.Humanoid.Health == 0 or not _G.CampMagma or c.Name ~= _G.SelectedKillPlayer
 end
@@ -1299,6 +1305,8 @@ if c.Name == _G.SelectedKillPlayer and _G.CampLight == true then
 repeat task.wait()
 if c.HumanoidRootPart.Position.Y > 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+elseif c.HumanoidRootPart.Position.Y < 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 until c.Humanoid.Health == 0 or not _G.CampLight or c.Name ~= _G.SelectedKillPlayer
 end

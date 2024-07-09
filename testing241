@@ -1057,7 +1057,7 @@ local args = {
     [1] = vtcccq,
     [2] = "DarkPower4",
     [3] = "StartCharging",
-    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+    [4] = CFrame.new(-102.340569, 213, 215.227097, -0.982314944, -0.125758141, 0.138716429, -0, 0.74086374, 0.671655476, -0.187236086, 0.659777224, -0.727761507),
     [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
     [7] = "Right"
 }

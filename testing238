@@ -908,7 +908,7 @@ end)
 
 
 local CONMEMAYCAMP = Tabs.Player:AddSection("Non-Teleport Camp")
-local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
+local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
@@ -934,7 +934,7 @@ end
 end)
 
 disstring = -10
-local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "Camp String (Use Skill To Activate)", Default = false })
+local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp (Use Skill To Activate)", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true
@@ -1033,8 +1033,38 @@ local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
         end
     })
 
+local darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
+darksec:OnChanged(function()
+if Options.darksectoggle.Value == true then
+_G.CampDark = true
+else
+_G.CampDark = false
+end
+end)
 
-local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Camp Vamp (Use Skill To Activate)", Default = false })
+
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.CampDark then
+pcall(function()
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.CampDark == true then
+repeat task.wait()
+if c.Humanoid.Health > 0 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+end
+until c.Humanoid.Health == 0 or not _G.CampDark or c.Name ~= _G.SelectedKillPlayer
+end
+end
+end)
+end
+end)
+end
+end)
+
+local vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp (Use Skill To Activate)", Default = false })
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
@@ -1104,7 +1134,7 @@ end)
 end
 end)
 
-local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Camp Magma (Use Skill To Activate)", Default = false })
+local magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp (Use Skill To Activate)", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
@@ -1174,7 +1204,7 @@ end)
 end
 end)
 
-local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Camp Light", Default = false })
+local lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then
 _G.CampLight = true

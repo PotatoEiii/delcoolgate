@@ -1063,7 +1063,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-task.wait(0.1)
+task.wait(0.05)
 local args = {
     [1] = vtcccq,
     [2] = "DarkPower4",

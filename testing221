@@ -934,6 +934,41 @@ end
 end
 end)
 
+local CONMEMAYCAMP6 = Tabs.Player:AddSection("Dark Camp")
+local a2wtadark = Tabs.Player:AddSlider("darktpsli", {
+    Title = "Teleport Distance",
+    Description = "Change this for adjusting camp distance",
+    Default = 15,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(disyaga)
+            darkdis = tonumber(disyaga)
+        end
+    })
+local darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Camp Dark", Default = false })
+darksec:OnChanged(function()
+if Options.darksectoggle.Value == true then
+_G.CampDark = true
+else
+_G.CampDark = false
+end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 local stringochab = Tabs.Player:AddSection("String Camp (Use Skill Before Turn On)")

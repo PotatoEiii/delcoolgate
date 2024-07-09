@@ -1092,7 +1092,9 @@ pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampDark == true then
 repeat task.wait()
+if c.HumanoidRootPart.Position.Y > 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+end
 until c.Humanoid.Health == 0 or not _G.CampDark or c.Name ~= _G.SelectedKillPlayer
 end
 end

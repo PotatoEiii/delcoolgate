@@ -934,8 +934,8 @@ end
 end
 end)
 
-local CONMEMAYCAMP6 = Tabs.Player:AddSection("Dark Camp")
-local a2wtadark = Tabs.Player:AddSlider("darktpsli", {
+Tabs.Player:AddSection("Dark Camp")
+Tabs.Player:AddSlider("darktpsli", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
     Default = 15,

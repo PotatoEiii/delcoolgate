@@ -959,47 +959,7 @@ _G.CampDark = false
 end
 end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.CampDark then
-pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampDark == true and v.Humanoid.Health > 0 then
-    pcall(function()
-repeat task.wait()
-local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
-local vtcccq = x.VTCjebaj
-local args = {
-    [1] = vtcccq,
-    [2] = "DarkPower4",
-    [3] = "StartCharging",
-    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
-    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
-    [7] = "Right"
-}
 
-game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
-local args = {
-    [1] = vtcccq,
-    [2] = "DarkPower4",
-    [3] = "StopCharging",
-    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,100,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampDark or v.Name ~= _G.SelectedKillPlayer
-end)
-end
-end
-end)
-end
-end)
-end
-end)
 
 spawn(function()
 while wait() do

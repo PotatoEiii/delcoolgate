@@ -310,6 +310,52 @@ _G.startrop = false
 end
 end)
 
+local Rarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit",
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+
+spawn(function()
+while task.wait() do
+pcall(function()
+if _G.startrop then
+pcall(function()
+for _, fruitz in pairs(Rarefruit) do
+for i, player in pairs(game.Players:GetChildren()) do 
+for i, backpack in pairs(player:GetChildren()) do
+if backpack.Name == "Backpack" then 
+for i, v in pairs(backpack:GetChildren()) do
+if v.Name == fruitz then
+_G.cuopfruittarget = player.Name
+end
+end
+end
+end
+end
+end
+end)
+end
+end)
+end
+end)
+
 
 local info1 = Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({

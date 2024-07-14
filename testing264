@@ -2268,7 +2268,6 @@ if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
 repeat wait()
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v)
 x.Parent = game.Players.LocalPlayer.Character
-wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
 end
@@ -2296,7 +2295,6 @@ if string.sub(d,b) == ",1" then
 repeat wait()
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name)
 x.Parent = game.Players.LocalPlayer.Character
-wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
 end

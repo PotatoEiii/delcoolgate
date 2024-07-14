@@ -2307,13 +2307,15 @@ spawn(function()
     while task.wait() do
         pcall(function()
 if getgenv().pickkk then
-            pcall(function()
+repeat task.wait()
+	pcall(function()
 for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
 if v:IsA("ClickDetector") then
 fireclickdetector(v)
 end
 end
-            end)
+	end)
+until not getgenv().pickkk
 end
 end)
 end

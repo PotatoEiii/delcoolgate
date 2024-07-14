@@ -26,8 +26,10 @@ for i, backpack in pairs(player:GetChildren()) do
 if backpack.Name == "Backpack" then 
 for i, v in pairs(backpack:GetChildren()) do
 if v.Name == fruitz then
+repeat task.wait()
 _G.testcuopfruit = player.Name
 _G.fruitname = v.Name
+until not backpack:FindFirstChild(v)
 end
 end
 end

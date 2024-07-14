@@ -2176,62 +2176,50 @@ if game.Workspace.UserData["User_"..plrid].Data.StoredDF1Unlocked.Value == true 
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF2.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF3.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF4.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF5.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF6.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF7.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF8.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF9.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF10.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF11.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF12.Value == "None" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 end
 end
 

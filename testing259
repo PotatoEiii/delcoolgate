@@ -362,31 +362,32 @@ pcall(function()
 if _G.startrop then
 pcall(function()
 
-		for i, tacc in pairs(game.Players:GetChildren()) do 
+	for i, tacc in pairs(game.Players:GetChildren()) do 
 	if tostring(tacc.Name) == tostring(_G.cuopfruittarget) then
-for i, backpackz in pairs(game.Players:FindFirstChild(_G.cuopfruittarget):GetChildren()) do
-		if backpackz.Name == "Backpack" then 
+	for i, backpackz in pairs(game.Players:FindFirstChild(_G.cuopfruittarget):GetChildren()) do
+	if backpackz.Name == "Backpack" then 
 	for i, v in pairs(backpackz:GetChildren()) do
-for _, fruitz in pairs(Rarefruit) do
-if v.Name == fruitz then
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.cuopfruittarget then
-repeat task.wait()
+	for _, fruitz in pairs(Rarefruit) do
+	if v.Name == fruitz then
+	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.Name == _G.cuopfruittarget then
+	repeat task.wait()
 local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vptt = xr.VTCebvc
 local dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-until v.Humanoid.Health == 0
+	until v.Humanoid.Health == 0
 wait()
 _G.cuopfruittarget = ""
-end
-end
-end
 	end
-		end
-end
 	end
-		end
+	end
+	end
+	end
+	end
+	end
+	end
+	end
 
 end)
 end

@@ -284,7 +284,7 @@ local Tabs = {
 local Options = Fluent.Options
 
 local rob1 = Tabs.Robbing:AddSection("Fruit Robbing")
-local robdrop = Tabs.Affinity:AddDropdown("robdrop", {
+local robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
         Values = {"Quake"},
         Multi = false,
@@ -301,6 +301,14 @@ _G.quakerob = false
 end
 end)
 
+local robfr = Tabs.Robbing:AddToggle("robfrtoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
+robfr:OnChanged(function()
+if Options.robfrtoggle.Value == true then
+_G.startrop = true
+else
+_G.startrop = false
+end
+end)
 
 
 local info1 = Tabs.Info:AddSection("Developer/Owner")

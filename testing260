@@ -294,11 +294,6 @@ local robdrop = Tabs.Robbing:AddDropdown("robdrop", {
 
     robdrop:OnChanged(function(dropzxmcc)
 _G.robmethod = dropzxmcc
-if _G.robmethod == "Quake" then
-_G.quakerob = true
-else
-_G.quakerob = false
-end
 end)
 
 local robfr = Tabs.Robbing:AddToggle("robfrtoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
@@ -359,7 +354,7 @@ end)
 spawn(function()
 while task.wait() do
 pcall(function()
-if _G.startrop then
+if _G.startrop and _G.robmethod == "Quake" then
 pcall(function()
 
 	for i, tacc in pairs(game.Players:GetChildren()) do 

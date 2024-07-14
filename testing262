@@ -334,11 +334,13 @@ if _G.startrop then
 pcall(function()
 for _, fruitz in pairs(Rarefruit) do
 for i, player in pairs(game.Players:GetChildren()) do 
+if player.Name ~= game.Players.LocalPlayer.Name then
 for i, backpack in pairs(player:GetChildren()) do
 if backpack.Name == "Backpack" then 
 for i, v in pairs(backpack:GetChildren()) do
 if v.Name == fruitz then
 _G.cuopfruittarget = player.Name
+end
 end
 end
 end
@@ -354,7 +356,7 @@ end)
 spawn(function()
 while task.wait() do
 pcall(function()
-if _G.startrop and _G.robmethod == "Quake" then
+if _G.startrop and _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= game.Players.LocalPlayer.Name then
 pcall(function()
 
 	for i, tacc in pairs(game.Players:GetChildren()) do 
@@ -2259,6 +2261,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
 if _G.storeffrt then
+repeat task.wait()
             pcall(function()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
@@ -2271,6 +2274,7 @@ until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
 end)
+until not _G.storeffrt
 end
 end)
 end
@@ -2281,6 +2285,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
 if _G.aurasto then
+repeat task.wait()
             pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
@@ -2298,6 +2303,7 @@ end
 end
 end
 end)
+until not _G.aurasto
 end
 end)
 end

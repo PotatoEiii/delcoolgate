@@ -283,6 +283,26 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
+local rob1 = Tabs.Robbing:AddSection("Fruit Robbing")
+local robdrop = Tabs.Affinity:AddDropdown("robdrop", {
+        Title = "Robbing Method",
+        Values = {"Quake"},
+        Multi = false,
+        Default = "",
+    })
+
+
+    robdrop:OnChanged(function(dropzxmcc)
+_G.robmethod = dropzxmcc
+if _G.robmethod == "Quake" then
+_G.quakerob = true
+else
+_G.quakerob = false
+end
+end)
+
+
+
 local info1 = Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",

@@ -266,7 +266,7 @@ local Tabs = {
     Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
-    Robbing = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://10651327243" }),
+    Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://10651327243" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
     Gems = Window:AddTab({ Title = "Gems (At Risk)", Icon = "rbxassetid://6788518051" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),

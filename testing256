@@ -609,6 +609,15 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
         end
     })
 
+local offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Default = false })
+offrender:OnChanged(function()
+if Options.offrendertoggle.Value == true then
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+else
+game:GetService("RunService"):Set3dRenderingEnabled(true)
+end
+end)
+
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
 local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
 miscquake:OnChanged(function()

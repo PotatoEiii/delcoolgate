@@ -3280,6 +3280,17 @@ Fluent:Notify({
 end
 end)
 
+local hopsli = Tabs.Automatic:AddSlider("hopsli", {
+    Title = "Players Number",
+    Description = "Adjust players number for hop",
+    Default = 4,
+    Min = 1,
+    Max = 18,
+    Rounding = 0,
+    Callback = function(qwejio)
+            hopplrnum = tonumber(qwejio)
+        end
+    })
 
 
 

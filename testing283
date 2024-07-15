@@ -9,7 +9,7 @@ RENDEFRAME = Instance.new("Frame")
 RENDEFRAME.Name = "RENDEFRAME"
 RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
 RENDEFRAME.BackgroundTransparency = 0
-RENDEFRAME.Size = UDim2.new(2, 0, 2, 0)
+RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
 RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 RENDEFRAME.Visible = false
 

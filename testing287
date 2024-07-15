@@ -13,8 +13,8 @@ RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
 RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 RENDEFRAME.Visible = false
 
-_G.name = "UPDATING PLEASE WAIT..."
-_G.facebookid = "UPDATING PLEASE WAIT..."
+_G.name = "NOT FOUND"
+_G.facebookid = "NOT FOUND"
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
 repeat wait() until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000

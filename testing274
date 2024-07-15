@@ -3282,24 +3282,7 @@ end)
 
 
 
-local autohoplow = Tabs.Automatic:AddToggle("autohoplowToggle", {Title = "Auto Hop Server If Low Player", Default = false })
-    autohoplow:OnChanged(function()
-if Options.autohoplowToggle.Value == true then
-_G.autohoplowplr = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Hop If Low-Server Is Turned On",
-    Duration = 5
-})
-else
-_G.autohoplowplr = false
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Hop If Low-Server Is Turned Off",
-    Duration = 5
-})
-end
-end)
+
 
 
 

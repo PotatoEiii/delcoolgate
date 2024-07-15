@@ -1,3 +1,14 @@
+RENDERCOLORING = Instance.new("ScreenGui")
+RENDERCOLORING.Name = "RENDERCOLORING"
+RENDERCOLORING.Parent = game.CoreGui
+
+RENDEFRAME = Instance.new("Frame")
+RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
+RENDEFRAME.BackgroundTransparency = 0
+RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
+RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+RENDEFRAME.Visible = false
+
 _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
@@ -152,7 +163,7 @@ vu = game:GetService("VirtualUser")
             return player.UserId
         end 
     
-         id
+        local id
         pcall(function ()
             id = Players:lol(name)
         end)
@@ -726,8 +737,10 @@ offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Def
 offrender:OnChanged(function()
 if Options.offrendertoggle.Value == true then
 game:GetService("RunService"):Set3dRenderingEnabled(false)
+game.CoreGui.RENDERCOLORING.RENDEFRAME.Visible = true
 else
 game:GetService("RunService"):Set3dRenderingEnabled(true)
+game.CoreGui.RENDERCOLORING.RENDEFRAME.Visible = false
 end
 end)
 
@@ -6122,11 +6135,11 @@ Fluent:Notify({
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
 --------
- BBB = Instance.new("ScreenGui")
+BBB = Instance.new("ScreenGui")
 BBB.Name = "BBB"
 BBB.Parent = game.CoreGui
 
- hideUI = Instance.new("ImageButton")
+hideUI = Instance.new("ImageButton")
 hideUI.Name = "hideUI"
 hideUI.Parent = game.CoreGui.BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -6186,13 +6199,13 @@ else
 SALUNAUI.Name = "SALUNAUI"
 SALUNAUI.Parent = game.CoreGui
 
- SSS = Instance.new("Frame")
+SSS = Instance.new("Frame")
 SSS.Name = "SSS"
 SSS.Parent = game.CoreGui.SALUNAUI
 SSS.BackgroundTransparency = 1
 SSS.Size = UDim2.new(1, 0, 1, 0)
 
- SALUNAFRAME = Instance.new("Frame")
+SALUNAFRAME = Instance.new("Frame")
 SALUNAFRAME.Name = "SALUNAFRAME"
 SALUNAFRAME.Parent = game.CoreGui.SALUNAUI.SSS
 SALUNAFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)

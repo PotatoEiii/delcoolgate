@@ -1,3 +1,14 @@
+RENDERCOLORING = Instance.new("ScreenGui")
+RENDERCOLORING.Name = "RENDERCOLORING"
+RENDERCOLORING.Parent = game.CoreGui
+
+RENDEFRAME = Instance.new("Frame")
+RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
+RENDEFRAME.BackgroundTransparency = 0
+RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
+RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+RENDEFRAME.Visible = false
+
 _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
@@ -6124,17 +6135,6 @@ Fluent:Notify({
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
 --------
-RENDERCOLORING = Instance.new("ScreenGui")
-RENDERCOLORING.Name = "RENDERCOLORING"
-RENDERCOLORING.Parent = game.CoreGui
-
-RENDEFRAME = Instance.new("Frame")
-RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
-RENDEFRAME.BackgroundTransparency = 0
-RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
-RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-RENDEFRAME.Visible = false
-
 BBB = Instance.new("ScreenGui")
 BBB.Name = "BBB"
 BBB.Parent = game.CoreGui

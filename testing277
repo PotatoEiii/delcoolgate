@@ -152,7 +152,7 @@ vu = game:GetService("VirtualUser")
             return player.UserId
         end 
     
-         id
+        local id
         pcall(function ()
             id = Players:lol(name)
         end)

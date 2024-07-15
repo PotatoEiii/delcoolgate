@@ -3280,7 +3280,7 @@ Fluent:Notify({
 end
 end)
 
-local hopsli = Tabs.Farm:AddSlider("hopsli", {
+local hopsli = Tabs.Automatic:AddSlider("hopsli", {
     Title = "Players Number",
     Description = "Adjust players number for hop",
     Default = 4,

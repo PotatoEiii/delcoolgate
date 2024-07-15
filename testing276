@@ -2,9 +2,9 @@ _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
-local plr = game.Players.LocalPlayer
+plr = game.Players.LocalPlayer
 repeat wait() until plr.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
-local Pedo = {
+Pedo = {
     1135910299, -- Havelic
     520944, -- Oblivic
     43247021, -- BowTiedPony
@@ -45,10 +45,10 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 
-local listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
-local gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
+gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 _G.WhiteListed = true
             end
@@ -59,7 +59,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 
-local currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
+currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
 if currenthwid == listed[1] then
 _G.name = "Irenkiss Trần"
 _G.facebookid = "IrenkissWantPeace"
@@ -134,7 +134,7 @@ _G.name = "Nguyễn Bin"
 _G.facebookid = "61553546437694"
 end
 
-    local vu = game:GetService("VirtualUser")
+vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
        wait(1)
@@ -249,10 +249,10 @@ local remotes = {}
     return tmp
  end
 
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
-local Window = Fluent:CreateWindow({
+ Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+ SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+ InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
+ Window = Fluent:CreateWindow({
     Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
     TabWidth = 160,
@@ -261,7 +261,7 @@ local Window = Fluent:CreateWindow({
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
 })
-local Tabs = {
+ Tabs = {
     Info = Window:AddTab({ Title = "About", Icon = "rbxassetid://4871684504" }),
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
     Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
@@ -285,7 +285,7 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
-local rob1 = Tabs.Robbing:AddSection("Fruit Robbing")
+Tabs.Robbing:AddSection("Fruit Robbing")
 local robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
         Values = {"Quake"},
@@ -424,13 +424,13 @@ end)
 
 
 
-local info1 = Tabs.Info:AddSection("Developer/Owner")
+Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nWe hope you will have a nice experience by using this script!"
 })
 
-local info2 = Tabs.Info:AddSection("Information")
+Tabs.Info:AddSection("Information")
 local plr = game.Players.LocalPlayer.Character.Name
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
@@ -445,7 +445,7 @@ Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax P
 })
 
 
-local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
+Tabs.Gems:AddSection("Dupe Gems (At Risk)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Dupe Gems: ",
 Content = [[Operation:
@@ -584,7 +584,7 @@ end
 end)
 
 
-local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
+Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"
@@ -648,7 +648,7 @@ end
 end)
 end
 end)
-local cqwezzz = Tabs.Misc:AddSection("Other Scripts")
+Tabs.Misc:AddSection("Other Scripts")
 
     Tabs.Misc:AddButton({
         Title = "Infinite Yield",
@@ -660,7 +660,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 
 
 
-local mgfrrr = Tabs.Misc:AddSection("Boost")
+Tabs.Misc:AddSection("Boost")
     Tabs.Misc:AddButton({
         Title = "Low-Graphic Mode",
         Description = "Use to reduce lag",
@@ -731,7 +731,7 @@ game:GetService("RunService"):Set3dRenderingEnabled(true)
 end
 end)
 
-local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
+Tabs.Misc:AddSection("Makes Server Lagging")
 local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
 miscquake:OnChanged(function()
 if Options.miscquaketoggle.Value == true then
@@ -769,7 +769,7 @@ end
 end
 end)
 
-local Miscc2 = Tabs.Misc:AddSection("Misc")
+Tabs.Misc:AddSection("Misc")
 Tabs.Misc:AddButton({
         Title = "Fix Cam",
         Description = "Reset Camera (If Error)",
@@ -785,7 +785,7 @@ Tabs.Misc:AddButton({
 	game.Players.LocalPlayer.Character.Head.Anchored = false       
 end
     })
-local plrsec = Tabs.Player:AddSection("About Player")
+Tabs.Player:AddSection("About Player")
 
     local plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
@@ -859,7 +859,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 end
     })
 
-local asdzxcvvv = Tabs.PVP:AddSection("Skills")
+Tabs.PVP:AddSection("Skills")
 local azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
 azxcwwwcarge:OnChanged(function()
 if Options.azxcwwwcargetoggle.Value == true then
@@ -869,7 +869,7 @@ _G.auto100rate = false
 end
 end)
 
-local plrsightzxcsz = Tabs.PVP:AddSection("Players' Sight")
+Tabs.PVP:AddSection("Players' Sight")
 local plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()
 if Options.plresptoggle.Value == true then
@@ -989,7 +989,7 @@ end)
 
 
 
-local bringadeksoaet = Tabs.Player:AddSection("Bring Player")
+Tabs.Player:AddSection("Bring Player")
 
 local bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
@@ -1058,7 +1058,7 @@ end)
 
 
 
-local CONMEMAYCAMP = Tabs.Player:AddSection("Non-Teleport Camp")
+Tabs.Player:AddSection("Non-Teleport Camp")
 local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -1171,7 +1171,7 @@ end
 end)
 
 
-local okgeriogg = Tabs.Player:AddSection("Teleport Camp")
+Tabs.Player:AddSection("Teleport Camp")
 local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -1504,7 +1504,7 @@ end)
 end
 end)
 
-local Shoo4p = Tabs.Shop:AddSection("Drinks")
+Tabs.Shop:AddSection("Drinks")
 
 local drinkstype = Tabs.Shop:AddDropdown("banlongdiem", {
         Title = "Select Drinks",
@@ -1576,7 +1576,7 @@ end
 
 
 
-local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
+Tabs.Shop:AddSection("Melee Weapon")
     Tabs.Shop:AddButton({
         Title = "Seastone Cestus (Fake Equipment)",
         Description = "Requires 500 Melee",
@@ -1686,7 +1686,7 @@ end
     })
 
 
-local Shooppp1 = Tabs.Shop:AddSection("Sword")
+Tabs.Shop:AddSection("Sword")
     Tabs.Shop:AddButton({
         Title = "Dagger",
         Description = "Requires 1,000 Beries",
@@ -1911,7 +1911,7 @@ end
         end
     })
 
-local Shoo3p = Tabs.Shop:AddSection("Gun")
+Tabs.Shop:AddSection("Gun")
 
     Tabs.Shop:AddButton({
         Title = "Slingshot",
@@ -2111,7 +2111,7 @@ end
 
 
 
-local FruitFFt = Tabs.Fruit:AddSection("Fruit Stuff")
+Tabs.Fruit:AddSection("Fruit Stuff")
 local openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
@@ -2317,7 +2317,7 @@ end)
 end
 end)
 
-local FruitF = Tabs.Fruit:AddSection("Auto Compass")
+Tabs.Fruit:AddSection("Auto Compass")
 local getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
 if Options.getcompasstoggle.Value == true then
@@ -2375,7 +2375,7 @@ end
 end)
 
 
-local Cannon = Tabs.Farm:AddSection("Auto Cannon Farming")
+Tabs.Farm:AddSection("Auto Cannon Farming")
 
 local fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Default = false })
 fastcannon:OnChanged(function()
@@ -2511,7 +2511,7 @@ _G.autocannonplr = false
 end
 end)
 
-local Reeaaz = Tabs.Farm:AddSection("Auto Reset")
+Tabs.Farm:AddSection("Auto Reset")
 
 local rssli = Tabs.Farm:AddSlider("rssliderzz", {
     Title = "Reset Time (s)",
@@ -2559,7 +2559,7 @@ end
 end)
 
 
-local Cannon = Tabs.Farm:AddSection("Auto Buso (Only 1 Allowed)")
+Tabs.Farm:AddSection("Auto Buso (Only 1 Allowed)")
 
 local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
@@ -2570,7 +2570,7 @@ _G.autohakibuso = false
 end
 end)
 
-local Cannon = Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
+Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
 local regentargetslider = Tabs.Farm:AddSlider("Autobusosli", {
     Title = "Regen Target (%)",
     Description = "Change this for adjusting regen target",
@@ -2787,7 +2787,7 @@ end)
 
 
 
-local Fishing = Tabs.Farm:AddSection("Auto Fishing")
+Tabs.Farm:AddSection("Auto Fishing")
 
 local autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
 autofish:OnChanged(function()
@@ -2878,7 +2878,7 @@ end
    end
 end)
 
-local Package = Tabs.Farm:AddSection("Auto Package")
+Tabs.Farm:AddSection("Auto Package")
 
 local autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package (Cannot be used with Auto-Fishing)", Default = false })
 autopackage:OnChanged(function()
@@ -3260,7 +3260,7 @@ end)
 end
 end)
 
-local Autorj = Tabs.Automatic:AddSection("General Function")
+Tabs.Automatic:AddSection("General Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
@@ -3280,17 +3280,6 @@ Fluent:Notify({
 end
 end)
 
-local hopsli = Tabs.Automatic:AddSlider("hopsli", {
-    Title = "Players Number",
-    Description = "Adjust players number for hop",
-    Default = 4,
-    Min = 1,
-    Max = 18,
-    Rounding = 0,
-    Callback = function(qwejio)
-            hopplrnum = tonumber(qwejio)
-        end
-    })
 
 
 
@@ -3349,7 +3338,7 @@ end
 end
 end)
 
-local Autospawn = Tabs.Automatic:AddSection("In-Game Function")
+Tabs.Automatic:AddSection("In-Game Function")
 local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
@@ -3495,7 +3484,7 @@ wait(5)
 	end)
 
 
-local Usefull11 = Tabs.Teleport:AddSection("Useful Teleport")
+Tabs.Teleport:AddSection("Useful Teleport")
 local randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
 randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
@@ -3612,7 +3601,7 @@ end
 end
 end)
 
-local Safe = Tabs.Teleport:AddSection("Special Teleport")
+Tabs.Teleport:AddSection("Special Teleport")
 
 Tabs.Teleport:AddButton({
         Title = "Teleport To Safe Zone",
@@ -3646,7 +3635,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Alta
         end
     })
 
-local Tmrt = Tabs.Teleport:AddSection("Teleport")
+Tabs.Teleport:AddSection("Teleport")
 
 local MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
@@ -3759,7 +3748,7 @@ end
 end)
 
 
-local Wep = Tabs.Weapon:AddSection("Equipment")
+Tabs.Weapon:AddSection("Equipment")
 local weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
         Values = {"Melee","Sniper","Sword","Utility"},
@@ -3928,8 +3917,8 @@ end
 end)
 
 
-local InstantWeapon = Tabs.Weapon:AddSection("Instant Weapon")
-local Yorusec = Tabs.Weapon:AddSection("Yoru Spam")
+Tabs.Weapon:AddSection("Instant Weapon")
+Tabs.Weapon:AddSection("Yoru Spam")
 local YoruSpeed = Tabs.Weapon:AddSlider("Yorusli", {
     Title = "Yoru Speed",
     Description = "Change this for adjusting Yoru's speed",
@@ -3997,7 +3986,7 @@ end)
 end
 end)
 
-local Cestussec = Tabs.Weapon:AddSection("Cestus Spam")
+Tabs.Weapon:AddSection("Cestus Spam")
 local CestusSpeed = Tabs.Weapon:AddSlider("cestussli", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
@@ -4064,7 +4053,7 @@ end)
 end
 end)
 
-local StatsFF = Tabs.Main:AddSection("Stats Farming")
+Tabs.Main:AddSection("Stats Farming")
 local statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
@@ -4210,7 +4199,7 @@ end
 end
 end)
 
-local HakiSection = Tabs.Haki:AddSection("Haki Stuff")
+Tabs.Haki:AddSection("Haki Stuff")
 local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
 if Options.hakiget.Value == true then
@@ -4846,7 +4835,7 @@ end)
 
 
 
-local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
+Tabs.Haki:AddSection("Auto Haki Farming")
 local hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
@@ -4957,7 +4946,7 @@ end)
 end
 end)
 
-local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
+Tabs.Haki:AddSection("Advanced Haki Farming")
 local hakiadvancespeed = Tabs.Haki:AddSlider("advanceslihaki", {
     Title = "Advanced Haki Speed",
     Description = "Change Advanced Haki Speed",
@@ -5097,7 +5086,7 @@ end)
 end
 end)
 
-local info3 = Tabs.Server:AddSection("Discord")
+Tabs.Server:AddSection("Discord")
 Tabs.Server:AddParagraph({
 Title = "Discord Information",
 Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
@@ -5119,7 +5108,7 @@ end
 
 
 
-local mgfrrr2 = Tabs.Server:AddSection("Rejoin/Hop")
+Tabs.Server:AddSection("Rejoin/Hop")
     Tabs.Server:AddButton({
         Title = "Rejoin Server",
         Description = "Rejoin the current server",
@@ -5294,7 +5283,7 @@ end
         end
     })
 
-local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
+Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
 local Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
     Title = "1st Devil Fruit Point",
@@ -6344,7 +6333,7 @@ SALUNA.TextScaled = true
 SALUNA.FontFace.Bold = true
 SALUNA.FontFace = Font.fromName("Merriweather")
 
-local DISCORD = Instance.new("TextButton")
+DISCORD = Instance.new("TextButton")
 DISCORD.Name = "DISCORD"
 DISCORD.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 DISCORD.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -6365,12 +6354,12 @@ end
 toClipboard("https://discord.gg/ecpbhm8G3w")
 end)
 
-local DisCorner = Instance.new("UICorner")
+DisCorner = Instance.new("UICorner")
 DisCorner.Name = "DisCorner"
 DisCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.DISCORD
 DisCorner.CornerRadius = UDim.new(0,13)
 
-local FACEBOOK = Instance.new("TextButton")
+FACEBOOK = Instance.new("TextButton")
 FACEBOOK.Name = "FACEBOOK"
 FACEBOOK.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 FACEBOOK.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -6391,7 +6380,7 @@ end
 toClipboard("https://www.facebook.com/IrenkissWantPeace/")
 end)
 
-local FBCorner = Instance.new("UICorner")
+FBCorner = Instance.new("UICorner")
 FBCorner.Name = "FBCorner"
 FBCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.FACEBOOK
 FBCorner.CornerRadius = UDim.new(0,13)

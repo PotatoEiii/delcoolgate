@@ -1,5 +1,4 @@
 _G.dupegem = true
-task.wait()
 
 spawn(function()
 while wait() do

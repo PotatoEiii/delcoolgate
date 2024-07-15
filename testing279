@@ -3,6 +3,7 @@ RENDERCOLORING.Name = "RENDERCOLORING"
 RENDERCOLORING.Parent = game.CoreGui
 
 RENDEFRAME = Instance.new("Frame")
+RENDEFRAME.Name = "RENDEFRAME"
 RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
 RENDEFRAME.BackgroundTransparency = 0
 RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)

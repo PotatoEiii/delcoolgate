@@ -2,6 +2,8 @@ _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
+local plr = game.Players.LocalPlayer
+repeat wait() until plr.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
 local Pedo = {
     1135910299, -- Havelic
     520944, -- Oblivic
@@ -251,7 +253,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (S1)",
+    Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -266,6 +268,7 @@ local Tabs = {
     Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
+    Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://10651327243" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
     Gems = Window:AddTab({ Title = "Gems (At Risk)", Icon = "rbxassetid://6788518051" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
@@ -281,6 +284,118 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local rob1 = Tabs.Robbing:AddSection("Fruit Robbing")
+local robdrop = Tabs.Robbing:AddDropdown("robdrop", {
+        Title = "Robbing Method",
+        Values = {"Quake"},
+        Multi = false,
+        Default = "",
+    })
+
+
+    robdrop:OnChanged(function(dropzxmcc)
+_G.robmethod = dropzxmcc
+end)
+
+local robfr = Tabs.Robbing:AddToggle("robfrtoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
+robfr:OnChanged(function()
+if Options.robfrtoggle.Value == true then
+_G.startrop = true
+else
+_G.startrop = false
+end
+end)
+
+local Rarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit",
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+
+spawn(function()
+while task.wait() do
+pcall(function()
+if _G.startrop then
+pcall(function()
+for _, fruitz in pairs(Rarefruit) do
+for i, player in pairs(game.Players:GetChildren()) do 
+if player.Name ~= game.Players.LocalPlayer.Name then
+for i, backpack in pairs(player:GetChildren()) do
+if backpack.Name == "Backpack" then 
+for i, v in pairs(backpack:GetChildren()) do
+if v.Name == fruitz then
+_G.cuopfruittarget = player.Name
+end
+end
+end
+end
+end
+end
+end
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while task.wait() do
+pcall(function()
+if _G.startrop and _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= game.Players.LocalPlayer.Name then
+pcall(function()
+
+	for i, tacc in pairs(game.Players:GetChildren()) do 
+	if tostring(tacc.Name) == tostring(_G.cuopfruittarget) then
+	for i, backpackz in pairs(game.Players:FindFirstChild(_G.cuopfruittarget):GetChildren()) do
+	if backpackz.Name == "Backpack" then 
+	for i, v in pairs(backpackz:GetChildren()) do
+	for _, fruitz in pairs(Rarefruit) do
+	if v.Name == fruitz then
+	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.Name == _G.cuopfruittarget then
+	repeat task.wait()
+local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+local vptt = xr.VTCebvc
+local dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+	until v.Humanoid.Health == 0
+wait()
+_G.cuopfruittarget = ""
+	end
+	end
+	end
+	end
+	end
+	end
+	end
+	end
+	end
+
+end)
+end
+end)
+end
+end)
+
+
+
 
 local info1 = Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({
@@ -579,6 +694,15 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
             })
         end
     })
+
+local offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Default = false })
+offrender:OnChanged(function()
+if Options.offrendertoggle.Value == true then
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+else
+game:GetService("RunService"):Set3dRenderingEnabled(true)
+end
+end)
 
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
 local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
@@ -2050,66 +2174,54 @@ end)
 function storedf()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-if game.Workspace.UserData["User_"..plrid].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF1.Value == "None" then
+if game.Workspace.UserData["User_"..plrid].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF2.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF3.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF4.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF5.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF6.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF7.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF8.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF9.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF10.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF11.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
-elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF12.Value == "None" then
+elseif game.Workspace.UserData["User_"..plrid].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..plrid].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.MouseButton1Click)) do
 v.Function()
 end
-wait()
 end
 end
 
@@ -2139,18 +2251,20 @@ spawn(function()
     while task.wait() do
         pcall(function()
 if _G.storeffrt then
+repeat task.wait()
             pcall(function()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
-repeat wait()
+repeat task.wait()
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v)
 x.Parent = game.Players.LocalPlayer.Character
-wait()
+task.wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
 end)
+until not _G.storeffrt
 end
 end)
 end
@@ -2161,6 +2275,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
 if _G.aurasto then
+repeat task.wait()
             pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
@@ -2168,16 +2283,17 @@ local d = v.Data.Value
 local c = string.len(d)
 local b = tonumber(c) - 1
 if string.sub(d,b) == ",1" then
-repeat wait()
+repeat task.wait()
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name)
 x.Parent = game.Players.LocalPlayer.Character
-wait()
+task.wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
 end
 end)
+until not _G.aurasto
 end
 end)
 end
@@ -2187,13 +2303,15 @@ spawn(function()
     while task.wait() do
         pcall(function()
 if getgenv().pickkk then
-            pcall(function()
+repeat task.wait()
+	pcall(function()
 for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
 if v:IsA("ClickDetector") then
 fireclickdetector(v)
 end
 end
-            end)
+	end)
+until not getgenv().pickkk
 end
 end)
 end

@@ -1,3 +1,17 @@
+if game.CoreGui:FindFirstChild("RENDERCOLORING") then
+game.CoreGui:FindFirstChild("RENDERCOLORING"):Destroy()
+end
+RENDERCOLORING = Instance.new("ScreenGui")
+RENDERCOLORING.Name = "RENDERCOLORING"
+RENDERCOLORING.Parent = game.CoreGui
+
+RENDEFRAME = Instance.new("Frame")
+RENDEFRAME.Name = "RENDEFRAME"
+RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
+RENDEFRAME.BackgroundTransparency = 0
+RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
+RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+RENDEFRAME.Visible = false
 
 _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
@@ -190,9 +204,6 @@ vu = game:GetService("VirtualUser")
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
 
-if game.CoreGui:FindFirstChild("RENDERCOLORING") then
-game.CoreGui:FindFirstChild("RENDERCOLORING"):Destroy()
-end
 
      SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
@@ -730,18 +741,6 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
             })
         end
     })
-
-RENDERCOLORING = Instance.new("ScreenGui")
-RENDERCOLORING.Name = "RENDERCOLORING"
-RENDERCOLORING.Parent = game.CoreGui
-
-RENDEFRAME = Instance.new("Frame")
-RENDEFRAME.Name = "RENDEFRAME"
-RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
-RENDEFRAME.BackgroundTransparency = 0
-RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
-RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-RENDEFRAME.Visible = false
 
 offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Default = false })
 offrender:OnChanged(function()

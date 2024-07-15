@@ -307,7 +307,7 @@ _G.startrop = false
 end
 end)
 
-local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
+local bringfruit = Tabs.Robbing:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
 bringfruit:OnChanged(function()
 if Options.bringfruittoggle.Value == true then
 getgenv().pickkk = true

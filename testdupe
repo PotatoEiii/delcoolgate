@@ -19,6 +19,12 @@ game.Workspace.UserData["User_"..plrid].Data.BoundUnlock10.Value == true or
 game.Workspace.UserData["User_"..plrid].Data.BoundUnlock11.Value == true or
 game.Workspace.UserData["User_"..plrid].Data.BoundUnlock12.Value == true then
 _G.startdupe = true
+else
+         game.StarterGui:SetCore("SendNotification", {
+            Title = "This Messenge Sent From Saluna With Love",
+            Text = "Rayleigh haven't spawned yet.",
+            Duration = 3
+          })
 end
 end)
 end

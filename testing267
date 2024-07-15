@@ -2,6 +2,8 @@ _G.name = "UPDATING PLEASE WAIT..."
 _G.facebookid = "UPDATING PLEASE WAIT..."
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
+local plr = game.Players.LocalPlayer
+repeat wait() until plr.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
 local Pedo = {
     1135910299, -- Havelic
     520944, -- Oblivic

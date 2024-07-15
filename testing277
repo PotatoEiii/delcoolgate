@@ -142,42 +142,42 @@ vu = game:GetService("VirtualUser")
     end)
 
 
-local Players = game:GetService("Players")
-    local cache = {}
+ Players = game:GetService("Players")
+     cache = {}
     function lol(name)
         if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
+         player = Players:FindFirstChild(name)
         if player then
             cache[name] = player.UserId
             return player.UserId
         end 
     
-        local id
+         id
         pcall(function ()
             id = Players:lol(name)
         end)
         cache[name] = id
         return id
     end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
+     ehh = game.Players.LocalPlayer.Name
+     Final = lol(ehh)
     getgenv().firstfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit"].Value
     getgenv().secondfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value
 
    do  
-    local fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
+     fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
     if fishingplace then 
     fishingplace:Destroy() 
     end 
     end
-    local fishingplace = Instance.new("Part",game.Workspace)
+     fishingplace = Instance.new("Part",game.Workspace)
     fishingplace.Name = "fishingplace"
     fishingplace.Size = Vector3.new(2,1,2)
     fishingplace.Position = Vector3.new(19784, 210,5000)
     fishingplace.Anchored = true
     
     do  
-    local safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
+     safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
     if safezonedestroyspace then 
     safezonedestroyspace:Destroy() 
     end 
@@ -185,7 +185,7 @@ local Players = game:GetService("Players")
         if game.CoreGui:FindFirstChild("BBB") then
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
-    local SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
+     SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
@@ -283,10 +283,10 @@ local remotes = {}
     nonef = Window:AddTab({ Title = "-------", Icon = "" }),
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
-local Options = Fluent.Options
+Options = Fluent.Options
 
 Tabs.Robbing:AddSection("Fruit Robbing")
-local robdrop = Tabs.Robbing:AddDropdown("robdrop", {
+ robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
         Values = {"Quake"},
         Multi = false,
@@ -298,7 +298,7 @@ local robdrop = Tabs.Robbing:AddDropdown("robdrop", {
 _G.robmethod = dropzxmcc
 end)
 
-local robfr = Tabs.Robbing:AddToggle("robfrtoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
+robfr = Tabs.Robbing:AddToggle("robfrtoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
 robfr:OnChanged(function()
 if Options.robfrtoggle.Value == true then
 _G.startrop = true
@@ -307,7 +307,7 @@ _G.startrop = false
 end
 end)
 
-local bringfruit = Tabs.Robbing:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
+bringfruit = Tabs.Robbing:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
 bringfruit:OnChanged(function()
 if Options.bringfruittoggle.Value == true then
 getgenv().pickkk = true
@@ -334,7 +334,7 @@ end)
 end
 end)
 
-local Rarefruit = {
+Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",
 "Flare Fruit",
@@ -398,9 +398,9 @@ pcall(function()
 	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 	if v.Name == _G.cuopfruittarget then
 	repeat task.wait()
-local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-local vptt = xr.VTCebvc
-local dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
+xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+ vptt = xr.VTCebvc
+ dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 	until v.Humanoid.Health == 0
 wait()
@@ -431,14 +431,14 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 })
 
 Tabs.Info:AddSection("Information")
-local plr = game.Players.LocalPlayer.Character.Name
-local plrid = tostring(game.Players.LocalPlayer.UserId)
+plr = game.Players.LocalPlayer.Character.Name
+ plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
 Title = "User Information",
 Content = "Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..plr .."\nUser ID: "..plrid
 })
 
-local Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 Tabs.Info:AddParagraph({
 Title = "Server Information",
 Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax Players: "..game.Players.MaxPlayers
@@ -455,7 +455,7 @@ When you reset stats, The refund function will reset too.
 Thus, when you reset stats and rejoin, you will get refund again.]]
 })
 
-local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save & Autoload Config)", Default = false })
+duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save & Autoload Config)", Default = false })
 duping:OnChanged(function()
 if Options.dupingtoggle.Value == true then
 _G.dupegem = true
@@ -470,8 +470,8 @@ while wait() do
 pcall(function()
 if _G.dupegem then
 pcall(function()
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+plrid = tostring(game.Players.LocalPlayer.UserId)
+plr = tostring(game.Players.LocalPlayer)
 if game.Workspace.UserData["User_"..plrid].Data.BoundUnlock1.Value == true or
 game.Workspace.UserData["User_"..plrid].Data.BoundUnlock2.Value == true or
 game.Workspace.UserData["User_"..plrid].Data.BoundUnlock3.Value == true or
@@ -509,7 +509,7 @@ pcall(function()
 if _G.startdupe then
 pcall(function()
 task.wait(7)
-local plr = game.Players.LocalPlayer
+plr = game.Players.LocalPlayer
 repeat task.wait()
 until plr.PlayerGui.Load.Frame.Visible
 if plr.PlayerGui.Load.Frame.Visible == true then
@@ -590,7 +590,7 @@ Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"
 })
 
-local wqettt = Tabs.Gems:AddDropdown("bentauga11", {
+wqettt = Tabs.Gems:AddDropdown("bentauga11", {
         Title = "Select Fruit To Exchange",
         Values = {"DFT1", "DFT2"},
         Multi = false,
@@ -601,7 +601,7 @@ local wqettt = Tabs.Gems:AddDropdown("bentauga11", {
 _G.fruitexchange = koedpwqbb
 end)
 
-local exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Exchange", Default = false })
+exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Exchange", Default = false })
 exchangett:OnChanged(function()
 if Options.exchangetttoggle.Value == true then
 _G.exchangegem = true
@@ -615,8 +615,8 @@ while wait() do
 pcall(function()
 if _G.exchangegem then
 pcall(function()
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+plrid = tostring(game.Players.LocalPlayer.UserId)
+plr = tostring(game.Players.LocalPlayer)
 
 if game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
@@ -722,7 +722,7 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
         end
     })
 
-local offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Default = false })
+offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Default = false })
 offrender:OnChanged(function()
 if Options.offrendertoggle.Value == true then
 game:GetService("RunService"):Set3dRenderingEnabled(false)
@@ -732,7 +732,7 @@ end
 end)
 
 Tabs.Misc:AddSection("Makes Server Lagging")
-local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
+miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
 miscquake:OnChanged(function()
 if Options.miscquaketoggle.Value == true then
 _G.quakelagmisc = true
@@ -745,8 +745,8 @@ spawn(function()
 while wait() do
 if _G.quakelagmisc then
 pcall(function()
-local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-local vp = x.VTCebvc
+x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+vp = x.VTCebvc
     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
         if v.Name == game.Players.LocalPlayer.Name then
 repeat task.wait(0.1)
@@ -787,7 +787,7 @@ end
     })
 Tabs.Player:AddSection("About Player")
 
-    local plrts = Tabs.Player:AddInput("plrts", {
+    plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
         Default = "",
         Placeholder = "Insert Here",
@@ -810,7 +810,7 @@ end
 end
 end)
 
-local targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false })
+targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false })
 targetallpcho:OnChanged(function()
 if Options.targetallpchotoggle.Value == true then
 getgenv().targeting = true
@@ -842,7 +842,7 @@ end
 end)
 
 
-local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
+viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
 getgenv().viewplrr = true
@@ -860,7 +860,7 @@ end
     })
 
 Tabs.PVP:AddSection("Skills")
-local azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
+azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
 azxcwwwcarge:OnChanged(function()
 if Options.azxcwwwcargetoggle.Value == true then
 _G.auto100rate = true
@@ -870,7 +870,7 @@ end
 end)
 
 Tabs.PVP:AddSection("Players' Sight")
-local plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
+plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()
 if Options.plresptoggle.Value == true then
 ESPPlayer = true
@@ -939,7 +939,7 @@ end)
 end
 end)
 
-local sizehahaqw = Tabs.PVP:AddSlider("sizehahaqwqweqwzz", {
+sizehahaqw = Tabs.PVP:AddSlider("sizehahaqwqweqwzz", {
     Title = "HitBox Players",
     Description = "Adjust players' hitbox",
     Default = 10,
@@ -951,7 +951,7 @@ local sizehahaqw = Tabs.PVP:AddSlider("sizehahaqwqweqwzz", {
         end
     })
 
-local hitboxasdmpo = Tabs.PVP:AddToggle("hitboxasdmpotoggle", {Title = "Hitbox Players", Default = false })
+hitboxasdmpo = Tabs.PVP:AddToggle("hitboxasdmpotoggle", {Title = "Hitbox Players", Default = false })
 hitboxasdmpo:OnChanged(function()
 if Options.hitboxasdmpotoggle.Value == true then
 _G.Hitboxplr = true
@@ -991,7 +991,7 @@ end)
 
 Tabs.Player:AddSection("Bring Player")
 
-local bringdis = Tabs.Player:AddSlider("bringsl", {
+bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",
     Default = 4,
@@ -1003,7 +1003,7 @@ local bringdis = Tabs.Player:AddSlider("bringsl", {
         end
     })
 
-local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Chosen Player", Default = false })
+disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Chosen Player", Default = false })
 disbring1aa:OnChanged(function()
 if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
@@ -1012,7 +1012,7 @@ _G.BringPlayer = false
 end
 end)
 
-local disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring All Player", Default = false })
+disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring All Player", Default = false })
 disbringallplr:OnChanged(function()
 if Options.disbringallplrtoggle.Value == true then
 _G.BringAllPlayer = true
@@ -1059,7 +1059,7 @@ end)
 
 
 Tabs.Player:AddSection("Non-Teleport Camp")
-local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
+quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
@@ -1073,9 +1073,9 @@ while wait() do
 if _G.AutoQuake then
 pcall(function()
 repeat task.wait()
-local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-local vptt = xr.VTCebvc
-local v = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character
+xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+vptt = xr.VTCebvc
+v = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 task.wait(0.05)
 until _G.AutoQuake == false
@@ -1085,7 +1085,7 @@ end
 end)
 
 disstring = -10
-local stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp (Use Skill To Activate)", Default = false })
+stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp (Use Skill To Activate)", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true
@@ -1172,7 +1172,7 @@ end)
 
 
 Tabs.Player:AddSection("Teleport Camp")
-local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
+cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
     Default = 15,
@@ -1184,7 +1184,7 @@ local cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
         end
     })
 
-local darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
+darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()
 if Options.darksectoggle.Value == true then
 _G.CampDark = true
@@ -1202,8 +1202,8 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampDark == true and v.Humanoid.Health > 0 then
     pcall(function()
 repeat task.wait()
-local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
-local vtcccq = x.VTCjebaj
+x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
+vtcccq = x.VTCjebaj
 local args = {
     [1] = vtcccq,
     [2] = "DarkPower4",
@@ -2789,7 +2789,7 @@ end)
 
 Tabs.Farm:AddSection("Auto Fishing")
 
-local autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
+autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
 autofish:OnChanged(function()
 if Options.fishytoggle.Value == true then
 getgenv().fishing = true
@@ -2821,11 +2821,10 @@ end)
 spawn(function()
     while task.wait() do
         pcall(function()
-local plr = game.Players.LocalPlayer
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-for i,v in pairs(plr.Backpack:GetChildren()) do
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
-v.Parent = plr.Character
+v.Parent = game.Players.LocalPlayer.Character
                 end
             end
          end
@@ -2939,13 +2938,12 @@ end)
 spawn(function()
     while task.wait() do
         pcall(function()
-local plr = game.Players.LocalPlayer
 if _G.autocannonslow or _G.autocannonplr or _G.autocannonplrbring then
 if _G.autocannon == false then
-for i,v in pairs(plr.Backpack:GetChildren()) do
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 repeat task.wait()
 if v.Name == "Cannon Ball" then
-v.Parent = plr.Character
+v.Parent = game.Players.LocalPlayer.Character
 end
 until not _G.autocannonslow and not _G.autocannonplr and not _G.autocannonplrbring
 end
@@ -3416,8 +3414,8 @@ spawn(function()
 while wait() do
 if _G.autochallenge then
 pcall(function()
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+plrid = tostring(game.Players.LocalPlayer.UserId)
+plr = tostring(game.Players.LocalPlayer)
 if game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Daily1")
 elseif game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
@@ -4875,8 +4873,8 @@ pcall(function()
 if _G.farmhakinek then
 pcall(function()
 
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+plrid = tostring(game.Players.LocalPlayer.UserId)
+plr = tostring(game.Players.LocalPlayer)
 _G.concu = true
 while _G.concu do wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
@@ -5370,7 +5368,7 @@ end
 			end
 end)
 
-local ret = Tabs.Affinity:AddDropdown("vxe1", {
+ret = Tabs.Affinity:AddDropdown("vxe1", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
@@ -5382,7 +5380,7 @@ local ret = Tabs.Affinity:AddDropdown("vxe1", {
 _G.budget = Valuezx
 end)
 
-local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
+DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
     DF11Toggle:OnChanged(function(gg)
 
 
@@ -5393,8 +5391,8 @@ _G.quayfirstdf = true
 else
 _G.quayfirstdf = false
 end
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+plrid = tostring(game.Players.LocalPlayer.UserId)
+plr = tostring(game.Players.LocalPlayer)
 if _G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
 _G.defspin = true
 else
@@ -5660,9 +5658,9 @@ wait(12)
             end)
 
 
-local af2 = Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
+Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
 
-local Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
+Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 2,
@@ -5674,7 +5672,7 @@ local Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
         end
     })
 
-     local wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
+wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
         Title = "Lock Affinity (DF2)",
         Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -5688,7 +5686,7 @@ _G.keepdef2 = false
 _G.keepmelee2 = false
 _G.keepsnip2 = false
 _G.keepsword2 = false
-local Values2 = {"None"}
+Values2 = {"None"}
 wait()
         for Valuer2, State in next, Valuer2 do
             table.insert(Values2, Valuer2)
@@ -5711,7 +5709,7 @@ end)
 
 
 
-    local wwrwwww2 = Tabs.Affinity:AddDropdown("tyumm1z", {
+     wwrwwww2 = Tabs.Affinity:AddDropdown("tyumm1z", {
         Title = "Target Affinity (DF2)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -5725,7 +5723,7 @@ _G.targetdef2 = false
 _G.targetmelee2 = false
 _G.targetsnip2 = false
 _G.targetsword2 = false
-local Valuess2 = {"None"}
+Valuess2 = {"None"}
 wait()
         for Valuerr2, State in next, Valuerr2 do
             table.insert(Valuess2, Valuerr2)
@@ -5747,7 +5745,7 @@ end
 end)
 
 
-local retw2 = Tabs.Affinity:AddDropdown("ccas24ff", {
+retw2 = Tabs.Affinity:AddDropdown("ccas24ff", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
@@ -5759,7 +5757,7 @@ local retw2 = Tabs.Affinity:AddDropdown("ccas24ff", {
 _G.budget2 = Valuezx2
 end)
 
-local DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
+DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
     DF22Toggle:OnChanged(function(tt)
 
 while Options.DF2Toggle.Value do wait()
@@ -5769,8 +5767,8 @@ _G.quayfirstdf2 = true
 else
 _G.quayfirstdf2 = false
 end
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+ plrid = tostring(game.Players.LocalPlayer.UserId)
+ plr = tostring(game.Players.LocalPlayer)
 if _G.targetdef2 == true and _G.targetsnip2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..plrid].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.defspin2 = true
 else
@@ -6039,8 +6037,8 @@ spawn(function()
 	while wait() do
 		if _G.quayfirstdf2 or _G.quayfirstdf then
                 	pcall(function()
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
+ plrid = tostring(game.Players.LocalPlayer.UserId)
+ plr = tostring(game.Players.LocalPlayer)
 if game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
 end
@@ -6077,40 +6075,40 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 
-local c1 = Tabs.Affinity:AddSection("                                                -----")
-local c2 = Tabs.Affinity:AddSection("                                                -----")
-local c3 = Tabs.Farm:AddSection("                                                -----")
-local c4 = Tabs.Main:AddSection("                                                -----")
-local c5 = Tabs.Main:AddSection("                                                -----")
-local c6 = Tabs.Farm:AddSection("                                                -----")
-local c7 = Tabs.Server:AddSection("                                                -----")
-local c8 = Tabs.Server:AddSection("                                                -----")
-local c9 = Tabs.Fruit:AddSection("                                                -----")
-local c10 = Tabs.Fruit:AddSection("                                                -----")
-local c11 = Tabs.Teleport:AddSection("                                                -----")
-local c12 = Tabs.Teleport:AddSection("                                                -----")
-local c13 = Tabs.Player:AddSection("                                                -----")
-local c14 = Tabs.Player:AddSection("                                                -----")
-local c15 = Tabs.Automatic:AddSection("                                                -----")
-local c16 = Tabs.Automatic:AddSection("                                                -----")
-local c17 = Tabs.Webhook:AddSection("                                                -----")
-local c18 = Tabs.Webhook:AddSection("                                                -----")
-local c19 = Tabs.Misc:AddSection("                                                -----")
-local c20 = Tabs.Misc:AddSection("                                                -----")
-local c21 = Tabs.Settings:AddSection("                                                -----")
-local c22 = Tabs.Settings:AddSection("                                                -----")
-local c23 = Tabs.Haki:AddSection("                                                -----")
-local c24 = Tabs.Haki:AddSection("                                                -----")
-local c25 = Tabs.Shop:AddSection("                                                -----")
-local c26 = Tabs.Shop:AddSection("                                                -----")
-local c27 = Tabs.PVP:AddSection("                                                -----")
-local c28 = Tabs.PVP:AddSection("                                                -----")
-local c29 = Tabs.Gems:AddSection("                                                -----")
-local c30 = Tabs.Gems:AddSection("                                                -----")
-local c31 = Tabs.Info:AddSection("                                                -----")
-local c32 = Tabs.Info:AddSection("                                                -----")
-local c33 = Tabs.Weapon:AddSection("                                                -----")
-local c34 = Tabs.Weapon:AddSection("                                                -----")
+Tabs.Affinity:AddSection("                                                -----")
+Tabs.Affinity:AddSection("                                                -----")
+Tabs.Farm:AddSection("                                                -----")
+Tabs.Main:AddSection("                                                -----")
+Tabs.Main:AddSection("                                                -----")
+Tabs.Farm:AddSection("                                                -----")
+Tabs.Server:AddSection("                                                -----")
+Tabs.Server:AddSection("                                                -----")
+Tabs.Fruit:AddSection("                                                -----")
+Tabs.Fruit:AddSection("                                                -----")
+Tabs.Teleport:AddSection("                                                -----")
+Tabs.Teleport:AddSection("                                                -----")
+Tabs.Player:AddSection("                                                -----")
+Tabs.Player:AddSection("                                                -----")
+Tabs.Automatic:AddSection("                                                -----")
+Tabs.Automatic:AddSection("                                                -----")
+Tabs.Webhook:AddSection("                                                -----")
+Tabs.Webhook:AddSection("                                                -----")
+Tabs.Misc:AddSection("                                                -----")
+Tabs.Misc:AddSection("                                                -----")
+Tabs.Settings:AddSection("                                                -----")
+Tabs.Settings:AddSection("                                                -----")
+Tabs.Haki:AddSection("                                                -----")
+Tabs.Haki:AddSection("                                                -----")
+Tabs.Shop:AddSection("                                                -----")
+Tabs.Shop:AddSection("                                                -----")
+Tabs.PVP:AddSection("                                                -----")
+Tabs.PVP:AddSection("                                                -----")
+Tabs.Gems:AddSection("                                                -----")
+Tabs.Gems:AddSection("                                                -----")
+Tabs.Info:AddSection("                                                -----")
+Tabs.Info:AddSection("                                                -----")
+Tabs.Weapon:AddSection("                                                -----")
+Tabs.Weapon:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
@@ -6124,11 +6122,11 @@ Fluent:Notify({
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
 --------
-local BBB = Instance.new("ScreenGui")
+ BBB = Instance.new("ScreenGui")
 BBB.Name = "BBB"
 BBB.Parent = game.CoreGui
 
-local hideUI = Instance.new("ImageButton")
+ hideUI = Instance.new("ImageButton")
 hideUI.Name = "hideUI"
 hideUI.Parent = game.CoreGui.BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -6143,21 +6141,21 @@ wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
 
-local hideUICorner = Instance.new("UICorner")
+ hideUICorner = Instance.new("UICorner")
 hideUICorner.Parent = game.CoreGui.BBB.hideUI
 hideUICorner.CornerRadius = UDim.new(1,0)
 
 
-local UIS = game:GetService('UserInputService')
-local frame = game.CoreGui.BBB.hideUI
-local dragToggle = nil
-local dragSpeed = 0.12
-local dragStart = nil
-local startPos = nil
+ UIS = game:GetService('UserInputService')
+ frame = game.CoreGui.BBB.hideUI
+ dragToggle = nil
+ dragSpeed = 0.12
+ dragStart = nil
+ startPos = nil
 
-local function updateInput(input)
- local delta = input.Position - dragStart
- local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
   startPos.Y.Scale, startPos.Y.Offset + delta.Y)
  game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
 end
@@ -6184,17 +6182,17 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 else
-local SALUNAUI = Instance.new("ScreenGui")
+ SALUNAUI = Instance.new("ScreenGui")
 SALUNAUI.Name = "SALUNAUI"
 SALUNAUI.Parent = game.CoreGui
 
-local SSS = Instance.new("Frame")
+ SSS = Instance.new("Frame")
 SSS.Name = "SSS"
 SSS.Parent = game.CoreGui.SALUNAUI
 SSS.BackgroundTransparency = 1
 SSS.Size = UDim2.new(1, 0, 1, 0)
 
-local SALUNAFRAME = Instance.new("Frame")
+ SALUNAFRAME = Instance.new("Frame")
 SALUNAFRAME.Name = "SALUNAFRAME"
 SALUNAFRAME.Parent = game.CoreGui.SALUNAUI.SSS
 SALUNAFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -6203,12 +6201,12 @@ SALUNAFRAME.ClipsDescendants = true
 SALUNAFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
 SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
 
-local SALUNAFRAMEcorner = Instance.new("UICorner")
+ SALUNAFRAMEcorner = Instance.new("UICorner")
 SALUNAFRAMEcorner.Name = "SALUNAFRAMEcorner"
 SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)
 
-local Cancel = Instance.new("ImageButton")
+ Cancel = Instance.new("ImageButton")
 Cancel.Parent = game.CoreGui.SALUNAUI.SSS
 Cancel.Name = "Cancel"
 Cancel.BackgroundTransparency = 1
@@ -6220,7 +6218,7 @@ Cancel.MouseButton1Up:Connect(function()
 game.CoreGui.SALUNAUI:Destroy()
 end)
 
-local HWIDGet = Instance.new("TextButton")
+ HWIDGet = Instance.new("TextButton")
 HWIDGet.Parent = game.CoreGui.SALUNAUI.SSS
 HWIDGet.Name = "HWIDGet"
 HWIDGet.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -6240,12 +6238,12 @@ function toClipboard(txt)
         everyClipboard(tostring(txt))
     end
 end
-local gethwid = 
+ gethwid = 
 game:GetService("RbxAnalyticsService"):GetClientId()
 toClipboard(gethwid)
 end)
 
-local Invalid = Instance.new("TextLabel")
+ Invalid = Instance.new("TextLabel")
 Invalid.Parent = game.CoreGui.SALUNAUI.SSS
 Invalid.Name = "Invalid"
 Invalid.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -6258,7 +6256,7 @@ Invalid.TextScaled = true
 Invalid.FontFace.Bold = true
 Invalid.FontFace = Font.fromName("Merriweather")
 
-local Owner = Instance.new("ImageLabel")
+ Owner = Instance.new("ImageLabel")
 Owner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 Owner.Name = "Owner"
 Owner.BackgroundTransparency = 1
@@ -6266,13 +6264,13 @@ Owner.Position = UDim2.new(0.638, 0, 0.383, 0)
 Owner.Size = UDim2.new(0.276, 0, 0.518, 0)
 Owner.Image = "http://www.roblox.com/asset/?id=18274868035"
 
-local OwnerCorner = Instance.new("UICorner")
+ OwnerCorner = Instance.new("UICorner")
 OwnerCorner.Name = "OwnerCorner"
 OwnerCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.Owner
 OwnerCorner.CornerRadius = UDim.new(0.1,0)
 
 
-local DiscordImage = Instance.new("ImageLabel")
+ DiscordImage = Instance.new("ImageLabel")
 DiscordImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 DiscordImage.Name = "DiscordImage"
 DiscordImage.BackgroundTransparency = 1
@@ -6280,12 +6278,12 @@ DiscordImage.Position = UDim2.new(0.397, 0, 0.403, 0)
 DiscordImage.Size = UDim2.new(0.098, 0, 0.148, 0)
 DiscordImage.Image = "http://www.roblox.com/asset/?id=17056354120"
 
-local DiscordCorner = Instance.new("UICorner")
+ DiscordCorner = Instance.new("UICorner")
 DiscordCorner.Name = "DiscordCorner"
 DiscordCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.DiscordImage
 DiscordCorner.CornerRadius = UDim.new(1,0)
 
-local FacebookImage = Instance.new("ImageLabel")
+ FacebookImage = Instance.new("ImageLabel")
 FacebookImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 FacebookImage.Name = "FacebookImage"
 FacebookImage.BackgroundTransparency = 1
@@ -6293,13 +6291,13 @@ FacebookImage.Position = UDim2.new(0.397, 0, 0.71, 0)
 FacebookImage.Size = UDim2.new(0.098, 0, 0.148, 0)
 FacebookImage.Image = "http://www.roblox.com/asset/?id=5265119620"
 
-local FacebookCorner = Instance.new("UICorner")
+ FacebookCorner = Instance.new("UICorner")
 FacebookCorner.Name = "FacebookCorner"
 FacebookCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.FacebookImage
 FacebookCorner.CornerRadius = UDim.new(0.2,0)
 
 
-local Tieude = Instance.new("TextLabel")
+ Tieude = Instance.new("TextLabel")
 Tieude.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 Tieude.Name = "Tieude"
 Tieude.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -6310,12 +6308,12 @@ Tieude.TextScaled = true
 Tieude.FontFace.Bold = true
 Tieude.FontFace = Font.fromName("Merriweather")
 
-local TieudeCorner = Instance.new("UICorner")
+ TieudeCorner = Instance.new("UICorner")
 TieudeCorner.Name = "TieudeCorner"
 TieudeCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.Tieude
 TieudeCorner.CornerRadius = UDim.new(0,15)
 
-local SALUNA = Instance.new("TextLabel")
+ SALUNA = Instance.new("TextLabel")
 SALUNA.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
 SALUNA.Name = "SALUNA"
 SALUNA.BackgroundTransparency = 1

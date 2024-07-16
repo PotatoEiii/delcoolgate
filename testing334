@@ -339,24 +339,19 @@ getgenv().pickkk = true
 else
 getgenv().pickkk = false
 end
-end)
 
-spawn(function()
-    while task.wait() do
-        pcall(function()
-if getgenv().pickkk then
+while getgenv().pickkk do wait(0.1)
+pcall(function()
 repeat task.wait()
-	pcall(function()
 for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
 if v:IsA("ClickDetector") then
 fireclickdetector(v)
 end
 end
-	end)
 until not getgenv().pickkk
-end
 end)
 end
+
 end)
 
 Rarefruit = {

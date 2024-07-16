@@ -898,7 +898,7 @@ _G.BringPlayer = true
 else
 _G.BringPlayer = false
 end
-while _G.BringPlayer do task.wait()
+while _G.BringPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
@@ -914,7 +914,7 @@ _G.BringAllPlayer = true
 else
 _G.BringAllPlayer = false
 end
-while _G.BringAllPlayer do task.wait()
+while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do

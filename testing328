@@ -1109,12 +1109,8 @@ _G.CampDark = true
 else
 _G.CampDark = false
 end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.CampDark then
+while _G.CampDark do task.wait()
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampDark == true and v.Humanoid.Health > 0 then
@@ -1149,9 +1145,9 @@ end
 end
 end)
 end
+
 end)
-end
-end)
+
 
 vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp (Use Skill To Activate)", Default = false })
 vamppppp:OnChanged(function()

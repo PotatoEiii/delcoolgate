@@ -4774,7 +4774,7 @@ elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
 repeat task.wait()
-until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= sll or game.Players.LocalPlayer.Character.Humanoid.Health == 0
+until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= sll or game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y > 211000
 elseif _G.farmhakinek == false then
 _G.concu = false
         local args = {

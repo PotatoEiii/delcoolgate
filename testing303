@@ -709,12 +709,8 @@ getgenv().targeting = true
 else
 getgenv().targeting = false
 end
-end)
-
-spawn(function()
-while wait() do
+while getgenv().targeting do
 pcall(function()
-if getgenv().targeting then
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 for i,c in pairs(game.Workspace:GetChildren()) do
@@ -728,11 +724,9 @@ end
 end
 end
 end
-end
 end)
 end
 end)
-
 
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()

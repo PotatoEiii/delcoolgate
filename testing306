@@ -709,21 +709,24 @@ getgenv().targeting = true
 else
 getgenv().targeting = false
 end
+
 while getgenv().targeting do task.wait()
 pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
-for i,c in pairs(game.Workspace:GetChildren()) do
+
 repeat task.wait()
-if getgenv().targeting == true and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+for i,c in pairs(game.Workspace:GetChildren()) do
+if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
 _G.SelectedKillPlayer = c.Name
+end
 end
 until not getgenv().targeting or c.Name ~= v.Name or c.Humanoid.Health == 0
 end
 end
-end
 end)
 end
+
 end)
 
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })

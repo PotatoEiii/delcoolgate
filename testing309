@@ -709,12 +709,8 @@ getgenv().targeting = true
 else
 getgenv().targeting = false
 end
-end)
-
-spawn(function()
-while wait() do
+while getgenv().targeting do task.wait()
 pcall(function()
-if getgenv().targeting then
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -727,11 +723,9 @@ end
 end
 end
 until not getgenv().targeting or _G.SelectedKillPlayer ~= v.Name or c.Humanoid.Health == 0
-end
 end)
 end
 end)
-
 
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()

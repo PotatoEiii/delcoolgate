@@ -901,6 +901,13 @@ _G.BringPlayer = true
 else
 _G.BringPlayer = false
 end
+while _G.BringPlayer do task.wait()
+pcall(function()
+repeat task.wait()
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+until not _G.BringPlayer
+end)
+end
 end)
 
 disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring All Player", Default = false })
@@ -927,19 +934,7 @@ end)
 
 
 
-        spawn(function()
-            while wait() do
-pcall(function()
-                if _G.BringPlayer then
-                    pcall(function()
-repeat task.wait()
-game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
-until not _G.BringPlayer
-                    end)
-                end
-end)
-            end
-        end)
+
 
 
 

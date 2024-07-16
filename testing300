@@ -518,13 +518,16 @@ _G.exchangegem = true
 else
 _G.exchangegem = false
 end
-while _G.exchangegem do wait()
-pcall(function()
+end)
 
+spawn(function()
+while wait() do
+pcall(function()
+if _G.exchangegem then
+pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
 workspace.UserData["User_".. tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge12")
 end
-
 repeat wait() 
 until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == false
 wait()
@@ -547,11 +550,11 @@ until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.
 
 wait()
 
-
 end)
 end
 end)
-
+end
+end)
 Tabs.Misc:AddSection("Other Scripts")
 
     Tabs.Misc:AddButton({

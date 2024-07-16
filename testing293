@@ -2416,6 +2416,7 @@ if _G.collectchest then
     if v.Name == "Touch" and v.Parent.Name == "TreasureChestPart" then
 repeat wait()
 v.Parent.CFrame = game.workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame
+until not _G.collectchest
 end
 end
 end

@@ -1072,7 +1072,7 @@ cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
 _G.telecamethod = fuckasdzz
 end)
 
-aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport To Camp", Default = false })
+aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport To Camp   (*)", Default = false })
 aweopcz:OnChanged(function()
 if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true

@@ -1362,7 +1362,6 @@ Fluent:Notify({
 repeat task.wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
 until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
-end)
 else
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end

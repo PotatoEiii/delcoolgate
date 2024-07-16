@@ -639,7 +639,7 @@ _G.quakelagmisc = true
 else
 _G.quakelagmisc = false
 end
-while _G.quakelagmisc do
+while _G.quakelagmisc do wait(0.1)
 pcall(function()
 repeat task.wait()
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
@@ -710,7 +710,7 @@ else
 getgenv().targeting = false
 end
 
-while getgenv().targeting do task.wait()
+while getgenv().targeting do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
@@ -898,7 +898,7 @@ _G.BringPlayer = true
 else
 _G.BringPlayer = false
 end
-while _G.BringPlayer do task.wait()
+while _G.BringPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
@@ -914,7 +914,7 @@ _G.BringAllPlayer = true
 else
 _G.BringAllPlayer = false
 end
-while _G.BringAllPlayer do task.wait()
+while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
@@ -1200,12 +1200,8 @@ _G.CampMagma = true
 else
 _G.CampMagma = false
 end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.CampMagma then
+while _G.CampMagma do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
@@ -1238,9 +1234,10 @@ end
 end
 end)
 end
+
 end)
-end
-end)
+
+
 
 lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })
 lightsec:OnChanged(function()
@@ -1249,12 +1246,8 @@ _G.CampLight = true
 else
 _G.CampLight = false
 end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.CampLight then
+while _G.CampLight do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true and v.Humanoid.Health > 0 then
@@ -1280,12 +1273,13 @@ end
 end
 end)
 end
-end)
-end
+
 end)
 
+
+
 spawn(function()
-while wait() do
+while wait(0.1) do
 pcall(function()
 if getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer then
 Fluent:Notify({

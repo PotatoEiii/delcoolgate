@@ -639,33 +639,25 @@ _G.quakelagmisc = true
 else
 _G.quakelagmisc = false
 end
-end)
-
-spawn(function()
-while wait() do
-if _G.quakelagmisc then
+while _G.quakelagmisc do
 pcall(function()
+repeat task.wait()
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 vp = x.VTCebvc
-    for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-        if v.Name == game.Players.LocalPlayer.Name then
-repeat task.wait(0.1)
 local args = {
     [1] = vp,
     [2] = "QuakePower1",
     [3] = "StopCharging",
     [4] = workspace:WaitForChild("IslandTown"):WaitForChild("Runic"):WaitForChild("Union"),
-    [5] = v.HumanoidRootPart.CFrame,
+    [5] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [6] = 100,
     [7] = Vector3.new(150.66384887695312, 230.749755859375, 4937.19677734375)
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
 until _G.quakelagmisc == false
-        end
-    end
 end)
-end
 end
 end)
 

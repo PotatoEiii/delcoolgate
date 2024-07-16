@@ -4716,13 +4716,13 @@ if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].H
 for i = 1, hakispeed do
     local args = {
         [1] = "Off",
-        [2] = slv
+        [2] = 1
     }
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
-        [2] = slv
+        [2] = 1
     }
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
@@ -4730,7 +4730,7 @@ end
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= sss and _G.farmhakinek == true then
         local args = {
         [1] = "Off",
-        [2] = slv
+        [2] = 1
     }
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
@@ -4740,7 +4740,7 @@ elseif _G.farmhakinek == false then
 _G.concu = false
         local args = {
         [1] = "Off",
-        [2] = slv
+        [2] = 1
     }
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))

@@ -1200,12 +1200,8 @@ _G.CampMagma = true
 else
 _G.CampMagma = false
 end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.CampMagma then
+while _G.CampMagma do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
@@ -1238,9 +1234,10 @@ end
 end
 end)
 end
+
 end)
-end
-end)
+
+
 
 lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })
 lightsec:OnChanged(function()

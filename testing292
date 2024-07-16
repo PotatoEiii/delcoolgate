@@ -2407,6 +2407,23 @@ _G.collectchest = false
 end
 end)
 
+spawn(function()
+while wait() do
+pcall(function()
+if _G.collectchest then
+    local apis = game.workspace:GetDescendants()
+    for i, v in pairs(apis) do
+    if v.Name == "Touch" and v.Parent.Name == "TreasureChestPart" then
+repeat wait()
+v.Parent.CFrame = game.workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame
+end
+end
+end
+end
+end)
+end
+end)
+
 Tabs.Farm:AddSection("Auto Reset")
 
 rssli = Tabs.Farm:AddSlider("rssliderzz", {

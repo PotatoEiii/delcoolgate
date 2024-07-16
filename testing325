@@ -1085,11 +1085,13 @@ end
 
 while _G.wqesorry do task.wait()
 pcall(function()
-if _G.telecamethod == "Above" then
+
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
 repeat task.wait()
-if c.HumanoidRootPart.Position.Y > 200 then
+if c.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
+elseif c.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
 elseif c.HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
@@ -1097,19 +1099,7 @@ end
 until c.Humanoid.Health == 0 or not _G.wqesorry or c.Name ~= _G.SelectedKillPlayer
 end
 end
-elseif _G.telecamethod == "Behind" then
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
-repeat task.wait()
-if c.HumanoidRootPart.Position.Y > 200 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
-elseif c.HumanoidRootPart.Position.Y < 200 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-end
-until c.Humanoid.Health == 0 or not _G.wqesorry or c.Name ~= _G.SelectedKillPlayer
-end
-end
-end
+
 end)
 end
 end)

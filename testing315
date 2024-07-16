@@ -947,12 +947,7 @@ _G.AutoQuake = true
 else
 _G.AutoQuake = false
 end
-end)
-
-spawn(function()
-while wait() do
 if _G.AutoQuake then
-pcall(function()
 repeat task.wait()
 xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 vptt = xr.VTCebvc
@@ -960,8 +955,6 @@ v = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 task.wait(0.05)
 until _G.AutoQuake == false
-end)
-end
 end
 end)
 

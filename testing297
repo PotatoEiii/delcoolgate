@@ -102,7 +102,7 @@ elseif currenthwid == listed[9] then
 _G.name = "Lâm Quốc Bảo"
 _G.facebookid = "theayma8"
 elseif currenthwid == listed[10] then
-_G.name = "Anh Long"
+_G.name = "Tạ Khánh"
 _G.facebookid = "100086491617614"
 elseif currenthwid == listed[11] then
 _G.name = "Duy Pham"
@@ -152,6 +152,9 @@ _G.facebookid = "100077353219952"
 elseif currenthwid == listed[28] then
 _G.name = "Trần Huy Quang"
 _G.facebookid = "hwan.infors"
+elseif currenthwid == listed[29] then
+_G.name = "Nguyễn Văn Bảo Khánh"
+_G.facebookid = "NgBaoKhanh.2007"
 end
 
 vu = game:GetService("VirtualUser")

@@ -947,11 +947,8 @@ _G.AutoQuake = true
 else
 _G.AutoQuake = false
 end
-end)
 
-spawn(function()
-while wait() do
-if _G.AutoQuake then
+while _G.AutoQuake do task.wait()
 pcall(function()
 repeat task.wait()
 xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
@@ -962,7 +959,8 @@ task.wait(0.05)
 until _G.AutoQuake == false
 end)
 end
-end
+
+
 end)
 
 disstring = -10
@@ -4674,8 +4672,8 @@ Tabs.Haki:AddSection("Auto Haki Farming")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
-    Default = 55,
-    Min = 1,
+    Default = 65,
+    Min = 20,
     Max = 90,
     Rounding = 0,
     Callback = function(gmm)
@@ -4686,7 +4684,7 @@ hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
 hakispeedt = Tabs.Haki:AddSlider("hakispeedsli", {
     Title = "Haki Speed",
     Description = "Change this for adjusting haki's speed",
-    Default = 20,
+    Default = 10,
     Min = 1,
     Max = 50,
     Rounding = 0,

@@ -910,13 +910,8 @@ _G.BringAllPlayer = true
 else
 _G.BringAllPlayer = false
 end
-end)
-
-        spawn(function()
-            while wait() do
+while _G.BringAllPlayer do task.wait()
 pcall(function()
-                if _G.BringAllPlayer then
-                    pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -924,11 +919,11 @@ v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.Humanoi
 end
 end
 until not _G.BringAllPlayer
-                    end)
-                end
 end)
-            end
-        end)
+end
+end)
+
+
 
 
 

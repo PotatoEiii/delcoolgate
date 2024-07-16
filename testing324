@@ -1063,7 +1063,7 @@ cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
         end
     })
 
- asdzx = Tabs.Robbing:AddDropdown("asdzx", {
+ asdzx = Tabs.Player:AddDropdown("asdzx", {
         Title = "Tele Method",
         Values = {"Above","Behind"},
         Multi = false,
@@ -1085,7 +1085,7 @@ end
 
 while _G.wqesorry do task.wait()
 pcall(function()
-if _G.wqesorry == "Above" then
+if _G.telecamethod == "Above" then
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
 repeat task.wait()
@@ -1097,7 +1097,7 @@ end
 until c.Humanoid.Health == 0 or not _G.wqesorry or c.Name ~= _G.SelectedKillPlayer
 end
 end
-elseif _G.wqesorry == "Behind" then
+elseif _G.telecamethod == "Behind" then
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
 repeat task.wait()
@@ -1112,8 +1112,8 @@ end
 end
 end)
 end
-
 end)
+
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()

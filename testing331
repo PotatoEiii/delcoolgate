@@ -639,7 +639,7 @@ _G.quakelagmisc = true
 else
 _G.quakelagmisc = false
 end
-while _G.quakelagmisc do
+while _G.quakelagmisc do wait(0.1)
 pcall(function()
 repeat task.wait()
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)

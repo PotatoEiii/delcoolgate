@@ -710,7 +710,7 @@ else
 getgenv().targeting = false
 end
 
-while getgenv().targeting do task.wait()
+while getgenv().targeting do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do

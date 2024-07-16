@@ -1359,29 +1359,18 @@ Fluent:Notify({
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
     Duration = 5
 })
-pcall(function()
-repeat wait()
+repeat task.wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
 until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
 end)
+else
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end
 end)
 end
 end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer then
-pcall(function()
-repeat wait()
-game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-until getgenv().viewplrr == true or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
-end)
-end
-end)
-end
-end)
+
 
 Tabs.Shop:AddSection("Drinks")
 

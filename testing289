@@ -4748,45 +4748,23 @@ if _G.farmhakinek then
 pcall(function()
 _G.concu = true
 while _G.concu do wait()
-slv = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
-sss = slv/100*hakitarget
-sll =  slv/100*90
+local slv = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local sss = slv/100*hakitarget
+local sll =  slv/100*90
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > sss and _G.farmhakinek == true then
-Players = game:GetService("Players")
-local cache = {}
-function lol(name)
-if cache[name] then
-return cache[name] 
-end
-local player = Players:FindFirstChild(name)
-if player then
-cache[name] = player.UserId
-return player.UserId
-end 
-    
-local id
-pcall(function ()
-id = Players:lol(name)
-end)
-cache[name] = id
-return id
-end
-
-local ehh = game.Players.LocalPlayer.Name
-local Final = lol(ehh)
 for i = 1, hakispeed do
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
 end
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= sss and _G.farmhakinek == true then
         local args = {
@@ -4794,10 +4772,9 @@ elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
 repeat task.wait()
-until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= sll
-_G.concu = true
+until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= sll or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 elseif _G.farmhakinek == false then
 _G.concu = false
         local args = {
@@ -4805,7 +4782,7 @@ _G.concu = false
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
 end
 end
 

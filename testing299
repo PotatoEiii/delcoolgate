@@ -520,7 +520,6 @@ _G.exchangegem = false
 end
 end)
 
-spawn(function()
 while _G.exchangegem do wait()
 pcall(function()
 
@@ -553,7 +552,7 @@ wait()
 
 end)
 end
-end)
+
 Tabs.Misc:AddSection("Other Scripts")
 
     Tabs.Misc:AddButton({

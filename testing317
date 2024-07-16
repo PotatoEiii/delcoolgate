@@ -948,7 +948,7 @@ else
 _G.AutoQuake = false
 end
 
-if _G.AutoQuake then
+while _G.AutoQuake do task.wait()
 repeat task.wait()
 xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 vptt = xr.VTCebvc

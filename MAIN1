@@ -715,19 +715,18 @@ spawn(function()
 while wait() do
 pcall(function()
 if getgenv().targeting then
+repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
+
 for i,c in pairs(game.Workspace:GetChildren()) do
-if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
-repeat task.wait()
-if getgenv().targeting == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
+if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
 _G.SelectedKillPlayer = c.Name
 end
-until not getgenv().targeting or c.Name ~= v.Name or c.Humanoid.Health == 0
 end
 end
 end
-end
+until not getgenv().targeting or _G.SelectedKillPlayer ~= v.Name or c.Humanoid.Health == 0
 end
 end)
 end

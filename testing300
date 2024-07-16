@@ -518,8 +518,6 @@ _G.exchangegem = true
 else
 _G.exchangegem = false
 end
-end)
-
 while _G.exchangegem do wait()
 pcall(function()
 
@@ -552,6 +550,7 @@ wait()
 
 end)
 end
+end)
 
 Tabs.Misc:AddSection("Other Scripts")
 

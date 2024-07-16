@@ -1063,6 +1063,18 @@ cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
         end
     })
 
+ asdzx = Tabs.Robbing:AddDropdown("asdzx", {
+        Title = "Tele Method",
+        Values = {"Above","Behind"},
+        Multi = false,
+        Default = "Above",
+    })
+
+
+    asdzx:OnChanged(function(fuckasdzz)
+_G.telecamethod = fuckasdzz
+end)
+
 aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport To Camp", Default = false })
 aweopcz:OnChanged(function()
 if Options.aweopcztoggle.Value == true then
@@ -1070,6 +1082,37 @@ _G.wqesorry = true
 else
 _G.wqesorry = false
 end
+
+while _G.wqesorry do task.wait()
+pcall(function()
+if _G.wqesorry == "Above" then
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
+repeat task.wait()
+if c.HumanoidRootPart.Position.Y > 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+elseif c.HumanoidRootPart.Position.Y < 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end
+until c.Humanoid.Health == 0 or not _G.wqesorry or c.Name ~= _G.SelectedKillPlayer
+end
+end
+elseif _G.wqesorry == "Behind" then
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
+repeat task.wait()
+if c.HumanoidRootPart.Position.Y > 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
+elseif c.HumanoidRootPart.Position.Y < 200 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end
+until c.Humanoid.Health == 0 or not _G.wqesorry or c.Name ~= _G.SelectedKillPlayer
+end
+end
+end
+end)
+end
+
 end)
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
@@ -2844,7 +2887,7 @@ end)
 spawn(function() -- autofarm velocity
     while wait(0) do
         pcall(function()
-            if _G.CampDark or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or _G.CampVamp or _G.autocannonplr or _G.CampLight or _G.CampMagma or _G.autocannonslow or _G.autocannonplr or getgenv().bgtyhn or getgenv().fishing or getgenv().tret or getgenv().e or getgenv().c or getgenv().a or getgenv().t or getgenv().emladepnwwhat or getgenv().emladepnhat then
+            if _G.wqesorry or _G.CampDark or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or _G.CampVamp or _G.autocannonplr or _G.CampLight or _G.CampMagma or _G.autocannonslow or _G.autocannonplr or getgenv().bgtyhn or getgenv().fishing or getgenv().tret or getgenv().e or getgenv().c or getgenv().a or getgenv().t or getgenv().emladepnwwhat or getgenv().emladepnhat then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -2853,7 +2896,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.CampDark == false or getgenv().vtt == false or getgenv().farmslowstats == false or _G.CampVamp == false or getgenv().farmstats == false or _G.autocannonplr == false or _G.CampLight == false or _G.CampMagma == false or _G.autocannonslow == false or _G.autocannonplr == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false or  getgenv().e == false or getgenv().c == false or getgenv().a == false or getgenv().t == false or getgenv().emladepnwwhat == false or getgenv().emladepnhat == false then
+            elseif _G.wqesorry == false or _G.CampDark == false or getgenv().vtt == false or getgenv().farmslowstats == false or _G.CampVamp == false or getgenv().farmstats == false or _G.autocannonplr == false or _G.CampLight == false or _G.CampMagma == false or _G.autocannonslow == false or _G.autocannonplr == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false or  getgenv().e == false or getgenv().c == false or getgenv().a == false or getgenv().t == false or getgenv().emladepnwwhat == false or getgenv().emladepnhat == false then
                 --if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)

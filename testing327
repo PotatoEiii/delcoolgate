@@ -849,7 +849,7 @@ end
 end)
 
 spawn(function()
-       while wait() do
+       while wait(0.1) do
               pcall(function()
 if _G.Hitboxplr then
                                           
@@ -971,7 +971,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.1) do
 pcall(function()
 if _G.CampString then
 pcall(function()
@@ -1007,7 +1007,7 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.1) do
 pcall(function()
 if _G.CampString then
 pcall(function()
@@ -1027,7 +1027,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.1) do
 pcall(function()
 if _G.CampString then
 pcall(function()

@@ -2396,6 +2396,16 @@ else
 _G.autocannonplr = false
 end
 end)
+Tabs.Farm:AddSection("Chest")
+
+chestz = Tabs.Farm:AddToggle("chestztoggle", {Title = "Auto Collect Chest", Default = false })
+chestz:OnChanged(function()
+if Options.chestztoggle.Value == true then
+_G.collectchest = true
+else
+_G.collectchest = false
+end
+end)
 
 Tabs.Farm:AddSection("Auto Reset")
 

@@ -61,7 +61,7 @@ for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui
 v:Fire()
 end
 end
-wait(2)
+wait(4)
 if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
 v:Fire()

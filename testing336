@@ -377,7 +377,7 @@ Rarefruit = {
 }
 
 spawn(function()
-while wait() do
+while wait(0.1) do
 pcall(function()
 if _G.startrop then
 pcall(function()
@@ -405,9 +405,10 @@ end
 end)
 
 spawn(function()
-while task.wait() do
+while wait(0.1) do
 pcall(function()
 if _G.startrop and _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= game.Players.LocalPlayer.Name then
+repeat task.wait()
 pcall(function()
 
 	for i, tacc in pairs(game.Players:GetChildren()) do 
@@ -438,6 +439,7 @@ _G.cuopfruittarget = ""
 	end
 
 end)
+until not _G.startrop or _G.robmethod ~= "Quake" or _G.cuopfruittarget == "" or _G.cuopfruittarget == game.Players.LocalPlayer.Name
 end
 end)
 end

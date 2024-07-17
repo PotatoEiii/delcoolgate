@@ -8,7 +8,7 @@ _G.WhiteListed = true
             end
         end
 if _G.WhiteListed then
-wait(2)
+wait(7)
 _G.dupegem = true
 
 spawn(function()

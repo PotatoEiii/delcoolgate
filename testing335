@@ -377,10 +377,11 @@ Rarefruit = {
 }
 
 spawn(function()
-while task.wait() do
+while wait() do
 pcall(function()
 if _G.startrop then
 pcall(function()
+repeat task.wait()
 for _, fruitz in pairs(Rarefruit) do
 for i, player in pairs(game.Players:GetChildren()) do 
 if player.Name ~= game.Players.LocalPlayer.Name then
@@ -396,6 +397,7 @@ end
 end
 end
 end
+until not _G.startrop
 end)
 end
 end)

@@ -1,3 +1,4 @@
+task.wait(7)
 repeat wait() until game:IsLoaded()
 listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 _G.WhiteListed = false
@@ -8,7 +9,6 @@ _G.WhiteListed = true
             end
         end
 if _G.WhiteListed then
-wait(7)
 _G.dupegem = true
 
 spawn(function()
@@ -47,15 +47,8 @@ while wait() do
 pcall(function()
 if _G.startdupe then
 pcall(function()
-task.wait(7)
 repeat task.wait()
 until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible
-if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
-v:Fire()
-end
-end
-wait(2)
 if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
 v:Fire()
@@ -67,11 +60,17 @@ for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui
 v:Fire()
 end
 end
+wait(2)
+if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+v:Fire()
+end
+end
 repeat task.wait()
 until game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000
 wait(7)
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
-wait(5)
+wait(7)
 
 game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)

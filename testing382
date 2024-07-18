@@ -2864,11 +2864,8 @@ Fluent:Notify({
 else
 _G.autorj = false
 end
-end)
 
-spawn(function()
-while wait(3) do
-if _G.autorj then
+while_G.autorj do wait(3)
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
 TeleportService = game:GetService("TeleportService")
@@ -2915,7 +2912,7 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 end
 end)
 end
-end
+
 end)
 
 Tabs.Automatic:AddSection("In-Game Function")

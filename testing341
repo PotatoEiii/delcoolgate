@@ -377,7 +377,7 @@ Rarefruit = {
 }
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.startrop then
 pcall(function()
@@ -405,7 +405,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.startrop and _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= game.Players.LocalPlayer.Name then
 repeat task.wait()
@@ -811,7 +811,7 @@ end)
         end
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if ESPPlayer then
 repeat task.wait()
@@ -850,10 +850,10 @@ end
 end)
 
 spawn(function()
-       while wait(0.1) do
+       while wait(0.3) do
               pcall(function()
 if _G.Hitboxplr then
-                                          
+repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
@@ -861,7 +861,7 @@ v.Character.HumanoidRootPart.Transparency = 0.7
 v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 end
 end
-                                          
+until not _G.Hitboxplr
 else
                                           
 for i,v in pairs(game.Players:GetChildren()) do

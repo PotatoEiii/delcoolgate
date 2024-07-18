@@ -2603,8 +2603,9 @@ local args = {
 [1] = Vector3.new(20837,-3017,-4390)
 }
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
-wait()
+task.wait()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(0.3)
 end
 end
 end

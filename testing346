@@ -850,8 +850,8 @@ end
 end)
 
 spawn(function()
-       while wait(0.3) do
-              pcall(function()
+while wait(0.3) do
+pcall(function()
 if _G.Hitboxplr then
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
@@ -2028,11 +2028,11 @@ Rarefruit = {
 }
 
 spawn(function()
-    while wait(0.3) do
-        pcall(function()
+while wait(0.3) do
+pcall(function()
 if _G.storeffrt then
 repeat task.wait()
-            pcall(function()
+pcall(function()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
 repeat task.wait()
@@ -2052,11 +2052,11 @@ end)
 
 
 spawn(function()
-    while wait(0.3) do
-        pcall(function()
+while wait(0.3) do
+pcall(function()
 if _G.aurasto then
 repeat task.wait()
-            pcall(function()
+pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
 d = v.Data.Value
@@ -2144,7 +2144,7 @@ end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannon then
                 toolname = "Cannon Ball"
@@ -2163,13 +2163,15 @@ wait()
 end)
 
 spawn(function()
-    while task.wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+repeat task.wait()
                 task.wait(1)
                 for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
                 end
+until not _G.autocannon
             end
         end)
     end
@@ -2192,9 +2194,10 @@ spawn(function()
     end
 end)
 spawn(function()
-    while task.wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannon then
+repeat task.wait()
                 task.wait(0.1)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2203,6 +2206,7 @@ spawn(function()
                         end
                     end
                 end
+until not _G.autocannon
             end
         end)
     end

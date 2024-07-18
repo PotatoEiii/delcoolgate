@@ -1901,6 +1901,17 @@ _G.opencommon = true
 else
 _G.opencommon = false
 end
+
+while _G.opencommon do wait()
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and string.find(v.Name, "ommon") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+end
+end
+end)
+end
 end)
 
 openboxrare = Tabs.Fruit:AddToggle("openboxraretoggle", {Title = "Auto Open Rare/Ultra Box", Default = false })
@@ -1909,6 +1920,17 @@ if Options.openboxraretoggle.Value == true then
 _G.openrare = true
 else
 _G.openrare = false
+end
+
+while _G.openrare do wait()
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and string.find(v.Name, "Rare") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+end
+end
+end)
 end
 end)
 
@@ -1929,46 +1951,6 @@ else
 _G.aurasto = false
 end
 end)
-
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.openrare then
-            pcall(function()
-                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if v:IsA("Tool") and string.find(v.Name, "Rare") then
-                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-v:Activate()
-                                        end
-                                    end
-            end)
-end
-end)
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.opencommon then
-            pcall(function()
-                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if v:IsA("Tool") and string.find(v.Name, "ommon") then
-                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-v:Activate()
-                                        end
-                                    end
-            end)
-end
-end)
-end
-end)
-
-
-
-
-
 
 
 function storedf()

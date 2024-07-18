@@ -3585,11 +3585,8 @@ getgenv().autodrinkmixer = true
 else
 getgenv().autodrinkmixer = false
 end
-end)
 
-spawn(function()
-while wait(0.3) do
-if getgenv().autodrinkmixer then
+while getgenv().autodrinkmixer do wait(0.3)
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
@@ -3604,8 +3601,9 @@ end
 end
 end)
 end
-end
+
 end)
+
 
 
 

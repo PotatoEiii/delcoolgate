@@ -275,8 +275,8 @@ local remotes = {}
  Window = Fluent:CreateWindow({
     Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
-    TabWidth = 136,
-    Size = UDim2.fromOffset(493, 391),
+    TabWidth = 128,
+    Size = UDim2.fromOffset(464, 368),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
@@ -2502,9 +2502,9 @@ end)
 end
 end)
 
-Tabs.Farm:AddSection("Auto Fishing")
+Tabs.Farm:AddSection("Auto Fishing   (*)")
 
-autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
+autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
 autofish:OnChanged(function()
 if Options.fishytoggle.Value == true then
 getgenv().fishing = true
@@ -2601,9 +2601,9 @@ end
    end
 end)
 
-Tabs.Farm:AddSection("Auto Package")
+Tabs.Farm:AddSection("Auto Package   (*)")
 
-autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package (Cannot be used with Auto-Fishing)", Default = false })
+autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package", Default = false })
 autopackage:OnChanged(function()
 if Options.packagetoggle.Value == true then
 getgenv().tret = true

@@ -12,7 +12,7 @@ task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"
 if game.placeId == 8569358381 or game.placeId == 3237168 then
-repeat wait() until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
+
 Pedo = {
     1135910299, -- Havelic
     520944, -- Oblivic

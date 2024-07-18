@@ -2233,9 +2233,10 @@ end
 end)
 
     spawn(function() -- autofarm teleport cannon
-    while wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonplrbring then
+repeat task.wait()
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.7
@@ -2250,6 +2251,7 @@ end)
                         end
                     end
                 end
+until not _G.autocannonplrbring
             end
         end)
     end
@@ -2294,8 +2296,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if _G.resetzxcm then
+repeat task.wait()
 pcall(function()
 task.wait(rstimehaha)
 if _G.resetzxcm then
@@ -2303,6 +2306,7 @@ game.Players.LocalPlayer.Character.Humanoid.Health = 0
 game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
 end
 end)
+until not _G.resetzxcm
 end
 end
 end)

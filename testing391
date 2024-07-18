@@ -4776,7 +4776,7 @@ _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
 Values = {"None"}
-wait()
+task.wait()
         for Valuer, State in next, Valuer do
             table.insert(Values, Valuer)
         end
@@ -4812,7 +4812,7 @@ _G.targetmelee = false
 _G.targetsnip = false
 _G.targetsword = false
 Valuess = {"None"}
-wait()
+task.wait()
 for Valuerr, State in next, Valuerr do
 table.insert(Valuess, Valuerr)
 end

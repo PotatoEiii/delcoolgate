@@ -4947,7 +4947,7 @@ end
 end)
 
             spawn(function()
-            while wait() do
+            while wait(0.3) do
                 if _G.quayfirstdf then
                     pcall(function()
 if _G.defswordsnip == true then
@@ -5321,7 +5321,7 @@ end
 end)
 
             spawn(function()
-            while wait() do
+            while wait(0.3) do
                 if _G.quayfirstdf2 then
                     pcall(function()
 if _G.defswordsnip2 == true then
@@ -5501,7 +5501,7 @@ wait(12)
             end)
 
 spawn(function()
-	while wait() do
+	while wait(0.3) do
 		if _G.quayfirstdf2 or _G.quayfirstdf then
                 	pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then

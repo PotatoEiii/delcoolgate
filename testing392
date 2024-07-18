@@ -129,7 +129,7 @@ _G.WhiteListed = true
             end
         end
 if _G.WhiteListed then
-
+game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
@@ -1057,7 +1057,11 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "condimemay" then task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
 end
 until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end
@@ -3094,7 +3098,11 @@ while wait(0.3) do
 if getgenv().tpchaiq then
 pcall(function()
 repeat task.wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "condimemay" then task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
 until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end

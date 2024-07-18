@@ -3616,16 +3616,14 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
-repeat task.wait(0.5)
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge13")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
-until not getgenv().farmstats and not getgenv().farmslowstats
 end)
 end
 end

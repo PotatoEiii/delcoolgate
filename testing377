@@ -3473,17 +3473,18 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.yoruonrt then
 pcall(function()
+repeat task.wait()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Yoru = Character:FindFirstChild("Yoru")
     local Environment
 
-for i = 1, Speeds do wait()
+for i = 1, Speeds do task.wait()
 if _G.yoruonrt then
 
 pcall(function()
@@ -3499,7 +3500,7 @@ end)
 
 end
 end
-
+until not _G.yoruonrt
 end)
 end
 end)
@@ -3542,16 +3543,17 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.cestusonrt then
 pcall(function()
+repeat task.wait()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Cestus = Character:FindFirstChild("Seastone Cestus")
     local Environment
-for i = 1, Speedss do wait()
+for i = 1, Speedss do task.wait()
 if _G.cestusonrt then
 pcall(function()
 for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
@@ -3566,7 +3568,7 @@ end)
 
 end
 end
-
+until not _G.cestusonrt
 end)
 end
 end)

@@ -3616,10 +3616,10 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
-repeat task.wait(1)
+repeat task.wait(0.5)
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge13")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
@@ -3645,7 +3645,7 @@ end
 end
 
 spawn(function()
-while task.wait() do
+while wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
 user = tostring(game.Players.LocalPlayer.Name)
@@ -3677,7 +3677,7 @@ end
 end)
 
 spawn(function()
-while task.wait() do
+while wait(0.3) do
 if getgenv().farmslowstats then
 pcall(function()
 user = tostring(game.Players.LocalPlayer.Name)
@@ -3716,19 +3716,14 @@ _G.gethakiqwe = true
 else
 _G.gethakiqwe = false
 end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.gethakiqwe then
+while _G.gethakiqwe do wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-wait(2)
+wait(3)
 end)
 end
-end)
-end
+
 end)
 
 
@@ -4279,13 +4274,13 @@ _G.rejoinifhaki0 = true
 else
 _G.rejoinifhaki0 = false
 end
-end)
 
-spawn(function()
-while wait() do
-if _G.rejoinifhaki0 then
+while _G.rejoinifhaki0 do wait()
 pcall(function()
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value == 0 then
+repeat wait()
+local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local zcc = zxm/100*2
+if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
 game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
@@ -4329,19 +4324,11 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
     end          
 
 end
+until not _G.rejoinifhaki0
 end)
 end
-end
+
 end)
-
-
-
-
-
-
-
-
-
 
 Tabs.Haki:AddSection("Auto Haki Farming")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {

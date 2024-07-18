@@ -2532,10 +2532,10 @@ end)
 
 
 spawn(function()
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autohakibuso then
-                task.wait(0)
+repeat task.wait()
                 if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
                     wait(0.5)
                     game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -2544,39 +2544,37 @@ spawn(function()
                     wait(0.5)
                     game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
                 end
-
+until not _G.autohakibuso
             end
         end)
     end
 end)
 
 spawn(function()
-    while task.wait() do
-        pcall(function()
+while wait(0.3) do
+pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat task.wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
 v.Parent = game.Players.LocalPlayer.Character
-                end
-            end
-         end
-      end)
-   end
+end
+end
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
+end
+end)
+end
 end)
 
 spawn(function()
-    while task.wait() do
-        pcall(function()
+while wait(0.3) do
+pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat task.wait()
 wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
 wait(0.1)
-for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name, "Rod") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-end
-end
-end
+
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Rod") then
 for _, x in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -2604,6 +2602,7 @@ end
 end
 end
 end
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 end
       end)
    end

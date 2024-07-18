@@ -4365,7 +4365,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.farmhakinek then
 pcall(function()
@@ -4435,16 +4435,11 @@ _G.farmadvanced = true
 else
 _G.farmadvanced = false
 end
-end)
 
-spawn(function()
-while wait() do
+while_G.farmadvanced do wait()
 pcall(function()
-if _G.farmadvanced then
-pcall(function()
-x = game.Players.LocalPlayer.UserId
-haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-wait(5)
+local x = game.Players.LocalPlayer.UserId
+local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
 for i = 1, speedyadvance do
             local args = {
                 [1] = "On",
@@ -4548,12 +4543,13 @@ for i = 1, speedyadvance do
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+wait(7)
 end
 end)
 end
+
 end)
-end
-end)
+
 
 Tabs.Server:AddSection("Discord")
 Tabs.Server:AddParagraph({
@@ -4784,10 +4780,10 @@ _G.keepsnip = false
 _G.keepsword = false
 Values = {"None"}
 wait()
-        for Valuer, State in next, Valuer do
-            table.insert(Values, Valuer)
-        end
-			for _, n in pairs(Values) do
+for Valuer, State in next, Valuer do
+table.insert(Values, Valuer)
+end
+for _, n in pairs(Values) do
 if string.find(n, "Defense") then
 _G.keepdef = true
 end
@@ -4800,7 +4796,7 @@ end
 if string.find(n, "Sword") then
 _G.keepsword = true
 end
-			end
+end
 end)
 
 
@@ -4836,7 +4832,7 @@ end
 if string.find(q, "Sword") then
 _G.targetsword = true
 end
-			end
+end
 end)
 
 ret = Tabs.Affinity:AddDropdown("vxe1", {
@@ -4946,10 +4942,10 @@ end)
 end
 end)
 
-            spawn(function()
-            while wait() do
-                if _G.quayfirstdf then
-                    pcall(function()
+spawn(function()
+while wait(0.3) do
+if _G.quayfirstdf then
+pcall(function()
 if _G.defswordsnip == true then
 local args = {
     [1] = "DFT1",
@@ -5320,10 +5316,10 @@ end)
 end
 end)
 
-            spawn(function()
-            while wait() do
-                if _G.quayfirstdf2 then
-                    pcall(function()
+spawn(function()
+while wait(0.3) do
+if _G.quayfirstdf2 then
+pcall(function()
 if _G.defswordsnip2 == true then
 local args = {
     [1] = "DFT2",
@@ -5501,9 +5497,9 @@ wait(12)
             end)
 
 spawn(function()
-	while wait() do
-		if _G.quayfirstdf2 or _G.quayfirstdf then
-                	pcall(function()
+while wait(0.3) do
+if _G.quayfirstdf2 or _G.quayfirstdf then
+pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge12")
 end

@@ -2356,7 +2356,7 @@ _G.autohakicannon = true
 _G.offhaki = true
 hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 hakiuse = hakigoc/100*regentarget
-wait()
+task.wait()
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > hakiuse then
 _G.onhaki = true
 _G.regenhaki = false
@@ -2372,11 +2372,11 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
-
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 repeat wait()
@@ -2387,8 +2387,8 @@ _G.onhaki = true
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= hakiuse then
 _G.regenhaki = true
 end
-
 end)
+until not _G.autohakicannon
 else
 _G.offhaki = false
 _G.onhaki = false
@@ -2400,9 +2400,10 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
@@ -2413,15 +2414,17 @@ end
 _G.onhaki = false
 _G.regenhaki = true
 end)
+until not _G.autohakicannon
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
@@ -2433,15 +2436,17 @@ wait()
 end
 
 end)
+until not _G.autohakicannon
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
@@ -2508,28 +2513,11 @@ end
 
 
 end)
+until not _G.autohakicannon
 end
 end)
 end
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Tabs.Farm:AddSection("Auto Fishing")
 

@@ -2,7 +2,7 @@ task.wait(0.5)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "SALUNA NOTIFY: LOADING SCRIPT, PLEASE WAIT"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Loading Script, Please Wait"
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
 task.wait(4)
 _G.name = "NOT FOUND"
@@ -5624,13 +5624,7 @@ Tabs.Weapon:AddSection("                                                -----")
 Tabs.Weapon:AddSection("                                                -----")
 
 Window:SelectTab(1)
-
-Fluent:Notify({
-    Title = "Saluna With Love ♥",
-    Content = "Have a nice day!",
-    Duration = 20
-})
-
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna With Love ♥ \nHave a nice day!"
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()

@@ -3470,12 +3470,8 @@ _G.yoruonrt = true
 else
 _G.yoruonrt = false
 end
-end)
 
-spawn(function()
-while wait(0.3) do
-pcall(function()
-if _G.yoruonrt then
+while _G.yoruonrt do wait()
 pcall(function()
 repeat task.wait()
     local Players = game:GetService("Players")
@@ -3503,8 +3499,7 @@ end
 until not _G.yoruonrt
 end)
 end
-end)
-end
+
 end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
@@ -3539,13 +3534,8 @@ _G.cestusonrt = true
 else
 _G.cestusonrt = false
 end
-end)
 
-
-spawn(function()
-while wait(0.3) do
-pcall(function()
-if _G.cestusonrt then
+while _G.cestusonrt do wait()
 pcall(function()
 repeat task.wait()
     local Players = game:GetService("Players")
@@ -3571,8 +3561,7 @@ end
 until not _G.cestusonrt
 end)
 end
-end)
-end
+
 end)
 
 Tabs.Main:AddSection("Stats Farming")

@@ -4350,7 +4350,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.farmhakinek then
 pcall(function()

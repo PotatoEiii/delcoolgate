@@ -3065,8 +3065,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().chawq then
+repeat wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tpchaiq = true
@@ -3077,12 +3078,13 @@ game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
 end
 end)
+until not getgenv().chawq
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().tpchaiq then
 pcall(function()
 repeat task.wait()
@@ -3096,8 +3098,9 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().vtt then
+repeat task.wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tprandom = true
@@ -3105,12 +3108,13 @@ else
 getgenv().tprandom = false
 end
 end)
+until not getgenv().vtt
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().tprandom then
 pcall(function()
 repeat task.wait()
@@ -3122,8 +3126,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().banana then
+repeat wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().bgtyhn = true
@@ -3131,14 +3136,16 @@ else
 getgenv().bgtyhn = false
 end
 end)
+until not getgenv().banana
 end
 end
 end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().bgtyhn then
+repeat wait()
 pcall(function()
 repeat task.wait()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
@@ -3146,6 +3153,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.ra
 end
 until not getgenv().bgtyhn
 end)
+until not getgenv().bgtyhn
 end
 end
 end)

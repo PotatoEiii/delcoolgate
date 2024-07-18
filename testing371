@@ -276,7 +276,7 @@ local remotes = {}
     Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
     TabWidth = 100,
-    Size = UDim2.fromOffset(464, 368),
+    Size = UDim2.fromOffset(475, 380),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
@@ -5627,7 +5627,12 @@ Tabs.Weapon:AddSection("                                                -----")
 Tabs.Weapon:AddSection("                                                -----")
 
 Window:SelectTab(1)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna With Love ♥ \nHave a nice day!"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
+Fluent:Notify({
+    Title = "Saluna With Love ♥",
+    Content = "Have a nice day!",
+    Duration = 20
+})
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()

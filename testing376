@@ -1933,6 +1933,7 @@ end
 
 
 Tabs.Fruit:AddSection("Fruit Stuff")
+Tabs.Fruit:AddSection("Auto Open Fruit Boxes")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
@@ -1973,6 +1974,7 @@ end)
 end
 end)
 
+Tabs.Fruit:AddSection("Auto Store Fruits")
 storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
 storefruit:OnChanged(function()
 if Options.storefruittoggle.Value == true then

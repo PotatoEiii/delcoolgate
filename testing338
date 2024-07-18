@@ -811,10 +811,12 @@ end)
         end
 
 spawn(function()
-while task.wait() do
+while wait(0.1) do
 pcall(function()
 if ESPPlayer then
+repeat task.wait()
 UpdatePlayerChams()
+until not ESPPlayer
 else
 for i,v in pairs(game:GetService'Players':GetChildren()) do
 if v.Character.Head:FindFirstChild('NameEsp'..Number) then

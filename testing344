@@ -2297,11 +2297,6 @@ Fluent:Notify({
 })
 else
 _G.resetzxcm = false
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Reset Is Turned Off",
-    Duration = 5
-})
 end
 end)
 
@@ -3022,11 +3017,6 @@ Fluent:Notify({
 })
 else
 _G.autorj = false
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Reconnect Is Turned Off",
-    Duration = 5
-})
 end
 end)
 
@@ -3100,11 +3090,6 @@ Fluent:Notify({
 })
 else
 _G.autospawn = false
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Spawn Is Turned Off",
-    Duration = 5
-})
 end
 end)
 
@@ -3135,11 +3120,6 @@ Fluent:Notify({
 })
 else
 _G.autogetexp = false
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Get Expertise Quest Is Turned Off",
-    Duration = 5
-})
 end
 end)
 
@@ -3154,11 +3134,6 @@ Fluent:Notify({
 })
 else
 _G.autochallenge = false
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Claim Challenge Is Turned Off",
-    Duration = 5
-})
 end
 end)
 
@@ -5832,7 +5807,7 @@ Window:SelectTab(1)
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
-    Duration = 15
+    Duration = 20
 })
 
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config

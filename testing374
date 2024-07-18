@@ -11,6 +11,72 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Vi
 task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"
+Rarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit",
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+MeleeTTT = {
+"Melee",
+"Table Kick",
+"Black Leg",
+"Seastone Cestus",
+"Aqua Staff"
+}
+
+SniperTTT = {
+"Slingshot",
+"Stars",
+"Crossbow",
+"Flintlock",
+"Cannon Ball"
+}
+
+SwordTTT = {
+"Dagger",
+"Wakizashi",
+"Tachi",
+"Katana",
+"Flail",
+"Krizma",
+"Kogatana",
+"Yoru",
+"Golden Fish",
+"Ultra Great Sword",
+"Masamune",
+"Candy Cane Yoru",
+"Divine Axe",
+"Kanshou and Byakuya",
+"Scissor Blade",
+"Lightning Sword",
+"Meteorite Sword"
+}
+
+UtilityTTT = {
+"Wood Rod",
+"Sturdy Rod",
+"Super Rod",
+"Zombie Head",
+"Tea Cup",
+"Santa Bag",
+"Tea Kettle"
+}
 if game.placeId == 8569358381 or game.placeId == 3237168 then
 
 Pedo = {
@@ -349,27 +415,7 @@ end
 
 end)
 
-Rarefruit = {
-"Candy Fruit",
-"Chilly Fruit",
-"Flare Fruit",
-"Gas Fruit",
-"Gravity Fruit",
-"Hollow Fruit",
-"Light Fruit",
-"Magma Fruit",
-"Ope Fruit",
-"Plasma Fruit",
-"Rumble Fruit",
-"Sand Fruit",
-"Smoke Fruit",
-"Snow Fruit",
-"Venom Fruit",
-"Dark Fruit",
-"Phoenix Fruit",
-"Quake Fruit",
-"Vampire Fruit"
-}
+
 
 spawn(function()
 while wait(0.3) do
@@ -1998,28 +2044,6 @@ end
 end
 end
 
-Rarefruit = {
-"Candy Fruit",
-"Chilly Fruit",
-"Flare Fruit",
-"Gas Fruit",
-"Gravity Fruit",
-"Hollow Fruit",
-"Light Fruit",
-"Magma Fruit",
-"Ope Fruit",
-"Plasma Fruit",
-"Rumble Fruit",
-"Sand Fruit",
-"Smoke Fruit",
-"Snow Fruit",
-"Venom Fruit",
-"Dark Fruit",
-"Phoenix Fruit",
-"Quake Fruit",
-"Vampire Fruit"
-}
-
 spawn(function()
 while wait(0.3) do
 pcall(function()
@@ -3311,107 +3335,8 @@ getgenv().eqqqqq = true
 else
 getgenv().eqqqqq = false
 end
-end)
 
-attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
-attackweapon:OnChanged(function()
-if Options.attackweapontoggle.Value == true then
-getgenv().useweapon = true
-else
-getgenv().useweapon = false
-end
-end)
-
-MeleeTTT = {
-"Melee",
-"Table Kick",
-"Black Leg",
-"Seastone Cestus",
-"Aqua Staff"
-}
-
-SniperTTT = {
-"Slingshot",
-"Stars",
-"Crossbow",
-"Flintlock",
-"Cannon Ball"
-}
-
-SwordTTT = {
-"Dagger",
-"Wakizashi",
-"Tachi",
-"Katana",
-"Flail",
-"Krizma",
-"Kogatana",
-"Yoru",
-"Golden Fish",
-"Ultra Great Sword",
-"Masamune",
-"Candy Cane Yoru",
-"Divine Axe",
-"Kanshou and Byakuya",
-"Scissor Blade",
-"Lightning Sword",
-"Meteorite Sword"
-}
-
-UtilityTTT = {
-"Wood Rod",
-"Sturdy Rod",
-"Super Rod",
-"Zombie Head",
-"Tea Cup",
-"Santa Bag",
-"Tea Kettle"
-}
-
-spawn(function()
-while wait() do
-pcall(function()
-if getgenv().useweapon then
-pcall(function()
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-
-
-for i,c in pairs(MeleeTTT) do
-if v.Name == c then
-v:Activate()
-end
-end
-
-for i,d in pairs(SniperTTT) do
-if v.Name == d then
-v:Activate()
-end
-end
-
-for i,e in pairs(SwordTTT) do
-if v.Name == e then
-v:Activate()
-end
-end
-
-for i,f in pairs(UtilityTTT) do
-if v.Name == f then
-v:Activate()
-end
-end
-
-
-end
-end)
-end
-end)
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if getgenv().eqqqqq then
+while getgenv().eqqqqq do wait()
 pcall(function()
 if _G.weponity == "Melee" then
 
@@ -3455,9 +3380,56 @@ end
 end
 end)
 end
+
 end)
+
+attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
+attackweapon:OnChanged(function()
+if Options.attackweapontoggle.Value == true then
+getgenv().useweapon = true
+else
+getgenv().useweapon = false
+end
+
+while getgenv().useweapon do wait()
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+
+
+for i,c in pairs(MeleeTTT) do
+if v.Name == c then
+v:Activate()
+end
+end
+
+for i,d in pairs(SniperTTT) do
+if v.Name == d then
+v:Activate()
+end
+end
+
+for i,e in pairs(SwordTTT) do
+if v.Name == e then
+v:Activate()
+end
+end
+
+for i,f in pairs(UtilityTTT) do
+if v.Name == f then
+v:Activate()
+end
+end
+
+
 end
 end)
+end
+
+end)
+
+
+
+
 
 
 Tabs.Weapon:AddSection("Instant Weapon")

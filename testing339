@@ -377,7 +377,7 @@ Rarefruit = {
 }
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.startrop then
 pcall(function()
@@ -405,7 +405,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.startrop and _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= game.Players.LocalPlayer.Name then
 repeat task.wait()
@@ -811,7 +811,7 @@ end)
         end
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if ESPPlayer then
 repeat task.wait()
@@ -850,10 +850,10 @@ end
 end)
 
 spawn(function()
-       while wait(0.1) do
+       while wait(0.3) do
               pcall(function()
 if _G.Hitboxplr then
-                                          
+repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
@@ -861,7 +861,7 @@ v.Character.HumanoidRootPart.Transparency = 0.7
 v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 end
 end
-                                          
+until not _G.Hitboxplr
 else
                                           
 for i,v in pairs(game.Players:GetChildren()) do
@@ -972,9 +972,10 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.CampString then
+repeat task.wait()
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampString == true and v.Humanoid.Health > 0 and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
@@ -1001,6 +1002,7 @@ end)
 end
 end
 end)
+until not _G.CampString
 end
 end)
 end
@@ -1008,9 +1010,10 @@ end)
 
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.CampString then
+repeat task.wait()
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
@@ -1022,15 +1025,17 @@ until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPl
 end
 end
 end)
+until not _G.CampString
 end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if _G.CampString then
+repeat task.wait()
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
@@ -1042,6 +1047,7 @@ until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPl
 end
 end
 end)
+until not _G.CampString
 end
 end)
 end
@@ -1280,7 +1286,7 @@ end)
 
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 if getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer then
 Fluent:Notify({
@@ -1930,9 +1936,10 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.openrare then
+repeat task.wait()
             pcall(function()
                 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                     if v:IsA("Tool") and string.find(v.Name, "Rare") then
@@ -1941,15 +1948,17 @@ v:Activate()
                                         end
                                     end
             end)
+until not _G.openrare
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.opencommon then
+repeat task.wait()
             pcall(function()
                 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                     if v:IsA("Tool") and string.find(v.Name, "ommon") then
@@ -1958,6 +1967,7 @@ v:Activate()
                                         end
                                     end
             end)
+until not _G.opencommon
 end
 end)
 end
@@ -2044,7 +2054,7 @@ Rarefruit = {
 }
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if _G.storeffrt then
 repeat task.wait()
@@ -2068,7 +2078,7 @@ end)
 
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if _G.aurasto then
 repeat task.wait()
@@ -2106,13 +2116,15 @@ end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if getgenv().claim then
+repeat task.wait()
             pcall(function()
                 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
             end)
 task.wait(1)
+until not getgenv().claim
 end
 end)
 end
@@ -2128,9 +2140,10 @@ end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if getgenv().find then
+repeat task.wait()
                 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
@@ -2147,6 +2160,7 @@ end
     end
        end)
 wait(0.5)
+until not getgenv().find
 end
 end)
 end
@@ -2171,7 +2185,7 @@ end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannon then
                 toolname = "Cannon Ball"
@@ -2190,13 +2204,15 @@ wait()
 end)
 
 spawn(function()
-    while task.wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+repeat task.wait()
                 task.wait(1)
                 for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
                 end
+until not _G.autocannon
             end
         end)
     end
@@ -2219,9 +2235,10 @@ spawn(function()
     end
 end)
 spawn(function()
-    while task.wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannon then
+repeat task.wait()
                 task.wait(0.1)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2230,6 +2247,7 @@ spawn(function()
                         end
                     end
                 end
+until not _G.autocannon
             end
         end)
     end
@@ -2256,9 +2274,10 @@ end
 end)
 
     spawn(function() -- autofarm teleport cannon
-    while wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonplrbring then
+repeat task.wait()
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.7
@@ -2273,6 +2292,7 @@ end)
                         end
                     end
                 end
+until not _G.autocannonplrbring
             end
         end)
     end
@@ -2322,8 +2342,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if _G.resetzxcm then
+repeat task.wait()
 pcall(function()
 task.wait(rstimehaha)
 if _G.resetzxcm then
@@ -2331,6 +2352,7 @@ game.Players.LocalPlayer.Character.Humanoid.Health = 0
 game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
 end
 end)
+until not _G.resetzxcm
 end
 end
 end)
@@ -2396,11 +2418,11 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
-
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 repeat wait()
@@ -2411,8 +2433,8 @@ _G.onhaki = true
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= hakiuse then
 _G.regenhaki = true
 end
-
 end)
+until not _G.autohakicannon
 else
 _G.offhaki = false
 _G.onhaki = false
@@ -2424,9 +2446,10 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
@@ -2437,15 +2460,17 @@ end
 _G.onhaki = false
 _G.regenhaki = true
 end)
+until not _G.autohakicannon
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
@@ -2457,15 +2482,17 @@ wait()
 end
 
 end)
+until not _G.autohakicannon
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.autohakicannon then
+repeat task.wait()
 pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
@@ -2532,6 +2559,7 @@ end
 
 
 end)
+until not _G.autohakicannon
 end
 end)
 end
@@ -2568,10 +2596,10 @@ end)
 
 
 spawn(function()
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autohakibuso then
-                task.wait(0)
+repeat task.wait()
                 if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
                     wait(0.5)
                     game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -2580,30 +2608,33 @@ spawn(function()
                     wait(0.5)
                     game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
                 end
-
+until not _G.autohakibuso
             end
         end)
     end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat task.wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
 v.Parent = game.Players.LocalPlayer.Character
                 end
             end
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
          end
       end)
    end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat task.wait()
 wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
 wait(0.1)
@@ -2640,6 +2671,7 @@ end
 end
 end
 end
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 end
       end)
    end
@@ -2657,22 +2689,25 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tret then
+repeat task.wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(2)
 end)
+until not getgenv().tret
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tret then
+repeat task.wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Package") then
                             game.Players.LocalPlayer.Backpack:FindFirstChild("Package").Parent = game.Players.LocalPlayer.Character
@@ -2697,6 +2732,7 @@ end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 end)
+until not getgenv().tret
 end
 end)
 end
@@ -2704,7 +2740,7 @@ end)
 
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if _G.autocannonslow or _G.autocannonplr or _G.autocannonplrbring then
 if _G.autocannon == false then
@@ -2722,9 +2758,10 @@ end
 end)
 
     spawn(function() -- autofarm teleport cannon
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonplr then
+repeat task.wait()
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.7
@@ -2733,6 +2770,7 @@ end)
                         v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                     end
                 end
+until not _G.autocannonplr
             end
         end)
     end
@@ -2741,9 +2779,10 @@ end)
 
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonplr or _G.autocannonslow or _G.autocannonplrbring then
+repeat task.wait()
                 local args = {
                     [1] = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
@@ -2757,6 +2796,7 @@ spawn(function()
                 if game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall") then
                     game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall").CanCollide = false
                 end
+until not _G.autocannonplr and not _G.autocannonslow and not _G.autocannonplrbring
             end
         end)
     end
@@ -2786,7 +2826,7 @@ spawn(function() -- autofarm velocity
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
                 repeat task.wait(0.2)
@@ -2803,20 +2843,23 @@ spawn(function()
 end)
 
 spawn(function() -- autofarm cannon
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonslow then
+repeat task.wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait(5)
+until not _G.autocannonslow
 end
 end)
 end
 end)
 
 spawn(function() -- autofarm cannon
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonslow then
+repeat task.wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -2875,15 +2918,16 @@ spawn(function() -- autofarm cannon
                         end
                     end
                 end
+until not _G.autocannonslow
             end
         end)
     end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
-if _G.autocannonplr then wait()
+if _G.autocannonplr then
 pcall(function()
 repeat wait()
 _G.chon2 = true
@@ -3053,8 +3097,9 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if _G.autorj then
+repeat task.wait(0.1)
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
 TeleportService = game:GetService("TeleportService")
@@ -3100,6 +3145,7 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 
 end
 end)
+until not _G.autorj
 end
 end
 end)
@@ -3125,8 +3171,9 @@ end
 end)
 
         spawn(function()
-            while wait() do
+            while wait(0.3) do
                 if _G.autospawn then
+repeat task.wait()
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
                             repeat wait(4)
@@ -3136,6 +3183,7 @@ end)
                             until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
                         end
                     end)
+until not _G.autospawn
                 end
             end
 	end)
@@ -3179,8 +3227,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if _G.autochallenge then
+repeat task.wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily1")
@@ -3228,6 +3277,7 @@ elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
 end)
+until not _G.autochallenge
 end
 end
 end)
@@ -3237,14 +3287,16 @@ end)
 
 
         spawn(function()
-            while wait() do
+            while wait(0.3) do
                 if _G.autogetexp then
+repeat task.wait()
                     pcall(function()
 if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
 workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(5)
 end
                     end)
+until not _G.autogetexp
                 end
             end
 	end)
@@ -3282,8 +3334,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().chawq then
+repeat task.wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tpchaiq = true
@@ -3294,18 +3347,21 @@ game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
 end
 end)
+until not getgenv().chawq
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().tpchaiq then
+repeat task.wait()
 pcall(function()
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
 until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
+until not getgenv().tpchaiq
 end
 end
 end)
@@ -3313,8 +3369,9 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().vtt then
+repeat task.wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tprandom = true
@@ -3322,25 +3379,29 @@ else
 getgenv().tprandom = false
 end
 end)
+until not getgenv().vtt
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().tprandom then
+repeat task.wait()
 pcall(function()
 repeat task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 until not getgenv().tprandom
 end)
+until not getgenv().tprandom
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().banana then
+repeat task.wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().bgtyhn = true
@@ -3348,13 +3409,14 @@ else
 getgenv().bgtyhn = false
 end
 end)
+until not getgenv().banana
 end
 end
 end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().bgtyhn then
 pcall(function()
 repeat task.wait()
@@ -3592,9 +3654,10 @@ UtilityTTT = {
 }
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().useweapon then
+repeat task.wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 
@@ -3626,15 +3689,17 @@ end
 
 end
 end)
+until not getgenv().useweapon
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().eqqqqq then
+repeat task.wait()
 pcall(function()
 if _G.weponity == "Melee" then
 
@@ -3677,6 +3742,7 @@ end
 
 end
 end)
+until not getgenv().eqqqqq
 end
 end)
 end
@@ -3719,9 +3785,10 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.yoruonrt then
+repeat task.wait()
 pcall(function()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
@@ -3747,6 +3814,7 @@ end
 end
 
 end)
+until not _G.yoruonrt
 end
 end)
 end
@@ -3788,9 +3856,10 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.cestusonrt then
+repeat task.wait()
 pcall(function()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
@@ -3814,6 +3883,7 @@ end
 end
 
 end)
+until not _G.cestusonrt
 end
 end)
 end
@@ -3900,7 +3970,7 @@ end
 end
 
 spawn(function()
-while task.wait() do
+while wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
 user = tostring(game.Players.LocalPlayer.Name)
@@ -3932,7 +4002,7 @@ end
 end)
 
 spawn(function()
-while task.wait() do
+while wait(0.3) do
 if getgenv().farmslowstats then
 pcall(function()
 user = tostring(game.Players.LocalPlayer.Name)
@@ -3974,13 +4044,15 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.gethakiqwe then
+repeat task.wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(2)
 end)
+until not _G.gethakiqwe
 end
 end)
 end
@@ -4537,8 +4609,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if _G.rejoinifhaki0 then
+repeat task.wait(0.1)
 pcall(function()
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value == 0 then
 game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
@@ -4585,6 +4658,7 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 
 end
 end)
+until not _G.rejoinifhaki0
 end
 end
 end)
@@ -4633,7 +4707,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.farmhakinek then
 pcall(function()
@@ -4706,13 +4780,14 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.farmadvanced then
+repeat task.wait()
 pcall(function()
 x = game.Players.LocalPlayer.UserId
 haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-wait(5)
+wait(7)
 for i = 1, speedyadvance do
             local args = {
                 [1] = "On",
@@ -4818,6 +4893,7 @@ for i = 1, speedyadvance do
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
 end
 end)
+until not _G.farmadvanced
 end
 end)
 end

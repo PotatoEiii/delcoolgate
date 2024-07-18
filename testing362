@@ -11,8 +11,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"
-repeat wait() until game:IsLoaded()
-  if game.placeId == 8569358381 or game.placeId == 3237168 then
+if game.placeId == 8569358381 or game.placeId == 3237168 then
 repeat wait() until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
 Pedo = {
     1135910299, -- Havelic
@@ -5695,4 +5694,7 @@ end)
 else
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/heaxcfd/raw/6f29527a57eddea99f5b4d611e517410288865a4/sust'))()
 end
+end
+if game.placeId ~= 8569358381 and game.placeId ~= 3237168 then
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end

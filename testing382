@@ -3557,6 +3557,19 @@ end
 
 end)
 
+function amongus()
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+end
+
 Tabs.Main:AddSection("Stats Farming")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
@@ -3617,19 +3630,6 @@ end)
 end
 end
 end)
-
-function amongus()
-for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
-if v:IsA("ClickDetector") then
-fireclickdetector(v)
-end
-end
-for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
-if v:IsA("ClickDetector") then
-fireclickdetector(v)
-end
-end
-end
 
 spawn(function()
 while wait(0.3) do

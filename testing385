@@ -3557,19 +3557,6 @@ end
 
 end)
 
-function amongus()
-for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
-if v:IsA("ClickDetector") then
-fireclickdetector(v)
-end
-end
-for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
-if v:IsA("ClickDetector") then
-fireclickdetector(v)
-end
-end
-end
-
 Tabs.Main:AddSection("Stats Farming")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
@@ -3616,18 +3603,33 @@ end
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
+repeat task.wait(0.5)
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge13")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
+until not getgenv().farmstats and not getgenv().farmslowstats
 end)
 end
 end
 end)
+
+function amongus()
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+end
 
 spawn(function()
 while wait(0.3) do
@@ -4350,7 +4352,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait() do
 pcall(function()
 if _G.farmhakinek then
 pcall(function()
@@ -4768,7 +4770,7 @@ _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
 Values = {"None"}
-task.wait()
+wait()
         for Valuer, State in next, Valuer do
             table.insert(Values, Valuer)
         end
@@ -4804,7 +4806,7 @@ _G.targetmelee = false
 _G.targetsnip = false
 _G.targetsword = false
 Valuess = {"None"}
-task.wait()
+wait()
 for Valuerr, State in next, Valuerr do
 table.insert(Valuess, Valuerr)
 end

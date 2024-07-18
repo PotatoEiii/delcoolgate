@@ -1,18 +1,10 @@
-if game.CoreGui:FindFirstChild("RENDERCOLORING") then
-game.CoreGui:FindFirstChild("RENDERCOLORING"):Destroy()
-end
-RENDERCOLORING = Instance.new("ScreenGui")
-RENDERCOLORING.Name = "RENDERCOLORING"
-RENDERCOLORING.Parent = game.CoreGui
-
-RENDEFRAME = Instance.new("Frame")
-RENDEFRAME.Name = "RENDEFRAME"
-RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
-RENDEFRAME.BackgroundTransparency = 0
-RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
-RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-RENDEFRAME.Visible = false
-
+task.wait(0.5)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "SALUNA NOTIFY: LOADING SCRIPT, PLEASE WAIT"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"
 repeat wait() until game:IsLoaded()
@@ -623,10 +615,8 @@ offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Def
 offrender:OnChanged(function()
 if Options.offrendertoggle.Value == true then
 game:GetService("RunService"):Set3dRenderingEnabled(false)
-game.CoreGui.RENDERCOLORING.RENDEFRAME.Visible = true
 else
 game:GetService("RunService"):Set3dRenderingEnabled(true)
-game.CoreGui.RENDERCOLORING.RENDEFRAME.Visible = false
 end
 end)
 

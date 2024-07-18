@@ -1,23 +1,18 @@
-if game.CoreGui:FindFirstChild("RENDERCOLORING") then
-game.CoreGui:FindFirstChild("RENDERCOLORING"):Destroy()
-end
-RENDERCOLORING = Instance.new("ScreenGui")
-RENDERCOLORING.Name = "RENDERCOLORING"
-RENDERCOLORING.Parent = game.CoreGui
-
-RENDEFRAME = Instance.new("Frame")
-RENDEFRAME.Name = "RENDEFRAME"
-RENDEFRAME.Parent = game.CoreGui.RENDERCOLORING
-RENDEFRAME.BackgroundTransparency = 0
-RENDEFRAME.Size = UDim2.new(1, 0, 1, 0)
-RENDEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-RENDEFRAME.Visible = false
-
+task.wait(0.5)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Loading Script, Please Wait..."
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"
-repeat wait() until game:IsLoaded()
-  if game.placeId == 8569358381 or game.placeId == 3237168 then
-repeat wait() until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
+if game.placeId == 8569358381 or game.placeId == 3237168 then
+
 Pedo = {
     1135910299, -- Havelic
     520944, -- Oblivic
@@ -280,8 +275,8 @@ local remotes = {}
  Window = Fluent:CreateWindow({
     Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
-    TabWidth = 136,
-    Size = UDim2.fromOffset(493, 391),
+    TabWidth = 100,
+    Size = UDim2.fromOffset(475, 380),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
@@ -292,10 +287,10 @@ local remotes = {}
     Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
     Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
-    Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
+    Fruit = Window:AddTab({ Title = "Fruit & Sam", Icon = "rbxassetid://13492316250" }),
     Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://10651327243" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
-    Gems = Window:AddTab({ Title = "Gems (At Risk)", Icon = "rbxassetid://6788518051" }),
+    Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
@@ -467,7 +462,7 @@ Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax P
 })
 
 
-Tabs.Gems:AddSection("Dupe Gems (At Risk)")
+Tabs.Gems:AddSection("Dupe Gems (Risky)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Dupe Gems: ",
 Content = [[Operation:
@@ -493,7 +488,7 @@ end
 
 
 
-Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
+Tabs.Gems:AddSection("Exchange Gems To Beries (Risky)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"
@@ -623,10 +618,8 @@ offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Def
 offrender:OnChanged(function()
 if Options.offrendertoggle.Value == true then
 game:GetService("RunService"):Set3dRenderingEnabled(false)
-game.CoreGui.RENDERCOLORING.RENDEFRAME.Visible = true
 else
 game:GetService("RunService"):Set3dRenderingEnabled(true)
-game.CoreGui.RENDERCOLORING.RENDEFRAME.Visible = false
 end
 end)
 
@@ -2223,7 +2216,7 @@ _G.autocannonslow = false
 end
 end)
 
-autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "Auto Kill All Player (Bring-Method)", Default = false })
+autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "Auto Kill All Player (Bring + Chair)", Default = false })
 autocannonplrbring:OnChanged(function()
 if Options.autocannonplrbringtoggle.Value == true then
 _G.autocannonplrbring = true
@@ -2255,16 +2248,6 @@ until not _G.autocannonplrbring
             end
         end)
     end
-end)
-
-
-autocannonplr = Tabs.Farm:AddToggle("cannonplrtoggle", {Title = "Auto Kill All Player (Chair)", Default = false })
-autocannonplr:OnChanged(function()
-if Options.cannonplrtoggle.Value == true then
-_G.autocannonplr = true
-else
-_G.autocannonplr = false
-end
 end)
 
 Tabs.Farm:AddSection("Auto Reset")
@@ -2312,7 +2295,7 @@ end
 end)
 
 
-Tabs.Farm:AddSection("Auto Buso (Only 1 Allowed)")
+Tabs.Farm:AddSection("Auto Buso (Normal) (*)")
 
 autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
@@ -2323,7 +2306,7 @@ _G.autohakibuso = false
 end
 end)
 
-Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
+Tabs.Farm:AddSection("Auto Buso (Fast Regen)   (*)")
 regentargetslider = Tabs.Farm:AddSlider("Autobusosli", {
     Title = "Regen Target (%)",
     Description = "Change this for adjusting regen target",
@@ -2519,9 +2502,9 @@ end)
 end
 end)
 
-Tabs.Farm:AddSection("Auto Fishing")
+Tabs.Farm:AddSection("Auto Fishing   (*)")
 
-autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
+autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
 autofish:OnChanged(function()
 if Options.fishytoggle.Value == true then
 getgenv().fishing = true
@@ -2532,10 +2515,10 @@ end)
 
 
 spawn(function()
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autohakibuso then
-                task.wait(0)
+repeat task.wait()
                 if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
                     wait(0.5)
                     game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -2544,39 +2527,45 @@ spawn(function()
                     wait(0.5)
                     game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
                 end
-
+until not _G.autohakibuso
             end
         end)
     end
 end)
 
 spawn(function()
-    while task.wait() do
-        pcall(function()
+while wait(0.3) do
+pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat task.wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
-v.Parent = game.Players.LocalPlayer.Character
-                end
-            end
-         end
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+end
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
+end
+end)
+end
+end)
+
+spawn(function()
+    while wait(0.3) do
+        pcall(function()
+if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat task.wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
+end
       end)
    end
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-wait(0.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
-wait(0.1)
-for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name, "Rod") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-end
-end
-end
+repeat task.wait(0.1)
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Rod") then
 for _, x in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -2597,21 +2586,24 @@ local args = {
 [1] = Vector3.new(20837,-3017,-4390)
 }
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
-wait()
+task.wait()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(0.3)
 end
 end
 end
 end
 end
+end
+until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 end
       end)
    end
 end)
 
-Tabs.Farm:AddSection("Auto Package")
+Tabs.Farm:AddSection("Auto Package   (*)")
 
-autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package (Cannot be used with Auto-Fishing)", Default = false })
+autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package", Default = false })
 autopackage:OnChanged(function()
 if Options.packagetoggle.Value == true then
 getgenv().tret = true
@@ -2621,22 +2613,25 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tret then
+repeat task.wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(2)
 end)
+until not getgenv().tret
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tret then
+repeat task.wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Package") then
                             game.Players.LocalPlayer.Backpack:FindFirstChild("Package").Parent = game.Players.LocalPlayer.Character
@@ -2661,6 +2656,7 @@ end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 end)
+until not getgenv().tret
 end
 end)
 end
@@ -2668,16 +2664,16 @@ end)
 
 
 spawn(function()
-    while task.wait() do
-        pcall(function()
-if _G.autocannonslow or _G.autocannonplr or _G.autocannonplrbring then
+while wait(0.3) do
+pcall(function()
+if _G.autocannonslow or _G.autocannonplrbring then
 if _G.autocannon == false then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 repeat task.wait()
 if v.Name == "Cannon Ball" then
 v.Parent = game.Players.LocalPlayer.Character
 end
-until not _G.autocannonslow and not _G.autocannonplr and not _G.autocannonplrbring
+until not _G.autocannonslow and not _G.autocannonplrbring
 end
 end
 end
@@ -2685,29 +2681,11 @@ end
    end
 end)
 
-    spawn(function() -- autofarm teleport cannon
-    while wait() do
-        pcall(function()
-            if _G.autocannonplr then
-                for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
-                        v.Character.HumanoidRootPart.Transparency = 0.7
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-                        v.Character.HumanoidRootPart.CanCollide = false
-                        v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
-                    end
-                end
-            end
-        end)
-    end
-end)
-
-
-
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
-            if _G.autocannonplr or _G.autocannonslow or _G.autocannonplrbring then
+            if _G.autocannonslow or _G.autocannonplrbring then
+repeat task.wait()
                 local args = {
                     [1] = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
@@ -2721,13 +2699,14 @@ spawn(function()
                 if game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall") then
                     game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall").CanCollide = false
                 end
+until not _G.autocannonslow and not _G.autocannonplrbring
             end
         end)
     end
 end)
 
 spawn(function() -- autofarm velocity
-    while wait(0) do
+    while wait(0.3) do
         pcall(function()
             if _G.wqesorry or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or getgenv().bgtyhn or getgenv().fishing or getgenv().tret then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
@@ -2750,10 +2729,10 @@ spawn(function() -- autofarm velocity
 end)
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
-                repeat task.wait(0.2)
+                repeat task.wait(0.1)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
@@ -2767,20 +2746,23 @@ spawn(function()
 end)
 
 spawn(function() -- autofarm cannon
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonslow then
+repeat task.wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait(5)
+until not _G.autocannonslow
 end
 end)
 end
 end)
 
 spawn(function() -- autofarm cannon
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonslow then
+repeat task.wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -2839,156 +2821,13 @@ spawn(function() -- autofarm cannon
                         end
                     end
                 end
+until not _G.autocannonslow
             end
         end)
     end
 end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.autocannonplr then wait()
-pcall(function()
-repeat wait()
-_G.chon2 = true
-wait(5)
-_G.chon2 = false
-wait()
-until _G.autocannonplr == false
-_G.chon2 = false
-end)
-end
-end)
-end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.chon2 then
-wait()
-for i,v in pairs(game.Players:GetChildren()) do
-	if v.Name ~= game.Players.LocalPlayer.Name then
-		for i,c in pairs(game.Workspace:GetChildren()) do
-			if c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
-Choose2 = c.Name
-	pcall(function()
-                repeat task.wait(0.2)
-					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-                      				if q.Name == "CannonBall" then
-                          			q.CFrame = c.HumanoidRootPart.CFrame
-                           			q.CanCollide = false
-						end
-					end
-until _G.chon2 == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
-Choose2 = ""
-	end)
-
-			end
-		end
-	end
-end
-
-end
-end)
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.chon2 then
-wait()
-for i,d in pairs(game.Players:GetChildren()) do
-	if d.Name ~= game.Players.LocalPlayer.Name then
-		for i,b in pairs(game.Workspace:GetChildren()) do
-			if b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 and b.Name ~= Choose2 then
-Choose3 = b.Name
-	pcall(function()
-                repeat task.wait(0.22)
-					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-                      				if e.Name == "CannonBall" then
-                          			e.CFrame = b.HumanoidRootPart.CFrame
-                           			e.CanCollide = false
-						end
-					end
-until _G.chon2 == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
-Choose3 = ""
-	end)
-
-			end
-		end
-	end
-end
-
-end
-end)
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.chon2 then
-wait()
-for i,f in pairs(game.Players:GetChildren()) do
-	if f.Name ~= game.Players.LocalPlayer.Name then
-		for i,h in pairs(game.Workspace:GetChildren()) do
-			if h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 and h.Name ~= Choose2 and h.Name ~= Choose3 then
-Choose4 = h.Name
-	pcall(function()
-                repeat task.wait(0.24)
-					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-                      				if w.Name == "CannonBall" then
-                          			w.CFrame = h.HumanoidRootPart.CFrame
-                           			w.CanCollide = false
-						end
-					end
-until _G.chon2 == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
-Choose4 = ""
-	end)
-
-			end
-		end
-	end
-end
-
-end
-end)
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.chon2 then
-wait()
-for i,g in pairs(game.Players:GetChildren()) do
-	if g.Name ~= game.Players.LocalPlayer.Name then
-		for i,j in pairs(game.Workspace:GetChildren()) do
-			if j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 and j.Name ~= Choose2 and j.Name ~= Choose3 and j.Name ~= Choose4 then
-Choose5 = j.Name
-	pcall(function()
-                repeat task.wait(0.26)
-					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-                      				if t.Name == "CannonBall" then
-                          			t.CFrame = j.HumanoidRootPart.CFrame
-                           			t.CanCollide = false
-						end
-					end
-until _G.chon2 == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
-Choose5 = ""
-	end)
-
-			end
-		end
-	end
-end
-
-end
-end)
-end
-end)
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -5788,13 +5627,12 @@ Tabs.Weapon:AddSection("                                                -----")
 Tabs.Weapon:AddSection("                                                -----")
 
 Window:SelectTab(1)
-
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
     Duration = 20
 })
-
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
@@ -5861,4 +5699,7 @@ end)
 else
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/heaxcfd/raw/6f29527a57eddea99f5b4d611e517410288865a4/sust'))()
 end
+end
+if game.placeId ~= 8569358381 and game.placeId ~= 3237168 then
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end

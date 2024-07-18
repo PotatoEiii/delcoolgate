@@ -3049,7 +3049,6 @@ randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
 getgenv().banana = true
 else
-getgenv().bgtyhn = false
 getgenv().banana = false
 end
 end)
@@ -3060,7 +3059,6 @@ if Options.tpsafeplatetoggle.Value == true then
 getgenv().vtt = true
 else
 getgenv().vtt = false
-getgenv().tprandom = false
 end
 end)
 
@@ -3070,7 +3068,6 @@ if Options.chairrrtoggle.Value == true then
 getgenv().chawq = true
 else
 getgenv().chawq = false
-getgenv().tpchaiq = false
 end
 end)
 
@@ -3089,6 +3086,8 @@ end
 end
 end)
 until not getgenv().chawq
+else
+getgenv().tpchaiq = false
 end
 end
 end)
@@ -3119,6 +3118,8 @@ getgenv().tprandom = false
 end
 end)
 until not getgenv().vtt
+else
+getgenv().tprandom = false
 end
 end
 end)
@@ -3147,6 +3148,8 @@ getgenv().bgtyhn = false
 end
 end)
 until not getgenv().banana
+else
+getgenv().bgtyhn = false
 end
 end
 end)

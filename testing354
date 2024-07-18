@@ -2567,14 +2567,18 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
-pcall(function()
+    while task.wait() do
+        pcall(function()
 if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-repeat task.wait()
 wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
 wait(0.1)
-
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name, "Rod") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+end
+end
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Rod") then
 for _, x in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -2602,11 +2606,11 @@ end
 end
 end
 end
-until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 end
       end)
    end
 end)
+
 
 Tabs.Farm:AddSection("Auto Package")
 

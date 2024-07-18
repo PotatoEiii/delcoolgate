@@ -1282,7 +1282,7 @@ end)
 
 
 spawn(function()
-while wait(0.1) do
+while wait(0.2) do
 pcall(function()
 if getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer then
 Fluent:Notify({
@@ -2028,7 +2028,7 @@ Rarefruit = {
 }
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if _G.storeffrt then
 repeat task.wait()
@@ -2052,7 +2052,7 @@ end)
 
 
 spawn(function()
-    while task.wait() do
+    while wait(0.3) do
         pcall(function()
 if _G.aurasto then
 repeat task.wait()
@@ -2087,18 +2087,12 @@ getgenv().claim = true
 else
 getgenv().claim = false
 end
-end)
 
-spawn(function()
-    while task.wait() do
-        pcall(function()
-if getgenv().claim then
-            pcall(function()
-                workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
-            end)
-task.wait(1)
-end
+while getgenv().claim do wait()
+pcall(function()
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end)
+task.wait(1)
 end
 end)
 
@@ -2109,13 +2103,9 @@ getgenv().find = true
 else
 getgenv().find = false
 end
-end)
 
-spawn(function()
-    while task.wait() do
-        pcall(function()
-if getgenv().find then
-                pcall(function()
+while getgenv().find do wait()
+pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
 end
@@ -2128,12 +2118,11 @@ end
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
-    end
-       end)
-wait(0.5)
 end
+wait(0.5)
 end)
 end
+
 end)
 
 

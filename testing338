@@ -123,7 +123,7 @@ elseif currenthwid == listed[16] then
 _G.name = "Cậu Ngân Hà"
 _G.facebookid = "100014813557316"
 elseif currenthwid == listed[17] then
-_G.name = "Quang Quý"
+_G.name = "Trần Dũng"
 _G.facebookid = "61560483452261"
 elseif currenthwid == listed[18] then
 _G.name = "Phan Van Long"

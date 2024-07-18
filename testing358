@@ -2630,22 +2630,25 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tret then
+repeat task.wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(2)
 end)
+until not getgenv().tret
 end
 end)
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tret then
+repeat task.wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Package") then
                             game.Players.LocalPlayer.Backpack:FindFirstChild("Package").Parent = game.Players.LocalPlayer.Character
@@ -2670,6 +2673,7 @@ end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 end)
+until not getgenv().tret
 end
 end)
 end

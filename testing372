@@ -290,7 +290,7 @@ local remotes = {}
     Fruit = Window:AddTab({ Title = "Fruit & Sam", Icon = "rbxassetid://13492316250" }),
     Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://10651327243" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
-    Gems = Window:AddTab({ Title = "Gems (At Risk)", Icon = "rbxassetid://6788518051" }),
+    Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
@@ -462,7 +462,7 @@ Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax P
 })
 
 
-Tabs.Gems:AddSection("Dupe Gems (At Risk)")
+Tabs.Gems:AddSection("Dupe Gems (Risky)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Dupe Gems: ",
 Content = [[Operation:
@@ -488,7 +488,7 @@ end
 
 
 
-Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
+Tabs.Gems:AddSection("Exchange Gems To Beries (Risky)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"

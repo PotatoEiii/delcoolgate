@@ -11,6 +11,72 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Vi
 task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"
+Rarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit",
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+MeleeTTT = {
+"Melee",
+"Table Kick",
+"Black Leg",
+"Seastone Cestus",
+"Aqua Staff"
+}
+
+SniperTTT = {
+"Slingshot",
+"Stars",
+"Crossbow",
+"Flintlock",
+"Cannon Ball"
+}
+
+SwordTTT = {
+"Dagger",
+"Wakizashi",
+"Tachi",
+"Katana",
+"Flail",
+"Krizma",
+"Kogatana",
+"Yoru",
+"Golden Fish",
+"Ultra Great Sword",
+"Masamune",
+"Candy Cane Yoru",
+"Divine Axe",
+"Kanshou and Byakuya",
+"Scissor Blade",
+"Lightning Sword",
+"Meteorite Sword"
+}
+
+UtilityTTT = {
+"Wood Rod",
+"Sturdy Rod",
+"Super Rod",
+"Zombie Head",
+"Tea Cup",
+"Santa Bag",
+"Tea Kettle"
+}
 if game.placeId == 8569358381 or game.placeId == 3237168 then
 
 Pedo = {
@@ -349,27 +415,7 @@ end
 
 end)
 
-Rarefruit = {
-"Candy Fruit",
-"Chilly Fruit",
-"Flare Fruit",
-"Gas Fruit",
-"Gravity Fruit",
-"Hollow Fruit",
-"Light Fruit",
-"Magma Fruit",
-"Ope Fruit",
-"Plasma Fruit",
-"Rumble Fruit",
-"Sand Fruit",
-"Smoke Fruit",
-"Snow Fruit",
-"Venom Fruit",
-"Dark Fruit",
-"Phoenix Fruit",
-"Quake Fruit",
-"Vampire Fruit"
-}
+
 
 spawn(function()
 while wait(0.3) do
@@ -1887,6 +1933,7 @@ end
 
 
 Tabs.Fruit:AddSection("Fruit Stuff")
+Tabs.Fruit:AddSection("Auto Open Fruit Boxes")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
@@ -1927,6 +1974,7 @@ end)
 end
 end)
 
+Tabs.Fruit:AddSection("Auto Store Fruits")
 storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
 storefruit:OnChanged(function()
 if Options.storefruittoggle.Value == true then
@@ -1997,28 +2045,6 @@ v.Function()
 end
 end
 end
-
-Rarefruit = {
-"Candy Fruit",
-"Chilly Fruit",
-"Flare Fruit",
-"Gas Fruit",
-"Gravity Fruit",
-"Hollow Fruit",
-"Light Fruit",
-"Magma Fruit",
-"Ope Fruit",
-"Plasma Fruit",
-"Rumble Fruit",
-"Sand Fruit",
-"Smoke Fruit",
-"Snow Fruit",
-"Venom Fruit",
-"Dark Fruit",
-"Phoenix Fruit",
-"Quake Fruit",
-"Vampire Fruit"
-}
 
 spawn(function()
 while wait(0.3) do
@@ -2844,14 +2870,8 @@ _G.autorj = false
 end
 end)
 
-
-
-
-
-
-
 spawn(function()
-while wait() do
+while wait(3) do
 if _G.autorj then
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
@@ -2915,11 +2935,8 @@ Fluent:Notify({
 else
 _G.autospawn = false
 end
-end)
 
-        spawn(function()
-            while wait() do
-                if _G.autospawn then
+            while _G.autospawn do wait()
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
                             repeat wait(4)
@@ -2929,9 +2946,10 @@ end)
                             until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
                         end
                     end)
-                end
             end
-	end)
+
+end)
+
 
 AutogetexpToggle = Tabs.Automatic:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
     AutogetexpToggle:OnChanged(function()
@@ -2945,6 +2963,14 @@ Fluent:Notify({
 else
 _G.autogetexp = false
 end
+
+while _G.autogetexp do wait()
+pcall(function()
+wait(5)
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end)
+end
+
 end)
 
 autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = false })
@@ -2959,11 +2985,8 @@ Fluent:Notify({
 else
 _G.autochallenge = false
 end
-end)
 
-spawn(function()
-while wait() do
-if _G.autochallenge then
+while _G.autochallenge do wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily1")
@@ -3012,25 +3035,14 @@ workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Challenge
 end
 end)
 end
-end
+
 end)
 
 
 
 
 
-        spawn(function()
-            while wait() do
-                if _G.autogetexp then
-                    pcall(function()
-if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
-workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-wait(5)
-end
-                    end)
-                end
-            end
-	end)
+
 
 
 Tabs.Teleport:AddSection("Useful Teleport")
@@ -3039,7 +3051,6 @@ randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
 getgenv().banana = true
 else
-getgenv().bgtyhn = false
 getgenv().banana = false
 end
 end)
@@ -3050,7 +3061,6 @@ if Options.tpsafeplatetoggle.Value == true then
 getgenv().vtt = true
 else
 getgenv().vtt = false
-getgenv().tprandom = false
 end
 end)
 
@@ -3060,13 +3070,13 @@ if Options.chairrrtoggle.Value == true then
 getgenv().chawq = true
 else
 getgenv().chawq = false
-getgenv().tpchaiq = false
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().chawq then
+repeat wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tpchaiq = true
@@ -3077,12 +3087,15 @@ game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
 end
 end)
+until not getgenv().chawq
+else
+getgenv().tpchaiq = false
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().tpchaiq then
 pcall(function()
 repeat task.wait()
@@ -3096,8 +3109,9 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().vtt then
+repeat task.wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tprandom = true
@@ -3105,12 +3119,15 @@ else
 getgenv().tprandom = false
 end
 end)
+until not getgenv().vtt
+else
+getgenv().tprandom = false
 end
 end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().tprandom then
 pcall(function()
 repeat task.wait()
@@ -3122,8 +3139,9 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().banana then
+repeat wait()
 pcall(function()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().bgtyhn = true
@@ -3131,14 +3149,18 @@ else
 getgenv().bgtyhn = false
 end
 end)
+until not getgenv().banana
+else
+getgenv().bgtyhn = false
 end
 end
 end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().bgtyhn then
+repeat wait()
 pcall(function()
 repeat task.wait()
 if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
@@ -3146,6 +3168,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.ra
 end
 until not getgenv().bgtyhn
 end)
+until not getgenv().bgtyhn
 end
 end
 end)
@@ -3317,107 +3340,8 @@ getgenv().eqqqqq = true
 else
 getgenv().eqqqqq = false
 end
-end)
 
-attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
-attackweapon:OnChanged(function()
-if Options.attackweapontoggle.Value == true then
-getgenv().useweapon = true
-else
-getgenv().useweapon = false
-end
-end)
-
-MeleeTTT = {
-"Melee",
-"Table Kick",
-"Black Leg",
-"Seastone Cestus",
-"Aqua Staff"
-}
-
-SniperTTT = {
-"Slingshot",
-"Stars",
-"Crossbow",
-"Flintlock",
-"Cannon Ball"
-}
-
-SwordTTT = {
-"Dagger",
-"Wakizashi",
-"Tachi",
-"Katana",
-"Flail",
-"Krizma",
-"Kogatana",
-"Yoru",
-"Golden Fish",
-"Ultra Great Sword",
-"Masamune",
-"Candy Cane Yoru",
-"Divine Axe",
-"Kanshou and Byakuya",
-"Scissor Blade",
-"Lightning Sword",
-"Meteorite Sword"
-}
-
-UtilityTTT = {
-"Wood Rod",
-"Sturdy Rod",
-"Super Rod",
-"Zombie Head",
-"Tea Cup",
-"Santa Bag",
-"Tea Kettle"
-}
-
-spawn(function()
-while wait() do
-pcall(function()
-if getgenv().useweapon then
-pcall(function()
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-
-
-for i,c in pairs(MeleeTTT) do
-if v.Name == c then
-v:Activate()
-end
-end
-
-for i,d in pairs(SniperTTT) do
-if v.Name == d then
-v:Activate()
-end
-end
-
-for i,e in pairs(SwordTTT) do
-if v.Name == e then
-v:Activate()
-end
-end
-
-for i,f in pairs(UtilityTTT) do
-if v.Name == f then
-v:Activate()
-end
-end
-
-
-end
-end)
-end
-end)
-end
-end)
-
-spawn(function()
-while wait() do
-pcall(function()
-if getgenv().eqqqqq then
+while getgenv().eqqqqq do wait()
 pcall(function()
 if _G.weponity == "Melee" then
 
@@ -3461,9 +3385,56 @@ end
 end
 end)
 end
+
 end)
+
+attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
+attackweapon:OnChanged(function()
+if Options.attackweapontoggle.Value == true then
+getgenv().useweapon = true
+else
+getgenv().useweapon = false
+end
+
+while getgenv().useweapon do wait()
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+
+
+for i,c in pairs(MeleeTTT) do
+if v.Name == c then
+v:Activate()
+end
+end
+
+for i,d in pairs(SniperTTT) do
+if v.Name == d then
+v:Activate()
+end
+end
+
+for i,e in pairs(SwordTTT) do
+if v.Name == e then
+v:Activate()
+end
+end
+
+for i,f in pairs(UtilityTTT) do
+if v.Name == f then
+v:Activate()
+end
+end
+
+
 end
 end)
+end
+
+end)
+
+
+
+
 
 
 Tabs.Weapon:AddSection("Instant Weapon")
@@ -3499,20 +3470,17 @@ _G.yoruonrt = true
 else
 _G.yoruonrt = false
 end
-end)
 
-spawn(function()
-while wait() do
+while _G.yoruonrt do wait()
 pcall(function()
-if _G.yoruonrt then
-pcall(function()
+repeat task.wait()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Yoru = Character:FindFirstChild("Yoru")
     local Environment
 
-for i = 1, Speeds do wait()
+for i = 1, Speeds do task.wait()
 if _G.yoruonrt then
 
 pcall(function()
@@ -3528,11 +3496,10 @@ end)
 
 end
 end
+until not _G.yoruonrt
+end)
+end
 
-end)
-end
-end)
-end
 end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
@@ -3567,20 +3534,16 @@ _G.cestusonrt = true
 else
 _G.cestusonrt = false
 end
-end)
 
-
-spawn(function()
-while wait() do
+while _G.cestusonrt do wait()
 pcall(function()
-if _G.cestusonrt then
-pcall(function()
+repeat task.wait()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Cestus = Character:FindFirstChild("Seastone Cestus")
     local Environment
-for i = 1, Speedss do wait()
+for i = 1, Speedss do task.wait()
 if _G.cestusonrt then
 pcall(function()
 for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
@@ -3595,11 +3558,10 @@ end)
 
 end
 end
+until not _G.cestusonrt
+end)
+end
 
-end)
-end
-end)
-end
 end)
 
 Tabs.Main:AddSection("Stats Farming")

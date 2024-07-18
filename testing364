@@ -2,12 +2,12 @@ task.wait(0.5)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Loading Script, Please Wait..."
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 task.wait(4)
 _G.name = "NOT FOUND"
 _G.facebookid = "NOT FOUND"

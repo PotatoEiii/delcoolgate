@@ -2330,6 +2330,22 @@ _G.autohakibuso = true
 else
 _G.autohakibuso = false
 end
+
+    while _G.autohakibuso do wait()
+        pcall(function()
+repeat task.wait()
+                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+until not _G.autohakibuso
+        end)
+    end
+
 end)
 
 Tabs.Farm:AddSection("Auto Buso (Fast Regen)   (*)")
@@ -2537,26 +2553,6 @@ getgenv().fishing = true
 else
 getgenv().fishing = false
 end
-end)
-
-
-spawn(function()
-    while wait(0.3) do
-        pcall(function()
-            if _G.autohakibuso then
-repeat task.wait()
-                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(0.5)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(0.5)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-until not _G.autohakibuso
-            end
-        end)
-    end
 end)
 
 spawn(function()

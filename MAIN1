@@ -1,4 +1,4 @@
-task.wait(0.5)
+task.wait(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -129,7 +129,8 @@ _G.WhiteListed = true
             end
         end
 if _G.WhiteListed then
-
+game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
+local chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
@@ -342,7 +343,7 @@ local remotes = {}
     Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
     TabWidth = 100,
-    Size = UDim2.fromOffset(475, 380),
+    Size = UDim2.fromOffset(475, 340),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
@@ -1057,7 +1058,12 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "condimemay" then task.wait()
+v.CFrame = chaircframeh
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
 end
 until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end
@@ -2276,6 +2282,23 @@ until not _G.autocannonplrbring
     end
 end)
 
+    spawn(function() -- autofarm teleport cannon
+    while wait(0.3) do
+        pcall(function()
+            if _G.autocannonplrbring or _G.BringPlayer or _G.BringAllPlayer then
+repeat wait(0.2)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "Seat" then task.wait()
+v:Destroy()
+end
+end
+until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
+            end
+        end)
+    end
+end)
+
+
 Tabs.Farm:AddSection("Auto Reset")
 
 rssli = Tabs.Farm:AddSlider("rssliderzz", {
@@ -2330,6 +2353,22 @@ _G.autohakibuso = true
 else
 _G.autohakibuso = false
 end
+
+    while _G.autohakibuso do wait()
+        pcall(function()
+repeat task.wait()
+                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+until not _G.autohakibuso
+        end)
+    end
+
 end)
 
 Tabs.Farm:AddSection("Auto Buso (Fast Regen)   (*)")
@@ -2539,26 +2578,6 @@ getgenv().fishing = false
 end
 end)
 
-
-spawn(function()
-    while wait(0.3) do
-        pcall(function()
-            if _G.autohakibuso then
-repeat task.wait()
-                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(0.5)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(0.5)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-until not _G.autohakibuso
-            end
-        end)
-    end
-end)
-
 spawn(function()
 while wait(0.3) do
 pcall(function()
@@ -2743,7 +2762,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.wqesorry == false or getgenv().vtt == false or getgenv().farmslowstats == false or getgenv().farmstats == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false then
+            elseif _G.wqesorry == false and getgenv().vtt == false and getgenv().farmslowstats == false and getgenv().farmstats == false and getgenv().bgtyhn == false and getgenv().fishing == false and getgenv().tret == false then
                 --if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)
@@ -2868,11 +2887,8 @@ Fluent:Notify({
 else
 _G.autorj = false
 end
-end)
 
-spawn(function()
-while wait(3) do
-if _G.autorj then
+while _G.autorj do wait(3)
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
 TeleportService = game:GetService("TeleportService")
@@ -2919,8 +2935,85 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 end
 end)
 end
+
+end)
+
+hopplrsvzz = Tabs.Automatic:AddSlider("hopplrsvzz", {
+    Title = "Player Numbers To Hop",
+    Description = "Adjust player numbers",
+    Default = 3,
+    Min = 1,
+    Max = 18,
+    Rounding = 0,
+    Callback = function(zxcbbbeg)
+            plrnumforhop = tonumber(zxcbbbeg)
+        end
+    })
+
+fewplrhop = Tabs.Automatic:AddToggle("fewplrhoptoggle", {Title = "Auto Hop If Fewer Player", Default = false })
+fewplrhop:OnChanged(function()
+if Options.fewplrhoptoggle.Value == true then
+_G.fewhopsv = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Hop If Fewer Player Is Turned On",
+    Duration = 5
+})
+else
+_G.fewhopsv = false
+end
+
+while _G.fewhopsv do wait(2)
+pcall(function()
+if #game.Players:GetChildren() < plrnumforhop then wait()
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+
+        if #servers > 0 then
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
+        end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
+    end          
+
 end
 end)
+end
+
+end)
+
 
 Tabs.Automatic:AddSection("In-Game Function")
 AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
@@ -3096,10 +3189,15 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if getgenv().tpchaiq then
+if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false  then
 pcall(function()
 repeat task.wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0, -1, 0)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "condimemay" then task.wait()
+v.CFrame = chaircframeh
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
 until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
@@ -3590,11 +3688,8 @@ getgenv().autodrinkmixer = true
 else
 getgenv().autodrinkmixer = false
 end
-end)
 
-spawn(function()
-while wait(0.3) do
-if getgenv().autodrinkmixer then
+while getgenv().autodrinkmixer do wait(0.3)
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
@@ -3609,23 +3704,24 @@ end
 end
 end)
 end
-end
+
 end)
 
 
 
 
+
 spawn(function()
-while wait() do
+while wait(0.5) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
-repeat task.wait(1)
+
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge13")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
-until not getgenv().farmstats and not getgenv().farmslowstats
+
 end)
 end
 end
@@ -3645,7 +3741,7 @@ end
 end
 
 spawn(function()
-while task.wait() do
+while wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
 user = tostring(game.Players.LocalPlayer.Name)
@@ -3677,7 +3773,7 @@ end
 end)
 
 spawn(function()
-while task.wait() do
+while wait(0.3) do
 if getgenv().farmslowstats then
 pcall(function()
 user = tostring(game.Players.LocalPlayer.Name)
@@ -3716,19 +3812,14 @@ _G.gethakiqwe = true
 else
 _G.gethakiqwe = false
 end
-end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.gethakiqwe then
+while _G.gethakiqwe do wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-wait(2)
+wait(3)
 end)
 end
-end)
-end
+
 end)
 
 
@@ -4279,13 +4370,13 @@ _G.rejoinifhaki0 = true
 else
 _G.rejoinifhaki0 = false
 end
-end)
 
-spawn(function()
-while wait() do
-if _G.rejoinifhaki0 then
+while _G.rejoinifhaki0 do wait()
 pcall(function()
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value == 0 then
+repeat wait()
+local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local zcc = zxm/100*2
+if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
 game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
@@ -4329,19 +4420,11 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
     end          
 
 end
+until not _G.rejoinifhaki0
 end)
 end
-end
+
 end)
-
-
-
-
-
-
-
-
-
 
 Tabs.Haki:AddSection("Auto Haki Farming")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
@@ -4378,7 +4461,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.farmhakinek then
 pcall(function()
@@ -4451,13 +4534,12 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.5) do
 pcall(function()
 if _G.farmadvanced then
 pcall(function()
 x = game.Players.LocalPlayer.UserId
 haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-wait(5)
 for i = 1, speedyadvance do
             local args = {
                 [1] = "On",
@@ -4562,6 +4644,7 @@ for i = 1, speedyadvance do
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
 end
+wait(7)
 end)
 end
 end)
@@ -4796,7 +4879,7 @@ _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
 Values = {"None"}
-wait()
+task.wait()
         for Valuer, State in next, Valuer do
             table.insert(Values, Valuer)
         end
@@ -4832,7 +4915,7 @@ _G.targetmelee = false
 _G.targetsnip = false
 _G.targetsword = false
 Valuess = {"None"}
-wait()
+task.wait()
 for Valuerr, State in next, Valuerr do
 table.insert(Valuess, Valuerr)
 end
@@ -4960,7 +5043,7 @@ end
 end)
 
             spawn(function()
-            while wait() do
+            while wait(0.3) do
                 if _G.quayfirstdf then
                     pcall(function()
 if _G.defswordsnip == true then
@@ -5334,7 +5417,7 @@ end
 end)
 
             spawn(function()
-            while wait() do
+            while wait(0.3) do
                 if _G.quayfirstdf2 then
                     pcall(function()
 if _G.defswordsnip2 == true then
@@ -5514,7 +5597,7 @@ wait(12)
             end)
 
 spawn(function()
-	while wait() do
+	while wait(0.3) do
 		if _G.quayfirstdf2 or _G.quayfirstdf then
                 	pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
@@ -5610,7 +5693,7 @@ hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.BackgroundTransparency = 1
 hideUI.ClipsDescendants = true
 hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0.078, 0, 0.136, 0)
+hideUI.Size = UDim2.new(0.06, 0, 0.11, 0)
 hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
@@ -5660,6 +5743,7 @@ end)
 
 else
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/heaxcfd/raw/6f29527a57eddea99f5b4d611e517410288865a4/sust'))()
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end
 end
 if game.placeId ~= 8569358381 and game.placeId ~= 3237168 then

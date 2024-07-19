@@ -2711,16 +2711,14 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.autocannonslow or _G.autocannonplrbring then
-if _G.autocannon == false then
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if _G.autocannonslow or _G.autocannonplrbring and _G.autocannon == false then
 repeat task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v.Name == "Cannon Ball" then
-v.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
 end
 until not _G.autocannonslow and not _G.autocannonplrbring
-end
-end
 end
       end)
    end

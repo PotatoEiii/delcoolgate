@@ -2937,7 +2937,7 @@ end
 end)
 
 hopplrsvzz = Tabs.Automatic:AddSlider("hopplrsvzz", {
-    Title = "Player Numbers For Hoping ",
+    Title = "Player Numbers To Hop",
     Description = "Adjust player numbers",
     Default = 3,
     Min = 1,

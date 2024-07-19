@@ -2280,6 +2280,23 @@ until not _G.autocannonplrbring
     end
 end)
 
+    spawn(function() -- autofarm teleport cannon
+    while wait(0.3) do
+        pcall(function()
+            if _G.autocannonplrbring or _G.BringPlayer or _G.BringAllPlayer then
+repeat wait(0.2)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "Seat" then task.wait()
+v:Destroy()
+end
+end
+until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
+            end
+        end)
+    end
+end)
+
+
 Tabs.Farm:AddSection("Auto Reset")
 
 rssli = Tabs.Farm:AddSlider("rssliderzz", {
@@ -2743,7 +2760,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.wqesorry == false or getgenv().vtt == false or getgenv().farmslowstats == false or getgenv().farmstats == false or getgenv().bgtyhn == false or getgenv().fishing == false or getgenv().tret == false then
+            elseif _G.wqesorry == false and getgenv().vtt == false and getgenv().farmslowstats == false and getgenv().farmstats == false and getgenv().bgtyhn == false and getgenv().fishing == false and getgenv().tret == false then
                 --if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)

@@ -2157,12 +2157,12 @@ fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Def
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
-
+for i = 1,3 do wait(0.2)
 if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
-wait()
+task.wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
-
+end
 else
 _G.autocannon = false
 end
@@ -2174,11 +2174,11 @@ spawn(function()
             if _G.autocannon then
                 toolname = "Cannon Ball"
                 wait(0.1)
-                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
 repeat wait()
 tool = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname)
 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(tool)
-task.wait(1)
+task.wait(0.8)
 until not _G.autocannon
 wait()
                 end

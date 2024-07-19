@@ -128,7 +128,7 @@ _G.WhiteListed = true
             end
         end
 userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
-        for _, v2 in pairs(listed) do
+        for _, v2 in pairs(userlisted) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.WhiteListed = true
             end

@@ -2323,6 +2323,20 @@ _G.resetzxcm = false
 end
 end)
 
+AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+    AutospawnToggle:OnChanged(function()
+if Options.Autospawn1Toggle.Value == true then
+_G.autospawn = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn Is Turned On",
+    Duration = 5
+})
+else
+_G.autospawn = false
+end
+end)
+
 spawn(function()
 while wait(0.3) do
 if _G.resetzxcm then

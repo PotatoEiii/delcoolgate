@@ -119,12 +119,17 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         end
     end
 end)  
-
-listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 _G.WhiteListed = false
+listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listed) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
+_G.WhiteListed = true
+            end
+        end
+userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+        for _, v2 in pairs(userlisted) do
+            if game.Players.LocalPlayer.UserId == v2 then
 _G.WhiteListed = true
             end
         end
@@ -1056,8 +1061,9 @@ pcall(function()
 if _G.CampString then
 pcall(function()
 repeat task.wait()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+task.wait()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
@@ -3178,11 +3184,14 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false  then
+if getgenv().tpchaiq then
 pcall(function()
 repeat task.wait()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+task.wait()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+end
 until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
@@ -5727,7 +5736,7 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 else
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/heaxcfd/raw/6f29527a57eddea99f5b4d611e517410288865a4/sust'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end
 end

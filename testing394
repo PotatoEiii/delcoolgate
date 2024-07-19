@@ -5615,7 +5615,7 @@ hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.BackgroundTransparency = 1
 hideUI.ClipsDescendants = true
 hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0.078, 0, 0.136, 0)
+hideUI.Size = UDim2.new(0.06, 0, 0.11, 0)
 hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)

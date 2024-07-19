@@ -297,7 +297,7 @@ local remotes = {}
         local args = {...}
         local method = getnamecallmethod()
         if method == "FireServer" or method == "InvokeServer" then
-            if self.Name == "RemoteEvent" and arg[3] ~= "Land" and arg[3] ~= "DF_Disabled" then
+            if self.Name == "RemoteEvent" and args[3] ~= "Land" and args[3] ~= "DF_Disabled" then
                 remotes[self.Name] = args[1]
                 return azc(self,unpack(args))
             end

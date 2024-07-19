@@ -1056,8 +1056,9 @@ pcall(function()
 if _G.CampString then
 pcall(function()
 repeat task.wait()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+task.wait()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
@@ -3178,11 +3179,14 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false  then
+if getgenv().tpchaiq then
 pcall(function()
 repeat task.wait()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+task.wait()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+end
 until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end

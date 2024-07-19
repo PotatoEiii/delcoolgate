@@ -3189,7 +3189,7 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if getgenv().tpchaiq then
+if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false  then
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do

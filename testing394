@@ -2936,6 +2936,26 @@ end
 
 end)
 
+fewplrhop = Tabs.Automatic:AddToggle("fewplrhoptoggle", {Title = "Auto Hop If Fewer Player", Default = false })
+fewplrhop:OnChanged(function()
+if Options.fewplrhoptoggle.Value == true then
+_G.fewhopsv = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Hop If Fewer Player Is Turned On",
+    Duration = 5
+})
+else
+_G.fewhopsv = false
+end
+
+while _G.fewhopsv do wait(2)
+pcall(function()
+
+end)
+end
+
+end)
 
 
 Tabs.Automatic:AddSection("In-Game Function")

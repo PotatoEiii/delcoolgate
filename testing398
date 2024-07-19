@@ -1,4 +1,4 @@
-task.wait(0.5)
+task.wait(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -343,7 +343,7 @@ local remotes = {}
     Title = "SALUNA VIP",
     SubTitle = "Made by Saluna",
     TabWidth = 100,
-    Size = UDim2.fromOffset(475, 380),
+    Size = UDim2.fromOffset(475, 340),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind

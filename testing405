@@ -1018,7 +1018,7 @@ if _G.CampString then
 repeat task.wait()
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampString == true and v.Humanoid.Health > 0 and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+if v.Name == _G.SelectedKillPlayer and _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
     pcall(function()
 repeat task.wait()
 local args = {
@@ -1032,6 +1032,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 until v.Humanoid.Health == 0 or not _G.CampString or v.Name ~= _G.SelectedKillPlayer
+task.wait()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "StringPower7"
@@ -1054,16 +1055,10 @@ while wait(0.3) do
 pcall(function()
 if _G.CampString then
 pcall(function()
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
 repeat task.wait()
-if c.Humanoid.Health > 0 then
 game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
-end
-until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
-end
-end
+until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
 end)
@@ -1076,12 +1071,10 @@ pcall(function()
 if _G.CampString then
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
+if _G.CampString == true then
 repeat task.wait()
-if c.Humanoid.Health > 0 then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,disstring)
-end
-until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer
+until not _G.CampString
 end
 end
 end)
@@ -2320,20 +2313,6 @@ Fluent:Notify({
 })
 else
 _G.resetzxcm = false
-end
-end)
-
-AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
-    AutospawnToggle:OnChanged(function()
-if Options.Autospawn1Toggle.Value == true then
-_G.autospawn = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Spawn Is Turned On",
-    Duration = 5
-})
-else
-_G.autospawn = false
 end
 end)
 

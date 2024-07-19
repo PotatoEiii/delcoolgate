@@ -130,7 +130,7 @@ _G.WhiteListed = true
         end
 if _G.WhiteListed then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
-local chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+_G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
@@ -1058,12 +1058,8 @@ for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c.Name == _G.SelectedKillPlayer and _G.CampString == true then
 repeat task.wait()
 if c.Humanoid.Health > 0 then
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-if v.Name == "condimemay" then task.wait()
-v.CFrame = chaircframeh
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-end
-end
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 end
 until c.Humanoid.Health == 0 or not _G.CampString or c.Name ~= _G.SelectedKillPlayer or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end
@@ -3192,12 +3188,8 @@ while wait(0.3) do
 if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false  then
 pcall(function()
 repeat task.wait()
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-if v.Name == "condimemay" then task.wait()
-v.CFrame = chaircframeh
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-end
-end
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end

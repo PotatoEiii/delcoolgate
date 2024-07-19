@@ -2718,7 +2718,7 @@ if v.Name == "Cannon Ball" then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 end
 end
-until not _G.autocannonslow and not _G.autocannonplrbring
+until not _G.autocannonslow or not _G.autocannonplrbring or _G.autocannon == true
 end
       end)
    end

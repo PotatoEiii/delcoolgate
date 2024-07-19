@@ -5736,7 +5736,7 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 else
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/heaxcfd/raw/6f29527a57eddea99f5b4d611e517410288865a4/sust'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end
 end

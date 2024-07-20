@@ -1400,7 +1400,7 @@ Tabs.Shop:AddButton({
 
                     for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                     if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
-                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
                                         end
                     end
@@ -1946,7 +1946,7 @@ while _G.opencommon do wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "ommon") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
 end
 end
@@ -1966,7 +1966,7 @@ while _G.openrare do wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Rare") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
 end
 end
@@ -2126,7 +2126,7 @@ end
 while getgenv().find do wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
+game.Players.LocalPlayer.Backpack:FindFirstChild("Compass").Parent = game.Players.LocalPlayer.Character
 end
 
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
@@ -2171,7 +2171,7 @@ spawn(function()
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
 repeat wait()
 tool = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname)
-game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(tool)
+tool.Parent = game.Players.LocalPlayer.Character
 task.wait(0.8)
 until not _G.autocannon
 wait()
@@ -2579,7 +2579,7 @@ if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("C
 repeat task.wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v.Parent = game.Players.LocalPlayer.Character
 end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
@@ -2720,7 +2720,7 @@ if _G.autocannon == false and _G.autocannonslow or
 _G.autocannonplrbring and _G.autocannon == false then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v.Name == "Cannon Ball" then
-repeat task.wait()
+repeat wait()
 v.Parent = game.Players.LocalPlayer.Character
 until _G.autocannon == true or
 not _G.autocannonslow and not _G.autocannonplrbring
@@ -3631,7 +3631,7 @@ if _G.weponity == "Melee" then
 for _, c in pairs(MeleeTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+x.Parent = game.Players.LocalPlayer.Character
 end
 end
 
@@ -3640,7 +3640,7 @@ elseif _G.weponity == "Sniper" then
 for _, c in pairs(SniperTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+x.Parent = game.Players.LocalPlayer.Character
 end
 end
 
@@ -3649,7 +3649,7 @@ elseif _G.weponity == "Sword" then
 for _, c in pairs(SwordTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+x.Parent = game.Players.LocalPlayer.Character
 end
 end
 
@@ -3658,7 +3658,7 @@ elseif _G.weponity == "Utility" then
 for _, c in pairs(UtilityTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+x.Parent = game.Players.LocalPlayer.Character
 end
 end
 
@@ -3877,7 +3877,7 @@ while getgenv().autodrinkmixer do wait(0.3)
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
 end
 end

@@ -263,7 +263,7 @@ vu = game:GetService("VirtualUser")
      fishingplace = Instance.new("Part",game.Workspace)
     fishingplace.Name = "fishingplace"
     fishingplace.Size = Vector3.new(2,1,2)
-    fishingplace.Position = Vector3.new(19784, 210,5000)
+    fishingplace.Position = Vector3.new((math.random(15000, 20000)),210,(math.random(15000, 20000)))
     fishingplace.Anchored = true
     
     do  
@@ -372,8 +372,7 @@ local remotes = {}
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
-    nonef = Window:AddTab({ Title = "-------", Icon = "" }),
-    nonet = Window:AddTab({ Title = "-------", Icon = "" })
+    nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
 
@@ -3288,6 +3287,14 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Wo
     })
 
 Tabs.Teleport:AddButton({
+        Title = "Teleport To Fishing Place",
+        Description = "(A place where you can go fishing)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
         Title = "Teleport To Rayleigh",
         Description = "Check and teleport to Rayleigh if he spawns",
         Callback = function()
@@ -3315,9 +3322,9 @@ Tabs.Teleport:AddSection("Teleport")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
-        Values = {"Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
+        Values = {" ","Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flail Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
-        Default = "",
+        Default = " ",
     })
 
 
@@ -3364,7 +3371,7 @@ Fluent:Notify({
     Content = "Teleported to " ..Mobbb,
     Duration = 1
 })
-elseif Mobbb == "Flair Seller" then
+elseif Mobbb == "Flail Seller" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.FlailMerchant.HumanoidRootPart.CFrame
 Fluent:Notify({
     Title = "Teleport Notify",
@@ -3423,6 +3430,178 @@ Fluent:Notify({
 end
 end)
 
+IslandTP = Tabs.Teleport:AddDropdown("IslandTP", {
+        Title = "Island Teleport",
+        Values = {" ","Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snowy Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
+        Multi = false,
+        Default = " ",
+    })
+
+
+IslandTP:OnChanged(function(zxcrris)
+if zxcrris == "Sam Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1280.31726, 239.998398, -1326.91028, -0.999996781, 7.21743021e-08, -0.00254111853, 7.21170679e-08, 1, 2.26145023e-08, 0.00254111853, 2.24311716e-08, -0.999996781)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Sand/Windmill" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.0743713, 282.310211, -36.9613533, 0.136958227, -1.5720218e-08, 0.990576804, 4.45528325e-09, 1, 1.52537698e-08, -0.990576804, 2.3241713e-09, 0.136958227)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Cave" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.43468678, 306.999908, -927.490723, -0.0791061521, -1.76420407e-08, 0.996866226, -2.13624607e-09, 1, 1.75279791e-08, -0.996866226, -7.42980621e-10, -0.0791061521)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Near-Bar Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.123474, 302.998199, 1218.83557, -0.00453962386, 6.63435955e-08, 0.999989688, -9.09009827e-08, 1, -6.67569395e-08, -0.999989688, -9.12030984e-08, -0.00453962386)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Bar" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1520.92224, 303.489471, 2138.15845, 0.996849716, 5.16282661e-09, -0.0793136358, -5.49105694e-09, 1, -3.92028143e-09, 0.0793136358, 4.34344694e-09, 0.996849716)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Boss-5K/Tornado Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4854.58057, 605.394287, -7281.04297, -0.969173074, -2.48229548e-10, 0.24638097, -1.49729756e-10, 1, 4.18520579e-10, -0.24638097, 3.68728326e-10, -0.969173074)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Kaizu/Aura Boss Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1575.16821, 215.999954, 9946.87207, 0.980506063, -4.32691003e-08, 0.196488753, 3.53463392e-08, 1, 4.38284715e-08, -0.196488753, -3.60289221e-08, 0.980506063)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Krizma Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1074.56641, 376.999908, 1667.55762, 0.999868512, -3.29602017e-08, 0.0162166674, 3.19331654e-08, 1, 6.35909743e-08, -0.0162166674, -6.30647605e-08, 0.999868512)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Sand Castle" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1078.84058, 245.200073, -3333.86084, 0.710731328, 4.62040433e-08, -0.703463554, -3.03972776e-08, 1, 3.49694673e-08, 0.703463554, -3.47051743e-09, 0.710731328)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Purple Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5169.17529, 522.999817, -7776.02295, -0.999938011, 4.8491323e-08, 0.011133004, 4.95431145e-08, 1, 9.41995779e-08, -0.011133004, 9.47453032e-08, -0.999938011)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Merlin/Boar Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1699.38147, 217.07135, -275.71048, -0.0825118199, 7.11512556e-08, 0.996590078, 3.90585164e-08, 1, -6.81608867e-08, -0.996590078, 3.33012515e-08, -0.0825118199)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Flail Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1133.75415, 230.999908, 3368.14087, -0.0550645292, -1.73162586e-08, 0.998482823, -2.23419292e-08, 1, 1.61104534e-08, -0.998482823, -2.14209184e-08, -0.0550645292)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Snowy Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1892.50696, 224.999954, 3303.00659, 0.999911904, -2.22762928e-08, 0.0132755609, 2.16087255e-08, 1, 5.04288202e-08, -0.0132755609, -5.01375084e-08, 0.999911904)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Big Snow Mountain" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6225.76221, 485.999908, -1601.78601, -0.0377998017, 1.83320459e-09, 0.99928534, -5.03370901e-09, 1, -2.02492489e-09, -0.99928534, -5.10665332e-09, -0.0377998017)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Big Black Mountain" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2013.95776, 487.999908, -720.344543, 0.151551947, -7.72941178e-08, 0.988449275, -2.81923054e-08, 1, 8.25198825e-08, -0.988449275, -4.03727149e-08, 0.151551947)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Marine Ford" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3133.93311, 275.901154, -3643.74341, -0.999911427, -3.90428356e-09, 0.0133108366, -4.18463797e-09, 1, -2.10342552e-08, -0.0133108366, -2.1088093e-08, -0.999911427)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Forest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6015.46631, 401.999908, 13.9106245, 0.726529002, 2.63533284e-08, 0.687135816, 4.80932307e-08, 1, -8.92028211e-08, -0.687135816, 9.78550219e-08, 0.726529002)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Green Rock/Cannon Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2623.29224, 269.599915, 1090.10852, -0.642234623, -2.10928164e-08, 0.766508102, 4.81428373e-08, 1, 6.7855531e-08, -0.766508102, 8.04810441e-08, -0.642234623)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Race/New Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6370.9834, 258.601776, 3841.90991, 1, 2.19709069e-08, 1.10745526e-13, -2.19709069e-08, 1, 8.39457854e-08, -1.08901156e-13, -8.39457854e-08, 1)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Pyramid" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.847107, 309.999908, 4943.37939, 0.99994427, -1.68357115e-08, -0.0105592962, 1.60353579e-08, 1, -7.58807701e-08, 0.0105592962, 7.57072129e-08, 0.99994427)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Mansion" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1835.2124, 269.999908, 861.194275, -0.693691909, -5.51743398e-08, 0.720271826, 2.95930125e-09, 1, 7.94521995e-08, -0.720271826, 5.72468508e-08, -0.693691909)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Moon Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3188.60791, 356.999908, 1627.56262, 0.999993682, 7.89155479e-08, -0.0035616986, -7.86453924e-08, 1, 7.59900161e-08, 0.0035616986, -7.57094227e-08, 0.999993682)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Vokun Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4434.4165, 487.999908, 5735.77051, 0.967606544, 4.68326107e-08, -0.252463102, -5.17578975e-08, 1, -1.28679076e-08, 0.252463102, 2.55180304e-08, 0.967606544)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+end
+end)
 
 Tabs.Weapon:AddSection("Equipment")
 weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
@@ -5642,40 +5821,24 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 
-Tabs.Affinity:AddSection("                                                -----")
-Tabs.Affinity:AddSection("                                                -----")
-Tabs.Farm:AddSection("                                                -----")
-Tabs.Main:AddSection("                                                -----")
-Tabs.Main:AddSection("                                                -----")
-Tabs.Farm:AddSection("                                                -----")
-Tabs.Server:AddSection("                                                -----")
-Tabs.Server:AddSection("                                                -----")
-Tabs.Fruit:AddSection("                                                -----")
-Tabs.Fruit:AddSection("                                                -----")
-Tabs.Teleport:AddSection("                                                -----")
-Tabs.Teleport:AddSection("                                                -----")
-Tabs.Player:AddSection("                                                -----")
-Tabs.Player:AddSection("                                                -----")
-Tabs.Automatic:AddSection("                                                -----")
-Tabs.Automatic:AddSection("                                                -----")
-Tabs.Webhook:AddSection("                                                -----")
-Tabs.Webhook:AddSection("                                                -----")
-Tabs.Misc:AddSection("                                                -----")
-Tabs.Misc:AddSection("                                                -----")
-Tabs.Settings:AddSection("                                                -----")
-Tabs.Settings:AddSection("                                                -----")
-Tabs.Haki:AddSection("                                                -----")
-Tabs.Haki:AddSection("                                                -----")
-Tabs.Shop:AddSection("                                                -----")
-Tabs.Shop:AddSection("                                                -----")
-Tabs.PVP:AddSection("                                                -----")
-Tabs.PVP:AddSection("                                                -----")
-Tabs.Gems:AddSection("                                                -----")
-Tabs.Gems:AddSection("                                                -----")
-Tabs.Info:AddSection("                                                -----")
-Tabs.Info:AddSection("                                                -----")
-Tabs.Weapon:AddSection("                                                -----")
-Tabs.Weapon:AddSection("                                                -----")
+Tabs.Info:AddSection(" ")
+Tabs.Main:AddSection(" ")
+Tabs.Haki:AddSection(" ")
+Tabs.Weapon:AddSection(" ")
+Tabs.Farm:AddSection(" ")
+Tabs.Fruit:AddSection(" ")
+Tabs.Robbing:AddSection(" ")
+Tabs.Affinity:AddSection(" ")
+Tabs.Gems:AddSection(" ")
+Tabs.PVP:AddSection(" ")
+Tabs.Teleport:AddSection(" ")
+Tabs.Player:AddSection(" ")
+Tabs.Shop:AddSection(" ")
+Tabs.Automatic:AddSection(" ")
+Tabs.Server:AddSection(" ")
+Tabs.Webhook:AddSection(" ")
+Tabs.Misc:AddSection(" ")
+Tabs.Settings:AddSection(" ")
 
 Window:SelectTab(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false

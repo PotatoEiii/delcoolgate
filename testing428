@@ -2528,7 +2528,7 @@ for i = 1, regenspeed do wait()
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
     end
-task.wait(1)
+task.wait(2)
         local args = {
         [1] = "Off",
         [2] = hakigoc

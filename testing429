@@ -2165,17 +2165,15 @@ end)
 spawn(function()
     while wait(0.3) do
         pcall(function()
-            if _G.autocannon or _G.autocannonslow or _G.autocannonplrbring then
+            if _G.autocannon then
                 toolname = "Cannon Ball"
                 wait(0.1)
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
 repeat wait()
-if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 then
 tool = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname)
 tool.Parent = game.Players.LocalPlayer.Character
 task.wait(0.8)
-end
-until not _G.autocannon and not _G.autocannonslow and not _G.autocannonplrbring
+until not _G.autocannon
 wait()
                 end
             end
@@ -2712,6 +2710,25 @@ until not getgenv().tret
 end
 end)
 end
+end)
+
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.autocannon == false and _G.autocannonslow or
+_G.autocannonplrbring and _G.autocannon == false then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.Name == "Cannon Ball" then
+repeat wait()
+v.Parent = game.Players.LocalPlayer.Character
+until _G.autocannon == true or
+not _G.autocannonslow and not _G.autocannonplrbring
+end
+end
+end
+      end)
+   end
 end)
 
 spawn(function()

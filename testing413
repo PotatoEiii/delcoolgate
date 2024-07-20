@@ -382,7 +382,7 @@ Tabs.Robbing:AddSection("Fruit Robbing")
         Title = "Robbing Method",
         Values = {"Quake"},
         Multi = false,
-        Default = "",
+        Default = "Quake",
     })
 
 
@@ -2308,7 +2308,7 @@ rssli = Tabs.Farm:AddSlider("rssliderzz", {
         end
     })
 
-autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset", Default = false })
+autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset (With Fast-Cannon)", Default = false })
 autoreset:OnChanged(function()
 if Options.autoresettoggle.Value == true then
 _G.resetzxcm = true
@@ -2643,6 +2643,15 @@ end)
 
 Tabs.Farm:AddSection("Auto Package   (*)")
 
+ restpac = Tabs.Farm:AddDropdown("restpac", {
+        Title = "Rest Package Type",
+        Values = {"Random TP","Safe Zone","Chair"},
+        Multi = false,
+        Default = "Chair",
+    })
+restpac:OnChanged(function(restpacxq)
+_G.resttypezx = restpacxq
+end)
 autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package", Default = false })
 autopackage:OnChanged(function()
 if Options.packagetoggle.Value == true then
@@ -2690,7 +2699,13 @@ end
 end
 end
 elseif not game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+if _G.resttypezx == "Random TP" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
+elseif _G.resttypezx == "Safe Zone" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+elseif _G.resttypezx == "Chair" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+end
 end
 end)
 until not getgenv().tret

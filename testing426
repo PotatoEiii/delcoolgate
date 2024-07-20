@@ -2721,7 +2721,7 @@ if _G.autocannon == false and _G.autocannonslow or
 _G.autocannonplrbring and _G.autocannon == false then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v.Name == "Cannon Ball" then
-repeat task.wait()
+repeat wait()
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 until _G.autocannon == true or
 not _G.autocannonslow and not _G.autocannonplrbring

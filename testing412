@@ -2678,14 +2678,14 @@ elseif game.Players.LocalPlayer.Character:FindFirstChild("Package") and not game
 for _,v in pairs(game.Workspace.Merchants:GetChildren()) do
 if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.Name, "Drink") or string.find(v.Name, "Boat") or string.find(v.Name, "Emote") or string.find(v.Name, "Exp") or string.find(v.Name, "Fish") or string.find(v.Name, "Flail") or string.find(v.Name, "Krizma") or string.find(v.Name, "QuestFish") or string.find(v.Name, "QuestMe") or string.find(v.Name, "Friend") or string.find(v.Name, "Sniper") or string.find(v.Name, "Sword") then
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-repeat task.wait()
 game.Players.LocalPlayer.Character.Package:Activate()
+if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame + Vector3.new(0, 0, 0)
+end
 wait(0.3)
 if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
  game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
-until not game.Players.LocalPlayer.Character:FindFirstChild("Package") or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 end
 end
 end

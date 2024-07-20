@@ -3440,7 +3440,42 @@ IslandTP = Tabs.Teleport:AddDropdown("IslandTP", {
 
 IslandTP:OnChanged(function(zxcrris)
 if zxcrris == "Sam Island" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.DrinkMerchant.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1280.31726, 239.998398, -1326.91028, -0.999996781, 7.21743021e-08, -0.00254111853, 7.21170679e-08, 1, 2.26145023e-08, 0.00254111853, 2.24311716e-08, -0.999996781)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Sand/Windmill" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.0743713, 282.310211, -36.9613533, 0.136958227, -1.5720218e-08, 0.990576804, 4.45528325e-09, 1, 1.52537698e-08, -0.990576804, 2.3241713e-09, 0.136958227)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Cave" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.43468678, 306.999908, -927.490723, -0.0791061521, -1.76420407e-08, 0.996866226, -2.13624607e-09, 1, 1.75279791e-08, -0.996866226, -7.42980621e-10, -0.0791061521)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Near-Bar Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(887.123474, 302.998199, 1218.83557, -0.00453962386, 6.63435955e-08, 0.999989688, -9.09009827e-08, 1, -6.67569395e-08, -0.999989688, -9.12030984e-08, -0.00453962386)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Bar" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1520.92224, 303.489471, 2138.15845, 0.996849716, 5.16282661e-09, -0.0793136358, -5.49105694e-09, 1, -3.92028143e-09, 0.0793136358, 4.34344694e-09, 0.996849716)
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+elseif zxcrris == "Boss-5K/Tornado Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4854.58057, 605.394287, -7281.04297, -0.969173074, -2.48229548e-10, 0.24638097, -1.49729756e-10, 1, 4.18520579e-10, -0.24638097, 3.68728326e-10, -0.969173074)
 Fluent:Notify({
     Title = "Teleport Notify",
     Content = "Teleported to " ..zxcrris,

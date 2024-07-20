@@ -9,8 +9,8 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Fo
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 task.wait(4)
-_G.name = "NOT FOUND"
-_G.facebookid = "NOT FOUND"
+_G.name = "SPECIFIC KEY"
+_G.facebookid = "SPECIFIC KEY"
 Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",

@@ -3288,6 +3288,14 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Wo
     })
 
 Tabs.Teleport:AddButton({
+        Title = "Teleport To Fishing Place",
+        Description = "(A place where you can go fishing)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
         Title = "Teleport To Rayleigh",
         Description = "Check and teleport to Rayleigh if he spawns",
         Callback = function()

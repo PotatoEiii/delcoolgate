@@ -2653,15 +2653,12 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(2) do
 pcall(function()
 if getgenv().tret then
-repeat task.wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-wait(2)
 end)
-until not getgenv().tret
 end
 end)
 end
@@ -2674,25 +2671,25 @@ if getgenv().tret then
 repeat task.wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Package") then
-                            game.Players.LocalPlayer.Backpack:FindFirstChild("Package").Parent = game.Players.LocalPlayer.Character
-                            game.Players.LocalPlayer.Character.Humanoid.Sit = true
-                            elseif game.Players.LocalPlayer.Character:FindFirstChild("Package")  then
-if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
-game.Players.LocalPlayer.Character.Humanoid.Sit = true
-end
- for _,v in pairs(game.Workspace.Merchants:GetChildren()) do
-if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.Name, "Drink") or string.find(v.Name, "Boat") or string.find(v.Name, "Emote") or string.find(v.Name, "Exp") or string.find(v.Name, "Fish") or string.find(v.Name, "Flail") or string.find(v.Name, "Krizma") or string.find(v.Name, "QuestFish") or string.find(v.Name, "QuestMe") or string.find(v.Name, "Friend") or string.find(v.Name, "Sniper") or string.find(v.Name, "Sword") and v:FindFirstChild("HumanoidRootPart") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Package"))
+
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Package") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+
+for _,v in pairs(game.Workspace.Merchants:GetChildren()) do
+if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.Name, "Drink") or string.find(v.Name, "Boat") or string.find(v.Name, "Emote") or string.find(v.Name, "Exp") or string.find(v.Name, "Fish") or string.find(v.Name, "Flail") or string.find(v.Name, "Krizma") or string.find(v.Name, "QuestFish") or string.find(v.Name, "QuestMe") or string.find(v.Name, "Friend") or string.find(v.Name, "Sniper") or string.find(v.Name, "Sword") then
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(1, 0, 0)
-wait(0.3)
 game.Players.LocalPlayer.Character.Package:Activate()
+if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame + Vector3.new(0, 0, 0)
+end
+wait(0.3)
+if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+ game.Players.LocalPlayer.Character.Humanoid.Sit = false
+end
 end
 end
 end
 elseif not game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
-game.Players.LocalPlayer.Character.Humanoid.Sit = false
-end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 end)

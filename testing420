@@ -3438,7 +3438,15 @@ IslandTP = Tabs.Teleport:AddDropdown("IslandTP", {
     })
 
 
-    MobsTP:OnChanged(function(Mobbb)
+IslandTP:OnChanged(function(zxcrris)
+if zxcrris == "Sam Island" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.DrinkMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..zxcrris,
+    Duration = 1
+})
+end
 end)
 
 Tabs.Weapon:AddSection("Equipment")

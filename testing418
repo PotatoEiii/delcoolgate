@@ -3323,9 +3323,9 @@ Tabs.Teleport:AddSection("Teleport")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
-        Values = {"","Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flai; Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
+        Values = {" ","Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flai; Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
-        Default = "",
+        Default = " ",
     })
 
 
@@ -3433,9 +3433,9 @@ end)
 
 IslandTP = Tabs.Teleport:AddDropdown("IslandTP", {
         Title = "Island Teleport",
-        Values = {"","Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snow Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
+        Values = {" ","Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snow Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
         Multi = false,
-        Default = "",
+        Default = " ",
     })
 
 

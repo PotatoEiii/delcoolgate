@@ -2787,7 +2787,7 @@ spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
-                repeat task.wait(0.1)
+                repeat task.wait()
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)

@@ -1186,7 +1186,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampDark or v.Name ~= _G.SelectedKillPlayer
+until not _G.CampDark or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end
@@ -1231,7 +1231,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampVamp or v.Name ~= _G.SelectedKillPlayer
+until not _G.CampVamp or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end
@@ -1275,7 +1275,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampMagma or v.Name ~= _G.SelectedKillPlayer
+until not _G.CampMagma or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end
@@ -1314,7 +1314,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-until v.Humanoid.Health == 0 or not _G.CampLight or v.Name ~= _G.SelectedKillPlayer
+until not _G.CampLight or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end

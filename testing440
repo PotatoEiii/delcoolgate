@@ -2285,7 +2285,7 @@ end)
     while wait(0.3) do
         pcall(function()
             if _G.autocannonplrbring or _G.BringPlayer or _G.BringAllPlayer then
-repeat wait(0.2)
+repeat wait(0.5)
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 if v.Name == "Seat" then task.wait()
 v:Destroy()

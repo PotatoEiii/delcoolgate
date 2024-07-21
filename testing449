@@ -1126,6 +1126,9 @@ end
 while _G.wqesorry do wait(0.1)
 pcall(function()
 repeat wait()
+if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
+end
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then

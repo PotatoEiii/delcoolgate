@@ -1140,10 +1140,12 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.
 elseif c.HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
-until not _G.wqesorry or game.Players:FindFirstChild(_G.SelectedKillPlayer)
+until not _G.wqesorry or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end
 end
-
+if not game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end
 end)
 end
 end)

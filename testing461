@@ -2099,10 +2099,7 @@ repeat task.wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
-d = v.Data.Value
-c = string.len(d)
-b = tonumber(c) - 1
-if string.sub(d,b) == ",1" then
+if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
 repeat task.wait()
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name)
 x.Parent = game.Players.LocalPlayer.Character

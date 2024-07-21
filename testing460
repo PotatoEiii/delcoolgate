@@ -471,10 +471,7 @@ for i, backpacka in pairs(playera:GetChildren()) do
 if backpacka.Name == "Backpack" then 
 for i, v in pairs(backpacka:GetChildren()) do
 if string.find(v.Name,"Fruit") then
-d = v.Data.Value
-c = string.len(d)
-b = tonumber(c) - 1
-if string.sub(d,b) == ",1" then
+if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
 _G.cuopfruittarget = playera.Name
 end
 end

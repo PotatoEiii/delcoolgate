@@ -1130,9 +1130,9 @@ if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end

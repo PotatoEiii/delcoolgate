@@ -2792,6 +2792,13 @@ spawn(function()
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
                             v.CanCollide = false
+                            if not v:FindFirstChild("BodyClip") then
+                                local Noclip = Instance.new("BodyVelocity")
+                                Noclip.Name = "BodyClip"
+                                Noclip.Parent = v
+                                Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                                Noclip.Velocity = Vector3.new(0,20,0)
+                            end
                         end
                     end
                 until _G.autocannonplrbring == false and _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0

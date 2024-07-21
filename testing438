@@ -135,6 +135,7 @@ _G.WhiteListed = true
         end
 if _G.WhiteListed then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
+_G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.Cframe
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
@@ -705,6 +706,13 @@ end)
 
 Tabs.Misc:AddSection("Misc")
 Tabs.Misc:AddButton({
+        Title = "Fix Chair's CFrame",
+        Description = "Reset Chair's CFrame",
+        Callback = function()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+end
+    })
+Tabs.Misc:AddButton({
         Title = "Fix Cam",
         Description = "Reset Camera (If Error)",
         Callback = function()
@@ -1075,7 +1083,7 @@ pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if _G.CampString == true then
 repeat wait()
-game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,0,-10)
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
 until not _G.CampString
 end
 end

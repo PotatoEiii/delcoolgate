@@ -500,7 +500,85 @@ end)
 end
 end)
 
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.startropaura then
+pcall(function()
+repeat task.wait()
+for i, playera in pairs(game.Players:GetChildren()) do 
+if playera.Name ~= game.Players.LocalPlayer.Name then
+for i, backpacka in pairs(playera:GetChildren()) do
+if backpacka.Name == "Backpack" then 
+for i, v in pairs(backpacka:GetChildren()) do
+if string.find(v.Name,"Fruit") then
+d = v.Data.Value
+c = string.len(d)
+b = tonumber(c) - 1
+if string.sub(d,b) == ",1" then
+_G.cuopauratarget = playera.Name
+end
+end
+end
+end
+end
+end
+end
+until not _G.startropaura
+end)
+end
+end)
+end
+end)
 
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.startropaura and _G.robmethod == "Quake" and _G.cuopauratarget ~= "" and _G.cuopauratarget ~= game.Players.LocalPlayer.Name then
+repeat task.wait()
+pcall(function()
+	for i, tacca in pairs(game.Players:GetChildren()) do 
+if tostring(tacca.Name) == tostring(_G.cuopauratarget) then
+	for i, backpackza in pairs(game.Players:FindFirstChild(_G.cuopauratarget):GetChildren()) do
+if backpackza.Name == "Backpack" then 
+	for i, v in pairs(backpackza:GetChildren()) do
+
+
+
+if string.find(v.Name,"Fruit") then
+d = v.Data.Value
+c = string.len(d)
+b = tonumber(c) - 1
+if string.sub(d,b) == ",1" then
+
+for i,va in pairs(game:GetService("Workspace"):GetChildren()) do
+	if va.Name == _G.cuopauratarget then
+repeat task.wait()
+xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+vptt = xr.VTCebvc
+dcv = game.Players:FindFirstChild(_G.cuopauratarget).Character
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+until va.Humanoid.Health == 0
+wait()
+_G.cuopauratarget = ""
+	end
+end
+	end
+end
+
+end
+
+	end
+end
+	end
+end
+
+end)
+until not _G.startrop or _G.robmethod ~= "Quake" or _G.cuopfruittarget == "" or _G.cuopfruittarget == game.Players.LocalPlayer.Name
+end
+end)
+end
+end)
 
 
 Tabs.Info:AddSection("Developer/Owner")

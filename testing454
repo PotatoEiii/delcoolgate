@@ -2950,10 +2950,10 @@ end)
 end
 
 end)
-hopplrsvzz = Tabs.Weapon:AddSlider("hopplrsvzzc", {
+hopplrsvzz = Tabs.Automatic:AddSlider("hopplrsvzzc", {
     Title = "Player Numbers To Hop",
-    Description = "Adjust player numbers",
-    Default = 6,
+    Description = "Adjust player numbers (Recommend: 3)",
+    Default = 18,
     Min = 1,
     Max = 18,
     Rounding = 0,

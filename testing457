@@ -524,7 +524,6 @@ end
 end
 end
 end
-end
 until not _G.startropaura
 end)
 end
@@ -573,7 +572,6 @@ end
 end
 	end
 end
-	end
 
 end)
 until not _G.startrop or _G.robmethod ~= "Quake" or _G.cuopfruittarget == "" or _G.cuopfruittarget == game.Players.LocalPlayer.Name

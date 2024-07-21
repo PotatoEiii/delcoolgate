@@ -1129,23 +1129,18 @@ end
 
 while _G.wqesorry do wait(0.1)
 pcall(function()
-
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c.Name == _G.SelectedKillPlayer and _G.wqesorry == true then
 repeat wait()
-if c.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
-elseif c.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = c.HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
-elseif c.HumanoidRootPart.Position.Y < 200 then
+if game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
+elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame * CFrame.new(0,campdis,0)
+elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-end
-until not _G.wqesorry or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
-end
 end
 if not game.Players:FindFirstChild(_G.SelectedKillPlayer) then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
+until not _G.wqesorry
 end)
 end
 end)

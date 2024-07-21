@@ -136,8 +136,9 @@ _G.WhiteListed = true
 if _G.WhiteListed then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+task.wait()
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-if v.Name == "Seat" then task.wait()
+if v.Name == "Seat" then
 v:Destroy()
 end
 end

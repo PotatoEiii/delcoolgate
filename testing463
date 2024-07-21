@@ -2075,7 +2075,7 @@ repeat task.wait()
 pcall(function()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
-repeat task.wait()
+repeat
 game.Players.LocalPlayer.Backpack:FindFirstChild(v).Parent = game.Players.LocalPlayer.Character
 task.wait()
 storedf()
@@ -2099,7 +2099,7 @@ pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
 if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
-repeat task.wait()
+repeat
 game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name).Parent = game.Players.LocalPlayer.Character
 task.wait()
 storedf()

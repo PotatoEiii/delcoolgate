@@ -1025,10 +1025,8 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.CampString then
-repeat wait()
 pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
     pcall(function()
 repeat wait()
 local args = {
@@ -1041,7 +1039,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
-until v.Humanoid.Health == 0 or not _G.CampString or v.Name ~= _G.SelectedKillPlayer
+until v.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 task.wait()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
@@ -1051,9 +1049,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 end)
 end
-end
 end)
-until not _G.CampString
 end
 end)
 end

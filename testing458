@@ -462,47 +462,6 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.startrop and _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= game.Players.LocalPlayer.Name then
-repeat task.wait()
-pcall(function()
-
-	for i, tacc in pairs(game.Players:GetChildren()) do 
-	if tostring(tacc.Name) == tostring(_G.cuopfruittarget) then
-	for i, backpackz in pairs(game.Players:FindFirstChild(_G.cuopfruittarget):GetChildren()) do
-	if backpackz.Name == "Backpack" then 
-	for i, v in pairs(backpackz:GetChildren()) do
-	for _, fruitz in pairs(Rarefruit) do
-	if v.Name == fruitz then
-	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-	if v.Name == _G.cuopfruittarget then
-	repeat task.wait()
-xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
- vptt = xr.VTCebvc
- dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-	until v.Humanoid.Health == 0
-wait()
-_G.cuopfruittarget = ""
-	end
-	end
-	end
-	end
-	end
-	end
-	end
-	end
-	end
-
-end)
-until not _G.startrop or _G.robmethod ~= "Quake" or _G.cuopfruittarget == "" or _G.cuopfruittarget == game.Players.LocalPlayer.Name
-end
-end)
-end
-end)
-
-spawn(function()
-while wait(0.3) do
-pcall(function()
 if _G.startropaura then
 pcall(function()
 repeat task.wait()
@@ -516,7 +475,7 @@ d = v.Data.Value
 c = string.len(d)
 b = tonumber(c) - 1
 if string.sub(d,b) == ",1" then
-_G.cuopauratarget = playera.Name
+_G.cuopfruittarget = playera.Name
 end
 end
 end
@@ -534,52 +493,29 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.startropaura and _G.robmethod == "Quake" and _G.cuopauratarget ~= "" and _G.cuopauratarget ~= game.Players.LocalPlayer.Name then
+if _G.startrop or _G.startropaura then
 repeat task.wait()
+if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" then
 pcall(function()
-	for i, tacca in pairs(game.Players:GetChildren()) do 
-if tostring(tacca.Name) == tostring(_G.cuopauratarget) then
-	for i, backpackza in pairs(game.Players:FindFirstChild(_G.cuopauratarget):GetChildren()) do
-if backpackza.Name == "Backpack" then 
-	for i, v in pairs(backpackza:GetChildren()) do
-
-
-
-if string.find(v.Name,"Fruit") then
-d = v.Data.Value
-c = string.len(d)
-b = tonumber(c) - 1
-if string.sub(d,b) == ",1" then
-
-for i,va in pairs(game:GetService("Workspace"):GetChildren()) do
-	if va.Name == _G.cuopauratarget then
 repeat task.wait()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.cuopfruittarget then
 xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 vptt = xr.VTCebvc
-dcv = game.Players:FindFirstChild(_G.cuopauratarget).Character
+dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-until va.Humanoid.Health == 0
+end
+end
+until v.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
-_G.cuopauratarget = ""
-	end
-end
-	end
-end
-
-end
-
-	end
-end
-	end
-end
-
+_G.cuopfruittarget = ""
 end)
-until not _G.startrop or _G.robmethod ~= "Quake" or _G.cuopfruittarget == "" or _G.cuopfruittarget == game.Players.LocalPlayer.Name
+end
+until not _G.startrop and not _G.startropaura
 end
 end)
 end
 end)
-
 
 Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({

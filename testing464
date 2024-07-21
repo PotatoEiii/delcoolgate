@@ -133,6 +133,9 @@ userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcuteh
 _G.WhiteListed = true
             end
         end
+if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
+_G.WhiteListed = true
+end
 if _G.WhiteListed then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame

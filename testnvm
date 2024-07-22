@@ -1,0 +1,5 @@
+for i,v in pairs(game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):GetChildren()) do
+if if v:IsA("BasePart") then
+v:Destroy()
+end
+end

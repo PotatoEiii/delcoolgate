@@ -819,6 +819,7 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
+Tabs.PVP:AddSection("Anti-stun")
 
 Tabs.PVP:AddSection("Skills")
 azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })

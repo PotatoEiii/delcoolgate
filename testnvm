@@ -1,5 +1,1 @@
-for i,v in pairs(game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):GetChildren()) do
-if v:IsA("BasePart") and v.Name == "HumanaidRootPart" then
-v:Destroy()
-end
-end
+game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name).Humanoid.Health:Destroy()

@@ -819,6 +819,68 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
+Tabs.PVP:AddSection("Anti-Stuff")
+antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti-Stun", Default = false })
+antistunz:OnChanged(function()
+if Options.antistunztoggle.Value == true then
+_G.autostun = true
+else
+_G.autostun = false
+for i = 1,2 do wait(0.2)
+game.Players.LocalPlayer.Character.BurnMagmaOverTime.Value = false
+game.Players.LocalPlayer.Character.BurnOverTime.Value = false
+game.Players.LocalPlayer.Character.CandyTouched.Value = false
+game.Players.LocalPlayer.Character.Cheshire.Value = false
+game.Players.LocalPlayer.Character.ChillyPunched.Value = false
+game.Players.LocalPlayer.Character["DF_Disabled"].Value = false
+game.Players.LocalPlayer.Character.GasPoison.Value = false
+game.Players.LocalPlayer.Character.GasAirless.Value = false
+game.Players.LocalPlayer.Character.GravityCrushed.Value = false
+game.Players.LocalPlayer.Character.HeartStolen.Value = false
+game.Players.LocalPlayer.Character.Hobbied.Value = false
+game.Players.LocalPlayer.Character.HotBody.Value = false
+game.Players.LocalPlayer.Character.HypnosisOnCooldown.Value = false
+game.Players.LocalPlayer.Character.LoveStunned.Value = false
+game.Players.LocalPlayer.Character.Mored.Value = false
+game.Players.LocalPlayer.Character.Negative.Value = false
+game.Players.LocalPlayer.Character.OpeSevered.Value = false
+game.Players.LocalPlayer.Character.Returned.Value = false
+game.Players.LocalPlayer.Character.RumbleStun.Value = false
+game.Players.LocalPlayer.Character.SanguineVampiris.Value = false
+game.Players.LocalPlayer.Character.SnowTouched.Value = false
+game.Players.LocalPlayer.Character.Stringing.Value = false
+game.Players.LocalPlayer.Character.VenomDoT.Value = false
+end
+end
+
+while _G.autostun do wait()
+pcall(function()
+game.Players.LocalPlayer.Character.BurnMagmaOverTime.Value = true
+game.Players.LocalPlayer.Character.BurnOverTime.Value = true
+game.Players.LocalPlayer.Character.CandyTouched.Value = true
+game.Players.LocalPlayer.Character.Cheshire.Value = true
+game.Players.LocalPlayer.Character.ChillyPunched.Value = true
+game.Players.LocalPlayer.Character["DF_Disabled"].Value = false
+game.Players.LocalPlayer.Character.GasPoison.Value = true
+game.Players.LocalPlayer.Character.GasAirless.Value = true
+game.Players.LocalPlayer.Character.GravityCrushed.Value = true
+game.Players.LocalPlayer.Character.HeartStolen.Value = true
+game.Players.LocalPlayer.Character.Hobbied.Value = true
+game.Players.LocalPlayer.Character.HotBody.Value = true
+game.Players.LocalPlayer.Character.HypnosisOnCooldown.Value = true
+game.Players.LocalPlayer.Character.LoveStunned.Value = true
+game.Players.LocalPlayer.Character.Mored.Value = true
+game.Players.LocalPlayer.Character.Negative.Value = true
+game.Players.LocalPlayer.Character.OpeSevered.Value = true
+game.Players.LocalPlayer.Character.Returned.Value = true
+game.Players.LocalPlayer.Character.RumbleStun.Value = true
+game.Players.LocalPlayer.Character.SanguineVampiris.Value = true
+game.Players.LocalPlayer.Character.SnowTouched.Value = true
+game.Players.LocalPlayer.Character.Stringing.Value = true
+game.Players.LocalPlayer.Character.VenomDoT.Value = true
+end)
+end
+end)
 
 Tabs.PVP:AddSection("Skills")
 azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
@@ -2145,7 +2207,7 @@ end
 while getgenv().find do wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Backpack:FindFirstChild("Compass").Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Compass"))
 end
 
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do

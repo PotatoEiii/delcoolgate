@@ -2146,7 +2146,7 @@ end
 while getgenv().find do wait()
 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
-game.Players.LocalPlayer.Backpack:FindFirstChild("Compass").Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Compass"))
 end
 
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do

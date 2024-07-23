@@ -306,6 +306,7 @@ aaxcz = hookmetamethod(game, "__namecall", function(self, ...)
         if self.Name == "RemoteEvent" and args[3] == "Land" and _G.antitestlol then
             args[1] = 0
             return aaxcz(self, unpack(args))
+print("concac")
         end
     end
     return aaxcz(self, ...)

@@ -299,6 +299,18 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     return aaxc(self, ...)
 end)
 
+aaxcz = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RemoteEvent" and args[3] == "Land" and _G.antitestlol then
+            args[1] = 0
+            return aaxcz(self, unpack(args))
+        end
+    end
+    return aaxcz(self, ...)
+end)
+
 local remotes = {}
     local azc
     azc=hookmetamethod(game,"__namecall",function(self,...)
@@ -879,6 +891,16 @@ game.Players.LocalPlayer.Character.SnowTouched.Value = true
 game.Players.LocalPlayer.Character.Stringing.Value = true
 game.Players.LocalPlayer.Character.VenomDoT.Value = true
 end)
+end
+end)
+
+Tabs.PVP:AddSection("Skills")
+testzxc = Tabs.PVP:AddToggle("testzxctoggle", {Title = "Test Anti", Default = false })
+testzxc:OnChanged(function()
+if Options.testzxctoggle.Value == true then
+_G.antitestlol = true
+else
+_G.antitestlol = false
 end
 end)
 

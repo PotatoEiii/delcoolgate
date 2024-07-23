@@ -882,6 +882,16 @@ end)
 end
 end)
 
+Tabs.PVP:AddSection("Anti-Stuff")
+testantiz = Tabs.PVP:AddToggle("testantiztoggle", {Title = "Test Anti", Default = false })
+testantiz:OnChanged(function()
+if Options.testantiztoggle.Value == true then
+_G.antitestlol = true
+else
+_G.antitestlol = false
+end
+end)
+
 Tabs.PVP:AddSection("Skills")
 azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
 azxcwwwcarge:OnChanged(function()
@@ -891,6 +901,7 @@ else
 _G.auto100rate = false
 end
 end)
+
 
 Tabs.PVP:AddSection("Players' Sight")
 plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })

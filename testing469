@@ -287,7 +287,6 @@ vu = game:GetService("VirtualUser")
     SafeZoneOuterSpace.Anchored = true
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
-local aaxc
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     local args = {...}
     local method = getnamecallmethod()
@@ -298,20 +297,6 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
         end
     end
     return aaxc(self, ...)
-end)
-local aaxcz
-aaxcz = hookmetamethod(game, "__namecall", function(self, ...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and _G.antitestlol then
-if args[3] == "Land" or string.find(args[3], "Disable") then
-            args[1] = 0
-            return aaxcz(self, unpack(args))
-        end
-end
-    end
-    return aaxcz(self, ...)
 end)
 
 local remotes = {}
@@ -897,16 +882,6 @@ end)
 end
 end)
 
-Tabs.PVP:AddSection("Anti-Stuff")
-testantiz = Tabs.PVP:AddToggle("testantiztoggle", {Title = "Test Anti", Default = false })
-testantiz:OnChanged(function()
-if Options.testantiztoggle.Value == true then
-_G.antitestlol = true
-else
-_G.antitestlol = false
-end
-end)
-
 Tabs.PVP:AddSection("Skills")
 azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
 azxcwwwcarge:OnChanged(function()
@@ -916,7 +891,6 @@ else
 _G.auto100rate = false
 end
 end)
-
 
 Tabs.PVP:AddSection("Players' Sight")
 plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })

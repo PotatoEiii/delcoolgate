@@ -172,7 +172,7 @@ local vu = game:GetService("VirtualUser")
     getgenv().secondfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value
 
    do  
-     fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
+	fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
     if fishingplace then 
     fishingplace:Destroy() 
     end 
@@ -189,6 +189,14 @@ local vu = game:GetService("VirtualUser")
     safezonedestroyspace:Destroy() 
     end 
     end
+
+    do  
+    local safezonedestroysea =  game:GetService("Workspace"):FindFirstChild("SafeZoneUnderSeaPart")  
+    if safezonedestroysea then 
+    safezonedestroysea:Destroy() 
+    end 
+    end
+
         if game.CoreGui:FindFirstChild("BBB") then
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
@@ -197,8 +205,15 @@ local vu = game:GetService("VirtualUser")
      SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
-    SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+    SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
+
+    local SafeZoneUnderSea = Instance.new("Part",game.Workspace)
+    SafeZoneUnderSea.Name = "SafeZoneUnderSeaPart"
+    SafeZoneUnderSea.Size = Vector3.new(200,3,200)
+    SafeZoneUnderSea.Position = Vector3.new((math.random(-100000, -50000)), -491, (math.random(-100000, -50000)))
+    SafeZoneUnderSea.Anchored = true
+
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
@@ -3348,6 +3363,15 @@ Tabs.Teleport:AddButton({
         Description = "(A high platform)",
         Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Safe Zone (Under Sea)",
+        Description = "(An undersea platform)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.JumpOutOfWater.Enabled = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneUnderSeaPart"].CFrame * CFrame.new(0, 5, 0)
         end
     })
 

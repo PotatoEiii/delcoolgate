@@ -677,7 +677,7 @@ Tabs.Player:AddSection("About Player")
 
     plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
-        Default = "",
+        Default = game.Players.LocalPlayer.Name,
         Placeholder = "Insert Here",
         Numeric = false, -- Only allows numbers
         Finished = true, -- Only calls callback when you press enter
@@ -1349,60 +1349,6 @@ repeat wait()
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
-                    local args = {
-                        [1] = tonumber(serializeTable(remotes)),
-                        [2] = "PlasmaPower4",
-                        [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
-                        [6] = 100
-                    }
-                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-                    local args = {
-                        [1] = tonumber(serializeTable(remotes)),
-                        [2] = "PlasmaPower4",
-                        [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
-                        [6] = 100
-                    }
-                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-                    local args = {
-                        [1] = tonumber(serializeTable(remotes)),
-                        [2] = "PlasmaPower4",
-                        [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
-                        [6] = 100
-                    }
-                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-                    local args = {
-                        [1] = tonumber(serializeTable(remotes)),
-                        [2] = "PlasmaPower4",
-                        [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
-                        [6] = 100
-                    }
-                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-                    local args = {
-                        [1] = tonumber(serializeTable(remotes)),
-                        [2] = "PlasmaPower4",
-                        [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
-                        [6] = 100
-                    }
-                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-                    local args = {
-                        [1] = tonumber(serializeTable(remotes)),
-                        [2] = "PlasmaPower4",
-                        [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
-                        [6] = 100
-                    }
-                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
                     local args = {
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",

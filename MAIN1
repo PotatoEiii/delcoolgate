@@ -9,8 +9,6 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Fo
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 task.wait(4)
-_G.name = "SPECIFIC KEY"
-_G.facebookid = "SPECIFIC KEY"
 Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",
@@ -143,91 +141,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 
-currenthwid = game:GetService("RbxAnalyticsService"):GetClientId()
-if currenthwid == listed[1] then
-_G.name = "Irenkiss Trần"
-_G.facebookid = "IrenkissWantPeace"
-elseif currenthwid == listed[2] then
-_G.name = "Nguyễn Ngọc Khôi"
-_G.facebookid = "ng.khoi.07"
-elseif currenthwid == listed[3] then
-_G.name = "Hiếu Trung"
-_G.facebookid = "cao.hieu.77312"
-elseif currenthwid == listed[4] then
-_G.name = "Khoa GK"
-_G.facebookid = "khoa.gk.75"
-elseif currenthwid == listed[5] then
-_G.name = "Huy Tú"
-_G.facebookid = "100041333672880"
-elseif currenthwid == listed[6] then
-_G.name = "Huy Tú (2)"
-_G.facebookid = "100041333672880"
-elseif currenthwid == listed[7] then
-_G.name = "Nguyễn Anh Tiến"
-_G.facebookid = "TienSama2x"
-elseif currenthwid == listed[8] then
-_G.name = "Tài Nhớt"
-_G.facebookid = "KakutoChan"
-elseif currenthwid == listed[9] then
-_G.name = "Lâm Quốc Bảo"
-_G.facebookid = "theayma8"
-elseif currenthwid == listed[10] then
-_G.name = "Tạ Khánh"
-_G.facebookid = "100086491617614"
-elseif currenthwid == listed[11] then
-_G.name = "Duy Pham"
-_G.facebookid = "61557719982076"
-elseif currenthwid == listed[12] then
-_G.name = "Trần Minh Đạt"
-_G.facebookid = "dat15112006"
-elseif currenthwid == listed[13] then
-_G.name = "Huyy Niee"
-_G.facebookid = "teobo.huy"
-elseif currenthwid == listed[14] then
-_G.name = "Huyy Niee (2)"
-_G.facebookid = "teobo.huy"
-elseif currenthwid == listed[15] then
-_G.name = "Đặng Bá Dương"
-_G.facebookid = "baduonggg.2706"
-elseif currenthwid == listed[16] then
-_G.name = "Cậu Ngân Hà"
-_G.facebookid = "100014813557316"
-elseif currenthwid == listed[17] then
-_G.name = "Trần Dũng"
-_G.facebookid = "61560483452261"
-elseif currenthwid == listed[18] then
-_G.name = "Phan Van Long"
-_G.facebookid = "100039356352586"
-elseif currenthwid == listed[19] then
-_G.name = "Lê Trường Giang"
-_G.facebookid = "61560880736193"
-elseif currenthwid == listed[20] then
-_G.name = "Irenkiss Test"
-_G.facebookid = "Irenkiss Test"
-elseif currenthwid == listed[23] then
-_G.name = "Minh Phạm"
-_G.facebookid = "beminhdzvl"
-elseif currenthwid == listed[24] then
-_G.name = "Nguyên Phúc"
-_G.facebookid = "61558821711905"
-elseif currenthwid == listed[25] then
-_G.name = "Minh Chính"
-_G.facebookid = "100080445215092"
-elseif currenthwid == listed[26] then
-_G.name = "Nguyễn Bin"
-_G.facebookid = "61553546437694"
-elseif currenthwid == listed[27] then
-_G.name = "Bùi Đức An"
-_G.facebookid = "100077353219952"
-elseif currenthwid == listed[28] then
-_G.name = "Trần Huy Quang"
-_G.facebookid = "hwan.infors"
-elseif currenthwid == listed[29] then
-_G.name = "Nguyễn Văn Bảo Khánh"
-_G.facebookid = "NgBaoKhanh.2007"
-end
-
-vu = game:GetService("VirtualUser")
+local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
        wait(1)
@@ -369,6 +283,7 @@ local remotes = {}
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
+    Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://4881507747" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
@@ -526,7 +441,7 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 Tabs.Info:AddSection("Information")
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "Register Name: ".._G.name.."\nFacebook ID: ".._G.facebookid.."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
+Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
 })
 
 Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)

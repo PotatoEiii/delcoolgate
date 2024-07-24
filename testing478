@@ -533,9 +533,17 @@ Tabs.Misc:AddSection("Other Scripts")
 
     Tabs.Misc:AddButton({
         Title = "Infinite Yield",
-        Description = "Open Infinite Yield GUI",
+        Description = "Open Infinite Yield Script",
         Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end
+    })
+
+    Tabs.Misc:AddButton({
+        Title = "Remote Spy",
+        Description = "Open Remote Spy Script",
+        Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
         end
     })
 
@@ -1040,7 +1048,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 until v.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
-task.wait()
+wait()
 local args = {
     [1] = tonumber(serializeTable(remotes)),
     [2] = "StringPower7"
@@ -1063,7 +1071,7 @@ if _G.CampString then
 pcall(function()
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
-task.wait()
+wait()
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
@@ -1340,7 +1348,7 @@ repeat wait()
                         [4] = Vector3.new(720, 238, 1194)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.05)
                     local args = {
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
@@ -1437,7 +1445,6 @@ end
 end
 end)
 end
-
 end)
 
 

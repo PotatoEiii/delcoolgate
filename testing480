@@ -1042,7 +1042,7 @@ local args = {
     [2] = "StringPower8",
     [3] = "Start",
     [4] = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Torso.CFrame,
-    [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart
+    [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.Torso
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))

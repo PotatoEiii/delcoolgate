@@ -5058,7 +5058,7 @@ end
 
    Tabs.Server:AddButton({
         Title = "Low-Server Hop",
-        Description = "Hop to a fewer players server",
+        Description = "Hop to a lowest players server",
         Callback = function()
             Window:Dialog({
                 Title = "Low-Server Hop",
@@ -5129,6 +5129,79 @@ game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
                 end
             end
             Teleport()         
+end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+   Tabs.Server:AddButton({
+        Title = "High-Server Hop",
+        Description = "Hop to a highest players server",
+        Callback = function()
+            Window:Dialog({
+                Title = "High-Server Hop",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+local PlaceID = game.PlaceId
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+
+-- Function to get server list
+local function getServerList(cursor)
+    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
+    if cursor and cursor ~= "" then
+        url = url .. '&cursor=' .. cursor
+    end
+    local response = HttpService:JSONDecode(game:HttpGet(url))
+    return response
+end
+
+-- Function to find the server with the highest player count
+local function findHighestPlayerServer()
+    local highestServer = nil
+    local foundAnything = ""
+    repeat
+        local Site = getServerList(foundAnything)
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        else
+            foundAnything = nil
+        end
+
+        for _, server in pairs(Site.data) do
+            if not highestServer or server.playing > highestServer.playing then
+                highestServer = server
+            end
+        end
+    until not foundAnything
+
+    return highestServer
+end
+
+-- Main function to hop to the highest player server
+local function hopToHighestPlayerServer()
+    local highestServer = findHighestPlayerServer()
+    if highestServer then
+        local serverId = highestServer.id
+        TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game.Players.LocalPlayer)
+    else
+        print("No servers found.")
+    end
+end
+
+-- Execute the hop
+hopToHighestPlayerServer()      
 end
                     },
                     {

@@ -1156,7 +1156,7 @@ end
 while _G.CampDark do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampDark == true and v.Humanoid.Health > 0 then
+if v.Name == _G.SelectedKillPlayer and _G.CampDark == true then
     pcall(function()
 repeat wait()
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
@@ -1203,7 +1203,7 @@ end
 while _G.CampVamp do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true and v.Humanoid.Health > 0 then
+if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
     pcall(function()
 repeat wait()
 local args = {
@@ -1247,7 +1247,7 @@ end
 while _G.CampMagma do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true and v.Humanoid.Health > 0 then
+if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
     pcall(function()
 repeat wait()
 local args = {
@@ -1293,7 +1293,7 @@ end
 while _G.CampLight do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampLight == true and v.Humanoid.Health > 0 then
+if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
     pcall(function()
 repeat wait()
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
@@ -1318,6 +1318,46 @@ end)
 end
 
 end)
+
+plasmasec = Tabs.Player:AddToggle("plasmasectoggle", {Title = "Plasma Camp", Default = false })
+plasmasec:OnChanged(function()
+if Options.plasmasectoggle.Value == true then
+_G.CampPlasma = true
+else
+_G.CampPlasma = false
+end
+
+while _G.CampPlasma do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
+    pcall(function()
+repeat wait()
+                    local args = {
+                        [1] = tonumber(serializeTable(remotes)),
+                        [2] = "PlasmaPower4",
+                        [3] = "StartCharging",
+                        [4] = Vector3.new(720, 238, 1194)
+                    }
+                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+                    local args = {
+                        [1] = tonumber(serializeTable(remotes)),
+                        [2] = "PlasmaPower4",
+                        [3] = "Attack",
+                        [4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+                        [6] = 100
+                    }
+                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+until not _G.CampPlasma or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+
+end)
+
 
 
 

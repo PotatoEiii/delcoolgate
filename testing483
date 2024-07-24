@@ -1353,7 +1353,7 @@ task.wait(0.05)
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1362,7 +1362,7 @@ task.wait(0.05)
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1371,12 +1371,55 @@ task.wait(0.05)
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 until not _G.CampPlasma or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+end)
+
+phoenixsec = Tabs.Player:AddToggle("phoenixsectoggle", {Title = "Phoenix Camp", Default = false })
+phoenixsec:OnChanged(function()
+if Options.phoenixsectoggle.Value == true then
+_G.CampPhoenix = true
+else
+_G.CampPhoenix = false
+end
+
+while _G.CampPhoenix do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
+    pcall(function()
+repeat wait()
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "PhoenixPower9",
+    [3] = "StartCharging",
+    [4] = CFrame.new(690.3527221679688, 238.20001220703125, 1188.52685546875, -0.2054780274629593, -0.3733275532722473, 0.9046576023101807, 1.4742429499392529e-10, 0.9243822693824768, 0.38146740198135376, -0.9786617159843445, 0.07838317006826401, -0.18994025886058807),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "PhoenixPower9",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
+until not _G.CampPhoenix or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end

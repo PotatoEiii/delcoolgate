@@ -306,8 +306,7 @@ end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.startrop then
+repeat wait() until _G.startrop == true
 pcall(function()
 repeat task.wait()
 for _, fruitz in pairs(Rarefruit) do
@@ -326,16 +325,14 @@ end
 end
 end
 until not _G.startrop
-end)
-end
+
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.startropaura then
+repeat wait() until _G.startropaura == true
 pcall(function()
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
@@ -357,13 +354,11 @@ until not _G.startropaura
 end)
 end
 end)
-end
-end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
 pcall(function()
-if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" then
 pcall(function()
@@ -382,7 +377,7 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
-end
+
 end)
 end
 end)

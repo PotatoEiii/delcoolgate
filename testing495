@@ -1240,6 +1240,49 @@ end
 
 end)
 
+chilll = Tabs.Player:AddToggle("chillltoggle", {Title = "Chilly Camp", Default = false })
+chilll:OnChanged(function()
+if Options.chillltoggle.Value == true then
+_G.CampChilly = true
+else
+_G.CampChilly = false
+end
+
+while _G.CampChilly do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
+    pcall(function()
+repeat wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-1084.59033, -9763.44336, 501.375885, -0, 0.995015204, 0.0997241139, 0.0880244896, -0.099337019, 0.991152883, 0.996118307, 0.00877816416, -0.08758571),
+    [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower5",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+until not _G.CampChilly or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+
+end)
 
 
 lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })

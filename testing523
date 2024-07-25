@@ -995,7 +995,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString then
+repeat wait() until _G.CampString == true
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 pcall(function()
@@ -1021,7 +1021,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireS
 end)
 end
 end)
-end
+
 end)
 end
 end)
@@ -1029,23 +1029,19 @@ end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.CampString then
+repeat wait() until _G.CampString == true
 pcall(function()
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
-wait()
+wait(0.1)
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
 end)
-end
-end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.CampString then
+repeat wait() until _G.CampString == true
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if _G.CampString == true then
@@ -1054,8 +1050,7 @@ game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CF
 until not _G.CampString
 end
 end
-end)
-end
+
 end)
 end
 end)

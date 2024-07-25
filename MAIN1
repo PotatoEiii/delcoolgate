@@ -1010,7 +1010,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 local args = {
@@ -1143,7 +1143,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = vtcccq,
     [2] = "DarkPower4",
@@ -1188,7 +1188,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
@@ -1232,7 +1232,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -1244,6 +1244,50 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 until not _G.CampMagma or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+
+end)
+
+flareee = Tabs.Player:AddToggle("flareeetoggle", {Title = "Flare Camp", Default = false })
+flareee:OnChanged(function()
+if Options.flareeetoggle.Value == true then
+_G.CampFlare = true
+else
+_G.CampFlare = false
+end
+
+while _G.CampFlare do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampFlare == true then
+    pcall(function()
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-143.0747833251953, 218, -994.1463012695312, 0.9986038208007812, -0.013327144086360931, 0.051116567105054855, 9.313225746154785e-10, 0.9676525592803955, 0.2522869408130646, -0.05282533913850784, -0.2519347071647644, 0.966301441192627),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+until not _G.CampFlare or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end
@@ -1276,7 +1320,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1288,6 +1332,51 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 until not _G.CampChilly or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+
+end)
+
+
+bombbbb = Tabs.Player:AddToggle("bombbbbtoggle", {Title = "Bomb Camp", Default = false })
+bombbbb:OnChanged(function()
+if Options.bombbbbtoggle.Value == true then
+_G.CampBomb = true
+else
+_G.CampBomb = false
+end
+
+while _G.CampBomb do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampBomb == true then
+    pcall(function()
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-1039.5162353515625, 214, 1886.921875, 0.2717759311199188, 0.3374144434928894, -0.9012709856033325, -0, 0.9365211129188538, 0.35061126947402954, 0.9623605608940125, -0.09528770297765732, 0.254523903131485),
+    [5] = workspace:WaitForChild("IslandCaver"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower5",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandCaver"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until not _G.CampBomb or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end
@@ -1314,7 +1403,7 @@ repeat
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
 lightcode = x.VTCrv
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = lightcode,
     [2] = "LightPower2",
@@ -1415,7 +1504,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",

@@ -213,51 +213,6 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     return aaxc(self, ...)
 end)
 
-local remotes = {}
-    local azc
-    azc=hookmetamethod(game,"__namecall",function(self,...)
-        local args = {...}
-        local method = getnamecallmethod()
-        if method == "FireServer" or method == "InvokeServer" then
-            if self.Name == "RemoteEvent" and args[3] ~= "Land" and args[3] ~= "DF_Disabled" then
-                remotes[self.Name] = args[1]
-                return azc(self,unpack(args))
-            end
-        end
-          return azc(self,...)
-    end)
-    
-    function serializeTable(val, name, skipnewlines, depth)
-    skipnewlines = skipnewlines or false
-    depth = depth or 0
- 
-    local tmp = string.rep("", depth)
- 
-    if name then tmp = tmp end
- 
-    if type(val) == "table" then
-        tmp = tmp .. (not skipnewlines and "" or "")
- 
-        for k, v in pairs(val) do
-            tmp =  tmp .. serializeTable(v, k, skipnewlines, depth + 1) .. (not skipnewlines and "" or "")
-        end
- 
-        tmp = tmp .. string.rep("", depth) 
-    elseif type(val) == "number" then
-        tmp = tmp .. tostring(val)
-    elseif type(val) == "string" then
-        tmp = tmp .. string.format("%q", val)
-    elseif type(val) == "boolean" then
-        tmp = tmp .. (val and "true" or "false")
-    elseif type(val) == "function" then
-        tmp = tmp  .. "func: " .. debug.getinfo(val).name
-    else
-        tmp = tmp .. tostring(val)
-    end
- 
-    return tmp
- end
-
  Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
  SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
  InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
@@ -1197,7 +1152,7 @@ end
 end)
 
 
-vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp (Use Skill To Activate)", Default = false })
+vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp", Default = false })
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
@@ -1212,7 +1167,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
     pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StartCharging",
     [4] = CFrame.new(-391.38922119140625, 213, -232.140625, 0.5274614095687866, -0.7214826345443726, 0.4486061632633209, -1.4901161193847656e-08, 0.5280334949493408, 0.8492236733436584, -0.8495790362358093, -0.44793272018432617, 0.2785172760486603),
@@ -1223,7 +1178,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StopCharging",
     [4] = v.HumanoidRootPart.CFrame,
@@ -1241,7 +1196,7 @@ end
 
 end)
 
-magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp (Use Skill To Activate)", Default = false })
+magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
@@ -1256,7 +1211,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
     pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
     [4] = CFrame.new(-123.28974914550781, 213, -871.10595703125, 0.9992225766181946, -0.009072019718587399, 0.038368139415979385, -0, 0.9731666445732117, 0.23010201752185822, -0.03942607715725899, -0.22992312908172607, 0.9724099040031433),
@@ -1267,7 +1222,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
     [4] = v.HumanoidRootPart.CFrame,
@@ -1285,6 +1240,49 @@ end
 
 end)
 
+chilll = Tabs.Player:AddToggle("chillltoggle", {Title = "Chilly Camp", Default = false })
+chilll:OnChanged(function()
+if Options.chillltoggle.Value == true then
+_G.CampChilly = true
+else
+_G.CampChilly = false
+end
+
+while _G.CampChilly do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
+    pcall(function()
+repeat wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-1084.59033, -9763.44336, 501.375885, -0, 0.995015204, 0.0997241139, 0.0880244896, -0.099337019, 0.991152883, 0.996118307, 0.00877816416, -0.08758571),
+    [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower5",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+until not _G.CampChilly or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+
+end)
 
 
 lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })
@@ -1339,7 +1337,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
     pcall(function()
 repeat wait()
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "StartCharging",
                         [4] = Vector3.new(720, 238, 1194)
@@ -1347,7 +1345,7 @@ repeat wait()
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
 			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
@@ -1356,7 +1354,7 @@ task.wait(0.05)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
 			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
@@ -1365,7 +1363,7 @@ task.wait(0.05)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
 			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
@@ -1396,7 +1394,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
     pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StartCharging",
     [4] = CFrame.new(690.3527221679688, 238.20001220703125, 1188.52685546875, -0.2054780274629593, -0.3733275532722473, 0.9046576023101807, 1.4742429499392529e-10, 0.9243822693824768, 0.38146740198135376, -0.9786617159843445, 0.07838317006826401, -0.18994025886058807),
@@ -1407,7 +1405,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StopCharging",
     [4] = v.HumanoidRootPart.CFrame,
@@ -3079,47 +3077,57 @@ end
 while _G.fewhopsv do wait(2)
 pcall(function()
 if #game.Players:GetChildren() < plrnumforhop then wait()
-game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
-TeleportService = game:GetService("TeleportService")
-HttpService = game:GetService("HttpService")
-PlaceId, JobId = game.PlaceId, game.JobId
-httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-	if httprequest then
-		httprequest({
-			Url = 'http://127.0.0.1:6463/rpc?v=1',
-			Method = 'POST',
-			Headers = {
-				['Content-Type'] = 'application/json',
-				Origin = 'https://discord.com'
-			},
-			Body = HttpService:JSONEncode({
-				cmd = 'INVITE_BROWSER',
-				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
-			})
-		})
-	end   
- if httprequest then
-        local servers = {}
-        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        local body = HttpService:JSONDecode(req.Body)
 
-        if body and body.data then
-            for i, v in next, body.data do
-                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
-                    table.insert(servers, 1, v.id)
-                end
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+local PlaceID = game.PlaceId
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+
+-- Function to get server list
+local function getServerList(cursor)
+    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
+    if cursor and cursor ~= "" then
+        url = url .. '&cursor=' .. cursor
+    end
+    local response = HttpService:JSONDecode(game:HttpGet(url))
+    return response
+end
+
+-- Function to find the server with the highest player count
+local function findHighestPlayerServer()
+    local highestServer = nil
+    local foundAnything = ""
+    repeat
+        local Site = getServerList(foundAnything)
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        else
+            foundAnything = nil
+        end
+
+        for _, server in pairs(Site.data) do
+            if not highestServer or server.playing > highestServer.playing then
+                highestServer = server
             end
         end
+    until not foundAnything
 
-        if #servers > 0 then
-            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
-        else
-            return notify("Serverhop", "Couldn't find a server.")
-        end
+    return highestServer
+end
+
+-- Main function to hop to the highest player server
+local function hopToHighestPlayerServer()
+    local highestServer = findHighestPlayerServer()
+    if highestServer then
+        local serverId = highestServer.id
+        TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game.Players.LocalPlayer)
     else
-        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
-    end          
+        print("No servers found.")
+    end
+end
+
+-- Execute the hop
+hopToHighestPlayerServer()      
 
 end
 end)

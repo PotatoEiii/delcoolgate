@@ -2411,14 +2411,12 @@ spawn(function()
     while wait(0.3) do
 repeat wait() until _G.autocannon == true
 pcall(function()
-repeat wait()
-                if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+repeat task.wait()
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
                             v:Destroy()
                         end
                     end
-                end
 until not _G.autocannon
         end)
     end

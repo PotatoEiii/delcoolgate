@@ -1032,10 +1032,10 @@ pcall(function()
 if _G.CampString then
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
-    pcall(function()
+pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower8",
     [3] = "Start",
     [4] = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Torso.CFrame,
@@ -1044,10 +1044,10 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
-until v.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower7"
 }
 

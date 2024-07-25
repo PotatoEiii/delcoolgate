@@ -2367,37 +2367,35 @@ end)
 
 spawn(function()
     while wait(0.3) do
+repeat wait() until _G.autocannon == true
         pcall(function()
-            if _G.autocannon then
 repeat wait()
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball"))
-task.wait(0.8)
+task.wait(0.7)
 until not _G.autocannon
-            end
         end)
     end
 end)
 
 spawn(function()
     while wait(0.3) do
+repeat wait() until _G.autocannon == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball")
         pcall(function()
-            if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
 repeat wait()
                 for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
                 end
 wait(1)
 until not _G.autocannon
-            end
         end)
     end
 end)
 
 spawn(function()
-    while task.wait(15) do
-        pcall(function()
-            if _G.autocannon then
-                task.wait(0.1)
+    while wait(0.3) do
+            repeat wait() until _G.autocannon == true
+	pcall(function()
+                repeat task.wait(1)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.Name == "Cannon Ball" then
@@ -2405,14 +2403,14 @@ spawn(function()
                         end
                     end
                 end
-            end
-        end)
+		until not _G.autocannon
+	end)
     end
 end)
 spawn(function()
     while wait(0.3) do
-        pcall(function()
-            if _G.autocannon then
+repeat wait() until _G.autocannon == true
+pcall(function()
 repeat wait()
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2421,9 +2419,7 @@ repeat wait()
                         end
                     end
                 end
-wait(0.1)
 until not _G.autocannon
-            end
         end)
     end
 end)

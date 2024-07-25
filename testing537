@@ -2468,7 +2468,7 @@ end)
 
 spawn(function() -- autofarm teleport cannon
 while wait(0.3) do
-repeat wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true then
+repeat wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
 pcall(function()
 repeat wait(0.5)
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do

@@ -612,7 +612,6 @@ game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircfr
 end
     })
 
-    })
 Tabs.Player:AddSection("About Player")
 
     plrts = Tabs.Player:AddInput("plrts", {
@@ -689,7 +688,7 @@ Tabs.Player:AddButton({
 	game.Players.LocalPlayer.CameraMode = "Classic"
 	game.Players.LocalPlayer.Character.Head.Anchored = false       
 end
-
+    })
 Tabs.Player:AddButton({
         Title = "Teleport To Player",
         Description = "Teleport To Chosen Player",

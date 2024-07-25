@@ -2264,13 +2264,10 @@ spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannon then
-if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
 repeat wait()
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball"))
 task.wait(0.8)
 until not _G.autocannon
-wait()
-                end
             end
         end)
     end

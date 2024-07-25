@@ -2364,7 +2364,6 @@ end
 else
 _G.autocannon = false
 end
-end
 end)
 
     Tabs.Farm:AddButton({

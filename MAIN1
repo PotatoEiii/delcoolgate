@@ -864,7 +864,8 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.Hitboxplr then
+
+repeat wait() until _G.Hitboxplr == true
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -874,7 +875,6 @@ v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 end
 end
 until not _G.Hitboxplr
-else
                                           
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -883,7 +883,6 @@ v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
 end
 end
                                           
-end
               end)
        end
 end)
@@ -1112,6 +1111,30 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Wo
 end
 
 
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+repeat wait() until _G.wqesorry == true
+repeat wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
+until _G.wqesorry == false
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
 end)
 end
 end)

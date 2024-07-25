@@ -306,8 +306,7 @@ end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.startrop then
+repeat wait() until _G.startrop == true
 pcall(function()
 repeat task.wait()
 for _, fruitz in pairs(Rarefruit) do
@@ -326,16 +325,14 @@ end
 end
 end
 until not _G.startrop
-end)
-end
+
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.startropaura then
+repeat wait() until _G.startropaura == true
 pcall(function()
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
@@ -357,32 +354,24 @@ until not _G.startropaura
 end)
 end
 end)
-end
-end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
 pcall(function()
-if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" then
 pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.cuopfruittarget then
-repeat task.wait()
-xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-vptt = xr.VTCebvc
-dcv = game.Players:FindFirstChild(_G.cuopfruittarget).Character
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dcv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-until v.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
-end
-end
+repeat
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+task.wait(0.06)
+until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
-end
+
 end)
 end
 end)
@@ -611,21 +600,7 @@ Tabs.Misc:AddButton({
 game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
 end
     })
-Tabs.Misc:AddButton({
-        Title = "Fix Cam",
-        Description = "Reset Camera (If Error)",
-        Callback = function()
-	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game.Players.LocalPlayer.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
-	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
-	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = false       
-end
-    })
+
 Tabs.Player:AddSection("About Player")
 
     plrts = Tabs.Player:AddInput("plrts", {
@@ -678,7 +653,7 @@ end)
 end
 
 end)
-
+Tabs.Player:AddSection("Players' Stuff")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
@@ -688,6 +663,21 @@ getgenv().viewplrr = false
 end
 end)
 
+Tabs.Player:AddButton({
+        Title = "Fix Cam",
+        Description = "Reset Camera (If Error)",
+        Callback = function()
+	workspace.CurrentCamera:remove()
+	wait(.1)
+	repeat wait() until game.Players.LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+	game.Players.LocalPlayer.CameraMode = "Classic"
+	game.Players.LocalPlayer.Character.Head.Anchored = false       
+end
+    })
 Tabs.Player:AddButton({
         Title = "Teleport To Player",
         Description = "Teleport To Chosen Player",
@@ -825,17 +815,17 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if ESPPlayer then
+repeat wait() until ESPPlayer == true
 repeat wait()
 UpdatePlayerChams()
 until not ESPPlayer
-else
+
 for i,v in pairs(game:GetService'Players':GetChildren()) do
 if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
 end
 end
-end
+
 end)
 end
 end)
@@ -995,7 +985,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString then
+repeat wait() until _G.CampString == true
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 pcall(function()
@@ -1021,7 +1011,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireS
 end)
 end
 end)
-end
+
 end)
 end
 end)
@@ -1029,23 +1019,19 @@ end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.CampString then
+repeat wait() until _G.CampString == true
 pcall(function()
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
-wait()
+wait(0.1)
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
 end
 end)
-end
-end)
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.CampString then
+repeat wait() until _G.CampString == true
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if _G.CampString == true then
@@ -1054,8 +1040,7 @@ game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CF
 until not _G.CampString
 end
 end
-end)
-end
+
 end)
 end
 end)
@@ -1550,9 +1535,9 @@ end)
 
 
 spawn(function()
-while wait(0.2) do
+while wait(0.3) do
 pcall(function()
-if getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer then
+repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
@@ -1561,9 +1546,9 @@ Fluent:Notify({
 repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
 until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
-else
+
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-end
+
 end)
 end
 end)
@@ -2277,8 +2262,7 @@ end
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.storeffrt then
+repeat wait() until _G.storeffrt == true
 repeat task.wait()
 pcall(function()
 for _, v in pairs(Rarefruit) do
@@ -2294,14 +2278,11 @@ end)
 until not _G.storeffrt
 end
 end)
-end
-end)
 
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.aurasto then
+repeat wait() until _G.aurasto == true
 repeat task.wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2317,8 +2298,6 @@ end
 end
 end)
 until not _G.aurasto
-end
-end)
 end
 end)
 

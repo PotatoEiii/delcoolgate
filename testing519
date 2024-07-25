@@ -1116,6 +1116,23 @@ end)
 end
 end)
 
+spawn(function()
+while wait(0.3) do
+pcall(function()
+repeat wait() until _G.wqesorry == true
+repeat wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
+until _G.wqesorry == false
+end)
+end
+end)
+
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()

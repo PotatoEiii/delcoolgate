@@ -2442,10 +2442,10 @@ _G.autocannonplrbring = false
 end
 end)
 
-    spawn(function() -- autofarm teleport cannon
-    while wait(0.3) do
-        pcall(function()
-            if _G.autocannonplrbring then
+spawn(function() -- autofarm bring canoon
+while wait(0.3) do
+repeat wait() until _G.autocannonplrbring == true
+pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
                     if v.Name ~= game.Players.LocalPlayer.Name then
@@ -2462,15 +2462,14 @@ repeat wait()
                     end
                 end
 until not _G.autocannonplrbring
-            end
         end)
     end
 end)
 
-    spawn(function() -- autofarm teleport cannon
-    while wait(0.3) do
-        pcall(function()
-            if _G.autocannonplrbring or _G.BringPlayer or _G.BringAllPlayer then
+spawn(function() -- autofarm teleport cannon
+while wait(0.3) do
+repeat wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true then
+pcall(function()
 repeat wait(0.5)
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 if v.Name == "Seat" then task.wait()
@@ -2478,7 +2477,6 @@ v:Destroy()
 end
 end
 until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
-            end
         end)
     end
 end)

@@ -1008,10 +1008,7 @@ end
 while _G.AutoQuake do wait(0.1)
 pcall(function()
 repeat wait()
-xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-vptt = xr.VTCebvc
-v = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 task.wait(0.05)
 until _G.AutoQuake == false
 end)
@@ -1020,7 +1017,7 @@ end
 
 end)
 
-stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp (Use Skill To Activate)", Default = false })
+stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true
@@ -1035,10 +1032,10 @@ pcall(function()
 if _G.CampString then
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
-    pcall(function()
+pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower8",
     [3] = "Start",
     [4] = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Torso.CFrame,
@@ -1047,10 +1044,10 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
-until v.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower7"
 }
 
@@ -1353,7 +1350,7 @@ task.wait(0.05)
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1362,7 +1359,7 @@ task.wait(0.05)
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1371,12 +1368,55 @@ task.wait(0.05)
                         [1] = tonumber(serializeTable(remotes)),
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.X, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y, game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 until not _G.CampPlasma or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+end)
+
+phoenixsec = Tabs.Player:AddToggle("phoenixsectoggle", {Title = "Phoenix Camp", Default = false })
+phoenixsec:OnChanged(function()
+if Options.phoenixsectoggle.Value == true then
+_G.CampPhoenix = true
+else
+_G.CampPhoenix = false
+end
+
+while _G.CampPhoenix do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
+    pcall(function()
+repeat wait()
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "PhoenixPower9",
+    [3] = "StartCharging",
+    [4] = CFrame.new(690.3527221679688, 238.20001220703125, 1188.52685546875, -0.2054780274629593, -0.3733275532722473, 0.9046576023101807, 1.4742429499392529e-10, 0.9243822693824768, 0.38146740198135376, -0.9786617159843445, 0.07838317006826401, -0.18994025886058807),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = tonumber(serializeTable(remotes)),
+    [2] = "PhoenixPower9",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
+until not _G.CampPhoenix or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end
@@ -5015,7 +5055,7 @@ end
 
    Tabs.Server:AddButton({
         Title = "Low-Server Hop",
-        Description = "Hop to a fewer players server",
+        Description = "Hop to a lowest players server",
         Callback = function()
             Window:Dialog({
                 Title = "Low-Server Hop",
@@ -5086,6 +5126,79 @@ game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
                 end
             end
             Teleport()         
+end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+   Tabs.Server:AddButton({
+        Title = "High-Server Hop",
+        Description = "Hop to a highest players server",
+        Callback = function()
+            Window:Dialog({
+                Title = "High-Server Hop",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+local PlaceID = game.PlaceId
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+
+-- Function to get server list
+local function getServerList(cursor)
+    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
+    if cursor and cursor ~= "" then
+        url = url .. '&cursor=' .. cursor
+    end
+    local response = HttpService:JSONDecode(game:HttpGet(url))
+    return response
+end
+
+-- Function to find the server with the highest player count
+local function findHighestPlayerServer()
+    local highestServer = nil
+    local foundAnything = ""
+    repeat
+        local Site = getServerList(foundAnything)
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        else
+            foundAnything = nil
+        end
+
+        for _, server in pairs(Site.data) do
+            if not highestServer or server.playing > highestServer.playing then
+                highestServer = server
+            end
+        end
+    until not foundAnything
+
+    return highestServer
+end
+
+-- Main function to hop to the highest player server
+local function hopToHighestPlayerServer()
+    local highestServer = findHighestPlayerServer()
+    if highestServer then
+        local serverId = highestServer.id
+        TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game.Players.LocalPlayer)
+    else
+        print("No servers found.")
+    end
+end
+
+-- Execute the hop
+hopToHighestPlayerServer()      
 end
                     },
                     {

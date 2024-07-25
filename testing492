@@ -1241,7 +1241,7 @@ end
 
 end)
 
-magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp (Use Skill To Activate)", Default = false })
+magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
@@ -1339,7 +1339,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
     pcall(function()
 repeat wait()
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "StartCharging",
                         [4] = Vector3.new(720, 238, 1194)
@@ -1347,7 +1347,7 @@ repeat wait()
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
 			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
@@ -1356,7 +1356,7 @@ task.wait(0.05)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
 			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
@@ -1365,7 +1365,7 @@ task.wait(0.05)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
                     local args = {
-                        [1] = tonumber(serializeTable(remotes)),
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
 			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),

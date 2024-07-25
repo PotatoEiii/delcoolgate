@@ -1197,7 +1197,7 @@ end
 end)
 
 
-vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp (Use Skill To Activate)", Default = false })
+vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp", Default = false })
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true

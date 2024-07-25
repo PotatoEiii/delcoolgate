@@ -2363,11 +2363,12 @@ end
 end
 else
 _G.autocannon = false
+wait(0.1)
 if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 then
 for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 v:Destroy()
 end
-wait()
+wait(0.1)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
 end

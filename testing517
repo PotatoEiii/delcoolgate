@@ -1010,7 +1010,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 local args = {
@@ -1143,7 +1143,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = vtcccq,
     [2] = "DarkPower4",
@@ -1188,7 +1188,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
@@ -1232,7 +1232,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -1276,7 +1276,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1321,7 +1321,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
@@ -1359,7 +1359,7 @@ repeat
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
 lightcode = x.VTCrv
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = lightcode,
     [2] = "LightPower2",
@@ -1460,7 +1460,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",

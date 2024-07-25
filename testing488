@@ -1212,7 +1212,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
     pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StartCharging",
     [4] = CFrame.new(-391.38922119140625, 213, -232.140625, 0.5274614095687866, -0.7214826345443726, 0.4486061632633209, -1.4901161193847656e-08, 0.5280334949493408, 0.8492236733436584, -0.8495790362358093, -0.44793272018432617, 0.2785172760486603),
@@ -1223,7 +1223,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StopCharging",
     [4] = v.HumanoidRootPart.CFrame,

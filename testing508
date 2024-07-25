@@ -238,7 +238,7 @@ end)
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
-    Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://4881507747" }),
+    Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://4881507762" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),

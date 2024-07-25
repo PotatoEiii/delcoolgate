@@ -819,7 +819,7 @@ repeat wait() until ESPPlayer == true
 repeat wait()
 UpdatePlayerChams()
 until not ESPPlayer
-
+wait()
 for i,v in pairs(game:GetService'Players':GetChildren()) do
 if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
@@ -865,7 +865,7 @@ v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 end
 end
 until not _G.Hitboxplr
-                                          
+wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.Transparency = 1
@@ -1113,6 +1113,7 @@ game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 until _G.wqesorry == false
+wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
@@ -1546,7 +1547,7 @@ Fluent:Notify({
 repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
 until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
-
+wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 
 end)
@@ -2364,6 +2365,22 @@ else
 _G.autocannon = false
 end
 end)
+
+    Tabs.Farm:AddButton({
+        Title = "Refresh BackPack",
+        Description = "Refresh Your BackPack",
+        Callback = function()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.1)
+if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+v:Destroy()
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+end
+        end
+    })
 
 spawn(function()
     while wait(0.3) do

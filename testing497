@@ -585,7 +585,7 @@ _G.quakelagmisc = false
 end
 while _G.quakelagmisc do wait(0.1)
 pcall(function()
-repeat wait()
+repeat
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
     [2] = "QuakePower1",
@@ -1116,7 +1116,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampDark == true then
     pcall(function()
-repeat wait()
+repeat
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
 vtcccq = x.VTCjebaj
 local args = {
@@ -1207,7 +1207,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
     pcall(function()
-repeat wait()
+repeat
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -1251,7 +1251,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
     pcall(function()
-repeat wait()
+repeat
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1296,7 +1296,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
     pcall(function()
-repeat wait()
+repeat
 x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
 lightcode = x.VTCrv
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
@@ -1333,7 +1333,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
     pcall(function()
-repeat wait()
+repeat
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -1390,7 +1390,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
     pcall(function()
-repeat wait()
+repeat
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",

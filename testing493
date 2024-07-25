@@ -1396,7 +1396,7 @@ if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
     pcall(function()
 repeat wait()
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StartCharging",
     [4] = CFrame.new(690.3527221679688, 238.20001220703125, 1188.52685546875, -0.2054780274629593, -0.3733275532722473, 0.9046576023101807, 1.4742429499392529e-10, 0.9243822693824768, 0.38146740198135376, -0.9786617159843445, 0.07838317006826401, -0.18994025886058807),
@@ -1407,7 +1407,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
 local args = {
-    [1] = tonumber(serializeTable(remotes)),
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StopCharging",
     [4] = v.HumanoidRootPart.CFrame,

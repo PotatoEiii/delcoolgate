@@ -913,9 +913,11 @@ _G.BringPlayer = false
 end
 while _G.BringPlayer do wait(0.1)
 pcall(function()
-repeat wait()
+repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == false then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
+end
 until not _G.BringPlayer
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == true then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = false
@@ -937,7 +939,9 @@ repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+if v.Character.HumanoidRootPart.Anchored == false then
 v.Character.HumanoidRootPart.Anchored = true
+end
 end
 end
 until not _G.BringAllPlayer

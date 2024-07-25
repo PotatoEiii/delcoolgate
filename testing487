@@ -1017,7 +1017,7 @@ end
 
 end)
 
-stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp (Use Skill To Activate)", Default = false })
+stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp", Default = false })
 stringggg:OnChanged(function()
 if Options.stringgggtoggle.Value == true then
 _G.CampString = true

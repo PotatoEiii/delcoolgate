@@ -1297,6 +1297,51 @@ end
 end)
 
 
+bombbbb = Tabs.Player:AddToggle("bombbbbtoggle", {Title = "Bomb Camp", Default = false })
+bombbbb:OnChanged(function()
+if Options.bombbbbtoggle.Value == true then
+_G.CampBomb = true
+else
+_G.CampBomb = false
+end
+
+while _G.CampChilly do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
+    pcall(function()
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-1039.5162353515625, 214, 1886.921875, 0.2717759311199188, 0.3374144434928894, -0.9012709856033325, -0, 0.9365211129188538, 0.35061126947402954, 0.9623605608940125, -0.09528770297765732, 0.254523903131485),
+    [5] = workspace:WaitForChild("IslandCaver"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.06)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower5",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandCaver"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until not _G.CampChilly or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+
+end)
+
+
 lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Default = false })
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then

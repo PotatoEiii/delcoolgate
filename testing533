@@ -2262,8 +2262,7 @@ end
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.storeffrt then
+repeat wait() until _G.storeffrt == true
 repeat task.wait()
 pcall(function()
 for _, v in pairs(Rarefruit) do
@@ -2279,14 +2278,11 @@ end)
 until not _G.storeffrt
 end
 end)
-end
-end)
 
 
 spawn(function()
 while wait(0.3) do
-pcall(function()
-if _G.aurasto then
+repeat wait() until _G.aurasto == true
 repeat task.wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2302,8 +2298,6 @@ end
 end
 end)
 until not _G.aurasto
-end
-end)
 end
 end)
 

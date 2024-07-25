@@ -586,10 +586,8 @@ end
 while _G.quakelagmisc do wait(0.1)
 pcall(function()
 repeat wait()
-x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-vp = x.VTCebvc
 local args = {
-    [1] = vp,
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
     [2] = "QuakePower1",
     [3] = "StopCharging",
     [4] = workspace:WaitForChild("IslandTown"):WaitForChild("Runic"):WaitForChild("Union"),
@@ -962,7 +960,7 @@ end
 
 while _G.AutoQuake do wait(0.1)
 pcall(function()
-repeat wait()
+repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 task.wait(0.05)
 until _G.AutoQuake == false

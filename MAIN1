@@ -232,13 +232,13 @@ end)
     Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Sam", Icon = "rbxassetid://13492316250" }),
-    Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://10651327243" }),
+    Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://6947202399" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
     Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
-    Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://4881507747" }),
+    Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://18518485889" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
@@ -913,9 +913,15 @@ _G.BringPlayer = false
 end
 while _G.BringPlayer do wait(0.1)
 pcall(function()
-repeat wait()
+repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == false then
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
+end
 until not _G.BringPlayer
+if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == true then
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = false
+end
 end)
 end
 end)
@@ -929,13 +935,21 @@ _G.BringAllPlayer = false
 end
 while _G.BringAllPlayer do wait(0.1)
 pcall(function()
-repeat wait()
+repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+if v.Character.HumanoidRootPart.Anchored == false then
+v.Character.HumanoidRootPart.Anchored = true
+end
 end
 end
 until not _G.BringAllPlayer
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Character.HumanoidRootPart.Anchored == true then
+v.Character.HumanoidRootPart.Anchored = false
+end
+end
 end)
 end
 end)
@@ -2264,16 +2278,10 @@ spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannon then
-                toolname = "Cannon Ball"
-                wait(0.1)
-if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolname) and not game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
 repeat wait()
-tool = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolname)
-tool.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball"))
 task.wait(0.8)
 until not _G.autocannon
-wait()
-                end
             end
         end)
     end

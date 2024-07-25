@@ -1305,10 +1305,10 @@ else
 _G.CampBomb = false
 end
 
-while _G.CampChilly do wait(0.1)
+while _G.CampBomb do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
+if v.Name == _G.SelectedKillPlayer and _G.CampBomb == true then
     pcall(function()
 repeat
 local args = {
@@ -1332,7 +1332,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-until not _G.CampChilly or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampBomb or not game.Players:FindFirstChild(SelectedKillPlayer)
 end)
 end
 end

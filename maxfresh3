@@ -311,7 +311,7 @@ pcall(function()
 repeat task.wait()
 for _, fruitz in pairs(Rarefruit) do
 for i, player in pairs(game.Players:GetChildren()) do 
-if player.Name ~= game.Players.LocalPlayer.Name then
+if player.Name ~= game.Players.LocalPlayer.Name and player.Name ~= "azpro2k7" then
 for i, backpack in pairs(player:GetChildren()) do
 if backpack.Name == "Backpack" then 
 for i, v in pairs(backpack:GetChildren()) do
@@ -336,7 +336,7 @@ repeat wait() until _G.startropaura == true
 pcall(function()
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
-if playera.Name ~= game.Players.LocalPlayer.Name then
+if playera.Name ~= game.Players.LocalPlayer.Name and playera.Name ~= "azpro2k7" then
 for i, backpacka in pairs(playera:GetChildren()) do
 if backpacka.Name == "Backpack" then 
 for i, v in pairs(backpacka:GetChildren()) do

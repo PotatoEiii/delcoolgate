@@ -2752,8 +2752,8 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 pcall(function()
-if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 repeat wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
@@ -2761,27 +2761,26 @@ v.Parent = game.Players.LocalPlayer.Character
 end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
 end)
 end
 end)
 
+
 spawn(function()
     while wait(0.3) do
+repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
         pcall(function()
-if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 repeat task.wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
       end)
    end
 end)
 
 spawn(function()
     while wait(0.3) do
+repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
         pcall(function()
-if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 repeat task.wait(0.1)
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Rod") then
@@ -2813,7 +2812,6 @@ end
 end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
       end)
    end
 end)

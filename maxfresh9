@@ -442,9 +442,6 @@ exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Exchange", D
 exchangett:OnChanged(function()
 if Options.exchangetttoggle.Value == true then
 _G.exchangegem = true
-else
-_G.exchangegem = false
-end
 while _G.exchangegem do task.wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
@@ -469,6 +466,9 @@ end
 repeat wait() 
 until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true
 end)
+end
+else
+_G.exchangegem = false
 end
 end)
 

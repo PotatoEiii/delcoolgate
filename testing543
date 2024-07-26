@@ -2538,17 +2538,16 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if _G.resetzxcm then
-repeat wait()
+repeat wait() until _G.resetzxcm == true
 pcall(function()
+repeat
 task.wait(rstimehaha)
 if _G.resetzxcm then
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
 end
-end)
 until not _G.resetzxcm
-end
+end)
 end
 end)
 

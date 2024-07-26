@@ -686,7 +686,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 end
     })
 Tabs.PVP:AddSection("Anti-Stuff")
-antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti-Stun", Default = false })
+antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti DF_Disabled", Default = false })
 antistunz:OnChanged(function()
 if Options.antistunztoggle.Value == true then
 _G.autostun = true
@@ -694,10 +694,14 @@ while _G.autostun do wait()
 pcall(function()
 game.Players.LocalPlayer.Character.HMS.Value = false
 game.Players.LocalPlayer.Character["DF_Disabled"].Value = false
+game.Players.LocalPlayer.Character.SanguineVampiris.Value = true
 end)
 end
 else
 _G.autostun = false
+for i = 1,2 do wait(0.2)
+game.Players.LocalPlayer.Character.SanguineVampiris.Value = false
+end
 end
 end)
 

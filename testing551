@@ -2769,11 +2769,11 @@ if string.find(v.Name, "Medium") or string.find(v.Name, "Small") or string.find(
 v.Parent = game.Players.LocalPlayer.Character
 task.wait()
 local args = {
-    [1] = CFrame.new(-1753.53466796875, 215.11622619628906, -328.451904296875, -0.993077278137207, -0.07266969233751297, 0.09228614717721939, 4.25061230657775e-09, 0.7856597304344177, 0.6186589598655701, -0.11746326088905334, 0.6143761277198792, -0.7802207469940186),
+    [1] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [2] = workspace:WaitForChild("Firepit"):WaitForChild("Part")
 }
 
-game:GetService("Players").LocalPlayer:WaitForChild("Click"):FireServer(unpack(args))
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(v.Name).Click:FireServer(unpack(args))
 task.wait()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end

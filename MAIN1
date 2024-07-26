@@ -2538,17 +2538,16 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if _G.resetzxcm then
-repeat wait()
+repeat wait() until _G.resetzxcm == true
 pcall(function()
+repeat
 task.wait(rstimehaha)
 if _G.resetzxcm then
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
 end
-end)
 until not _G.resetzxcm
-end
+end)
 end
 end)
 
@@ -2630,27 +2629,23 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 repeat wait()
 until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > hakiuse then
 _G.onhaki = true
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= hakiuse then
 _G.regenhaki = true
 end
-end)
 until not _G.autohakicannon
-else
+wait()
 _G.offhaki = false
 _G.onhaki = false
 _G.regenhaki = false
-end
 end)
 end
 end)
@@ -2658,10 +2653,9 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
@@ -2670,19 +2664,16 @@ game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:Fi
 end
 _G.onhaki = false
 _G.regenhaki = true
-end)
 until not _G.autohakicannon
-end
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 
@@ -2692,43 +2683,21 @@ game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:F
 wait()
 end
 
-end)
 until not _G.autohakicannon
-end
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 hakimuon = hakiuse + 10
 if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < hakimuon and not _G.onhaki then
 wait()
- local Players = game:GetService("Players")
-local cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
 for i = 1, regenspeed do wait()
     local args = {
         [1] = "Off",
@@ -2757,7 +2726,6 @@ wait()
     }
     
     workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
-wait()
 repeat wait()
 until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= hakigoc and _G.regenhaki == true then 
@@ -2765,13 +2733,8 @@ wait()
 _G.onhaki = true
 _G.regenhaki = false
 end
-
 end
-
-
-end)
 until not _G.autohakicannon
-end
 end)
 end
 end)
@@ -2787,10 +2750,43 @@ getgenv().fishing = false
 end
 end)
 
+zxcautofi = Tabs.Farm:AddToggle("zxcautofitoggle", {Title = "Auto Grill + Sell Fish", Default = false })
+zxcautofi:OnChanged(function()
+if Options.zxcautofitoggle.Value == true then
+getgenv().grillsell = true
+else
+getgenv().grillsell = false
+end
+end)
+
 spawn(function()
 while wait(0.3) do
+repeat wait() until getgenv().grillsell == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 pcall(function()
-if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+repeat wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name, "Medium") or string.find(v.Name, "Small") or string.find(v.Name, "Large") then
+v.Parent = game.Players.LocalPlayer.Character
+task.wait()
+local args = {
+    [1] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+    [2] = workspace:WaitForChild("Firepit"):WaitForChild("Part")
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(v.Name).Click:FireServer(unpack(args))
+task.wait()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+end
+until not getgenv().grillsell or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
+pcall(function()
 repeat wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
@@ -2798,27 +2794,26 @@ v.Parent = game.Players.LocalPlayer.Character
 end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
 end)
 end
 end)
 
+
 spawn(function()
     while wait(0.3) do
+repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
         pcall(function()
-if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 repeat task.wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
       end)
    end
 end)
 
 spawn(function()
     while wait(0.3) do
+repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
         pcall(function()
-if getgenv().fishing and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 repeat task.wait(0.1)
 for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Rod") then
@@ -2840,8 +2835,6 @@ local args = {
 [1] = Vector3.new(20837,-3017,-4390)
 }
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
-task.wait()
-workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(0.3)
 end
 end
@@ -2850,7 +2843,6 @@ end
 end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
       end)
    end
 end)

@@ -2761,7 +2761,7 @@ v.Parent = game.Players.LocalPlayer.Character
 end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-end
+end)
 end
 end)
 

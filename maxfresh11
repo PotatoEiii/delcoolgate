@@ -1242,6 +1242,49 @@ _G.CampFlare = false
 end
 end)
 
+snowww = Tabs.Player:AddToggle("snowwwtoggle", {Title = "Snow Camp", Default = false })
+snowww:OnChanged(function()
+if Options.snowwwtoggle.Value == true then
+_G.CampSnow = true
+while _G.CampSnow do wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampSnow == true then
+    pcall(function()
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
+    [2] = "SnowPower9",
+    [3] = "StartCharging",
+    [4] = CFrame.new(709.24609375, 238, 1224.901611328125, -0.9550395011901855, -0.07896141707897186, 0.28577059507369995, -5.080631026999072e-09, 0.9638818502426147, 0.26633062958717346, -0.29647889733314514, 0.2543562650680542, -0.9205450415611267),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Snow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
+    [2] = "SnowPower9",
+    [3] = "StopCharging",
+    [4] = v.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100,
+    [7] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Snow.RemoteEvent:FireServer(unpack(args))
+until not _G.CampSnow or not game.Players:FindFirstChild(SelectedKillPlayer)
+end)
+end
+end
+end)
+end
+else
+_G.CampSnow = false
+end
+end)
+
 chilll = Tabs.Player:AddToggle("chillltoggle", {Title = "Chilly Camp", Default = false })
 chilll:OnChanged(function()
 if Options.chillltoggle.Value == true then

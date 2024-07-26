@@ -2750,9 +2750,9 @@ getgenv().fishing = false
 end
 end)
 
-autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Grill + Sell Fish", Default = false })
-autofish:OnChanged(function()
-if Options.fishytoggle.Value == true then
+zxcautofi = Tabs.Farm:AddToggle("zxcautofitoggle", {Title = "Auto Grill + Sell Fish", Default = false })
+zxcautofi:OnChanged(function()
+if Options.zxcautofitoggle.Value == true then
 getgenv().grillsell = true
 else
 getgenv().grillsell = false

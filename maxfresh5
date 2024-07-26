@@ -2868,23 +2868,21 @@ end
 end)
 
 spawn(function()
-while wait(2) do
+while wait(0.3) do
+repeat wait() until getgenv().tret == true
 pcall(function()
-if getgenv().tret then
-pcall(function()
+repeat wait(1)
 workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-end)
-end
+until not getgenv().tret
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until getgenv().tret == true
 pcall(function()
-if getgenv().tret then
 repeat wait()
-pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Package") then
 game.Players.LocalPlayer.Backpack:FindFirstChild("Package").Parent = game.Players.LocalPlayer.Character
 elseif game.Players.LocalPlayer.Character:FindFirstChild("Package") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
@@ -2912,9 +2910,7 @@ elseif _G.resttypezx == "Chair" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 end
 end
-end)
 until not getgenv().tret
-end
 end)
 end
 end)

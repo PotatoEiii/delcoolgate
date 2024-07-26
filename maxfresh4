@@ -2522,7 +2522,7 @@ rssli = Tabs.Farm:AddSlider("rssliderzz", {
         end
     })
 
-autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset (With Fast-Cannon)", Default = false })
+autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset (Die To Refresh Ping)", Default = false })
 autoreset:OnChanged(function()
 if Options.autoresettoggle.Value == true then
 _G.resetzxcm = true

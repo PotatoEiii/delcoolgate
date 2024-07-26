@@ -442,9 +442,6 @@ exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Exchange", D
 exchangett:OnChanged(function()
 if Options.exchangetttoggle.Value == true then
 _G.exchangegem = true
-else
-_G.exchangegem = false
-end
 while _G.exchangegem do task.wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
@@ -469,6 +466,9 @@ end
 repeat wait() 
 until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true
 end)
+end
+else
+_G.exchangegem = false
 end
 end)
 
@@ -569,9 +569,6 @@ miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", D
 miscquake:OnChanged(function()
 if Options.miscquaketoggle.Value == true then
 _G.quakelagmisc = true
-else
-_G.quakelagmisc = false
-end
 while _G.quakelagmisc do wait(0.1)
 pcall(function()
 repeat
@@ -589,6 +586,9 @@ game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireSe
 task.wait(0.06)
 until _G.quakelagmisc == false
 end)
+end
+else
+_G.quakelagmisc = false
 end
 end)
 
@@ -690,61 +690,14 @@ antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti-Stun", Default 
 antistunz:OnChanged(function()
 if Options.antistunztoggle.Value == true then
 _G.autostun = true
-else
-_G.autostun = false
-for i = 1,2 do wait(0.2)
-game.Players.LocalPlayer.Character.BurnMagmaOverTime.Value = false
-game.Players.LocalPlayer.Character.BurnOverTime.Value = false
-game.Players.LocalPlayer.Character.CandyTouched.Value = false
-game.Players.LocalPlayer.Character.Cheshire.Value = false
-game.Players.LocalPlayer.Character.ChillyPunched.Value = false
-game.Players.LocalPlayer.Character["DF_Disabled"].Value = false
-game.Players.LocalPlayer.Character.GasPoison.Value = false
-game.Players.LocalPlayer.Character.GasAirless.Value = false
-game.Players.LocalPlayer.Character.GravityCrushed.Value = false
-game.Players.LocalPlayer.Character.HeartStolen.Value = false
-game.Players.LocalPlayer.Character.Hobbied.Value = false
-game.Players.LocalPlayer.Character.HotBody.Value = false
-game.Players.LocalPlayer.Character.HypnosisOnCooldown.Value = false
-game.Players.LocalPlayer.Character.LoveStunned.Value = false
-game.Players.LocalPlayer.Character.Mored.Value = false
-game.Players.LocalPlayer.Character.Negative.Value = false
-game.Players.LocalPlayer.Character.OpeSevered.Value = false
-game.Players.LocalPlayer.Character.Returned.Value = false
-game.Players.LocalPlayer.Character.RumbleStun.Value = false
-game.Players.LocalPlayer.Character.SanguineVampiris.Value = false
-game.Players.LocalPlayer.Character.SnowTouched.Value = false
-game.Players.LocalPlayer.Character.Stringing.Value = false
-game.Players.LocalPlayer.Character.VenomDoT.Value = false
-end
-end
-
 while _G.autostun do wait()
 pcall(function()
-game.Players.LocalPlayer.Character.BurnMagmaOverTime.Value = true
-game.Players.LocalPlayer.Character.BurnOverTime.Value = true
-game.Players.LocalPlayer.Character.CandyTouched.Value = true
-game.Players.LocalPlayer.Character.Cheshire.Value = true
-game.Players.LocalPlayer.Character.ChillyPunched.Value = true
+game.Players.LocalPlayer.Character.HMS.Value = false
 game.Players.LocalPlayer.Character["DF_Disabled"].Value = false
-game.Players.LocalPlayer.Character.GasPoison.Value = true
-game.Players.LocalPlayer.Character.GasAirless.Value = true
-game.Players.LocalPlayer.Character.GravityCrushed.Value = true
-game.Players.LocalPlayer.Character.HeartStolen.Value = true
-game.Players.LocalPlayer.Character.Hobbied.Value = true
-game.Players.LocalPlayer.Character.HotBody.Value = true
-game.Players.LocalPlayer.Character.HypnosisOnCooldown.Value = true
-game.Players.LocalPlayer.Character.LoveStunned.Value = true
-game.Players.LocalPlayer.Character.Mored.Value = true
-game.Players.LocalPlayer.Character.Negative.Value = true
-game.Players.LocalPlayer.Character.OpeSevered.Value = true
-game.Players.LocalPlayer.Character.Returned.Value = true
-game.Players.LocalPlayer.Character.RumbleStun.Value = true
-game.Players.LocalPlayer.Character.SanguineVampiris.Value = true
-game.Players.LocalPlayer.Character.SnowTouched.Value = true
-game.Players.LocalPlayer.Character.Stringing.Value = true
-game.Players.LocalPlayer.Character.VenomDoT.Value = true
 end)
+end
+else
+_G.autostun = false
 end
 end)
 
@@ -897,9 +850,6 @@ disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Chosen 
 disbring1aa:OnChanged(function()
 if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
-else
-_G.BringPlayer = false
-end
 while _G.BringPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
@@ -913,15 +863,15 @@ game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.An
 end
 end)
 end
+else
+_G.BringPlayer = false
+end
 end)
 
 disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring All Player", Default = false })
 disbringallplr:OnChanged(function()
 if Options.disbringallplrtoggle.Value == true then
 _G.BringAllPlayer = true
-else
-_G.BringAllPlayer = false
-end
 while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
@@ -941,6 +891,9 @@ end
 end
 end)
 end
+else
+_G.BringAllPlayer = false
+end
 end)
 
 
@@ -957,10 +910,6 @@ quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake C
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
-else
-_G.AutoQuake = false
-end
-
 while _G.AutoQuake do wait(0.1)
 pcall(function()
 repeat
@@ -969,8 +918,9 @@ task.wait(0.06)
 until _G.AutoQuake == false
 end)
 end
-
-
+else
+_G.AutoQuake = false
+end
 end)
 
 stringggg = Tabs.Player:AddToggle("stringgggtoggle", {Title = "String Camp", Default = false })
@@ -1075,14 +1025,9 @@ aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport To Camp
 aweopcz:OnChanged(function()
 if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
-else
-_G.wqesorry = false
-end
-
 while _G.wqesorry do task.wait()
 pcall(function()
 if game.Players:FindFirstChild(_G.SelectedKillPlayer) then
-
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
@@ -1090,13 +1035,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
-
 elseif not game.Players:FindFirstChild(_G.SelectedKillPlayer) then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
-
-
 end)
+end
+else
+_G.wqesorry = false
 end
 end)
 
@@ -1130,10 +1075,6 @@ darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default =
 darksec:OnChanged(function()
 if Options.darksectoggle.Value == true then
 _G.CampDark = true
-else
-_G.CampDark = false
-end
-
 while _G.CampDark do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1169,7 +1110,9 @@ end
 end
 end)
 end
-
+else
+_G.CampDark = false
+end
 end)
 
 
@@ -1177,10 +1120,6 @@ vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp", Default
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
-else
-_G.CampVamp = false
-end
-
 while _G.CampVamp do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1214,17 +1153,15 @@ end
 end
 end)
 end
-
+else
+_G.CampVamp = false
+end
 end)
 
 magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", Default = false })
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
-else
-_G.CampMagma = false
-end
-
 while _G.CampMagma do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1258,17 +1195,15 @@ end
 end
 end)
 end
-
+else
+_G.CampMagma = false
+end
 end)
 
 flareee = Tabs.Player:AddToggle("flareeetoggle", {Title = "Flare Camp", Default = false })
 flareee:OnChanged(function()
 if Options.flareeetoggle.Value == true then
 _G.CampFlare = true
-else
-_G.CampFlare = false
-end
-
 while _G.CampFlare do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1302,17 +1237,15 @@ end
 end
 end)
 end
-
+else
+_G.CampFlare = false
+end
 end)
 
 chilll = Tabs.Player:AddToggle("chillltoggle", {Title = "Chilly Camp", Default = false })
 chilll:OnChanged(function()
 if Options.chillltoggle.Value == true then
 _G.CampChilly = true
-else
-_G.CampChilly = false
-end
-
 while _G.CampChilly do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1346,7 +1279,9 @@ end
 end
 end)
 end
-
+else
+_G.CampChilly = false
+end
 end)
 
 
@@ -1354,10 +1289,6 @@ bombbbb = Tabs.Player:AddToggle("bombbbbtoggle", {Title = "Bomb Camp", Default =
 bombbbb:OnChanged(function()
 if Options.bombbbbtoggle.Value == true then
 _G.CampBomb = true
-else
-_G.CampBomb = false
-end
-
 while _G.CampBomb do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1391,7 +1322,9 @@ end
 end
 end)
 end
-
+else
+_G.CampBomb = false
+end
 end)
 
 
@@ -1399,10 +1332,6 @@ lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Defaul
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then
 _G.CampLight = true
-else
-_G.CampLight = false
-end
-
 while _G.CampLight do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1429,17 +1358,15 @@ end
 end
 end)
 end
-
+else
+_G.CampLight = false
+end
 end)
 
 plasmasec = Tabs.Player:AddToggle("plasmasectoggle", {Title = "Plasma Camp", Default = false })
 plasmasec:OnChanged(function()
 if Options.plasmasectoggle.Value == true then
 _G.CampPlasma = true
-else
-_G.CampPlasma = false
-end
-
 while _G.CampPlasma do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1487,16 +1414,15 @@ end
 end
 end)
 end
+else
+_G.CampPlasma = false
+end
 end)
 
 phoenixsec = Tabs.Player:AddToggle("phoenixsectoggle", {Title = "Phoenix Camp", Default = false })
 phoenixsec:OnChanged(function()
 if Options.phoenixsectoggle.Value == true then
 _G.CampPhoenix = true
-else
-_G.CampPhoenix = false
-end
-
 while _G.CampPhoenix do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -1529,6 +1455,9 @@ end)
 end
 end
 end)
+end
+else
+_G.CampPhoenix = false
 end
 end)
 
@@ -2153,10 +2082,6 @@ openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
 _G.opencommon = true
-else
-_G.opencommon = false
-end
-
 while _G.opencommon do wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2167,16 +2092,15 @@ end
 end
 end)
 end
+else
+_G.opencommon = false
+end
 end)
 
 openboxrare = Tabs.Fruit:AddToggle("openboxraretoggle", {Title = "Auto Open Rare/Ultra Box", Default = false })
 openboxrare:OnChanged(function()
 if Options.openboxraretoggle.Value == true then
 _G.openrare = true
-else
-_G.openrare = false
-end
-
 while _G.openrare do wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2186,6 +2110,9 @@ v:Activate()
 end
 end
 end)
+end
+else
+_G.openrare = false
 end
 end)
 
@@ -2558,10 +2485,6 @@ autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On
 autobusohaki:OnChanged(function()
 if Options.autobusohakitoggle.Value == true then
 _G.autohakibuso = true
-else
-_G.autohakibuso = false
-end
-
     while _G.autohakibuso do wait()
         pcall(function()
 repeat wait()
@@ -2576,7 +2499,9 @@ repeat wait()
 until not _G.autohakibuso
         end)
     end
-
+else
+_G.autohakibuso = false
+end
 end)
 
 Tabs.Farm:AddSection("Auto Buso (Fast Regen)   (*)")
@@ -2918,18 +2843,20 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() 
+until _G.autocannon == false and _G.autocannonslow
+or
+_G.autocannonplrbring and _G.autocannon == false
 pcall(function()
-if _G.autocannon == false and _G.autocannonslow or
-_G.autocannonplrbring and _G.autocannon == false then
 repeat wait(0.2)
 for _, cannonz in pairs(Rarefruit) do
 if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end
 end
-until _G.autocannon == true or
+until _G.autocannon == true
+or
 not _G.autocannonslow and not _G.autocannonplrbring
-end
       end)
    end
 end)
@@ -3099,10 +3026,6 @@ Fluent:Notify({
     Content = "Auto Reconnect Is Turned On",
     Duration = 5
 })
-else
-_G.autorj = false
-end
-
 while _G.autorj do wait(3)
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
@@ -3150,7 +3073,9 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 end
 end)
 end
-
+else
+_G.autorj = false
+end
 end)
 hopplrsvzz = Tabs.Automatic:AddSlider("hopplrsvzzc", {
     Title = "Player Numbers To Hop",
@@ -3173,10 +3098,6 @@ Fluent:Notify({
     Content = "Auto Hop If Fewer Player Is Turned On",
     Duration = 5
 })
-else
-_G.fewhopsv = false
-end
-
 while _G.fewhopsv do wait(2)
 pcall(function()
 if #game.Players:GetChildren() < plrnumforhop then wait()
@@ -3235,7 +3156,9 @@ hopToHighestPlayerServer()
 end
 end)
 end
-
+else
+_G.fewhopsv = false
+end
 end)
 
 
@@ -3249,10 +3172,6 @@ Fluent:Notify({
     Content = "Auto Spawn Is Turned On",
     Duration = 5
 })
-else
-_G.autospawn = false
-end
-
             while _G.autospawn do wait()
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
@@ -3264,7 +3183,9 @@ end
                         end
                     end)
             end
-
+else
+_G.autospawn = false
+end
 end)
 
 
@@ -3277,17 +3198,15 @@ Fluent:Notify({
     Content = "Auto Get Expertise Quest Is Turned On",
     Duration = 5
 })
-else
-_G.autogetexp = false
-end
-
 while _G.autogetexp do wait()
 pcall(function()
 wait(5)
 workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end)
 end
-
+else
+_G.autogetexp = false
+end
 end)
 
 autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = false })
@@ -3299,10 +3218,6 @@ Fluent:Notify({
     Content = "Auto Claim Challenge Is Turned On",
     Duration = 5
 })
-else
-_G.autochallenge = false
-end
-
 while _G.autochallenge do wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
@@ -3352,7 +3267,9 @@ workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Challenge
 end
 end)
 end
-
+else
+_G.autochallenge = false
+end
 end)
 
 
@@ -3966,10 +3883,6 @@ tyoru = Tabs.Weapon:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default =
 tyoru:OnChanged(function()
 if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
-else
-_G.yoruonrt = false
-end
-
 while _G.yoruonrt do wait()
 pcall(function()
 repeat wait()
@@ -3998,7 +3911,9 @@ end
 until not _G.yoruonrt
 end)
 end
-
+else
+_G.yoruonrt = false
+end
 end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
@@ -4030,10 +3945,6 @@ tcestus = Tabs.Weapon:AddToggle("tcestustoggle", {Title = "Cestus Spamming", Def
 tcestus:OnChanged(function()
 if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
-else
-_G.cestusonrt = false
-end
-
 while _G.cestusonrt do wait()
 pcall(function()
 repeat wait()
@@ -4060,7 +3971,9 @@ end
 until not _G.cestusonrt
 end)
 end
-
+else
+_G.cestusonrt = false
+end
 end)
 
 Tabs.Main:AddSection("Stats Farming")
@@ -4210,17 +4123,15 @@ gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Defa
 gethaki:OnChanged(function()
 if Options.hakiget.Value == true then
 _G.gethakiqwe = true
-else
-_G.gethakiqwe = false
-end
-
 while _G.gethakiqwe do wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(3)
 end)
 end
-
+else
+_G.gethakiqwe = false
+end
 end)
 
 
@@ -4768,10 +4679,6 @@ hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki",
 hakirjoin:OnChanged(function()
 if Options.hakirjointoggle.Value == true then
 _G.rejoinifhaki0 = true
-else
-_G.rejoinifhaki0 = false
-end
-
 while _G.rejoinifhaki0 do wait()
 pcall(function()
 repeat wait()
@@ -4824,7 +4731,9 @@ end
 until not _G.rejoinifhaki0
 end)
 end
-
+else
+_G.rejoinifhaki0 = false
+end
 end)
 
 Tabs.Haki:AddSection("Auto Haki Farming")

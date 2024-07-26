@@ -2629,27 +2629,23 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 repeat wait()
 until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > hakiuse then
 _G.onhaki = true
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= hakiuse then
 _G.regenhaki = true
 end
-end)
 until not _G.autohakicannon
-else
+wait()
 _G.offhaki = false
 _G.onhaki = false
 _G.regenhaki = false
-end
 end)
 end
 end)
@@ -2657,10 +2653,9 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
@@ -2669,19 +2664,16 @@ game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:Fi
 end
 _G.onhaki = false
 _G.regenhaki = true
-end)
 until not _G.autohakicannon
-end
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 
@@ -2691,19 +2683,16 @@ game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:F
 wait()
 end
 
-end)
 until not _G.autohakicannon
-end
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.autohakicannon == true
 pcall(function()
-if _G.autohakicannon then
 repeat wait()
-pcall(function()
 local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 hakimuon = hakiuse + 10
@@ -2768,9 +2757,8 @@ end
 end
 
 
-end)
 until not _G.autohakicannon
-end
+
 end)
 end
 end)
@@ -2798,7 +2786,6 @@ end
 end
 until not getgenv().fishing or game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 end
-end)
 end
 end)
 

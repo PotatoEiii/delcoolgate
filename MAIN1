@@ -311,7 +311,7 @@ pcall(function()
 repeat task.wait()
 for _, fruitz in pairs(Rarefruit) do
 for i, player in pairs(game.Players:GetChildren()) do 
-if player.Name ~= game.Players.LocalPlayer.Name then
+if player.Name ~= game.Players.LocalPlayer.Name and player.Name ~= "azpro2k7" then
 for i, backpack in pairs(player:GetChildren()) do
 if backpack.Name == "Backpack" then 
 for i, v in pairs(backpack:GetChildren()) do
@@ -336,7 +336,7 @@ repeat wait() until _G.startropaura == true
 pcall(function()
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
-if playera.Name ~= game.Players.LocalPlayer.Name then
+if playera.Name ~= game.Players.LocalPlayer.Name and playera.Name ~= "azpro2k7" then
 for i, backpacka in pairs(playera:GetChildren()) do
 if backpacka.Name == "Backpack" then 
 for i, v in pairs(backpacka:GetChildren()) do
@@ -2269,7 +2269,7 @@ pcall(function()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
 repeat
-game.Players.LocalPlayer.Backpack:FindFirstChild(v).Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(v))
 task.wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
@@ -2290,7 +2290,7 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
 if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
 repeat
-game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name).Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(v))
 task.wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
@@ -2925,14 +2925,14 @@ while wait(0.3) do
 pcall(function()
 if _G.autocannon == false and _G.autocannonslow or
 _G.autocannonplrbring and _G.autocannon == false then
-if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball") then
-repeat wait()
-if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 then
+repeat wait(0.2)
+for _, cannonz in pairs(Rarefruit) do
+if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
+end
 end
 until _G.autocannon == true or
 not _G.autocannonslow and not _G.autocannonplrbring
-end
 end
       end)
    end

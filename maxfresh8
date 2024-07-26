@@ -2918,18 +2918,20 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() 
+until _G.autocannon == false and _G.autocannonslow
+or
+_G.autocannonplrbring and _G.autocannon == false
 pcall(function()
-if _G.autocannon == false and _G.autocannonslow or
-_G.autocannonplrbring and _G.autocannon == false then
 repeat wait(0.2)
 for _, cannonz in pairs(Rarefruit) do
 if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end
 end
-until _G.autocannon == true or
+until _G.autocannon == true
+or
 not _G.autocannonslow and not _G.autocannonplrbring
-end
       end)
    end
 end)

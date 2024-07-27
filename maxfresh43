@@ -856,13 +856,11 @@ for i, v in pairs(game.Players:GetChildren()) do
 for i, vista in pairs(anticamp) do
 if v.Name ~= game.Players.LocalPlayer.Name and not string.find(vista, v.Name) and v.Character.HumanoidRootPart.Position.Y < 211000 then
 v.Name = _G.Tarb
-for i, c in pairs(game.Workspace:GetChildren()) do
-if getgenv().targeting == true and c:IsA("Model") and c.Name == _G.Tarb then
+
 repeat wait()
-_G.SelectedKillPlayer = c.Name
+_G.SelectedKillPlayer = _G.Tarb
 until not getgenv().targeting or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
-end
-end
+
 end
 end
 end

@@ -828,7 +828,7 @@ while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if v.Character.HumanoidRootPart.Anchored == false then
 v.Character.HumanoidRootPart.Anchored = true
@@ -4982,7 +4982,7 @@ repeat wait()
 until not _G.autocannonplrbring
 wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
                 	    v.Character.HumanoidRootPart.CanCollide = true
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1

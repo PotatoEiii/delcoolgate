@@ -841,22 +841,19 @@ end
         )
 
         targetallpcho =
-            Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false})
-        targetallpcho:OnChanged(
-            function()
-                if Options.targetallpchotoggle.Value == true then
-                    getgenv().targeting = true
-                else
-                    getgenv().targeting = false
-                end
+Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false})
+targetallpcho:OnChanged(function()
+if Options.targetallpchotoggle.Value == true then
+getgenv().targeting = true
+else
+getgenv().targeting = false
+end
 
-                while getgenv().targeting do
-                    wait(0.1)
-                    pcall(
-                        function()
-                            for i, v in pairs(game.Players:GetChildren()) do
-                                if v.Name ~= game.Players.LocalPlayer.Name then
-                                    for i, c in pairs(game.Workspace:GetChildren()) do
+while getgenv().targeting do wait(0.1)
+pcall(function()
+for i, v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+for i, c in pairs(game.Workspace:GetChildren()) do
 for i,visd in pairs(anticamp) do
 if not string.find(visd, c.Name) then
 if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
@@ -865,11 +862,12 @@ _G.SelectedKillPlayer = c.Name
 until not getgenv().targeting or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
 end
 end
-                                    end
-                                end
-                            end
-                            _G.SelectedKillPlayer = ""
-                        end)
+end
+end
+end
+end
+_G.SelectedKillPlayer = ""
+end)
                 end
             end)
         Tabs.Player:AddSection("Players' Stuff")

@@ -1,6 +1,14 @@
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
+yorucode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").AnimationController).PlaceId
+end
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Yoru") then
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
 yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
 end
+end
+print(yorucode)
+
 
                         local args = {
                             [1] = yorucode

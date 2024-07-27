@@ -383,7 +383,6 @@ pcall(function()
 repeat task.wait()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
-repeat
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -394,7 +393,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+repeat
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -405,6 +404,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
 until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""

@@ -1,4 +1,45 @@
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
 yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
 end
-print(yorucode)
+
+                        local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+                                                local args = {
+                            [1] = yorucode
+                        }
+
+                        game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+

@@ -3141,11 +3141,11 @@ end)
 spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
-            if _G. then
+            if _G.autocannonslow then
 repeat wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait(5)
-until not _G.
+until not _G.autocannonslow
 end
 end)
 end

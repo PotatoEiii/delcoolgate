@@ -1145,7 +1145,7 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
                     while _G.AutoQuake do
                         wait(0.1)
 for i, vistap in pairs(anticamp) do
-if _G.SelectedKillPlayer ~= vistap then 
+if not string.find(vistap, _G.SelectedKillPlayer) then 
                         pcall(function()
                                 repeat
                                     game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(
@@ -1158,7 +1158,7 @@ if _G.SelectedKillPlayer ~= vistap then
                                         Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375)
                                     )
                                     task.wait(0.06)
-                                until _G.AutoQuake == false or _G.SelectedKillPlayer == vistap
+                                until _G.AutoQuake == false or string.find(vistap, _G.SelectedKillPlayer)
                         end)
 end
 end

@@ -4076,29 +4076,6 @@ end)
 
 Tabs.Weapon:AddSection("Instant Weapon")
 Tabs.Weapon:AddSection("Yoru Spam")
-YoruSpeed = Tabs.Weapon:AddSlider("Yorusli", {
-    Title = "Yoru Speed",
-    Description = "Change this for adjusting Yoru's speed",
-    Default = 50,
-    Min = 1,
-    Max = 100,
-    Rounding = 0,
-    Callback = function(to)
-            Speeds = tonumber(to)
-        end
-    })
-
-YoruMulti = Tabs.Weapon:AddSlider("Yorumilsz", {
-    Title = "Yoru Multi Hit",
-    Description = "Change this for adjusting Yoru's hits",
-    Default = 200,
-    Min = 1,
-    Max = 999,
-    Rounding = 0,
-    Callback = function(hitsss)
-            hitts = tonumber(hitsss)
-        end
-    })
 
 tyoru = Tabs.Weapon:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default = false })
 tyoru:OnChanged(function()
@@ -4106,32 +4083,28 @@ if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
 while _G.yoruonrt do wait()
 pcall(function()
-repeat wait()
-    local Players = game:GetService("Players")
-    local Plr = Players.LocalPlayer
-    local Character = Plr.Character
-    local Yoru = Character:FindFirstChild("Yoru")
-    local Environment
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
+yorucode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").AnimationController).PlaceId
+end
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Yoru") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
+yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
+end
+end
+repeat task.wait()
+for i = 1, 10 do
+local args = {
+[1] = yorucode
+}
 
-for i = 1, Speeds do task.wait()
-if _G.yoruonrt then
+game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
+end
+until not _G.yoruonrt or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 
-pcall(function()
-for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
-    Environment = getsenv(Yoru["AnimationController"])
-end
-wait()
-for i = 1, hitts do
-Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
-end
-wait()
-end)
-
-end
-end
-until not _G.yoruonrt
 end)
 end
+
 else
 _G.yoruonrt = false
 end

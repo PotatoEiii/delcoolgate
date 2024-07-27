@@ -4123,27 +4123,15 @@ end
 end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
-CestusSpeed = Tabs.Weapon:AddSlider("cestussli", {
-    Title = "Cestus Speed",
-    Description = "Change this for adjusting Seastone Cestus's speed",
-    Default = 50,
+cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
+    Title = "Cestus Spped",
+    Description = "Recommend: \nCamp:15 ; Farm:25->50",
+    Default = 15,
     Min = 1,
-    Max = 200,
+    Max = 100,
     Rounding = 0,
-    Callback = function(too)
-            Speedss = tonumber(too)
-        end
-    })
-
-CestusMulti = Tabs.Weapon:AddSlider("cesmulza", {
-    Title = "Cestus Multi Hit",
-    Description = "Change this for adjusting Cestus's hits",
-    Default = 200,
-    Min = 1,
-    Max = 999,
-    Rounding = 0,
-    Callback = function(hitsssces)
-            hittsces = tonumber(hitsssces)
+    Callback = function(zxceyoz)
+            cestusspeedzx = tonumber(zxceyoz)
         end
     })
 
@@ -4153,30 +4141,29 @@ if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
 while _G.cestusonrt do wait()
 pcall(function()
-repeat wait()
-    local Players = game:GetService("Players")
-    local Plr = Players.LocalPlayer
-    local Character = Plr.Character
-    local Cestus = Character:FindFirstChild("Seastone Cestus")
-    local Environment
-for i = 1, Speedss do task.wait()
-if _G.cestusonrt then
-pcall(function()
-for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
-    Environment = getsenv(Cestus["AnimationController"])
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").RequestAnimation.OnClientEvent)) do 
+cestuscode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").AnimationController).PlaceId
 end
-    wait()
-for i = 1, hittsces do
-Cestus["RequestAnimation"]:FireServer(Environment.PlaceId)
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus").RequestAnimation.OnClientEvent)) do 
+cestuscode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus").AnimationController).PlaceId
 end
-wait()
-end)
+end
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false then
+repeat task.wait()
+for i = 1, cestusspeedzx do
+local args = {
+[1] = cestuscode
+}
 
+game:GetService("Players").LocalPlayer.Character["Seastone Cestus"].RequestAnimation:FireServer(unpack(args))
 end
+until not _G.cestusonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
 end
-until not _G.cestusonrt
 end)
 end
+
 else
 _G.cestusonrt = false
 end

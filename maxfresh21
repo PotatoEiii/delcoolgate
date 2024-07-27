@@ -4076,7 +4076,7 @@ end)
 
 Tabs.Weapon:AddSection("Instant Weapon")
 Tabs.Weapon:AddSection("Yoru Spam")
-yorusmazz = Tabs.PVP:AddSlider("yorusmazz", {
+yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
     Title = "Yoru Spped",
     Description = "Recommend: Camp:15 ; Farm:50",
     Default = 15,

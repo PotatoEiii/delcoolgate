@@ -4277,6 +4277,7 @@ game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CF
 amongus()
 end
 end
+task.wait()
 if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 amongus()

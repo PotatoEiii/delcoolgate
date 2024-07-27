@@ -3105,7 +3105,7 @@ spawn(function()
 repeat wait(4)
 for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
 if c.Name == ("CannonBall") then
-c:Destroy
+c:Destroy()
 end
 end
 until not _G.autocannonslow and not _G.autocannonplrbring

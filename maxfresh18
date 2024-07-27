@@ -1755,8 +1755,8 @@ Tabs.Shop:AddButton({
         Description = "Fast Drink",
         Callback = function()
 
-                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
                                         end
@@ -3061,7 +3061,7 @@ until _G.autocannon == false and _G.autocannonslow
 or
 _G.autocannonplrbring and _G.autocannon == false
 pcall(function()
-repeat wait(0.2)
+repeat wait(0.1)
 for _, cannonz in pairs(Rarefruit) do
 if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
@@ -4216,7 +4216,7 @@ else
 getgenv().autodrinkmixer = false
 end
 
-while getgenv().autodrinkmixer do wait(0.3)
+while getgenv().autodrinkmixer do wait(2)
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then

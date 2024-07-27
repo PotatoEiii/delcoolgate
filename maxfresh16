@@ -441,6 +441,26 @@ end)
 end
 end)
 
+spawn(function() -- autofarm destroy seat
+while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
+pcall(function()
+repeat task.wait()
+if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
+repeat
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "Seat" then task.wait()
+v:Destroy()
+end
+end
+wait(0.5)
+until _G.robmethod ~= "Magma" or _G.cuopfruittarget == "" or _G.cuopfruittarget == nil
+end
+until not _G.startrop and not _G.startropaura
+        end)
+    end
+end)
+
 Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",

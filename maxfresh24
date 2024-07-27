@@ -4079,9 +4079,6 @@ if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
 while _G.yoruonrt do wait()
 pcall(function()
-
-repeat task.wait()
-
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru") then
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
 yorucode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").AnimationController).PlaceId
@@ -4091,7 +4088,8 @@ for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChil
 yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
 end
 end
-
+repeat task.wait()
+if yorucode ~= "" then
 for i = 1, yoruspeedzx do
 local args = {
 [1] = yorucode
@@ -4099,8 +4097,9 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
 end
-until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-
+end
+until not _G.yoruonrt or game.Players.LocalPlayer.Character.Humanoid.Health == 0
+yorucode = ""
 end)
 end
 

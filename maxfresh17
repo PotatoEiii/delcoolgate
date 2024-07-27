@@ -461,6 +461,87 @@ until not _G.startrop and not _G.startropaura
     end
 end)
 
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
+pcall(function()
+repeat task.wait()
+if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
+pcall(function()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-143.0747833251953, 218, -994.1463012695312, 0.9986038208007812, -0.013327144086360931, 0.051116567105054855, 9.313225746154785e-10, 0.9676525592803955, 0.2522869408130646, -0.05282533913850784, -0.2519347071647644, 0.966301441192627),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StopCharging",
+    [4] = game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
+wait()
+_G.cuopfruittarget = ""
+end)
+end
+until not _G.startrop and not _G.startropaura
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
+pcall(function()
+repeat task.wait()
+if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
+pcall(function()
+repeat task.wait()
+game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
+if game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored == false then
+game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored = true
+end
+until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
+wait()
+_G.cuopfruittarget = ""
+end)
+end
+until not _G.startrop and not _G.startropaura
+end)
+end
+end)
+
+spawn(function() -- autofarm destroy seat
+while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
+pcall(function()
+repeat task.wait()
+if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
+repeat
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "Seat" then task.wait()
+v:Destroy()
+end
+end
+wait(0.5)
+until _G.robmethod ~= "Flare" or _G.cuopfruittarget == "" or _G.cuopfruittarget == nil
+end
+until not _G.startrop and not _G.startropaura
+        end)
+    end
+end)
+
 Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",

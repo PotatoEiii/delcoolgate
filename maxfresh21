@@ -4076,6 +4076,17 @@ end)
 
 Tabs.Weapon:AddSection("Instant Weapon")
 Tabs.Weapon:AddSection("Yoru Spam")
+yorusmazz = Tabs.PVP:AddSlider("yorusmazz", {
+    Title = "Yoru Spped",
+    Description = "Recommend: Camp:15 ; Farm:50",
+    Default = 15,
+    Min = 1,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(zxceyoz)
+            yoruspeedzx = tonumber(zxceyoz)
+        end
+    })
 
 tyoru = Tabs.Weapon:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default = false })
 tyoru:OnChanged(function()
@@ -4092,16 +4103,17 @@ for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChil
 yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
 end
 end
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false then
 repeat task.wait()
-for i = 1, 15 do
+for i = 1, yoruspeedzx do
 local args = {
 [1] = yorucode
 }
 
 game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
 end
-until not _G.yoruonrt or game.Players.LocalPlayer.Character.Humanoid.Health == 0
-
+until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
+end
 end)
 end
 

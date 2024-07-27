@@ -814,7 +814,9 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
                 _G.plrlow = string.lower(tostring(plrts.Value))
                 _G.plrnum = string.len(_G.plrlow)
                 wait()
-if plrts.Value ~= "" or plrts.Value ~= nil then
+if plrts.Value == "" or plrts.Value == nil then
+_G.SelectedKillPlayer = ""
+else
                 for i, e in pairs(game.Players:GetChildren()) do
                     _G.anh = tostring(e.Name)
                     _G.plrchoose = string.lower(string.sub(_G.anh, 1, _G.plrnum))

@@ -4093,7 +4093,7 @@ yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").Ani
 end
 end
 repeat task.wait()
-for i = 1, 10 do
+for i = 1, 15 do
 local args = {
 [1] = yorucode
 }

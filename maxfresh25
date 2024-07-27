@@ -1144,8 +1144,9 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
                     _G.AutoQuake = true
                     while _G.AutoQuake do
                         wait(0.1)
-                        pcall(
-                            function()
+for i, vistap in pairs(anticamp) do
+if _G.SelectedKillPlayer ~= vistap then 
+                        pcall(function()
                                 repeat
                                     game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(
                                         getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
@@ -1157,9 +1158,10 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
                                         Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375)
                                     )
                                     task.wait(0.06)
-                                until _G.AutoQuake == false
-                            end
-                        )
+                                until _G.AutoQuake == false or _G.SelectedKillPlayer == vistap
+                        end)
+end
+end
                     end
                 else
                     _G.AutoQuake = false

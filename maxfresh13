@@ -252,7 +252,7 @@ Options = Fluent.Options
 Tabs.Robbing:AddSection("Fruit Robbing")
  robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
-        Values = {"Quake"},
+        Values = {"Quake","Magma","Flare"},
         Multi = false,
         Default = "Quake",
     })
@@ -372,6 +372,67 @@ end)
 end
 until not _G.startrop and not _G.startropaura
 
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
+pcall(function()
+repeat task.wait()
+if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" then
+pcall(function()
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-123.28974914550781, 213, -871.10595703125, 0.9992225766181946, -0.009072019718587399, 0.038368139415979385, -0, 0.9731666445732117, 0.23010201752185822, -0.03942607715725899, -0.22992312908172607, 0.9724099040031433),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
+wait()
+_G.cuopfruittarget = ""
+end)
+end
+until not _G.startrop and not _G.startropaura
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.startrop == true or _G.startropaura == true
+pcall(function()
+repeat task.wait()
+if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" then
+pcall(function()
+repeat task.wait()
+game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
+if game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored == false then
+game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored = true
+end
+until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
+wait()
+_G.cuopfruittarget = ""
+end)
+end
+until not _G.startrop and not _G.startropaura
 end)
 end
 end)

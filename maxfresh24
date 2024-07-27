@@ -4098,7 +4098,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
 end
 end
-until not _G.yoruonrt or game.Players.LocalPlayer.Character.Humanoid.Health == 0
+until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
 yorucode = ""
 end)
 end

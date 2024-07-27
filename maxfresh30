@@ -800,7 +800,7 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
             "plrts",
             {
                 Title = "Choose Player:",
-                Default = "Enter Here",
+                Default = "",
                 Placeholder = "Insert Here",
                 Numeric = false, -- Only allows numbers
                 Finished = true, -- Only calls callback when you press enter

@@ -857,27 +857,20 @@ end
                             for i, v in pairs(game.Players:GetChildren()) do
                                 if v.Name ~= game.Players.LocalPlayer.Name then
                                     for i, c in pairs(game.Workspace:GetChildren()) do
-                                        if
-                                            getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and
-                                                c.HumanoidRootPart.Position.Y < 211000
-                                         then
-                                            repeat
-                                                wait()
-                                                _G.SelectedKillPlayer = c.Name
-                                            until not getgenv().targeting or
-                                                not game.Players:FindFirstChild(_G.SelectedKillPlayer) or
-                                                game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health ==
-                                                    0
+for i,visd in pairs(anticamp) do
+                                        if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and not string.find(visd, c.Name) then
+repeat wait()
+_G.SelectedKillPlayer = c.Name
+until not getgenv().targeting or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
                                         end
+end
                                     end
                                 end
                             end
                             _G.SelectedKillPlayer = ""
-                        end
-                    )
+                        end)
                 end
-            end
-        )
+            end)
         Tabs.Player:AddSection("Players' Stuff")
         viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false})
         viewplr:OnChanged(

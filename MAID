@@ -207,6 +207,7 @@ _G.WhiteListed = true
 if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
 _G.WhiteListed = true
 end
+anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 if _G.WhiteListed then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
@@ -576,25 +577,40 @@ end
 
 Tabs.Player:AddSection("About Player")
 
-    plrts = Tabs.Player:AddInput("plrts", {
-        Title = "Choose Player:",
-        Default = game.Players.LocalPlayer.Name,
-        Placeholder = "Insert Here",
-        Numeric = false, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function()
-        end
-    })
-    plrts:OnChanged(function()
-_G.SelectedKillPlayer = ""
-_G.plrlow = string.lower(tostring(plrts.Value))
-_G.plrnum = string.len(_G.plrlow)
+plrts =
+Tabs.Player:AddInput("plrts", {
+	Title = "Choose Player:",
+	Default = "",
+	Placeholder = "Insert Here",
+	Numeric = false, -- Only allows numbers
+	Finished = true, -- Only calls callback when you press enter
+	Callback = function()
+	end
+})
+plrts:OnChanged(function()
+	_G.SelectedKillPlayer = ""
+	_G.plrlow = string.lower(tostring(plrts.Value))
+	_G.plrnum = string.len(_G.plrlow)
 wait()
-for i,e in pairs(game.Players:GetChildren()) do
-_G.anh = tostring(e.Name)
-_G.plrchoose = string.lower(string.sub(_G.anh,1,_G.plrnum))
+if plrts.Value == "" or plrts.Value == nil then
+	_G.SelectedKillPlayer = ""
+else
+	for i, e in pairs(game.Players:GetChildren()) do
+	_G.anh = tostring(e.Name)
+	_G.plrchoose = string.lower(string.sub(_G.anh, 1, _G.plrnum))
 if _G.plrlow == _G.plrchoose then
-_G.SelectedKillPlayer = _G.anh
+for i,vista in pairs(anticamp) do
+if not string.find(vista, _G.anh) then
+	_G.SelectedKillPlayer = _G.anh
+elseif string.find(vista, _G.anh) then
+Fluent:Notify({
+	Title = "Saluna Camp Notify",
+	Content = _G.anh.." Is An Anti-Camp Target",
+	Duration = 8
+})
+end
+end
+end
 end
 end
 end)
@@ -612,7 +628,7 @@ pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 for i,c in pairs(game.Workspace:GetChildren()) do
-if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Name ~= "azpro2k7" then
 repeat wait()
 _G.SelectedKillPlayer = c.Name
 until not getgenv().targeting or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
@@ -812,7 +828,7 @@ while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if v.Character.HumanoidRootPart.Anchored == false then
 v.Character.HumanoidRootPart.Anchored = true
@@ -4966,7 +4982,7 @@ repeat wait()
 until not _G.autocannonplrbring
 wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
                 	    v.Character.HumanoidRootPart.CanCollide = true
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1

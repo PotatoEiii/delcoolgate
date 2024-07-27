@@ -2620,10 +2620,6 @@ repeat wait()
                         v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
                         v.Character.HumanoidRootPart.Anchored = true
-                        if v.Character.Humanoid.Health == 0 then
-                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-                            v.Character.HumanoidRootPart.Transparency = 1
-                        end
                     end
                 end
 until not _G.autocannonplrbring
@@ -3096,10 +3092,7 @@ repeat wait()
                     [1] = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
-                wait()
-                if game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall") then
-                    game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall").CanCollide = false
-                end
+
 until not _G.autocannonslow and not _G.autocannonplrbring
             end
         end)
@@ -3138,13 +3131,6 @@ spawn(function()
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
                             v.CanCollide = false
-                            if not v:FindFirstChild("BodyClip") then
-                                local Noclip = Instance.new("BodyVelocity")
-                                Noclip.Name = "BodyClip"
-                                Noclip.Parent = v
-                                Noclip.MaxForce = Vector3.new(100000,100000,100000)
-                                Noclip.Velocity = Vector3.new(0,20,0)
-                            end
                         end
                     end
                 until _G.autocannonplrbring == false and _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
@@ -3156,11 +3142,11 @@ end)
 spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
-            if _G.autocannonslow then
+            if _G. then
 repeat wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait(5)
-until not _G.autocannonslow
+until not _G.
 end
 end)
 end

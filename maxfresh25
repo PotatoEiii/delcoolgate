@@ -8,7 +8,6 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-task.wait(4)
 Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",
@@ -75,6 +74,80 @@ UtilityTTT = {
 "Santa Bag",
 "Tea Kettle"
 }
+
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+
+function storedf()
+if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.MouseButton1Click)) do
+v.Function()
+end
+elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.MouseButton1Click)) do
+v.Function()
+end
+end
+end
+
+function amongus()
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+end
+
+task.wait(4)
 if game.placeId == 8569358381 or game.placeId == 3237168 then
 
 Pedo = {
@@ -147,29 +220,6 @@ local vu = game:GetService("VirtualUser")
        wait(1)
        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     end)
-
-
- Players = game:GetService("Players")
-     cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-         player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-     ehh = game.Players.LocalPlayer.Name
-     Final = lol(ehh)
-    getgenv().firstfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit"].Value
-    getgenv().secondfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value
 
    do  
      fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
@@ -575,12 +625,6 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
         Title = "Dupe Gems Script",
         Description = "Copy Script To ClipBoard",
         Callback = function()
-everyClipboard = toclipboard
-function toClipboard(txt)
-    if everyClipboard then
-        everyClipboard(tostring(txt))
-    end
-end
 toClipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/ultimate'))()")
 end
     })
@@ -890,15 +934,15 @@ ESPPlayer = false
 end
 end)
 
-        function isnil(thing)
-            return (thing == nil)
-        end
-        local function round(n)
-            return math.floor(tonumber(n) + 0.5)
-        end
-        Number = math.random(1, 1000000)
-        function UpdatePlayerChams()
-            for i,v in pairs(game:GetService'Players':GetChildren()) do
+function isnil(thing)
+return (thing == nil)
+end
+local function round(n)
+return math.floor(tonumber(n) + 0.5)
+end
+Number = math.random(1, 1000000)
+function UpdatePlayerChams()
+for i,v in pairs(game:GetService'Players':GetChildren()) do
  if v.Name ~= game.Players.LocalPlayer.Name then
                 pcall(function()
                     if not isnil(v.Character) then
@@ -930,9 +974,9 @@ end)
                         end
                     end
                 end)
-	end
-            end
-        end
+end
+end
+end
 
 spawn(function()
 while wait(0.3) do
@@ -1784,27 +1828,8 @@ Tabs.Shop:AddSection("Melee Weapon")
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Melee") or game.Players.LocalPlayer.Backpack:FindFirstChild("Table Kick") or game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game.Players.LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.MeleeLevel.Value >= 500 then
 pcall(function()
-          Players = game:GetService("Players")
-    local cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
     local A_1 = "Seastone Cestus"
-    local Event = game:GetService("Workspace").UserData["User_"..Final].UpdateMelee
+    local Event = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateMelee
     Event:FireServer(A_1)
 end)
 Fluent:Notify({
@@ -1836,27 +1861,8 @@ end
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Melee") or game.Players.LocalPlayer.Backpack:FindFirstChild("Table Kick") or game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game.Players.LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.MeleeLevel.Value >= 500 then
 pcall(function()
-          local Players = game:GetService("Players")
-    local cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
     local A_1 = "Aqua Staff"
-    local Event = game:GetService("Workspace").UserData["User_"..Final].UpdateMelee
+    local Event = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateMelee
     Event:FireServer(A_1)
 end)
 Fluent:Notify({
@@ -2354,59 +2360,6 @@ else
 _G.aurasto = false
 end
 end)
-
-
-function storedf()
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.MouseButton1Click)) do
-v.Function()
-end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.MouseButton1Click)) do
-v.Function()
-end
-end
-end
 
 spawn(function()
 while wait(0.3) do
@@ -3325,7 +3278,6 @@ local PlaceID = game.PlaceId
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
 
--- Function to get server list
 local function getServerList(cursor)
     local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
     if cursor and cursor ~= "" then
@@ -3335,7 +3287,6 @@ local function getServerList(cursor)
     return response
 end
 
--- Function to find the server with the highest player count
 local function findHighestPlayerServer()
     local highestServer = nil
     local foundAnything = ""
@@ -3357,7 +3308,6 @@ local function findHighestPlayerServer()
     return highestServer
 end
 
--- Main function to hop to the highest player server
 local function hopToHighestPlayerServer()
     local highestServer = findHighestPlayerServer()
     if highestServer then
@@ -4230,19 +4180,6 @@ end
 end
 end)
 
-function amongus()
-for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
-if v:IsA("ClickDetector") then
-fireclickdetector(v)
-end
-end
-for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
-if v:IsA("ClickDetector") then
-fireclickdetector(v)
-end
-end
-end
-
 spawn(function()
 while wait(0.3) do
 if getgenv().farmstats then
@@ -4327,537 +4264,517 @@ Tabs.Haki:AddButton({
         Description = "Click To Drain Haki To 0",
         Callback = function()
 function hakiauto()
-       local Players = game:GetService("Players")
-    local cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
-    
-    local args = {
+        local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
     
     
     
     end
 wait()
 for i = 1, 10 do
-        hakiauto()
+hakiauto()
 end
 end
     })
@@ -5158,12 +5075,6 @@ Tabs.Server:AddButton({
         Title = "Discord Saluna Hub",
         Description = "Copy Discord Invite Link",
         Callback = function()
-everyClipboard = toclipboard
-function toClipboard(txt)
-    if everyClipboard then
-        everyClipboard(tostring(txt))
-    end
-end
 toClipboard("https://discord.gg/ecpbhm8G3w")    
 end
     })

@@ -4079,6 +4079,9 @@ if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
 while _G.yoruonrt do wait()
 pcall(function()
+
+repeat task.wait()
+
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru") then
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
 yorucode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").AnimationController).PlaceId
@@ -4088,8 +4091,7 @@ for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChil
 yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
 end
 end
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false then
-repeat task.wait()
+
 for i = 1, yoruspeedzx do
 local args = {
 [1] = yorucode
@@ -4098,7 +4100,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
 end
 until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-end
+
 end)
 end
 
@@ -4126,6 +4128,8 @@ if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
 while _G.cestusonrt do wait()
 pcall(function()
+repeat task.wait()
+
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") then
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").RequestAnimation.OnClientEvent)) do 
 cestuscode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").AnimationController).PlaceId
@@ -4135,8 +4139,7 @@ for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChil
 cestuscode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus").AnimationController).PlaceId
 end
 end
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false then
-repeat task.wait()
+
 for i = 1, cestusspeedzx do
 local args = {
 [1] = cestuscode
@@ -4144,8 +4147,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character["Seastone Cestus"].RequestAnimation:FireServer(unpack(args))
 end
-until not _G.cestusonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-end
+until not _G.cestusonrt
 end)
 end
 

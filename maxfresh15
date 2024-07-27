@@ -360,7 +360,7 @@ while wait(0.3) do
 repeat wait() until _G.startrop == true or _G.startropaura == true
 pcall(function()
 repeat task.wait()
-if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" then
+if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
 repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
@@ -381,7 +381,7 @@ while wait(0.3) do
 repeat wait() until _G.startrop == true or _G.startropaura == true
 pcall(function()
 repeat task.wait()
-if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" then
+if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
 repeat
 local args = {
@@ -420,7 +420,7 @@ while wait(0.3) do
 repeat wait() until _G.startrop == true or _G.startropaura == true
 pcall(function()
 repeat task.wait()
-if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" then
+if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
 repeat task.wait()
 game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)

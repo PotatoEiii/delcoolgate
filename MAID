@@ -802,19 +802,18 @@ end
 
 while getgenv().targeting do wait(0.1)
 pcall(function()
-repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
-
 for i,c in pairs(game.Workspace:GetChildren()) do
 if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+repeat wait()
 _G.SelectedKillPlayer = c.Name
+until not getgenv().targeting or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
 end
 end
 end
 end
-until not getgenv().targeting or _G.SelectedKillPlayer ~= v.Name or c.Humanoid.Health == 0
-
+_G.SelectedKillPlayer = ""
 end)
 end
 
@@ -1756,11 +1755,19 @@ Tabs.Shop:AddButton({
         Callback = function()
 
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v:Activate()
-                                        end
-                    end
+v:Activate()
+v:Activate()
+v:Destroy()
+end
+end
+
 end
     })
 
@@ -2612,10 +2619,6 @@ repeat wait()
                         v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
                         v.Character.HumanoidRootPart.Anchored = true
-                        if v.Character.Humanoid.Health == 0 then
-                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-                            v.Character.HumanoidRootPart.Transparency = 1
-                        end
                     end
                 end
 until not _G.autocannonplrbring
@@ -3088,10 +3091,7 @@ repeat wait()
                     [1] = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
-                wait()
-                if game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall") then
-                    game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall").CanCollide = false
-                end
+
 until not _G.autocannonslow and not _G.autocannonplrbring
             end
         end)
@@ -3130,13 +3130,6 @@ spawn(function()
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
                             v.CanCollide = false
-                            if not v:FindFirstChild("BodyClip") then
-                                local Noclip = Instance.new("BodyVelocity")
-                                Noclip.Name = "BodyClip"
-                                Noclip.Parent = v
-                                Noclip.MaxForce = Vector3.new(100000,100000,100000)
-                                Noclip.Velocity = Vector3.new(0,20,0)
-                            end
                         end
                     end
                 until _G.autocannonplrbring == false and _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
@@ -4068,27 +4061,15 @@ end)
 
 Tabs.Weapon:AddSection("Instant Weapon")
 Tabs.Weapon:AddSection("Yoru Spam")
-YoruSpeed = Tabs.Weapon:AddSlider("Yorusli", {
-    Title = "Yoru Speed",
-    Description = "Change this for adjusting Yoru's speed",
-    Default = 50,
+yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
+    Title = "Yoru Spped",
+    Description = "Recommend: \nCamp:15 ; Farm:25->50",
+    Default = 15,
     Min = 1,
     Max = 100,
     Rounding = 0,
-    Callback = function(to)
-            Speeds = tonumber(to)
-        end
-    })
-
-YoruMulti = Tabs.Weapon:AddSlider("Yorumilsz", {
-    Title = "Yoru Multi Hit",
-    Description = "Change this for adjusting Yoru's hits",
-    Default = 200,
-    Min = 1,
-    Max = 999,
-    Rounding = 0,
-    Callback = function(hitsss)
-            hitts = tonumber(hitsss)
+    Callback = function(zxceyoz)
+            yoruspeedzx = tonumber(zxceyoz)
         end
     })
 
@@ -4098,59 +4079,45 @@ if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
 while _G.yoruonrt do wait()
 pcall(function()
-repeat wait()
-    local Players = game:GetService("Players")
-    local Plr = Players.LocalPlayer
-    local Character = Plr.Character
-    local Yoru = Character:FindFirstChild("Yoru")
-    local Environment
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
+yorucode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Yoru").AnimationController).PlaceId
+end
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Yoru") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
+yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
+end
+end
+repeat task.wait()
+if yorucode ~= "" then
+for i = 1, yoruspeedzx do
+local args = {
+[1] = yorucode
+}
 
-for i = 1, Speeds do task.wait()
-if _G.yoruonrt then
-
-pcall(function()
-for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
-    Environment = getsenv(Yoru["AnimationController"])
-end
-wait()
-for i = 1, hitts do
-Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
-end
-wait()
-end)
-
+game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
 end
 end
-until not _G.yoruonrt
+until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
+yorucode = ""
 end)
 end
+
 else
 _G.yoruonrt = false
 end
 end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
-CestusSpeed = Tabs.Weapon:AddSlider("cestussli", {
-    Title = "Cestus Speed",
-    Description = "Change this for adjusting Seastone Cestus's speed",
-    Default = 50,
+cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
+    Title = "Cestus Spped",
+    Description = "Recommend: \nCamp:15 ; Farm:25->50",
+    Default = 15,
     Min = 1,
-    Max = 200,
+    Max = 100,
     Rounding = 0,
-    Callback = function(too)
-            Speedss = tonumber(too)
-        end
-    })
-
-CestusMulti = Tabs.Weapon:AddSlider("cesmulza", {
-    Title = "Cestus Multi Hit",
-    Description = "Change this for adjusting Cestus's hits",
-    Default = 200,
-    Min = 1,
-    Max = 999,
-    Rounding = 0,
-    Callback = function(hitsssces)
-            hittsces = tonumber(hitsssces)
+    Callback = function(zxceyoz)
+            cestusspeedzx = tonumber(zxceyoz)
         end
     })
 
@@ -4160,28 +4127,25 @@ if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
 while _G.cestusonrt do wait()
 pcall(function()
-repeat wait()
-    local Players = game:GetService("Players")
-    local Plr = Players.LocalPlayer
-    local Character = Plr.Character
-    local Cestus = Character:FindFirstChild("Seastone Cestus")
-    local Environment
-for i = 1, Speedss do task.wait()
-if _G.cestusonrt then
-pcall(function()
-for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
-    Environment = getsenv(Cestus["AnimationController"])
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").RequestAnimation.OnClientEvent)) do 
+cestuscode = getsenv(game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").AnimationController).PlaceId
 end
-    wait()
-for i = 1, hittsces do
-Cestus["RequestAnimation"]:FireServer(Environment.PlaceId)
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus") then
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus").RequestAnimation.OnClientEvent)) do 
+cestuscode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Seastone Cestus").AnimationController).PlaceId
 end
-wait()
-end)
+end
+repeat task.wait()
+for i = 1, cestusspeedzx do
+local args = {
+[1] = cestuscode
+}
 
+game:GetService("Players").LocalPlayer.Character["Seastone Cestus"].RequestAnimation:FireServer(unpack(args))
 end
-end
-until not _G.cestusonrt
+until not _G.cestusonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
+cestuscode = ""
 end)
 end
 else
@@ -4219,9 +4183,16 @@ end
 while getgenv().autodrinkmixer do wait(2)
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v:Activate()
+v:Activate()
+v:Activate()
+v:Destroy()
 end
 end
 for i,c in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do

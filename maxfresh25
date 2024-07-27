@@ -5360,67 +5360,58 @@ game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 local PlaceID = game.PlaceId
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
-
--- Function to get server list
 local function getServerList(cursor)
-    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
-    if cursor and cursor ~= "" then
-        url = url .. '&cursor=' .. cursor
-    end
-    local response = HttpService:JSONDecode(game:HttpGet(url))
-    return response
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
+if cursor and cursor ~= "" then
+url = url .. '&cursor=' .. cursor
 end
-
--- Function to find the server with the highest player count
+local response = HttpService:JSONDecode(game:HttpGet(url))
+return response
+end
 local function findHighestPlayerServer()
-    local highestServer = nil
-    local foundAnything = ""
-    repeat
-        local Site = getServerList(foundAnything)
-        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-            foundAnything = Site.nextPageCursor
-        else
-            foundAnything = nil
-        end
-
-        for _, server in pairs(Site.data) do
-            if not highestServer or server.playing > highestServer.playing then
-                highestServer = server
-            end
-        end
-    until not foundAnything
-
-    return highestServer
+local highestServer = nil
+local foundAnything = ""
+repeat
+local Site = getServerList(foundAnything)
+if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+foundAnything = Site.nextPageCursor
+else
+foundAnything = nil
+end
+for _, server in pairs(Site.data) do
+if not highestServer or server.playing > highestServer.playing then
+highestServer = server
+end
+end
+until not foundAnything
+return highestServer
 end
 
--- Main function to hop to the highest player server
 local function hopToHighestPlayerServer()
-    local highestServer = findHighestPlayerServer()
-    if highestServer then
-        local serverId = highestServer.id
-        TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game.Players.LocalPlayer)
-    else
-        print("No servers found.")
-    end
+local highestServer = findHighestPlayerServer()
+if highestServer then
+local serverId = highestServer.id
+TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game.Players.LocalPlayer)
+else
+print("No servers found.")
 end
-
--- Execute the hop
+end
 hopToHighestPlayerServer()      
 end
-                    },
-                    {
-                        Title = "Cancel",
-                        Callback = function()
-                        end
-                    }
-                }
-            })
-        end
-    })
+},
+{
+Title = "Cancel",
+Callback = function()
+end
+}
+}
+})
+end
+})
 
 Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
- Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
+Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
     Title = "1st Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 2,
@@ -5430,30 +5421,30 @@ Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
     Callback = function(treotttt)
             _G.trqpwo = tonumber(treotttt)
         end
-    })
+})
 
 
-     wrrrrr = Tabs.Affinity:AddDropdown("dqwww", {
+wrrrrr = Tabs.Affinity:AddDropdown("dqwww", {
         Title = "Lock Affinity (DF1)",
         Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
-    })
+})
 
 
 
-    wrrrrr:OnChanged(function(Valuer)
+wrrrrr:OnChanged(function(Valuer)
 _G.keepdef = false
 _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
 Values = {"None"}
 task.wait()
-        for Valuer, State in next, Valuer do
-            table.insert(Values, Valuer)
-        end
-			for _, n in pairs(Values) do
+for Valuer, State in next, Valuer do
+table.insert(Values, Valuer)
+end
+for _, n in pairs(Values) do
 if string.find(n, "Defense") then
 _G.keepdef = true
 end
@@ -5466,20 +5457,20 @@ end
 if string.find(n, "Sword") then
 _G.keepsword = true
 end
-			end
+end
 end)
 
 
-    wwwwww = Tabs.Affinity:AddDropdown("dtqzxcwww", {
+wwwwww = Tabs.Affinity:AddDropdown("dtqzxcwww", {
         Title = "Target Affinity (DF1)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
-    })
+})
 
  
-    wwwwww:OnChanged(function(Valuerr)
+wwwwww:OnChanged(function(Valuerr)
 _G.targetdef = false
 _G.targetmelee = false
 _G.targetsnip = false
@@ -5502,7 +5493,7 @@ end
 if string.find(q, "Sword") then
 _G.targetsword = true
 end
-			end
+end
 end)
 
 ret = Tabs.Affinity:AddDropdown("vxe1", {
@@ -5510,17 +5501,15 @@ ret = Tabs.Affinity:AddDropdown("vxe1", {
         Values = {"Cash", "Gems"},
         Multi = false,
         Default = "",
-    })
+})
 
 
-    ret:OnChanged(function(Valuezx)
+ret:OnChanged(function(Valuezx)
 _G.budget = Valuezx
 end)
 
 DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
-    DF11Toggle:OnChanged(function(gg)
-
-
+DF11Toggle:OnChanged(function(gg)
 while Options.DF1Toggle.Value do wait()
 pcall(function()
 if Options.DF1Toggle.Value == true then
@@ -5607,15 +5596,14 @@ _G.allspin = true
 else
 _G.allspin = false
 end
-
 end)
 end
 end)
 
-            spawn(function()
-            while wait(0.3) do
-                if _G.quayfirstdf then
-                    pcall(function()
+spawn(function()
+while wait(0.3) do
+if _G.quayfirstdf then
+pcall(function()
 if _G.defswordsnip == true then
 local args = {
     [1] = "DFT1",
@@ -5787,14 +5775,13 @@ local args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
 wait(12)
-                    end)
-                end
-            end
-            end)
+end)
+end
+end
+end)
 
 
 Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
-
 Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
@@ -5803,9 +5790,9 @@ Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
     Max = 2,
     Rounding = 1,
     Callback = function(treot)
-            _G.trqpwo2 = tonumber(treot)
+        _G.trqpwo2 = tonumber(treot)
         end
-    })
+})
 
 wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
         Title = "Lock Affinity (DF2)",
@@ -5813,20 +5800,20 @@ wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
-    })
+})
 
 
-    wrrrrr2:OnChanged(function(Valuer2)
+wrrrrr2:OnChanged(function(Valuer2)
 _G.keepdef2 = false
 _G.keepmelee2 = false
 _G.keepsnip2 = false
 _G.keepsword2 = false
 Values2 = {"None"}
 wait()
-        for Valuer2, State in next, Valuer2 do
-            table.insert(Values2, Valuer2)
-        end
-			for _, m in pairs(Values2) do
+for Valuer2, State in next, Valuer2 do
+table.insert(Values2, Valuer2)
+end
+for _, m in pairs(Values2) do
 if string.find(m, "Defense") then
 _G.keepdef2 = true
 end
@@ -5839,31 +5826,31 @@ end
 if string.find(m, "Sword") then
 _G.keepsword2 = true
 end
-			end
+end
 end)
 
 
 
-     wwrwwww2 = Tabs.Affinity:AddDropdown("tyumm1z", {
+wwrwwww2 = Tabs.Affinity:AddDropdown("tyumm1z", {
         Title = "Target Affinity (DF2)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
-    })
+})
 
 
-    wwrwwww2:OnChanged(function(Valuerr2)
+wwrwwww2:OnChanged(function(Valuerr2)
 _G.targetdef2 = false
 _G.targetmelee2 = false
 _G.targetsnip2 = false
 _G.targetsword2 = false
 Valuess2 = {"None"}
 wait()
-        for Valuerr2, State in next, Valuerr2 do
-            table.insert(Valuess2, Valuerr2)
-        end
-			for _, r in pairs(Valuess2) do
+for Valuerr2, State in next, Valuerr2 do
+table.insert(Valuess2, Valuerr2)
+end
+for _, r in pairs(Valuess2) do
 if string.find(r, "Defense") then
 _G.targetdef2 = true
 end
@@ -5876,7 +5863,7 @@ end
 if string.find(r, "Sword") then
 _G.targetsword2 = true
 end
-			end
+end
 end)
 
 
@@ -5885,16 +5872,15 @@ retw2 = Tabs.Affinity:AddDropdown("ccas24ff", {
         Values = {"Cash", "Gems"},
         Multi = false,
         Default = "",
-    })
+})
 
 
-    retw2:OnChanged(function(Valuezx2)
+retw2:OnChanged(function(Valuezx2)
 _G.budget2 = Valuezx2
 end)
 
 DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
-    DF22Toggle:OnChanged(function(tt)
-
+DF22Toggle:OnChanged(function(tt)
 while Options.DF2Toggle.Value do wait()
 pcall(function()
 if Options.DF2Toggle.Value == true then
@@ -5914,19 +5900,16 @@ _G.meleespin2 = false
 end
 if _G.targetsnip2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.sniperspin2 = true
-
 else
 _G.sniperspin2 = false
 end
 if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.swordspin2 = true
-
 else
 _G.swordspin2 = false
 end
 if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleespin2 = true
-
 else
 _G.defmeleespin2 = false
 end
@@ -5934,7 +5917,6 @@ if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == fal
 _G.defsnipspin2 = true
 else
 _G.defsnipspin2 = false
-
 end
 if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.defswordspin2 = true
@@ -5981,15 +5963,14 @@ _G.allspin2 = true
 else
 _G.allspin2 = false
 end
-
 end)
 end
 end)
 
-            spawn(function()
-            while wait(0.3) do
-                if _G.quayfirstdf2 then
-                    pcall(function()
+spawn(function()
+while wait(0.3) do
+if _G.quayfirstdf2 then
+pcall(function()
 if _G.defswordsnip2 == true then
 local args = {
     [1] = "DFT2",
@@ -6161,45 +6142,27 @@ local args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
 wait(12)
-                    end)
-                end
-            end
-            end)
+end)
+end
+end
+end)
 
 spawn(function()
-	while wait(0.3) do
-		if _G.quayfirstdf2 or _G.quayfirstdf then
-                	pcall(function()
+while wait(0.3) do
+if _G.quayfirstdf2 or _G.quayfirstdf then
+pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge12")
 end
-			end)		
-		end
-	end
+end)		
+end
+end
 end)
 
-
-
-
-
--- Addons:
--- SaveManager (Allows you to have a configuration system)
--- InterfaceManager (Allows you to have a interface managment system)
-
--- Hand the library over to our managers
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
-
--- Ignore keys that are used by ThemeManager.
--- (we dont want configs to save themes, do we?)
 SaveManager:IgnoreThemeSettings()
-
--- You can add indexes of elements the save manager should ignore
 SaveManager:SetIgnoreIndexes({})
-
--- use case for doing it this way:
--- a script hub could have themes in a global folder
--- and game configs in a separate folder per game
 InterfaceManager:SetFolder("FluentScriptHub")
 SaveManager:SetFolder("FluentScriptHub/specific-game")
 
@@ -6226,75 +6189,17 @@ Tabs.Misc:AddSection(" ")
 Tabs.Settings:AddSection(" ")
 
 Window:SelectTab(1)
+
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
     Duration = 20
 })
--- You can use the SaveManager:LoadAutoloadConfig() to load a config
--- which has been marked to be one that auto loads!
+
 SaveManager:LoadAutoloadConfig()
---------
-BBB = Instance.new("ScreenGui")
-BBB.Name = "BBB"
-BBB.Parent = game.CoreGui
 
-hideUI = Instance.new("ImageButton")
-hideUI.Name = "hideUI"
-hideUI.Parent = game.CoreGui.BBB
-hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
-hideUI.BackgroundTransparency = 1
-hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0.06, 0, 0.11, 0)
-hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
-hideUI.MouseButton1Up:Connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-end)
-
- hideUICorner = Instance.new("UICorner")
-hideUICorner.Parent = game.CoreGui.BBB.hideUI
-hideUICorner.CornerRadius = UDim.new(1,0)
-
-
- UIS = game:GetService('UserInputService')
- frame = game.CoreGui.BBB.hideUI
- dragToggle = nil
- dragSpeed = 0.12
- dragStart = nil
- startPos = nil
-
- function updateInput(input)
-  delta = input.Position - dragStart
-  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
- game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-end
-
-frame.InputBegan:Connect(function(input)
- if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-  dragToggle = true
-  dragStart = input.Position
-  startPos = frame.Position
-  input.Changed:Connect(function()
-   if input.UserInputState == Enum.UserInputState.End then
-    dragToggle = false
-   end
-  end)
- end
-end)
-
-UIS.InputChanged:Connect(function(input)
- if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-  if dragToggle then
-   updateInput(input)
-  end
- end
-end)
-
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/graze.lua'))()
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false

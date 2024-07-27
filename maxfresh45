@@ -855,7 +855,7 @@ pcall(function()
 for i, v in pairs(game.Players:GetChildren()) do
 for i, vista in pairs(anticamp) do
 if v.Name ~= game.Players.LocalPlayer.Name and not string.find(vista, v.Name) and v.Character.HumanoidRootPart.Position.Y < 211000 then
-v.Name = _G.Tarb
+_G.Tarb = v.Name
 end
 end
 end

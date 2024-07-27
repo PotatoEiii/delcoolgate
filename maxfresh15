@@ -250,6 +250,10 @@ end)
 Options = Fluent.Options
 
 Tabs.Robbing:AddSection("Fruit Robbing")
+Tabs.Robbing:AddParagraph({
+Title = "NOTE",
+Content = "Only Quake-Robbing can use with Random Teleport"
+})
  robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
         Values = {"Quake","Magma","Flare"},

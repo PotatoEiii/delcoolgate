@@ -77,9 +77,9 @@ UtilityTTT = {
 
 everyClipboard = toclipboard
 function toClipboard(txt)
-    if everyClipboard then
-        everyClipboard(tostring(txt))
-    end
+if everyClipboard then
+everyClipboard(tostring(txt))
+end
 end
 
 function storedf()
@@ -190,27 +190,39 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         end
     end
 end)  
+
 _G.WhiteListed = false
+
 listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+
         for _, v1 in pairs(listed) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 _G.WhiteListed = true
             end
         end
+
 userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
         for _, v2 in pairs(userlisted) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.WhiteListed = true
             end
         end
+
 if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
 _G.WhiteListed = true
 end
+
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
+
 if _G.WhiteListed then
+
+if game:GetService("Workspace").Island8.Table.Chair.Seat then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
+end
+
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"

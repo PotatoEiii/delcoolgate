@@ -77,9 +77,9 @@ UtilityTTT = {
 
 everyClipboard = toclipboard
 function toClipboard(txt)
-    if everyClipboard then
-        everyClipboard(tostring(txt))
-    end
+if everyClipboard then
+everyClipboard(tostring(txt))
+end
 end
 
 function storedf()
@@ -190,66 +190,82 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         end
     end
 end)  
+
 _G.WhiteListed = false
+
 listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+
         for _, v1 in pairs(listed) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 _G.WhiteListed = true
             end
         end
+
 userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
         for _, v2 in pairs(userlisted) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.WhiteListed = true
             end
         end
+
 if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
 _G.WhiteListed = true
 end
+
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
+
 if _G.WhiteListed then
+
+if game:GetService("Workspace").Island8.Table.Chair.Seat then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
+end
+
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
+
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 
 local vu = game:GetService("VirtualUser")
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
+game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
        wait(1)
        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    end)
+end)
 
-   do  
-     fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
+do  
+fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
     if fishingplace then 
     fishingplace:Destroy() 
     end 
-    end
-     fishingplace = Instance.new("Part",game.Workspace)
-    fishingplace.Name = "fishingplace"
-    fishingplace.Size = Vector3.new(2,1,2)
-    fishingplace.Position = Vector3.new((math.random(15000, 20000)),210,(math.random(15000, 20000)))
-    fishingplace.Anchored = true
+end
+
+fishingplace = Instance.new("Part",game.Workspace)
+fishingplace.Name = "fishingplace"
+fishingplace.Size = Vector3.new(2,1,2)
+fishingplace.Position = Vector3.new((math.random(15000, 20000)),210,(math.random(15000, 20000)))
+fishingplace.Anchored = true
     
-    do  
-     safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
-    if safezonedestroyspace then 
-    safezonedestroyspace:Destroy() 
-    end 
-    end
-        if game.CoreGui:FindFirstChild("BBB") then
-            game.CoreGui:FindFirstChild("BBB"):Destroy()
-        end
+do  
+safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
+	if safezonedestroyspace then 
+  		safezonedestroyspace:Destroy() 
+	end 
+end
 
+do  
+	if game.CoreGui:FindFirstChild("BBB") then
+		game.CoreGui:FindFirstChild("BBB"):Destroy()
+	end
+end
 
-     SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
-    SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
-    SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
-    SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
-    SafeZoneOuterSpace.Anchored = true
+SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
+SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
+SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
+SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
+SafeZoneOuterSpace.Anchored = true
+
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
@@ -313,7 +329,7 @@ Content = "Only Quake-Robbing can use with Random Teleport"
     })
 
 
-    robdrop:OnChanged(function(dropzxmcc)
+robdrop:OnChanged(function(dropzxmcc)
 _G.robmethod = dropzxmcc
 end)
 

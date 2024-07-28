@@ -1,4 +1,5 @@
 task.wait(1)
+game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -216,10 +217,6 @@ end
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 
 if _G.WhiteListed then
-
-if game:GetService("Workspace").Island8.Table.Chair.Seat then
-game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
-end
 
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 
@@ -4104,18 +4101,17 @@ end
 
 Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
-Lucyfirst = Tabs.Affinity:AddSlider("rollaff1sli", {
-    Title = "1st Devil Fruit Point",
-    Description = "Choose the point of affinity",
-    Default = 2,
-    Min = 1,
-    Max = 2,
-    Rounding = 1,
-    Callback = function(treotttt)
-            _G.trqpwo = tonumber(treotttt)
-        end
+rabunzoa = Tabs.Affinity:AddDropdown("rabunzoa", {
+        Title = "1st Devil Fruit Point",
+        Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
+        Multi = false,
+        Default = "1.9",
 })
 
+
+rabunzoa:OnChanged(function(wekorzza)
+_G.trqpwo = tonumber(wekorzza)
+end)
 
 wrrrrr = Tabs.Affinity:AddDropdown("dqwww", {
         Title = "Lock Affinity (DF1)",
@@ -4297,17 +4293,17 @@ end)
 
 
 Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
-Lucysecond = Tabs.Affinity:AddSlider("rollaff2sli", {
-    Title = "2nd Devil Fruit Point",
-    Description = "Choose the point of affinity",
-    Default = 2,
-    Min = 1,
-    Max = 2,
-    Rounding = 1,
-    Callback = function(treot)
-        _G.trqpwo2 = tonumber(treot)
-        end
+
+rabunzoasec = Tabs.Affinity:AddDropdown("rabunzoasec", {
+        Title = "2nd Devil Fruit Point",
+        Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
+        Multi = false,
+        Default = "1.9",
 })
+
+rabunzoasec:OnChanged(function(wekorzzasec)
+_G.trqpwo2 = tonumber(wekorzzasec)
+end)
 
 wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
         Title = "Lock Affinity (DF2)",
@@ -4482,7 +4478,39 @@ end)
 end
 end)
 
+Tabs.Skill:AddSection("Auto Spam Fruit")
+skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
+        Title = "Fruit Spam",
+        Values = {"Flare","Magma","Bomb"},
+        Multi = false,
+        Default = "",
+    })
 
+
+skillldrop:OnChanged(function(skillzxmdr)
+_G.skilltype = skillzxmdr
+end)
+
+skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
+        Title = "Skill",
+        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
+        Multi = false,
+        Default = "",
+    })
+
+
+skillnumpo:OnChanged(function(skilzwqw)
+_G.skillnumz = skilzwqw
+end)
+
+spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Spam Fruit", Default = false })
+spamskillz:OnChanged(function()
+if Options.spamskillztoggle.Value == true then
+_G.startspamskill = true
+else
+_G.startspamskill = false
+end
+end)
 
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)

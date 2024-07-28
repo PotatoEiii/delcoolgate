@@ -1009,7 +1009,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
     [6] = 100
 }
@@ -1051,7 +1051,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
     [6] = 100
 }
@@ -1093,7 +1093,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
     [6] = 100
 }
@@ -1135,7 +1135,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
     [6] = 100,
     [7] = 100
@@ -1178,7 +1178,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
     [6] = 100
 }
@@ -1221,7 +1221,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandCaver"):WaitForChild("Grass"):WaitForChild("Grass"),
     [6] = 100
 }
@@ -1263,7 +1263,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandKai"):WaitForChild("Folder"):WaitForChild("FourIce"),
     [6] = 100
 }
@@ -1298,7 +1298,7 @@ local args = {
     [1] = lightcode,
     [2] = "LightPower2",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace.IslandCaver.Stones.Stone,
     [6] = 100
 }
@@ -1337,7 +1337,7 @@ task.wait(0.08)
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.X, game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y, game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1346,7 +1346,7 @@ task.wait(0.08)
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.X, game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y, game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1355,7 +1355,7 @@ task.wait(0.08)
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
-			[4] = Vector3.new(v.HumanoidRootPart.Position.X, v.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z),
+			[4] = Vector3.new(game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.X, game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Y, game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.Position.Z),
                         [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
                         [6] = 100
                     }
@@ -1396,7 +1396,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StopCharging",
-    [4] = v.HumanoidRootPart.CFrame,
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
     [6] = 100
 }

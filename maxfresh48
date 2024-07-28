@@ -1,4 +1,5 @@
 task.wait(1)
+game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -216,10 +217,6 @@ end
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 
 if _G.WhiteListed then
-
-if not game:GetService("Workspace").Island8.Table.Chair.condimemay then
-game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
-end
 
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 

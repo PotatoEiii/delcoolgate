@@ -217,7 +217,7 @@ anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcuteheh
 
 if _G.WhiteListed then
 
-if game:GetService("Workspace").Island8.Table.Chair.Seat then
+if not game:GetService("Workspace").Island8.Table.Chair.condimemay then
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 end
 

@@ -4492,7 +4492,6 @@ skillldrop:OnChanged(function(skillzxmdr)
 _G.skilltype = skillzxmdr
 end)
 
-Tabs.Skill:AddSection("Auto Spam Fruit")
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Title = "Fruit Spam",
         Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
@@ -4505,7 +4504,7 @@ skillnumpo:OnChanged(function(skilzwqw)
 _G.skillnumz = skilzwqw
 end)
 
-spamskillz = Tabs.Robbing:AddToggle("spamskillztoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
+spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
 spamskillz:OnChanged(function()
 if Options.spamskillztoggle.Value == true then
 _G.startspamskill = true

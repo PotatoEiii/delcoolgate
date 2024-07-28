@@ -4495,7 +4495,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Title = "Fruit Spam",
-        Values = {"Power1","Power2","Power3"."Power4","Power5"."Power6"},
+        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
         Multi = false,
         Default = "",
     })

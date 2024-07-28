@@ -4493,7 +4493,7 @@ _G.skilltype = skillzxmdr
 end)
 
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
-        Title = "Fruit Spam",
+        Title = "Skill",
         Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
         Multi = false,
         Default = "",

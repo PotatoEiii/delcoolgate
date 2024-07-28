@@ -4504,7 +4504,7 @@ skillnumpo:OnChanged(function(skilzwqw)
 _G.skillnumz = skilzwqw
 end)
 
-spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Rob Rare/Ultra Fruits", Default = false })
+spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Spam Fruit", Default = false })
 spamskillz:OnChanged(function()
 if Options.spamskillztoggle.Value == true then
 _G.startspamskill = true

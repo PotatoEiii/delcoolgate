@@ -489,6 +489,14 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb16
         end
     })
 
+Tabs.Misc:AddSection("                                      ---")
+    Tabs.Misc:AddButton({
+        Title = "Nothing Hub",
+        Description = "Open Nothing Hub Script",
+        Callback = function()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdaeb8c720eac056eff0d9e74d5087e6/chhickendiu"))()
+end
+    })
 
 Tabs.Misc:AddSection("Boost")
     Tabs.Misc:AddButton({

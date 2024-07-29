@@ -4821,7 +4821,7 @@ pcall(function()
 repeat wait() until _G.Hitboxplr == true
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
 v.Character.HumanoidRootPart.Transparency = 0.7
 v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
@@ -5051,7 +5051,7 @@ repeat wait() until _G.autocannonplrbring == true
 pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
                         v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false

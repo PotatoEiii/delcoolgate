@@ -4574,7 +4574,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait(0.05)
-until _G.skilltype ~= "Flare" and _G.skillnumz ~= "Power1" and _G.startspamskill == false
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Flare" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat
 local args = {
@@ -4587,7 +4587,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.1)
+task.wait(0.05)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
@@ -4598,7 +4598,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-until _G.skilltype ~= "Flare" and _G.skillnumz ~= "Power2" and _G.startspamskill == false
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 
 end
 until _G.startspamskill == false

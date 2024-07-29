@@ -952,7 +952,7 @@ end
 end)
 
 
-
+Tabs.Player:AddSection("")
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()

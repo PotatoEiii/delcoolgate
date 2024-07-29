@@ -2373,9 +2373,9 @@ else
 _G.autorj = false
 end
 end)
-
+Tabs.Automatic:AddSection("")
 hopplrsvzz = Tabs.Automatic:AddDropdown("hopplrsvzz", {
-        Title = "1st Devil Fruit Point",
+        Title = "Player Numbers To Hop",
         Values = {"", "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18",""},
         Multi = false,
         Default = "3",

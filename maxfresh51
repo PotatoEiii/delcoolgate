@@ -4561,6 +4561,57 @@ end
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.startspamskill == true
+if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower1",
+    [3] = "Fly"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+until _G.skilltype ~= "Flare" and _G.skillnumz ~= "Power1" and _G.startspamskill == false
+elseif _G.skilltype == "Flare" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-143.0747833251953, 218, -994.1463012695312, 0.9986038208007812, -0.013327144086360931, 0.051116567105054855, 9.313225746154785e-10, 0.9676525592803955, 0.2522869408130646, -0.05282533913850784, -0.2519347071647644, 0.966301441192627),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StopCharging",
+    [4] = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Flare" and _G.skillnumz ~= "Power2" and _G.startspamskill == false
+
+
+
+
+
+
+
+
+
+end
+end
+end)
+
+spawn(function()
+while wait(0.3) do
 repeat wait() until _G.startrop == true
 pcall(function()
 repeat task.wait()

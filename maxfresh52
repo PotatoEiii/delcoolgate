@@ -4562,6 +4562,7 @@ end
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.startspamskill == true
+repeat wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat
 local args = {
@@ -4607,6 +4608,7 @@ until _G.skilltype ~= "Flare" and _G.skillnumz ~= "Power2" and _G.startspamskill
 
 
 end
+until _G.startspamskill == false
 end
 end)
 

@@ -1134,7 +1134,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampSnow == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
@@ -1145,7 +1145,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Snow.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
@@ -1177,7 +1177,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1188,7 +1188,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1220,7 +1220,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampBomb == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
@@ -1231,7 +1231,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
@@ -1262,7 +1262,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampGas == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
@@ -1273,7 +1273,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gas.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
@@ -1304,13 +1304,11 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
     pcall(function()
-repeat
-x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
-lightcode = x.VTCrv
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
-task.wait(0.05)
+repeat task.wait()
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
+task.wait(0.09)
 local args = {
-    [1] = lightcode,
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
     [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
@@ -1395,7 +1393,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
@@ -1406,7 +1404,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
@@ -4693,7 +4691,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -4704,7 +4702,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""
@@ -4774,7 +4772,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
@@ -4785,7 +4783,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""
@@ -4899,7 +4897,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 local args = {

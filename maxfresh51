@@ -480,7 +480,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
         end
     })
 
-Tabs.Misc:AddSection("                                         ---")
+Tabs.Misc:AddSection("                                      ---")
 
 
 
@@ -954,7 +954,7 @@ end
 end)
 
 
-Tabs.Player:AddSection("                                         ---")
+Tabs.Player:AddSection("                                      ---")
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()
@@ -2139,7 +2139,7 @@ end
         end
     })
 
-Tabs.Farm:AddSection("                                         ---")
+Tabs.Farm:AddSection("                                      ---")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2339,7 +2339,7 @@ else
 _G.autorj = false
 end
 end)
-Tabs.Automatic:AddSection("                                         ---")
+Tabs.Automatic:AddSection("                                      ---")
 hopplrsvzz = Tabs.Automatic:AddDropdown("hopplrsvzz", {
         Title = "Player Numbers To Hop",
         Values = {"", "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18",""},
@@ -3145,7 +3145,7 @@ getgenv().farmslowstats = false
 end
 end)
 
-Tabs.Main:AddSection("                                         ---")
+Tabs.Main:AddSection("                                      ---")
 
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
@@ -3197,7 +3197,7 @@ _G.gethakiqwe = false
 end
 end)
 
-Tabs.Haki:AddSection("                                         ---")
+Tabs.Haki:AddSection("                                      ---")
 
 hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
 hakirjoin:OnChanged(function()
@@ -3260,7 +3260,7 @@ _G.rejoinifhaki0 = false
 end
 end)
 
-Tabs.Haki:AddSection("                                         ---")
+Tabs.Haki:AddSection("                                      ---")
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",

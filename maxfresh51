@@ -927,7 +927,7 @@ cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
 _G.telecamethod = fuckasdzz
 end)
 
-aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport To Camp   (*)", Default = false })
+aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport (*)", Default = false })
 aweopcz:OnChanged(function()
 if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
@@ -952,7 +952,7 @@ end
 end)
 
 
-Tabs.Player:AddSection("")
+Tabs.Player:AddSection("---")
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()
@@ -2137,9 +2137,7 @@ end
         end
     })
 
-
-
-
+Tabs.Farm:AddSection("---")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2158,40 +2156,6 @@ else
 _G.autocannonplrbring = false
 end
 end)
-
-
-
-
-Tabs.Farm:AddSection("Auto Reset")
-
-rssli = Tabs.Farm:AddSlider("rssliderzz", {
-    Title = "Reset Time (s)",
-    Description = "Adjust reset time",
-    Default = 900,
-    Min = 100,
-    Max = 2000,
-    Rounding = 0,
-    Callback = function(casd)
-            rstimehaha = tonumber(casd)
-        end
-    })
-
-autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset (Die To Refresh Ping)", Default = false })
-autoreset:OnChanged(function()
-if Options.autoresettoggle.Value == true then
-_G.resetzxcm = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Reset Is Turned On",
-    Duration = 5
-})
-else
-_G.resetzxcm = false
-end
-end)
-
-
-
 
 Tabs.Farm:AddSection("Auto Buso (Normal) (*)")
 
@@ -2373,7 +2337,7 @@ else
 _G.autorj = false
 end
 end)
-Tabs.Automatic:AddSection("")
+Tabs.Automatic:AddSection("---")
 hopplrsvzz = Tabs.Automatic:AddDropdown("hopplrsvzz", {
         Title = "Player Numbers To Hop",
         Values = {"", "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18",""},
@@ -2566,12 +2530,33 @@ _G.autochallenge = false
 end
 end)
 
+Tabs.Automatic:AddSection("Auto Reset")
 
+rssli = Tabs.Automatic:AddSlider("rssliderzz", {
+    Title = "Reset Time (s)",
+    Description = "Adjust reset time",
+    Default = 900,
+    Min = 100,
+    Max = 2000,
+    Rounding = 0,
+    Callback = function(casd)
+            rstimehaha = tonumber(casd)
+        end
+    })
 
-
-
-
-
+autoreset = Tabs.Automatic:AddToggle("autoresettoggle", {Title = "Auto Reset (Die To Refresh Ping)", Default = false })
+autoreset:OnChanged(function()
+if Options.autoresettoggle.Value == true then
+_G.resetzxcm = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Reset Is Turned On",
+    Duration = 5
+})
+else
+_G.resetzxcm = false
+end
+end)
 
 Tabs.Teleport:AddSection("Useful Teleport")
 randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
@@ -2600,50 +2585,6 @@ else
 getgenv().chawq = false
 end
 end)
-
-
-
-Tabs.Teleport:AddSection("Special Teleport")
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Safe Zone",
-        Description = "(A high platform)",
-        Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-        end
-    })
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Fishing Place",
-        Description = "(A place where you can go fishing)",
-        Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)
-        end
-    })
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Rayleigh",
-        Description = "Check and teleport to Rayleigh if he spawns",
-        Callback = function()
-if game:GetService("Workspace").Merchants.QuestHakiMerchant.Clickable.Available.Value == true then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestHakiMerchant.HumanoidRootPart.CFrame
-else
-Fluent:Notify({
-    Title = "Rayleigh Notify",
-    Content = "Rayleigh hasn't spawned yet",
-    Duration = 4
-})
-end
-        end
-    })
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Dark Atlas",
-        Description = "(Legendary Pedestal)",
-        Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 0, 0)
-        end
-    })
 
 Tabs.Teleport:AddSection("Teleport")
 
@@ -2930,6 +2871,48 @@ Fluent:Notify({
 end
 end)
 
+Tabs.Teleport:AddSection("Special Teleport")
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Safe Zone",
+        Description = "(A high platform)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Fishing Place",
+        Description = "(A place where you can go fishing)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Rayleigh",
+        Description = "Check and teleport to Rayleigh if he spawns",
+        Callback = function()
+if game:GetService("Workspace").Merchants.QuestHakiMerchant.Clickable.Available.Value == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestHakiMerchant.HumanoidRootPart.CFrame
+else
+Fluent:Notify({
+    Title = "Rayleigh Notify",
+    Content = "Rayleigh hasn't spawned yet",
+    Duration = 4
+})
+end
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Dark Atlas",
+        Description = "(Legendary Pedestal)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 0, 0)
+        end
+    })
+
 Tabs.Weapon:AddSection("Equipment")
 weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
@@ -3050,7 +3033,7 @@ end)
 Tabs.Weapon:AddSection("Instant Weapon")
 Tabs.Weapon:AddSection("Yoru Spam")
 yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
-    Title = "Yoru Spped",
+    Title = "Yoru Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
     Default = 15,
     Min = 1,
@@ -3098,7 +3081,7 @@ end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
 cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
-    Title = "Cestus Spped",
+    Title = "Cestus Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
     Default = 15,
     Min = 1,
@@ -3160,6 +3143,8 @@ getgenv().farmslowstats = false
 end
 end)
 
+Tabs.Main:AddSection("---")
+
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
 if Options.statsdrinktoggle.Value == true then
@@ -3210,6 +3195,70 @@ _G.gethakiqwe = false
 end
 end)
 
+Tabs.Haki:AddSection("---")
+
+hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
+hakirjoin:OnChanged(function()
+if Options.hakirjointoggle.Value == true then
+_G.rejoinifhaki0 = true
+while _G.rejoinifhaki0 do wait()
+pcall(function()
+repeat wait()
+local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local zcc = zxm/100*2
+if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+
+        if #servers > 0 then
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
+        end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
+    end          
+
+end
+until not _G.rejoinifhaki0
+end)
+end
+else
+_G.rejoinifhaki0 = false
+end
+end)
+
+Tabs.Haki:AddSection("---")
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",
@@ -3730,67 +3779,6 @@ hakiauto()
 end
 end
     })
-
-hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
-hakirjoin:OnChanged(function()
-if Options.hakirjointoggle.Value == true then
-_G.rejoinifhaki0 = true
-while _G.rejoinifhaki0 do wait()
-pcall(function()
-repeat wait()
-local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
-local zcc = zxm/100*2
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
-game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
-TeleportService = game:GetService("TeleportService")
-HttpService = game:GetService("HttpService")
-PlaceId, JobId = game.PlaceId, game.JobId
-httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-	if httprequest then
-		httprequest({
-			Url = 'http://127.0.0.1:6463/rpc?v=1',
-			Method = 'POST',
-			Headers = {
-				['Content-Type'] = 'application/json',
-				Origin = 'https://discord.com'
-			},
-			Body = HttpService:JSONEncode({
-				cmd = 'INVITE_BROWSER',
-				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
-			})
-		})
-	end   
- if httprequest then
-        local servers = {}
-        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        local body = HttpService:JSONDecode(req.Body)
-
-        if body and body.data then
-            for i, v in next, body.data do
-                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
-                    table.insert(servers, 1, v.id)
-                end
-            end
-        end
-
-        if #servers > 0 then
-            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
-        else
-            return notify("Serverhop", "Couldn't find a server.")
-        end
-    else
-        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
-    end          
-
-end
-until not _G.rejoinifhaki0
-end)
-end
-else
-_G.rejoinifhaki0 = false
-end
-end)
 
 Tabs.Haki:AddSection("Auto Haki Farming")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {

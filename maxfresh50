@@ -4912,7 +4912,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-repeat wait() until _G.wqesorry == true or getgenv().tret == true
+repeat wait() until _G.wqesorry == true
 repeat wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
@@ -4921,7 +4921,7 @@ game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
-until _G.wqesorry == false and getgenv().tret == false
+until _G.wqesorry == false
 wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
@@ -5337,7 +5337,7 @@ game.Players.LocalPlayer.Character.Package:Activate()
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 end
-wait(0.2)
+wait(0.3)
 if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
  game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end

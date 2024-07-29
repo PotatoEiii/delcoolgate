@@ -5288,7 +5288,7 @@ spawn(function()
 while wait(0.3) do
 repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 pcall(function()
-repeat wait()
+repeat wait(0.3)
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
 v.Parent = game.Players.LocalPlayer.Character

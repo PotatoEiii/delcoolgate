@@ -481,7 +481,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
     })
 
 Tabs.Misc:AddSection("                                      ---")
-
+    Tabs.Misc:AddButton({
+        Title = "Saluna Old",
+        Description = "Open Saluna Old Script",
+        Callback = function()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb1640c549df25cafbedc4fb868ea87a/zxww"))()
+        end
+    })
 
 
 Tabs.Misc:AddSection("Boost")

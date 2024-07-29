@@ -4563,7 +4563,7 @@ repeat wait() until _G.startspamskill == true
 pcall(function()
 repeat wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower1",
@@ -4571,10 +4571,10 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Flare" and _G.skillnumz == "Power2" and _G.startspamskill == true then
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
@@ -4585,7 +4585,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",

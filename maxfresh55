@@ -4741,7 +4741,7 @@ local args = {
 }
                         
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-task.wait(0.13)
+task.wait(0.15)
 local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",

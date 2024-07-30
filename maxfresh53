@@ -4689,7 +4689,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireSe
 until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Magma" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-if game.Players.LocalPlayer.Character.UsingMagmaBody.Value == true then
+if game.Players.LocalPlayer.Character.UsingMagmaBody.Value == false then
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower8"

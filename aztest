@@ -4,10 +4,10 @@ if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find
 pcall(function()
 if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
 _G.fruitype = "Ultra Rare Fruit(s)"
-_G.pingplr = "@Ultra Rare Ping"
+_G.pingplr = "@Ultra Rare Ping "
 else
 _G.fruitype = "Rare Fruit(s)"
-_G.pingplr = "@Rare Ping"
+_G.pingplr = "@Rare Ping "
 end
 
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
@@ -22,7 +22,7 @@ end
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {
-        ["content"] = _G.pingplr .. " " .. _G.auranotify,
+        ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",

@@ -22,11 +22,11 @@ end
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {
-        ["content"] = "",
+        ["content"] = _G.pingplr .. " " .. _G.auranotify,
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = _G.pingplr .. " " .. _G.auranotify .. "\nUsername: " .. y.Parent.Parent.Name .. "\nGot A ".. y.Name .. _G.auraisgood,
+                ["description"] = "Username: " .. y.Parent.Parent.Name .. "\nGot A ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }

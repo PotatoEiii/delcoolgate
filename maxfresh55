@@ -4753,6 +4753,29 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower11",
+    [3] = "StartCharging",
+    [4] = CFrame.new(712.109130859375, 238, 1197.0052490234375, -0.9692574739456177, -0.12293502688407898, 0.21313606202602386, 3.651063451570735e-09, 0.8662350177764893, 0.49963682889938354, -0.24604877829551697, 0.48427674174308777, -0.8396047353744507),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass")
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower11",
+    [3] = "StopCharging",
+    [4] = CFrame.new(717.3153686523438, 238, 1196.58447265625, -0.8449660539627075, 0.34548458456993103, -0.40825584530830383, -3.946096782669883e-09, 0.7633518576622009, 0.6459829211235046, 0.534820020198822, 0.5458336472511292, -0.6450063586235046),
+    [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
+    [6] = 150
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

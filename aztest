@@ -51,9 +51,9 @@ end
 
 
 game.Players.LocalPlayer.Backpack.ChildAdded:Connect(function(yy)
-if string.find(yy.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(yy.Name, "Dark") or string.find(yy.Name, "Vampire") or string.find(yy.Name, "Gravity") or string.find(yy.Name, "Ope") or string.find(yy.Name, "Venom") or string.find(yy.Name, "Candy Fruit") or string.find(yy.Name, "Hollow") or string.find(yy.Name, "Chilly") or string.find(yy.Name, "Gas") or string.find(yy.Name, "Flare") or string.find(yy.Name, "Light") or string.find(yy.Name, "Smoke") or string.find(yy.Name, "Rumble") or string.find(yy.Name, "Sand") or string.find(yy.Name, "Magma") or string.find(yy.Name, "Snow") or string.find(yy.Name, "Plasma") then
+if string.find(yy.Name, "Quake") or string.find(yy.Name, "Phoenix") or string.find(yy.Name, "Dark") or string.find(yy.Name, "Vampire") or string.find(yy.Name, "Gravity") or string.find(yy.Name, "Ope") or string.find(yy.Name, "Venom") or string.find(yy.Name, "Candy Fruit") or string.find(yy.Name, "Hollow") or string.find(yy.Name, "Chilly") or string.find(yy.Name, "Gas") or string.find(yy.Name, "Flare") or string.find(yy.Name, "Light") or string.find(yy.Name, "Smoke") or string.find(yy.Name, "Rumble") or string.find(yy.Name, "Sand") or string.find(yy.Name, "Magma") or string.find(yy.Name, "Snow") or string.find(yy.Name, "Plasma") then
 pcall(function()
-if string.find(yy.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(yy.Name, "Dark") or string.find(yy.Name, "Vampire") then
+if string.find(yy.Name, "Quake") or string.find(yy.Name, "Phoenix") or string.find(yy.Name, "Dark") or string.find(yy.Name, "Vampire") then
 _G.fruitypey = "Ultra Rare Fruit(s)"
 _G.pingplry = "@Ultra Rare Ping"
 else

@@ -11,14 +11,16 @@ _G.pingplr = "@Ultra Rare Ping"
 else
 _G.fruitype = "Rare Fruit(s)"
 _G.pingplr = "@Rare Ping"
-if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
+end
+
+if string.sub(y.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
 _G.auraisgood = "Aura Fruit!!!"
 _G.auranotify = "@Aura Fruit Ping"
 else
 _G.auraisgood = "Normal Fruit"
 _G.auranotify = ""
 end
-end
+
 
 
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"

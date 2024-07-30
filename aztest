@@ -27,7 +27,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "Fruit Type: " .. _G.fruitype .. "\nUsername: " .. y.Parent.Parent.Name .. "\nGot A ".. y.Name .. _G.auraisgood,
+                ["description"] = "Fruit Type: " .. _G.fruitype .. "\nUsername: " .. y.Parent.Parent.Name .. "\nGot A(n) ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }
@@ -77,7 +77,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "Fruit Type: ".. _G.fruitypey .. "\nUsername: " .. yy.Parent.Parent.Name .. "\nGot A ".. yy.Name .. _G.auraisgoody,
+                ["description"] = "Fruit Type: ".. _G.fruitypey .. "\nUsername: " .. yy.Parent.Parent.Name .. "\nGot A(n) ".. yy.Name .. _G.auraisgoody,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }

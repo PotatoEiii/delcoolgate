@@ -1,4 +1,5 @@
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
     v.Backpack.ChildAdded:Connect(function(y)
 if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") or string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
 pcall(function()
@@ -26,7 +27,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "Username: " .. y.Parent.Parent.Name .. "\nGot A ".. y.Name .. _G.auraisgood,
+                ["description"] = "Fruit Type: " .. _G.fruitype "\nUsername: " .. y.Parent.Parent.Name .. "\nGot A ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }
@@ -43,10 +44,69 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
 
 
   end)
+        end
+    end)
+end
+end
 
 
+game.Players.LocalPlayer.Backpack.ChildAdded:Connect(function(yy)
+if string.find(yy.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(yy.Name, "Dark") or string.find(yy.Name, "Vampire") or string.find(yy.Name, "Gravity") or string.find(yy.Name, "Ope") or string.find(yy.Name, "Venom") or string.find(yy.Name, "Candy Fruit") or string.find(yy.Name, "Hollow") or string.find(yy.Name, "Chilly") or string.find(yy.Name, "Gas") or string.find(yy.Name, "Flare") or string.find(yy.Name, "Light") or string.find(yy.Name, "Smoke") or string.find(yy.Name, "Rumble") or string.find(yy.Name, "Sand") or string.find(yy.Name, "Magma") or string.find(yy.Name, "Snow") or string.find(yy.Name, "Plasma") then
+pcall(function()
+if string.find(yy.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(yy.Name, "Dark") or string.find(yy.Name, "Vampire") then
+_G.fruitypey = "Ultra Rare Fruit(s)"
+_G.pingplry = "@Ultra Rare Ping"
+else
+_G.fruitypey = "Rare Fruit(s)"
+_G.pingplry = "@Rare Ping"
+end
+
+if string.sub(yy.Data.Value,tonumber(string.len(yy.Data.Value)) - 1) == ",1" then
+_G.auraisgoody = " (Aura Fruit!!!)"
+_G.auranotifyy = "@Aura Fruit Ping"
+else
+_G.auraisgoody = " (Normal Fruit)"
+_G.auranotifyy = ""
+end
+
+
+task.wait()
+local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+        local data = {
+        ["content"] = _G.pingplry .. " " .. _G.auranotifyy,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "Fruit Type: ".. _G.fruitypey .. "\nUsername: " .. yy.Parent.Parent.Name .. "\nGot A ".. yy.Name .. _G.auraisgoody,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xff8200),
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+  end)
 
 
         end
     end)
-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

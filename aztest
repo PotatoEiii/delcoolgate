@@ -29,7 +29,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = _G.pingplr .." " .._G.auranotify .."\nUsername: " ..v.Parent.Parent .."\nGot A "..v.Name .." (" .._G.auraisgood .. ")",
+                ["description"] = _G.pingplr .." " .._G.auranotify .."\nUsername: " ..y.Parent.Parent .."\nGot A "..v.Name .." (" .._G.auraisgood .. ")",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }

@@ -588,7 +588,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
-task.wait(0.06)
+task.wait(0.08)
 until _G.quakelagmisc == false
 end)
 end

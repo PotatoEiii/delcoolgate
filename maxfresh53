@@ -4699,6 +4699,19 @@ game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireSe
 end
 task.wait(0.2)
 until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Magma" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower9",
+    [3] = "Create",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass")
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

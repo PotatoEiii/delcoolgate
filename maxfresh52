@@ -4639,6 +4639,30 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait(0.1)
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Flare" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(722.184326171875, 238, 1204.1463623046875, -0.9409554600715637, 0.07911429554224014, -0.3291562795639038, 6.581859057774864e-09, 0.9723090529441833, 0.23369912803173065, 0.3385305404663086, 0.2199004739522934, -0.9148994088172913),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower5",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

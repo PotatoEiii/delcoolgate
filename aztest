@@ -5,15 +5,15 @@ if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find
 pcall(function()
 if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
 _G.fruitype = "Ultra Rare Fruit(s)"
-_G.pingplr = "@1267828963024306289"
+_G.pingplr = "<@&1267828963024306289>"
 else
 _G.fruitype = "Rare Fruit(s)"
-_G.pingplr = "@1267829170092769301"
+_G.pingplr = "<@&1267829170092769301>"
 end
 
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
-_G.auranotify = "@Aura Fruit Ping"
+_G.auranotify = "<@&1267829260442402959>"
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""

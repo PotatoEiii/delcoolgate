@@ -1,13 +1,21 @@
 task.wait(7)
 repeat wait() until game:IsLoaded()
-listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 _G.WhiteListed = false
+listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listed) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 _G.WhiteListed = true
             end
         end
+
+userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+        for _, v2 in pairs(userlisted) do
+            if game.Players.LocalPlayer.UserId == v2 then
+_G.WhiteListed = true
+            end
+        end
+
 if _G.WhiteListed then
 _G.dupegem = true
 

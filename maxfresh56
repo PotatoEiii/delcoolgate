@@ -4927,6 +4927,30 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower6",
+    [3] = "StartCharging",
+    [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower6",
+    [3] = "StopCharging",
+    [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

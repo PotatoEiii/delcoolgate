@@ -1,5 +1,4 @@
 task.wait(1)
-game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -217,7 +216,14 @@ end
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 
 if _G.WhiteListed then
-
+do
+for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
+if v.Name == "condimemay" then
+v.Name = "Seat"
+end
+end
+end
+game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
 
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
@@ -266,7 +272,7 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     local method = getnamecallmethod()
     if method == "FireServer" or method == "InvokeServer" then
         if self.Name == "RemoteEvent" and args[3] == "StopCharging" and _G.auto100rate then
-            args[6] = 100
+            args[6] = 300
             return aaxc(self, unpack(args))
         end
     end
@@ -287,23 +293,23 @@ end)
 })
  Tabs = {
     Info = Window:AddTab({ Title = "About", Icon = "rbxassetid://4871684504" }),
-    Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
-    Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
-    Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Sam", Icon = "rbxassetid://13492316250" }),
     Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://6947202399" }),
-    Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
-    Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
-    PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
-    Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
+    Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
+    Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
+    Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
+    Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
+    PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://18518485889" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
+    Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
+    Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
-    Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
@@ -474,7 +480,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
         end
     })
 
+Tabs.Misc:AddSection("                                      ---")
+    Tabs.Misc:AddButton({
+        Title = "Saluna Old",
+        Description = "Open Saluna Old Script",
+        Callback = function()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb1640c549df25cafbedc4fb868ea87a/zxww"))()
+        end
+    })
 
+Tabs.Misc:AddSection("                                      ---")
+    Tabs.Misc:AddButton({
+        Title = "Nothing Hub",
+        Description = "Open Nothing Hub Script",
+        Callback = function()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdaeb8c720eac056eff0d9e74d5087e6/chhickendiu"))()
+end
+    })
 
 Tabs.Misc:AddSection("Boost")
     Tabs.Misc:AddButton({
@@ -921,7 +943,7 @@ cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
 _G.telecamethod = fuckasdzz
 end)
 
-aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport To Camp   (*)", Default = false })
+aweopcz = Tabs.Player:AddToggle("aweopcztoggle", {Title = "Auto Teleport (*)", Default = false })
 aweopcz:OnChanged(function()
 if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
@@ -946,7 +968,7 @@ end
 end)
 
 
-
+Tabs.Player:AddSection("                                      ---")
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()
@@ -957,11 +979,9 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampDark == true then
     pcall(function()
-repeat
-x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)
-vtcccq = x.VTCjebaj
+repeat task.wait()
 local args = {
-    [1] = vtcccq,
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StartCharging",
     [4] = CFrame.new(-102.340569, 213, 215.227097, -0.982314944, -0.125758141, 0.138716429, -0, 0.74086374, 0.671655476, -0.187236086, 0.659777224, -0.727761507),
@@ -970,9 +990,9 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
-    [1] = vtcccq,
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StopCharging",
     [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,100,0),
@@ -981,7 +1001,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-until not _G.CampDark or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampDark or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1002,7 +1022,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
     pcall(function()
-repeat wait()
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
@@ -1013,7 +1033,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
@@ -1024,7 +1044,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
-until not _G.CampVamp or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampVamp or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1044,7 +1064,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -1055,7 +1075,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -1066,7 +1086,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-until not _G.CampMagma or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1085,8 +1105,8 @@ while _G.CampFlare do wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampFlare == true then
-    pcall(function()
-repeat
+pcall(function()
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
@@ -1097,7 +1117,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
@@ -1108,7 +1128,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-until not _G.CampFlare or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampFlare or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1128,7 +1148,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampSnow == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
@@ -1139,7 +1159,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Snow.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
@@ -1151,7 +1171,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Snow.RemoteEvent:FireServer(unpack(args))
-until not _G.CampSnow or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampSnow or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1171,7 +1191,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1182,7 +1202,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
@@ -1193,7 +1213,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
-until not _G.CampChilly or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampChilly or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1214,7 +1234,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampBomb == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
@@ -1225,7 +1245,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
@@ -1236,7 +1256,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-until not _G.CampBomb or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampBomb or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1256,7 +1276,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampGas == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
@@ -1267,7 +1287,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gas.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
@@ -1278,7 +1298,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gas.RemoteEvent:FireServer(unpack(args))
-until not _G.CampGas or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampGas or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1298,13 +1318,11 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
     pcall(function()
-repeat
-x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)
-lightcode = x.VTCrv
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(lightcode,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
-task.wait(0.05)
+repeat task.wait()
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
+task.wait(0.09)
 local args = {
-    [1] = lightcode,
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
     [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
@@ -1313,7 +1331,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-until not _G.CampLight or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampLight or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1333,7 +1351,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
     pcall(function()
-repeat
+repeat task.wait()
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -1369,7 +1387,7 @@ task.wait(0.08)
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-until not _G.CampPlasma or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampPlasma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -1389,7 +1407,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
     pcall(function()
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
@@ -1400,7 +1418,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
@@ -1411,7 +1429,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
-until not _G.CampPhoenix or not game.Players:FindFirstChild(SelectedKillPlayer)
+until not _G.CampPhoenix or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end)
 end
 end
@@ -2131,9 +2149,7 @@ end
         end
     })
 
-
-
-
+Tabs.Farm:AddSection("                                      ---")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2152,40 +2168,6 @@ else
 _G.autocannonplrbring = false
 end
 end)
-
-
-
-
-Tabs.Farm:AddSection("Auto Reset")
-
-rssli = Tabs.Farm:AddSlider("rssliderzz", {
-    Title = "Reset Time (s)",
-    Description = "Adjust reset time",
-    Default = 900,
-    Min = 100,
-    Max = 2000,
-    Rounding = 0,
-    Callback = function(casd)
-            rstimehaha = tonumber(casd)
-        end
-    })
-
-autoreset = Tabs.Farm:AddToggle("autoresettoggle", {Title = "Auto Reset (Die To Refresh Ping)", Default = false })
-autoreset:OnChanged(function()
-if Options.autoresettoggle.Value == true then
-_G.resetzxcm = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Reset Is Turned On",
-    Duration = 5
-})
-else
-_G.resetzxcm = false
-end
-end)
-
-
-
 
 Tabs.Farm:AddSection("Auto Buso (Normal) (*)")
 
@@ -2367,17 +2349,18 @@ else
 _G.autorj = false
 end
 end)
-hopplrsvzz = Tabs.Automatic:AddSlider("hopplrsvzzc", {
-    Title = "Player Numbers To Hop",
-    Description = "Adjust player numbers (Recommend: 3)",
-    Default = 18,
-    Min = 1,
-    Max = 18,
-    Rounding = 0,
-    Callback = function(zxcbbbeg)
-            plrnumforhop = tonumber(zxcbbbeg)
-        end
-    })
+Tabs.Automatic:AddSection("                                      ---")
+hopplrsvzz = Tabs.Automatic:AddDropdown("hopplrsvzz", {
+        Title = "Player Numbers To Hop",
+        Values = {"", "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18",""},
+        Multi = false,
+        Default = "3",
+})
+
+
+hopplrsvzz:OnChanged(function(zxcbbbeg)
+plrnumforhop = tonumber(zxcbbbeg)
+end)
 
 fewplrhop = Tabs.Automatic:AddToggle("fewplrhoptoggle", {Title = "Auto Hop If Fewer Player", Default = false })
 fewplrhop:OnChanged(function()
@@ -2559,12 +2542,33 @@ _G.autochallenge = false
 end
 end)
 
+Tabs.Automatic:AddSection("Auto Reset")
 
+rssli = Tabs.Automatic:AddSlider("rssliderzz", {
+    Title = "Reset Time (s)",
+    Description = "Adjust reset time",
+    Default = 900,
+    Min = 100,
+    Max = 2000,
+    Rounding = 0,
+    Callback = function(casd)
+            rstimehaha = tonumber(casd)
+        end
+    })
 
-
-
-
-
+autoreset = Tabs.Automatic:AddToggle("autoresettoggle", {Title = "Auto Reset (Die To Refresh Ping)", Default = false })
+autoreset:OnChanged(function()
+if Options.autoresettoggle.Value == true then
+_G.resetzxcm = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Reset Is Turned On",
+    Duration = 5
+})
+else
+_G.resetzxcm = false
+end
+end)
 
 Tabs.Teleport:AddSection("Useful Teleport")
 randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
@@ -2593,50 +2597,6 @@ else
 getgenv().chawq = false
 end
 end)
-
-
-
-Tabs.Teleport:AddSection("Special Teleport")
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Safe Zone",
-        Description = "(A high platform)",
-        Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-        end
-    })
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Fishing Place",
-        Description = "(A place where you can go fishing)",
-        Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)
-        end
-    })
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Rayleigh",
-        Description = "Check and teleport to Rayleigh if he spawns",
-        Callback = function()
-if game:GetService("Workspace").Merchants.QuestHakiMerchant.Clickable.Available.Value == true then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestHakiMerchant.HumanoidRootPart.CFrame
-else
-Fluent:Notify({
-    Title = "Rayleigh Notify",
-    Content = "Rayleigh hasn't spawned yet",
-    Duration = 4
-})
-end
-        end
-    })
-
-Tabs.Teleport:AddButton({
-        Title = "Teleport To Dark Atlas",
-        Description = "(Legendary Pedestal)",
-        Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 0, 0)
-        end
-    })
 
 Tabs.Teleport:AddSection("Teleport")
 
@@ -2923,6 +2883,48 @@ Fluent:Notify({
 end
 end)
 
+Tabs.Teleport:AddSection("Special Teleport")
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Safe Zone",
+        Description = "(A high platform)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Fishing Place",
+        Description = "(A place where you can go fishing)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Rayleigh",
+        Description = "Check and teleport to Rayleigh if he spawns",
+        Callback = function()
+if game:GetService("Workspace").Merchants.QuestHakiMerchant.Clickable.Available.Value == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestHakiMerchant.HumanoidRootPart.CFrame
+else
+Fluent:Notify({
+    Title = "Rayleigh Notify",
+    Content = "Rayleigh hasn't spawned yet",
+    Duration = 4
+})
+end
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Dark Atlas",
+        Description = "(Legendary Pedestal)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 0, 0)
+        end
+    })
+
 Tabs.Weapon:AddSection("Equipment")
 weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
@@ -3043,7 +3045,7 @@ end)
 Tabs.Weapon:AddSection("Instant Weapon")
 Tabs.Weapon:AddSection("Yoru Spam")
 yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
-    Title = "Yoru Spped",
+    Title = "Yoru Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
     Default = 15,
     Min = 1,
@@ -3091,7 +3093,7 @@ end)
 
 Tabs.Weapon:AddSection("Cestus Spam")
 cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
-    Title = "Cestus Spped",
+    Title = "Cestus Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
     Default = 15,
     Min = 1,
@@ -3153,6 +3155,8 @@ getgenv().farmslowstats = false
 end
 end)
 
+Tabs.Main:AddSection("                                      ---")
+
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
 if Options.statsdrinktoggle.Value == true then
@@ -3203,6 +3207,70 @@ _G.gethakiqwe = false
 end
 end)
 
+Tabs.Haki:AddSection("                                      ---")
+
+hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
+hakirjoin:OnChanged(function()
+if Options.hakirjointoggle.Value == true then
+_G.rejoinifhaki0 = true
+while _G.rejoinifhaki0 do wait()
+pcall(function()
+repeat wait()
+local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local zcc = zxm/100*2
+if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
+game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+
+        if #servers > 0 then
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
+        end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
+    end          
+
+end
+until not _G.rejoinifhaki0
+end)
+end
+else
+_G.rejoinifhaki0 = false
+end
+end)
+
+Tabs.Haki:AddSection("                                      ---")
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",
@@ -3723,67 +3791,6 @@ hakiauto()
 end
 end
     })
-
-hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
-hakirjoin:OnChanged(function()
-if Options.hakirjointoggle.Value == true then
-_G.rejoinifhaki0 = true
-while _G.rejoinifhaki0 do wait()
-pcall(function()
-repeat wait()
-local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
-local zcc = zxm/100*2
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
-game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
-TeleportService = game:GetService("TeleportService")
-HttpService = game:GetService("HttpService")
-PlaceId, JobId = game.PlaceId, game.JobId
-httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-	if httprequest then
-		httprequest({
-			Url = 'http://127.0.0.1:6463/rpc?v=1',
-			Method = 'POST',
-			Headers = {
-				['Content-Type'] = 'application/json',
-				Origin = 'https://discord.com'
-			},
-			Body = HttpService:JSONEncode({
-				cmd = 'INVITE_BROWSER',
-				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
-			})
-		})
-	end   
- if httprequest then
-        local servers = {}
-        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        local body = HttpService:JSONDecode(req.Body)
-
-        if body and body.data then
-            for i, v in next, body.data do
-                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
-                    table.insert(servers, 1, v.id)
-                end
-            end
-        end
-
-        if #servers > 0 then
-            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
-        else
-            return notify("Serverhop", "Couldn't find a server.")
-        end
-    else
-        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
-    end          
-
-end
-until not _G.rejoinifhaki0
-end)
-end
-else
-_G.rejoinifhaki0 = false
-end
-end)
 
 Tabs.Haki:AddSection("Auto Haki Farming")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
@@ -4481,7 +4488,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {"Flare","Magma","Bomb"},
+        Values = {"Flare","Magma","Gravity","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -4493,7 +4500,7 @@ end)
 
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Title = "Skill",
-        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
+        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"," "},
         Multi = false,
         Default = "",
     })
@@ -4561,6 +4568,394 @@ end
 if game.placeId ~= 8569358381 and game.placeId ~= 3237168 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.startspamskill == true
+pcall(function()
+repeat wait()
+if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower1",
+    [3] = "Fly"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Flare" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-143.0747833251953, 218, -994.1463012695312, 0.9986038208007812, -0.013327144086360931, 0.051116567105054855, 9.313225746154785e-10, 0.9676525592803955, 0.2522869408130646, -0.05282533913850784, -0.2519347071647644, 0.966301441192627),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower2",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Flare" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower3",
+    [3] = "Status",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z))
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower3",
+    [3] = "Status",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z))
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Flare" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower4"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.1)
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Flare" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(722.184326171875, 238, 1204.1463623046875, -0.9409554600715637, 0.07911429554224014, -0.3291562795639038, 6.581859057774864e-09, 0.9723090529441833, 0.23369912803173065, 0.3385305404663086, 0.2199004739522934, -0.9148994088172913),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
+    [2] = "FlarePower5",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Magma" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-123.28974914550781, 213, -871.10595703125, 0.9992225766181946, -0.009072019718587399, 0.038368139415979385, -0, 0.9731666445732117, 0.23010201752185822, -0.03942607715725899, -0.22992312908172607, 0.9724099040031433),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Magma" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character.UsingMagmaBody.Value == false then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower8"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+end
+task.wait(0.2)
+until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Magma" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower9",
+    [3] = "Create",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass")
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower7"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StartCharging"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StartCharging",
+[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+[5] = game.Players.LocalPlayer.Character.HumanoidRootPart
+}
+                        
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.15)
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StopCharging",
+[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+[5] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+[6] = 300
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower11",
+    [3] = "StartCharging",
+    [4] = CFrame.new(712.109130859375, 238, 1197.0052490234375, -0.9692574739456177, -0.12293502688407898, 0.21313606202602386, 3.651063451570735e-09, 0.8662350177764893, 0.49963682889938354, -0.24604877829551697, 0.48427674174308777, -0.8396047353744507),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass")
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower11",
+    [3] = "StopCharging",
+    [4] = CFrame.new(717.3153686523438, 238, 1196.58447265625, -0.8449660539627075, 0.34548458456993103, -0.40825584530830383, -3.946096782669883e-09, 0.7633518576622009, 0.6459829211235046, 0.534820020198822, 0.5458336472511292, -0.6450063586235046),
+    [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
+    [6] = 150
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower12",
+    [3] = "StartCharging"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower12",
+    [3] = "StartCharging",
+    [4] = CFrame.new(726.8839111328125, 238.20001220703125, 1194.1475830078125, -0.5433058738708496, 0.19173738360404968, -0.8173466920852661, -3.00356317595174e-09, 0.9735709428787231, 0.22838526964187622, 0.8395348191261292, 0.12408305704593658, -0.5289468169212341),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union")
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+    [2] = "GravityPower12",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
+    [6] = 150
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower7",
+    [3] = "StartCharging",
+    [4] = CFrame.new(727.8606567382812, 238, 1206.005859375, -0.7932435274124146, 0.36403170228004456, -0.4881042540073395, -7.20106996254799e-09, 0.8016104698181152, 0.5978468656539917, 0.6089046001434326, 0.47423815727233887, -0.6358722448348999),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower7",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(764.07861328125, 238, 1206.9749755859375, -0.3646012842655182, 0.5613641738891602, -0.742924153804779, 9.520264576678983e-09, 0.7978448271751404, 0.6028629541397095, 0.9311638474464417, 0.21980459988117218, -0.2908952236175537),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower9",
+    [3] = "StartCharging",
+    [4] = CFrame.new(764.029541015625, 238, 1228.4931640625, 0.1461942344903946, 0.16408567130565643, -0.9755527973175049, -5.016764781373695e-11, 0.9861480593681335, 0.16586777567863464, 0.9892559051513672, -0.024248912930488586, 0.1441691666841507),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower9",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower10",
+    [3] = "StartCharging",
+    [4] = CFrame.new(777, 241.96307373046875, 1204.1689453125, -0.1765427589416504, 0.01790277659893036, -0.9841301441192627, -2.6789415130679117e-10, 0.9998345971107483, 0.018188463523983955, 0.9842929840087891, 0.0032110416796058416, -0.17651355266571045),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower10",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower11",
+    [3] = "StartCharging",
+    [4] = CFrame.new(802, 255.7018280029297, 1209.4305419921875, -0.18318389356136322, -0.10552715510129929, -0.9773984551429749, 1.4024177374949431e-09, 0.9942220449447632, -0.10734354704618454, 0.9830787181854248, -0.0196636114269495, -0.18212544918060303),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower11",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower6",
+    [3] = "StartCharging",
+    [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower6",
+    [3] = "StopCharging",
+    [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+end
+until _G.startspamskill == false
+end)
+end
+end)
 
 spawn(function()
 while wait(0.3) do
@@ -4651,7 +5046,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -4662,7 +5057,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""
@@ -4732,7 +5127,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-repeat
+repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
@@ -4743,7 +5138,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""
@@ -4821,7 +5216,7 @@ pcall(function()
 repeat wait() until _G.Hitboxplr == true
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
 v.Character.HumanoidRootPart.Transparency = 0.7
 v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
@@ -4857,7 +5252,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
-task.wait(0.05)
+task.wait(0.09)
 until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 local args = {
@@ -4906,7 +5301,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-repeat wait() until _G.wqesorry == true or getgenv().tret == true
+repeat wait() until _G.wqesorry == true
 repeat wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
@@ -4915,7 +5310,7 @@ game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
-until _G.wqesorry == false and getgenv().tret == false
+until _G.wqesorry == false
 wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
@@ -5051,7 +5446,7 @@ repeat wait() until _G.autocannonplrbring == true
 pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
                         v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
@@ -5244,7 +5639,7 @@ spawn(function()
 while wait(0.3) do
 repeat wait() until getgenv().fishing == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
 pcall(function()
-repeat wait()
+repeat wait(0.3)
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
 v.Parent = game.Players.LocalPlayer.Character
@@ -5331,7 +5726,7 @@ game.Players.LocalPlayer.Character.Package:Activate()
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 end
-wait(0.2)
+wait(0.3)
 if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
  game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end

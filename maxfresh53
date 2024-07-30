@@ -4663,37 +4663,6 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
-elseif _G.skilltype == "Flare" and _G.skillnumz == "Power6" and _G.startspamskill == true then
-repeat task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
-    [2] = "FlarePower6",
-    [3] = "StartCharging"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
-    [2] = "FlarePower6",
-    [3] = "StartCharging",
-    [4] = CFrame.new(703.4432373046875, 238, 1162.0966796875, 0.8931042551994324, -0.015547205694019794, 0.44958120584487915, -1.9890780689202359e-10, 0.9994027614593506, 0.03456087037920952, -0.4498499631881714, -0.030866460874676704, 0.8925706744194031),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [7] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
-    [2] = "FlarePower6",
-    [3] = "StopCharging",
-    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 166
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
-until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Magma" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
 local args = {
@@ -4720,13 +4689,15 @@ game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireSe
 until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Magma" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
+if game.Players.LocalPlayer.Character.UsingMagmaBody.Value == true then
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower8"
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
+end
+task.wait(0.2)
 until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 end
 until _G.startspamskill == false

@@ -1,60 +1,41 @@
-BBB = Instance.new("ScreenGui")
-BBB.Name = "BBB"
-BBB.Parent = game.CoreGui
+Pedo = {
+    1135910299, -- Havelic
+    520944, -- Oblivic
+    43247021, -- BowTiedPony
+    2350183594, -- icydragonwingsis
+    835620275, -- Silvers_Rayleig
+    137621, -- mariobros38
+    295337577, -- ModeratorDaMarcuses
+    1338963426, -- happypandamagic2
+    1276541545, -- VanitasThePlague
+    587649463, -- happypandamagic
+    245586741, -- Tiptop98
+    174941504, -- FoxKingFab
+    136099207,-- CudlessTheCat
+    94825741, -- NATSUDRAGN331
+    358051152, -- VortexFragmented
+    529455640, -- vlonedd
+    281482099, -- Quixotize
+    355207559, -- Elianmc1s
+    5084487, -- Americanflag
+    928623624, -- TrashPanda2361
+    30049170, -- Farquanetta
+    1322815101, -- TEST AZ
+    474452017 -- Bige0n
+}
 
-hideUI = Instance.new("ImageButton")
-hideUI.Name = "hideUI"
-hideUI.Parent = game.CoreGui.BBB
-hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
-hideUI.BackgroundTransparency = 1
-hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0.06, 0, 0.11, 0)
-hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
-hideUI.MouseButton1Up:Connect(function()
-if game.CoreGui:FindFirstChild("SalunaFluent").Enabled == true then
-game.CoreGui:FindFirstChild("SalunaFluent").Enabled = false
-else
-game.CoreGui:FindFirstChild("SalunaFluent").Enabled = true
-end
-end)
-
- hideUICorner = Instance.new("UICorner")
-hideUICorner.Parent = game.CoreGui.BBB.hideUI
-hideUICorner.CornerRadius = UDim.new(1,0)
-
-
- UIS = game:GetService('UserInputService')
- frame = game.CoreGui.BBB.hideUI
- dragToggle = nil
- dragSpeed = 0.12
- dragStart = nil
- startPos = nil
-
- function updateInput(input)
-  delta = input.Position - dragStart
-  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
- game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+    for _, v1 in pairs(Pedo) do
+        if v.UserId == v1 then
+            game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
+        end
+    end
 end
 
-frame.InputBegan:Connect(function(input)
- if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-  dragToggle = true
-  dragStart = input.Position
-  startPos = frame.Position
-  input.Changed:Connect(function()
-   if input.UserInputState == Enum.UserInputState.End then
-    dragToggle = false
-   end
-  end)
- end
-end)
-
-UIS.InputChanged:Connect(function(input)
- if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-  if dragToggle then
-   updateInput(input)
-  end
- end
-end)
+game:GetService("Players").PlayerAdded:Connect(function(r)
+    for _, v in pairs(Pedo) do
+        if r.UserId == v then
+            game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
+        end
+    end
+end)  

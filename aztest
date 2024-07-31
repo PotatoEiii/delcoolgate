@@ -85,8 +85,50 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
 end
 end
 
+game:GetService("Players").PlayerAdded:Connect(function(tpb)
+wait(6)
+tpb:WaitForChild("Backpack").ChildAdded:Connect(function(yt)
+if string.find(yt.Name, "Quake") or string.find(yt.Name, "Phoenix") or string.find(yt.Name, "Dark") or string.find(yt.Name, "Vampire") or string.find(yt.Name, "Gravity") or string.find(yt.Name, "Ope") or string.find(yt.Name, "Venom") or string.find(yt.Name, "Candy Fruit") or string.find(yt.Name, "Hollow") or string.find(yt.Name, "Chilly") or string.find(yt.Name, "Gas") or string.find(yt.Name, "Flare") or string.find(yt.Name, "Light") or string.find(yt.Name, "Smoke") or string.find(yt.Name, "Rumble") or string.find(yt.Name, "Sand") or string.find(yt.Name, "Magma") or string.find(yt.Name, "Snow") or string.find(yt.Name, "Plasma") then
+pcall(function()
+if string.find(yt.Name, "Quake") or string.find(yt.Name, "Phoenix") or string.find(yt.Name, "Dark") or string.find(yt.Name, "Vampire") then
+_G.pingplr = "<@&1267828963024306289>"
+else
+_G.pingplr = "<@&1267829170092769301>"
+end
+if string.sub(yt.Data.Value,tonumber(string.len(yt.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1267829260442402959>"
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+end
+task.wait()
+local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+        local data = {
+        ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. yt.Parent.Parent.Name .. "\nFruit: ".. yt.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xff8200),
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+  end)
+        end
+    end)
 
 
+end)  
 
 
 

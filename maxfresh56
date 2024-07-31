@@ -5353,19 +5353,17 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.storeffrt == true
-repeat task.wait()
 pcall(function()
+repeat task.wait()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
-repeat
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait()
 storedf()
-until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
-end)
 until not _G.storeffrt
+end)
 end
 end)
 
@@ -5373,21 +5371,17 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.aurasto == true
-repeat task.wait()
 pcall(function()
+repeat task.wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name,"Fruit") then
-if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
-repeat
+if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait()
 storedf()
-until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
-end
-end)
 until not _G.aurasto
+end)
 end
 end)
 

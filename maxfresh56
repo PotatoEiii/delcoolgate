@@ -321,7 +321,10 @@ Tabs.Webhook:AddSection("Webhook")
 
 Tabs.Webhook:AddParagraph({
 Title = "Fruit + Login Webhook",
-Content = "Auto Webhook To Saluna's Discord Server, Come join us."
+Content = [[Webhook Will Be Sent To Saluna's Discord Server.
+Come join us.
+https://discord.gg/ecpbhm8G3w
+]]
 })
 
 Tabs.Robbing:AddSection("Fruit Robbing")

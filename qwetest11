@@ -45,6 +45,35 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
+
+elseif string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") or string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+pcall(function()
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+task.wait()
+local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+        local data = {
+        ["content"] = _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xff8200),
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end
+end)
 end
 end
 end
@@ -96,6 +125,36 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
+
+elseif string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") or string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+pcall(function()
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+task.wait()
+local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+        local data = {
+        ["content"] = _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xff8200),
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end
+end)
+
 end
 end)
 end

@@ -3861,23 +3861,6 @@ _G.farmadvanced = false
 end
 end)
 
-
-Tabs.Server:AddSection("Discord")
-Tabs.Server:AddParagraph({
-Title = "Discord Information",
-Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
-})
-
-Tabs.Server:AddButton({
-        Title = "Discord Saluna Hub",
-        Description = "Copy Discord Invite Link",
-        Callback = function()
-toClipboard("https://discord.gg/ecpbhm8G3w")    
-end
-    })
-
-
-
 Tabs.Server:AddSection("Rejoin/Hop")
     Tabs.Server:AddButton({
         Title = "Rejoin Server",
@@ -4116,6 +4099,34 @@ end
 })
 end
 })
+
+Tabs.Server:AddSection("Discord")
+Tabs.Server:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
+
+Tabs.Server:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
+
+Tabs.Server:AddSection("Discord")
+Tabs.Server:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
+
+Tabs.Server:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
 
 Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 

@@ -317,6 +317,13 @@ Options = Fluent.Options
 
 game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 
+Tabs.Webhook:AddSection("Webhook")
+
+Tabs.Webhook:AddParagraph({
+Title = "Fruit + Login Webhook",
+Content = "Auto Webhook To Saluna's Discord Server, Come join us."
+})
+
 Tabs.Robbing:AddSection("Fruit Robbing")
 Tabs.Robbing:AddParagraph({
 Title = "NOTE",

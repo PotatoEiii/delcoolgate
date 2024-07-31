@@ -30,7 +30,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nID: " .. y.Parent.Parent.UserId .. "\nFruit: ".. y.Name .. _G.auraisgood,
+                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nJobID: " .. game.JobId .. "\nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }
@@ -58,7 +58,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nID: " .. y.Parent.Parent.UserId .. "\nFruit: ".. y.Name .. _G.auraisgood,
+                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nJobID: " .. game.JobId .. "\nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }
@@ -110,7 +110,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nID: " .. y.Parent.Parent.UserId .. "\nFruit: ".. y.Name .. _G.auraisgood,
+                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nJobID: " .. game.JobId .. "\nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }
@@ -138,7 +138,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nID: " .. y.Parent.Parent.UserId .. "\nFruit: ".. y.Name .. _G.auraisgood,
+                ["description"] = "\nUsername: " .. y.Parent.Parent.Name .. "\nJobID: " .. game.JobId .. "\nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }

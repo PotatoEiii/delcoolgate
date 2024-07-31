@@ -1,6 +1,6 @@
 local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
         local data = {
-        ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
+        ["content"] = "",
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",

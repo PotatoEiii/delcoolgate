@@ -5355,11 +5355,13 @@ while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
-for _, v in pairs(Rarefruit) do
-if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+for i, t in pairs(Rarefruit) do
+for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if u.Name == t then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
 task.wait()
 storedf()
+end
 end
 end
 until not _G.storeffrt

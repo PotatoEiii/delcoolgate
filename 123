@@ -12,9 +12,11 @@ hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
 hideUI.Size = UDim2.new(0.06, 0, 0.11, 0)
 hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 hideUI.MouseButton1Up:Connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+if game.CoreGui:FindFirstChild("SalunaFluent").Enabled == true then
+game.CoreGui:FindFirstChild("SalunaFluent").Enabled = false
+else
+game.CoreGui:FindFirstChild("SalunaFluent").Enabled = true
+end
 end)
 
  hideUICorner = Instance.new("UICorner")

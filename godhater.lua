@@ -701,7 +701,7 @@ end
 end)
 SamSection2:NewToggle("Auto Find Compass",false,function(bool)
             getgenv().autofindsam = bool
-            while getgenv().autofindsam do wait(0.3)
+            while getgenv().autofindsam do task.wait(0.3)
                 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])

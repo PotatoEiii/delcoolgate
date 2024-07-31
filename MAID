@@ -5728,6 +5728,7 @@ game.Players.LocalPlayer.Character.Humanoid.Sit = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 end
 wait(0.3)
+
 end
 end
 end

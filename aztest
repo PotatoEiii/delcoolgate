@@ -4,17 +4,25 @@ if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find
 pcall(function()
 if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
 _G.pingplr = "<@&1267828963024306289>"
-else
-_G.pingplr = "<@&1267829170092769301>"
-end
-
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
-_G.auranotify = "<@&1267829260442402959>"
+_G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
 end
+else
+_G.pingplr = "<@&1267829170092769301>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+end
+end
+
+
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {
@@ -48,16 +56,24 @@ if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find
 pcall(function()
 if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
 _G.pingplr = "<@&1267828963024306289>"
-else
-_G.pingplr = "<@&1267829170092769301>"
-end
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
-_G.auranotify = "<@&1267829260442402959>"
+_G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
 end
+else
+_G.pingplr = "<@&1267829170092769301>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+end
+end
+
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {
@@ -92,16 +108,24 @@ if string.find(yt.Name, "Quake") or string.find(yt.Name, "Phoenix") or string.fi
 pcall(function()
 if string.find(yt.Name, "Quake") or string.find(yt.Name, "Phoenix") or string.find(yt.Name, "Dark") or string.find(yt.Name, "Vampire") then
 _G.pingplr = "<@&1267828963024306289>"
-else
-_G.pingplr = "<@&1267829170092769301>"
-end
 if string.sub(yt.Data.Value,tonumber(string.len(yt.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
-_G.auranotify = "<@&1267829260442402959>"
+_G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
 end
+else
+_G.pingplr = "<@&1267829170092769301>"
+if string.sub(yt.Data.Value,tonumber(string.len(yt.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+end
+end
+
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {
@@ -127,13 +151,3 @@ end)
 end
 end)
 end)  
-
-
-
-
-
-
-
-
-
-

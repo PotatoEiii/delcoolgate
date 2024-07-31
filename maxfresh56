@@ -315,6 +315,8 @@ end)
 }
 Options = Fluent.Options
 
+game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
+
 Tabs.Robbing:AddSection("Fruit Robbing")
 Tabs.Robbing:AddParagraph({
 Title = "NOTE",
@@ -480,6 +482,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
         end
     })
 
+    Tabs.Misc:AddButton({
+        Title = "Dark Dex",
+        Description = "Open Remote Spy Script",
+        Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+        end
+    })
+
+
 Tabs.Misc:AddSection("                                      ---")
     Tabs.Misc:AddButton({
         Title = "Saluna Old",
@@ -489,7 +500,6 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb16
         end
     })
 
-Tabs.Misc:AddSection("                                      ---")
     Tabs.Misc:AddButton({
         Title = "Nothing Hub",
         Description = "Open Nothing Hub Script",

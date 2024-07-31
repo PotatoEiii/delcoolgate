@@ -146,12 +146,12 @@ end
 end)
 end
 end)
-MainSection:NewToggle("Auto Open Uncommon Boxes", false, function(boxes)
+MainSection:NewToggle("Auto Open Common/Uncommon Boxes", false, function(boxes)
         getgenv().uncommonopen = boxes
         while getgenv().uncommonopen do wait(0.1)
             pcall(function()
                 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if v:IsA("Tool") and string.find(v.Name, "Uncommon") then
+                    if v:IsA("Tool") and string.find(v.Name, "ommon") then
                                             game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 v:Activate()
                                         end

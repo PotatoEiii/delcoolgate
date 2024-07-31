@@ -5351,7 +5351,7 @@ pcall(function()
 for _, v in pairs(Rarefruit) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
 repeat
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(v))
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character
@@ -5372,7 +5372,7 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name,"Fruit") then
 if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
 repeat
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(v))
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait()
 storedf()
 until x.Parent ~= game.Players.LocalPlayer.Character

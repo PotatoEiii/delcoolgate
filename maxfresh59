@@ -1513,17 +1513,17 @@ drinkstype = Tabs.Shop:AddDropdown("banlongdiem", {
 _G.drinktret = tostring(typepp)
 end)
 
-    drinkamount = Tabs.Shop:AddInput("drinkamount", {
-        Title = "Choose Amount:",
-        Default = "",
-        Placeholder = "Insert Here",
-        Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function()
-        end
-    })
-
-    drinkamount:OnChanged(function()
+drinkamount = Tabs.Shop:AddInput("drinkamount", {
+	Title = "Choose Amount:",
+	Default = "",
+	Placeholder = "Insert Here",
+	Numeric = false, -- Only allows numbers
+	Finished = false, -- Only calls callback when you press enter
+	Callback = function()
+	end
+})
+drinkamount:OnChanged(function()
+task.wait()
 drinkff = drinkamount.Value
 tretgmm = tonumber(drinkff)
 end)
@@ -3904,17 +3904,17 @@ end
 end)
 Tabs.Server:AddSection("Join Server With JobID")
 
-    joinjobid = Tabs.Server:AddInput("joinjobid", {
-        Title = "Server JobID:",
-        Default = "",
-        Placeholder = "Insert Here",
-        Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function()
-        end
-    })
-
+joinjobid = Tabs.Server:AddInput("joinjobid", {
+	Title = "Server JobID:",
+	Default = "",
+	Placeholder = "Insert Here",
+	Numeric = false, -- Only allows numbers
+	Finished = false, -- Only calls callback when you press enter
+	Callback = function()
+	end
+})
 joinjobid:OnChanged(function()
+task.wait()
 targetjobid = tostring(joinjobid.Value)
 end)
 

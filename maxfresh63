@@ -5394,6 +5394,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
+task.wait()
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,

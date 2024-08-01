@@ -1518,7 +1518,7 @@ end)
         Default = "",
         Placeholder = "Insert Here",
         Numeric = true, -- Only allows numbers
-        Finished = false, -- Only calls callback when you press enter
+        Finished = true, -- Only calls callback when you press enter
         Callback = function()
         end
     })
@@ -3909,7 +3909,7 @@ Tabs.Server:AddSection("Join Server With JobID")
         Default = "",
         Placeholder = "Insert Here",
         Numeric = true, -- Only allows numbers
-        Finished = false, -- Only calls callback when you press enter
+        Finished = true, -- Only calls callback when you press enter
         Callback = function()
         end
     })

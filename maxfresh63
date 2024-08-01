@@ -4625,7 +4625,7 @@ SaveManager:LoadAutoloadConfig()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/graze.lua'))()
 
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/8c4e54feae9c8258012cd2eb29ab3058eb04f7cc/frzxhoo.lua'))()
 
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()

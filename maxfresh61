@@ -4633,6 +4633,11 @@ Fluent:Notify({
 SaveManager:LoadAutoloadConfig()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/graze.lua'))()
+
+if game.placeId == 3237168 then
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
+end
+
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
@@ -6709,7 +6714,3 @@ end)
 end
 end
 end)
-
-if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
-end

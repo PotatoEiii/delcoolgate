@@ -4,7 +4,7 @@ local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ79
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n================================== \nWelcome To Saluna Hub \nHave A Nice Day â™¥",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n================================== \nWelcome To Saluna Hub \nHave A Nice Day ♥ \n================================== \nHWID: " ..game:GetService("RbxAnalyticsService"):GetClientId(),
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }

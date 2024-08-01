@@ -723,9 +723,9 @@ end
 end)
 Tabs.Player:AddSection("Players' Stuff")
 
-viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
-viewplr:OnChanged(function()
-if Options.viewplrtoggle.Value == true then
+viewplrzxc = Tabs.Player:AddToggle("viewplrzxctoggle", {Title = "View Chosen Player", Default = false })
+viewplrzxc:OnChanged(function()
+if Options.viewplrzxctoggle.Value == true then
 getgenv().viewplrr = true
 else
 getgenv().viewplrr = false

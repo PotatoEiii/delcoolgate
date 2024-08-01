@@ -5084,7 +5084,7 @@ if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~
 pcall(function()
 repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-task.wait(0.06)
+task.wait(0.08)
 until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
 wait()
 _G.cuopfruittarget = ""

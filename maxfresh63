@@ -668,29 +668,38 @@ plrts = Tabs.Player:AddInput("plrts", {
 	end
 })
 plrts:OnChanged(function()
-	_G.SelectedKillPlayer = ""
-	_G.plrlow = string.lower(tostring(plrts.Value))
-	_G.plrnum = string.len(_G.plrlow)
-wait()
+task.wait()
+_G.SelectedKillPlayer = ""
+_G.plrlow = string.lower(tostring(plrts.Value))
+_G.plrnum = string.len(_G.plrlow)
+_G.tieptuc = false
+_G.anticampplris = ""
+task.wait()
 if plrts.Value == "" or plrts.Value == nil then
-	_G.SelectedKillPlayer = ""
+_G.SelectedKillPlayer = ""
 else
-	for i, e in pairs(game.Players:GetChildren()) do
-	_G.anh = tostring(e.Name)
-	_G.plrchoose = string.lower(string.sub(_G.anh, 1, _G.plrnum))
-if _G.plrlow == _G.plrchoose then
+for i, e in pairs(game.Players:GetChildren()) do
 for i,vista in pairs(anticamp) do
-if not string.find(vista, _G.anh) then
-	_G.SelectedKillPlayer = _G.anh
-elseif string.find(vista, _G.anh) then
+if e.UserId == vista then
+_G.tieptuc = true
+_G.anticampplris = e.Name
+end
+end
+end
+if _G.tieptuc == false then
+for i, e in pairs(game.Players:GetChildren()) do
+_G.anh = tostring(e.Name)
+_G.plrchoose = string.lower(string.sub(_G.anh, 1, _G.plrnum))
+if _G.plrlow == _G.plrchoose then
+_G.SelectedKillPlayer = _G.anh
+end
+end
+elseif _G.tieptuc == true then
 Fluent:Notify({
-	Title = "Saluna Camp Notify",
-	Content = _G.anh.." Is An Anti-Camp Target",
-	Duration = 8
+Title = "Saluna Camp Notify",
+Content = _G.anticampplris.." Is An Anti-Camp Target",
+Duration = 8
 })
-end
-end
-end
 end
 end
 end)

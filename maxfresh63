@@ -935,10 +935,12 @@ if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
 while _G.AutoQuake do wait(0.1)
 pcall(function()
+if _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-task.wait(0.06)
-until _G.AutoQuake == false
+task.wait(0.08)
+until _G.AutoQuake == false or _G.SelectedKillPlayer == "azpro2k7"
+end
 end)
 end
 else
@@ -989,7 +991,7 @@ if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
 while _G.wqesorry do task.wait()
 pcall(function()
-if game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+if game.Players:FindFirstChild(_G.SelectedKillPlayer) and _G.SelectedKillPlayer ~= "azpro2k7" then
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
@@ -997,7 +999,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
-elseif not game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 end)
@@ -5305,7 +5307,7 @@ while wait(0.3) do
 pcall(function()
 repeat wait() until _G.CampString == true
 pcall(function()
-if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 pcall(function()
 repeat wait()
 local args = {
@@ -5318,7 +5320,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
-until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or _G.SelectedKillPlayer == "azpro2k7"
 wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
@@ -5337,25 +5339,25 @@ end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.CampString == true
+repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
 pcall(function()
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 wait(0.1)
-until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true or _G.SelectedKillPlayer == "azpro2k7"
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.CampString == true
+repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if _G.CampString == true then
 repeat wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
-until not _G.CampString
+until not _G.CampString or _G.SelectedKillPlayer == "azpro2k7"
 end
 end
 

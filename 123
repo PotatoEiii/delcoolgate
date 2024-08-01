@@ -1,62 +1,13 @@
-Pedo = {
-    1322815101 -- TEST AZ
-}
-
-for _, v in pairs(game:GetService("Players"):GetPlayers()) do
-    for _, v1 in pairs(Pedo) do
-        if v.UserId == v1 then
-            game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
-task.wait()
-local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8bAE8cjyhyBUix9GjZMO4QLmZhdjAEn2HPORUc4L5cEA99sHiNKpMS1r"
-        local data = {
-        ["content"] = "@everyone",
-        ["embeds"] = {
-            {
-                ["title"] = " Saluna Notify",
-                ["description"] = "\n Admin or Staff: " .. v.Name .. "\nIs Online" .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId,
-                ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
-            }
-        }
-        }
-        local newdata = game:GetService("HttpService"):JSONEncode(data)
-    
-        local headers = {
-        ["content-type"] = "application/json"
-        }
-        request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-        request(abcdef)
-
-        end
+do  
+     fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
+    if fishingplace then 
+    fishingplace:Destroy() 
+    end 
     end
-end
-
-game:GetService("Players").PlayerAdded:Connect(function(r)
-    for _, v in pairs(Pedo) do
-        if r.UserId == v then
-            game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
+     fishingplace = Instance.new("Part",game.Workspace)
+    fishingplace.Name = "fishingplace"
+    fishingplace.Size = Vector3.new(2,1,2)
+    fishingplace.Position = Vector3.new((math.random(15000, 20000)),210,(math.random(15000, 20000)))
+    fishingplace.Anchored = true
 task.wait()
-local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8bAE8cjyhyBUix9GjZMO4QLmZhdjAEn2HPORUc4L5cEA99sHiNKpMS1r"
-        local data = {
-        ["content"] = "@everyone",
-        ["embeds"] = {
-            {
-                ["title"] = " Saluna Notify",
-                ["description"] = "\n Admin or Staff: " .. r.Name .. "\nIs Online" .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId,
-                ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
-            }
-        }
-        }
-        local newdata = game:GetService("HttpService"):JSONEncode(data)
-    
-        local headers = {
-        ["content-type"] = "application/json"
-        }
-        request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-        request(abcdef)
-        end
-    end
-end)  
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 5, 0)

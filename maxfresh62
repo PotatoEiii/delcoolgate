@@ -4372,7 +4372,7 @@ end)
 
 
 
-Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
+Tabs.Affinity:AddSection("Roll Affinity 2nd Devil Fruit")
 
 rabunzoasec = Tabs.Affinity:AddDropdown("rabunzoasec", {
         Title = "2nd Devil Fruit Point",

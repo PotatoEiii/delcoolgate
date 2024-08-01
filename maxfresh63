@@ -688,6 +688,7 @@ Fluent:Notify({
 	Content = _G.anh.." Is An Anti-Camp Target",
 	Duration = 8
 })
+task.wait()
 _G.SelectedKillPlayer = ""
 end
 end

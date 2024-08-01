@@ -5400,7 +5400,7 @@ end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
+repeat wait() until getgenv().viewplrr == true
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
@@ -5409,7 +5409,7 @@ Fluent:Notify({
 pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
-until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
+until getgenv().viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer).Name
 end)
 end
 end)

@@ -234,27 +234,27 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
     end
 end)  
 
-_G.WhiteListed = false
+_G.asdwqelist = false
 
 listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 
         for _, v1 in pairs(listed) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
-_G.WhiteListed = true
+_G.asdwqelist = true
             end
         end
 
 userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
         for _, v2 in pairs(userlisted) do
             if game.Players.LocalPlayer.UserId == v2 then
-_G.WhiteListed = true
+_G.asdwqelist = true
             end
         end
 
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 
-if _G.WhiteListed then
+if _G.asdwqelist then
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
 if v.Name == "condimemay" then

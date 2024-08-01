@@ -1517,7 +1517,7 @@ drinkamount = Tabs.Shop:AddInput("drinkamount", {
 	Title = "Choose Amount:",
 	Default = "",
 	Placeholder = "Insert Here",
-	Numeric = false, -- Only allows numbers
+	Numeric = true, -- Only allows numbers
 	Finished = false, -- Only calls callback when you press enter
 	Callback = function()
 	end

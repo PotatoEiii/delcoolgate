@@ -236,17 +236,17 @@ end)
 
 _G.asdwqelist = false
 
-listedqwe = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 
-        for _, v1 in pairs(listedqwe) do
+        for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 _G.asdwqelist = true
             end
         end
 
-userlistedzxcw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
-        for _, v2 in pairs(userlistedzxcw) do
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+        for _, v2 in pairs(userlistedzxwc) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.asdwqelist = true
             end
@@ -671,7 +671,7 @@ plrts:OnChanged(function()
 	_G.SelectedKillPlayer = ""
 	_G.plrlow = string.lower(tostring(plrts.Value))
 	_G.plrnum = string.len(_G.plrlow)
-task.wait()
+wait()
 if plrts.Value == "" or plrts.Value == nil then
 	_G.SelectedKillPlayer = ""
 else
@@ -681,15 +681,13 @@ else
 if _G.plrlow == _G.plrchoose then
 for i,vista in pairs(anticamp) do
 if not string.find(vista, _G.anh) then
-_G.SelectedKillPlayer = _G.anh
+	_G.SelectedKillPlayer = _G.anh
 elseif string.find(vista, _G.anh) then
 Fluent:Notify({
 	Title = "Saluna Camp Notify",
 	Content = _G.anh.." Is An Anti-Camp Target",
 	Duration = 8
 })
-task.wait()
-_G.SelectedKillPlayer = ""
 end
 end
 end
@@ -724,31 +722,10 @@ end
 
 end)
 Tabs.Player:AddSection("Players' Stuff")
-
-viewplrzxc = Tabs.Player:AddToggle("viewplrzxctoggle", {Title = "View Chosen Player", Default = false })
-viewplrzxc:OnChanged(function()
-if Options.viewplrzxctoggle.Value == true then
+viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
+viewplr:OnChanged(function()
+if Options.viewplrtoggle.Value == true then
 getgenv().viewplrr = true
-
-while getgenv().viewplrr do wait()
-Fluent:Notify({
-    Title = "Players Notify",
-    Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
-    Duration = 5
-})
-pcall(function()
-repeat wait()
-if _G.SelectedKillPlayer ~= "" then
-game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
-end
-until getgenv().viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer).Name
-wait()
-for i = 1,2 do task.wait()
-game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-end
-end)
-end
-
 else
 getgenv().viewplrr = false
 end
@@ -5416,6 +5393,26 @@ game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
+Fluent:Notify({
+    Title = "Players Notify",
+    Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
+    Duration = 5
+})
+repeat wait()
+if _G.SelectedKillPlayer ~= "" and _G.SelectedKillPlayer ~= nil then
+game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
+end
+until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
+wait()
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end)
 end
 end)

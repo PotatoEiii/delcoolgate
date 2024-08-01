@@ -730,6 +730,7 @@ getgenv().viewplrr = true
 else
 getgenv().viewplrr = false
 end
+end)
 
 Tabs.Player:AddButton({
         Title = "Fix Cam",

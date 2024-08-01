@@ -148,7 +148,7 @@ end
 end
 
 task.wait(4)
-if game.placeId == 8569358381 or game.placeId == 3237168 then
+if game.placeId == 3237168 then
 
 Pedo = {
     1135910299, -- Havelic
@@ -234,31 +234,27 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
     end
 end)  
 
-_G.WhiteListed = false
+_G.asdwqelist = false
 
-listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 
-        for _, v1 in pairs(listed) do
+        for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
-_G.WhiteListed = true
+_G.asdwqelist = true
             end
         end
 
-userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
-        for _, v2 in pairs(userlisted) do
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+        for _, v2 in pairs(userlistedzxwc) do
             if game.Players.LocalPlayer.UserId == v2 then
-_G.WhiteListed = true
+_G.asdwqelist = true
             end
         end
-
-if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
-_G.WhiteListed = true
-end
 
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 
-if _G.WhiteListed then
+if _G.asdwqelist then
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
 if v.Name == "condimemay" then
@@ -289,7 +285,7 @@ local vu = game:GetService("VirtualUser")
      fishingplace = Instance.new("Part",game.Workspace)
     fishingplace.Name = "fishingplace"
     fishingplace.Size = Vector3.new(2,1,2)
-    fishingplace.Position = Vector3.new((math.random(15000, 20000)),210,(math.random(15000, 20000)))
+    fishingplace.Position = Vector3.new((math.random(15000, 20000)),208,(math.random(15000, 20000)))
     fishingplace.Anchored = true
     
     do  
@@ -661,39 +657,30 @@ end
     })
 
 Tabs.Player:AddSection("About Player")
+    plrts = Tabs.Player:AddInput("plrts", {
+        Title = "Choose Player:",
+        Default = "",
+        Placeholder = "Insert Here",
+        Numeric = false, -- Only allows numbers
+        Finished = true, -- Only calls callback when you press enter
+        Callback = function()
+        end
+})
 
-plrts = Tabs.Player:AddInput("plrts", {
-	Title = "Choose Player:",
-	Default = "",
-	Placeholder = "Insert Here",
-	Numeric = false, -- Only allows numbers
-	Finished = true, -- Only calls callback when you press enter
-	Callback = function()
-	end
-})
 plrts:OnChanged(function()
-	_G.SelectedKillPlayer = ""
-	_G.plrlow = string.lower(tostring(plrts.Value))
-	_G.plrnum = string.len(_G.plrlow)
-wait()
+task.wait()
+_G.SelectedKillPlayer = ""
+_G.plrlow = string.lower(tostring(plrts.Value))
+_G.plrnum = string.len(_G.plrlow)
+task.wait()
 if plrts.Value == "" or plrts.Value == nil then
-	_G.SelectedKillPlayer = ""
+_G.SelectedKillPlayer = ""
 else
-	for i, e in pairs(game.Players:GetChildren()) do
-	_G.anh = tostring(e.Name)
-	_G.plrchoose = string.lower(string.sub(_G.anh, 1, _G.plrnum))
+for i,e in pairs(game.Players:GetChildren()) do
+_G.anh = tostring(e.Name)
+_G.plrchoose = string.lower(string.sub(_G.anh,1,_G.plrnum))
 if _G.plrlow == _G.plrchoose then
-for i,vista in pairs(anticamp) do
-if not string.find(vista, _G.anh) then
-	_G.SelectedKillPlayer = _G.anh
-elseif string.find(vista, _G.anh) then
-Fluent:Notify({
-	Title = "Saluna Camp Notify",
-	Content = _G.anh.." Is An Anti-Camp Target",
-	Duration = 8
-})
-end
-end
+_G.SelectedKillPlayer = _G.anh
 end
 end
 end
@@ -888,12 +875,14 @@ if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
 while _G.BringPlayer do wait(0.1)
 pcall(function()
+if _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == false then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
 end
 until not _G.BringPlayer
+end
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == true then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = false
 end
@@ -948,10 +937,12 @@ if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
 while _G.AutoQuake do wait(0.1)
 pcall(function()
+if _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-task.wait(0.06)
-until _G.AutoQuake == false
+task.wait(0.08)
+until _G.AutoQuake == false or _G.SelectedKillPlayer == "azpro2k7"
+end
 end)
 end
 else
@@ -1002,7 +993,7 @@ if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
 while _G.wqesorry do task.wait()
 pcall(function()
-if game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+if game.Players:FindFirstChild(_G.SelectedKillPlayer) and _G.SelectedKillPlayer ~= "azpro2k7" then
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
@@ -1010,7 +1001,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFi
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y < 200 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
-elseif not game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 end)
@@ -4372,7 +4363,7 @@ end)
 
 
 
-Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
+Tabs.Affinity:AddSection("Roll Affinity 2nd Devil Fruit")
 
 rabunzoasec = Tabs.Affinity:AddDropdown("rabunzoasec", {
         Title = "2nd Devil Fruit Point",
@@ -4633,12 +4624,15 @@ Fluent:Notify({
 SaveManager:LoadAutoloadConfig()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/graze.lua'))()
+
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
+
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end
 end
-if game.placeId ~= 8569358381 and game.placeId ~= 3237168 then
+if game.placeId ~= 3237168 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
 
@@ -5313,7 +5307,7 @@ while wait(0.3) do
 pcall(function()
 repeat wait() until _G.CampString == true
 pcall(function()
-if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 pcall(function()
 repeat wait()
 local args = {
@@ -5326,7 +5320,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
-until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or _G.SelectedKillPlayer == "azpro2k7"
 wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
@@ -5345,25 +5339,25 @@ end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.CampString == true
+repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
 pcall(function()
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 wait(0.1)
-until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true or _G.SelectedKillPlayer == "azpro2k7"
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.CampString == true
+repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
 pcall(function()
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if _G.CampString == true then
 repeat wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
-until not _G.CampString
+until not _G.CampString or _G.SelectedKillPlayer == "azpro2k7"
 end
 end
 
@@ -5400,17 +5394,19 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
+task.wait()
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
     Duration = 5
 })
 repeat wait()
+if _G.SelectedKillPlayer ~= "" and _G.SelectedKillPlayer ~= nil then
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
+end
 until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
 wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-
 end)
 end
 end)
@@ -6709,7 +6705,3 @@ end)
 end
 end
 end)
-
-if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/b269d1380b009408777046cedb279734f3762aac/frzxhoo.lua'))()
-end

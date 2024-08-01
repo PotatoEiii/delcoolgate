@@ -671,7 +671,7 @@ plrts:OnChanged(function()
 	_G.SelectedKillPlayer = ""
 	_G.plrlow = string.lower(tostring(plrts.Value))
 	_G.plrnum = string.len(_G.plrlow)
-wait()
+task.wait()
 if plrts.Value == "" or plrts.Value == nil then
 	_G.SelectedKillPlayer = ""
 else
@@ -5400,7 +5400,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
+repeat wait() until getgenv().viewplrr == true
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
@@ -5408,7 +5408,7 @@ Fluent:Notify({
 })
 repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
-until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
+until getgenv().viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer).Name
 wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 

@@ -180,6 +180,7 @@ end)
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(tpb)
+wait(2)
 tpb:WaitForChild("Character").ChildAdded:Connect(function(yt)
 if string.find(yt.Name, "Quake") or string.find(yt.Name, "Phoenix") or string.find(yt.Name, "Dark") or string.find(yt.Name, "Vampire") or string.find(yt.Name, "Gravity") or string.find(yt.Name, "Ope") or string.find(yt.Name, "Venom") or string.find(yt.Name, "Candy Fruit") or string.find(yt.Name, "Hollow") or string.find(yt.Name, "Chilly") or string.find(yt.Name, "Gas") or string.find(yt.Name, "Flare") or string.find(yt.Name, "Light") or string.find(yt.Name, "Smoke") or string.find(yt.Name, "Rumble") or string.find(yt.Name, "Sand") or string.find(yt.Name, "Magma") or string.find(yt.Name, "Snow") or string.find(yt.Name, "Plasma") then
 pcall(function()

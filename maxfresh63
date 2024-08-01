@@ -148,7 +148,7 @@ end
 end
 
 task.wait(4)
-if game.placeId == 8569358381 or game.placeId == 3237168 then
+if game.placeId == 3237168 then
 
 Pedo = {
     1135910299, -- Havelic

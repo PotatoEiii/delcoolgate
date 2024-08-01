@@ -1,0 +1,64 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local userIdToFind = 12345678  -- Replace with the UserId you want to find
+
+local function requestServerJoin(userId)
+    local findServerEvent = ReplicatedStorage:WaitForChild("FindServer")
+    findServerEvent:FireServer(userId)
+end
+
+-- Call the function to request joining the server with the specified UserId
+requestServerJoin(userIdToFind)
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local function findServerWithUserId(userId)
+    local placeId = game.PlaceId
+    local url = "https://games.roblox.com/v1/games/"..placeId.."/servers/Public?sortOrder=Asc&limit=100"
+
+    local success, response = pcall(function()
+        return HttpService:GetAsync(url)
+    end)
+
+    if success then
+        local data = HttpService:JSONDecode(response)
+
+        for _, server in ipairs(data.data) do
+            if server.playing < server.maxPlayers then
+                for _, player in ipairs(server.playerIds) do
+                    if player == userId then
+                        return server.id
+                    end
+                end
+            end
+        end
+    else
+        warn("Failed to get server list: " .. response)
+    end
+
+    return nil
+end
+
+local function onFindServerRequest(player, userId)
+    local serverId = findServerWithUserId(userId)
+
+    if serverId then
+        local success, result = pcall(function()
+            TeleportService:TeleportToPlaceInstance(game.PlaceId, serverId, player)
+        end)
+
+        if not success then
+            warn("Failed to teleport to server with UserId: " .. userId .. " - Error: " .. result)
+        end
+    else
+        warn("Server with UserId " .. userId .. " not found")
+    end
+end
+
+local findServerEvent = Instance.new("RemoteEvent")
+findServerEvent.Name = "FindServer"
+findServerEvent.Parent = ReplicatedStorage
+
+findServerEvent.OnServerEvent:Connect(onFindServerRequest)

@@ -681,13 +681,14 @@ else
 if _G.plrlow == _G.plrchoose then
 for i,vista in pairs(anticamp) do
 if not string.find(vista, _G.anh) then
-	_G.SelectedKillPlayer = _G.anh
+_G.SelectedKillPlayer = _G.anh
 elseif string.find(vista, _G.anh) then
 Fluent:Notify({
 	Title = "Saluna Camp Notify",
 	Content = _G.anh.." Is An Anti-Camp Target",
 	Duration = 8
 })
+_G.SelectedKillPlayer = ""
 end
 end
 end

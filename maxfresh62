@@ -725,9 +725,9 @@ Tabs.Player:AddSection("Players' Stuff")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
-getgenv().viewplrr = true
+_G.viewplrr = true
 else
-getgenv().viewplrr = false
+_G.viewplrr = false
 end
 end)
 
@@ -5399,8 +5399,8 @@ end)
 
 spawn(function()
 while wait(0.3) do
+repeat wait() until _G.viewplrr == true
 pcall(function()
-repeat wait() until getgenv().viewplrr == true
 Fluent:Notify({
     Title = "Players Notify",
     Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
@@ -5408,7 +5408,7 @@ Fluent:Notify({
 })
 repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
-until getgenv().viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer).Name
+until _G.viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer).Name
 wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 

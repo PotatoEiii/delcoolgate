@@ -252,10 +252,6 @@ _G.WhiteListed = true
             end
         end
 
-if _G.wqeiqotqrjqwiomcvkfdgewkr == "wqmekwqmoikgmtreiofgmriogermtoigwemroew" then
-_G.WhiteListed = true
-end
-
 anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
 
 if _G.WhiteListed then

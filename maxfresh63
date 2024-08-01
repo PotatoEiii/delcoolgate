@@ -875,12 +875,14 @@ if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
 while _G.BringPlayer do wait(0.1)
 pcall(function()
+if _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == false then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
 end
 until not _G.BringPlayer
+end
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == true then
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = false
 end

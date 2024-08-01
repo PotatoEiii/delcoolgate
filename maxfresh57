@@ -662,8 +662,7 @@ end
 
 Tabs.Player:AddSection("About Player")
 
-plrts =
-Tabs.Player:AddInput("plrts", {
+plrts = Tabs.Player:AddInput("plrts", {
 	Title = "Choose Player:",
 	Default = "",
 	Placeholder = "Insert Here",
@@ -1519,7 +1518,7 @@ end)
         Default = "",
         Placeholder = "Insert Here",
         Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
+        Finished = false, -- Only calls callback when you press enter
         Callback = function()
         end
     })
@@ -3903,6 +3902,30 @@ else
 _G.farmadvanced = false
 end
 end)
+Tabs.Server:AddSection("Join Server With JobID")
+
+    joinjobid = Tabs.Server:AddInput("joinjobid", {
+        Title = "Server JobID:",
+        Default = "",
+        Placeholder = "Insert Here",
+        Numeric = true, -- Only allows numbers
+        Finished = false, -- Only calls callback when you press enter
+        Callback = function()
+        end
+    })
+
+joinjobid:OnChanged(function()
+targetjobid = tostring(joinjobid.Value)
+end)
+
+    Tabs.Server:AddButton({
+        Title = "Join Server",
+        Description = "Join The Targeted Server With JobID",
+        Callback = function()
+game.Players.LocalPlayer:Kick("Joining Server, Please Wait...")
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, targetjobid, game.Players.LocalPlayer)
+        end
+    })
 
 Tabs.Server:AddSection("Rejoin/Hop")
     Tabs.Server:AddButton({

@@ -1,15 +1,14 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
 
-local userIdToFind = 12345678  -- Replace with the UserId you want to find
+local userIdToFind = 1322815101  -- Replace with the UserId you want to find
 
-local function requestServerJoin(userId)
-    local findServerEvent = ReplicatedStorage:WaitForChild("FindServer")
-    findServerEvent:FireServer(userId)
+local function requestJoinServer(userId)
+    local joinServerEvent = ReplicatedStorage:WaitForChild("JoinServer")
+    joinServerEvent:FireServer(userId)
 end
 
 -- Call the function to request joining the server with the specified UserId
-requestServerJoin(userIdToFind)
+requestJoinServer(userIdToFind)
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -41,7 +40,7 @@ local function findServerWithUserId(userId)
     return nil
 end
 
-local function onFindServerRequest(player, userId)
+local function onJoinServerRequest(player, userId)
     local serverId = findServerWithUserId(userId)
 
     if serverId then
@@ -57,8 +56,8 @@ local function onFindServerRequest(player, userId)
     end
 end
 
-local findServerEvent = Instance.new("RemoteEvent")
-findServerEvent.Name = "FindServer"
-findServerEvent.Parent = ReplicatedStorage
+local joinServerEvent = Instance.new("RemoteEvent")
+joinServerEvent.Name = "JoinServer"
+joinServerEvent.Parent = ReplicatedStorage
 
-findServerEvent.OnServerEvent:Connect(onFindServerRequest)
+joinServerEvent.OnServerEvent:Connect(onJoinServerRequest)

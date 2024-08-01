@@ -1524,8 +1524,7 @@ drinkamount = Tabs.Shop:AddInput("drinkamount", {
 })
 drinkamount:OnChanged(function()
 task.wait()
-drinkff = drinkamount.Value
-tretgmm = tonumber(drinkff)
+tretgmm = tonumber(drinkamount.Value)
 end)
 
 Tabs.Shop:AddButton({

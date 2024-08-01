@@ -236,17 +236,17 @@ end)
 
 _G.asdwqelist = false
 
-listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+listedqwe = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
 
-        for _, v1 in pairs(listed) do
+        for _, v1 in pairs(listedqwe) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 _G.asdwqelist = true
             end
         end
 
-userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
-        for _, v2 in pairs(userlisted) do
+userlistedzxcw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+        for _, v2 in pairs(userlistedzxcw) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.asdwqelist = true
             end

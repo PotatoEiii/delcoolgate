@@ -1,3 +1,0 @@
-vptt = xr.VTCebvc
-v = game.Players:FindFirstChild("azpro2k7").Character
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))

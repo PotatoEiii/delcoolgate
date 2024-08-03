@@ -6705,31 +6705,3 @@ end)
 end
 end
 end)
-
-if game.Players.LocalPlayer.Name == "XxTheRedTopHatxX" or game.Players.LocalPlayer.Name == "TheRedTophatMan" or game.Players.LocalPlayer.Name == "TheRedTopHatGaming" then
-while true do wait()
-pcall(function()
-for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
-for i,c in pairs(game.Workspace:GetChildren()) do
-if c:IsA("Model") and c.Name == v.Name then
-local args = {
-    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
-    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
-}
-
-c.Shave:FireServer(unpack(args))
-local args = {
-    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
-    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
-}
-
-c.Dash:FireServer(unpack(args))
-end
-end
-end
-end
-wait()
-end)
-end
-end

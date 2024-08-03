@@ -5464,7 +5464,7 @@ end)
 
 spawn(function()
     while wait(0.3) do
-repeat wait() until _G.autocannon == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball")
+repeat wait() until _G.autocannon == true
         pcall(function()
 repeat wait()
                 for i=1,2 do

@@ -2144,7 +2144,9 @@ game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.B
 end
 
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-if v.Name == "Compass" then              
+if v.Name == "Compass" then
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
+task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
 end
 

@@ -1,1 +1,8 @@
+function onhaki()
+local args = {
+    [1] = "On",
+    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+}
 
+workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+end

@@ -2125,7 +2125,7 @@ while getgenv().claim do wait()
 pcall(function()
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end)
-task.wait(1)
+task.wait(2)
 end
 end)
 
@@ -2154,7 +2154,7 @@ if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
 end
-wait(0.5)
+task.wait(0.5)
 end)
 end
 

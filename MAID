@@ -148,7 +148,7 @@ end
 end
 
 task.wait(4)
-if game.placeId == 3237168 then
+if game.placeId == 3237168 or game.placeId == 8569358381 then
 
 Pedo = {
     1135910299, -- Havelic
@@ -2125,7 +2125,7 @@ while getgenv().claim do wait()
 pcall(function()
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end)
-task.wait(1)
+task.wait(2)
 end
 end)
 
@@ -2144,7 +2144,9 @@ game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.B
 end
 
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-if v.Name == "Compass" then              
+if v.Name == "Compass" then
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
+task.wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
 end
 
@@ -2152,7 +2154,7 @@ if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
 end
-wait(0.5)
+task.wait(0.5)
 end)
 end
 
@@ -2165,7 +2167,7 @@ fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Def
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
-for i = 1,3 do wait(0.2)
+for i = 1,2 do wait(0.2)
 if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
 task.wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
@@ -4625,14 +4627,16 @@ SaveManager:LoadAutoloadConfig()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/graze.lua'))()
 
+if game.placeId == 3237168 then
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/8c4e54feae9c8258012cd2eb29ab3058eb04f7cc/frzxhoo.lua'))()
+end
 
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end
 end
-if game.placeId ~= 3237168 then
+if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
 
@@ -5453,54 +5457,45 @@ spawn(function()
 repeat wait() until _G.autocannon == true
         pcall(function()
 repeat wait()
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball"))
-task.wait(0.7)
+for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if tuy.Name == "Cannon Ball" then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)
+wait(1.2)
+end
+end
 until not _G.autocannon
         end)
     end
 end)
 
 spawn(function()
-    while wait(0.3) do
-repeat wait() until _G.autocannon == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball")
-        pcall(function()
-repeat wait()
-                for i=1,2 do
-                    game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-                end
-wait(1)
-until not _G.autocannon
-        end)
-    end
-end)
-
-spawn(function()
-    while wait(0.3) do
-            repeat wait() until _G.autocannon == true
-	pcall(function()
-                repeat task.wait(1)
-                if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
-                    for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                        if v.Name == "Cannon Ball" then
-                            v:Destroy()
-                        end
-                    end
-                end
-		until not _G.autocannon
-	end)
-    end
-end)
-spawn(function()
-    while wait(0.3) do
-repeat wait() until _G.autocannon == true
+while wait(0.3) do
+repeat wait() until _G.autocannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
 pcall(function()
-repeat task.wait()
-                    for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                        if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
-                            v:Destroy()
-                        end
-                    end
-until not _G.autocannon
+wait(1)
+for i= 1,5 do
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+end
+repeat wait()
+until not _G.autocannon or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 211000
+        end)
+    end
+end)
+
+spawn(function()
+    while wait(0.3) do
+repeat wait() until _G.autocannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
+pcall(function()
+wait(1)
+for i = 1,10 do wait(1)
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
+v:Destroy()
+end
+end
+end
+repeat wait()
+until not _G.autocannon  or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 211000
         end)
     end
 end)
@@ -5815,11 +5810,11 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() 
-until (_G.autocannon == false and _G.autocannonslow) or (_G.autocannonplrbring and _G.autocannon == false)
+until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false)
 pcall(function()
-repeat wait(0.1)
+repeat wait(0.05)
 for _, cannonz in pairs(Rarefruit) do
-if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(cannonz) then
+if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end
 end
@@ -6111,6 +6106,7 @@ repeat task.wait()
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" and getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
 amongus()
 task.wait()
 end
@@ -6118,6 +6114,7 @@ end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" and getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
 amongus()
 task.wait()
 end
@@ -6142,15 +6139,17 @@ repeat
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" and getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
 amongus()
-task.wait(0.1)
+task.wait(0.05)
 end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" and getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
 amongus()
-task.wait(0.1)
+task.wait(0.05)
 end
 end
 if getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then task.wait()
@@ -6705,31 +6704,3 @@ end)
 end
 end
 end)
-
-if game.Players.LocalPlayer.Name == "XxTheRedTopHatxX" or game.Players.LocalPlayer.Name == "TheRedTophatMan" or game.Players.LocalPlayer.Name == "TheRedTopHatGaming" then
-while true do wait()
-pcall(function()
-for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
-for i,c in pairs(game.Workspace:GetChildren()) do
-if c:IsA("Model") and c.Name == v.Name then
-local args = {
-    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
-    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
-}
-
-c.Shave:FireServer(unpack(args))
-local args = {
-    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
-    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
-}
-
-c.Dash:FireServer(unpack(args))
-end
-end
-end
-end
-wait()
-end)
-end
-end

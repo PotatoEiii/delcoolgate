@@ -16,6 +16,7 @@ local args = {
 workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
 end
 
+while wait() do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -378,4 +379,5 @@ onhaki()
 offhaki()
 offhaki()
 end
-
+wait(120)
+end

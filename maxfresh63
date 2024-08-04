@@ -3996,11 +3996,9 @@ onhaki()
 offhaki()
 onhaki()
 offhaki()
-onhaki()
-offhaki()
 offhaki()
 end
-wait(15)
+wait(12)
 end
 end
         end

@@ -3918,7 +3918,7 @@ Tabs.Haki:AddSection("                                      ---")
 
  hakitypef = Tabs.Haki:AddDropdown("hakitypef", {
         Title = "1-Click Method",
-        Values = {"1112222","122122","1221212122"},
+        Values = {"1112222","122122","1221212122","1221212212"," "},
         Multi = false,
         Default = "",
     })
@@ -3957,7 +3957,7 @@ offhaki()
 offhaki()
 offhaki()
 end
-wait(22)
+task.wait(22)
 end
 elseif _G.hakimetohdf == "122122" then
 while wait() do
@@ -3978,7 +3978,7 @@ onhaki()
 offhaki()
 offhaki()
 end
-wait(13)
+task.wait(13)
 end
 elseif _G.hakimetohdf == "1221212122" then
 while wait() do
@@ -3998,7 +3998,29 @@ onhaki()
 offhaki()
 offhaki()
 end
-wait(12)
+task.wait(12)
+end
+elseif _G.hakimetohdf == "1221212212" then
+while wait() do
+for i = 1,999 do
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+end
+task.wait(19)
 end
 end
         end

@@ -6457,7 +6457,7 @@ for i = 1, speedyadvance do
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
 end
-wait(7)
+wait(12)
 end)
 end
 end)

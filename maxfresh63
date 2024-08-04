@@ -3896,6 +3896,61 @@ end
 end)
 Tabs.Server:AddSection("Join Server With JobID")
 
+Tabs.Haki:AddSection("                                      ---")
+
+Tabs.Haki:AddButton({
+        Title = "Advanced Haki Farm 1-Click (New)",
+        Description = "Haki Farm With 1 Click",
+        Callback = function()
+function onhaki()
+local args = {
+    [1] = "On",
+    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+}
+
+workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+end
+
+function offhaki()
+local args = {
+    [1] = "Off",
+    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+}
+
+workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+end
+
+while task.wait() do
+for i = 1,999 do
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+end
+end
+        end
+    })
+
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",
 	Default = "",

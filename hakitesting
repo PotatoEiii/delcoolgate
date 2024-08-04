@@ -15,3 +15,20 @@ local args = {
 
 workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
 end
+
+while task.wait() do
+for i = 1,999 do
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+end
+end

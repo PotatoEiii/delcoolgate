@@ -5819,12 +5819,6 @@ while wait(0.3) do
 repeat wait() 
 until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false)
 pcall(function()
-task.wait()
-for i,tuy in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-if tuy.Name == "Cannon Ball" then
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
-end
-end
 repeat wait(0.05)
 for _, cannonz in pairs(Rarefruit) do
 if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(cannonz) then
@@ -5832,7 +5826,6 @@ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Pa
 end
 end
 until (_G.autocannon == true) or (not _G.autocannonslow and not _G.autocannonplrbring)
-
       end)
    end
 end)

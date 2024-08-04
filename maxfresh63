@@ -3957,7 +3957,7 @@ offhaki()
 offhaki()
 offhaki()
 end
-task.wait(22)
+task.wait(20)
 end
 elseif _G.hakimetohdf == "122122" then
 while wait() do
@@ -3978,7 +3978,7 @@ onhaki()
 offhaki()
 offhaki()
 end
-task.wait(13)
+task.wait(11)
 end
 elseif _G.hakimetohdf == "1221212122" then
 while wait() do
@@ -3998,7 +3998,7 @@ onhaki()
 offhaki()
 offhaki()
 end
-task.wait(12)
+task.wait(10)
 end
 elseif _G.hakimetohdf == "1221212212" then
 while wait() do
@@ -4020,7 +4020,7 @@ onhaki()
 offhaki()
 offhaki()
 end
-task.wait(19)
+task.wait(17)
 end
 end
         end

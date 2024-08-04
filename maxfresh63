@@ -5457,8 +5457,12 @@ spawn(function()
 repeat wait() until _G.autocannon == true
         pcall(function()
 repeat wait()
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Cannon Ball"])
-wait(1.5)
+for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if tuy.Name == "Cannon Ball" then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)
+task.wait(1.2)
+end
+end
 until not _G.autocannon
         end)
     end
@@ -5483,7 +5487,7 @@ spawn(function()
 repeat wait() until _G.autocannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
 pcall(function()
 wait(1)
-for i = 1,10 do wait(0.2)
+for i = 1,10 do wait(1)
 for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
 v:Destroy()

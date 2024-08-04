@@ -4033,7 +4033,7 @@ Tabs.Haki:AddSection("The Others")
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
 for i = 1,10 do
-while task.wait() do
+while wait() do
 local args = {
     [1] = "On",
     [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
@@ -4049,7 +4049,7 @@ end
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
 for i = 1,10 do
-while task.wait() do
+while wait() do
 local args = {
     [1] = "Off",
     [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value

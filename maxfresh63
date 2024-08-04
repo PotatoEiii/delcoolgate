@@ -5454,10 +5454,14 @@ spawn(function()
     while wait(0.3) do
 repeat wait() until _G.autocannon == true
         pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack) do
+if v.Name == "Cannon Ball" then
 repeat wait()
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball"))
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait(0.7)
 until not _G.autocannon
+end
+end
         end)
     end
 end)
@@ -5480,7 +5484,7 @@ spawn(function()
     while wait(0.3) do
             repeat wait() until _G.autocannon == true
 	pcall(function()
-                repeat task.wait(1)
+                repeat task.wait(2)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.Name == "Cannon Ball" then

@@ -4032,7 +4032,7 @@ Tabs.Haki:AddSection("The Others")
         Title = "Haki 1",
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
-for i = 1,10 do
+for i = 1,50 do
 while wait() do
 local args = {
     [1] = "On",
@@ -4048,7 +4048,7 @@ end
         Title = "Haki 2",
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
-for i = 1,10 do
+for i = 1,50 do
 while wait() do
 local args = {
     [1] = "Off",

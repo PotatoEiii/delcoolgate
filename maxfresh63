@@ -5472,7 +5472,7 @@ repeat wait()
                 for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
                 end
-wait(3)
+wait(1)
 until not _G.autocannon
         end)
     end

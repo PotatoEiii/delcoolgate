@@ -5817,11 +5817,11 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() 
-until (_G.autocannon == false and _G.autocannonslow) or (_G.autocannonplrbring and _G.autocannon == false)
+until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false)
 pcall(function()
 task.wait()
 for i,tuy in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-if string.find(tuy,"Cannon Ball") then
+if tuy.Name == "Cannon Ball" then
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
 end

@@ -147,6 +147,24 @@ end
 end
 end
 
+function onhaki()
+local args = {
+    [1] = "On",
+    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+}
+
+workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+end
+
+function offhaki()
+local args = {
+    [1] = "Off",
+    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+}
+
+workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+end
+
 task.wait(4)
 if game.placeId == 3237168 or game.placeId == 8569358381 then
 
@@ -3898,29 +3916,51 @@ Tabs.Server:AddSection("Join Server With JobID")
 
 Tabs.Haki:AddSection("                                      ---")
 
-Tabs.Haki:AddButton({
-        Title = "Advanced Haki Farm 1-Click (New)",
-        Description = "Haki Farm With 1 Click",
+ hakitypef = Tabs.Haki:AddDropdown("hakitypef", {
+        Title = "1-Click Method",
+        Values = {"1112222","122122","1221212122"},
+        Multi = false,
+        Default = "",
+    })
+
+
+hakitypef:OnChanged(function(zxcereree)
+_G.hakimetohdf = zxcereree
+end)
+
+    Tabs.Server:AddButton({
+        Title = "Haki 1-Click",
+        Description = "Farm Haki With 1 Click",
         Callback = function()
-function onhaki()
-local args = {
-    [1] = "On",
-    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
-}
-
-workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+if _G.hakimetohdf == "1112222" then
+while wait() do
+for i = 1,999 do
+onhaki()
+onhaki()
+onhaki()
+offhaki()
+offhaki()
+offhaki()
+offhaki()
+onhaki()
+onhaki()
+onhaki()
+offhaki()
+offhaki()
+offhaki()
+offhaki()
+onhaki()
+onhaki()
+onhaki()
+offhaki()
+offhaki()
+offhaki()
+offhaki()
 end
-
-function offhaki()
-local args = {
-    [1] = "Off",
-    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
-}
-
-workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+wait(22)
 end
-
-while task.wait() do
+elseif _G.hakimetohdf == "122122" then
+while wait() do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -3931,10 +3971,41 @@ offhaki()
 onhaki()
 offhaki()
 offhaki()
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+end
+wait(13)
+end
+elseif _G.hakimetohdf == "1221212122" then
+while wait() do
+for i = 1,999 do
+onhaki()
+offhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+onhaki()
+offhaki()
+offhaki()
+end
+wait(15)
 end
 end
         end
     })
+
 
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",

@@ -3928,7 +3928,7 @@ hakitypef:OnChanged(function(zxcereree)
 _G.hakimetohdf = zxcereree
 end)
 
-    Tabs.Server:AddButton({
+    Tabs.Haki:AddButton({
         Title = "Haki 1-Click",
         Description = "Farm Haki With 1 Click",
         Callback = function()

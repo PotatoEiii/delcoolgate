@@ -1421,7 +1421,7 @@ repeat task.wait()
                         [4] = Vector3.new(720, 238, 1194)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.08)
+task.wait(0.09)
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",

@@ -4731,7 +4731,7 @@ end)
 
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Title = "Skill",
-        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"," "},
+        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
         Multi = false,
         Default = "",
     })

@@ -5501,7 +5501,7 @@ task.wait(0.09)
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
+                        [5] = game.Players.LocalPlayer:GetMouse().Hit,
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
@@ -5510,7 +5510,7 @@ task.wait(0.09)
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
+                        [5] = game.Players.LocalPlayer:GetMouse().Hit,
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
@@ -5519,7 +5519,7 @@ task.wait(0.09)
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
-                        [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.HumanoidRootPart,
+                        [5] = game.Players.LocalPlayer:GetMouse().Hit,
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))

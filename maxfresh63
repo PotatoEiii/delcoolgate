@@ -5301,7 +5301,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StopCharging",
-    [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
     [6] = 100
 }

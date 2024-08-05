@@ -5232,6 +5232,21 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
 until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Quake" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
+    [2] = "QuakePower4",
+    [3] = "StopCharging",
+    [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
+    [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [6] = 100,
+    [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

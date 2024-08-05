@@ -263,7 +263,7 @@ _G.asdwqelist = true
             end
         end
 
-userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/world2.lua'))()
         for _, v2 in pairs(userlistedzxwc) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.asdwqelist = true

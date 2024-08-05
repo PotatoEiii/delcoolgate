@@ -958,7 +958,7 @@ pcall(function()
 if _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame.Position)
-task.wait(0.08)
+task.wait(0.06)
 until _G.AutoQuake == false or _G.SelectedKillPlayer == "azpro2k7"
 end
 end)

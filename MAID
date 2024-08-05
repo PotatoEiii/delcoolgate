@@ -957,8 +957,8 @@ while _G.AutoQuake do wait(0.1)
 pcall(function()
 if _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-task.wait(0.08)
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame.Position)
+task.wait(0.06)
 until _G.AutoQuake == false or _G.SelectedKillPlayer == "azpro2k7"
 end
 end)
@@ -4719,7 +4719,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {"Flare","Magma","Gravity","Bomb"},
+        Values = {"Quake","Magma","Flare","Gravity","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -4731,7 +4731,7 @@ end)
 
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Title = "Skill",
-        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"," "},
+        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
         Multi = false,
         Default = "",
     })
@@ -5187,6 +5187,66 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Quake" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+            local args = {
+                [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
+                [2] = "QuakePower1",
+                [3] = "StopCharging",
+                [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+                [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+                [6] = 100,
+                [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+            }
+
+            game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Quake" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
+    [2] = "QuakePower2",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [6] = 100,
+    [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [8] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Quake" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
+    [2] = "QuakePower3",
+    [3] = "StopCharging",
+    [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [6] = 100,
+    [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Quake" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
+    [2] = "QuakePower4",
+    [3] = "StopCharging",
+    [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
+    [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [6] = 100,
+    [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

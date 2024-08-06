@@ -455,7 +455,7 @@ Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId()
 Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax Players: "..game.Players.MaxPlayers
+Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
 

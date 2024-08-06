@@ -1421,7 +1421,7 @@ repeat task.wait()
                         [4] = Vector3.new(720, 238, 1194)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
+task.wait(0.15)
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -1431,6 +1431,7 @@ task.wait(0.09)
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait()
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -1440,6 +1441,7 @@ task.wait(0.09)
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait()
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -5495,7 +5497,7 @@ repeat task.wait()
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
+task.wait(0.15)
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",

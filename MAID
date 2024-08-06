@@ -1421,7 +1421,7 @@ repeat task.wait()
                         [4] = Vector3.new(720, 238, 1194)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.08)
+task.wait(0.15)
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -1431,6 +1431,7 @@ task.wait(0.08)
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait()
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -1440,6 +1441,7 @@ task.wait(0.08)
                         [6] = 100
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait()
                     local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
@@ -4719,7 +4721,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Magma","Flare","Gravity","Bomb"},
+        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Plasma","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -4731,7 +4733,7 @@ end)
 
 skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Title = "Skill",
-        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"},
+        Values = {"Power1","Power2","Power3","Power4","Power5","Power6"," "},
         Multi = false,
         Default = "",
     })
@@ -5366,6 +5368,166 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
 task.wait(0.5)
 until _G.skilltype ~= "Phoenix" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
+    [2] = "VampirePower1",
+    [3] = "",
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
+until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
+    [2] = "VampirePower2",
+    [3] = "",
+    [4] = Enum.UserInputState.Begin
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
+until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
+    [2] = "VampirePower3",
+    [3] = "",
+    [4] = Enum.UserInputState.Begin
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
+until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
+    [2] = "VampirePower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [9] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
+    [2] = "VampirePower5",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
+    [2] = "VampirePower6",
+    [3] = "",
+    [4] = Enum.UserInputState.Begin
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
+until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+    [2] = "PlasmaPower1"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
+until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+    [2] = "PlasmaPower2",
+    [3] = "TurnOn"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+    [2] = "PlasmaPower2",
+    [3] = "Attack",
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+    [2] = "PlasmaPower2",
+    [3] = "TurnOff"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+    [2] = "PlasmaPower3",
+    [3] = "Attack"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
+until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+                    local args = {
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+                        [2] = "PlasmaPower4",
+                        [3] = "StartCharging",
+   			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+                    }
+                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.15)
+                    local args = {
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+                        [2] = "PlasmaPower4",
+                        [3] = "Attack",
+   			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+                        [5] = game.Players.LocalPlayer:GetMouse().Hit,
+                        [6] = 100
+                    }
+                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+                    local args = {
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+                        [2] = "PlasmaPower4",
+                        [3] = "Attack",
+   			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+                        [5] = game.Players.LocalPlayer:GetMouse().Hit,
+                        [6] = 100
+                    }
+                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+                    local args = {
+                        [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
+                        [2] = "PlasmaPower4",
+                        [3] = "Attack",
+   			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+                        [5] = game.Players.LocalPlayer:GetMouse().Hit,
+                        [6] = 100
+                    }
+                    game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

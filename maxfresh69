@@ -5287,6 +5287,13 @@ game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireSer
 task.wait(0.5)
 until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Dark" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
@@ -5309,7 +5316,14 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power4" or _G.startspamskill == true
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
 elseif _G.skilltype == "Phoenix" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
 local args = {

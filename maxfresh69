@@ -5638,7 +5638,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
-task.wait(0.5)
+task.wait(0.2)
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()

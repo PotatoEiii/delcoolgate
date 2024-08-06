@@ -5555,6 +5555,18 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+elseif _G.skilltype == "Venom" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character.UsingVenomBody.Value == false then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower8"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+end
+task.wait(0.2)
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

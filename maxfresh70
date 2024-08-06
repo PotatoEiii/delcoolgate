@@ -5287,6 +5287,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireSer
 task.wait(0.5)
 until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Dark" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
@@ -5316,7 +5317,8 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
-until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power4" or _G.startspamskill == true
+until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
@@ -5667,6 +5669,7 @@ end
 task.wait(0.2)
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
@@ -5696,7 +5699,8 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
-until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power3" or _G.startspamskill == true
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true

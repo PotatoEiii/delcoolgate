@@ -455,7 +455,7 @@ Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId()
 Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax Players: "..game.Players.MaxPlayers
+Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
 
@@ -4721,7 +4721,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Plasma","Bomb"},
+        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Plasma","Venom","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -5528,6 +5528,107 @@ task.wait()
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Venom" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower1",
+    [3] = "Start",
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower1",
+    [3] = "Fire",
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower1",
+    [3] = "Stop"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+elseif _G.skilltype == "Venom" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character.UsingVenomBody.Value == false then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower8"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+end
+task.wait(0.2)
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Venom" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower9",
+    [3] = "StartCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower9",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100,
+    [7] = 500,
+    [8] = 500
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Venom" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower10",
+    [3] = "StartCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower10",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Venom" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character.UsingVenomDemon.Value == false then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower12"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+end
+task.wait(0.2)
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

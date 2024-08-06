@@ -5656,7 +5656,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-if game.Players.LocalPlayer.Character.UsingVenomDemon.Value == false then
+if game.Players.LocalPlayer.Character.UsingCandyBody.Value == false then
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower8"

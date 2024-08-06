@@ -4721,7 +4721,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Plasma","Venom","Bomb"},
+        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Candy","Plasma","Venom","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -5628,6 +5628,17 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
 end
 task.wait(0.2)
+until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower7",
+    [3] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.5)
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 end
 until _G.startspamskill == false

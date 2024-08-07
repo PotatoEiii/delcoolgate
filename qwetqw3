@@ -5739,7 +5739,7 @@ local args = {
     [2] = "CandyPower6",
     [3] = "",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [5] = game.Players.LocalPlayer:GetMouse().Hit
+    [5] = game.Players.LocalPlayer:GetMouse().Target
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))

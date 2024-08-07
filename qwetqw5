@@ -5785,6 +5785,34 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower11",
+    [3] = "CreateHollows"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower11",
+    [3] = "SendHollows"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower12"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

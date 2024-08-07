@@ -4721,7 +4721,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Candy","Plasma","Venom","Hollow","Bomb"},
+        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
         Multi = false,
         Default = "",
     })

@@ -5864,6 +5864,19 @@ game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
+elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower9",
+    [3] = true,
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z))
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

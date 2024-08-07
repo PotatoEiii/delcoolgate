@@ -4721,7 +4721,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Gravity","Plasma","Venom","Bomb"},
+        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -5287,6 +5287,14 @@ game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireSer
 task.wait(0.5)
 until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Dark" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+task.wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
@@ -5310,6 +5318,14 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+task.wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
 elseif _G.skilltype == "Phoenix" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
 local args = {
@@ -5629,6 +5645,262 @@ game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireSe
 end
 task.wait(0.2)
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower7",
+    [3] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character.UsingCandyBody.Value == false then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower8"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+end
+task.wait(0.2)
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+task.wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower9",
+    [3] = "StartCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower9",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+task.wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+repeat task.wait()
+ local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower4",
+    [3] = "Start"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower5",
+    [3] = "",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass")
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Candy" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower6",
+    [3] = "",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = game.Players.LocalPlayer:GetMouse().Target
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character.Projecting.Value == false then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower7"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+end
+task.wait(0.2)
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower8"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower9",
+    [3] = "CreateHollows"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower9",
+    [3] = "SendHollows"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower11",
+    [3] = "CreateHollows"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower11",
+    [3] = "SendHollows"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power6" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
+    [2] = "HollowPower12"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
+elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower7",
+    [3] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+task.wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = "Right",
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+task.wait()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
+game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
+game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
+elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower9",
+    [3] = true,
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z))
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower5",
+    [3] = "StartCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower5",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

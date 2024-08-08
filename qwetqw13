@@ -530,6 +530,97 @@ _G.exchangegem = false
 end
 end)
 
+BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+
+hideUI = Instance.new("ImageButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = game.CoreGui.BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.BackgroundTransparency = 1
+hideUI.ClipsDescendants = true
+hideUI.Position = UDim2.new(0.02, 1, 0.155, 1)
+hideUI.Size = UDim2.new(0, 50, 0, 50)
+hideUI.Image = ""
+hideUI.MouseButton1Up:Connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
+
+ hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = game.CoreGui.BBB.hideUI
+hideUICorner.CornerRadius = UDim.new(1,0)
+
+
+ UIS = game:GetService('UserInputService')
+ frame = game.CoreGui.BBB.hideUI
+ dragToggle = nil
+ dragSpeed = 0.12
+ dragStart = nil
+ startPos = nil
+
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+
+UIS.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  if dragToggle then
+   updateInput(input)
+  end
+ end
+end)
+
+Tabs.Misc:AddSection("Hide/Show Image")
+asdzxima = Tabs.Robbing:AddDropdown("asdzxima", {
+        Title = "Image",
+        Values = {"1","2","3","4","5","6","7","8","9","10"},
+        Multi = false,
+        Default = "3",
+    })
+
+
+    robdrop:OnChanged(function(heheimage)
+if heheimage == "1" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
+elseif heheimage == "2" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=18809926638"
+elseif heheimage == "3" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
+elseif heheimage == "4" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=16607424856"
+elseif heheimage == "5" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=14838902926"
+elseif heheimage == "6" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=15992747200"
+elseif heheimage == "7" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=16039945586"
+elseif heheimage == "8" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9124649710"
+elseif heheimage == "9" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=5594451067"
+elseif heheimage == "10" then
+game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=17836568522"
+emd
+end)
 
 Tabs.Misc:AddSection("Other Scripts")
 
@@ -4791,8 +4882,6 @@ Fluent:Notify({
 })
 
 SaveManager:LoadAutoloadConfig()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/graze.lua'))()
 
 if game.placeId == 3237168 then
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/8c4e54feae9c8258012cd2eb29ab3058eb04f7cc/frzxhoo.lua'))()

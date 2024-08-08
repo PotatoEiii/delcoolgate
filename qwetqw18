@@ -591,16 +591,16 @@ end)
 
 Tabs.Misc:AddSection("Hide/Show Image")
 
-asdzxima = Tabs.Robbing:AddDropdown("asdzxima", {
-        Title = "Robbing Method",
+asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
+        Title = "Image",
         Values = {"1","2","3","4","5","6","7","8","9","10"},
         Multi = false,
         Default = "3",
     })
 
 
-asdzxima:OnChanged(function(zxwehehehe)
-if zxwehehehe == "1" then
+asdzxima:OnChanged(function(heheimage)
+if heheimage == "1" then
 game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 elseif heheimage == "2" then
 game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=18809926638"

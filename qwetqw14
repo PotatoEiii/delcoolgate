@@ -598,7 +598,7 @@ asdzxima = Tabs.Robbing:AddDropdown("asdzxima", {
     })
 
 
-    robdrop:OnChanged(function(heheimage)
+asdzxima:OnChanged(function(heheimage)
 if heheimage == "1" then
 game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 elseif heheimage == "2" then

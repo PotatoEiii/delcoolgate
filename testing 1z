@@ -27,43 +27,6 @@ if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].D
                 }
                 
                 game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-task.wait(0.2)
-if workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None" then
-local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
-local fruitparts = {}
-for part in string.gmatch(fruitdata, "[^,]+") do
-    local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
-    table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table
-end
-
-if fruitparts[6] == "1" then
-_G.fruitauraistrue = "(Aura Fruit!!!)"
-else
-_G.fruitauraistrue = "(Normal Fruit)"
-end
-
-local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNIBbvYkvht8m9sh5zfCQi-J0Ki6jKy6N56RKS1YSHsBX1yfXMnZhm7On"
-        local data = {
-        ["content"] = "",
-        ["embeds"] = {
-            {
-                ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 1 \nFruit:" .. fruitparts[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts[2] .." ; Melee: " .. fruitparts[3] .. " ; Snip: " .. fruitparts[4] .. " ; Sword: " .. fruitparts[5],
-                ["type"] = "rich",
-                ["color"] = tonumber(0x00FF7F)
-            }
-        }
-        }
-        local newdata = game:GetService("HttpService"):JSONEncode(data)
-    
-        local headers = {
-        ["content-type"] = "application/json"
-        }
-        request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-        request(abcdef)
-
-end
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.MouseButton1Click)) do
 v.Function()
@@ -152,3 +115,45 @@ end)
 
 _G.aurasto = true
 _G.storeffrt = true
+
+spawn(function()
+while wait() do
+pcall(function()
+_G.fruitdata1 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= _G.fruitdata1 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None"
+local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
+local fruitparts = {}
+for part in string.gmatch(fruitdata, "[^,]+") do
+    local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
+    table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table
+end
+
+if fruitparts[6] == "1" then
+_G.fruitauraistrue = "(Aura Fruit!!!)"
+else
+_G.fruitauraistrue = "(Normal Fruit)"
+end
+
+local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNIBbvYkvht8m9sh5zfCQi-J0Ki6jKy6N56RKS1YSHsBX1yfXMnZhm7On"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 1 \nFruit:" .. fruitparts[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts[2] .." ; Melee: " .. fruitparts[3] .. " ; Snip: " .. fruitparts[4] .. " ; Sword: " .. fruitparts[5],
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+end
+end)

@@ -1,3 +1,25 @@
+Rarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit",
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+
 function storedf()
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
@@ -49,3 +71,42 @@ v.Function()
 end
 end
 end
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.storeffrt == true
+pcall(function()
+repeat task.wait()
+for i, t in pairs(Rarefruit) do
+for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if u.Name == t then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
+task.wait()
+storedf()
+end
+end
+end
+until not _G.storeffrt
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.aurasto == true
+pcall(function()
+repeat task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+storedf()
+end
+end
+until not _G.aurasto
+end)
+end
+end)
+
+_G.aurasto = true
+_G.storeffrt = true

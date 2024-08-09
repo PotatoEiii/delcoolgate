@@ -143,9 +143,9 @@ while wait(0.3) do
 pcall(function()
 _G.fruitdata1 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= _G.fruitdata1 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None"
-local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
+local fruitdataz = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
 local fruitparts1 = {}
-for part in string.gmatch(fruitdata, "[^,]+") do
+for part in string.gmatch(fruitdataz, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
     table.insert(fruitparts1, trimmed)  -- Add the trimmed part to the table
 end
@@ -185,9 +185,9 @@ while wait(0.3) do
 pcall(function()
 _G.fruitdata2 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= _G.fruitdata2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= "None"
-local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
+local fruitdatax = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
 local fruitparts2 = {}
-for part in string.gmatch(fruitdata, "[^,]+") do
+for part in string.gmatch(fruitdatax, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
     table.insert(fruitparts2, trimmed)  -- Add the trimmed part to the table
 end
@@ -227,9 +227,9 @@ while wait(0.3) do
 pcall(function()
 _G.fruitdata3 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= _G.fruitdata3 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= "None"
-local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
+local fruitdatac = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
 local fruitparts3 = {}
-for part in string.gmatch(fruitdata, "[^,]+") do
+for part in string.gmatch(fruitdatac, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
     table.insert(fruitparts3, trimmed)  -- Add the trimmed part to the table
 end
@@ -269,9 +269,9 @@ while wait(0.3) do
 pcall(function()
 _G.fruitdata4 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= _G.fruitdata4 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= "None"
-local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
+local fruitdatav = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
 local fruitparts4 = {}
-for part in string.gmatch(fruitdata, "[^,]+") do
+for part in string.gmatch(fruitdatav, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
     table.insert(fruitparts4, trimmed)  -- Add the trimmed part to the table
 end
@@ -311,9 +311,9 @@ while wait(0.3) do
 pcall(function()
 _G.fruitdata5 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= _G.fruitdata5 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= "None"
-local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
+local fruitdatab = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
 local fruitparts5 = {}
-for part in string.gmatch(fruitdata, "[^,]+") do
+for part in string.gmatch(fruitdatab, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
     table.insert(fruitparts5, trimmed)  -- Add the trimmed part to the table
 end

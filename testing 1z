@@ -139,7 +139,7 @@ _G.aurasto = true
 _G.storeffrt = true
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 _G.fruitdata1 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
 repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= _G.fruitdata1 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None"

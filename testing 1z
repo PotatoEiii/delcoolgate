@@ -431,3 +431,45 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
 end)
 end
 end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+_G.fruitdata8 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value
+repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value ~= _G.fruitdata8 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value ~= "None"
+local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value
+local fruitparts8 = {}
+for part5 in string.gmatch(fruitdataa, "[^,]+") do
+    local trimmed = part5:match("^%s*(.-)%s*$")  -- Trim spaces
+    table.insert(fruitparts8, trimmed)  -- Add the trimmed part to the table
+end
+
+if fruitparts8[6] == "1" then
+_G.fruitauraistrue = "(Aura Fruit!!!)"
+else
+_G.fruitauraistrue = "(Normal Fruit)"
+end
+
+local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNIBbvYkvht8m9sh5zfCQi-J0Ki6jKy6N56RKS1YSHsBX1yfXMnZhm7On"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 8 \nFruit: " .. fruitparts8[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts8[2] .." ; Melee: " .. fruitparts8[3] .. " ; Snip: " .. fruitparts8[4] .. " ; Sword: " .. fruitparts8[5],
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+end
+end)

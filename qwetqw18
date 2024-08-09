@@ -4909,7 +4909,7 @@ Fluent:Notify({
 SaveManager:LoadAutoloadConfig()
 
 if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/953518b24cf43dcbdd2026b3f4367abd7baa378f/frzxhoo.lua'))()
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()
 end
 
 else

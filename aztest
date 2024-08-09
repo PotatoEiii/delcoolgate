@@ -6,7 +6,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
                 ["title"] = " Saluna Notify",
                 ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nWelcome To Saluna Hub \nHave A Nice Day ♥ \n============================================ \nHWID: " ..game:GetService("RbxAnalyticsService"):GetClientId(),
                 ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
+                ["color"] = tonumber(0x00ff7f),
             }
         }
         }

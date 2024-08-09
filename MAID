@@ -84,53 +84,77 @@ end
 
 function storedf()
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF1"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF2"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF3"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF4"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF5"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF6"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF7"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF8"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF9"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF10"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF11"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.MouseButton1Click)) do
-v.Function()
-end
+                local args = {
+                    [1] = "StoredDF12"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
 end
 end
 
@@ -4885,7 +4909,7 @@ Fluent:Notify({
 SaveManager:LoadAutoloadConfig()
 
 if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/7eb0edda60e804fc6b5f51670b46a25336227d79/frzxhoo.lua'))()
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/953518b24cf43dcbdd2026b3f4367abd7baa378f/frzxhoo.lua'))()
 end
 
 else
@@ -6398,11 +6422,12 @@ storedf()
 end
 end
 end
+task.wait()
+storedf()
 until not _G.storeffrt
 end)
 end
 end)
-
 
 spawn(function()
 while wait(0.3) do
@@ -6416,6 +6441,8 @@ task.wait()
 storedf()
 end
 end
+task.wait()
+storedf()
 until not _G.aurasto
 end)
 end

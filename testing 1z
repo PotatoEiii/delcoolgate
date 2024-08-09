@@ -142,7 +142,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata1 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= _G.fruitdata1 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= _G.fruitdata1 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None"
 local fruitdataz = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
 local fruitparts1 = {}
 for part1 in string.gmatch(fruitdataz, "[^,]+") do
@@ -184,7 +184,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata2 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= _G.fruitdata2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= _G.fruitdata2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= "None"
 local fruitdatax = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
 local fruitparts2 = {}
 for part2 in string.gmatch(fruitdatax, "[^,]+") do
@@ -226,7 +226,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata3 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= _G.fruitdata3 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= _G.fruitdata3 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= "None"
 local fruitdatac = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
 local fruitparts3 = {}
 for part3 in string.gmatch(fruitdatac, "[^,]+") do
@@ -268,7 +268,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata4 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= _G.fruitdata4 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= _G.fruitdata4 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= "None"
 local fruitdatav = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
 local fruitparts4 = {}
 for part4 in string.gmatch(fruitdatav, "[^,]+") do
@@ -310,7 +310,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata5 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= _G.fruitdata5 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= _G.fruitdata5 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= "None"
 local fruitdatab = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
 local fruitparts5 = {}
 for part5 in string.gmatch(fruitdatab, "[^,]+") do
@@ -352,7 +352,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata6 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value ~= _G.fruitdata6 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value ~= _G.fruitdata6 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value ~= "None"
 local fruitdatan = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value
 local fruitparts6 = {}
 for part6 in string.gmatch(fruitdatan, "[^,]+") do
@@ -394,7 +394,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata7 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value ~= _G.fruitdata7 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value ~= _G.fruitdata7 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value ~= "None"
 local fruitdatam = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value
 local fruitparts7 = {}
 for part7 in string.gmatch(fruitdatam, "[^,]+") do
@@ -436,7 +436,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 _G.fruitdata8 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value
-repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value ~= _G.fruitdata8 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value ~= "None"
+repeat wait() until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value ~= _G.fruitdata8 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value ~= "None"
 local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value
 local fruitparts8 = {}
 for part8 in string.gmatch(fruitdataa, "[^,]+") do

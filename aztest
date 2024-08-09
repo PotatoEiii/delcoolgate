@@ -254,7 +254,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["description"] = "\nUsername: " .. tpb.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
                 ["color"] = _G.colorside
             }

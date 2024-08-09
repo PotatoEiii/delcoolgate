@@ -22,14 +22,15 @@ Rarefruit = {
 
 function storedf()
 if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.MouseButton1Click)) do
-v.Function()
-end
-task.wait()
+                local args = {
+                    [1] = "StoredDF1"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
+task.wait(0.2)
 if workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None" then
 local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
 local fruitparts = {}
-
 for part in string.gmatch(fruitdata, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
     table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table

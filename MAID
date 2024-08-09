@@ -557,7 +557,7 @@ hideUICorner.CornerRadius = UDim.new(1,0)
  UIS = game:GetService('UserInputService')
  frame = game.CoreGui.BBB.hideUI
  dragToggle = nil
- dragSpeed = 0.12
+ dragSpeed = 0.05
  dragStart = nil
  startPos = nil
 
@@ -592,7 +592,7 @@ end)
 Tabs.Misc:AddSection("Hide/Show Image")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
-        Title = "Image",
+        Title = "Choose Display Image",
         Values = {"1","2","3","4","5","6","7","8","9","10"},
         Multi = false,
         Default = "3",
@@ -4885,7 +4885,7 @@ Fluent:Notify({
 SaveManager:LoadAutoloadConfig()
 
 if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/8c4e54feae9c8258012cd2eb29ab3058eb04f7cc/frzxhoo.lua'))()
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/7eb0edda60e804fc6b5f51670b46a25336227d79/frzxhoo.lua'))()
 end
 
 else

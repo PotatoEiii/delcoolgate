@@ -6422,6 +6422,7 @@ storedf()
 end
 end
 end
+task.wait()
 storedf()
 until not _G.storeffrt
 end)

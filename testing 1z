@@ -557,3 +557,88 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
 end)
 end
 end)
+
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+_G.fruitdata11 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value
+repeat wait(0.1) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value ~= _G.fruitdata11 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value ~= "None"
+local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value
+local fruitparts11 = {}
+for part11 in string.gmatch(fruitdataa, "[^,]+") do
+    local trimmed11 = part11:match("^%s*(.-)%s*$")  -- Trim spaces
+    table.insert(fruitparts11, trimmed11)  -- Add the trimmed11 part to the table
+end
+
+if fruitparts11[6] == "1" then
+_G.fruitauraistrue = "(Aura Fruit!!!)"
+else
+_G.fruitauraistrue = "(Normal Fruit)"
+end
+
+local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNIBbvYkvht8m9sh5zfCQi-J0Ki6jKy6N56RKS1YSHsBX1yfXMnZhm7On"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 11 \nFruit: " .. fruitparts11[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts11[2] .." ; Melee: " .. fruitparts11[3] .. " ; Snip: " .. fruitparts11[4] .. " ; Sword: " .. fruitparts11[5],
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+_G.fruitdata12 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
+repeat wait(0.1) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
+local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
+local fruitparts12 = {}
+for part12 in string.gmatch(fruitdataa, "[^,]+") do
+    local trimmed12 = part12:match("^%s*(.-)%s*$")  -- Trim spaces
+    table.insert(fruitparts12, trimmed12)  -- Add the trimmed12 part to the table
+end
+
+if fruitparts12[6] == "1" then
+_G.fruitauraistrue = "(Aura Fruit!!!)"
+else
+_G.fruitauraistrue = "(Normal Fruit)"
+end
+
+local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNIBbvYkvht8m9sh5zfCQi-J0Ki6jKy6N56RKS1YSHsBX1yfXMnZhm7On"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 12 \nFruit: " .. fruitparts12[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts12[2] .." ; Melee: " .. fruitparts12[3] .. " ; Snip: " .. fruitparts12[4] .. " ; Sword: " .. fruitparts12[5],
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+end
+end)

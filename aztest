@@ -28,22 +28,22 @@ _G.pingplr = "<@&1267828963024306289>"
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
-_G.colorside = tonumber(0x00FF7F)
+_G.colorside = tonumber(0x00FF7F) -- aura
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
-_G.colorside = tonumber(0x800080)
+_G.colorside = tonumber(0x800080) -- purple
 end
 else
 _G.pingplr = "<@&1267829170092769301>"
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
-_G.colorside = tonumber(0x00FF7F)
+_G.colorside = tonumber(0x00FF7F) -- aura
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
-_G.colorside = tonumber(0xFFFF00)
+_G.colorside = tonumber(0xFFFF00) -- yellow
 end
 end
 
@@ -113,6 +113,7 @@ _G.pingplr = "<@&1267828963024306289>"
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
+_G.colorside = tonumber(0x00FF7F)
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
@@ -122,6 +123,7 @@ _G.pingplr = "<@&1267829170092769301>"
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+_G.colorside = tonumber(0x00FF7F) -- aura
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
@@ -156,6 +158,7 @@ pcall(function()
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+_G.colorside = tonumber(0x00FF7F)
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {
@@ -194,6 +197,7 @@ _G.pingplr = "<@&1267828963024306289>"
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
+_G.colorside = tonumber(0x00FF7F)
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
@@ -203,6 +207,7 @@ _G.pingplr = "<@&1267829170092769301>"
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+_G.colorside = tonumber(0x00FF7F) -- aura
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
@@ -237,6 +242,7 @@ pcall(function()
 if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
 _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+_G.colorside = tonumber(0x00FF7F)
 task.wait()
 local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
         local data = {

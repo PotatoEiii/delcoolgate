@@ -122,6 +122,7 @@ if u.Name == t then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
 task.wait()
 storedf()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
 end
 end
@@ -140,6 +141,7 @@ if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 task.wait()
 storedf()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
 end
 until not _G.aurasto

@@ -1,3 +1,7 @@
+        if game.CoreGui:FindFirstChild("BBB") then
+            game.CoreGui:FindFirstChild("BBB"):Destroy()
+        end
+task.wait()
 BBB = Instance.new("ScreenGui")
 BBB.Name = "BBB"
 BBB.Parent = game.CoreGui

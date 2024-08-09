@@ -117,6 +117,7 @@ _G.colorside = tonumber(0x00FF7F)
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
+ _G.colorside = tonumber(0x800080) -- purple
 end
 else
 _G.pingplr = "<@&1267829170092769301>"
@@ -127,6 +128,7 @@ _G.colorside = tonumber(0x00FF7F) -- aura
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
+_G.colorside = tonumber(0xFFFF00) -- yellow
 end
 end
 
@@ -139,7 +141,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
                 ["title"] = " Saluna Notify",
                 ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
+                ["color"] = _G.colorside
             }
         }
         }
@@ -168,7 +170,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
                 ["title"] = " Saluna Notify",
                 ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
+                ["color"] = _G.colorside
             }
         }
         }
@@ -201,6 +203,7 @@ _G.colorside = tonumber(0x00FF7F)
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
+_G.colorside = tonumber(0x800080) -- purple
 end
 else
 _G.pingplr = "<@&1267829170092769301>"
@@ -211,6 +214,7 @@ _G.colorside = tonumber(0x00FF7F) -- aura
 else
 _G.auraisgood = " (Normal Fruit)"
 _G.auranotify = ""
+_G.colorside = tonumber(0xFFFF00) -- yellow
 end
 end
 
@@ -223,7 +227,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
                 ["title"] = " Saluna Notify",
                 ["description"] = "\nUsername: " .. tpb.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
+                ["color"] = _G.colorside
             }
         }
         }
@@ -252,7 +256,7 @@ local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-
                 ["title"] = " Saluna Notify",
                 ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
                 ["type"] = "rich",
-                ["color"] = tonumber(0xff8200),
+                ["color"] = _G.colorside
             }
         }
         }

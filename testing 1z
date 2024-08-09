@@ -162,7 +162,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 1 \nFruit: " .. fruitparts1[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts1[2] .." ; Melee: " .. fruitparts1[3] .. " ; Snip: " .. fruitparts1[4] .. " ; Sword: " .. fruitparts1[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 1 \nFruit: " .. fruitparts1[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down: \nDef: "..fruitparts1[2] .." ; Melee: " .. fruitparts1[3] .. " ; Snip: " .. fruitparts1[4] .. " ; Sword: " .. fruitparts1[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -204,7 +204,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 2 \nFruit: " .. fruitparts2[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts2[2] .." ; Melee: " .. fruitparts2[3] .. " ; Snip: " .. fruitparts2[4] .. " ; Sword: " .. fruitparts2[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 2 \nFruit: " .. fruitparts2[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts2[2] .." ; Melee: " .. fruitparts2[3] .. " ; Snip: " .. fruitparts2[4] .. " ; Sword: " .. fruitparts2[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -246,7 +246,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 3 \nFruit: " .. fruitparts3[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts3[2] .." ; Melee: " .. fruitparts3[3] .. " ; Snip: " .. fruitparts3[4] .. " ; Sword: " .. fruitparts3[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 3 \nFruit: " .. fruitparts3[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts3[2] .." ; Melee: " .. fruitparts3[3] .. " ; Snip: " .. fruitparts3[4] .. " ; Sword: " .. fruitparts3[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -288,7 +288,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 4 \nFruit: " .. fruitparts4[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts4[2] .." ; Melee: " .. fruitparts4[3] .. " ; Snip: " .. fruitparts4[4] .. " ; Sword: " .. fruitparts4[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 4 \nFruit: " .. fruitparts4[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts4[2] .." ; Melee: " .. fruitparts4[3] .. " ; Snip: " .. fruitparts4[4] .. " ; Sword: " .. fruitparts4[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -330,7 +330,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 5 \nFruit: " .. fruitparts5[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts5[2] .." ; Melee: " .. fruitparts5[3] .. " ; Snip: " .. fruitparts5[4] .. " ; Sword: " .. fruitparts5[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 5 \nFruit: " .. fruitparts5[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: :point_down:  \nDef: "..fruitparts5[2] .." ; Melee: " .. fruitparts5[3] .. " ; Snip: " .. fruitparts5[4] .. " ; Sword: " .. fruitparts5[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

@@ -144,13 +144,13 @@ pcall(function()
 _G.fruitdata1 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= _G.fruitdata1 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value ~= "None"
 local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value
-local fruitparts = {}
+local fruitparts1 = {}
 for part in string.gmatch(fruitdata, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
-    table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table
+    table.insert(fruitparts1, trimmed)  -- Add the trimmed part to the table
 end
 
-if fruitparts[6] == "1" then
+if fruitparts1[6] == "1" then
 _G.fruitauraistrue = "(Aura Fruit!!!)"
 else
 _G.fruitauraistrue = "(Normal Fruit)"
@@ -162,7 +162,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 1 \nFruit:" .. fruitparts[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts[2] .." ; Melee: " .. fruitparts[3] .. " ; Snip: " .. fruitparts[4] .. " ; Sword: " .. fruitparts[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 1 \nFruit:" .. fruitparts1[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts1[2] .." ; Melee: " .. fruitparts1[3] .. " ; Snip: " .. fruitparts1[4] .. " ; Sword: " .. fruitparts1[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -186,13 +186,13 @@ pcall(function()
 _G.fruitdata2 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= _G.fruitdata2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value ~= "None"
 local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value
-local fruitparts = {}
+local fruitparts2 = {}
 for part in string.gmatch(fruitdata, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
-    table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table
+    table.insert(fruitparts2, trimmed)  -- Add the trimmed part to the table
 end
 
-if fruitparts[6] == "1" then
+if fruitparts2[6] == "1" then
 _G.fruitauraistrue = "(Aura Fruit!!!)"
 else
 _G.fruitauraistrue = "(Normal Fruit)"
@@ -204,7 +204,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 2 \nFruit:" .. fruitparts[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts[2] .." ; Melee: " .. fruitparts[3] .. " ; Snip: " .. fruitparts[4] .. " ; Sword: " .. fruitparts[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 2 \nFruit:" .. fruitparts2[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts2[2] .." ; Melee: " .. fruitparts2[3] .. " ; Snip: " .. fruitparts2[4] .. " ; Sword: " .. fruitparts2[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -228,13 +228,13 @@ pcall(function()
 _G.fruitdata3 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= _G.fruitdata3 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value ~= "None"
 local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value
-local fruitparts = {}
+local fruitparts3 = {}
 for part in string.gmatch(fruitdata, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
-    table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table
+    table.insert(fruitparts3, trimmed)  -- Add the trimmed part to the table
 end
 
-if fruitparts[6] == "1" then
+if fruitparts3[6] == "1" then
 _G.fruitauraistrue = "(Aura Fruit!!!)"
 else
 _G.fruitauraistrue = "(Normal Fruit)"
@@ -246,7 +246,7 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 3 \nFruit:" .. fruitparts[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts[2] .." ; Melee: " .. fruitparts[3] .. " ; Snip: " .. fruitparts[4] .. " ; Sword: " .. fruitparts[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 3 \nFruit:" .. fruitparts3[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts3[2] .." ; Melee: " .. fruitparts3[3] .. " ; Snip: " .. fruitparts3[4] .. " ; Sword: " .. fruitparts3[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }
@@ -270,13 +270,13 @@ pcall(function()
 _G.fruitdata4 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
 repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= _G.fruitdata4 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value ~= "None"
 local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value
-local fruitparts = {}
+local fruitparts4 = {}
 for part in string.gmatch(fruitdata, "[^,]+") do
     local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
-    table.insert(fruitparts, trimmed)  -- Add the trimmed part to the table
+    table.insert(fruitparts4, trimmed)  -- Add the trimmed part to the table
 end
 
-if fruitparts[6] == "1" then
+if fruitparts4[6] == "1" then
 _G.fruitauraistrue = "(Aura Fruit!!!)"
 else
 _G.fruitauraistrue = "(Normal Fruit)"
@@ -288,7 +288,49 @@ local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNI
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 4 \nFruit:" .. fruitparts[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts[2] .." ; Melee: " .. fruitparts[3] .. " ; Snip: " .. fruitparts[4] .. " ; Sword: " .. fruitparts[5],
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 4 \nFruit:" .. fruitparts4[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts4[2] .." ; Melee: " .. fruitparts4[3] .. " ; Snip: " .. fruitparts4[4] .. " ; Sword: " .. fruitparts4[5],
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+_G.fruitdata5 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
+repeat wait(0.3) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= _G.fruitdata5 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value ~= "None"
+local fruitdata = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value
+local fruitparts5 = {}
+for part in string.gmatch(fruitdata, "[^,]+") do
+    local trimmed = part:match("^%s*(.-)%s*$")  -- Trim spaces
+    table.insert(fruitparts5, trimmed)  -- Add the trimmed part to the table
+end
+
+if fruitparts5[6] == "1" then
+_G.fruitauraistrue = "(Aura Fruit!!!)"
+else
+_G.fruitauraistrue = "(Normal Fruit)"
+end
+
+local url = "https://discord.com/api/webhooks/1271257970965086278/L-FsAiKEQHfyNIBbvYkvht8m9sh5zfCQi-J0Ki6jKy6N56RKS1YSHsBX1yfXMnZhm7On"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nStored DF Slot: 5 \nFruit:" .. fruitparts5[1] .. " " .. _G.fruitauraistrue .. "\nAffinity: \nDef: "..fruitparts5[2] .." ; Melee: " .. fruitparts5[3] .. " ; Snip: " .. fruitparts5[4] .. " ; Sword: " .. fruitparts5[5],
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

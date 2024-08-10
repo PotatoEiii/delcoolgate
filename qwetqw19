@@ -4840,8 +4840,8 @@ Tabs.Affinity:AddSection("                                      ---")
 Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
 Tabs.Affinity:AddSection("1st Devil Fruit")
 affdropnew = Tabs.Affinity:AddDropdown("affdropnew", {
-        Title = "Lock Affinity (DF1)",
-        Description = "You can choose affinities to lock.",
+        Title = "Target Affinity (DF1)",
+        Description = "You can choose affinities to target.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {},
@@ -4873,7 +4873,6 @@ if string.find(n, "Sword") then
 _G.keensw = true
 end
 end
-print(table.concat(Valuablez))
 end)
 
 Tabs.Affinity:AddSection("2nd Devil Fruit")

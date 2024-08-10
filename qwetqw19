@@ -4912,7 +4912,53 @@ spawn(function()
 while wait(0.3) do
 repeat wait(0.1) until _G.rolznewaff == true
 pcall(function()
-print("hello world")
+repeat wait() 
+if _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.affpointnew then
+_G.rundef = true
+_G.trykeepdef = false
+else
+_G.rundef = false
+_G.trykeepdef = true
+end
+task.wait()
+if _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.affpointnew then
+_G.runmelee = true
+_G.trykeepmelee = false
+else
+_G.runmelee = false
+_G.trykeepmelee = true
+end
+task.wait()
+if _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.affpointnew then
+_G.runsnip = true
+_G.trykeepsnip = false
+else
+_G.runsnip = false
+_G.trykeepsnip = true
+end
+task.wait()
+if _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.affpointnew then
+_G.runsw = true
+_G.trykeepsw = false
+else
+_G.runsw = false
+_G.trykeepsw = true
+end
+task.wait()
+if _G.rundef == true or _G.runmelee == true or _G.runsnip == true or _G.runsw == true then
+local args = {
+    [1] = "DFT1",
+    [2] = _G.trykeepdef,
+    [3] = _G.trykeepmelee,
+    [4] = _G.trykeepsnip,
+    [5] = _G.trykeepsw,
+    [6] = _G.kindbud
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+wait(11)
+until _G.rolznewaff == false
+end
 end)
 end
 end)

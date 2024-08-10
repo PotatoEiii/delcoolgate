@@ -4455,7 +4455,7 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
     })
 
-Tabs.Affinity:AddSection("Roll Affinity (Old Method)")
+Tabs.Affinity:AddSection("Auto Roll Affinity (Old Method)")
 
 Tabs.Affinity:AddSection("1st Devil Fruit")
 

@@ -4884,6 +4884,17 @@ _G.rolznewaff = false
 end
 end)
 
+spawn(function()
+while wait(0.3) do
+repeat wait(0.1) until _G.rolznewaff == true
+pcall(function()
+print("hello world")
+end)
+end
+end)
+
+
+
 Tabs.Affinity:AddSection("2nd Devil Fruit")
 
 Tabs.Skill:AddSection("Auto Spam Fruit")

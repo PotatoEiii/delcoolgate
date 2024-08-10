@@ -1,4 +1,8 @@
 task.wait(1)
+_G.trykeepdef = false
+_G.trykeepmelee = false
+_G.trykeepsnip = false
+_G.trykeepsw = false
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true

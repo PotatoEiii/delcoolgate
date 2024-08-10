@@ -4888,6 +4888,18 @@ end
 end
 end)
 
+buzrito = Tabs.Affinity:AddDropdown("buzrito", {
+        Title = "Budget Type",
+        Values = {"Cash", "Gems"},
+        Multi = false,
+        Default = "",
+})
+
+
+buzrito:OnChanged(function(wkeopaff)
+_G.kindbud = wkeopaff
+end)
+
 autorolznew1 = Tabs.Farm:AddToggle("autorolznew1toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
 autorolznew1:OnChanged(function()
 if Options.autorolznew1toggle.Value == true then

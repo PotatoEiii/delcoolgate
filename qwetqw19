@@ -4836,6 +4836,7 @@ end)
 end
 end)
 
+Tabs.Affinity:AddSection("                                      ---")
 Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
 
 Tabs.Skill:AddSection("Auto Spam Fruit")

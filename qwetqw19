@@ -4838,6 +4838,44 @@ end)
 
 Tabs.Affinity:AddSection("                                      ---")
 Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
+Tabs.Affinity:AddSection("1st Devil Fruit")
+affdropnew = Tabs.Affinity:AddDropdown("affdropnew", {
+        Title = "Lock Affinity (DF1)",
+        Description = "You can choose affinities to lock.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {},
+})
+
+
+
+affdropnew:OnChanged(function(statement)
+_G.keendef = false
+_G.keenmelee = false
+_G.keensnip = false
+_G.keensword = false
+Valuablez = {"None"}
+task.wait()
+for statement, State in next, statement do
+table.insert(Valuablez, statement)
+end
+for _, n in pairs(Values) do
+if string.find(n, "Defense") then
+_G.keendef = true
+end
+if string.find(n, "Melee") then
+_G.keenmelee = true
+end
+if string.find(n, "Sniper") then
+_G.keensnip = true
+end
+if string.find(n, "Sword") then
+_G.keensword = true
+end
+end
+end)
+
+Tabs.Affinity:AddSection("2nd Devil Fruit")
 
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {

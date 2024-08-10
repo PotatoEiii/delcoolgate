@@ -4455,7 +4455,7 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
     })
 
-Tabs.Affinity:AddSection("Auto Roll Affinity (Old Method)")
+Tabs.Affinity:AddSection("Auto Roll Affinity (Old Saluna Method)")
 
 Tabs.Affinity:AddSection("1st Devil Fruit")
 
@@ -4835,6 +4835,8 @@ end
 end)
 end
 end)
+
+Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
 
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {

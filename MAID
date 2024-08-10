@@ -4469,12 +4469,12 @@ rabunzoa:OnChanged(function(wekorzza)
 _G.trqpwo = tonumber(wekorzza)
 end)
 
-wrrrrr = Tabs.Affinity:AddDropdown("dqwww", {
+wrrrrr = Tabs.Affinity:AddDropdown("wrrrrr", {
         Title = "Lock Affinity (DF1)",
         Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {""},
+        Default = {},
 })
 
 
@@ -4506,12 +4506,12 @@ end
 end)
 
 
-wwwwww = Tabs.Affinity:AddDropdown("dtqzxcwww", {
+wwwwww = Tabs.Affinity:AddDropdown("wwwwww", {
         Title = "Target Affinity (DF1)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {""},
+        Default = {},
 })
 
  
@@ -4661,12 +4661,12 @@ rabunzoasec:OnChanged(function(wekorzzasec)
 _G.trqpwo2 = tonumber(wekorzzasec)
 end)
 
-wrrrrr2 = Tabs.Affinity:AddDropdown("vqw44", {
+wrrrrr2 = Tabs.Affinity:AddDropdown("wrrrrr2", {
         Title = "Lock Affinity (DF2)",
         Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {""},
+        Default = {},
 })
 
 
@@ -4698,12 +4698,12 @@ end)
 
 
 
-wwrwwww2 = Tabs.Affinity:AddDropdown("tyumm1z", {
+wwrwwww2 = Tabs.Affinity:AddDropdown("wwrwwww2", {
         Title = "Target Affinity (DF2)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {""},
+        Default = {},
 })
 
 

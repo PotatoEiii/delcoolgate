@@ -4455,7 +4455,9 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
     })
 
-Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
+Tabs.Affinity:AddSection("Roll Affinity (Old Method)")
+
+Tabs.Affinity:AddSection("1st Devil Fruit")
 
 rabunzoa = Tabs.Affinity:AddDropdown("rabunzoa", {
         Title = "1st Devil Fruit Point",
@@ -4648,7 +4650,7 @@ end)
 
 
 
-Tabs.Affinity:AddSection("Roll Affinity 2nd Devil Fruit")
+Tabs.Affinity:AddSection("2nd Devil Fruit")
 
 rabunzoasec = Tabs.Affinity:AddDropdown("rabunzoasec", {
         Title = "2nd Devil Fruit Point",

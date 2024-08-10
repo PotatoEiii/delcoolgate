@@ -4859,7 +4859,7 @@ task.wait()
 for statement, State in next, statement do
 table.insert(Valuablez, statement)
 end
-for _, n in pairs(Values) do
+for _, n in pairs(Valuablez) do
 if string.find(n, "Defense") then
 _G.keendef = true
 end
@@ -4873,6 +4873,7 @@ if string.find(n, "Sword") then
 _G.keensw = true
 end
 end
+print(table.concat(Valuablez))
 end)
 
 Tabs.Affinity:AddSection("2nd Devil Fruit")

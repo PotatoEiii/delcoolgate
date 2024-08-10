@@ -4910,9 +4910,8 @@ end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait(0.1) until _G.rolznewaff == true
+if _G.rolznewaff == true then
 pcall(function()
-repeat wait() 
 if _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.affpointnew then
 _G.rundef = true
 _G.trykeepdef = false
@@ -4958,8 +4957,8 @@ local args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 wait(11)
 end
-until _G.rolznewaff == false
 end)
+end
 end
 end)
 

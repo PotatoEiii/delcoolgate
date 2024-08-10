@@ -4957,8 +4957,8 @@ local args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 wait(11)
-until _G.rolznewaff == false
 end
+until _G.rolznewaff == false
 end)
 end
 end)

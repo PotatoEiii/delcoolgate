@@ -4875,6 +4875,15 @@ end
 end
 end)
 
+autorolznew1 = Tabs.Farm:AddToggle("autorolznew1toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
+autorolznew1:OnChanged(function()
+if Options.autorolznew1toggle.Value == true then
+_G.rolznewaff = true
+else
+_G.rolznewaff = false
+end
+end)
+
 Tabs.Affinity:AddSection("2nd Devil Fruit")
 
 Tabs.Skill:AddSection("Auto Spam Fruit")

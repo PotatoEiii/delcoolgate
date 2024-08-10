@@ -4838,6 +4838,7 @@ end)
 
 Tabs.Affinity:AddSection("                                      ---")
 Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
+Tabs.Affinity:AddSection("1st Devil Fruit")
 razerr = Tabs.Affinity:AddDropdown("razerr", {
         Title = "1st Devil Fruit Point",
         Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
@@ -4850,7 +4851,6 @@ razerr:OnChanged(function(affz1)
 _G.affpointnew = tonumber(affz1)
 end)
 
-Tabs.Affinity:AddSection("1st Devil Fruit")
 affdropnew = Tabs.Affinity:AddDropdown("affdropnew", {
         Title = "Target Affinity (DF1)",
         Description = "You can choose affinities to target.",

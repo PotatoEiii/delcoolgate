@@ -4853,7 +4853,7 @@ affdropnew:OnChanged(function(statement)
 _G.keendef = false
 _G.keenmelee = false
 _G.keensnip = false
-_G.keensword = false
+_G.keensw = false
 Valuablez = {"None"}
 task.wait()
 for statement, State in next, statement do
@@ -4870,7 +4870,7 @@ if string.find(n, "Sniper") then
 _G.keensnip = true
 end
 if string.find(n, "Sword") then
-_G.keensword = true
+_G.keensw = true
 end
 end
 end)

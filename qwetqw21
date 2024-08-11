@@ -5000,7 +5000,7 @@ skillnumpo:OnChanged(function(skilzwqw)
 _G.skillnumz = skilzwqw
 end)
 
-skillzmupoza = Tabs.PVP:AddSlider("skillzmupoza", {
+skillzmupoza = Tabs.Skill:AddSlider("skillzmupoza", {
     Title = "Charging Power (%)",
     Description = "Adjust charging power",
     Default = 100,

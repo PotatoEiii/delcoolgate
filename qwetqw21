@@ -4996,10 +4996,21 @@ skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Default = "",
     })
 
-
 skillnumpo:OnChanged(function(skilzwqw)
 _G.skillnumz = skilzwqw
 end)
+
+skillzmupoza = Tabs.PVP:AddSlider("skillzmupoza", {
+    Title = "Charging Power (%)",
+    Description = "Adjust charging power",
+    Default = 100,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(asdkqwmz)
+            _G.numcharg = tonumber(asdkqwmz)
+        end
+    })
 
 spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Spam Fruit", Default = false })
 spamskillz:OnChanged(function()

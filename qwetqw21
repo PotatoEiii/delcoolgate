@@ -6197,6 +6197,36 @@ repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power4" and _G.startspamskill == true then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower10",
+    [3] = "On"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower4",
+    [3] = "Update",
+    [4] = 7.4626593589782715,
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y + 10, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [6] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [8] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.05)
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower10",
+    [3] = "Off"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 end
 until _G.startspamskill == false
 end)

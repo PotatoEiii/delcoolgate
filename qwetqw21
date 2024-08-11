@@ -5109,7 +5109,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
@@ -5163,7 +5163,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
@@ -5187,7 +5187,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
@@ -5253,7 +5253,7 @@ local args = {
 [3] = "StopCharging",
 [4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
 [5] = game.Players.LocalPlayer.Character.HumanoidRootPart,
-[6] = 300
+[6] = _G.numcharg * 3
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
@@ -5276,7 +5276,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(717.3153686523438, 238, 1196.58447265625, -0.8449660539627075, 0.34548458456993103, -0.40825584530830383, -3.946096782669883e-09, 0.7633518576622009, 0.6459829211235046, 0.534820020198822, 0.5458336472511292, -0.6450063586235046),
     [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
-    [6] = 150
+    [6] = _G.numcharg * 1.5
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
@@ -5307,7 +5307,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
-    [6] = 150
+    [6] = _G.numcharg * 1.5
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
@@ -5331,7 +5331,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5355,7 +5355,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5379,7 +5379,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5403,7 +5403,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5427,7 +5427,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5451,7 +5451,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5464,7 +5464,7 @@ repeat task.wait()
                 [3] = "StopCharging",
                 [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
                 [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-                [6] = 100,
+                [6] = _G.numcharg,
                 [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
             }
 
@@ -5478,7 +5478,7 @@ local args = {
     [2] = "QuakePower2",
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
     [8] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
 }
@@ -5494,7 +5494,7 @@ local args = {
     [3] = "StopCharging",
     [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
     [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
 }
 
@@ -5509,7 +5509,7 @@ local args = {
     [3] = "StopCharging",
     [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
     [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
 }
 
@@ -5580,7 +5580,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
@@ -5636,7 +5636,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
@@ -5706,7 +5706,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
@@ -5787,7 +5787,7 @@ task.wait(0.15)
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
                         [5] = game.Players.LocalPlayer:GetMouse().Hit,
-                        [6] = 100
+                        [6] = _G.numcharg
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
@@ -5797,7 +5797,7 @@ task.wait()
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
                         [5] = game.Players.LocalPlayer:GetMouse().Hit,
-                        [6] = 100
+                        [6] = _G.numcharg
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
@@ -5807,7 +5807,7 @@ task.wait()
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
                         [5] = game.Players.LocalPlayer:GetMouse().Hit,
-                        [6] = 100
+                        [6] = _G.numcharg
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
@@ -5869,7 +5869,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = 500,
     [8] = 500
 }
@@ -5895,7 +5895,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
@@ -5962,7 +5962,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
@@ -6118,7 +6118,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = "Right",
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
@@ -6163,14 +6163,14 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, _G.numcharg)
 task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
@@ -6178,7 +6178,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace.IslandCaver.Stones.Stone,
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
@@ -6191,7 +6191,7 @@ repeat task.wait()
     [3] = "StopCharging",
     [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
     [5] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X -10, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))

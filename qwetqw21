@@ -4979,7 +4979,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if _G.rolznewaff == true then
 pcall(function()
 if _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.affpointnew then
@@ -5045,7 +5045,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if _G.rolznewaff2 == true then
 pcall(function()
 if _G.keendef2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.affpointnew2 then

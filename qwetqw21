@@ -6185,17 +6185,6 @@ game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireSe
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower9",
-    [3] = "StartCharging",
-    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [9] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
  local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower9",
@@ -6206,6 +6195,7 @@ task.wait(0.09)
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 end
 until _G.startspamskill == false

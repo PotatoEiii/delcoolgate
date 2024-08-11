@@ -2449,7 +2449,6 @@ end)
 
 
 Tabs.Farm:AddSection("Auto Package   (*)")
-
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},
@@ -2468,8 +2467,26 @@ getgenv().tret = false
 end
 end)
 
-
-
+Tabs.Expertise:AddSection("Auto Expertise")
+AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
+    AutogetexpToggle:OnChanged(function()
+if Options.Autogetexp1Toggle.Value == true then
+_G.autogetexp = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Get Expertise Quest Is Turned On",
+    Duration = 5
+})
+while _G.autogetexp do wait()
+pcall(function()
+wait(5)
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end)
+end
+else
+_G.autogetexp = false
+end
+end)
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -2638,27 +2655,6 @@ Fluent:Notify({
             end
 else
 _G.autospawn = false
-end
-end)
-
-
-AutogetexpToggle = Tabs.Automatic:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
-    AutogetexpToggle:OnChanged(function()
-if Options.Autogetexp1Toggle.Value == true then
-_G.autogetexp = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Get Expertise Quest Is Turned On",
-    Duration = 5
-})
-while _G.autogetexp do wait()
-pcall(function()
-wait(5)
-workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-end)
-end
-else
-_G.autogetexp = false
 end
 end)
 

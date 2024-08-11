@@ -6190,7 +6190,7 @@ repeat task.wait()
     [2] = "LightPower9",
     [3] = "StopCharging",
     [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
-    [5] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X -10, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position,
     [6] = _G.numcharg
 }
 

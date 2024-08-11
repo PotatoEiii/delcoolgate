@@ -6189,7 +6189,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower9",
     [3] = "StartCharging",
-    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
     [9] = "Right"
 }

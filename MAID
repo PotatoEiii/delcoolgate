@@ -4455,7 +4455,9 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
     })
 
-Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
+Tabs.Affinity:AddSection("Auto Roll Affinity (Old Saluna Method)")
+
+Tabs.Affinity:AddSection("1st Devil Fruit")
 
 rabunzoa = Tabs.Affinity:AddDropdown("rabunzoa", {
         Title = "1st Devil Fruit Point",
@@ -4648,7 +4650,7 @@ end)
 
 
 
-Tabs.Affinity:AddSection("Roll Affinity 2nd Devil Fruit")
+Tabs.Affinity:AddSection("2nd Devil Fruit")
 
 rabunzoasec = Tabs.Affinity:AddDropdown("rabunzoasec", {
         Title = "2nd Devil Fruit Point",
@@ -4833,6 +4835,283 @@ end
 end)
 end
 end)
+
+Tabs.Affinity:AddSection("                                      ---")
+Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
+Tabs.Affinity:AddSection("1st Devil Fruit")
+razerr = Tabs.Affinity:AddDropdown("razerr", {
+        Title = "1st Devil Fruit Point",
+        Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
+        Multi = false,
+        Default = "1.9",
+})
+
+
+razerr:OnChanged(function(affz1)
+_G.affpointnew = tonumber(affz1)
+end)
+
+affdropnew = Tabs.Affinity:AddDropdown("affdropnew", {
+        Title = "Target Affinity (DF1)",
+        Description = "You can choose affinities to target.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {},
+})
+
+
+
+affdropnew:OnChanged(function(statement)
+_G.keendef = false
+_G.keenmelee = false
+_G.keensnip = false
+_G.keensw = false
+Valuablez = {"None"}
+task.wait()
+for statement, State in next, statement do
+table.insert(Valuablez, statement)
+end
+for _, n in pairs(Valuablez) do
+if string.find(n, "Defense") then
+_G.keendef = true
+end
+if string.find(n, "Melee") then
+_G.keenmelee = true
+end
+if string.find(n, "Sniper") then
+_G.keensnip = true
+end
+if string.find(n, "Sword") then
+_G.keensw = true
+end
+end
+end)
+
+buzrito = Tabs.Affinity:AddDropdown("buzrito", {
+        Title = "Budget Type",
+        Values = {"Cash", "Gems"},
+        Multi = false,
+        Default = "",
+})
+
+
+buzrito:OnChanged(function(wkeopaff)
+_G.kindbud = wkeopaff
+end)
+
+autorolznew1 = Tabs.Affinity:AddToggle("autorolznew1toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
+autorolznew1:OnChanged(function()
+if Options.autorolznew1toggle.Value == true then
+_G.rolznewaff = true
+else
+_G.rolznewaff = false
+end
+end)
+
+Tabs.Affinity:AddSection("2nd Devil Fruit")
+raz2err = Tabs.Affinity:AddDropdown("raz2err", {
+        Title = "2nd Devil Fruit Point",
+        Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
+        Multi = false,
+        Default = "1.9",
+})
+
+
+raz2err:OnChanged(function(affz2)
+_G.affpointnew2 = tonumber(affz2)
+end)
+
+affdropnew2 = Tabs.Affinity:AddDropdown("affdropnew2", {
+        Title = "Target Affinity (DF2)",
+        Description = "You can choose affinities to target.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {},
+})
+
+
+
+affdropnew2:OnChanged(function(statementz2)
+_G.keendef2 = false
+_G.keenmelee2 = false
+_G.keensnip2 = false
+_G.keensw2 = false
+Valuablezz2 = {"None"}
+task.wait()
+for statementz2, State in next, statementz2 do
+table.insert(Valuablezz2, statementz2)
+end
+for _, n in pairs(Valuablezz2) do
+if string.find(n, "Defense") then
+_G.keendef2 = true
+end
+if string.find(n, "Melee") then
+_G.keenmelee2 = true
+end
+if string.find(n, "Sniper") then
+_G.keensnip2 = true
+end
+if string.find(n, "Sword") then
+_G.keensw2 = true
+end
+end
+end)
+
+buzri2to = Tabs.Affinity:AddDropdown("buzri2to", {
+        Title = "Budget Type",
+        Values = {"Cash", "Gems"},
+        Multi = false,
+        Default = "",
+})
+
+
+buzri2to:OnChanged(function(wkeop2aff)
+_G.kindbud2 = wkeop2aff
+end)
+
+autorolznew2 = Tabs.Affinity:AddToggle("autorolznew2toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
+autorolznew2:OnChanged(function()
+if Options.autorolznew2toggle.Value == true then
+_G.rolznewaff2 = true
+else
+_G.rolznewaff2 = false
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+if _G.rolznewaff == true then
+pcall(function()
+if _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.affpointnew then
+_G.rundef = true
+_G.trykeepdef = false
+elseif _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value >= _G.affpointnew then
+_G.rundef = false
+_G.trykeepdef = true
+elseif _G.keendef == false then
+_G.trykeepdef = false
+_G.rundef = false
+end
+task.wait()
+if _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.affpointnew then
+_G.runmelee = true
+_G.trykeepmelee = false
+elseif _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value >= _G.affpointnew then
+_G.runmelee = false
+_G.trykeepmelee = true
+elseif _G.keenmelee == false then
+_G.trykeepmelee = false
+_G.runmelee = false
+end
+task.wait()
+if _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.affpointnew then
+_G.runsnip = true
+_G.trykeepsnip = false
+elseif _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value >= _G.affpointnew then
+_G.runsnip = false
+_G.trykeepsnip = true
+elseif _G.keensnip == false then
+_G.runsnip = false
+_G.trykeepsnip = false
+end
+task.wait()
+if _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.affpointnew then
+_G.runsw = true
+_G.trykeepsw = false
+elseif _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value >= _G.affpointnew then
+_G.runsw = false
+_G.trykeepsw = true
+elseif _G.keensw == false then
+_G.runsw = false
+_G.trykeepsw = false
+end
+task.wait()
+if _G.rundef == true or _G.runmelee == true or _G.runsnip == true or _G.runsw == true then
+local args = {
+    [1] = "DFT1",
+    [2] = _G.trykeepdef,
+    [3] = _G.trykeepmelee,
+    [4] = _G.trykeepsnip,
+    [5] = _G.trykeepsw,
+    [6] = _G.kindbud
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+wait(11)
+end
+end)
+end
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+if _G.rolznewaff2 == true then
+pcall(function()
+if _G.keendef2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.affpointnew2 then
+_G.rundef2 = true
+_G.trykeepdef2 = false
+elseif _G.keendef2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value >= _G.affpointnew2 then
+_G.rundef2 = false
+_G.trykeepdef2 = true
+elseif _G.keendef2 == false then
+_G.rundef2 = false
+_G.trykeepdef2 = false
+end
+task.wait()
+if _G.keenmelee2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.affpointnew2 then
+_G.runmelee2 = true
+_G.trykeepmelee2 = false
+elseif _G.keenmelee2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value >= _G.affpointnew2 then
+_G.runmelee2 = false
+_G.trykeepmelee2 = true
+elseif _G.keenmelee2 == false then
+_G.runmelee2 = false
+_G.trykeepmelee2 = false
+end
+task.wait()
+if _G.keensnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.affpointnew2 then
+_G.runsnip2 = true
+_G.trykeepsnip2 = false
+elseif _G.keensnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value >= _G.affpointnew2 then
+_G.runsnip2 = false
+_G.trykeepsnip2 = true
+elseif _G.keensnip2 == false then
+_G.trykeepsnip2 = false
+_G.runsnip2 = false
+end
+task.wait()
+if _G.keensw2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.affpointnew2 then
+_G.runsw2 = true
+_G.trykeepsw2 = false
+elseif _G.keensw2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value >= _G.affpointnew2 then
+_G.runsw2 = false
+_G.trykeepsw2 = true
+elseif _G.keensw2 == false then
+_G.trykeepsw2 = false
+_G.runsw2 = false
+end
+task.wait()
+if _G.rundef2 == true or _G.runmelee2 == true or _G.runsnip2 == true or _G.runsw2 == true then
+local args = {
+    [1] = "DFT2",
+    [2] = _G.trykeepdef2,
+    [3] = _G.trykeepmelee2,
+    [4] = _G.trykeepsnip2,
+    [5] = _G.trykeepsw2,
+    [6] = _G.kindbud2
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+wait(11)
+end
+end)
+end
+end
+end)
+
+
+
 
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
@@ -7503,7 +7782,7 @@ local args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
-wait(12)
+wait(11)
 end)
 end
 end
@@ -7683,7 +7962,7 @@ local args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
-wait(12)
+wait(11)
 end)
 end
 end

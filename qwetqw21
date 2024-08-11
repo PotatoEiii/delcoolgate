@@ -6157,6 +6157,35 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+ local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower9",
+    [3] = "StopCharging",
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X -10, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 end
 until _G.startspamskill == false
 end)

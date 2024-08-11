@@ -1,8 +1,4 @@
 task.wait(1)
-_G.trykeepdef = false
-_G.trykeepmelee = false
-_G.trykeepsnip = false
-_G.trykeepsw = false
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -4919,33 +4915,41 @@ pcall(function()
 if _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.affpointnew then
 _G.rundef = true
 _G.trykeepdef = false
-else
+elseif _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value >= _G.affpointnew then
 _G.rundef = false
 _G.trykeepdef = true
+elseif _G.keendef == false then
+_G.trykeepdef = false
 end
 task.wait()
 if _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.affpointnew then
 _G.runmelee = true
 _G.trykeepmelee = false
-else
+elseif _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value >= _G.affpointnew then
 _G.runmelee = false
 _G.trykeepmelee = true
+elseif _G.keenmelee == false then
+_G.trykeepmelee = false
 end
 task.wait()
 if _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.affpointnew then
 _G.runsnip = true
 _G.trykeepsnip = false
-else
+elseif _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value >= _G.affpointnew then
 _G.runsnip = false
 _G.trykeepsnip = true
+elseif _G.keensnip == false then
+_G.trykeepsnip = false
 end
 task.wait()
 if _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.affpointnew then
 _G.runsw = true
 _G.trykeepsw = false
-else
+elseif _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value >= _G.affpointnew then
 _G.runsw = false
 _G.trykeepsw = true
+elseif _G.keensw == false then
+_G.trykeepsw = false
 end
 task.wait()
 if _G.rundef == true or _G.runmelee == true or _G.runsnip == true or _G.runsw == true then

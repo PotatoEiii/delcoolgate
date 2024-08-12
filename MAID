@@ -3387,6 +3387,9 @@ if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.
 v:Activate()
 v:Activate()
 v:Activate()
+v:Activate()
+v:Activate()
+v:Activate()
 v:Destroy()
 end
 end

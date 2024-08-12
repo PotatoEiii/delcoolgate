@@ -383,8 +383,10 @@ end)
     Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
     Weapon = Window:AddTab({ Title = "Weapon", Icon = "rbxassetid://7485051715" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
+    Expertise = Window:AddTab({ Title = "Expertise", Icon = "rbxassetid://16181361436" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://18518485889" }),
+    Mobs = Window:AddTab({ Title = "Mobs", Icon = "rbxassetid://13957749947" }),
     Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
@@ -413,6 +415,23 @@ Tabs.Robbing:AddParagraph({
 Title = "NOTE",
 Content = "Only Quake-Robbing can use with Random Teleport"
 })
+
+fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
+        Title = "Fruit Targeting (Normal)",
+        Description = "Choose fruits for \"Normal Fruits\" Robbing.",
+        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Multi = true,
+        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+})
+
+fruitzmpa:OnChanged(function(fruitvamzue)
+Fruittaoew = {"None"}
+task.wait()
+for fruitvamzue, State in next, fruitvamzue do
+table.insert(Fruittaoew, fruitvamzue)
+end
+end)
+
  robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
         Values = {"Quake","Magma","Flare"},
@@ -2228,6 +2247,23 @@ end
 end)
 
 Tabs.Fruit:AddSection("Auto Store Fruits")
+
+fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
+        Title = "Fruit Targeting (Normal)",
+        Description = "Choose fruits for \"Normal Fruits\" Storing.",
+        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Multi = true,
+        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+})
+
+fruitoppai:OnChanged(function(fqwmzzp)
+Fruitniggahaha = {"None"}
+task.wait()
+for fqwmzzp, State in next, fqwmzzp do
+table.insert(Fruitniggahaha, fqwmzzp)
+end
+end)
+
 storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
 storefruit:OnChanged(function()
 if Options.storefruittoggle.Value == true then
@@ -2447,7 +2483,6 @@ end)
 
 
 Tabs.Farm:AddSection("Auto Package   (*)")
-
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},
@@ -2466,8 +2501,26 @@ getgenv().tret = false
 end
 end)
 
-
-
+Tabs.Expertise:AddSection("Auto Expertise")
+AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
+    AutogetexpToggle:OnChanged(function()
+if Options.Autogetexp1Toggle.Value == true then
+_G.autogetexp = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Get Expertise Quest Is Turned On",
+    Duration = 5
+})
+while _G.autogetexp do wait()
+pcall(function()
+wait(5)
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end)
+end
+else
+_G.autogetexp = false
+end
+end)
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -2636,27 +2689,6 @@ Fluent:Notify({
             end
 else
 _G.autospawn = false
-end
-end)
-
-
-AutogetexpToggle = Tabs.Automatic:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
-    AutogetexpToggle:OnChanged(function()
-if Options.Autogetexp1Toggle.Value == true then
-_G.autogetexp = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Get Expertise Quest Is Turned On",
-    Duration = 5
-})
-while _G.autogetexp do wait()
-pcall(function()
-wait(5)
-workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-end)
-end
-else
-_G.autogetexp = false
 end
 end)
 
@@ -4981,7 +5013,7 @@ end)
 Tabs.Skill:AddSection("Auto Spam Fruit")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
+        Values = {" ","Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -4998,10 +5030,21 @@ skillnumpo = Tabs.Skill:AddDropdown("skillnumpo", {
         Default = "",
     })
 
-
 skillnumpo:OnChanged(function(skilzwqw)
 _G.skillnumz = skilzwqw
 end)
+
+skillzmupoza = Tabs.Skill:AddSlider("skillzmupoza", {
+    Title = "Charging Power (%)",
+    Description = "Adjust charging power",
+    Default = 100,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(asdkqwmz)
+            _G.numcharg = tonumber(asdkqwmz)
+        end
+    })
 
 spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Spam Fruit", Default = false })
 spamskillz:OnChanged(function()
@@ -5100,7 +5143,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandTown"):WaitForChild("GrassUplift"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
@@ -5154,7 +5197,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
@@ -5178,7 +5221,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
@@ -5244,7 +5287,7 @@ local args = {
 [3] = "StopCharging",
 [4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
 [5] = game.Players.LocalPlayer.Character.HumanoidRootPart,
-[6] = 300
+[6] = _G.numcharg * 3
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
@@ -5267,7 +5310,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(717.3153686523438, 238, 1196.58447265625, -0.8449660539627075, 0.34548458456993103, -0.40825584530830383, -3.946096782669883e-09, 0.7633518576622009, 0.6459829211235046, 0.534820020198822, 0.5458336472511292, -0.6450063586235046),
     [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
-    [6] = 150
+    [6] = _G.numcharg * 1.5
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
@@ -5298,7 +5341,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
-    [6] = 150
+    [6] = _G.numcharg * 1.5
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
@@ -5322,7 +5365,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5346,7 +5389,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5370,7 +5413,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5394,7 +5437,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5418,7 +5461,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5442,7 +5485,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
@@ -5455,7 +5498,7 @@ repeat task.wait()
                 [3] = "StopCharging",
                 [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
                 [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-                [6] = 100,
+                [6] = _G.numcharg,
                 [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
             }
 
@@ -5469,7 +5512,7 @@ local args = {
     [2] = "QuakePower2",
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
     [8] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
 }
@@ -5485,7 +5528,7 @@ local args = {
     [3] = "StopCharging",
     [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
     [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
 }
 
@@ -5500,7 +5543,7 @@ local args = {
     [3] = "StopCharging",
     [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Dirt"):WaitForChild("Dirt"),
     [5] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
 }
 
@@ -5571,7 +5614,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
@@ -5627,7 +5670,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
@@ -5697,7 +5740,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("OutterDune"):WaitForChild("Beach"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
@@ -5778,7 +5821,7 @@ task.wait(0.15)
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
                         [5] = game.Players.LocalPlayer:GetMouse().Hit,
-                        [6] = 100
+                        [6] = _G.numcharg
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
@@ -5788,7 +5831,7 @@ task.wait()
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
                         [5] = game.Players.LocalPlayer:GetMouse().Hit,
-                        [6] = 100
+                        [6] = _G.numcharg
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
@@ -5798,7 +5841,7 @@ task.wait()
                         [3] = "Attack",
    			[4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
                         [5] = game.Players.LocalPlayer:GetMouse().Hit,
-                        [6] = 100
+                        [6] = _G.numcharg
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
@@ -5860,7 +5903,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100,
+    [6] = _G.numcharg,
     [7] = 500,
     [8] = 500
 }
@@ -5886,7 +5929,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
@@ -5904,7 +5947,6 @@ end
 task.wait(0.2)
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power1" and _G.startspamskill == true then
-repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower7",
@@ -5912,8 +5954,22 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyAnim1"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
+    [2] = "CandyPower7",
+    [3] = false
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
 if game.Players.LocalPlayer.Character.UsingCandyBody.Value == false then
@@ -5953,7 +6009,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
@@ -6072,7 +6128,6 @@ game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireS
 task.wait(0.2)
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power1" and _G.startspamskill == true then
-repeat task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower7",
@@ -6080,8 +6135,22 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyAnim1"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
+    [2] = "ChillyPower7",
+    [3] = false
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
@@ -6109,7 +6178,7 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = "Right",
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
@@ -6154,11 +6223,99 @@ local args = {
     [3] = "StopCharging",
     [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
     [5] = workspace:WaitForChild("IslandPirate"):WaitForChild("Base"):WaitForChild("Beach"),
-    [6] = 100
+    [6] = _G.numcharg
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power1" and _G.startspamskill == true then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower7",
+    [3] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+repeat task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightAnim1"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower7",
+    [3] = false
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power2" and _G.startspamskill == true then
+repeat task.wait()
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, _G.numcharg)
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = CFrame.new(Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = _G.numcharg
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power3" and _G.startspamskill == true then
+repeat task.wait()
+ local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower9",
+    [3] = "StopCharging",
+    [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z),
+    [5] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position,
+    [6] = _G.numcharg
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
+elseif _G.skilltype == "Light" and _G.skillnumz == "Power5" and _G.startspamskill == true then
+       local args = {
+           [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+           [2] = "LightPower5",
+           [3] = "Start"
+       }
+       
+       game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+repeat task.wait()
+       local args = {
+           [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+           [2] = "LightPower5",
+           [3] = "Fire",
+           [4] = Vector3.new(game.Players.LocalPlayer:GetMouse().Hit.X, game.Players.LocalPlayer:GetMouse().Hit.Y, game.Players.LocalPlayer:GetMouse().Hit.Z)
+       }
+       
+       game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
+       local args = {
+           [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+           [2] = "LightPower5",
+           [3] = "End"
+       }
+       
+       game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+       
+       local args = {
+           [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+           [2] = "LightPower5",
+           [3] = "Stop"
+       }
+       
+       game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 end
 until _G.startspamskill == false
 end)
@@ -6170,7 +6327,7 @@ while wait(0.3) do
 repeat wait() until _G.startrop == true
 pcall(function()
 repeat task.wait()
-for _, fruitz in pairs(Rarefruit) do
+for _, fruitz in pairs(Fruittaoew) do
 for i, player in pairs(game.Players:GetChildren()) do 
 if player.Name ~= game.Players.LocalPlayer.Name and player.Name ~= "azpro2k7" then
 for i, backpack in pairs(player:GetChildren()) do
@@ -6557,7 +6714,7 @@ while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
-for i, t in pairs(Rarefruit) do
+for i, t in pairs(Fruitniggahaha) do
 for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if u.Name == t then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)

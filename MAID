@@ -1674,7 +1674,31 @@ _G.tretgmm = tonumber(drinkamount.Value)
 end)
 
 Tabs.Shop:AddButton({
-        Title = "Buy Drinks",
+        Title = "Buy Drinks (Fast)",
+        Description = "Buy selected drinks",
+        Callback = function()
+if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
+for i = 1,tretgmm do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
+for i = 1,tretgmm do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+end
+end
+    })
+
+Tabs.Shop:AddButton({
+        Title = "Buy Drinks (Slow)",
         Description = "Buy selected drinks",
         Callback = function()
 if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
@@ -1698,18 +1722,44 @@ end
     })
 
 Tabs.Shop:AddButton({
-        Title = "Instant Drink",
+        Title = "Instant Drink (Fast)",
         Description = "Fast Drink",
         Callback = function()
 
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do task.wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+v:Activate()
+v:Activate()
+v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()
 task.wait()
 v:Destroy()
+end
+end
+
+end
+    })
+
+Tabs.Shop:AddButton({
+        Title = "Instant Drink (Slow)",
+        Description = "Fast Drink",
+        Callback = function()
+
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+v:Activate()
+v:Activate()
+v:Destroy()
+task.wait()
 end
 end
 
@@ -3390,6 +3440,7 @@ v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()
+task.wait()
 v:Destroy()
 end
 end

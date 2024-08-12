@@ -5910,7 +5910,13 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
 end
-task.wait(0.2)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
+    [2] = "VenomPower6Anim"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 local args = {

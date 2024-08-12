@@ -1739,7 +1739,6 @@ v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()
-task.wait()
 v:Destroy()
 end
 end
@@ -3440,7 +3439,6 @@ v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()
-task.wait()
 v:Destroy()
 end
 end

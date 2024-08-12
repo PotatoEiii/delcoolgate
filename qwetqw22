@@ -417,8 +417,8 @@ Content = "Only Quake-Robbing can use with Random Teleport"
 })
 
 fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
-        Title = "Fruit Targeting (Rare Robbing)",
-        Description = "Choose fruits that you want to rob.",
+        Title = "Fruit Targeting (Normal)",
+        Description = "Choose fruits for "Normal Fruits" Robbing.",
         Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
         Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},

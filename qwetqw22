@@ -415,6 +415,23 @@ Tabs.Robbing:AddParagraph({
 Title = "NOTE",
 Content = "Only Quake-Robbing can use with Random Teleport"
 })
+
+fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
+        Title = "Fruit Targeting (Rare Robbing)",
+        Description = "Choose fruits that you want to rob.",
+        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Multi = true,
+        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+})
+
+fruitzmpa:OnChanged(function(fruitvamzue)
+Fruittaoew = {"None"}
+task.wait()
+for fruitvamzue, State in next, fruitvamzue do
+table.insert(Fruittaoew, fruitvamzue)
+end
+end)
+
  robdrop = Tabs.Robbing:AddDropdown("robdrop", {
         Title = "Robbing Method",
         Values = {"Quake","Magma","Flare"},
@@ -6293,7 +6310,7 @@ while wait(0.3) do
 repeat wait() until _G.startrop == true
 pcall(function()
 repeat task.wait()
-for _, fruitz in pairs(Rarefruit) do
+for _, fruitz in pairs(Fruittaoew) do
 for i, player in pairs(game.Players:GetChildren()) do 
 if player.Name ~= game.Players.LocalPlayer.Name and player.Name ~= "azpro2k7" then
 for i, backpack in pairs(player:GetChildren()) do

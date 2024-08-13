@@ -421,7 +421,7 @@ fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
         Description = "Choose fruits for \"Normal Fruits\" Robbing.",
         Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
-        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Default = {},
 })
 
 fruitzmpa:OnChanged(function(fruitvamzue)
@@ -1647,7 +1647,7 @@ end)
 
 Tabs.Shop:AddSection("Drinks")
 
-drinkstype = Tabs.Shop:AddDropdown("banlongdiem", {
+drinkstype = Tabs.Shop:AddDropdown("drinkstype", {
         Title = "Select Drinks",
         Values = {"Smoothie","Cider","Juice","Lemonade","Smoothie+","Cider+","Juice+","Lemonade+"},
         Multi = false,
@@ -1655,8 +1655,8 @@ drinkstype = Tabs.Shop:AddDropdown("banlongdiem", {
     })
 
 
-    drinkstype:OnChanged(function(typepp)
-_G.drinktret = tostring(typepp)
+drinkstype:OnChanged(function(typepzp)
+_G.drinktret = tostring(typepzp)
 end)
 
 drinkamount = Tabs.Shop:AddInput("drinkamount", {
@@ -1670,15 +1670,15 @@ drinkamount = Tabs.Shop:AddInput("drinkamount", {
 })
 drinkamount:OnChanged(function()
 task.wait()
-tretgmm = tonumber(drinkamount.Value)
+_G.tretgmm = tonumber(drinkamount.Value)
 end)
 
 Tabs.Shop:AddButton({
-        Title = "Buy Drinks",
+        Title = "Buy Drinks (Fast)",
         Description = "Buy selected drinks",
         Callback = function()
 if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
-for i = 1,tretgmm do
+for i = 1, _G.tretgmm do
     local args = {
         [1] = _G.drinktret
     }
@@ -1686,7 +1686,7 @@ for i = 1,tretgmm do
 workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
 end
 elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
-for i = 1,tretgmm do
+for i = 1, _G.tretgmm do
     local args = {
         [1] = _G.drinktret
     }
@@ -1698,7 +1698,31 @@ end
     })
 
 Tabs.Shop:AddButton({
-        Title = "Instant Drink",
+        Title = "Buy Drinks (Slow)",
+        Description = "Buy selected drinks",
+        Callback = function()
+if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
+for i = 1, tonumber(_G.tretgmm) do task.wait()
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
+for i = 1,tonumber(_G.tretgmm) do task.wait()
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+end
+end
+    })
+
+Tabs.Shop:AddButton({
+        Title = "Instant Drink (Fast)",
         Description = "Fast Drink",
         Callback = function()
 
@@ -1709,6 +1733,33 @@ end
 end
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+v:Activate()
+v:Activate()
+v:Activate()
+v:Activate()
+v:Activate()
+v:Activate()
+v:Destroy()
+end
+end
+
+end
+    })
+
+Tabs.Shop:AddButton({
+        Title = "Instant Drink (Slow)",
+        Description = "Slow Drink",
+        Callback = function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do task.wait()
+if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+v:Activate()
+v:Activate()
+v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()
@@ -2253,7 +2304,7 @@ fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Description = "Choose fruits for \"Normal Fruits\" Storing.",
         Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
-        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Default = {},
 })
 
 fruitoppai:OnChanged(function(fqwmzzp)
@@ -3387,6 +3438,9 @@ end
 end
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+v:Activate()
+v:Activate()
+v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()

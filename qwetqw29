@@ -2310,7 +2310,7 @@ fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
 fruitoppai:OnChanged(function(fqwmzzp)
 _G.Fruitniggahaha = {"None"}
 task.wait()
-if fqwmzzp == "All" then
+if tostring(fqwmzzp) == "All" then
 _G.Fruitniggahaha = _G.Rarefruit
 else
 for fqwmzzp, State in next, fqwmzzp do

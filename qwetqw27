@@ -2302,7 +2302,7 @@ Tabs.Fruit:AddSection("Auto Store Fruits")
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
         Description = "Choose fruits for \"Normal Fruits\" Storing.",
-        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Values = {" ","All","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
         Default = {},
 })
@@ -2310,8 +2310,12 @@ fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
 fruitoppai:OnChanged(function(fqwmzzp)
 Fruitniggahaha = {"None"}
 task.wait()
+if fqwmzzp == "All" then
+Fruitniggahaha = Rarefruit
+else
 for fqwmzzp, State in next, fqwmzzp do
 table.insert(Fruitniggahaha, fqwmzzp)
+end
 end
 end)
 

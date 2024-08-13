@@ -1748,12 +1748,15 @@ end
 
 Tabs.Shop:AddButton({
         Title = "Instant Drink (Slow)",
-        Description = "Fast Drink",
+        Description = "Slow Drink",
         Callback = function()
 
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+v:Activate()
+v:Activate()
 v:Activate()
 v:Activate()
 v:Activate()

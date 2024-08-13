@@ -8,7 +8,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-_G.Rarefruit = {
+Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",
 "Flare Fruit",
@@ -2302,21 +2302,16 @@ Tabs.Fruit:AddSection("Auto Store Fruits")
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
         Description = "Choose fruits for \"Normal Fruits\" Storing.",
-        Values = {" ","All","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
         Default = {},
 })
 
 fruitoppai:OnChanged(function(fqwmzzp)
-_G.Fruitniggahaha = {"None"}
+Fruitniggahaha = {"None"}
 task.wait()
 for fqwmzzp, State in next, fqwmzzp do
-table.insert(_G.Fruitniggahaha, fqwmzzp)
-end
-for _, sthz in ipairs(fqwmzzp) do
-if sthz == "All" then
-_G.Fruitniggahaha = _G.Rarefruit
-end
+table.insert(Fruitniggahaha, fqwmzzp)
 end
 end)
 
@@ -6773,7 +6768,7 @@ while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
-for i, t in pairs(_G.Fruitniggahaha) do
+for i, t in pairs(Fruitniggahaha) do
 for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if u.Name == t then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
@@ -7169,7 +7164,7 @@ repeat wait()
 until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false)
 pcall(function()
 repeat wait(0.05)
-for _, cannonz in pairs(_G.Rarefruit) do
+for _, cannonz in pairs(Rarefruit) do
 if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end

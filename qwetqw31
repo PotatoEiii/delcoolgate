@@ -2309,14 +2309,14 @@ fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
 
 fruitoppai:OnChanged(function(fqwmzzp)
 _G.Fruitniggahaha = {"None"}
-print(type(fqwmzzp))
 task.wait()
-if tostring(fqwmzzp) == "All" then
+for i, v in ipairs(fqwmzzp) do
+if v == "All" then
 _G.Fruitniggahaha = _G.Rarefruit
-else
+end
+end
 for fqwmzzp, State in next, fqwmzzp do
 table.insert(_G.Fruitniggahaha, fqwmzzp)
-end
 end
 end)
 

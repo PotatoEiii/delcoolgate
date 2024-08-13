@@ -421,7 +421,7 @@ fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
         Description = "Choose fruits for \"Normal Fruits\" Robbing.",
         Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
-        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Default = {},
 })
 
 fruitzmpa:OnChanged(function(fruitvamzue)
@@ -2304,7 +2304,7 @@ fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Description = "Choose fruits for \"Normal Fruits\" Storing.",
         Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
-        Default = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Default = {},
 })
 
 fruitoppai:OnChanged(function(fqwmzzp)

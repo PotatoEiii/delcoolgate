@@ -2328,7 +2328,7 @@ _G.openrare = false
 end
 end)
 
-Tabs.Fruit:AddSection("					--Auto Store Fruits--")
+Tabs.Fruit:AddSection("					 --Auto Store Fruits--")
 
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
@@ -2365,8 +2365,7 @@ end
 end)
 
 
-
-Tabs.Fruit:AddSection("Auto Compass")
+Tabs.Fruit:AddSection("				-------Auto Compass-------")
 getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
 if Options.getcompasstoggle.Value == true then

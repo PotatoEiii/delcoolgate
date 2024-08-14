@@ -486,7 +486,7 @@ end)
 Tabs.Info:AddSection("		   			--Developer/Owner--")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",
-Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nI hope you'll have a nice experience by using this script!"
+Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nI hope you'll have a nice experience using this script!"
 })
 
 Tabs.Info:AddSection("		   			    --Information--")
@@ -2543,7 +2543,7 @@ end)
 
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("						   Auto Fishing   (*)")
+Tabs.Farm:AddSection("							--Auto Fishing--")
 
 autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
 autofish:OnChanged(function()
@@ -2564,7 +2564,7 @@ end
 end)
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("						Auto Package   (*)")
+Tabs.Farm:AddSection("							--Auto Package--")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},

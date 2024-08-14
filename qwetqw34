@@ -2469,7 +2469,7 @@ end
 end)
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("						--Auto Buso--")
+Tabs.Farm:AddSection("							--Auto Buso--")
 autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
 if Options.autobusohakitoggle.Value == true then

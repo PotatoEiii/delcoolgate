@@ -489,7 +489,7 @@ Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nWe hope you will have a nice experience by using this script!"
 })
 
-Tabs.Info:AddSection("		   			   Information")
+Tabs.Info:AddSection("		   			       Information")
 Tabs.Info:AddParagraph({
 Title = "User Information",
 Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)

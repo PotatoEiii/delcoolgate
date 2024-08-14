@@ -364,8 +364,8 @@ end)
  SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
  InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
  Window = Fluent:CreateWindow({
-    Title = "SALUNA VIP",
-    SubTitle = "	Made by Saluna",
+    Title = "SALUNA VIP ♥",
+    SubTitle = "		Made by Saluna",
     TabWidth = 100,
     Size = UDim2.fromOffset(475, 340),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely

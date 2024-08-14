@@ -3467,7 +3467,7 @@ mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
 })
 
 mobbakaak:OnChanged(function(mobfrepz)
-Mobsszz = {}
+Mobsszz = {"None"}
 task.wait()
 for mobfrepz, State in next, mobfrepz do
 table.insert(Mobsszz, mobfrepz)

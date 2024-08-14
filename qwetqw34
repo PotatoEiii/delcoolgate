@@ -2415,7 +2415,7 @@ end
 end)
 
 
-Tabs.Farm:AddSection("						Auto Cannon Farming")
+Tabs.Farm:AddSection("					Auto Cannon Farming")
 
 fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Default = false })
 fastcannon:OnChanged(function()
@@ -2469,7 +2469,7 @@ end
 end)
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("				Auto Buso (Normal) (*)")
+Tabs.Farm:AddSection("					Auto Buso (Normal) (*)")
 
 autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()

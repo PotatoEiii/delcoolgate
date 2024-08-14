@@ -3546,6 +3546,9 @@ _G.bringmzowpa = false
 end
 end)
 
+Tabs.Mobs:AddSection("                                      ---")
+Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
+Tabs.Mobs:AddSection("Coming Soon")
 
 Tabs.Haki:AddSection("Haki Stuff")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })

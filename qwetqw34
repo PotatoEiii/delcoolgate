@@ -2448,7 +2448,7 @@ end
         end
     })
 
-Tabs.Farm:AddSection("Turn Off Farm Mobs Before Turn Off Fast Cannon")
+Tabs.Farm:AddSection("Off Farm Before Off Fast-Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()

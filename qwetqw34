@@ -2448,7 +2448,7 @@ end
         end
     })
 
-Tabs.Farm:AddSection("	 Off Farm Before Off Fast-Cannon")
+Tabs.Farm:AddSection("	    Off Farm Before Off Fast-Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2607,7 +2607,7 @@ end)
 
 Tabs.Expertise:AddSection("                                      ---")
 Tabs.Expertise:AddSection("Auto Do Expertise")
-Tabs.Expertise:AddSection("					Coming Soon")
+Tabs.Expertise:AddSection("					    Coming Soon")
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -3553,7 +3553,7 @@ end)
 
 Tabs.Mobs:AddSection("                                      ---")
 Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
-Tabs.Mobs:AddSection("					Coming Soon")
+Tabs.Expertise:AddSection("					    Coming Soon")
 
 Tabs.Haki:AddSection("Haki Stuff")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })

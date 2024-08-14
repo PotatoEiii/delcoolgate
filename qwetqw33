@@ -3459,8 +3459,8 @@ end)
 Tabs.Mobs:AddSection("Mobs Bring")
 
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
-        Title = "Fruit Targeting (Normal)",
-        Description = "Choose fruits for \"Normal Fruits\" Robbing.",
+        Title = "Choose Mobs",
+        Description = "Choose Mobs To Bring.",
         Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},

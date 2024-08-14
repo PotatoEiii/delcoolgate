@@ -636,14 +636,29 @@ Tabs.Misc:AddSection("Hide/Show Image")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
         Title = "Choose Display Image",
-        Values = {"1","2","3","4","5","6","7","8","9","10"},
+        Values = {"Random","1","2","3","4","5","6","7","8","9","10"},
         Multi = false,
-        Default = "3",
+        Default = "Random",
     })
 
 
 asdzxima:OnChanged(function(heheimage)
-if heheimage == "1" then
+if heheimage == "Random" then
+local imageUrls = {
+"http://www.roblox.com/asset/?id=9434974330",
+"http://www.roblox.com/asset/?id=18809926638",
+"http://www.roblox.com/asset/?id=14208692008",
+"http://www.roblox.com/asset/?id=16607424856",
+"http://www.roblox.com/asset/?id=14838902926",
+"http://www.roblox.com/asset/?id=15992747200",
+"http://www.roblox.com/asset/?id=16039945586",
+"http://www.roblox.com/asset/?id=9124649710",
+"http://www.roblox.com/asset/?id=5594451067",
+"http://www.roblox.com/asset/?id=17836568522"
+}
+local randomIndex = math.random(1, #imageUrls)
+game.CoreGui.BBB.hideUI.Image = imageUrls[randomIndex]
+elseif heheimage == "1" then
 game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
 elseif heheimage == "2" then
 game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=18809926638"

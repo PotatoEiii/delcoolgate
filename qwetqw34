@@ -2543,7 +2543,7 @@ end)
 
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("						     --Auto Fishing--")
+Tabs.Farm:AddSection("						  --Auto Fishing--")
 
 autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
 autofish:OnChanged(function()
@@ -2564,7 +2564,7 @@ end
 end)
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("						     --Auto Package--")
+Tabs.Farm:AddSection("						 --Auto Package--")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},

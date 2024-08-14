@@ -2544,7 +2544,7 @@ end)
 
 
 Tabs.Farm:AddSection("                                      ---")
-Tabs.Farm:AddSection("						Auto Fishing   (*)")
+Tabs.Farm:AddSection("						 Auto Fishing   (*)")
 
 autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
 autofish:OnChanged(function()

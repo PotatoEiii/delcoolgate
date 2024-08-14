@@ -3472,7 +3472,7 @@ task.wait()
 for mobfrepz, State in next, mobfrepz do
 table.insert(Mobsszz, mobfrepz)
 end
-print(Mobsszz)
+print(table.concat(Mobsszz, ", "))
 end)
 
 Tabs.Haki:AddSection("Haki Stuff")

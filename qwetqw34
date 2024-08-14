@@ -2448,7 +2448,7 @@ end
         end
     })
 
-Tabs.Farm:AddSection("                                      ---")
+Tabs.Farm:AddSection("Turn Off Farm Mobs Before Turn Off Fast Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2468,6 +2468,7 @@ _G.autocannonplrbring = false
 end
 end)
 
+Tabs.Farm:AddSection("                                      ---")
 Tabs.Farm:AddSection("Auto Buso (Normal) (*)")
 
 autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
@@ -2542,7 +2543,7 @@ end)
 
 
 
-
+Tabs.Farm:AddSection("                                      ---")
 Tabs.Farm:AddSection("Auto Fishing   (*)")
 
 autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
@@ -2563,7 +2564,7 @@ getgenv().grillsell = false
 end
 end)
 
-
+Tabs.Farm:AddSection("                                      ---")
 Tabs.Farm:AddSection("Auto Package   (*)")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",

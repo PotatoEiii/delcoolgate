@@ -636,7 +636,7 @@ Tabs.Misc:AddSection("Hide/Show Image")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
         Title = "Choose Display Image",
-        Values = {"Random","1","2","3","4","5","6","7","8","9","10"},
+        Values = {" ","Random","1","2","3","4","5","6","7","8","9","10"},
         Multi = false,
         Default = "Random",
     })

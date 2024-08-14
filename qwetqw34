@@ -2865,7 +2865,7 @@ _G.resetzxcm = false
 end
 end)
 
-Tabs.Teleport:AddSection("Useful Teleport")
+Tabs.Teleport:AddSection("						--Useful Teleport--")
 randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
 randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
@@ -2893,7 +2893,7 @@ getgenv().chawq = false
 end
 end)
 
-Tabs.Teleport:AddSection("Teleport")
+Tabs.Teleport:AddSection("							 --Teleport--")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
@@ -3178,7 +3178,7 @@ Fluent:Notify({
 end
 end)
 
-Tabs.Teleport:AddSection("Special Teleport")
+Tabs.Teleport:AddSection("						--Special Teleport--")
 
 Tabs.Teleport:AddButton({
         Title = "Teleport To Safe Zone",
@@ -3431,7 +3431,7 @@ _G.cestusonrt = false
 end
 end)
 
-Tabs.Main:AddSection("Stats Farming")
+Tabs.Main:AddSection("						--Stats Farming--")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
@@ -3450,7 +3450,7 @@ getgenv().farmslowstats = false
 end
 end)
 
-Tabs.Main:AddSection("                                      ---")
+Tabs.Main:AddSection("                                --Drink--")
 
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()

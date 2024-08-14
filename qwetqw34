@@ -3553,7 +3553,7 @@ end)
 
 Tabs.Mobs:AddSection("                                      ---")
 Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
-Tabs.Expertise:AddSection("					    Coming Soon")
+Tabs.Mobs:AddSection("					    Coming Soon")
 
 Tabs.Haki:AddSection("Haki Stuff")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })

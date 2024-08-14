@@ -2288,7 +2288,7 @@ end
 
 
 
-Tabs.Fruit:AddSection("Fruit Stuff")
+Tabs.Fruit:AddSection("					Fruit Stuff")
 Tabs.Fruit:AddSection("Auto Open Fruit Boxes")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()

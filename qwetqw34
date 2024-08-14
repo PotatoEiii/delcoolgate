@@ -2288,8 +2288,8 @@ end
 
 
 
-Tabs.Fruit:AddSection("					Fruit Stuff")
-Tabs.Fruit:AddSection("Auto Open Fruit Boxes")
+Tabs.Fruit:AddSection("					-------Fruit Stuff-------")
+Tabs.Fruit:AddSection("				--Auto Open Fruit Boxes--")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
@@ -2328,7 +2328,7 @@ _G.openrare = false
 end
 end)
 
-Tabs.Fruit:AddSection("Auto Store Fruits")
+Tabs.Fruit:AddSection("					--Auto Store Fruits--")
 
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
@@ -2468,7 +2468,6 @@ _G.autocannonplrbring = false
 end
 end)
 
-Tabs.Farm:AddSection("                                      ---")
 Tabs.Farm:AddSection("							--Auto Buso--")
 autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
@@ -2542,7 +2541,6 @@ end)
 
 
 
-Tabs.Farm:AddSection("                                      ---")
 Tabs.Farm:AddSection("						  --Auto Fishing--")
 
 autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
@@ -2563,7 +2561,6 @@ getgenv().grillsell = false
 end
 end)
 
-Tabs.Farm:AddSection("                                      ---")
 Tabs.Farm:AddSection("						 --Auto Package--")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",

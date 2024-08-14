@@ -840,7 +840,7 @@ game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircfr
 end
     })
 
-Tabs.Player:AddSection("About Player")
+Tabs.Player:AddSection("						--About Player--")
     plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
         Default = "",
@@ -896,7 +896,7 @@ end)
 end
 
 end)
-Tabs.Player:AddSection("Players' Stuff")
+Tabs.Player:AddSection("						--Players' Stuff--")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
@@ -1039,7 +1039,7 @@ end)
 
 
 
-Tabs.Player:AddSection("Bring Player")
+Tabs.Player:AddSection("						 --Bring Player--")
 
 bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
@@ -1114,7 +1114,7 @@ end)
 
 
 
-Tabs.Player:AddSection("Non-Teleport Camp")
+Tabs.Player:AddSection("					    --Special Camp--")
 quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -1146,7 +1146,7 @@ end)
 
 
 
-Tabs.Player:AddSection("Teleport Camp")
+Tabs.Player:AddSection("					   --Teleport Camp--")
 cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -5236,7 +5236,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = fa
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
-    Duration = 20
+    Duration = 999
 })
 
 SaveManager:LoadAutoloadConfig()

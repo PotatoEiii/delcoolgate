@@ -3456,7 +3456,24 @@ end)
 end
 end)
 
+Tabs.Mobs:AddSection("Mobs Bring")
 
+mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
+        Title = "Fruit Targeting (Normal)",
+        Description = "Choose fruits for \"Normal Fruits\" Robbing.",
+        Values = {" ","Crab","Boar","Bandit"."Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Multi = true,
+        Default = {},
+})
+
+mobbakaak:OnChanged(function(mobfrepz)
+Mobsszz = {}
+task.wait()
+for mobfrepz, State in next, mobfrepz do
+table.insert(Mobsszz, mobfrepz)
+end
+print(Mobsszz)
+end)
 
 Tabs.Haki:AddSection("Haki Stuff")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })

@@ -3505,7 +3505,7 @@ table.insert(Mobsszz, mobfrepz)
 end
 end)
 
-disbringmz = Tabs.Player:AddSlider("disbriasdngmz", {
+disbringmz = Tabs.Mobs:AddSlider("disbriasdngmz", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",
     Default = 10,
@@ -3517,7 +3517,7 @@ disbringmz = Tabs.Player:AddSlider("disbriasdngmz", {
         end
     })
 
-bringmzos = Tabs.Mobs:AddToggle("bringmzostoggle", {Title = "Auto get haki (1k lvl)", Default = false })
+bringmzos = Tabs.Mobs:AddToggle("bringmzostoggle", {Title = "Auto Bring Mobs", Default = false })
 bringmzos:OnChanged(function()
 if Options.bringmzostoggle.Value == true then
 _G.bringmzowpa = true

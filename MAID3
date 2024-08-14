@@ -189,7 +189,7 @@ local args = {
 workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
 end
 
-task.wait(4)
+task.wait(0)
 if game.placeId == 3237168 or game.placeId == 8569358381 then
 
 Pedo = {
@@ -364,8 +364,8 @@ end)
  SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
  InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
  Window = Fluent:CreateWindow({
-    Title = "SALUNA VIP",
-    SubTitle = "Made by Saluna",
+    Title = "SALUNA VIP ♥",
+    SubTitle = "		Made by Saluna",
     TabWidth = 100,
     Size = UDim2.fromOffset(475, 340),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -410,7 +410,7 @@ https://discord.gg/ecpbhm8G3w
 ]]
 })
 
-Tabs.Robbing:AddSection("Fruit Robbing")
+Tabs.Robbing:AddSection("						--Fruit Robbing--")
 Tabs.Robbing:AddParagraph({
 Title = "NOTE",
 Content = "Only Quake-Robbing can use with Random Teleport"
@@ -483,13 +483,13 @@ end)
 end
 end)
 
-Tabs.Info:AddSection("Developer/Owner")
+Tabs.Info:AddSection("		   			--Developer/Owner--")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",
-Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nWe hope you will have a nice experience by using this script!"
+Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nI hope you'll have a nice experience using this script!"
 })
 
-Tabs.Info:AddSection("Information")
+Tabs.Info:AddSection("		   			    --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
 Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
@@ -636,33 +636,64 @@ Tabs.Misc:AddSection("Hide/Show Image")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
         Title = "Choose Display Image",
-        Values = {"1","2","3","4","5","6","7","8","9","10"},
+        Values = {" ","Random","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"},
         Multi = false,
-        Default = "3",
+        Default = "Random",
     })
 
+_G.imageUrls = {
+"http://www.roblox.com/asset/?id=9434974330", --1
+"http://www.roblox.com/asset/?id=18809926638", --2
+"http://www.roblox.com/asset/?id=14208692008", --3
+"http://www.roblox.com/asset/?id=16607424856", --4
+"http://www.roblox.com/asset/?id=13703042399", --5
+"http://www.roblox.com/asset/?id=15992747200", --6
+"http://www.roblox.com/asset/?id=16039945586", --7 
+"http://www.roblox.com/asset/?id=9124649710", --8
+"http://www.roblox.com/asset/?id=5594451067", --9
+"http://www.roblox.com/asset/?id=17836568522", --10
+"http://www.roblox.com/asset/?id=7028310152", --11
+"http://www.roblox.com/asset/?id=7505699541", --12
+"http://www.roblox.com/asset/?id=18470271790", --13
+"http://www.roblox.com/asset/?id=6404803553", --14
+"http://www.roblox.com/asset/?id=6717696974", --15
+"http://www.roblox.com/asset/?id=18470282120", --16
+"http://www.roblox.com/asset/?id=18463157903", --17
+"http://www.roblox.com/asset/?id=8032194497", --18
+"http://www.roblox.com/asset/?id=15332983254", --19
+"http://www.roblox.com/asset/?id=11041446512", --20
+"http://www.roblox.com/asset/?id=600803939", --21
+"http://www.roblox.com/asset/?id=903318290", --22
+"http://www.roblox.com/asset/?id=10842366977", --23
+"http://www.roblox.com/asset/?id=13448937007", --24
+"http://www.roblox.com/asset/?id=12810822812", --25
+"http://www.roblox.com/asset/?id=16105197154", --26
+"http://www.roblox.com/asset/?id=16053681504", --27
+"http://www.roblox.com/asset/?id=15890986090", --28
+"http://www.roblox.com/asset/?id=16173517892", --29
+"http://www.roblox.com/asset/?id=7617067045", --30
+"http://www.roblox.com/asset/?id=6859342076", --31
+"http://www.roblox.com/asset/?id=14613789931", --32
+"http://www.roblox.com/asset/?id=15399456436", --33
+"http://www.roblox.com/asset/?id=12744741181", --34
+"http://www.roblox.com/asset/?id=15392784585", --35
+"http://www.roblox.com/asset/?id=13836053875", --36
+"http://www.roblox.com/asset/?id=7853514116", --37
+"http://www.roblox.com/asset/?id=6942501524", --38
+"http://www.roblox.com/asset/?id=6522457335", --39
+"http://www.roblox.com/asset/?id=15288241266", --40
+"http://www.roblox.com/asset/?id=18602648450", --41
+"http://www.roblox.com/asset/?id=13999153827", --42
+"http://www.roblox.com/asset/?id=12550364500", --43
+"http://www.roblox.com/asset/?id=15755889896" --44
+}
 
 asdzxima:OnChanged(function(heheimage)
-if heheimage == "1" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9434974330"
-elseif heheimage == "2" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=18809926638"
-elseif heheimage == "3" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
-elseif heheimage == "4" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=16607424856"
-elseif heheimage == "5" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=14838902926"
-elseif heheimage == "6" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=15992747200"
-elseif heheimage == "7" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=16039945586"
-elseif heheimage == "8" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=9124649710"
-elseif heheimage == "9" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=5594451067"
-elseif heheimage == "10" then
-game.CoreGui.BBB.hideUI.Image = "http://www.roblox.com/asset/?id=17836568522"
+if heheimage == "Random" then
+local randomIndex = math.random(1, #_G.imageUrls)
+game.CoreGui.BBB.hideUI.Image = _G.imageUrls[randomIndex]
+else
+game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
 end
 end)
 
@@ -809,7 +840,7 @@ game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircfr
 end
     })
 
-Tabs.Player:AddSection("About Player")
+Tabs.Player:AddSection("						--About Player--")
     plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
         Default = "",
@@ -865,7 +896,7 @@ end)
 end
 
 end)
-Tabs.Player:AddSection("Players' Stuff")
+Tabs.Player:AddSection("						--Players' Stuff--")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
@@ -1008,7 +1039,7 @@ end)
 
 
 
-Tabs.Player:AddSection("Bring Player")
+Tabs.Player:AddSection("						 --Bring Player--")
 
 bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
@@ -1083,7 +1114,7 @@ end)
 
 
 
-Tabs.Player:AddSection("Non-Teleport Camp")
+Tabs.Player:AddSection("					    --Special Camp--")
 quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -1115,7 +1146,7 @@ end)
 
 
 
-Tabs.Player:AddSection("Teleport Camp")
+Tabs.Player:AddSection("					   --Teleport Camp--")
 cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -2257,8 +2288,8 @@ end
 
 
 
-Tabs.Fruit:AddSection("Fruit Stuff")
-Tabs.Fruit:AddSection("Auto Open Fruit Boxes")
+Tabs.Fruit:AddSection("					-------Fruit Stuff-------")
+Tabs.Fruit:AddSection("				--Auto Open Fruit Boxes--")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
@@ -2297,7 +2328,7 @@ _G.openrare = false
 end
 end)
 
-Tabs.Fruit:AddSection("Auto Store Fruits")
+Tabs.Fruit:AddSection("					 --Auto Store Fruits--")
 
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
@@ -2334,8 +2365,7 @@ end
 end)
 
 
-
-Tabs.Fruit:AddSection("Auto Compass")
+Tabs.Fruit:AddSection("				-------Auto Compass-------")
 getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
 if Options.getcompasstoggle.Value == true then
@@ -2384,7 +2414,7 @@ end
 end)
 
 
-Tabs.Farm:AddSection("Auto Cannon Farming")
+Tabs.Farm:AddSection("				--Auto Cannon Farming--")
 
 fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Default = false })
 fastcannon:OnChanged(function()
@@ -2417,7 +2447,7 @@ end
         end
     })
 
-Tabs.Farm:AddSection("                                      ---")
+Tabs.Farm:AddSection("	    Off Farm Before Off Fast-Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2437,8 +2467,7 @@ _G.autocannonplrbring = false
 end
 end)
 
-Tabs.Farm:AddSection("Auto Buso (Normal) (*)")
-
+Tabs.Farm:AddSection("							--Auto Buso--")
 autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
 if Options.autobusohakitoggle.Value == true then
@@ -2462,7 +2491,7 @@ _G.autohakibuso = false
 end
 end)
 
-Tabs.Farm:AddSection("Auto Buso (Fast Regen)   (*)")
+Tabs.Farm:AddSection("				--Auto Buso (Fast Regen)--")
 regentargetslider = Tabs.Farm:AddSlider("Autobusosli", {
     Title = "Regen Target (%)",
     Description = "Change this for adjusting regen target",
@@ -2511,8 +2540,7 @@ end)
 
 
 
-
-Tabs.Farm:AddSection("Auto Fishing   (*)")
+Tabs.Farm:AddSection("						  --Auto Fishing--")
 
 autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default = false })
 autofish:OnChanged(function()
@@ -2532,8 +2560,7 @@ getgenv().grillsell = false
 end
 end)
 
-
-Tabs.Farm:AddSection("Auto Package   (*)")
+Tabs.Farm:AddSection("						 --Auto Package--")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},
@@ -2572,6 +2599,10 @@ else
 _G.autogetexp = false
 end
 end)
+
+Tabs.Expertise:AddSection("                                      ---")
+Tabs.Expertise:AddSection("Auto Do Expertise")
+Tabs.Expertise:AddSection("					    Coming Soon")
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -2834,7 +2865,7 @@ _G.resetzxcm = false
 end
 end)
 
-Tabs.Teleport:AddSection("Useful Teleport")
+Tabs.Teleport:AddSection("						--Useful Teleport--")
 randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
 randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
@@ -2862,7 +2893,7 @@ getgenv().chawq = false
 end
 end)
 
-Tabs.Teleport:AddSection("Teleport")
+Tabs.Teleport:AddSection("							 --Teleport--")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
@@ -3147,7 +3178,7 @@ Fluent:Notify({
 end
 end)
 
-Tabs.Teleport:AddSection("Special Teleport")
+Tabs.Teleport:AddSection("						--Special Teleport--")
 
 Tabs.Teleport:AddButton({
         Title = "Teleport To Safe Zone",
@@ -3400,7 +3431,7 @@ _G.cestusonrt = false
 end
 end)
 
-Tabs.Main:AddSection("Stats Farming")
+Tabs.Main:AddSection("						--Stats Farming--")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
@@ -3419,7 +3450,7 @@ getgenv().farmslowstats = false
 end
 end)
 
-Tabs.Main:AddSection("                                      ---")
+Tabs.Main:AddSection("                                --Drink--")
 
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
@@ -3456,9 +3487,71 @@ end)
 end
 end)
 
+Tabs.Mobs:AddSection("Mobs Bring")
+
+mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
+        Title = "Choose Mobs",
+        Description = "Choose Mobs To Bring.",
+        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Multi = true,
+        Default = {},
+})
+
+mobbakaak:OnChanged(function(mobfrepz)
+Mobsszz = {"None"}
+task.wait()
+for mobfrepz, State in next, mobfrepz do
+table.insert(Mobsszz, mobfrepz)
+end
+end)
+
+disbringmz = Tabs.Mobs:AddSlider("disbriasdngmz", {
+    Title = "Bring Distance",
+    Description = "Adjust bring distance",
+    Default = 10,
+    Min = -20,
+    Max = 20,
+    Rounding = 0,
+    Callback = function(asdqwezxsd)
+            mobbringdis = tonumber(asdqwezxsd)*(-1)
+        end
+    })
+
+bringmzos = Tabs.Mobs:AddToggle("bringmzostoggle", {Title = "Auto Bring Mobs", Default = false })
+bringmzos:OnChanged(function()
+if Options.bringmzostoggle.Value == true then
+_G.bringmzowpa = true
+while _G.bringmzowpa do wait()
+pcall(function()
+for _, mobs in pairs(Mobsszz) do
+for _, bringz in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(bringz.Name, mobs) and bringz:FindFirstChild("HumanoidRootPart") then
+bringz.HumanoidRootPart.CanCollide = false
+bringz.HumanoidRootPart.Size = Vector3.new(5, 5, 5)
+bringz:FindFirstChild("HumanoidRootPart").Anchored = true
+bringz:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,mobbringdis)
+bringz.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+bringz.HumanoidRootPart.Transparency = 0.9
+if bringz.Humanoid.Health == 0 then
+bringz.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+bringz:Destroy()
+end
+end
+end
+end
+end)
+end
+else
+_G.bringmzowpa = false
+end
+end)
+
+Tabs.Mobs:AddSection("                                      ---")
+Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
+Tabs.Mobs:AddSection("					    Coming Soon")
 
 
-Tabs.Haki:AddSection("Haki Stuff")
+Tabs.Haki:AddSection("						  ---Haki Stuff---")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
 if Options.hakiget.Value == true then
@@ -3473,8 +3566,6 @@ else
 _G.gethakiqwe = false
 end
 end)
-
-Tabs.Haki:AddSection("                                      ---")
 
 hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
 hakirjoin:OnChanged(function()
@@ -3537,7 +3628,6 @@ _G.rejoinifhaki0 = false
 end
 end)
 
-Tabs.Haki:AddSection("                                      ---")
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",
@@ -5144,7 +5234,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = fa
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
-    Duration = 20
+    Duration = 999
 })
 
 SaveManager:LoadAutoloadConfig()
@@ -7270,7 +7360,7 @@ spawn(function() -- autofarm cannon
             if _G.autocannonslow then
 repeat wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, " Boar")
+                    if string.find(v.Name, "Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)

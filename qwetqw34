@@ -410,7 +410,7 @@ https://discord.gg/ecpbhm8G3w
 ]]
 })
 
-Tabs.Robbing:AddSection("Fruit Robbing")
+Tabs.Robbing:AddSection("						--Fruit Robbing--")
 Tabs.Robbing:AddParagraph({
 Title = "NOTE",
 Content = "Only Quake-Robbing can use with Random Teleport"

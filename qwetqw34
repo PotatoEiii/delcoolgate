@@ -3550,7 +3550,8 @@ Tabs.Mobs:AddSection("                                      ---")
 Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
 Tabs.Mobs:AddSection("					    Coming Soon")
 
-Tabs.Haki:AddSection("Haki Stuff")
+
+Tabs.Haki:AddSection("						  ---Haki Stuff---")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
 if Options.hakiget.Value == true then
@@ -3565,8 +3566,6 @@ else
 _G.gethakiqwe = false
 end
 end)
-
-Tabs.Haki:AddSection("                                      ---")
 
 hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
 hakirjoin:OnChanged(function()
@@ -3629,7 +3628,6 @@ _G.rejoinifhaki0 = false
 end
 end)
 
-Tabs.Haki:AddSection("                                      ---")
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",

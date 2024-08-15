@@ -501,6 +501,19 @@ Title = "Server Information",
 Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
+Tabs.Info:AddSection("						  	 --Discord--")
+Tabs.Info:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
+
+Tabs.Info:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
 
 Tabs.Gems:AddSection("						   --Dupe Gems--")
 Tabs.Gems:AddParagraph({
@@ -4176,7 +4189,6 @@ else
 _G.farmadvanced = false
 end
 end)
-Tabs.Server:AddSection("Join Server With JobID")
 
 Tabs.Haki:AddSection("			   	  --Haki Farm 1-Click--")
 
@@ -4325,6 +4337,7 @@ end
 end
     })
 
+Tabs.Server:AddSection("				--Join Server With JobID--")
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",
 	Default = "",
@@ -4348,7 +4361,7 @@ game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, targetj
         end
     })
 
-Tabs.Server:AddSection("Rejoin/Hop")
+Tabs.Server:AddSection("						   --Rejoin/Hop--")
     Tabs.Server:AddButton({
         Title = "Rejoin Server",
         Description = "Rejoin the current server",
@@ -4586,20 +4599,6 @@ end
 })
 end
 })
-
-Tabs.Server:AddSection("Discord")
-Tabs.Server:AddParagraph({
-Title = "Discord Information",
-Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
-})
-
-Tabs.Server:AddButton({
-        Title = "Discord Saluna Hub",
-        Description = "Copy Discord Invite Link",
-        Callback = function()
-toClipboard("https://discord.gg/ecpbhm8G3w")    
-end
-    })
 
 Tabs.Affinity:AddSection("					  --Auto Roll Affinity--")
 Tabs.Affinity:AddSection("				--> (Old Saluna Method) <--")

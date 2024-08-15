@@ -1013,8 +1013,7 @@ end
 end
 end
 
-
-
+Tabs.PVP:AddSection("							Hitbox Players")
 sizehahaqw = Tabs.PVP:AddSlider("sizehahaqwqweqwzz", {
     Title = "HitBox Players",
     Description = "Adjust players' hitbox",
@@ -5135,7 +5134,7 @@ _G.rolznewaff2 = false
 end
 end)
 
-Tabs.Skill:AddSection("Auto Spam Fruit")
+Tabs.Skill:AddSection("					  --Auto Spam Fruit--")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
         Values = {" ","Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},

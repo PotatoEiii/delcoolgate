@@ -5215,7 +5215,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = fa
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
-    Duration = 999
+    Duration = 120
 })
 
 SaveManager:LoadAutoloadConfig()

@@ -2447,7 +2447,7 @@ end
         end
     })
 
-Tabs.Farm:AddSection("	    Off Farm Before Off Fast-Cannon")
+Tabs.Farm:AddSection("	     Off Farm Before Off Fast-Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -4149,7 +4149,7 @@ end
 end
     })
 
-Tabs.Haki:AddSection("Auto Haki Farming")
+Tabs.Haki:AddSection("					--Auto Haki Farming--")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
@@ -4185,7 +4185,7 @@ end)
 
 
 
-Tabs.Haki:AddSection("Advanced Haki Farming")
+Tabs.Haki:AddSection("			  --Advanced Haki Farming--")
 hakiadvancespeed = Tabs.Haki:AddSlider("advanceslihaki", {
     Title = "Advanced Haki Speed",
     Description = "Change Advanced Haki Speed",
@@ -4208,7 +4208,7 @@ end
 end)
 Tabs.Server:AddSection("Join Server With JobID")
 
-Tabs.Haki:AddSection("                                      ---")
+Tabs.Haki:AddSection("			   	 --Haki Farm 1-Click--")
 
  hakitypef = Tabs.Haki:AddDropdown("hakitypef", {
         Title = "1-Click Method",
@@ -4320,7 +4320,7 @@ end
         end
     })
 
-Tabs.Haki:AddSection("The Others")
+Tabs.Haki:AddSection("				   --Other Haki Method--")
 
     Tabs.Haki:AddButton({
         Title = "Haki 1",

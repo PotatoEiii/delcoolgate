@@ -400,7 +400,7 @@ Options = Fluent.Options
 
 game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 
-Tabs.Webhook:AddSection("Webhook")
+Tabs.Webhook:AddSection("						-----Webhook-----")
 
 Tabs.Webhook:AddParagraph({
 Title = "Fruit + Login Webhook",

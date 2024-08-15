@@ -2579,7 +2579,7 @@ getgenv().tret = false
 end
 end)
 
-Tabs.Expertise:AddSection("Auto Expertise")
+Tabs.Expertise:AddSection("						-----Expertise-----")
 AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
     AutogetexpToggle:OnChanged(function()
 if Options.Autogetexp1Toggle.Value == true then
@@ -2600,9 +2600,8 @@ _G.autogetexp = false
 end
 end)
 
-Tabs.Expertise:AddSection("                                      ---")
-Tabs.Expertise:AddSection("Auto Do Expertise")
-Tabs.Expertise:AddSection("					    Coming Soon")
+Tabs.Expertise:AddSection("					--Auto Do Expertise--")
+Tabs.Expertise:AddSection("					    	Coming Soon")
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -3521,7 +3520,7 @@ end)
 
 Tabs.Mobs:AddSection("                                      ---")
 Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
-Tabs.Mobs:AddSection("					    Coming Soon")
+Tabs.Mobs:AddSection("					    	Coming Soon")
 
 
 Tabs.Haki:AddSection("						  ---Haki Stuff---")
@@ -4989,6 +4988,12 @@ end)
 Tabs.Affinity:AddSection(" ")
 Tabs.Affinity:AddSection("					  --Auto Roll Affinity--")
 Tabs.Affinity:AddSection("				--> (New Saluna Method) <--")
+Tabs.Affinity:AddParagraph({
+Title = "New Affinity Note: ",
+Content = [[Untargeted Affinity Will Not Be Locked !!! 
+Automatically Lock The Chosen Affinities If Reached The "Targeted or Higher" Point. 
+]]
+})
 Tabs.Affinity:AddSection("							 1st Devil Fruit")
 razerr = Tabs.Affinity:AddDropdown("razerr", {
         Title = "1st Devil Fruit Point",

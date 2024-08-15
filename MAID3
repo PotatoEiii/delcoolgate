@@ -361,7 +361,7 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
 end)
 
  Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
- SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+ SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Configuration.lua"))()
  InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
  Window = Fluent:CreateWindow({
     Title = "SALUNA VIP ♥",
@@ -400,7 +400,7 @@ Options = Fluent.Options
 
 game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 
-Tabs.Webhook:AddSection("Webhook")
+Tabs.Webhook:AddSection("						-----Webhook-----")
 
 Tabs.Webhook:AddParagraph({
 Title = "Fruit + Login Webhook",
@@ -489,7 +489,7 @@ Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nI hope you'll have a nice experience using this script!"
 })
 
-Tabs.Info:AddSection("		   			    --Information--")
+Tabs.Info:AddSection("		   			     --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
 Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
@@ -501,8 +501,21 @@ Title = "Server Information",
 Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
+Tabs.Info:AddSection("						  	 --Discord--")
+Tabs.Info:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
 
-Tabs.Gems:AddSection("Dupe Gems (Risky)")
+Tabs.Info:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
+
+Tabs.Gems:AddSection("						   --Dupe Gems--")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Dupe Gems: ",
 Content = [[Operation:
@@ -522,7 +535,7 @@ end
 
 
 
-Tabs.Gems:AddSection("Exchange Gems To Beries (Risky)")
+Tabs.Gems:AddSection("			--Exchange Gems To Beries--")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"
@@ -632,7 +645,7 @@ UIS.InputChanged:Connect(function(input)
  end
 end)
 
-Tabs.Misc:AddSection("Hide/Show Image")
+Tabs.Misc:AddSection("				-----Hide/Show Image-----")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
         Title = "Choose Display Image",
@@ -697,7 +710,7 @@ game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
 end
 end)
 
-Tabs.Misc:AddSection("Other Scripts")
+Tabs.Misc:AddSection("							 --FE Scripts--")
 
     Tabs.Misc:AddButton({
         Title = "Infinite Yield",
@@ -715,7 +728,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
         end
     })
 
-Tabs.Misc:AddSection("                                      ---")
+Tabs.Misc:AddSection("						    --Old Scripts--")
     Tabs.Misc:AddButton({
         Title = "Saluna Old",
         Description = "Open Saluna Old Script",
@@ -732,7 +745,7 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdae
 end
     })
 
-Tabs.Misc:AddSection("Boost")
+Tabs.Misc:AddSection("						    -----Boost-----")
     Tabs.Misc:AddButton({
         Title = "Low-Graphic Mode",
         Description = "Use to reduce lag",
@@ -803,7 +816,7 @@ game:GetService("RunService"):Set3dRenderingEnabled(true)
 end
 end)
 
-Tabs.Misc:AddSection("Makes Server Lagging")
+Tabs.Misc:AddSection("					 --Makes Server Lag--")
 miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
 miscquake:OnChanged(function()
 if Options.miscquaketoggle.Value == true then
@@ -831,16 +844,7 @@ _G.quakelagmisc = false
 end
 end)
 
-Tabs.Misc:AddSection("Misc")
-Tabs.Misc:AddButton({
-        Title = "Fix Chair's CFrame",
-        Description = "Reset Chair's CFrame",
-        Callback = function()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
-end
-    })
-
-Tabs.Player:AddSection("						--About Player--")
+Tabs.Player:AddSection("						  --About Player--")
     plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
         Default = "",
@@ -896,7 +900,7 @@ end)
 end
 
 end)
-Tabs.Player:AddSection("						--Players' Stuff--")
+Tabs.Player:AddSection("						 --Players' Stuff--")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
@@ -928,7 +932,7 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
-Tabs.PVP:AddSection("Anti-Stuff")
+Tabs.PVP:AddSection("								  Anti-Stun")
 antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti DF_Disabled", Default = false })
 antistunz:OnChanged(function()
 if Options.antistunztoggle.Value == true then
@@ -948,7 +952,7 @@ end
 end
 end)
 
-Tabs.PVP:AddSection("Skills")
+Tabs.PVP:AddSection("									 Skills")
 azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
 azxcwwwcarge:OnChanged(function()
 if Options.azxcwwwcargetoggle.Value == true then
@@ -958,7 +962,8 @@ _G.auto100rate = false
 end
 end)
 
-Tabs.PVP:AddSection("Players' Sight")
+Tabs.PVP:AddSection("					--ESP/HitBox Players--")
+Tabs.PVP:AddSection("							   ESP Players")
 plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()
 if Options.plresptoggle.Value == true then
@@ -985,14 +990,14 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                 local bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
                                 bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                                bill.Size = UDim2.new(1,200,1,30)
+                                bill.Size = UDim2.new(1,200,1,50)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
                                 name.FontFace = Font.fromName("Merriweather")
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true
-                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m')
+                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
                                 name.Size = UDim2.new(1,0,1,0)
                                 name.TextYAlignment = 'Top'
                                 name.BackgroundTransparency = 1
@@ -1003,7 +1008,7 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                     name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 end
                             else
-                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m')
+                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
                             end
                         end
                     end
@@ -1012,8 +1017,7 @@ end
 end
 end
 
-
-
+Tabs.PVP:AddSection("							Hitbox Players")
 sizehahaqw = Tabs.PVP:AddSlider("sizehahaqwqweqwzz", {
     Title = "HitBox Players",
     Description = "Adjust players' hitbox",
@@ -1039,7 +1043,7 @@ end)
 
 
 
-Tabs.Player:AddSection("						 --Bring Player--")
+Tabs.Player:AddSection("						  --Bring Player--")
 
 bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
@@ -1114,7 +1118,7 @@ end)
 
 
 
-Tabs.Player:AddSection("					    --Special Camp--")
+Tabs.Player:AddSection("					     --Special Camp--")
 quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -1146,7 +1150,7 @@ end)
 
 
 
-Tabs.Player:AddSection("					   --Teleport Camp--")
+Tabs.Player:AddSection("					    --Teleport Camp--")
 cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -1196,7 +1200,7 @@ end
 end)
 
 
-Tabs.Player:AddSection("                                      ---")
+Tabs.Player:AddSection("                              Fruit Camp")
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()
@@ -1676,7 +1680,7 @@ end)
 
 
 
-Tabs.Shop:AddSection("Drinks")
+Tabs.Shop:AddSection("						  -----Drinks-----")
 
 drinkstype = Tabs.Shop:AddDropdown("drinkstype", {
         Title = "Select Drinks",
@@ -1806,8 +1810,9 @@ end
 
 
 
-Tabs.Shop:AddSection("Melee Weapon")
-    Tabs.Shop:AddButton({
+Tabs.Shop:AddSection("						  -----Weapon-----")
+Tabs.Shop:AddSection("						  	   --Melee--")
+Tabs.Shop:AddButton({
         Title = "Seastone Cestus (Fake Equipment)",
         Description = "Requires 500 Melee",
         Callback = function()
@@ -1874,7 +1879,7 @@ end
     })
 
 
-Tabs.Shop:AddSection("Sword")
+Tabs.Shop:AddSection("						  	  --Sword--")
     Tabs.Shop:AddButton({
         Title = "Dagger",
         Description = "Requires 1,000 Beries",
@@ -2093,7 +2098,7 @@ end
         end
     })
 
-Tabs.Shop:AddSection("Gun")
+Tabs.Shop:AddSection("						  	  --Sniper--")
 
     Tabs.Shop:AddButton({
         Title = "Slingshot",
@@ -2288,7 +2293,7 @@ end
 
 
 
-Tabs.Fruit:AddSection("					-------Fruit Stuff-------")
+Tabs.Fruit:AddSection("				   -------Fruit Stuff-------")
 Tabs.Fruit:AddSection("				--Auto Open Fruit Boxes--")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
@@ -2328,7 +2333,7 @@ _G.openrare = false
 end
 end)
 
-Tabs.Fruit:AddSection("					 --Auto Store Fruits--")
+Tabs.Fruit:AddSection("			   --Auto Store Devil Fruits--")
 
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
@@ -2365,7 +2370,7 @@ end
 end)
 
 
-Tabs.Fruit:AddSection("				-------Auto Compass-------")
+Tabs.Fruit:AddSection("			   -------Auto Compass-------")
 getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
 if Options.getcompasstoggle.Value == true then
@@ -2447,7 +2452,15 @@ end
         end
     })
 
-Tabs.Farm:AddSection("	    Off Farm Before Off Fast-Cannon")
+Tabs.Farm:AddButton({
+        Title = "Fix Chair's CFrame",
+        Description = "Reset Chair's CFrame",
+        Callback = function()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+end
+    })
+
+Tabs.Farm:AddSection("	     Off Farm Before Off Fast-Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
@@ -2560,7 +2573,7 @@ getgenv().grillsell = false
 end
 end)
 
-Tabs.Farm:AddSection("						 --Auto Package--")
+Tabs.Farm:AddSection("						--Auto Package--")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},
@@ -2579,7 +2592,7 @@ getgenv().tret = false
 end
 end)
 
-Tabs.Expertise:AddSection("Auto Expertise")
+Tabs.Expertise:AddSection("						-----Expertise-----")
 AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
     AutogetexpToggle:OnChanged(function()
 if Options.Autogetexp1Toggle.Value == true then
@@ -2600,11 +2613,10 @@ _G.autogetexp = false
 end
 end)
 
-Tabs.Expertise:AddSection("                                      ---")
-Tabs.Expertise:AddSection("Auto Do Expertise")
-Tabs.Expertise:AddSection("					    Coming Soon")
+Tabs.Expertise:AddSection("					 --Auto Do Expertise--")
+Tabs.Expertise:AddSection("					    	 Coming Soon")
 
-Tabs.Automatic:AddSection("General Function")
+Tabs.Automatic:AddSection("					  --General Function--")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
@@ -2665,7 +2677,7 @@ else
 _G.autorj = false
 end
 end)
-Tabs.Automatic:AddSection("                                      ---")
+Tabs.Automatic:AddSection("			   Hop Server If Fewer Players")
 hopplrsvzz = Tabs.Automatic:AddDropdown("hopplrsvzz", {
         Title = "Player Numbers To Hop",
         Values = {"", "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18",""},
@@ -2747,8 +2759,7 @@ _G.fewhopsv = false
 end
 end)
 
-
-Tabs.Automatic:AddSection("In-Game Function")
+Tabs.Automatic:AddSection("					   --Game Function--")
 AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
@@ -2837,7 +2848,7 @@ _G.autochallenge = false
 end
 end)
 
-Tabs.Automatic:AddSection("Auto Reset")
+Tabs.Automatic:AddSection("					   	   Auto Reset")
 
 rssli = Tabs.Automatic:AddSlider("rssliderzz", {
     Title = "Reset Time (s)",
@@ -2865,7 +2876,7 @@ _G.resetzxcm = false
 end
 end)
 
-Tabs.Teleport:AddSection("						--Useful Teleport--")
+Tabs.Teleport:AddSection("					   --Useful Teleport--")
 randomtp = Tabs.Teleport:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
 randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
@@ -2893,7 +2904,7 @@ getgenv().chawq = false
 end
 end)
 
-Tabs.Teleport:AddSection("							 --Teleport--")
+Tabs.Teleport:AddSection("							  --Teleport--")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
@@ -3178,7 +3189,7 @@ Fluent:Notify({
 end
 end)
 
-Tabs.Teleport:AddSection("						--Special Teleport--")
+Tabs.Teleport:AddSection("					  --Special Teleport--")
 
 Tabs.Teleport:AddButton({
         Title = "Teleport To Safe Zone",
@@ -3220,7 +3231,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Alta
         end
     })
 
-Tabs.Weapon:AddSection("Equipment")
+Tabs.Weapon:AddSection("					   -----Equipment-----")
 weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
         Values = {"Melee","Sniper","Sword","Utility"},
@@ -3229,7 +3240,7 @@ weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
     })
 
 
-    weapontype:OnChanged(function(wtypea)
+weapontype:OnChanged(function(wtypea)
 _G.weponity = wtypea
 end)
 
@@ -3240,52 +3251,39 @@ getgenv().eqqqqq = true
 else
 getgenv().eqqqqq = false
 end
-
 while getgenv().eqqqqq do wait()
 pcall(function()
 if _G.weponity == "Melee" then
-
-
 for _, c in pairs(MeleeTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
 elseif _G.weponity == "Sniper" then
-
 for _, c in pairs(SniperTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
 elseif _G.weponity == "Sword" then
-
 for _, c in pairs(SwordTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
 elseif _G.weponity == "Utility" then
-
 for _, c in pairs(UtilityTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
-
-
 end
 end)
 end
-
 end)
 
 attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
@@ -3295,50 +3293,36 @@ getgenv().useweapon = true
 else
 getgenv().useweapon = false
 end
-
 while getgenv().useweapon do wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-
-
 for i,c in pairs(MeleeTTT) do
 if v.Name == c then
 v:Activate()
 end
 end
-
 for i,d in pairs(SniperTTT) do
 if v.Name == d then
 v:Activate()
 end
 end
-
 for i,e in pairs(SwordTTT) do
 if v.Name == e then
 v:Activate()
 end
 end
-
 for i,f in pairs(UtilityTTT) do
 if v.Name == f then
 v:Activate()
 end
 end
-
-
 end
 end)
 end
-
 end)
 
-
-
-
-
-
-Tabs.Weapon:AddSection("Instant Weapon")
-Tabs.Weapon:AddSection("Yoru Spam")
+Tabs.Weapon:AddSection("				  -----Instant Weapon-----")
+Tabs.Weapon:AddSection("							--Yoru Spam--")
 yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
     Title = "Yoru Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
@@ -3386,7 +3370,7 @@ _G.yoruonrt = false
 end
 end)
 
-Tabs.Weapon:AddSection("Cestus Spam")
+Tabs.Weapon:AddSection("						 --Cestus Spam--")
 cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
     Title = "Cestus Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
@@ -3431,7 +3415,7 @@ _G.cestusonrt = false
 end
 end)
 
-Tabs.Main:AddSection("						--Stats Farming--")
+Tabs.Main:AddSection("					     --Stats Farming--")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
@@ -3450,7 +3434,7 @@ getgenv().farmslowstats = false
 end
 end)
 
-Tabs.Main:AddSection("                                --Drink--")
+Tabs.Main:AddSection("                                    Drink")
 
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
@@ -3487,7 +3471,7 @@ end)
 end
 end)
 
-Tabs.Mobs:AddSection("Mobs Bring")
+Tabs.Mobs:AddSection("						    --Bring Mobs--")
 
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
         Title = "Choose Mobs",
@@ -3546,9 +3530,8 @@ _G.bringmzowpa = false
 end
 end)
 
-Tabs.Mobs:AddSection("                                      ---")
-Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
-Tabs.Mobs:AddSection("					    Coming Soon")
+Tabs.Mobs:AddSection("				  --Mobs Farming (Fruit)--")
+Tabs.Mobs:AddSection("					    	 Coming Soon")
 
 
 Tabs.Haki:AddSection("						  ---Haki Stuff---")
@@ -4149,7 +4132,7 @@ end
 end
     })
 
-Tabs.Haki:AddSection("Auto Haki Farming")
+Tabs.Haki:AddSection("					--Auto Haki Farming--")
 hakitargett = Tabs.Haki:AddSlider("hakitarsli", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
@@ -4185,7 +4168,7 @@ end)
 
 
 
-Tabs.Haki:AddSection("Advanced Haki Farming")
+Tabs.Haki:AddSection("			   --Advanced Haki Farming--")
 hakiadvancespeed = Tabs.Haki:AddSlider("advanceslihaki", {
     Title = "Advanced Haki Speed",
     Description = "Change Advanced Haki Speed",
@@ -4206,9 +4189,8 @@ else
 _G.farmadvanced = false
 end
 end)
-Tabs.Server:AddSection("Join Server With JobID")
 
-Tabs.Haki:AddSection("                                      ---")
+Tabs.Haki:AddSection("			   	  --Haki Farm 1-Click--")
 
  hakitypef = Tabs.Haki:AddDropdown("hakitypef", {
         Title = "1-Click Method",
@@ -4320,7 +4302,7 @@ end
         end
     })
 
-Tabs.Haki:AddSection("The Others")
+Tabs.Haki:AddSection("				    --Other Haki Method--")
 
     Tabs.Haki:AddButton({
         Title = "Haki 1",
@@ -4355,6 +4337,7 @@ end
 end
     })
 
+Tabs.Server:AddSection("				--Join Server With JobID--")
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",
 	Default = "",
@@ -4378,7 +4361,7 @@ game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, targetj
         end
     })
 
-Tabs.Server:AddSection("Rejoin/Hop")
+Tabs.Server:AddSection("						   --Rejoin/Hop--")
     Tabs.Server:AddButton({
         Title = "Rejoin Server",
         Description = "Rejoin the current server",
@@ -4617,23 +4600,10 @@ end
 end
 })
 
-Tabs.Server:AddSection("Discord")
-Tabs.Server:AddParagraph({
-Title = "Discord Information",
-Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
-})
+Tabs.Affinity:AddSection("					  --Auto Roll Affinity--")
+Tabs.Affinity:AddSection("				--> (Old Saluna Method) <--")
 
-Tabs.Server:AddButton({
-        Title = "Discord Saluna Hub",
-        Description = "Copy Discord Invite Link",
-        Callback = function()
-toClipboard("https://discord.gg/ecpbhm8G3w")    
-end
-    })
-
-Tabs.Affinity:AddSection("Auto Roll Affinity (Old Saluna Method)")
-
-Tabs.Affinity:AddSection("1st Devil Fruit")
+Tabs.Affinity:AddSection("							 1st Devil Fruit")
 
 rabunzoa = Tabs.Affinity:AddDropdown("rabunzoa", {
         Title = "1st Devil Fruit Point",
@@ -4826,7 +4796,7 @@ end)
 
 
 
-Tabs.Affinity:AddSection("2nd Devil Fruit")
+Tabs.Affinity:AddSection("							 2nd Devil Fruit")
 
 rabunzoasec = Tabs.Affinity:AddDropdown("rabunzoasec", {
         Title = "2nd Devil Fruit Point",
@@ -5012,9 +4982,16 @@ end)
 end
 end)
 
-Tabs.Affinity:AddSection("                                      ---")
-Tabs.Affinity:AddSection("Auto Roll Affinity (New)")
-Tabs.Affinity:AddSection("1st Devil Fruit")
+Tabs.Affinity:AddSection(" ")
+Tabs.Affinity:AddSection("					  --Auto Roll Affinity--")
+Tabs.Affinity:AddSection("				--> (New Saluna Method) <--")
+Tabs.Affinity:AddParagraph({
+Title = "New Affinity Note: ",
+Content = [[Untargeted Affinity Will Not Be Locked !!! 
+Automatically Lock The Chosen Affinities If Reached The "Targeted or Higher" Point. 
+]]
+})
+Tabs.Affinity:AddSection("							 1st Devil Fruit")
 razerr = Tabs.Affinity:AddDropdown("razerr", {
         Title = "1st Devil Fruit Point",
         Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
@@ -5084,7 +5061,7 @@ _G.rolznewaff = false
 end
 end)
 
-Tabs.Affinity:AddSection("2nd Devil Fruit")
+Tabs.Affinity:AddSection("							 2nd Devil Fruit")
 raz2err = Tabs.Affinity:AddDropdown("raz2err", {
         Title = "2nd Devil Fruit Point",
         Values = {"", "1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2",""},
@@ -5154,7 +5131,7 @@ _G.rolznewaff2 = false
 end
 end)
 
-Tabs.Skill:AddSection("Auto Spam Fruit")
+Tabs.Skill:AddSection("					  --Auto Spam Fruit--")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
         Values = {" ","Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
@@ -5210,22 +5187,25 @@ InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 
 Tabs.Info:AddSection(" ")
-Tabs.Main:AddSection(" ")
-Tabs.Haki:AddSection(" ")
-Tabs.Weapon:AddSection(" ")
 Tabs.Farm:AddSection(" ")
 Tabs.Fruit:AddSection(" ")
 Tabs.Robbing:AddSection(" ")
-Tabs.Affinity:AddSection(" ")
-Tabs.Gems:AddSection(" ")
-Tabs.PVP:AddSection(" ")
-Tabs.Teleport:AddSection(" ")
 Tabs.Player:AddSection(" ")
-Tabs.Shop:AddSection(" ")
+Tabs.Teleport:AddSection(" ")
+Tabs.Main:AddSection(" ")
+Tabs.Haki:AddSection(" ")
+Tabs.Weapon:AddSection(" ")
+Tabs.Affinity:AddSection(" ")
+Tabs.Expertise:AddSection(" ")
+Tabs.PVP:AddSection(" ")
+Tabs.Skill:AddSection(" ")
+Tabs.Mobs:AddSection(" ")
+Tabs.Gems:AddSection(" ")
 Tabs.Automatic:AddSection(" ")
+Tabs.Misc:AddSection(" ")
+Tabs.Shop:AddSection(" ")
 Tabs.Server:AddSection(" ")
 Tabs.Webhook:AddSection(" ")
-Tabs.Misc:AddSection(" ")
 Tabs.Settings:AddSection(" ")
 
 Window:SelectTab(1)
@@ -5234,7 +5214,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = fa
 Fluent:Notify({
     Title = "Saluna With Love ♥",
     Content = "Have a nice day!",
-    Duration = 999
+    Duration = 120
 })
 
 SaveManager:LoadAutoloadConfig()

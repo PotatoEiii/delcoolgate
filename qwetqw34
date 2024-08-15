@@ -928,7 +928,7 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
-Tabs.PVP:AddSection("Anti-Stuff")
+Tabs.PVP:AddSection("								  Anti-Stun")
 antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti DF_Disabled", Default = false })
 antistunz:OnChanged(function()
 if Options.antistunztoggle.Value == true then
@@ -948,7 +948,7 @@ end
 end
 end)
 
-Tabs.PVP:AddSection("Skills")
+Tabs.PVP:AddSection("									 Skills")
 azxcwwwcarge = Tabs.PVP:AddToggle("azxcwwwcargetoggle", {Title = "100% Charging", Default = false })
 azxcwwwcarge:OnChanged(function()
 if Options.azxcwwwcargetoggle.Value == true then
@@ -958,7 +958,8 @@ _G.auto100rate = false
 end
 end)
 
-Tabs.PVP:AddSection("Players' Sight")
+Tabs.PVP:AddSection("					--ESP/HitBox Players--")
+Tabs.PVP:AddSection("							   ESP Players")
 plresp = Tabs.PVP:AddToggle("plresptoggle", {Title = "Esp Players", Default = false })
 plresp:OnChanged(function()
 if Options.plresptoggle.Value == true then
@@ -985,14 +986,14 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                 local bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
                                 bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                                bill.Size = UDim2.new(1,200,1,30)
+                                bill.Size = UDim2.new(1,200,1,50)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
                                 name.FontFace = Font.fromName("Merriweather")
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true
-                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m')
+                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
                                 name.Size = UDim2.new(1,0,1,0)
                                 name.TextYAlignment = 'Top'
                                 name.BackgroundTransparency = 1
@@ -1003,7 +1004,7 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                     name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 end
                             else
-                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m')
+                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
                             end
                         end
                     end

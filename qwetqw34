@@ -3459,7 +3459,7 @@ end)
 end
 end)
 
-Tabs.Mobs:AddSection("Mobs Bring")
+Tabs.Mobs:AddSection("						  --Bring Mobs--")
 
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
         Title = "Choose Mobs",
@@ -3518,8 +3518,7 @@ _G.bringmzowpa = false
 end
 end)
 
-Tabs.Mobs:AddSection("                                      ---")
-Tabs.Mobs:AddSection("Mobs Farming (Fruit)")
+Tabs.Mobs:AddSection("					--Mobs Farming (Fruit)--")
 Tabs.Mobs:AddSection("					    	Coming Soon")
 
 
@@ -5190,22 +5189,25 @@ InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 
 Tabs.Info:AddSection(" ")
-Tabs.Main:AddSection(" ")
-Tabs.Haki:AddSection(" ")
-Tabs.Weapon:AddSection(" ")
 Tabs.Farm:AddSection(" ")
 Tabs.Fruit:AddSection(" ")
 Tabs.Robbing:AddSection(" ")
-Tabs.Affinity:AddSection(" ")
-Tabs.Gems:AddSection(" ")
-Tabs.PVP:AddSection(" ")
-Tabs.Teleport:AddSection(" ")
 Tabs.Player:AddSection(" ")
-Tabs.Shop:AddSection(" ")
+Tabs.Teleport:AddSection(" ")
+Tabs.Main:AddSection(" ")
+Tabs.Haki:AddSection(" ")
+Tabs.Weapon:AddSection(" ")
+Tabs.Affinity:AddSection(" ")
+Tabs.Expertise:AddSection(" ")
+Tabs.PVP:AddSection(" ")
+Tabs.Skill:AddSection(" ")
+Tabs.Mobs:AddSection(" ")
+Tabs.Gems:AddSection(" ")
 Tabs.Automatic:AddSection(" ")
+Tabs.Misc:AddSection(" ")
+Tabs.Shop:AddSection(" ")
 Tabs.Server:AddSection(" ")
 Tabs.Webhook:AddSection(" ")
-Tabs.Misc:AddSection(" ")
 Tabs.Settings:AddSection(" ")
 
 Window:SelectTab(1)

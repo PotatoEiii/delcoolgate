@@ -3220,7 +3220,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Alta
         end
     })
 
-Tabs.Weapon:AddSection("					 -----Equipment-----")
+Tabs.Weapon:AddSection("					   -----Equipment-----")
 weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
         Values = {"Melee","Sniper","Sword","Utility"},
@@ -3359,7 +3359,7 @@ _G.yoruonrt = false
 end
 end)
 
-Tabs.Weapon:AddSection("Cestus Spam")
+Tabs.Weapon:AddSection("						 --Cestus Spam--")
 cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
     Title = "Cestus Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",

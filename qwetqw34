@@ -632,7 +632,7 @@ UIS.InputChanged:Connect(function(input)
  end
 end)
 
-Tabs.Misc:AddSection("Hide/Show Image")
+Tabs.Misc:AddSection("				-----Hide/Show Image-----")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
         Title = "Choose Display Image",
@@ -697,7 +697,7 @@ game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
 end
 end)
 
-Tabs.Misc:AddSection("Other Scripts")
+Tabs.Misc:AddSection("							 --FE Scripts--")
 
     Tabs.Misc:AddButton({
         Title = "Infinite Yield",
@@ -715,7 +715,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/S
         end
     })
 
-Tabs.Misc:AddSection("                                      ---")
+Tabs.Misc:AddSection("						    --Old Scripts--")
     Tabs.Misc:AddButton({
         Title = "Saluna Old",
         Description = "Open Saluna Old Script",
@@ -732,7 +732,7 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdae
 end
     })
 
-Tabs.Misc:AddSection("Boost")
+Tabs.Misc:AddSection("						    -----Boost-----")
     Tabs.Misc:AddButton({
         Title = "Low-Graphic Mode",
         Description = "Use to reduce lag",
@@ -803,7 +803,7 @@ game:GetService("RunService"):Set3dRenderingEnabled(true)
 end
 end)
 
-Tabs.Misc:AddSection("Makes Server Lagging")
+Tabs.Misc:AddSection("					 --Makes Server Lag--")
 miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
 miscquake:OnChanged(function()
 if Options.miscquaketoggle.Value == true then
@@ -830,15 +830,6 @@ else
 _G.quakelagmisc = false
 end
 end)
-
-Tabs.Misc:AddSection("Misc")
-Tabs.Misc:AddButton({
-        Title = "Fix Chair's CFrame",
-        Description = "Reset Chair's CFrame",
-        Callback = function()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
-end
-    })
 
 Tabs.Player:AddSection("						  --About Player--")
     plrts = Tabs.Player:AddInput("plrts", {
@@ -2447,6 +2438,14 @@ end
         end
     })
 
+Tabs.Farm:AddButton({
+        Title = "Fix Chair's CFrame",
+        Description = "Reset Chair's CFrame",
+        Callback = function()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
+end
+    })
+
 Tabs.Farm:AddSection("	     Off Farm Before Off Fast-Cannon")
 
 autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
@@ -2603,7 +2602,7 @@ end)
 Tabs.Expertise:AddSection("					 --Auto Do Expertise--")
 Tabs.Expertise:AddSection("					    	 Coming Soon")
 
-Tabs.Automatic:AddSection("General Function")
+Tabs.Automatic:AddSection("					  --General Function--")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
@@ -2664,7 +2663,7 @@ else
 _G.autorj = false
 end
 end)
-Tabs.Automatic:AddSection("                                      ---")
+Tabs.Automatic:AddSection("			   Hop Server If Fewer Players")
 hopplrsvzz = Tabs.Automatic:AddDropdown("hopplrsvzz", {
         Title = "Player Numbers To Hop",
         Values = {"", "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18",""},
@@ -2746,8 +2745,7 @@ _G.fewhopsv = false
 end
 end)
 
-
-Tabs.Automatic:AddSection("In-Game Function")
+Tabs.Automatic:AddSection("					   --Game Function--")
 AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
@@ -2836,7 +2834,7 @@ _G.autochallenge = false
 end
 end)
 
-Tabs.Automatic:AddSection("Auto Reset")
+Tabs.Automatic:AddSection("					   	   Auto Reset")
 
 rssli = Tabs.Automatic:AddSlider("rssliderzz", {
     Title = "Reset Time (s)",

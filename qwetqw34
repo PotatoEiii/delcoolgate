@@ -2600,8 +2600,8 @@ _G.autogetexp = false
 end
 end)
 
-Tabs.Expertise:AddSection("					--Auto Do Expertise--")
-Tabs.Expertise:AddSection("					    	Coming Soon")
+Tabs.Expertise:AddSection("					 --Auto Do Expertise--")
+Tabs.Expertise:AddSection("					    	 Coming Soon")
 
 Tabs.Automatic:AddSection("General Function")
 AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -3459,7 +3459,7 @@ end)
 end
 end)
 
-Tabs.Mobs:AddSection("						  --Bring Mobs--")
+Tabs.Mobs:AddSection("						    --Bring Mobs--")
 
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
         Title = "Choose Mobs",
@@ -3518,8 +3518,8 @@ _G.bringmzowpa = false
 end
 end)
 
-Tabs.Mobs:AddSection("					--Mobs Farming (Fruit)--")
-Tabs.Mobs:AddSection("					    	Coming Soon")
+Tabs.Mobs:AddSection("				  --Mobs Farming (Fruit)--")
+Tabs.Mobs:AddSection("					    	 Coming Soon")
 
 
 Tabs.Haki:AddSection("						  ---Haki Stuff---")

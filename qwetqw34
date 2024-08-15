@@ -502,7 +502,7 @@ Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServ
 })
 
 
-Tabs.Gems:AddSection("Dupe Gems (Risky)")
+Tabs.Gems:AddSection("						   --Dupe Gems--")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Dupe Gems: ",
 Content = [[Operation:
@@ -522,7 +522,7 @@ end
 
 
 
-Tabs.Gems:AddSection("Exchange Gems To Beries (Risky)")
+Tabs.Gems:AddSection("			--Exchange Gems To Beries--")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
 Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"

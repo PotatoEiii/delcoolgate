@@ -1667,7 +1667,7 @@ end)
 
 
 
-Tabs.Shop:AddSection("Drinks")
+Tabs.Shop:AddSection("						  -----Drinks-----")
 
 drinkstype = Tabs.Shop:AddDropdown("drinkstype", {
         Title = "Select Drinks",
@@ -1797,8 +1797,9 @@ end
 
 
 
-Tabs.Shop:AddSection("Melee Weapon")
-    Tabs.Shop:AddButton({
+Tabs.Shop:AddSection("						  -----Weapon-----")
+Tabs.Shop:AddSection("						  	   --Melee--")
+Tabs.Shop:AddButton({
         Title = "Seastone Cestus (Fake Equipment)",
         Description = "Requires 500 Melee",
         Callback = function()
@@ -1865,7 +1866,7 @@ end
     })
 
 
-Tabs.Shop:AddSection("Sword")
+Tabs.Shop:AddSection("						  	  --Sword--")
     Tabs.Shop:AddButton({
         Title = "Dagger",
         Description = "Requires 1,000 Beries",
@@ -2084,7 +2085,7 @@ end
         end
     })
 
-Tabs.Shop:AddSection("Gun")
+Tabs.Shop:AddSection("						  	  --Sniper--")
 
     Tabs.Shop:AddButton({
         Title = "Slingshot",

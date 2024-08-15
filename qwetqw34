@@ -3403,8 +3403,6 @@ _G.cestusonrt = false
 end
 end)
 
-Tabs.Main:AddSection("					     --Configuration--")
-Tabs.Main:AddSection("					    	 --Interface--")
 Tabs.Main:AddSection("					     --Stats Farming--")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()

@@ -3404,7 +3404,7 @@ _G.cestusonrt = false
 end
 end)
 
-Tabs.Main:AddSection("						--Stats Farming--")
+Tabs.Main:AddSection("					     --Stats Farming--")
 statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
@@ -3423,7 +3423,7 @@ getgenv().farmslowstats = false
 end
 end)
 
-Tabs.Main:AddSection("                                --Drink--")
+Tabs.Main:AddSection("                                    Drink")
 
 statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
@@ -4158,7 +4158,7 @@ end)
 
 
 
-Tabs.Haki:AddSection("			  --Advanced Haki Farming--")
+Tabs.Haki:AddSection("			   --Advanced Haki Farming--")
 hakiadvancespeed = Tabs.Haki:AddSlider("advanceslihaki", {
     Title = "Advanced Haki Speed",
     Description = "Change Advanced Haki Speed",
@@ -4181,7 +4181,7 @@ end
 end)
 Tabs.Server:AddSection("Join Server With JobID")
 
-Tabs.Haki:AddSection("			   	 --Haki Farm 1-Click--")
+Tabs.Haki:AddSection("			   	  --Haki Farm 1-Click--")
 
  hakitypef = Tabs.Haki:AddDropdown("hakitypef", {
         Title = "1-Click Method",
@@ -4293,7 +4293,7 @@ end
         end
     })
 
-Tabs.Haki:AddSection("				   --Other Haki Method--")
+Tabs.Haki:AddSection("				    --Other Haki Method--")
 
     Tabs.Haki:AddButton({
         Title = "Haki 1",

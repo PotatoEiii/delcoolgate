@@ -489,7 +489,7 @@ Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nI hope you'll have a nice experience using this script!"
 })
 
-Tabs.Info:AddSection("		   			    --Information--")
+Tabs.Info:AddSection("		   			     --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
 Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
@@ -840,7 +840,7 @@ game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircfr
 end
     })
 
-Tabs.Player:AddSection("						--About Player--")
+Tabs.Player:AddSection("						  --About Player--")
     plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
         Default = "",
@@ -896,7 +896,7 @@ end)
 end
 
 end)
-Tabs.Player:AddSection("						--Players' Stuff--")
+Tabs.Player:AddSection("						 --Players' Stuff--")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
 viewplr:OnChanged(function()
 if Options.viewplrtoggle.Value == true then
@@ -1039,7 +1039,7 @@ end)
 
 
 
-Tabs.Player:AddSection("						 --Bring Player--")
+Tabs.Player:AddSection("						  --Bring Player--")
 
 bringdis = Tabs.Player:AddSlider("bringsl", {
     Title = "Bring Distance",
@@ -1114,7 +1114,7 @@ end)
 
 
 
-Tabs.Player:AddSection("					    --Special Camp--")
+Tabs.Player:AddSection("					     --Special Camp--")
 quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake Camp", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
@@ -1146,7 +1146,7 @@ end)
 
 
 
-Tabs.Player:AddSection("					   --Teleport Camp--")
+Tabs.Player:AddSection("					    --Teleport Camp--")
 cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {
     Title = "Teleport Distance",
     Description = "Change this for adjusting camp distance",
@@ -1196,7 +1196,7 @@ end
 end)
 
 
-Tabs.Player:AddSection("                                      ---")
+Tabs.Player:AddSection("                              Fruit Camp")
 
 darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default = false })
 darksec:OnChanged(function()
@@ -2288,7 +2288,7 @@ end
 
 
 
-Tabs.Fruit:AddSection("					-------Fruit Stuff-------")
+Tabs.Fruit:AddSection("				   -------Fruit Stuff-------")
 Tabs.Fruit:AddSection("				--Auto Open Fruit Boxes--")
 openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common/Uncommon Box", Default = false })
 openboxunc:OnChanged(function()
@@ -2328,7 +2328,7 @@ _G.openrare = false
 end
 end)
 
-Tabs.Fruit:AddSection("					 --Auto Store Fruits--")
+Tabs.Fruit:AddSection("			   --Auto Store Devil Fruits--")
 
 fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
         Title = "Fruit Targeting (Normal)",
@@ -2365,7 +2365,7 @@ end
 end)
 
 
-Tabs.Fruit:AddSection("				-------Auto Compass-------")
+Tabs.Fruit:AddSection("			   -------Auto Compass-------")
 getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
 if Options.getcompasstoggle.Value == true then
@@ -2560,7 +2560,7 @@ getgenv().grillsell = false
 end
 end)
 
-Tabs.Farm:AddSection("						 --Auto Package--")
+Tabs.Farm:AddSection("						--Auto Package--")
  restpac = Tabs.Farm:AddDropdown("restpac", {
         Title = "Rest Package Type",
         Values = {"Random TP","Safe Zone","Chair"},
@@ -3220,7 +3220,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Alta
         end
     })
 
-Tabs.Weapon:AddSection("Equipment")
+Tabs.Weapon:AddSection("					 -----Equipment-----")
 weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
         Title = "Select Weapon Type",
         Values = {"Melee","Sniper","Sword","Utility"},
@@ -3229,7 +3229,7 @@ weapontype = Tabs.Weapon:AddDropdown("tanglunroie11", {
     })
 
 
-    weapontype:OnChanged(function(wtypea)
+weapontype:OnChanged(function(wtypea)
 _G.weponity = wtypea
 end)
 
@@ -3240,52 +3240,39 @@ getgenv().eqqqqq = true
 else
 getgenv().eqqqqq = false
 end
-
 while getgenv().eqqqqq do wait()
 pcall(function()
 if _G.weponity == "Melee" then
-
-
 for _, c in pairs(MeleeTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
 elseif _G.weponity == "Sniper" then
-
 for _, c in pairs(SniperTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
 elseif _G.weponity == "Sword" then
-
 for _, c in pairs(SwordTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
 elseif _G.weponity == "Utility" then
-
 for _, c in pairs(UtilityTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 x.Parent = game.Players.LocalPlayer.Character
 end
 end
-
-
-
 end
 end)
 end
-
 end)
 
 attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
@@ -3295,50 +3282,36 @@ getgenv().useweapon = true
 else
 getgenv().useweapon = false
 end
-
 while getgenv().useweapon do wait()
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-
-
 for i,c in pairs(MeleeTTT) do
 if v.Name == c then
 v:Activate()
 end
 end
-
 for i,d in pairs(SniperTTT) do
 if v.Name == d then
 v:Activate()
 end
 end
-
 for i,e in pairs(SwordTTT) do
 if v.Name == e then
 v:Activate()
 end
 end
-
 for i,f in pairs(UtilityTTT) do
 if v.Name == f then
 v:Activate()
 end
 end
-
-
 end
 end)
 end
-
 end)
 
-
-
-
-
-
-Tabs.Weapon:AddSection("Instant Weapon")
-Tabs.Weapon:AddSection("Yoru Spam")
+Tabs.Weapon:AddSection("				  -----Instant Weapon-----")
+Tabs.Weapon:AddSection("							--Yoru Spam--")
 yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
     Title = "Yoru Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",

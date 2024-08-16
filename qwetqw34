@@ -6877,7 +6877,7 @@ spawn(function()
     while wait(0.3) do
 repeat wait() until _G.autocannon == true
         pcall(function()
-repeat wait()
+repeat wait(0.1)
 for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)

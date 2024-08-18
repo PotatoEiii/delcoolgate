@@ -2838,7 +2838,7 @@ game.CoreGui["Keyboard gui WarriorRoberr Version"].Drag.KeyBoard.Bunb0ybun.Text 
 game.CoreGui["Keyboard gui WarriorRoberr Version"].Drag.KeyBoard.Position = UDim2.new(0, 0, 0, 35)
 game.CoreGui["Keyboard gui WarriorRoberr Version"].Drag.KeyBoard.Bunb0ybun.TextSize = 10
 end)
-SettingsSection:NewKeybind("Toggle Ui", "Toggles the ui on and off when key is pressed", Enum.KeyCode.M, function()
+SettingsSection:NewKeybind("Toggle Ui", "Toggles the ui on and off when key is pressed", Enum.KeyCode.F2, function()
 Library:ToggleUI()
 end)
 local colors = {
@@ -2890,3 +2890,56 @@ UIS.InputChanged:Connect(function(input)
   end
  end
 end)
+
+
+BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+
+hideUI = Instance.new("ImageButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = game.CoreGui.BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.BackgroundTransparency = 1
+hideUI.ClipsDescendants = true
+hideUI.Position = UDim2.new(0.02, 1, 0.155, 1)
+hideUI.Size = UDim2.new(0, 50, 0, 50)
+hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
+hideUI.MouseButton1Up:Connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
+
+ hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = game.CoreGui.BBB.hideUI
+hideUICorner.CornerRadius = UDim.new(1,0)
+
+
+ UIS = game:GetService('UserInputService')
+ frame = game.CoreGui.BBB.hideUI
+ dragToggle = nil
+ dragSpeed = 0.05
+ dragStart = nil
+ startPos = nil
+
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+

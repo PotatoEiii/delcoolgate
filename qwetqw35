@@ -2336,22 +2336,6 @@ end)
 
 Tabs.Fruit:AddSection("			   --Auto Store Devil Fruits--")
 
-fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
-        Title = "Fruit Targeting (Normal)",
-        Description = "Choose fruits for \"Normal Fruits\" Storing.",
-        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
-        Multi = true,
-        Default = {},
-})
-
-fruitoppai:OnChanged(function(fqwmzzp)
-Fruitniggahaha = {"None"}
-task.wait()
-for fqwmzzp, State in next, fqwmzzp do
-table.insert(Fruitniggahaha, fqwmzzp)
-end
-end)
-
 storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
 storefruit:OnChanged(function()
 if Options.storefruittoggle.Value == true then
@@ -6840,7 +6824,7 @@ while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
-for i, t in pairs(Fruitniggahaha) do
+for i, t in pairs(Rarefruit) do
 for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if u.Name == t then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)

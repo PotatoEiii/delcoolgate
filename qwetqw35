@@ -410,7 +410,7 @@ Tabs.Boss:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame
 end
     })
-Tabs.Boss:AddSection("								 --View--")
+Tabs.Boss:AddSection("								  --View--")
 Tabs.Boss:AddButton({
         Title = "View Kaizu",
         Description = "View Kaizu Boss",
@@ -433,7 +433,7 @@ Tabs.Boss:AddButton({
 	game.Players.LocalPlayer.Character.Head.Anchored = false       
 end
     })
-Tabs.Boss:AddSection("							--Kill--")
+Tabs.Boss:AddSection("								  --Kill--")
 Tabs.Boss:AddButton({
         Title = "1-Shot Kaizu",
         Description = "Kill Kaizu With A Click",

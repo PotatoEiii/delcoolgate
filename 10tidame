@@ -52,6 +52,7 @@ Tabs.Main:AddButton({
     Description = "Làm Mới Người Chơi",
     Callback = function()
         table.clear(Playerslist)
+print(table.concat(Playerslist))
         for i,v in pairs(game:GetService("Players"):GetChildren()) do
             table.insert(Playerslist,v.Name)
         end

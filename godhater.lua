@@ -2917,27 +2917,27 @@ hideUICorner.CornerRadius = UDim.new(1,0)
 
 
  UIS = game:GetService('UserInputService')
- frame = game.CoreGui.BBB.hideUI
- dragToggle = nil
- dragSpeed = 0.05
- dragStart = nil
- startPos = nil
+ ccframe = game.CoreGui.BBB.hideUI
+ ccdragToggle = nil
+ ccdragSpeed = 0.05
+ ccdragStart = nil
+ ccstartPos = nil
 
  function updateInput(input)
-  delta = input.Position - dragStart
-  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
- game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+  delta = input.Position - ccdragStart
+  position = UDim2.new(ccstartPos.X.Scale, ccstartPos.X.Offset + delta.X,
+  ccstartPos.Y.Scale, ccstartPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(ccframe, TweenInfo.new(ccdragSpeed), {Position = position}):Play()
 end
 
-frame.InputBegan:Connect(function(input)
+ccframe.InputBegan:Connect(function(input)
  if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-  dragToggle = true
-  dragStart = input.Position
-  startPos = frame.Position
+  ccdragToggle = true
+  ccdragStart = input.Position
+  ccstartPos = ccframe.Position
   input.Changed:Connect(function()
    if input.UserInputState == Enum.UserInputState.End then
-    dragToggle = false
+    ccdragToggle = false
    end
   end)
  end

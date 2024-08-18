@@ -433,7 +433,7 @@ Tabs.Boss:AddButton({
 	game.Players.LocalPlayer.Character.Head.Anchored = false       
 end
     })
-Tabs.Boss:AddSection("								  --Kill--")
+Tabs.Boss:AddSection("								   --Kill--")
 Tabs.Boss:AddButton({
         Title = "1-Shot Kaizu",
         Description = "Kill Kaizu With A Click",

@@ -1,0 +1,2 @@
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai.Kaizu:FindFirstChild("HumanoidRootPart").CFrame
+game.Workspace.IslandKai.Kaizu.Humanoid.Health = 0

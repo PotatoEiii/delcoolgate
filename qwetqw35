@@ -404,6 +404,13 @@ game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")
 Tabs.Boss:AddButton({
+        Title = "Teleport To Kaizu Island",
+        Description = "TP To Island",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1575.16821, 215.999954, 9946.87207, 0.980506063, -4.32691003e-08, 0.196488753, 3.53463392e-08, 1, 4.38284715e-08, -0.196488753, -3.60289221e-08, 0.980506063)
+end
+    })
+Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu",
         Description = "TP To Kaizu Boss",
         Callback = function()

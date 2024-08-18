@@ -470,6 +470,9 @@ end)
 end
 else
 _G.bringkaizuz = false
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = false
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 1
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = true
 end
 end)
 

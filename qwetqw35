@@ -468,11 +468,11 @@ game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Color = Color3.f
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 0.9
 end)
 end
-else
-_G.bringkaizuz = false
 game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = false
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 1
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = true
+else
+_G.bringkaizuz = false
 end
 end)
 

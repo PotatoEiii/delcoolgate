@@ -1,4 +1,3 @@
-print("AntiAfk Activated")
 local VirtualUser=game:service'VirtualUser'
 repeat
 wait()

@@ -10,7 +10,7 @@ end)
 _G.WhiteListed = true
 
 if _G.WhiteListed then
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/kavo"))()
 local Window = Library.CreateLib("Saluna SCRIPT | OPL: ARNACHY | Version: D3", "Serpent", colors)
 local Main = Window:NewTab("MAIN")
 local Tab = Window:NewTab("SAM DUPE")

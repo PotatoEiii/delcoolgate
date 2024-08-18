@@ -1,2 +1,5 @@
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai.Kaizu:FindFirstChild("HumanoidRootPart").CFrame
-game.Workspace.IslandKai:WaitForChild("Kaizu"):WaitForChild("Humanoid").Health = 0
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid").Health = 0
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Island14:WaitForChild("Lv5000 Pursuer"):FindFirstChild("HumanoidRootPart").CFrame
+game.Workspace.Island14:WaitForChild("Lv5000 Pursuer"):FindFirstChild("Humanoid").Health = 0

@@ -2857,7 +2857,7 @@ end
 end
 
  UIS = game:GetService('UserInputService')
- frame = game.CoreGui.SalunaDevoz.Main
+ frame = game.CoreGui.SalunaDeVoz.Main
  dragToggle = nil
  dragSpeed = 0.05
  dragStart = nil

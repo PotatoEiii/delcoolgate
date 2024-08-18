@@ -401,8 +401,8 @@ Options = Fluent.Options
 
 game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 
-Tabs.Boss:AddSection("						-----Kaizu Boss-----")
-Tabs.Boss:AddSection("							--Teleport--")
+Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
+Tabs.Boss:AddSection("							 --Teleport--")
 Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu",
         Description = "TP To Kaizu Boss",

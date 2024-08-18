@@ -469,7 +469,7 @@ game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 0
 end)
 end
 else
-_G.bringmzowpa = false
+_G.bringkaizuz = false
 end
 end)
 

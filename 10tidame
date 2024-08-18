@@ -56,6 +56,7 @@ print(table.concat(Playerslist))
         for i,v in pairs(game:GetService("Players"):GetChildren()) do
             table.insert(Playerslist,v.Name)
         end
+print(table.concat(Playerslist))
     end
 })
 

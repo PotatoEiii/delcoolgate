@@ -387,6 +387,7 @@ end)
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://18518485889" }),
     Mobs = Window:AddTab({ Title = "Mobs", Icon = "rbxassetid://13957749947" }),
+    Boss = Window:AddTab({ Title = "Boss", Icon = "rbxassetid://12487510294" }),
     Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
@@ -399,6 +400,92 @@ end)
 Options = Fluent.Options
 
 game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
+
+Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
+Tabs.Boss:AddSection("							   --Teleport--")
+Tabs.Boss:AddButton({
+        Title = "Teleport To Kaizu Island",
+        Description = "TP To Island",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1575.16821, 215.999954, 9946.87207, 0.980506063, -4.32691003e-08, 0.196488753, 3.53463392e-08, 1, 4.38284715e-08, -0.196488753, -3.60289221e-08, 0.980506063)
+end
+    })
+Tabs.Boss:AddButton({
+        Title = "Teleport To Kaizu",
+        Description = "TP To Kaizu Boss",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame
+end
+    })
+Tabs.Boss:AddSection("								  --View--")
+Tabs.Boss:AddButton({
+        Title = "View Kaizu",
+        Description = "View Kaizu Boss",
+        Callback = function()
+game.Workspace.Camera.CameraSubject = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid")
+end
+    })
+Tabs.Boss:AddButton({
+        Title = "Fix Cam",
+        Description = "Reset Camera",
+        Callback = function()
+	workspace.CurrentCamera:remove()
+	wait(.1)
+	repeat wait() until game.Players.LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+	game.Players.LocalPlayer.CameraMode = "Classic"
+	game.Players.LocalPlayer.Character.Head.Anchored = false       
+end
+    })
+
+Tabs.Boss:AddSection("								 --Bring--")
+qweqwezxg = Tabs.Boss:AddSlider("qweqwezxgg", {
+    Title = "Bring Distance",
+    Description = "Adjust bring distance",
+    Default = 10,
+    Min = -20,
+    Max = 20,
+    Rounding = 0,
+    Callback = function(wedsfctt)
+            kaizubringdis = tonumber(wedsfctt)*(-1)
+        end
+    })
+
+wekpoxzmkl = Tabs.Boss:AddToggle("wekpoxzmkltoggle", {Title = "Auto Bring Kaizu", Default = false })
+wekpoxzmkl:OnChanged(function()
+if Options.wekpoxzmkltoggle.Value == true then
+_G.bringkaizuz = true
+while _G.bringkaizuz do wait()
+pcall(function()
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = false
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Size = Vector3.new(5, 5, 5)
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = true
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,mobbringdis)
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 0.9
+end)
+end
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = false
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 1
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = true
+else
+_G.bringkaizuz = false
+end
+end)
+
+Tabs.Boss:AddSection("								   --Kill--")
+Tabs.Boss:AddButton({
+        Title = "1-Shot Kaizu",
+        Description = "Kill Kaizu With A Click",
+        Callback = function()
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = false
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = true
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid").Health = 0
+end
+    })
 
 Tabs.Webhook:AddSection("						-----Webhook-----")
 
@@ -2334,22 +2421,6 @@ end
 end)
 
 Tabs.Fruit:AddSection("			   --Auto Store Devil Fruits--")
-
-fruitoppai = Tabs.Fruit:AddDropdown("fruitoppai", {
-        Title = "Fruit Targeting (Normal)",
-        Description = "Choose fruits for \"Normal Fruits\" Storing.",
-        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
-        Multi = true,
-        Default = {},
-})
-
-fruitoppai:OnChanged(function(fqwmzzp)
-Fruitniggahaha = {"None"}
-task.wait()
-for fqwmzzp, State in next, fqwmzzp do
-table.insert(Fruitniggahaha, fqwmzzp)
-end
-end)
 
 storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
 storefruit:OnChanged(function()
@@ -5200,6 +5271,7 @@ Tabs.Expertise:AddSection(" ")
 Tabs.PVP:AddSection(" ")
 Tabs.Skill:AddSection(" ")
 Tabs.Mobs:AddSection(" ")
+Tabs.Boss:AddSection(" ")
 Tabs.Gems:AddSection(" ")
 Tabs.Automatic:AddSection(" ")
 Tabs.Misc:AddSection(" ")
@@ -6838,7 +6910,7 @@ while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
-for i, t in pairs(Fruitniggahaha) do
+for i, t in pairs(Rarefruit) do
 for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if u.Name == t then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
@@ -6877,7 +6949,7 @@ spawn(function()
     while wait(0.3) do
 repeat wait() until _G.autocannon == true
         pcall(function()
-repeat wait()
+repeat wait(0.1)
 for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)

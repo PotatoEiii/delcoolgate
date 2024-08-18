@@ -1,7 +1,13 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
-
+local TestDrop = {
+"Hello",
+"World",
+"I",
+"Am",
+"Good"
+}
 local Window = Fluent:CreateWindow({
     Title = "Fluent " .. Fluent.Version,
     SubTitle = "by dawid",
@@ -55,7 +61,7 @@ Tabs.Main:AddButton({
         for i,v in pairs(game:GetService("Players"):GetChildren()) do
             table.insert(Playerslist,v.Name)
         end
-SelectedPly:SetValues(Playerslist)
+SelectedPly:SetValues(TestDrop)
     end
 })
 

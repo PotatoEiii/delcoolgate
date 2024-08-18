@@ -481,6 +481,8 @@ Tabs.Boss:AddButton({
         Title = "1-Shot Kaizu",
         Description = "Kill Kaizu With A Click",
         Callback = function()
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = false
+game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = true
 game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid").Health = 0
 end
     })

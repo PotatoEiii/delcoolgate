@@ -402,7 +402,7 @@ Options = Fluent.Options
 game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
-Tabs.Boss:AddSection("							 --Teleport--")
+Tabs.Boss:AddSection("							   --Teleport--")
 Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu",
         Description = "TP To Kaizu Boss",
@@ -410,7 +410,7 @@ Tabs.Boss:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame
 end
     })
-Tabs.Boss:AddSection("							--View--")
+Tabs.Boss:AddSection("								--View--")
 Tabs.Boss:AddButton({
         Title = "View Kaizu",
         Description = "View Kaizu Boss",

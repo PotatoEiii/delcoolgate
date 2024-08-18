@@ -442,7 +442,7 @@ end
     })
 
 Tabs.Boss:AddSection("								 --Bring--")
-qweqwezxg = Tabs.Mobs:AddSlider("qweqwezxgg", {
+qweqwezxg = Tabs.Boss:AddSlider("qweqwezxgg", {
     Title = "Bring Distance",
     Description = "Adjust bring distance",
     Default = 10,
@@ -454,7 +454,7 @@ qweqwezxg = Tabs.Mobs:AddSlider("qweqwezxgg", {
         end
     })
 
-wekpoxzmkl = Tabs.Mobs:AddToggle("wekpoxzmkltoggle", {Title = "Auto Bring Kaizu", Default = false })
+wekpoxzmkl = Tabs.Boss:AddToggle("wekpoxzmkltoggle", {Title = "Auto Bring Kaizu", Default = false })
 wekpoxzmkl:OnChanged(function()
 if Options.wekpoxzmkltoggle.Value == true then
 _G.bringkaizuz = true

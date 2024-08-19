@@ -3656,7 +3656,7 @@ qweqezxczs = Tabs.Mobs:AddSlider("qweqezxczs", {
         end
     })
 
-fruitfarmfr = Tabs.Mobs:AddToggle("fruitfarmfrtoggle", {Title = "Auto Farm Mobs (Fruit)", Default = false })
+fruitfarmfr = Tabs.Mobs:AddToggle("fruitfarmfrtoggle", {Title = "Auto Farm Mobs 1-Shot (Fruit)", Default = false })
 fruitfarmfr:OnChanged(function()
 if Options.fruitfarmfrtoggle.Value == true then
 _G.farmfruit = true

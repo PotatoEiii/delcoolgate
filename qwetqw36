@@ -3630,6 +3630,7 @@ task.wait()
 for mobsfarmseww, State in next, mobsfarmseww do
 table.insert(Mobsfarmz, mobsfarmseww)
 end
+print(table.concat(Mobsfarmz," ,"))
 end)
 
 Tabs.Haki:AddSection("						  ---Haki Stuff---")

@@ -8341,3 +8341,7 @@ end)
 end
 end
 end)
+
+while wait(0.1) do
+game:GetService("Players").LocalPlayer.PlayerGui.Version.Version.Text = os.date("%x %X (%Z)")
+end

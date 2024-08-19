@@ -3649,7 +3649,7 @@ qweqezxczs = Tabs.Mobs:AddSlider("qweqezxczs", {
     Description = "Adjust farm distance",
     Default = 10,
     Min = 0,
-    Max = 20,
+    Max = 30,
     Rounding = 0,
     Callback = function(asdwqeasaa)
             farmfruitdis = tonumber(asdwqeasaa)
@@ -3676,7 +3676,7 @@ for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
 if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,asdwqeasaa,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,farmfruitdis,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()
 local args = {
@@ -3700,7 +3700,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait(0.5)
+task.wait(0.1)
 end
 end
 end

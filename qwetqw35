@@ -943,7 +943,7 @@ _G.quakelagmisc = false
 end
 end)
 
-SelectedPly = Tabs.Main:AddDropdown("SelectedPly", {
+SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
     Title = "Select Player",
     Description = "Choose Player From The List",
     Values = Playerslist,
@@ -956,6 +956,7 @@ SelectedPly:OnChanged(function(variazxwt)
 end)
 
 game:GetService("Players").PlayerAdded:Connect(function()
+task.wait()
 table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)

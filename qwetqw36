@@ -3647,7 +3647,7 @@ end)
 qweqezxczs = Tabs.Mobs:AddSlider("qweqezxczs", {
     Title = "Farm Distance",
     Description = "Adjust farm distance",
-    Default = 10,
+    Default = 5,
     Min = 0,
     Max = 30,
     Rounding = 0,

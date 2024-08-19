@@ -8,6 +8,14 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+Fruittaoew = {}
+Mobsszz = {}
+Values = {}
+Valuess = {}
+Values2 = {}
+Valuess2 = {}
+Valuablez = {}
+Valuablezz2 = {}
 Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",

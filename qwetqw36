@@ -3679,7 +3679,7 @@ if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,farmfruitdis,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()
-task.wait(0.1)
+task.wait(0.2)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",

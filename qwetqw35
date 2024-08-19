@@ -16,6 +16,10 @@ Values2 = {}
 Valuess2 = {}
 Valuablez = {}
 Valuablezz2 = {}
+Playerslist = {}
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    table.insert(Playerslist,v.Name)
+end
 Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",
@@ -939,35 +943,25 @@ _G.quakelagmisc = false
 end
 end)
 
-Tabs.Player:AddSection("						  --About Player--")
-    plrts = Tabs.Player:AddInput("plrts", {
-        Title = "Choose Player:",
-        Default = "",
-        Placeholder = "Insert Here",
-        Numeric = false, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function()
-        end
+SelectedPly = Tabs.Main:AddDropdown("SelectedPly", {
+    Title = "Select Player",
+    Description = "Choose Player From The List",
+    Values = Playerslist,
+    Multi = false,
+    Default = "",
 })
 
-plrts:OnChanged(function()
-task.wait()
-_G.SelectedKillPlayer = ""
-_G.plrlow = string.lower(tostring(plrts.Value))
-_G.plrnum = string.len(_G.plrlow)
-task.wait()
-if plrts.Value == "" or plrts.Value == nil then
-_G.SelectedKillPlayer = ""
-else
-for i,e in pairs(game.Players:GetChildren()) do
-_G.anh = tostring(e.Name)
-_G.plrchoose = string.lower(string.sub(_G.anh,1,_G.plrnum))
-if _G.plrlow == _G.plrchoose then
-_G.SelectedKillPlayer = _G.anh
-end
-end
-end
+SelectedPly:OnChanged(function(variazxwt)
+    _G.SelectedKillPlayer = variazxwt
 end)
+
+game:GetService("Players").PlayerAdded:Connect(function(taobu)
+table.clear(Playerslist)
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+table.insert(Playerslist,v.Name)
+end
+SelectedPly:SetValues(Playerslist)
+end)  
 
 targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false })
 targetallpcho:OnChanged(function()

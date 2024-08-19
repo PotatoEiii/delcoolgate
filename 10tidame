@@ -20,43 +20,23 @@ local Tabs = {
 local Options = Fluent.Options
 
 
-    Fluent:Notify({
-        Title = "Notification",
-        Content = "This is a notification",
-        SubContent = "SubContent", -- Optional
-        Duration = 5 -- Set to nil to make the notification not disappear
-    })
-
-local Playerslist = {}
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
-    table.insert(Playerslist,v.Name)
-end
-
-local SelectedPly = Tabs.Main:AddDropdown("SelectedPly", {
-    Title = "Select Player",
-    Description = "Chọn Người Chơi",
-    Values = Playerslist,
-    Multi = false,
-    Default = 1,
-})
-
-SelectedPly:SetValue("nil")
-SelectedPly:OnChanged(function(Value)
-    _G.SelectPly = Value
-end)
-
-
-Tabs.Main:AddButton({
-    Title = "Refresh Player",
-    Description = "Làm Mới Người Chơi",
-    Callback = function()
-        table.clear(Playerslist)
-        for i,v in pairs(game:GetService("Players"):GetChildren()) do
-            table.insert(Playerslist,v.Name)
+    Tabs.Main:AddButton({
+        Title = "Rejoin Server",
+        Description = "Rejoin the current server",
+        Callback = function()
+            Window:Dialog({
+                Title = "Rejoin Server",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
         end
-SelectedPly:SetValues(Playerslist)
-    end
-})
+    })
 
 -- Addons:
 -- SaveManager (Allows you to have a configuration system)

@@ -3675,7 +3675,7 @@ repeat wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true then 
+if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,asdwqeasaa,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()

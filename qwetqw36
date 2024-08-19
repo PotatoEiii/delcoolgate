@@ -3658,11 +3658,13 @@ while wait() do
 repeat wait() until _G.farmfruit == true
 pcall(function()
 repeat wait()
-if _G.fruitfarmz == "Light" and _G.skillnumz == "Power1" and _G.farmfruit == true then
+if _G.fruitfarmz == "Light" and _G.farmfruit == true then
 repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if table.find(Mobsfarmz,mobalive.Name) then
+if string.find(mobalive.Name,moblist) then
 print(mobalive.Name)
+end
 end
 end
 until _G.fruitfarmz ~= "Light" or _G.farmfruit == false

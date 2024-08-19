@@ -3618,7 +3618,7 @@ Tabs.Mobs:AddSection("				  --Mobs Farming (Fruit)--")
 
 mobsfarmse = Tabs.Mobs:AddDropdown("mobsfarmse", {
         Title = "Select Mobs",
-        Description = "Select Mobs To Bring.",
+        Description = "Select Mobs To Farm.",
         Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},

@@ -3644,6 +3644,34 @@ jmkoertz:OnChanged(function(asdwqeasda)
 _G.fruitfarmz = asdwqeasda
 end)
 
+fruitfarmfr = Tabs.Robbing:AddToggle("fruitfarmfrtoggle", {Title = "Auto Farm Mobs (Fruit)", Default = false })
+fruitfarmfr:OnChanged(function()
+if Options.fruitfarmfrtoggle.Value == true then
+_G.farmfruit = true
+else
+_G.farmfruit = false
+end
+end)
+
+spawn(function()
+while wait() do
+repeat wait() until _G.farmfruit == true
+pcall(function()
+repeat wait()
+if _G.fruitfarmz == "Light" and _G.skillnumz == "Power1" and _G.farmfruit == true then
+repeat wait()
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if table.find(Mobsfarmz,mobalive.Name) then
+print(mobalive.Name)
+end
+end
+until _G.fruitfarmz ~= "Light" or _G.farmfruit == false
+end
+until _G.farmfruit == false
+end)
+end
+end)
+
 Tabs.Haki:AddSection("						  ---Haki Stuff---")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()

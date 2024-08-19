@@ -512,7 +512,7 @@ fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
 })
 
 fruitzmpa:OnChanged(function(fruitvamzue)
-Fruittaoew = {"None"}
+table.clear(Fruittaoew)
 task.wait()
 for fruitvamzue, State in next, fruitvamzue do
 table.insert(Fruittaoew, fruitvamzue)
@@ -3553,7 +3553,7 @@ mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
 })
 
 mobbakaak:OnChanged(function(mobfrepz)
-Mobsszz = {"None"}
+table.clear(Mobsszz)
 task.wait()
 for mobfrepz, State in next, mobfrepz do
 table.insert(Mobsszz, mobfrepz)
@@ -4703,7 +4703,7 @@ _G.keepdef = false
 _G.keepmelee = false
 _G.keepsnip = false
 _G.keepsword = false
-Values = {"None"}
+table.clear(Values)
 task.wait()
 for Valuer, State in next, Valuer do
 table.insert(Values, Valuer)
@@ -4739,7 +4739,7 @@ _G.targetdef = false
 _G.targetmelee = false
 _G.targetsnip = false
 _G.targetsword = false
-Valuess = {"None"}
+table.clear(Valuess)
 task.wait()
 for Valuerr, State in next, Valuerr do
 table.insert(Valuess, Valuerr)
@@ -4894,7 +4894,7 @@ _G.keepdef2 = false
 _G.keepmelee2 = false
 _G.keepsnip2 = false
 _G.keepsword2 = false
-Values2 = {"None"}
+table.clear(Values2)
 wait()
 for Valuer2, State in next, Valuer2 do
 table.insert(Values2, Valuer2)
@@ -4931,7 +4931,7 @@ _G.targetdef2 = false
 _G.targetmelee2 = false
 _G.targetsnip2 = false
 _G.targetsword2 = false
-Valuess2 = {"None"}
+table.clear(Valuess2)
 wait()
 for Valuerr2, State in next, Valuerr2 do
 table.insert(Valuess2, Valuerr2)
@@ -5090,7 +5090,7 @@ _G.keendef = false
 _G.keenmelee = false
 _G.keensnip = false
 _G.keensw = false
-Valuablez = {"None"}
+table.clear(Valuablez)
 task.wait()
 for statement, State in next, statement do
 table.insert(Valuablez, statement)
@@ -5160,7 +5160,7 @@ _G.keendef2 = false
 _G.keenmelee2 = false
 _G.keensnip2 = false
 _G.keensw2 = false
-Valuablezz2 = {"None"}
+table.clear(Valuablezz2)
 task.wait()
 for statementz2, State in next, statementz2 do
 table.insert(Valuablezz2, statementz2)

@@ -956,7 +956,7 @@ SelectedPly:OnChanged(function(variazxwt)
 end)
 
 game:GetService("Players").PlayerAdded:Connect(function()
-task.wait()
+wait()
 table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)

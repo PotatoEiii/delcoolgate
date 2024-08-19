@@ -3663,7 +3663,12 @@ repeat wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
-print(mobalive.Name)
+if _G.farmfruit == true then 
+repeat wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * (0,5,0)
+until mobalive.Humanoid.Health == 0
+wait(2)
+end
 end
 end
 end
@@ -7425,7 +7430,7 @@ end)
 spawn(function() -- autofarm velocity
     while wait(0.3) do
         pcall(function()
-            if _G.wqesorry or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or getgenv().bgtyhn or getgenv().fishing or getgenv().tret then
+            if _G.farmfruit or _G.wqesorry or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or getgenv().bgtyhn or getgenv().fishing or getgenv().tret then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -7434,11 +7439,9 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.wqesorry == false and getgenv().vtt == false and getgenv().farmslowstats == false and getgenv().farmstats == false and getgenv().bgtyhn == false and getgenv().fishing == false and getgenv().tret == false then
-                --if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+            elseif _G.farmfruit == false and _G.wqesorry == false and getgenv().vtt == false and getgenv().farmslowstats == false and getgenv().farmstats == false and getgenv().bgtyhn == false and getgenv().fishing == false and getgenv().tret == false then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)
-                --end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
             end
         end)

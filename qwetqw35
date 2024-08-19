@@ -955,7 +955,7 @@ SelectedPly:OnChanged(function(variazxwt)
     _G.SelectedKillPlayer = variazxwt
 end)
 
-game:GetService("Players").PlayerAdded:Connect(function(taobu)
+game:GetService("Players").PlayerAdded:Connect(function()
 table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)

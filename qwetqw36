@@ -964,6 +964,15 @@ end
 SelectedPly:SetValues(Playerslist)
 end)  
 
+game:GetService("Players").PlayerRemoving:Connect(function()
+wait()
+table.clear(Playerslist)
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+table.insert(Playerslist,v.Name)
+end
+SelectedPly:SetValues(Playerslist)
+end)  
+
 targetallpcho = Tabs.Player:AddToggle("targetallpchotoggle", {Title = "Target All Spawned Player", Default = false })
 targetallpcho:OnChanged(function()
 if Options.targetallpchotoggle.Value == true then

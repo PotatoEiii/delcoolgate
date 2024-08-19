@@ -3644,18 +3644,6 @@ jmkoertz:OnChanged(function(asdwqeasda)
 _G.fruitfarmz = asdwqeasda
 end)
 
-qweqezxczs = Tabs.Mobs:AddSlider("qweqezxczs", {
-    Title = "Farm Distance",
-    Description = "Adjust farm distance",
-    Default = 5,
-    Min = 0,
-    Max = 30,
-    Rounding = 0,
-    Callback = function(asdwqeasaa)
-            farmfruitdis = tonumber(asdwqeasaa)
-        end
-    })
-
 fruitfarmfr = Tabs.Mobs:AddToggle("fruitfarmfrtoggle", {Title = "Auto Farm Mobs 1-Shot (Fruit)", Default = false })
 fruitfarmfr:OnChanged(function()
 if Options.fruitfarmfrtoggle.Value == true then
@@ -3676,7 +3664,7 @@ for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
 if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,farmfruitdis,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()
 task.wait(0.5)

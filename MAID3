@@ -3722,7 +3722,7 @@ if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.L
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()
-task.wait(0.5)
+task.wait(0.7)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
@@ -3744,6 +3744,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait()
 end
 end
 end
@@ -3758,7 +3759,7 @@ if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.L
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()
-task.wait(0.5)
+task.wait(0.7)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -3780,6 +3781,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait()
 end
 end
 end
@@ -3794,7 +3796,7 @@ if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.L
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive.Humanoid.Health = 0
 mobalive.Head:Destroy()
-task.wait(0.5)
+task.wait(0.7)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
@@ -3816,6 +3818,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
 end
 end
 end

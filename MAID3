@@ -202,7 +202,7 @@ local args = {
 workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
 end
 
-task.wait(0)
+task.wait(4)
 if game.placeId == 3237168 or game.placeId == 8569358381 then
 
 Pedo = {

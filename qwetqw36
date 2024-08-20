@@ -1651,7 +1651,16 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
     pcall(function()
 repeat task.wait()
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, 100)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
@@ -6546,7 +6555,16 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,"LightPower2", "StartCharging",CFrame.new(Vector3.new(-1037.58544921875, 215.7229461669922, -5000.449951171875), Vector3.new(-0.7139230966567993, -0.5779988169670105, 0.39526084065437317)),workspace.IslandCaver.Stones.Stone, _G.numcharg)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,

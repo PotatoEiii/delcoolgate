@@ -408,7 +408,7 @@ end)
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
-    nonez = Window:AddTab({ Title = "-----", Icon = "" }),
+    nonez = Window:AddTab({ Title = "-----------------------------", Icon = "" }),
     OPA = Window:AddTab({ Title = "(OPA)", Icon = "rbxassetid://13553932740" }),
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }

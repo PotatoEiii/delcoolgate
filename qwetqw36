@@ -3702,6 +3702,41 @@ end
 end
 end
 until _G.fruitfarmz ~= "Light" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Magma" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive.Humanoid.Health = 0
+mobalive.Head:Destroy()
+task.wait(0.5)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Magma" or _G.farmfruit == false
 end
 until _G.farmfruit == false
 end)

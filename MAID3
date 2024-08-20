@@ -541,6 +541,7 @@ kaizu:FindFirstChild("HumanoidRootPart").Anchored = false
 kaizu.HumanoidRootPart.CanCollide = true
 kaizu:FindFirstChild("Humanoid").Health = 0
 kaizu.Head:Destroy()
+kaizu:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end)
 end
 end
@@ -3720,8 +3721,11 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
 if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive.Humanoid.Health = 0
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.7)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
@@ -3757,8 +3761,11 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
 if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive.Humanoid.Health = 0
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.7)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
@@ -3794,8 +3801,11 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
 if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive.Humanoid.Health = 0
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.7)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,

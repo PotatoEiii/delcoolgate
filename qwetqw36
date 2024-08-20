@@ -534,11 +534,13 @@ Tabs.Boss:AddButton({
         Callback = function()
 for i,v in pairs(game.Workspace.IslandKai:GetChildren()) do
 if v.Name == "Kaizu" then
+pcall(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,5,0)
 game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = false
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = true
 game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid").Health = 0
 game.Workspace.IslandKai:WaitForChild("Kaizu").Head:Destroy()
+end)
 end
 end
 end

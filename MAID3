@@ -3690,7 +3690,7 @@ end)
 
 jmkoertz = Tabs.Mobs:AddDropdown("jmkoertz", {
         Title = "Select Fruit",
-        Values = {" ","Light","Magma","Bomb"},
+        Values = {" ","Light","Magma","Gravity","Rumble","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -3719,14 +3719,14 @@ repeat wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if _G.farmfruit == true and _G.fruitfarmz == "Light" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
 mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
@@ -3748,7 +3748,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end
@@ -3759,14 +3759,14 @@ repeat wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if _G.farmfruit == true and _G.fruitfarmz == "Magma" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
 mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -3788,7 +3788,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end
@@ -3799,14 +3799,14 @@ repeat wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if _G.farmfruit == true and _G.fruitfarmz == "Bomb" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
 mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
@@ -3828,12 +3828,85 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end
 end
 until _G.fruitfarmz ~= "Bomb" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Gravity" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Gravity" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StartCharging"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StartCharging",
+[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+[5] = game.Players.LocalPlayer.Character.HumanoidRootPart
+}
+                        
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StopCharging",
+[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+[5] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+[6] = 300
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Gravity" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Rumble" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Rumble" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Rumble).VTCzyhf,
+    [2] = "RumblePower4",
+    [3] = "Create"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Rumble.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Rumble" or _G.farmfruit == false
 end
 until _G.farmfruit == false
 end)

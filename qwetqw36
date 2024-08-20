@@ -3726,7 +3726,7 @@ mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
@@ -3748,7 +3748,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end
@@ -3766,7 +3766,7 @@ mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -3788,7 +3788,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end
@@ -3806,7 +3806,7 @@ mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
@@ -3828,7 +3828,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end
@@ -3846,7 +3846,7 @@ mobalive.HumanoidRootPart.CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.7)
+task.wait(0.5)
 local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
@@ -3875,7 +3875,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-task.wait()
+task.wait(0.2)
 end
 end
 end

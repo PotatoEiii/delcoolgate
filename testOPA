@@ -11,7 +11,7 @@
     local method = getnamecallmethod()
     if method == "FireServer" or method == "InvokeServer" then
         if self.Name == "RemoteEvent" and args[3] == "StopCharging" then
-            args[6] = "10000"
+            args[6] = "100"
             return a(self,unpack(args))
         end
     end

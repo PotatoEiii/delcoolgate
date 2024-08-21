@@ -7875,7 +7875,7 @@ if getgenv().bgtyhn then
 repeat wait()
 pcall(function()
 repeat wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or (not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass")) then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 until not getgenv().bgtyhn

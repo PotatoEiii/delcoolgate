@@ -1,5 +1,81 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant34"))()
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(1)
+vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+if game.CoreGui:FindFirstChild("BBB") then
+game.CoreGui:FindFirstChild("BBB"):Destroy()
+end
+
+if game.CoreGui:FindFirstChild("SalunaDeVoz") then
+game.CoreGui:FindFirstChild("SalunaDeVoz"):Destroy()
+end
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant37"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Main = Window:NewTab("Dupe")
 local MainSection = Main:NewSection(" -- Fruit Boxes -- ")
 local Settings = Window:NewTab("Settings")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ UIS = game:GetService('UserInputService')
+ frame = game.CoreGui.SalunaDeVoz.Main
+ dragToggle = nil
+ dragSpeed = 0
+ dragStart = nil
+ startPos = nil
+
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+
+UIS.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  if dragToggle then
+   updateInput(input)
+  end
+ end
+end)

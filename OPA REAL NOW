@@ -9,7 +9,8 @@ function loadcheck()
 end
 
 getgenv().Save = {
-    ["AutoSave"] = false
+    ["AutoSave"] = false,
+    ["Auto Aura Finding"] = false
 }
 
 function LoadSetting()

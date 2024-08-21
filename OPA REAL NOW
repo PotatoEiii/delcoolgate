@@ -54,10 +54,59 @@ end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant58"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
+local Dupe = Window:NewTab("Dupe")
 local Settings = Window:NewTab("Settings")
+local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
-SettingsSection1:NewToggle("Auto Save" , "Auto Save Config", function(state)
-getgenv().Save["AutoSave"] = true
+Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
+getgenv().Save["Auto Aura Finding"] = state
+if getgenv().Save["AutoSave"] then
 SaveSetting()
+end
+end)
+
+SettingsSection1:NewToggle("Auto Save" , "Auto Save Config", function(state)
+getgenv().Save["AutoSave"] = state
+SaveSetting()
+end)
+
+spawn(function()
+while wait() do
+if getgenv().Save["Auto Aura Finding"] then
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
+wait(1)
+
+repeat
+if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true and getgenv().Save["Auto Aura Finding"] then
+repeat
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+       v:Fire()
+   end
+wait(2)
+until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == false or not getgenv().Save["Auto Aura Finding"]
+end
+if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+end
+
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
+end
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) and getgenv().Save["Auto Aura Finding"] do
+if v.Name == "Compass" then              
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
+end
+
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
+game.Players.LocalPlayer.Character.Compass:Activate()
+end
+task.wait(0.5)
+until not getgenv().Save["Auto Aura Finding"]
+
+end
+end
 end)

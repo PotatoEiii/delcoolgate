@@ -13,7 +13,7 @@ if game.CoreGui:FindFirstChild("SalunaDeVoz") then
 game.CoreGui:FindFirstChild("SalunaDeVoz"):Destroy()
 end
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant43"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant54"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Main = Window:NewTab("Dupe")
 local MainSection = Main:NewSection(" -- Fruit Boxes -- ")
@@ -27,13 +27,15 @@ MainSection:NewDropdown("Present", "Collect Chosen presents", {"Hourly Presents"
 ChosenOne = AnF
 end)
 
-MiscSection:NewButton("ModMenu", "Hold alt or press emotes, this is a safe 1", function()
+MainSection:NewButton("ModMenu", "Hold alt or press emotes, this is a safe 1", function()
 end)
 
-KPSection3:NewToggle("Light Spam" , "Kills Player", function(state)
+MainSection:NewToggle("Light Spam" , "Kills Player", function(state)
 _G.AutoLight = state
 end)
 
+MainSection:NewTextBox("Present Amount", "Collects presents", function(text)
+end)
 
 
 

@@ -10,7 +10,9 @@ end
 
 getgenv().Save = {
     ["AutoSave"] = false,
-    ["Auto Aura Finding"] = false
+    ["Auto Aura Finding"] = false,
+    ["Auto Delete Common Box"] = false,
+    ["Auto Delete Uncommon Box"] = false
 }
 
 function LoadSetting()
@@ -56,12 +58,28 @@ end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant58"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Dupe = Window:NewTab("Dupe")
+local Backpack = Window:NewTab("Backpack")
 local Settings = Window:NewTab("Settings")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
+local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Aura Finding"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack1:NewToggle("Auto Delete Common Box" , "Delete Common Box", function(state)
+getgenv().Save["Auto Delete Common Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack1:NewToggle("Auto Delete Uncommon Box" , "Delete Uncommon Box", function(state)
+getgenv().Save["Auto Delete Uncommon Box"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
@@ -73,7 +91,32 @@ SaveSetting()
 end)
 
 spawn(function()
-while wait() do
+while wait(0.1) do
+
+if getgenv().Save["Auto Delete Common Box"] then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Common Box" then
+v:Destroy()
+end
+end
+end
+
+if getgenv().Save["Auto Delete Uncommon Box"] then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uncommon Box" then
+v:Destroy()
+end
+end
+end
+
+end
+end)
+
+
+
+
+spawn(function()
+while wait(0.1) do
 if getgenv().Save["Auto Aura Finding"] then
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
@@ -97,16 +140,44 @@ if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and getgenv().Sav
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
 end
 
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) and getgenv().Save["Auto Aura Finding"] do
-if v.Name == "Compass" then              
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "Compass" and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
 end
 
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
+end
 task.wait(0.5)
 until not getgenv().Save["Auto Aura Finding"]
+
+end
+end
+end)
+
+spawn(function()
+while wait(0.1) do
+if getgenv().Save["Auto Aura Finding"] then
+
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
+
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: You Got An Aura Fruit!"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+getgenv().Save["Auto Aura Finding"] = false
+for i = 1,5 do wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+end
+end
 
 end
 end

@@ -1,6 +1,6 @@
 function loadcheck()
     if isfile("SALUNA_OPA.json") then
-        g = readfile("Nothing Hub.json")
+        g = readfile("SALUNA_OPA.json")
             return g
         else
             writefile("SALUNA_OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))

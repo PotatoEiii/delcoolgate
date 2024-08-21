@@ -32,7 +32,6 @@ end)
 
 KPSection3:NewToggle("Light Spam" , "Kills Player", function(state)
 _G.AutoLight = state
-end
 end)
 
 

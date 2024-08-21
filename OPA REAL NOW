@@ -3,18 +3,18 @@ getgenv().Save = {
     ["Mod"] = false
 }
 function loadcheck()
-    if isfile("SALUNA OPA.json") then
+    if isfile("SALUNA_OPA.json") then
         g = readfile("Nothing Hub.json")
             return g
         else
-            writefile("SALUNA OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
+            writefile("SALUNA_OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
         return
     end
 end
 
 function LoadSetting()
-    if isfile("SALUNA OPA.json") then
-            vb = game:GetService("HttpService"):JSONDecode(readfile("SALUNA OPA.json"))
+    if isfile("SALUNA_OPA.json") then
+            vb = game:GetService("HttpService"):JSONDecode(readfile("SALUNA_OPA.json"))
             getgenv().Save = vb
                 return vb
         else
@@ -24,9 +24,9 @@ function LoadSetting()
 end
 
 function SaveSetting()
-    if isfile("SALUNA OPA.json") then
+    if isfile("SALUNA_OPA.json") then
             f = writefile
-            writefile("SALUNA OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
+            writefile("SALUNA_OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
                 return f
         else
             loadcheck()

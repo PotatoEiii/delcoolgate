@@ -1,13 +1,20 @@
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant58"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant61"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Main = Window:NewTab("Dupe")
 local MainSection = Main:NewSection(" -- Fruit Boxes -- ")
 local Settings = Window:NewTab("Settings")
 
-local Dick = MainSection:NewLabel("Yoru Speed")
+local Dick = MainSection:NewLabel2("Yoru Speed")
 
 
 MainSection:NewButton("Test", "Hold alt or press emotes, this is a safe 1", function()
-Dick:UpdateLabel("Concac")
+Dick:UpdateLabel2("Concac")
+end)
+
+local Dick2 = MainSection:NewLabel("Yoru Speed")
+
+
+MainSection:NewButton("Test", "Hold alt or press emotes, this is a safe 1", function()
+Dick2:UpdateLabel("Concac")
 end)

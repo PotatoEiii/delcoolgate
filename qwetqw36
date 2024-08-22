@@ -1,4 +1,6 @@
 task.wait(1)
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
@@ -8022,7 +8024,7 @@ if getgenv().bgtyhn then
 repeat wait()
 pcall(function()
 repeat wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or (not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass")) then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 until not getgenv().bgtyhn

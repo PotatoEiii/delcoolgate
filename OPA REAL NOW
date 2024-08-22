@@ -89,7 +89,7 @@ local PlayerStat2 = Stats1:NewLabel("Gems: "..format_large_number_with_spaces(wo
 local PlayerStat3 = Stats1:NewLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
 local PlayerStat4 = Stats1:NewLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
 local PlayerStat5 = Stats1:NewLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
-local PlayerStat6 = Stats1:NewLabel("Combo: "..tostring(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.DevilFruit.Value) .." & "..tostring(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.DevilFruit2.Value))
+local PlayerStat6 = Stats1:NewLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Aura Finding"] = state
@@ -269,6 +269,6 @@ PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.User
 PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
 PlayerStat4:UpdateLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
 PlayerStat5:UpdateLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
-PlayerStat6:UpdateLabel("Combo: "..tostring(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.DevilFruit.Value) .." & "..tostring(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.DevilFruit2.Value))
+PlayerStat6:UpdateLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
 end
 end)

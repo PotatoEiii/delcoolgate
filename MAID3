@@ -202,7 +202,7 @@ local args = {
 workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
 end
 
-task.wait(0)
+task.wait(4)
 if game.placeId == 3237168 or game.placeId == 8569358381 then
 
 Pedo = {
@@ -8022,7 +8022,7 @@ if getgenv().bgtyhn then
 repeat wait()
 pcall(function()
 repeat wait()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or (not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass")) then
+if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
 until not getgenv().bgtyhn

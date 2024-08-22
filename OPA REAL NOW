@@ -55,14 +55,18 @@ if game.CoreGui:FindFirstChild("SalunaDeVoz") then
 game.CoreGui:FindFirstChild("SalunaDeVoz"):Destroy()
 end
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant58"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/servant61"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
+local Stats = Window:NewTab("Stats")
 local Dupe = Window:NewTab("Dupe")
 local Backpack = Window:NewTab("Backpack")
 local Settings = Window:NewTab("Settings")
+local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
+
+local Realtimecheck = Stats1:NewLabel2("Real-Time \n"..os.date("%x %X (%Z)"))
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Aura Finding"] = state
@@ -180,5 +184,11 @@ end
 end
 
 end
+end
+end)
+
+spawn(function()
+while wait(0.1) do
+Realtimecheck:UpdateLabel2("Real-Time \n"..os.date("%x %X (%Z)"))
 end
 end)

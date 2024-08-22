@@ -1,3 +1,6 @@
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+
 function loadcheck()
     if isfile("SALUNA_OPA.json") then
         g = readfile("SALUNA_OPA.json")
@@ -60,10 +63,12 @@ local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Stats = Window:NewTab("Stats")
 local Dupe = Window:NewTab("Dupe")
 local Backpack = Window:NewTab("Backpack")
+local Server = Window:NewTab("Server")
 local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
+local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
 local Realtimecheck = Stats1:NewLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
@@ -87,6 +92,11 @@ getgenv().Save["Auto Delete Uncommon Box"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
+end)
+
+Server1:NewButton("Rejoin Server", "Rejoin The Current Server", function()
+game.Players.LocalPlayer:Kick("Rejoining Server, Please Wait...")
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 end)
 
 SettingsSection1:NewToggle("Auto Save" , "Auto Save Config", function(state)

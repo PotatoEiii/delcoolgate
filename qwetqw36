@@ -3898,6 +3898,7 @@ for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
 if _G.farmfruit == true and _G.fruitfarmz == "Bomb" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
 mobalive.HumanoidRootPart.CanCollide = true
@@ -3927,6 +3928,54 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait(0.2)
+else
+task.wait(0.05)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+end
 end
 end
 end

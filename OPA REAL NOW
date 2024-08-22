@@ -269,6 +269,10 @@ PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.User
 PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
 PlayerStat4:UpdateLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
 PlayerStat5:UpdateLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
+if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text ~= "Ready!" then
 PlayerStat6:UpdateLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
+else
+PlayerStat6:UpdateLabel("Compass: "..tostring(game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokens.Value).."/"..tostring(game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokenLimit.Value).." (Full!)")
+end
 end
 end)

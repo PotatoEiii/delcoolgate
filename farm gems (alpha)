@@ -93,6 +93,7 @@ end
 end
 until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.concac == false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.0743713, 282.310211, -36.9613533, 0.136958227, -1.5720218e-08, 0.990576804, 4.45528325e-09, 1, 1.52537698e-08, -0.990576804, 2.3241713e-09, 0.136958227)
+_G.swingsword = false
 repeat wait()
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily3")
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","AllDaily")
@@ -109,7 +110,7 @@ end)
 spawn(function()
 while wait(0.1) do
 pcall(function()
-if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.swingsword == true then
 repeat wait()
 if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi"))
@@ -117,7 +118,7 @@ end
 if game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi"):Activate()
 end
-until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.concac == false
+until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.swingsword == false
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
 end)

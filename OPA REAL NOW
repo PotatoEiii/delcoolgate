@@ -335,6 +335,8 @@ until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == false or not getg
 end
 if not game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end
 if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])

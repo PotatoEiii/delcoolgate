@@ -60,8 +60,9 @@ wait(0.3)
 if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 and game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
 game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
 end
-until _G.concac == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi")
+until _G.concac == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") or game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi")
 wait(0.3)
+_G.swingsword = true
 repeat wait()
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Bandit") or string.find(mobalive.Name,"Boar") then
@@ -83,7 +84,7 @@ end)
 
 spawn(function()
 while wait(0.1) do
-if _G.concac then
+if _G.swingsword then
 if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi"))
 end

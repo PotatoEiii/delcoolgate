@@ -3,7 +3,7 @@ local function killMob(mob)
     local humanoid = mob:FindFirstChildOfClass("Humanoid")
 
     if humanoidRootPart and humanoid then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 4)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 3)
         humanoidRootPart.Anchored = false
         humanoidRootPart.CanCollide = true
         humanoid.Health = 0

@@ -4,6 +4,9 @@ while wait(0.1) do
 pcall(function()
 if _G.concac then
 repeat wait()
+if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+pcall(function()
+repeat wait()
 if game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value ~= "Quests" and game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value ~= "None" then
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
 end
@@ -95,6 +98,9 @@ workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Challenge
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","AllDaily")
 until (game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete") or _G.concac == false
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
+end)
+end
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
 end
 end)
 end

@@ -12,7 +12,7 @@ end
 wait(0.5)
 until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.MissionObjective.Value == "Quests" or _G.concac == false
 repeat wait()
-if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false then
+if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false then
 if (not game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass")) and (not game.Players.LocalPlayer.Character:FindFirstChild("Compass")) and _G.concac == true then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1")
 end
@@ -24,7 +24,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Pla
 game.Players.LocalPlayer.Character:WaitForChild("Compass"):Activate()
 end
 end
-until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or _G.concac == false
+until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == true or _G.concac == false
 
 
 

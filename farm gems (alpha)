@@ -7,7 +7,7 @@ local function killMob(mob)
         humanoidRootPart.Anchored = false
         humanoidRootPart.CanCollide = true
         humanoid.Health = 0
-        mob.Head:Destroy()
+        mob:FindFirstChild("Head"):Destroy()
         humanoid:ChangeState(Enum.HumanoidStateType.Dead)
         task.wait(0.5)
     end

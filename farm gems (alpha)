@@ -40,6 +40,9 @@ end
 wait(0.3)
 end
 until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or _G.concac == false
+end
+end
+end
 for i,c in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
 if string.find(c.Name,"Box") then
 c.Parent = game.Players.LocalPlayer.Character
@@ -47,12 +50,11 @@ task.wait()
 c:Activate()
 end
 end
-end
-end
 until _G.concac == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
+
+
+
 end
-
-
 end
 end)
 

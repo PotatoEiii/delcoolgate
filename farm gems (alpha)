@@ -61,6 +61,7 @@ if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value 
 game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
 end
 until _G.concac == false or game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi")
+wait(0.3)
 if game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi"))
 end

@@ -15,7 +15,10 @@ getgenv().Save = {
     ["AutoSave"] = false,
     ["Auto Aura Finding"] = false,
     ["Auto Delete Common Box"] = false,
-    ["Auto Delete Uncommon Box"] = false
+    ["Auto Delete Uncommon Box"] = false,
+["Auto Open Common Box"] = false,
+["Auto Open Uncommon Box"] = false,
+["Auto Open Rare/Ultra Box"] = false
 }
 
 function LoadSetting()
@@ -80,6 +83,7 @@ local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
+local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
 local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
@@ -107,6 +111,27 @@ end)
 
 Backpack1:NewToggle("Auto Delete Uncommon Box" , "Delete Uncommon Box", function(state)
 getgenv().Save["Auto Delete Uncommon Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack2:NewToggle("Auto Open Common Box" , "Open Common Box", function(state)
+getgenv().Save["Auto Open Common Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack2:NewToggle("Auto Open Uncommon Box" , "Open Uncommon Box", function(state)
+getgenv().Save["Auto Open Uncommon Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack2:NewToggle("Auto Open Rare/Ultra Box" , "Open Rare/Ultra Box", function(state)
+getgenv().Save["Auto Open Rare/Ultra Box"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
@@ -171,7 +196,6 @@ end)
 
 spawn(function()
 while wait(0.1) do
-
 if getgenv().Save["Auto Delete Common Box"] then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and v.Name == "Common Box" then
@@ -184,6 +208,33 @@ if getgenv().Save["Auto Delete Uncommon Box"] then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and v.Name == "Uncommon Box" then
 v:Destroy()
+end
+end
+end
+
+if getgenv().Save["Auto Open Common Box"] then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Common Box" then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+end
+end
+end
+
+if getgenv().Save["Auto Delete Uncommon Box"] then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uncommon Box" then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+end
+end
+end
+
+if getgenv().Save["Auto Open Rare/Ultra Box"] then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and string.find(v.Name,"Rare") then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
 end
 end
 end

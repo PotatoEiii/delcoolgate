@@ -1,8 +1,7 @@
-
 spawn(function()
 while wait(0.1) do
 pcall(function()
-if _G.concac then
+if getgenv().Save["Auto Farm Gems"] then
 repeat wait()
 if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
 pcall(function()
@@ -15,22 +14,22 @@ if game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.Lo
 workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end
 wait(0.5)
-until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.MissionObjective.Value == "Quests" or _G.concac == false or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Completed"
+until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.MissionObjective.Value == "Quests" or getgenv().Save["Auto Farm Gems"] == false or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Completed"
 repeat wait()
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Claim" then
-if _G.concac == true and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Claim" then
+if getgenv().Save["Auto Farm Gems"] == true and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Claim" then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1")
 end
-if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and _G.concac == true then
+if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and getgenv().Save["Auto Farm Gems"] == true then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character:WaitForChild("Compass").Poser.Value)
 game.Players.LocalPlayer.Character:WaitForChild("Compass"):Activate()
 wait(1)
 end
 end
-until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Completed" or _G.concac == false
+until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
 repeat wait()
-if _G.concac == true and game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value == "None" then
+if getgenv().Save["Auto Farm Gems"] == true and game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value == "None" then
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
 if string.find(v.Name,"Fruit") then
 repeat wait()
@@ -44,7 +43,7 @@ z.Function()
 end
 wait(0.3)
 end
-until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or _G.concac == false
+until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
 end
 end
 end
@@ -55,7 +54,7 @@ task.wait()
 c:Activate()
 end
 end
-until _G.concac == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
+until getgenv().Save["Auto Farm Gems"] == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
 repeat wait()
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily1")
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily4")
@@ -65,13 +64,13 @@ wait(0.3)
 if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 and game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
 game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
 end
-until _G.concac == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") or game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi")
+until getgenv().Save["Auto Farm Gems"] == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") or game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi")
 wait(0.3)
 _G.swingsword = true
 repeat wait()
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") or string.find(mobalive.Name,"Lv9 Bandit") or string.find(mobalive.Name,"Lv2 Angry Bob") or string.find(mobalive.Name,"Lv4 Freddy") or string.find(mobalive.Name,"Boar")) and mobalive.Humanoid.Health ~= 0 then
-if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and getgenv().Save["Auto Farm Gems"] == true then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 10, 10)
 task.wait()
         mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
@@ -85,19 +84,19 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstC
 else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 3)
 end
-if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and getgenv().Save["Auto Farm Gems"] == true then
 task.wait(1)
 end
 end
 end
 end
-until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.concac == false
+until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.0743713, 282.310211, -36.9613533, 0.136958227, -1.5720218e-08, 0.990576804, 4.45528325e-09, 1, 1.52537698e-08, -0.990576804, 2.3241713e-09, 0.136958227)
 _G.swingsword = false
 repeat wait()
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily3")
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","AllDaily")
-until (game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete") or _G.concac == false
+until (game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete") or getgenv().Save["Auto Farm Gems"] == false
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
 end)
 end
@@ -128,7 +127,7 @@ end)
 spawn(function() -- autofarm velocity
     while wait() do
         pcall(function()
-            if _G.concac == true then
+            if getgenv().Save["Auto Farm Gems"] == true then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -137,7 +136,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.concac == false then
+            elseif getgenv().Save["Auto Farm Gems"] == false then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
@@ -146,4 +145,6 @@ spawn(function() -- autofarm velocity
     end
 end)
 
-_G.concac = true
+getgenv().Save = {
+["Auto Farm Gems"] = true
+}

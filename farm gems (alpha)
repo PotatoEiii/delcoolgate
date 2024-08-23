@@ -13,7 +13,7 @@ wait(0.5)
 until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.MissionObjective.Value == "Quests" or _G.concac == false or game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor or game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Completed"
 repeat wait()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Claim" then
-if (not game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass")) and (not game.Players.LocalPlayer.Character:FindFirstChild("Compass")) and _G.concac == true then
+if _G.concac == true and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Claim" then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1")
 end
 if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and _G.concac == true then
@@ -51,6 +51,8 @@ end
 end
 until _G.concac == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
 end
+
+
 end
 end)
 

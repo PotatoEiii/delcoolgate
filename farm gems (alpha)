@@ -70,17 +70,16 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") or string.find(mobalive.Name,"Lv9 Bandit") or string.find(mobalive.Name,"Lv2 Angry Bob") or string.find(mobalive.Name,"Lv4 Freddy") or string.find(mobalive.Name,"Boar")) and mobalive.Humanoid.Health ~= 0 then
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
 
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 7, 0)
-        humanoidRootPart.Anchored = false
-        humanoidRootPart.CanCollide = true
-        humanoid.Health = 0
-        mob:FindFirstChild("Head"):Destroy()
-        humanoid:ChangeState(Enum.HumanoidStateType.Dead)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 7, 0)
+        mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+        mobalive:FindFirstChild("HumanoidRootPart").CanCollide = true
+        mobalive:FindFirstChild("Humanoid").Health = 0
+        mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
         task.wait(0.5)
 if string.find(mob.Name,"Crab") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 1)
 else
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 3)
 end
         task.wait(1)
 

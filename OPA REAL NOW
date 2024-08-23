@@ -356,6 +356,18 @@ end)
 
 spawn(function()
 while wait(0.1) do
+if getgenv().Save["Auto Aura Finding"] then
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if not string.find(v.Name,"Fruit") and not string.find(v.Name,"Compass") and not string.find(v.Name,"Box") then
+v:Destroy()
+end
+end
+end
+end
+end)
+
+spawn(function()
+while wait(0.1) do
 Realtimecheck:UpdateLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
 PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
 PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))

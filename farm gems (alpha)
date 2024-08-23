@@ -81,8 +81,9 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstC
 else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 3)
 end
-        task.wait(1)
-
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
+task.wait(1)
+end
 end
 end
 end

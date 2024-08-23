@@ -18,7 +18,11 @@ getgenv().Save = {
     ["Auto Delete Uncommon Box"] = false,
 ["Auto Open Common Box"] = false,
 ["Auto Open Uncommon Box"] = false,
-["Auto Open Rare/Ultra Box"] = false
+["Auto Open Rare/Ultra Box"] = false,
+["Auto Delete Non-Aura Common Fruit"] = false,
+["Auto Delete Non-Aura Uncommon Fruit"] = false,
+["Auto Delete Non-Aura Rare Fruit"] = false,
+["Auto Delete Non-Aura Ultra Rare Fruit"] = false
 }
 
 function LoadSetting()
@@ -84,6 +88,7 @@ local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
+local Backpack3 = Backpack:NewSection(" -- Auto Delete Fruit -- ")
 local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
@@ -132,6 +137,34 @@ end)
 
 Backpack2:NewToggle("Auto Open Rare/Ultra Box" , "Open Rare/Ultra Box", function(state)
 getgenv().Save["Auto Open Rare/Ultra Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Common Fruit" , "Delete Common Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Common Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Uncommon Fruit" , "Delete Uncommon Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Uncommon Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Rare Fruit" , "Delete Rare Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Rare Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Ultra Rare Fruit" , "Delete Ultra Rare Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Ultra Rare Fruit"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
@@ -239,6 +272,46 @@ end
 end
 end
 
+if getgenv().Save["Auto Delete Non-Aura Ultra Rare Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
+if not string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Rare Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Uncommon Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") then
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Common Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
 end
 end)
 
@@ -252,63 +325,31 @@ repeat wait() until game:IsLoaded()
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
 game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
 wait(1)
-
 repeat
 if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true and getgenv().Save["Auto Aura Finding"] then
 repeat
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
-       v:Fire()
-   end
+v:Fire()
+end
 wait(2)
 until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == false or not getgenv().Save["Auto Aura Finding"]
 end
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end
-
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
 end
-
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v.Name == "Compass" and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
 end
-
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
 end
 task.wait(0.5)
 until not getgenv().Save["Auto Aura Finding"]
-
-end
-end
-end)
-
-spawn(function()
-while wait(0.1) do
-if getgenv().Save["Auto Aura Finding"] then
-
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
-
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: You Got An Aura Fruit!"
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-getgenv().Save["Auto Aura Finding"] = false
-for i = 1,5 do wait(0.1)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-end
-end
-end
-
 end
 end
 end)

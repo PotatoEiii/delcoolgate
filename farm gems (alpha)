@@ -107,7 +107,7 @@ if game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi"):Activate()
 end
 until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.concac == false
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools(game.Players.LocalPlayer.Character.Wakizashi)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
 end)
 end

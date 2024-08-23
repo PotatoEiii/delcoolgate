@@ -8,7 +8,6 @@ if string.find(mob.Name,"Crab") then
         humanoidRootPart.Anchored = false
         humanoidRootPart.CanCollide = true
         humanoid.Health = 0
-        mob:FindFirstChild("Head"):Destroy()
         humanoid:ChangeState(Enum.HumanoidStateType.Dead)
         task.wait(1.5)
 else

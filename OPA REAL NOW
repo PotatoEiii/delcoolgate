@@ -254,7 +254,7 @@ end
 end
 end
 
-if getgenv().Save["Auto Delete Uncommon Box"] then
+if getgenv().Save["Auto Open Uncommon Box"] then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and v.Name == "Uncommon Box" then
 v.Parent = game.Players.LocalPlayer.Character

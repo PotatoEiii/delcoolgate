@@ -3,6 +3,15 @@ local function killMob(mob)
     local humanoid = mob:FindFirstChildOfClass("Humanoid")
 
     if humanoidRootPart and humanoid then
+if string.find(mob.Name,"Crab") then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 1)
+        humanoidRootPart.Anchored = false
+        humanoidRootPart.CanCollide = true
+        humanoid.Health = 0
+        mob:FindFirstChild("Head"):Destroy()
+        humanoid:ChangeState(Enum.HumanoidStateType.Dead)
+        task.wait(1.5)
+else
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, 3)
         humanoidRootPart.Anchored = false
         humanoidRootPart.CanCollide = true
@@ -10,6 +19,7 @@ local function killMob(mob)
         mob:FindFirstChild("Head"):Destroy()
         humanoid:ChangeState(Enum.HumanoidStateType.Dead)
         task.wait(0.5)
+end
     end
 end
 
@@ -81,7 +91,7 @@ wait(0.3)
 _G.swingsword = true
 repeat wait()
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,"Bandit") or string.find(mobalive.Name,"Fr") or string.find(mobalive.Name,"Boar") and mobalive.Humanoid.Health ~= 0 then
+if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") or string.find(mobalive.Name,"Lv9 Bandit") or string.find(mobalive.Name,"Lv2 Angry Bob") or string.find(mobalive.Name,"Lv4 Freddy") or string.find(mobalive.Name,"Boar")) and mobalive.Humanoid.Health ~= 0 then
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
 killMob(mobalive)
 end

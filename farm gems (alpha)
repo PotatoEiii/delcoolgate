@@ -70,7 +70,7 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") or string.find(mobalive.Name,"Lv9 Bandit") or string.find(mobalive.Name,"Lv2 Angry Bob") or string.find(mobalive.Name,"Lv4 Freddy") or string.find(mobalive.Name,"Boar")) and mobalive.Humanoid.Health ~= 0 then
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
 
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 7, 0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 7, 7)
         mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
         mobalive:FindFirstChild("HumanoidRootPart").CanCollide = true
         mobalive:FindFirstChild("Humanoid").Health = 0
@@ -95,6 +95,7 @@ end)
 
 spawn(function()
 while wait(0.1) do
+pcall(function()
 if _G.swingsword then
 if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi"))
@@ -103,6 +104,7 @@ if game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi"):Activate()
 end
 end
+end)
 end
 end)
 

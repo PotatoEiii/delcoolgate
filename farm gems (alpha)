@@ -56,10 +56,14 @@ workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Challenge
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily4")
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge9")
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily2")
-if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 then
+if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 and game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
 game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
+wait(0.3)
 end
-until _G.concac == false or game.Players.LocalPlayer.Backpack:WaitForChild("Wakizashi")
+if game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi"))
+end
+until _G.concac == false or game.Players.LocalPlayer.Character:WaitForChild("Wakizashi")
 
 
 

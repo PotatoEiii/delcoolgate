@@ -9,7 +9,7 @@ local function killMob(mob)
         humanoid.Health = 0
         mob.Head:Destroy()
         humanoid:ChangeState(Enum.HumanoidStateType.Dead)
-        task.wait(1)
+        task.wait(0.5)
     end
 end
 
@@ -80,10 +80,12 @@ wait(0.3)
 _G.swingsword = true
 repeat wait()
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Boar") then
+if string.find(mobalive.Name,"Bandit") or string.find(mobalive.Name,"Thug") or string.find(mobalive.Name,"Boar") and v.Humanoid.Health ~= 0 then
+pcall(function()
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
 killMob(mobalive)
 end
+end)
 end
 end
 until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.concac == false
@@ -102,6 +104,27 @@ game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi"):Activate()
 end
 end
 end
+end)
+
+spawn(function() -- autofarm velocity
+    while wait() do
+        pcall(function()
+            if _G.concac == true then
+                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+                    local Noclip = Instance.new("BodyVelocity")
+                    Noclip.Name = "BodyClip"
+                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                    Noclip.Velocity = Vector3.new(0,0,0)
+                end
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+            elseif _G.concac == false then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+                wait(1)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+            end
+        end)
+    end
 end)
 
 _G.concac = true

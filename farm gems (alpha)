@@ -70,6 +70,8 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") or string.find(mobalive.Name,"Lv9 Bandit") or string.find(mobalive.Name,"Lv2 Angry Bob") or string.find(mobalive.Name,"Lv4 Freddy") or string.find(mobalive.Name,"Boar")) and mobalive.Humanoid.Health ~= 0 then
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
 local cframemob = mobalive:FindFirstChild("HumanoidRootPart").CFrame
+local cframecrab = cframemob * CFrame.new(0, 0, 1)
+local cframeother = cframemob * CFrame.new(0, 0, 3)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cframemob * CFrame.new(0, 7, 7)
         mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
         mobalive:FindFirstChild("HumanoidRootPart").CanCollide = true
@@ -78,9 +80,9 @@ local cframemob = mobalive:FindFirstChild("HumanoidRootPart").CFrame
         mobalive.Head:Destroy()
         task.wait(0.5)
 if string.find(mob.Name,"Crab") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cframemob * CFrame.new(0, 0, 1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cframecrab
 else
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cframemob * CFrame.new(0, 0, 3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cframeother
 end
         task.wait(1)
 

@@ -60,7 +60,7 @@ wait(0.3)
 if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 and game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
 game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
 end
-until _G.concac == false or game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi")
+until _G.concac == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi")
 wait(0.3)
 repeat wait()
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do

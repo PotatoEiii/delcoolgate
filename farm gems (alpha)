@@ -65,8 +65,31 @@ wait(0.3)
 if game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Wakizashi"))
 end
+repeat wait()
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Bandit") or string.find(mobalive.Name,"Boar") then
+if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Claim" and _G.concac == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(1)
+end
+end
+end
+until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor or game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Completed" or _G.concac == false
+end
+end
+end)
 
-
+spawn(function()
+while wait(0.1) do
+if _G.concac then
+if game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi"):Activate()
+end
 end
 end
 end)

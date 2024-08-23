@@ -51,6 +51,15 @@ c:Activate()
 end
 end
 until _G.concac == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
+repeat wait()
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily1")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily4")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge9")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily2")
+if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 then
+game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
+end
+until _G.concac == false or game.Players.LocalPlayer.Backpack:WaitForChild("Wakizashi")
 
 
 

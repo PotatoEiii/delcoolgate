@@ -24,7 +24,8 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Rare Fruit"] = false,
 ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
 ["Auto Farm Gems"] = false,
-["Auto Spawn"] = false
+["Auto Spawn"] = false,
+["Auto Get Expertise"] = false
 }
 
 function LoadSetting()
@@ -109,6 +110,13 @@ local PlayerStat6 = Stats1:NewLabel("Compass: "..tostring(game:GetService("Playe
 
 FFarm1:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
 getgenv().Save["Auto Spawn"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+FFarm1:NewToggle("Auto Get Expertise" , "Automatic Get Expertise Quest", function(state)
+getgenv().Save["Auto Get Expertise"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
@@ -270,8 +278,8 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Rare Fruit"] = false,
 ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
 ["Auto Farm Gems"] = false,
-["Auto Spawn"] = false
-
+["Auto Spawn"] = false,
+["Auto Get Expertise"] = false
 }
 SaveSetting()
 end)
@@ -383,6 +391,17 @@ end)
             end
             end)
 
+            spawn(function()
+            while wait(2) do
+                if getgenv().Save["Auto Get Expertise"] then
+                    pcall(function()
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+                    end)
+                end
+            end
+            end)
 
 spawn(function()
 while wait(0.1) do

@@ -48,13 +48,10 @@ task.wait()
 for i, z in pairs(getconnections(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("GiverGUI"):WaitForChild("ImageLabel"):WaitForChild("Frame")[1].MouseButton1Click)) do
 z.Function()
 end
-task.wait()
-v:Activate()
-task.wait()
-for i, z in pairs(getconnections(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("GiverGUI"):WaitForChild("ImageLabel"):WaitForChild("Frame")[1].MouseButton1Click)) do
-z.Function()
+wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid:UnEquipTools()
 end
-wait(0.3)
+wait(0.2)
 end
 until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
 end

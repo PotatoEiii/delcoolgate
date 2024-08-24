@@ -1,3 +1,21 @@
+_G.SalunaWhite = false
+
+salunalisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+        for _, v1 in pairs(salunalisted) do
+gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
+            if gethwid == v1 then
+_G.SalunaWhite = true
+            end
+        end
+
+salunauserlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+        for _, v2 in pairs(salunauserlisted) do
+            if game.Players.LocalPlayer.UserId == v2 then
+_G.SalunaWhite = true
+            end
+        end
+
+if _G.SalunaWhite then
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
 
@@ -647,3 +665,4 @@ PlayerStat6:UpdateLabel("Compass: "..tostring(game.Workspace.UserData["User_"..g
 end
 end
 end)
+end

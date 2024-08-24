@@ -25,7 +25,8 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
 ["Auto Farm Gems"] = false,
 ["Auto Spawn"] = false,
-["Auto Get Expertise"] = false
+["Auto Get Expertise"] = false,
+["Auto Bring Compass"] = false
 }
 
 function LoadSetting()
@@ -84,19 +85,22 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Potat
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Stats = Window:NewTab("Stats")
 local FFarm = Window:NewTab("Farm")
-local Dupe = Window:NewTab("Dupe")
-local Backpack = Window:NewTab("Backpack")
 local Gems = Window:NewTab("Gems")
+local Dupe = Window:NewTab("Dupe")
+local GrabDrop = Window:NewTab("Grab/Drop")
+local Backpack = Window:NewTab("Backpack")
 local Server = Window:NewTab("Server")
 local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
+local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Dupe2 = Dupe:NewSection(" -- Dupe Mode -- ")
+local GrabDrop1 = GrabDrop:NewSection(" -- Grab Tools -- ")
+local GrabDrop2 = GrabDrop:NewSection(" -- Drop Tools -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
 local Backpack3 = Backpack:NewSection(" -- Auto Delete Fruit -- ")
-local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
@@ -140,6 +144,13 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+GrabDrop1:NewToggle("Auto Bring Compass" , "Auto Bring Compass", function(state)
+getgenv().Save["Auto Bring Compass"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
 end)
 
 Backpack1:NewToggle("Auto Delete Common Box" , "Delete Common Box", function(state)
@@ -279,7 +290,8 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
 ["Auto Farm Gems"] = false,
 ["Auto Spawn"] = false,
-["Auto Get Expertise"] = false
+["Auto Get Expertise"] = false,
+["Auto Bring Compass"] = false
 }
 SaveSetting()
 end)
@@ -375,6 +387,22 @@ end
 end
 end
 end)
+
+            spawn(function()
+            while wait() do
+                if getgenv().Save["Auto Bring Compass"] then
+ pcall(function()
+local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+	for _, child in ipairs(workspace:GetChildren()) do
+		if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and string.find(child.Name, "Compass")  and child:FindFirstChild("Handle") then
+			humanoid:EquipTool(child)
+			wait()
+		end
+		end
+	end)
+                end
+            end
+            end)
 
             spawn(function()
             while wait() do

@@ -1,6 +1,6 @@
 _G.SalunaWhite = false
 
-salunalisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+salunalisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/main/hwidlist'))()
         for _, v1 in pairs(salunalisted) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
@@ -8,7 +8,7 @@ _G.SalunaWhite = true
             end
         end
 
-salunauserlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/wlist.lua'))()
+salunauserlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/main/userlist'))()
         for _, v2 in pairs(salunauserlisted) do
             if game.Players.LocalPlayer.UserId == v2 then
 _G.SalunaWhite = true
@@ -665,4 +665,6 @@ PlayerStat6:UpdateLabel("Compass: "..tostring(game.Workspace.UserData["User_"..g
 end
 end
 end)
+else
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 end

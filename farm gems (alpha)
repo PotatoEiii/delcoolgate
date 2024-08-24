@@ -98,7 +98,9 @@ repeat wait()
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily3")
 workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","AllDaily")
 until (game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete") or getgenv().Save["Auto Farm Gems"] == false
+if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete" and getgenv().Save["Auto Farm Gems"] == true then
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
+end
 end)
 end
 until game.Players.LocalPlayer.Character.Humanoid.Health == 0

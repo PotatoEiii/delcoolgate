@@ -90,7 +90,7 @@ local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
 local Backpack3 = Backpack:NewSection(" -- Auto Delete Fruit -- ")
-local Gems1 = Stats:NewSection(" -- Farm Gems -- ")
+local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 

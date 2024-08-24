@@ -22,7 +22,8 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Common Fruit"] = false,
 ["Auto Delete Non-Aura Uncommon Fruit"] = false,
 ["Auto Delete Non-Aura Rare Fruit"] = false,
-["Auto Delete Non-Aura Ultra Rare Fruit"] = false
+["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
+["Auto Farm Gems"] = false
 }
 
 function LoadSetting()
@@ -186,7 +187,7 @@ SaveSetting()
 end
 end)
 
-Gems1:NewToggle("Auto Farm Gems" , "Require: Sam's Token And You Should Lure Cave Demon + Gunslinger Far From Tree", function(state)
+Gems1:NewToggle("Auto Farm Gems (Recommend Use In Server 1 Player)" , "Require: Sam's Token And You Should Lure Cave Demon + Gunslinger Far From Tree", function(state)
 getgenv().Save["Auto Farm Gems"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
@@ -245,7 +246,25 @@ Fluent:Notify({
     end          
 end)
 
-SettingsSection1:NewToggle("Auto Save" , "Auto Save Config", function(state)
+SettingsSection1:NewButton("Reset Config", "Reset The Auto Save Config", function()
+getgenv().Save = {
+    ["AutoSave"] = false,
+    ["Auto Aura Finding"] = false,
+    ["Auto Delete Common Box"] = false,
+    ["Auto Delete Uncommon Box"] = false,
+["Auto Open Common Box"] = false,
+["Auto Open Uncommon Box"] = false,
+["Auto Open Rare/Ultra Box"] = false,
+["Auto Delete Non-Aura Common Fruit"] = false,
+["Auto Delete Non-Aura Uncommon Fruit"] = false,
+["Auto Delete Non-Aura Rare Fruit"] = false,
+["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
+["Auto Farm Gems"] = false
+}
+SaveSetting()
+end)
+
+SettingsSection1:NewToggle("Auto Save Config" , "Auto Save Config", function(state)
 getgenv().Save["AutoSave"] = state
 SaveSetting()
 end)

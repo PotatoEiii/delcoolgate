@@ -512,7 +512,7 @@ task.wait()
         mobalive:FindFirstChild("Humanoid").Health = 0
         mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
         mobalive:FindFirstChild("Head"):Destroy()
-        task.wait(0.5)
+        wait(0.7)
 local killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 if string.find(mobalive.Name,"Crab") then
 repeat wait()

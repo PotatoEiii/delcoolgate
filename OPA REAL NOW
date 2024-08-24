@@ -87,6 +87,7 @@ local Server = Window:NewTab("Server")
 local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
+local Dupe2 = Dupe:NewSection(" -- Dupe Mode -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
 local Backpack3 = Backpack:NewSection(" -- Auto Delete Fruit -- ")
@@ -107,6 +108,19 @@ getgenv().Save["Auto Aura Finding"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
+end)
+
+Dupe2:NewButton("Dupe Mode", "Not Save Data Progress", function()
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Dupe Mode Turned On"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 end)
 
 Backpack1:NewToggle("Auto Delete Common Box" , "Delete Common Box", function(state)

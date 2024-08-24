@@ -23,7 +23,8 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Uncommon Fruit"] = false,
 ["Auto Delete Non-Aura Rare Fruit"] = false,
 ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
-["Auto Farm Gems"] = false
+["Auto Farm Gems"] = false,
+["Auto Spawn"] = false
 }
 
 function LoadSetting()
@@ -81,12 +82,14 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
 local Stats = Window:NewTab("Stats")
+local FFarm = Window:NewTab("Farm")
 local Dupe = Window:NewTab("Dupe")
 local Backpack = Window:NewTab("Backpack")
 local Gems = Window:NewTab("Gems")
 local Server = Window:NewTab("Server")
 local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
+local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Dupe2 = Dupe:NewSection(" -- Dupe Mode -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
@@ -103,6 +106,13 @@ local PlayerStat3 = Stats1:NewLabel("Beri: "..format_large_number_with_spaces(wo
 local PlayerStat4 = Stats1:NewLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
 local PlayerStat5 = Stats1:NewLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
 local PlayerStat6 = Stats1:NewLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
+
+FFarm1:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
+getgenv().Save["Auto Spawn"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Aura Finding"] = state
@@ -259,7 +269,9 @@ getgenv().Save = {
 ["Auto Delete Non-Aura Uncommon Fruit"] = false,
 ["Auto Delete Non-Aura Rare Fruit"] = false,
 ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
-["Auto Farm Gems"] = false
+["Auto Farm Gems"] = false,
+["Auto Spawn"] = false
+
 }
 SaveSetting()
 end)
@@ -356,7 +368,20 @@ end
 end
 end)
 
-
+            spawn(function()
+            while wait() do
+                if getgenv().Save["Auto Spawn"] then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+                             wait(5)
+   for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+                                    v.Function()
+                                end
+                        end
+                    end)
+                end
+            end
+            end)
 
 
 spawn(function()

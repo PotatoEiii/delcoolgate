@@ -83,15 +83,11 @@ task.wait()
         mobalive:FindFirstChild("Head"):Destroy()
         wait(0.7)
 local killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
-if string.find(mobalive.Name,"Crab") then
-repeat wait(0.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, -1, 1)
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= killstat or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
-else
+
 repeat wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 3)
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= killstat or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
-end
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or not mobalive:FindFirstChild("HumanoidRootPart") or workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= killstat or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
+
 end
 end
 end

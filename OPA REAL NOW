@@ -187,7 +187,7 @@ SaveSetting()
 end
 end)
 
-Gems1:NewToggle("Auto Farm Gems (Recommend Use In Server 1 Player)" , "Require: Sam's Token And You Should Lure Cave Demon + Gunslinger Far From Tree", function(state)
+Gems1:NewToggle("Auto Farm Gems (Better Use In 1-Player Server)" , "Require: Compass Token", function(state)
 getgenv().Save["Auto Farm Gems"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()

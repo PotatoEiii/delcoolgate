@@ -48,7 +48,6 @@ task.wait()
 for i, z in pairs(getconnections(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("GiverGUI"):WaitForChild("ImageLabel"):WaitForChild("Frame")[1].MouseButton1Click)) do
 z.Function()
 end
-wait()
 task.wait()
 v:Activate()
 task.wait()

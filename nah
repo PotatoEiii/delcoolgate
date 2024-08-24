@@ -1,0 +1,126 @@
+-- Auto Farm Gems and Mob Script
+getgenv().Save = {
+    ["Auto Farm Gems"] = true,
+    ["Auto Farm Mobs"] = true
+}
+
+-- Function to Claim Challenges
+local function claimChallenges()
+    local userId = game.Players.LocalPlayer.UserId
+    local userData = workspace.UserData["User_" .. tostring(userId)]
+    
+    userData.ChallengesRemote:FireServer("Claim", "Daily1")
+    userData.ChallengesRemote:FireServer("Claim", "Daily4")
+    userData.ChallengesRemote:FireServer("Claim", "Challenge9")
+    userData.ChallengesRemote:FireServer("Claim", "Daily2")
+end
+
+-- Function to Handle Sword Swinging
+local function swingSword()
+    if getgenv().Save["Auto Farm Gems"] or getgenv().Save["Auto Farm Mobs"] then
+        local humanoid = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+        if humanoid and humanoid.Health > 0 then
+            local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Wakizashi")
+            if tool then
+                humanoid:EquipTool(tool)
+                tool:Activate()
+            end
+        end
+    end
+end
+
+-- Function to Farm Gems
+local function autoFarmGems()
+    if getgenv().Save["Auto Farm Gems"] then
+        while getgenv().Save["Auto Farm Gems"] do
+            pcall(function()
+                local player = game.Players.LocalPlayer
+                local character = player.Character or player.CharacterAdded:Wait()
+                local humanoid = character:WaitForChild("Humanoid")
+                local backpack = player:WaitForChild("Backpack")
+
+                if humanoid.Health > 0 and #backpack:GetChildren() > 0 then
+                    repeat
+                        wait(0.1)
+                        claimChallenges()
+                        if player:FindFirstChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false then
+                            workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1")
+                        end
+                    until humanoid.Health == 0 or not getgenv().Save["Auto Farm Gems"]
+
+                    -- Equip and use the compass
+                    local compass = backpack:FindFirstChild("Compass")
+                    if compass then
+                        humanoid:EquipTool(compass)
+                        character.HumanoidRootPart.CFrame = CFrame.new(compass.Poser.Value)
+                        compass:Activate()
+                        wait(1)
+                    end
+                end
+            end)
+            wait(0.1)
+        end
+    end
+end
+
+-- Function to Farm Mobs
+local function autoFarmMobs()
+    if getgenv().Save["Auto Farm Mobs"] then
+        while getgenv().Save["Auto Farm Mobs"] do
+            pcall(function()
+                local player = game.Players.LocalPlayer
+                local character = player.Character or player.CharacterAdded:Wait()
+                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+                local humanoid = character:WaitForChild("Humanoid")
+
+                if humanoid.Health > 0 then
+                    for _, mob in ipairs(workspace.Living:GetChildren()) do
+                        if mob:FindFirstChild("HumanoidRootPart") and mob.Humanoid.Health > 0 then
+                            humanoidRootPart.CFrame = mob.HumanoidRootPart.CFrame
+                            swingSword()
+                            wait(0.1) -- Adjust wait time as needed for smoother mob farming
+                        end
+                    end
+                end
+            end)
+            wait(0.1)
+        end
+    end
+end
+
+-- Function for Velocity Control (Noclip)
+local function controlVelocity()
+    spawn(function()
+        while wait() do
+            pcall(function()
+                local character = game.Players.LocalPlayer.Character
+                local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+                if getgenv().Save["Auto Farm Gems"] or getgenv().Save["Auto Farm Mobs"] then
+                    if not humanoidRootPart:FindFirstChild("BodyClip") then
+                        local bodyClip = Instance.new("BodyVelocity", humanoidRootPart)
+                        bodyClip.Name = "BodyClip"
+                        bodyClip.MaxForce = Vector3.new(100000, 100000, 100000)
+                        bodyClip.Velocity = Vector3.new(0, 0, 0)
+                    end
+                    character.Humanoid.JumpPower = 0
+                else
+                    if humanoidRootPart:FindFirstChild("BodyClip") then
+                        humanoidRootPart.BodyClip:Destroy()
+                    end
+                    character.Humanoid.JumpPower = 50
+                end
+            end)
+        end
+    end)
+end
+
+-- Main Execution
+spawn(controlVelocity) -- Start controlling velocity (noclip)
+
+if getgenv().Save["Auto Farm Gems"] then
+    autoFarmGems()
+end
+
+if getgenv().Save["Auto Farm Mobs"] then
+    autoFarmMobs()
+end

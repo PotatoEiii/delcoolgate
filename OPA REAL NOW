@@ -45,8 +45,7 @@ getgenv().Save = {
     ["Auto Spawn"] = false,
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
-    ["Auto Compass Dupe"] = false,
-    ["Duping Current Position"] = ""
+    ["Auto Compass Dupe"] = false
 }
 
 function LoadSetting()
@@ -84,7 +83,6 @@ end
 
 loadcheck()
 LoadSetting()
-
 local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
 vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -180,19 +178,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Fo
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 end)
-if getgenv().Save["Duping Current Position"] ~= "" then
-DupeCurrentPos = Dupe3:NewLabel("Current Position: "..tostring(getgenv().Save["Duping Current Position"].Position))
-else
-DupeCurrentPos = Dupe3:NewLabel("Current Position: nil")
-end
 
-Dupe3:NewButton("Save This Current Position", "Save This Current Position For Duping", function()
-getgenv().Save["Duping Current Position"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
-DupeCurrentPos:UpdateLabel("Current Position: "..tostring(getgenv().Save["Duping Current Position"].Position))
-end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Compass Dupe"] = state

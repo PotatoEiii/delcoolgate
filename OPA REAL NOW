@@ -230,7 +230,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Vi
 end)
 
 if getgenv().CFrame[1] ~= "" then
-DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
+DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().CFrame[1]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[2]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[3]))..", ...")
 else
 DupePos = Dupe3:NewLabel("Current Position: nil")
 end
@@ -238,7 +238,7 @@ end
 Dupe3:NewButton("Save The Current Position", "Save The Current Standing Position", function()
 getgenv().CFrame = CFrameToTable(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 SaveCFrame()
-DupePos:UpdateLabel("Current Position: nil")
+DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().CFrame[1]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[2]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[3]))..", ...")
 end)
 
 Dupe3:NewButton("Teleport To Saved Position", "Teleport To The Position That You Saved", function()
@@ -416,7 +416,7 @@ SaveCFrame()
 task.wait()
 LoadSetting()
 LoadCFrame()
-DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
+DupePos:UpdateLabel("Current Position: nil")
 end)
 
 SettingsSection1:NewToggle("Auto Save Config" , "Auto Save Config", function(state)

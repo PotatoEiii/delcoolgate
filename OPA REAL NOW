@@ -29,6 +29,21 @@ function loadcheck()
     end
 end
 
+function loadcheckcframe()
+    if isfile("SalunaCFrame.json") then
+        z = readfile("SalunaCFrame.json")
+            return z
+        else
+            writefile("SalunaCFrame.json",game:GetService("HttpService"):JSONEncode(getgenv().CFrame))
+        return
+    end
+end
+
+function CFrameToTable(cf)
+    return {cf:GetComponents()}
+end
+
+getgenv().CFrame = {""}
 getgenv().Save = {
     ["AutoSave"] = false,
     ["Auto Aura Finding"] = false,
@@ -59,6 +74,17 @@ function LoadSetting()
     end
 end
 
+function LoadCFrame()
+    if isfile("SalunaCFrame.json") then
+            vt = game:GetService("HttpService"):JSONDecode(readfile("SalunaCFrame.json"))
+            getgenv().CFrame = vt
+                return vt
+        else
+            loadcheck()
+        return
+    end
+end
+
 function SaveSetting()
     if isfile("SALUNA_OPA.json") then
             f = writefile
@@ -68,6 +94,22 @@ function SaveSetting()
             loadcheck()
         return
     end
+end
+
+function SaveCFrame()
+    if isfile("SalunaCFrame.json") then
+            t = writefile
+            writefile("SalunaCFrame.json",game:GetService("HttpService"):JSONEncode(getgenv().CFrame))
+                return t
+        else
+            loadcheck()
+        return
+    end
+end
+
+function formatToOneDecimal(value)
+    local roundedValue = math.floor(value * 10 + 0.5) / 10
+    return string.format("%.1f", roundedValue)
 end
 
 function format_large_number_with_spaces(n)
@@ -82,7 +124,10 @@ function format_large_number_with_spaces(n)
 end
 
 loadcheck()
+loadcheckcframe()
 LoadSetting()
+LoadCFrame()
+
 local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
 vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -177,6 +222,18 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+if getgenv().CFrame[1] ~= "" then
+DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
+else
+DupePos = Dupe3:NewLabel("Current Position: nil")
+end
+
+Dupe3:NewButton("Save The Current Position", "Save The Current Standing Position", function()
+getgenv().CFrame = CFrameToTable(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+SaveCFrame()
+DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
 end)
 
 
@@ -336,8 +393,14 @@ getgenv().Save = {
     ["Auto Compass Dupe"] = false,
     ["Duping Current Position"] = ""
 }
+getgenv().CFrame = {""}
 task.wait()
 SaveSetting()
+SaveCFrame()
+task.wait()
+LoadSetting()
+LoadCFrame()
+DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
 end)
 
 SettingsSection1:NewToggle("Auto Save Config" , "Auto Save Config", function(state)

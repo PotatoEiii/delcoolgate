@@ -32,5 +32,18 @@ function SaveSetting()
     end
 end
 
+function CFrameToTable(cf)
+    return {cf:GetComponents()}
+end
+
+function TableToCFrame(tbl)
+    return CFrame.new(unpack(tbl))
+end
+
 loadcheck()
 LoadSetting()
+
+local myCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+getgenv().CFrame = CFrameToTable(myCFrame)
+SaveSetting()
+

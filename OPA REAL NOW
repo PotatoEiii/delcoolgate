@@ -783,4 +783,3 @@ end)
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 end
-end)

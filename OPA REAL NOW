@@ -236,6 +236,9 @@ SaveCFrame()
 DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
 end)
 
+Dupe3:NewButton("Teleport To Saved Position", "Teleport To The Position That You Saved", function()
+game.Players.LocalPlayer.HumanoidRootPart.CFrame = CFrame.new(getgenv().CFrame[1],getgenv().CFrame[2],getgenv().CFrame[3],getgenv().CFrame[4],getgenv().CFrame[5],getgenv().CFrame[6],getgenv().CFrame[7],getgenv().CFrame[8],getgenv().CFrame[9],getgenv().CFrame[10],getgenv().CFrame[11],getgenv().CFrame[12])
+end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Compass Dupe"] = state

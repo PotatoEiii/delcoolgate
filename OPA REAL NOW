@@ -45,7 +45,8 @@ getgenv().Save = {
     ["Auto Spawn"] = false,
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
-    ["Auto Compass Dupe"] = false
+    ["Auto Compass Dupe"] = false,
+    ["Duping Current Position"] = nil
 }
 
 function LoadSetting()
@@ -178,6 +179,23 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+if getgenv().Save["Duping Current Position"] ~= nil then
+local DupeCurrentPos = Dupe3:NewLabel("Current Position: "..tostring(getgenv().Save["Duping Current Position"]))
+else
+local DupeCurrentPos = Dupe3:NewLabel("Current Position: nil")
+end
+
+Dupe3:NewButton("Save This Current Position", "Save This Current Position For Duping", function()
+getgenv().Save["Duping Current Position"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+if getgenv().Save["Duping Current Position"] ~= nil then
+DupeCurrentPos:UpdateLabel("Current Position: "..tostring(getgenv().Save["Duping Current Position"]))
+else
+DupeCurrentPos:UpdateLabel("Current Position: nil")
+end
 end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
@@ -333,7 +351,8 @@ getgenv().Save = {
     ["Auto Spawn"] = false,
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
-    ["Auto Compass Dupe"] = false
+    ["Auto Compass Dupe"] = false,
+    ["Duping Current Position"] = nil
 }
 task.wait()
 SaveSetting()

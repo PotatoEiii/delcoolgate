@@ -1,0 +1,12 @@
+function loadcheck()
+    if isfile("SalunaCFrame.json") then
+        g = readfile("SalunaCFrame.json")
+            return g
+        else
+            writefile("SalunaCFrame.json",game:GetService("HttpService"):JSONEncode(getgenv().CFrame))
+        return
+    end
+end
+
+getgenv().CFrame = {}
+loadcheck()

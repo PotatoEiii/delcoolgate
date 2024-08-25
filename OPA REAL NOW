@@ -323,6 +323,7 @@ end)
 spawn(function()
 while wait(0.1) do
 if getgenv().Save["Auto Delete Common Box"] then
+pcall(function()
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
 if v:IsA("Tool") and v.Name == "Common Box" then
 v:Destroy()
@@ -403,13 +404,14 @@ y:Destroy()
 end
 end
 end
+end)
 end
 end
 end)
 
-            spawn(function()
-            while wait() do
-                if getgenv().Save["Auto Bring Compass"] then
+spawn(function()
+while wait() do
+if getgenv().Save["Auto Bring Compass"] then
  pcall(function()
 local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
 	for _, child in ipairs(workspace:GetChildren()) do
@@ -453,6 +455,7 @@ workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChi
 spawn(function()
 while wait(0.1) do
 if getgenv().Save["Auto Aura Finding"] then
+pcall(function()
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
 game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
@@ -482,6 +485,7 @@ end
 end
 task.wait(0.5)
 until not getgenv().Save["Auto Aura Finding"]
+end)
 end
 end
 end)
@@ -489,11 +493,13 @@ end)
 spawn(function()
 while wait(0.1) do
 if getgenv().Save["Auto Aura Finding"] then
+pcall(function()
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
 if not string.find(v.Name,"Fruit") and not string.find(v.Name,"Compass") and not string.find(v.Name,"Box") then
 v:Destroy()
 end
 end
+end)
 end
 end
 end)

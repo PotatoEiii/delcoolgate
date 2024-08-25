@@ -46,7 +46,7 @@ getgenv().Save = {
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
     ["Auto Compass Dupe"] = false,
-    ["Duping Current Position"] = nil
+    ["Duping Current Position"] = ""
 }
 
 function LoadSetting()
@@ -180,7 +180,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Fo
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 end)
-if getgenv().Save["Duping Current Position"] ~= nil then
+if getgenv().Save["Duping Current Position"] ~= "" then
 DupeCurrentPos = Dupe3:NewLabel("Current Position: "..tostring(getgenv().Save["Duping Current Position"].Position))
 else
 DupeCurrentPos = Dupe3:NewLabel("Current Position: nil")
@@ -348,7 +348,7 @@ getgenv().Save = {
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
     ["Auto Compass Dupe"] = false,
-    ["Duping Current Position"] = nil
+    ["Duping Current Position"] = ""
 }
 task.wait()
 SaveSetting()

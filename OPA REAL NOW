@@ -124,8 +124,8 @@ function format_large_number_with_spaces(n)
 end
 
 loadcheck()
-loadcheckcframe()
 LoadSetting()
+loadcheckcframe()
 LoadCFrame()
 
 local vu = game:GetService("VirtualUser")

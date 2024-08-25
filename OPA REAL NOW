@@ -238,7 +238,7 @@ end)
 
 Dupe3:NewButton("Teleport To Saved Position", "Teleport To The Position That You Saved", function()
 if getgenv().CFrame[1] ~= "" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(getgenv().CFrame[1],getgenv().CFrame[2],getgenv().CFrame[3])
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().CFrame[1],getgenv().CFrame[2],getgenv().CFrame[3]))
 else
 Fluent:Notify({
     Title = "Saluna Notify",

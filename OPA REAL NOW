@@ -34,17 +34,18 @@ getgenv().Save = {
     ["Auto Aura Finding"] = false,
     ["Auto Delete Common Box"] = false,
     ["Auto Delete Uncommon Box"] = false,
-["Auto Open Common Box"] = false,
-["Auto Open Uncommon Box"] = false,
-["Auto Open Rare/Ultra Box"] = false,
-["Auto Delete Non-Aura Common Fruit"] = false,
-["Auto Delete Non-Aura Uncommon Fruit"] = false,
-["Auto Delete Non-Aura Rare Fruit"] = false,
-["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
-["Auto Farm Gems"] = false,
-["Auto Spawn"] = false,
-["Auto Get Expertise"] = false,
-["Auto Bring Compass"] = false
+    ["Auto Open Common Box"] = false,
+    ["Auto Open Uncommon Box"] = false,
+    ["Auto Open Rare/Ultra Box"] = false,
+    ["Auto Delete Non-Aura Common Fruit"] = false,
+    ["Auto Delete Non-Aura Uncommon Fruit"] = false,
+    ["Auto Delete Non-Aura Rare Fruit"] = false,
+    ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
+    ["Auto Farm Gems"] = false,
+    ["Auto Spawn"] = false,
+    ["Auto Get Expertise"] = false,
+    ["Auto Bring Compass"] = false,
+    ["Auto Compass Dupe"] = false
 }
 
 function LoadSetting()
@@ -114,6 +115,7 @@ local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
 local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
+local Dupe3 = Dupe:NewSection(" -- Compass Dupe -- ")
 local Dupe2 = Dupe:NewSection(" -- Dupe Mode -- ")
 local GrabDrop1 = GrabDrop:NewSection(" -- Grab Tools -- ")
 local GrabDrop2 = GrabDrop:NewSection(" -- Drop Tools -- ")
@@ -163,6 +165,26 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+Dupe2:NewButton("Save Data", "Save The Current Data Progress", function()
+game:GetService("Workspace").UserData["User_"..plr.UserId].UpdateClothing_Extras:FireServer("A","None",34)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Data Saved"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
+getgenv().Save["Auto Compass Dupe"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
 end)
 
 GrabDrop1:NewToggle("Auto Bring Compass" , "Auto Bring Compass", function(state)
@@ -300,18 +322,20 @@ getgenv().Save = {
     ["Auto Aura Finding"] = false,
     ["Auto Delete Common Box"] = false,
     ["Auto Delete Uncommon Box"] = false,
-["Auto Open Common Box"] = false,
-["Auto Open Uncommon Box"] = false,
-["Auto Open Rare/Ultra Box"] = false,
-["Auto Delete Non-Aura Common Fruit"] = false,
-["Auto Delete Non-Aura Uncommon Fruit"] = false,
-["Auto Delete Non-Aura Rare Fruit"] = false,
-["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
-["Auto Farm Gems"] = false,
-["Auto Spawn"] = false,
-["Auto Get Expertise"] = false,
-["Auto Bring Compass"] = false
+    ["Auto Open Common Box"] = false,
+    ["Auto Open Uncommon Box"] = false,
+    ["Auto Open Rare/Ultra Box"] = false,
+    ["Auto Delete Non-Aura Common Fruit"] = false,
+    ["Auto Delete Non-Aura Uncommon Fruit"] = false,
+    ["Auto Delete Non-Aura Rare Fruit"] = false,
+    ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
+    ["Auto Farm Gems"] = false,
+    ["Auto Spawn"] = false,
+    ["Auto Get Expertise"] = false,
+    ["Auto Bring Compass"] = false,
+    ["Auto Compass Dupe"] = false
 }
+task.wait()
 SaveSetting()
 end)
 

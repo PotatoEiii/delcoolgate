@@ -233,7 +233,7 @@ end
 Dupe3:NewButton("Save The Current Position", "Save The Current Standing Position", function()
 getgenv().CFrame = CFrameToTable(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 SaveCFrame()
-DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(getgenv().CFrame[1])..", "..formatToOneDecimal(getgenv().CFrame[2])..", "..formatToOneDecimal(getgenv().CFrame[3])..", ...")
+DupePos:UpdateLabel("Current Position: nil")
 end)
 
 Dupe3:NewButton("Teleport To Saved Position", "Teleport To The Position That You Saved", function()

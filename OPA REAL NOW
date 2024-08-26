@@ -195,7 +195,7 @@ else
 DupePos = Dupe3:NewLabel("Current Position: nil")
 end
 
-Dupe3:NewButton("Set Postion", "Set The Current Standing Position", function()
+Dupe3:NewButton("Set Postion For Duping", "Set The Current Standing Position", function()
 getgenv().Save["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.X
 getgenv().Save["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Y
 getgenv().Save["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Z

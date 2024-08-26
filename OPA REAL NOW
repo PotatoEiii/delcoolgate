@@ -226,7 +226,7 @@ SaveSetting()
 end
 end)
 
-Dupe4:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
+Dupe4:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
@@ -238,7 +238,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Fr") or string.find(v.Name,"Boar") or string.find(v.Name,"Thug") or string.find(v.Name,"Thief") then
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
 v.HumanoidRootPart.Anchored = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
 local args = {
@@ -377,7 +377,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 wait(0.09)
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Fr") or string.find(v.Name,"Boar") or string.find(v.Name,"Thug") or string.find(v.Name,"Thief") then
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
 if v.HumanoidRootPart.Anchored == true then
 v.HumanoidRootPart.Anchored = false
 end
@@ -472,7 +472,7 @@ SaveSetting()
 end
 end)
 
-Gems1:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
+Gems1:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,

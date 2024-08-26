@@ -484,10 +484,13 @@ getgenv().Save = {
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
     ["Auto Compass Dupe"] = false,
-    ["Duping Current Position"] = ""
+    ["Position X"] = "",
+    ["Position Y"] = "",
+    ["Position Z"] = ""
 }
 SaveSetting()
 LoadSetting()
+DupePos:UpdateLabel("Current Position: nil")
 end)
 
 SettingsSection1:NewToggle("Auto Save Config" , "Auto Save Config", function(state)

@@ -239,13 +239,14 @@ game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireSe
 
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
+pcall(function()
 v.HumanoidRootPart.Anchored = true
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -255,7 +256,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -265,7 +266,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -275,7 +276,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -285,7 +286,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -295,7 +296,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -305,7 +306,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -315,7 +316,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -325,12 +326,13 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 wait(0.5)
+end)
 end
 end
 
@@ -378,8 +380,8 @@ game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireSe
 wait(0.09)
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
-if v.HumanoidRootPart.Anchored == true then
-v.HumanoidRootPart.Anchored = false
+if v:FindFirstChild("HumanoidRootPart").Anchored == true then
+v:FindFirstChild("HumanoidRootPart").Anchored = false
 end
 end
 end
@@ -472,7 +474,7 @@ SaveSetting()
 end
 end)
 
-Gems1:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
+Gems1:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
@@ -485,13 +487,14 @@ game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireSe
 
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
+pcall(function()
 v.HumanoidRootPart.Anchored = true
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -501,7 +504,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -511,7 +514,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -521,7 +524,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -531,7 +534,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -541,7 +544,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -551,7 +554,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -561,7 +564,7 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
@@ -571,12 +574,13 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
     [3] = "UpdateSmoke",
-    [4] = v.HumanoidRootPart.CFrame.Position,
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
     [5] = true
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 wait(0.5)
+end)
 end
 end
 
@@ -624,8 +628,8 @@ game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireSe
 wait(0.09)
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
-if v.HumanoidRootPart.Anchored == true then
-v.HumanoidRootPart.Anchored = false
+if v:FindFirstChild("HumanoidRootPart").Anchored == true then
+v:FindFirstChild("HumanoidRootPart").Anchored = false
 end
 end
 end

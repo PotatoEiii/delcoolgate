@@ -226,7 +226,7 @@ SaveSetting()
 end
 end)
 
-Dupe4:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
+Dupe4:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,

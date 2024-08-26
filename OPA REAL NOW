@@ -39,16 +39,12 @@ function loadcheckcframe()
     end
 end
 
-function CFrameToTable(cf)
-    local components = {cf:GetComponents()}
-    local stringComponents = {}
-    for _, component in ipairs(components) do
-        table.insert(stringComponents, tostring(component))
-    end
-    return stringComponents
-end
+getgenv().CFrame = {
+["Position X"] = "",
+["Position Y"] = "",
+["Position Z"] = ""
+}
 
-getgenv().CFrame = {""}
 getgenv().Save = {
     ["AutoSave"] = false,
     ["Auto Aura Finding"] = false,
@@ -81,11 +77,11 @@ end
 
 function LoadCFrame()
     if isfile("SalunaCFrame.json") then
-            vt = game:GetService("HttpService"):JSONDecode(readfile("SalunaCFrame.json"))
-            getgenv().CFrame = vt
-                return vt
-        else
-            loadcheck()
+        local vt = game:GetService("HttpService"):JSONDecode(readfile("SalunaCFrame.json"))
+        getgenv().CFrame = vt
+        return vt
+    else
+        loadcheck()
         return
     end
 end
@@ -113,8 +109,8 @@ function SaveCFrame()
 end
 
 function formatToOneDecimal(value)
-    local roundedValue = math.floor(value * 10 + 0.5) / 10
-    return string.format("%.1f", roundedValue)
+local roundedValue = math.floor(value * 10 + 0.5) / 10
+return string.format("%.1f", roundedValue)
 end
 
 function format_large_number_with_spaces(n)
@@ -229,28 +225,35 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Fo
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 end)
 
-if getgenv().CFrame[1] ~= "" then
-DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().CFrame[1]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[2]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[3]))..", ...")
+if getgenv().CFrame["Position X"] ~= "" then
+DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().CFrame["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame["Position Z"])))
 else
 DupePos = Dupe3:NewLabel("Current Position: nil")
 end
 
 Dupe3:NewButton("Save The Current Position", "Save The Current Standing Position", function()
-getgenv().CFrame = CFrameToTable(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-SaveCFrame()
-DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().CFrame[1]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[2]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame[3]))..", ...")
+    getgenv().CFrame = {
+        ["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,
+        ["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,
+        ["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
+    }
+    SaveCFrame()  -- Make sure SaveCFrame is correctly implemented
+    DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().CFrame["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().CFrame["Position Z"])))
 end)
 
 Dupe3:NewButton("Teleport To Saved Position", "Teleport To The Position That You Saved", function()
-if getgenv().CFrame[1] ~= "" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(tonumber(getgenv().CFrame[1]), tonumber(getgenv().CFrame[2]), tonumber(getgenv().CFrame[3]), tonumber(getgenv().CFrame[4]), tonumber(getgenv().CFrame[5]), tonumber(getgenv().CFrame[6]), tonumber(getgenv().CFrame[7]), tonumber(getgenv().CFrame[8]), tonumber(getgenv().CFrame[9]), tonumber(getgenv().CFrame[10]), tonumber(getgenv().CFrame[11]), tonumber(getgenv().CFrame[12]))
-else 
-Fluent:Notify({
-    Title = "Saluna Notify",
-    Content = "Not Saved Any Position Yet",
-    Duration = 10
-})
-end
+    if getgenv().CFrame["Position X"] ~= "" then
+local x = tonumber(getgenv().CFrame["Position X"])
+local y = tonumber(getgenv().CFrame["Position Y"])
+local z = tonumber(getgenv().CFrame["Position Z"])
+game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(Vector3.new(x, y, z))
+    else 
+        Fluent:Notify({
+            Title = "Saluna Notify",
+            Content = "Not Saved Any Position Yet",
+            Duration = 10
+        })
+    end
 end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
@@ -409,7 +412,11 @@ getgenv().Save = {
     ["Auto Compass Dupe"] = false,
     ["Duping Current Position"] = ""
 }
-getgenv().CFrame = {""}
+getgenv().CFrame = {
+["Position X"] = "",
+["Position Y"] = "",
+["Position Z"] = ""
+}
 task.wait()
 SaveSetting()
 SaveCFrame()

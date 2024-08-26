@@ -196,7 +196,7 @@ else
 DupePos = Dupe3:NewLabel("Current Position: nil")
 end
 
-Dupe3:NewButton("Set Postion For Duping", "Set The Current Standing Position", function()
+Dupe3:NewButton("Set Postion For Duping (Work Without Save Position)", "Set The Current Standing Position", function()
 getgenv().Save["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.X
 getgenv().Save["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Y
 getgenv().Save["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Z
@@ -207,7 +207,15 @@ DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().
 end)
 
 Dupe3:NewButton("Teleport To Saved Position", "Teleport To Saved Position", function()
+if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().Save["Position X"], getgenv().Save["Position Y"], getgenv().Save["Position Z"]))
+else
+Fluent:Notify({
+    Title = "Saluna Notify",
+    Content = "Not Found Any Saved Position",
+    Duration = 5
+})
+end
 end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
@@ -824,6 +832,40 @@ end)
 end
 end)
 
+spawn(function()
+    while wait() do
+        pcall(function()
+            if getgenv().Save["Auto Compass Dupe"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
+wait(0.5)
+repeat wait(0.1)
+if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().Save["Position X"], getgenv().Save["Position Y"], getgenv().Save["Position Z"]))
+end
+wait(0.1)
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokens.Value > 0 then
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+end
+wait(0.1)
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.Name == "Compass" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+wait(0.1)
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "Compass" then
+v.Parent = game.Workspace
+end
+end
+wait(0.1)
+until not getgenv().Save["Auto Compass Dupe"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
+            end
+        end)
+    end
+end)
+
+
 spawn(function() -- autofarm velocity
     while wait() do
         pcall(function()
@@ -859,6 +901,7 @@ PlayerStat6:UpdateLabel("Compass: "..tostring(game.Workspace.UserData["User_"..g
 end
 end
 end)
+
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 end

@@ -32,18 +32,14 @@ function SaveSetting()
     end
 end
 
-function CFrameToTable(cf)
-    return {cf:GetComponents()}
-end
-
-function TableToCFrame(tbl)
-    return CFrame.new(unpack(tbl))
-end
-
 loadcheck()
 LoadSetting()
 
-local myCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-getgenv().CFrame = CFrameToTable(myCFrame)
+local myCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position
+getgenv().CFrame = {
+["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.X,
+["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Y,
+["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Z
+}
 SaveSetting()
 

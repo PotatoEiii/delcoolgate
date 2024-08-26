@@ -45,7 +45,10 @@ getgenv().Save = {
     ["Auto Spawn"] = false,
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
-    ["Auto Compass Dupe"] = false
+    ["Auto Compass Dupe"] = false,
+    ["Position X"] = "",
+    ["Position Y"] = "",
+    ["Position Z"] = ""
 }
 
 function LoadSetting()
@@ -80,6 +83,11 @@ function format_large_number_with_spaces(n)
         formatted = formatted:sub(2)
     end
     return formatted
+end
+
+function formatToOneDecimal(value)
+    local roundedValue = math.floor(value * 10 + 0.5) / 10
+    return string.format("%.1f", roundedValue)
 end
 
 loadcheck()
@@ -179,6 +187,26 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
+DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().Save["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Z"])))
+else
+DupePos = Dupe3:NewLabel("Current Position: nil")
+end
+
+Dupe3:NewButton("Set Postion", "Set The Current Standing Position", function()
+getgenv().Save["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.X
+getgenv().Save["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Y
+getgenv().Save["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Z
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().Save["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Z"])))
+end)
+
+Dupe3:NewButton("Teleport To Saved Position", "Teleport To Saved Position", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().Save["Position X"], getgenv().Save["Position Y"], getgenv().Save["Position Z"]))
 end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)

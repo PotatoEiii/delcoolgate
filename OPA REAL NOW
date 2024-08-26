@@ -46,6 +46,7 @@ getgenv().Save = {
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
     ["Auto Compass Dupe"] = false,
+    ["Auto Stack Token"] = false,
     ["Position X"] = "",
     ["Position Y"] = "",
     ["Position Z"] = ""
@@ -126,6 +127,7 @@ local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Gems2 = Gems:NewSection(" -- Lure Mobs -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Dupe3 = Dupe:NewSection(" -- Compass Dupe -- ")
+local Dupe4 = Dupe:NewSection(" -- Stack Token -- ")
 local Dupe2 = Dupe:NewSection(" -- Dupe Mode -- ")
 local GrabDrop1 = GrabDrop:NewSection(" -- Grab Tools -- ")
 local GrabDrop2 = GrabDrop:NewSection(" -- Drop Tools -- ")
@@ -220,6 +222,13 @@ end)
 
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Compass Dupe"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Dupe4:NewToggle("Auto Stack Token" , "Require A Lot Of Compass In Inventory", function(state)
+getgenv().Save["Auto Stack Token"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
@@ -492,6 +501,7 @@ getgenv().Save = {
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
     ["Auto Compass Dupe"] = false,
+    ["Auto Stack Token"] = false,
     ["Position X"] = "",
     ["Position Y"] = "",
     ["Position Z"] = ""

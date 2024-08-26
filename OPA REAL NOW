@@ -717,7 +717,7 @@ game.Players.LocalPlayer.Character:WaitForChild("Compass"):Activate()
 wait(1)
 end
 end
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
+until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
 end
 if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
 repeat wait(0.1)
@@ -743,12 +743,12 @@ end
 wait(0.1)
 game.Players.LocalPlayer.Character.Humanoid:UnEquipTools()
 end
-wait(0.2)
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
+wait(0.1)
+until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
 end
 end
 end
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or getgenv().Save["Auto Farm Gems"] == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
+until getgenv().Save["Auto Farm Gems"] == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
 end
 if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
 repeat wait(0.1)
@@ -760,7 +760,7 @@ wait(0.1)
 if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 and game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
 game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
 end
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or getgenv().Save["Auto Farm Gems"] == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") or game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi")
+until getgenv().Save["Auto Farm Gems"] == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") or game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi")
 end
 _G.swingsword = true
 if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then

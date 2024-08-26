@@ -1,1 +1,137 @@
+spawn(function() -- autofarm velocity
+    while wait() do
+        pcall(function()
+            if getgenv().SmokeLure == true then
+                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+                    local Noclip = Instance.new("BodyVelocity")
+                    Noclip.Name = "BodyClip"
+                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                    Noclip.Velocity = Vector3.new(0,0,0)
+                end
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+            elseif getgenv().SmokeLure == false then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+                wait(1)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+            end
+        end)
+    end
+end)
 
+getgenv().SmokeLure = true
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "MakeSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+
+for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") then
+v.HumanoidRootPart.Anchored = true
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(1)
+end
+end
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2610.68945, 269.599915, 1086.86829)
+wait(1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") then
+if v.HumanoidRootPart.Anchored == true then
+v.HumanoidRootPart.Anchored = false
+end
+end
+end
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = false
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+getgenv().SmokeLure = false

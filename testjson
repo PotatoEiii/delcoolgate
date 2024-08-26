@@ -8,7 +8,10 @@ function loadcheck()
     end
 end
 
-getgenv().CFrame = {}
+getgenv().CFrame = {
+["Position X"] = "",
+["Position Y"] = "",
+["Position Z"] = ""
 
 function LoadSetting()
     if isfile("SalunaCFrame.json") then

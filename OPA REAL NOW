@@ -124,7 +124,6 @@ local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
 local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
-local Gems2 = Gems:NewSection(" -- Lure Mobs -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Dupe3 = Dupe:NewSection(" -- Compass Dupe -- ")
 local Dupe4 = Dupe:NewSection(" -- Stack Token -- ")
@@ -291,7 +290,47 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
-wait(1)
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.5)
 end
 end
 
@@ -316,7 +355,17 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
-wait(0.09)
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
@@ -328,7 +377,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 wait(0.09)
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") then
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Fr") or string.find(v.Name,"Boar") or string.find(v.Name,"Thug") or string.find(v.Name,"Thief") then
 if v.HumanoidRootPart.Anchored == true then
 v.HumanoidRootPart.Anchored = false
 end
@@ -423,14 +472,7 @@ SaveSetting()
 end
 end)
 
-Gems1:NewToggle("Auto Farm Gems (Better Use In 1-Player Server)" , "Require: Compass Token", function(state)
-getgenv().Save["Auto Farm Gems"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
-end)
-
-Gems2:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
+Gems1:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
@@ -442,7 +484,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") then
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
 v.HumanoidRootPart.Anchored = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,10,0)
 local args = {
@@ -494,7 +536,47 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
-wait(1)
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v.HumanoidRootPart.CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.5)
 end
 end
 
@@ -519,7 +601,17 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
-wait(0.09)
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
     [2] = "SmokePower4",
@@ -531,7 +623,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 wait(0.09)
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") then
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
 if v.HumanoidRootPart.Anchored == true then
 v.HumanoidRootPart.Anchored = false
 end
@@ -548,6 +640,15 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
 getgenv().SmokeLure = false
 end)
+
+Gems1:NewToggle("Auto Farm Gems (Better Use In 1-Player Server)" , "Require: Compass Token", function(state)
+getgenv().Save["Auto Farm Gems"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+
 
 
 Server1:NewButton("Rejoin Server", "Rejoin The Current Server", function()

@@ -1,0 +1,1170 @@
+_G.SalunaWhite = false
+
+salunalisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/main/hwidlist'))()
+        for _, v1 in pairs(salunalisted) do
+gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
+            if gethwid == v1 then
+_G.SalunaWhite = true
+            end
+        end
+
+salunauserlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/main/userlist'))()
+        for _, v2 in pairs(salunauserlisted) do
+            if game.Players.LocalPlayer.UserId == v2 then
+_G.SalunaWhite = true
+            end
+        end
+
+if _G.SalunaWhite then
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+
+function loadcheck()
+    if isfile("SALUNA_OPA.json") then
+        g = readfile("SALUNA_OPA.json")
+            return g
+        else
+            writefile("SALUNA_OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
+        return
+    end
+end
+
+getgenv().Save = {
+    ["AutoSave"] = false,
+    ["Auto Aura Finding"] = false,
+    ["Auto Delete Common Box"] = false,
+    ["Auto Delete Uncommon Box"] = false,
+    ["Auto Open Common Box"] = false,
+    ["Auto Open Uncommon Box"] = false,
+    ["Auto Open Rare/Ultra Box"] = false,
+    ["Auto Delete Non-Aura Common Fruit"] = false,
+    ["Auto Delete Non-Aura Uncommon Fruit"] = false,
+    ["Auto Delete Non-Aura Rare Fruit"] = false,
+    ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
+    ["Auto Farm Gems"] = false,
+    ["Auto Spawn"] = false,
+    ["Auto Get Expertise"] = false,
+    ["Auto Bring Compass"] = false,
+    ["Auto Compass Dupe"] = false,
+    ["Auto Stack Token"] = false,
+    ["Position X"] = "",
+    ["Position Y"] = "",
+    ["Position Z"] = ""
+}
+
+function LoadSetting()
+    if isfile("SALUNA_OPA.json") then
+            vb = game:GetService("HttpService"):JSONDecode(readfile("SALUNA_OPA.json"))
+            getgenv().Save = vb
+                return vb
+        else
+            loadcheck()
+        return
+    end
+end
+
+
+function SaveSetting()
+    if isfile("SALUNA_OPA.json") then
+            f = writefile
+            writefile("SALUNA_OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
+                return f
+        else
+            loadcheck()
+        return
+    end
+end
+
+function format_large_number_with_spaces(n)
+    local str = tostring(n)
+    local reversed = str:reverse()
+    local formatted = reversed:gsub("(%d%d%d)", "%1 ")
+    formatted = formatted:reverse()
+    if formatted:sub(1, 1) == " " then
+        formatted = formatted:sub(2)
+    end
+    return formatted
+end
+
+function formatToOneDecimal(value)
+    local roundedValue = math.floor(value * 10 + 0.5) / 10
+    return string.format("%.1f", roundedValue)
+end
+
+loadcheck()
+LoadSetting()
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(1)
+vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+if game.CoreGui:FindFirstChild("BBB") then
+game.CoreGui:FindFirstChild("BBB"):Destroy()
+end
+
+if game.CoreGui:FindFirstChild("SalunaDeVoz") then
+game.CoreGui:FindFirstChild("SalunaDeVoz"):Destroy()
+end
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
+local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY", "Serpent", colors)
+local Stats = Window:NewTab("Stats")
+local FFarm = Window:NewTab("Farm")
+local Gems = Window:NewTab("Gems")
+local Dupe = Window:NewTab("Dupe")
+local GrabDrop = Window:NewTab("Grab/Drop")
+local Backpack = Window:NewTab("Backpack")
+local PlayerSec = Window:NewTab("Players")
+local Server = Window:NewTab("Server")
+local Settings = Window:NewTab("Settings")
+local Stats1 = Stats:NewSection(" -- Statistics -- ")
+local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
+local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
+local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
+local Dupe3 = Dupe:NewSection(" -- Compass Dupe -- ")
+local Dupe4 = Dupe:NewSection(" -- Stack Token -- ")
+local Dupe2 = Dupe:NewSection(" -- Dupe Mode -- ")
+local GrabDrop1 = GrabDrop:NewSection(" -- Grab Tools -- ")
+local GrabDrop2 = GrabDrop:NewSection(" -- Drop Tools -- ")
+local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
+local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
+local Backpack3 = Backpack:NewSection(" -- Auto Delete Fruit -- ")
+local Server1 = Server:NewSection("-- Server --")
+local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
+
+local Realtimecheck = Stats1:NewLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
+local PlayerStat1 = Stats1:NewLabel2("Player Stats")
+local PlayerStat2 = Stats1:NewLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
+local PlayerStat3 = Stats1:NewLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
+local PlayerStat4 = Stats1:NewLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
+local PlayerStat5 = Stats1:NewLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
+local PlayerStat6 = Stats1:NewLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
+
+FFarm1:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
+getgenv().Save["Auto Spawn"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+FFarm1:NewToggle("Auto Get Expertise" , "Automatic Get Expertise Quest", function(state)
+getgenv().Save["Auto Get Expertise"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
+getgenv().Save["Auto Aura Finding"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Dupe2:NewButton("Dupe Mode", "Not Save Data Progress", function()
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Dupe Mode Turned On"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+Dupe2:NewButton("Save Data", "Save The Current Data Progress", function()
+game:GetService("Workspace").UserData["User_"..plr.UserId].UpdateClothing_Extras:FireServer("A","None",34)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Data Saved"
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+end)
+
+if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
+DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().Save["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Z"])))
+else
+DupePos = Dupe3:NewLabel("Current Position: nil")
+end
+
+Dupe3:NewButton("Set Postion For Duping (Work Without Save Position)", "Set The Current Standing Position", function()
+getgenv().Save["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.X
+getgenv().Save["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Y
+getgenv().Save["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Z
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().Save["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Z"])))
+end)
+
+Dupe3:NewButton("Teleport To Saved Position", "Teleport To Saved Position", function()
+if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().Save["Position X"], getgenv().Save["Position Y"], getgenv().Save["Position Z"]))
+else
+Fluent:Notify({
+    Title = "Saluna Notify",
+    Content = "Not Found Any Saved Position",
+    Duration = 5
+})
+end
+end)
+
+Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
+getgenv().Save["Auto Compass Dupe"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Dupe4:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
+getgenv().SmokeLure = true
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "MakeSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+
+for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+v.HumanoidRootPart.Anchored = true
+wait(0.5)
+end)
+end
+end
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2610.68945, 269.599915, 1086.86829)
+wait(1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
+if v:FindFirstChild("HumanoidRootPart").Anchored == true then
+v:FindFirstChild("HumanoidRootPart").Anchored = false
+end
+end
+end
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = false
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+getgenv().SmokeLure = false
+end)
+
+Dupe4:NewToggle("Auto Stack Token" , "Require A Lot Of Compass In Inventory", function(state)
+getgenv().Save["Auto Stack Token"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+GrabDrop1:NewToggle("Auto Bring Compass" , "Auto Bring Compass", function(state)
+getgenv().Save["Auto Bring Compass"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack1:NewToggle("Auto Delete Common Box" , "Delete Common Box", function(state)
+getgenv().Save["Auto Delete Common Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack1:NewToggle("Auto Delete Uncommon Box" , "Delete Uncommon Box", function(state)
+getgenv().Save["Auto Delete Uncommon Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack2:NewToggle("Auto Open Common Box" , "Open Common Box", function(state)
+getgenv().Save["Auto Open Common Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack2:NewToggle("Auto Open Uncommon Box" , "Open Uncommon Box", function(state)
+getgenv().Save["Auto Open Uncommon Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack2:NewToggle("Auto Open Rare/Ultra Box" , "Open Rare/Ultra Box", function(state)
+getgenv().Save["Auto Open Rare/Ultra Box"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Common Fruit" , "Delete Common Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Common Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Uncommon Fruit" , "Delete Uncommon Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Uncommon Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Rare Fruit" , "Delete Rare Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Rare Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Backpack3:NewToggle("Auto Delete Non-Aura Ultra Rare Fruit" , "Delete Ultra Rare Fruits Which Have No Aura", function(state)
+getgenv().Save["Auto Delete Non-Aura Ultra Rare Fruit"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+Gems1:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
+getgenv().SmokeLure = true
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "MakeSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+
+for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = v:FindFirstChild("HumanoidRootPart").CFrame.Position,
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+v.HumanoidRootPart.Anchored = true
+wait(0.5)
+end)
+end
+end
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2610.68945, 269.599915, 1086.86829)
+wait(1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = true
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+wait(0.09)
+for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
+if v:FindFirstChild("HumanoidRootPart").Anchored == true then
+v:FindFirstChild("HumanoidRootPart").Anchored = false
+end
+end
+end
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
+    [2] = "SmokePower4",
+    [3] = "UpdateSmoke",
+    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position * Vector3.new(0,-10,0),
+    [5] = false
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+getgenv().SmokeLure = false
+end)
+
+Gems1:NewToggle("Auto Farm Gems (Better Use In 1-Player Server)" , "Require: Compass Token", function(state)
+getgenv().Save["Auto Farm Gems"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+
+
+
+Server1:NewButton("Rejoin Server", "Rejoin The Current Server", function()
+game.Players.LocalPlayer:Kick("Rejoining Server, Please Wait...")
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+end)
+
+Server1:NewButton("Hop Server", "Hop To The Other Server", function()
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+
+        if #servers > 0 then
+            game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return 
+Fluent:Notify({
+    Title = "Saluna Notify",
+    Content = "Not Found Any Other Server",
+    Duration = 5
+})
+        end
+    end          
+end)
+
+SettingsSection1:NewButton("Reset Config", "Reset The Auto Save Config", function()
+getgenv().Save = {
+    ["AutoSave"] = false,
+    ["Auto Aura Finding"] = false,
+    ["Auto Delete Common Box"] = false,
+    ["Auto Delete Uncommon Box"] = false,
+    ["Auto Open Common Box"] = false,
+    ["Auto Open Uncommon Box"] = false,
+    ["Auto Open Rare/Ultra Box"] = false,
+    ["Auto Delete Non-Aura Common Fruit"] = false,
+    ["Auto Delete Non-Aura Uncommon Fruit"] = false,
+    ["Auto Delete Non-Aura Rare Fruit"] = false,
+    ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
+    ["Auto Farm Gems"] = false,
+    ["Auto Spawn"] = false,
+    ["Auto Get Expertise"] = false,
+    ["Auto Bring Compass"] = false,
+    ["Auto Compass Dupe"] = false,
+    ["Auto Stack Token"] = false,
+    ["Position X"] = "",
+    ["Position Y"] = "",
+    ["Position Z"] = ""
+}
+SaveSetting()
+LoadSetting()
+DupePos:UpdateLabel("Current Position: nil")
+end)
+
+SettingsSection1:NewToggle("Auto Save Config" , "Auto Save Config", function(state)
+getgenv().Save["AutoSave"] = state
+SaveSetting()
+end)
+
+spawn(function()
+while wait(0.1) do
+pcall(function()
+if getgenv().Save["Auto Delete Common Box"] then
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if v:IsA("Tool") and v.Name == "Common Box" then
+v:Destroy()
+end
+end
+end
+
+if getgenv().Save["Auto Delete Uncommon Box"] then
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uncommon Box" then
+v:Destroy()
+end
+end
+end
+
+if getgenv().Save["Auto Open Common Box"] then
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if v:IsA("Tool") and v.Name == "Common Box" then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+end
+end
+end
+
+if getgenv().Save["Auto Open Uncommon Box"] then
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uncommon Box" then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+end
+end
+end
+
+if getgenv().Save["Auto Open Rare/Ultra Box"] then
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if v:IsA("Tool") and string.find(v.Name,"Rare") then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Ultra Rare Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
+if not string.sub(y:WaitForChild("Data").Value,tonumber(string.len(y:WaitForChild("Data").Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Rare Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
+if not string.sub(y:WaitForChild("Data").Value,tonumber(string.len(y:WaitForChild("Data").Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Uncommon Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") then
+if not string.sub(y:WaitForChild("Data").Value,tonumber(string.len(y:WaitForChild("Data").Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+
+if getgenv().Save["Auto Delete Non-Aura Common Fruit"] then
+for i,y in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+if not string.sub(y:WaitForChild("Data").Value,tonumber(string.len(y:WaitForChild("Data").Value)) - 1) ~= ",1" then
+y:Destroy()
+end
+end
+end
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+if getgenv().Save["Auto Bring Compass"] then
+ pcall(function()
+local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+	for _, child in ipairs(workspace:GetChildren()) do
+		if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and string.find(child.Name, "Compass")  and child:FindFirstChild("Handle") then
+			humanoid:EquipTool(child)
+			wait()
+		end
+		end
+	end)
+                end
+            end
+            end)
+
+            spawn(function()
+            while wait() do
+                if getgenv().Save["Auto Spawn"] then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+                             wait(5)
+   for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+                                    v.Function()
+                                end
+                        end
+                    end)
+                end
+            end
+            end)
+
+            spawn(function()
+            while wait(2) do
+                if getgenv().Save["Auto Get Expertise"] then
+                    pcall(function()
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+                    end)
+                end
+            end
+            end)
+
+spawn(function()
+while wait(0.1) do
+if getgenv().Save["Auto Aura Finding"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+pcall(function()
+
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
+wait(1)
+repeat
+if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true and getgenv().Save["Auto Aura Finding"] then
+repeat
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+v:Fire()
+end
+wait(2)
+until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == false or not getgenv().Save["Auto Aura Finding"]
+end
+if not game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+end
+if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "Compass" and getgenv().Save["Auto Aura Finding"] then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
+task.wait(0.1)
+end
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
+game.Players.LocalPlayer.Character.Compass:Activate()
+end
+end
+task.wait(0.5)
+until not getgenv().Save["Auto Aura Finding"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
+
+end)
+end
+end
+end)
+
+spawn(function()
+while wait(0.1) do
+if getgenv().Save["Auto Aura Finding"] then
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if not string.find(v.Name,"Fruit") and not string.find(v.Name,"Compass") and not string.find(v.Name,"Box") then
+v:Destroy()
+end
+end
+end)
+end
+end
+end)
+
+spawn(function()
+while wait(0.1) do
+pcall(function()
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+pcall(function()
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+if game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value ~= "Quests" and game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value ~= "None" then
+workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
+end
+wait(0.5)
+if game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value ~= "Quests" and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Claim" then
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+wait(0.5)
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.MissionObjective.Value == "Quests" or getgenv().Save["Auto Farm Gems"] == false or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Completed"
+end
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Claim" then
+if getgenv().Save["Auto Farm Gems"] == true and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.TextLabel.Text == "Claim" then
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1")
+end
+if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and getgenv().Save["Auto Farm Gems"] == true then wait(0.3)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character:WaitForChild("Compass").Poser.Value)
+game.Players.LocalPlayer.Character:WaitForChild("Compass"):Activate()
+wait(1)
+end
+end
+until game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
+end
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+for i,c in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if string.find(c.Name,"Box") then
+c.Parent = game.Players.LocalPlayer.Character
+task.wait()
+c:Activate()
+end
+end
+if getgenv().Save["Auto Farm Gems"] == true and game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value == "None" then
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+if string.find(v.Name,"Fruit") then
+repeat wait(0.1)
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value == "None" then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+v:Activate()
+task.wait()
+for i, z in pairs(getconnections(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("GiverGUI"):WaitForChild("ImageLabel"):WaitForChild("Frame")[1].MouseButton1Click)) do
+z.Function()
+end
+wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid:UnEquipTools()
+end
+wait(0.1)
+until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
+end
+end
+end
+until getgenv().Save["Auto Farm Gems"] == false or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None"
+end
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily1")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily4")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge9")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily2")
+wait(0.1)
+if workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value > 5000 and game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
+game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum:FireServer("Wakizashi", 5000)
+end
+until getgenv().Save["Auto Farm Gems"] == false or game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") or game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi")
+end
+_G.swingsword = true
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") or string.find(mobalive.Name,"Lv9 Bandit") or string.find(mobalive.Name,"Lv2 Angry Bob") or string.find(mobalive.Name,"Lv4 Freddy") or string.find(mobalive.Name,"Boar")) and mobalive.Humanoid.Health ~= 0 then
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and getgenv().Save["Auto Farm Gems"] == true then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 10, 10)
+task.wait()
+        mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+        mobalive:FindFirstChild("HumanoidRootPart").CanCollide = true
+        mobalive:FindFirstChild("Humanoid"):TakeDamage(mobalive:FindFirstChild("Humanoid").Health)
+        mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+        mobalive:FindFirstChild("Humanoid").Health = 0
+        wait(1)
+local killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
+repeat wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 3)
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or not mobalive:FindFirstChild("HumanoidRootPart") or workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= killstat or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
+end
+end
+end
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or getgenv().Save["Auto Farm Gems"] == false
+end
+_G.swingsword = false
+if getgenv().Save["Auto Farm Gems"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily3")
+workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","AllDaily")
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or (game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete") or getgenv().Save["Auto Farm Gems"] == false
+if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.AutoButtonColor == false and game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.CompletionFrame.Claim.TextLabel.Text == "Complete" and getgenv().Save["Auto Farm Gems"] == true then
+workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
+end
+end
+end)
+end
+until game.Players.LocalPlayer.Character.Humanoid.Health == 0
+end
+end)
+end
+end)
+
+spawn(function()
+while wait(0.1) do
+pcall(function()
+if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.swingsword == true and getgenv().Save["Auto Farm Gems"] == true then
+repeat wait(0.1)
+if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi") and not game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Wakizashi"))
+end
+if game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Wakizashi"):Activate()
+end
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" or _G.swingsword == false
+for i = 1,3 do wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.0743713, 282.310211, -36.9613533, 0.136958227, -1.5720218e-08, 0.990576804, 4.45528325e-09, 1, 1.52537698e-08, -0.990576804, 2.3241713e-09, 0.136958227)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+end
+end
+end)
+end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if getgenv().Save["Auto Compass Dupe"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
+wait(0.5)
+repeat wait(0.1)
+if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().Save["Position X"], getgenv().Save["Position Y"], getgenv().Save["Position Z"]))
+end
+wait(0.1)
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokens.Value > 0 then
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+end
+wait(0.1)
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.Name == "Compass" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+wait(0.1)
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "Compass" then
+v.Parent = game.Workspace
+end
+end
+wait(0.1)
+until not getgenv().Save["Auto Compass Dupe"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if getgenv().Save["Auto Stack Token"] == true and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat task.wait(0.1)
+if game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..game.Players.LocalPlayer.UserId].ChallengesRemote:FireServer("Claim","Weekly3")
+end
+task.wait(0.1)
+if getgenv().Save["Auto Stack Token"] == true and game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed" then
+workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
+end
+task.wait(0.1)
+if getgenv().Save["Auto Stack Token"] == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" then
+repeat wait()
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])
+task.wait()
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Stack Token"] == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character:FindFirstChild("Compass").Poser.Value)
+task.wait()
+game.Players.LocalPlayer.Character:FindFirstChild("Compass"):Activate()
+end
+task.wait(0.5)
+until not getgenv().Save["Auto Stack Token"] or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") or game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed"
+end
+until not getgenv().Save["Auto Stack Token"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
+            end
+        end)
+    end
+end)
+spawn(function() -- autofarm velocity
+    while wait() do
+        pcall(function()
+            if getgenv().Save["Auto Farm Gems"] == true or getgenv().SmokeLure == true then
+                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+                    local Noclip = Instance.new("BodyVelocity")
+                    Noclip.Name = "BodyClip"
+                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                    Noclip.Velocity = Vector3.new(0,0,0)
+                end
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+            elseif getgenv().Save["Auto Farm Gems"] == false or getgenv().SmokeLure == false then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+                wait(1)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+            end
+        end)
+    end
+end)
+
+spawn(function()
+while wait(0.1) do
+Realtimecheck:UpdateLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
+PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
+PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
+PlayerStat4:UpdateLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
+PlayerStat5:UpdateLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokens.Value < game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokenLimit.Value then
+PlayerStat6:UpdateLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
+else
+PlayerStat6:UpdateLabel("Compass: "..tostring(game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokens.Value).."/"..tostring(game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokenLimit.Value).." (Full!)")
+end
+end
+end)
+
+else
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
+end

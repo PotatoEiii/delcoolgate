@@ -240,7 +240,6 @@ game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireSe
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") or string.find(v.Name,"Boar") then
 pcall(function()
-v.HumanoidRootPart.Anchored = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
@@ -331,6 +330,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+v.HumanoidRootPart.Anchored = true
 wait(0.5)
 end)
 end
@@ -488,7 +488,6 @@ game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireSe
 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 if string.find(v.Name,"Demon") or string.find(v.Name,"Gunslinger") or string.find(v.Name,"Angry") then
 pcall(function()
-v.HumanoidRootPart.Anchored = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,10,0)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Smoke).VTCuwpx,
@@ -579,6 +578,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Smoke.RemoteEvent:FireServer(unpack(args))
+v.HumanoidRootPart.Anchored = true
 wait(0.5)
 end)
 end

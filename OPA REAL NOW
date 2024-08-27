@@ -1014,7 +1014,6 @@ if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.Dai
 task.wait()
         mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
         mobalive:FindFirstChild("Humanoid").Health = 0
-        mobalive:BreakJoints()
         wait(1)
 local killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 repeat wait(0.1)

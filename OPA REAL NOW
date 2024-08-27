@@ -931,7 +931,7 @@ spawn(function()
 while wait(0.1) do
 pcall(function()
 if getgenv().Save["Auto Farm Gems"] then
-if game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value == "Quests" game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionRequirement").Value > 1 then
+if game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionObjective").Value == "Quests" and game.Workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Data"):WaitForChild("MissionRequirement").Value > 1 then
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
 end
 repeat wait(0.1)

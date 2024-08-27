@@ -989,7 +989,7 @@ wait(0.1)
 game.Players.LocalPlayer.Character.Humanoid:UnEquipTools()
 end
 wait(0.1)
-until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 or game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
 end
 end
 end

@@ -973,7 +973,7 @@ task.wait()
 c:Activate()
 end
 end
-if getgenv().Save["Auto Farm Gems"] == true and game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value == "None" then
+if getgenv().Save["Auto Farm Gems"] == true and game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value == "None" and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
 if string.find(v.Name,"Fruit") then
 repeat wait(0.1)
@@ -989,7 +989,7 @@ wait(0.1)
 game.Players.LocalPlayer.Character.Humanoid:UnEquipTools()
 end
 wait(0.1)
-until game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
+until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value ~= "None" or getgenv().Save["Auto Farm Gems"] == false
 end
 end
 end

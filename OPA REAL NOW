@@ -1012,8 +1012,9 @@ if (string.find(mobalive.Name,"Crab") or string.find(mobalive.Name,"Lv12 Thug") 
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and getgenv().Save["Auto Farm Gems"] == true then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 10, 10)
 task.wait()
-        mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
         mobalive:FindFirstChild("Humanoid").Health = 0
+        mobalive:FindFirstChild("Head"):Destroy()
+        mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
         wait(1)
 local killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 repeat wait(0.1)

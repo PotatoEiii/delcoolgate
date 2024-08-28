@@ -1015,7 +1015,6 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
         string.find(mobalive.Name, "Lv12 Thug") or 
         string.find(mobalive.Name, "Lv15 Thug") or 
         string.find(mobalive.Name, "Lv17 Thug") or 
-        string.find(mobalive.Name, "Lv24 Thug") or 
         string.find(mobalive.Name, "Lv30 Thug") or 
         string.find(mobalive.Name, "Lv40 Thug") or 
         string.find(mobalive.Name, "Lv22 Thug") or 

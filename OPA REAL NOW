@@ -1032,7 +1032,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstC
 wait(0.2)
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end)
-until mobalive:FindFirstChild("Humanoid").Health == 0
+until mobalive:FindFirstChild("Humanoid").Health == 0 or getgenv().Save["Auto Farm Gems"] == false
 task.wait()
 getgenv().killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 repeat wait(0.1)

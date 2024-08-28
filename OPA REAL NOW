@@ -111,7 +111,7 @@ end
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
-local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY | Version: A1", "Serpent", colors)
+local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY | Version: A2", "Serpent", colors)
 local Stats = Window:NewTab("Stats")
 local FFarm = Window:NewTab("Farm")
 local Gems = Window:NewTab("Gems")

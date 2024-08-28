@@ -1031,7 +1031,7 @@ game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyF
 repeat wait()
 pcall(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
-wait(0.2)
+wait(0.1)
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end)
 until (mobalive:FindFirstChild("Humanoid").Health == 0) or (getgenv().Save["Auto Farm Gems"] == false) or (not mobalive:FindFirstChild("HumanoidRootPart"))

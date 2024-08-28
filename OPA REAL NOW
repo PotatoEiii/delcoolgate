@@ -1013,6 +1013,9 @@ repeat wait(0.1)
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
     if (string.find(mobalive.Name, "Crab") or 
         string.find(mobalive.Name, "Lv12 Thug") or 
+        string.find(mobalive.Name, "Lv17 Thug") or 
+        string.find(mobalive.Name, "Lv40 Thug") or 
+        string.find(mobalive.Name, "Lv22 Thug") or 
         string.find(mobalive.Name, "Lv9 Bandit") or 
         string.find(mobalive.Name, "Lv2 Angry Bob") or 
         string.find(mobalive.Name, "Lv4 Freddy") or 

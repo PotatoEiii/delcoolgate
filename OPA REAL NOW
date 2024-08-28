@@ -1021,6 +1021,8 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
         string.find(mobalive.Name, "Lv9 Bandit") or 
         string.find(mobalive.Name, "Lv2 Angry Bob") or 
         string.find(mobalive.Name, "Lv4 Freddy") or 
+        string.find(mobalive.Name, "Fr") or 
+
         string.find(mobalive.Name, "Boar")) and 
         mobalive:FindFirstChild("Humanoid") and 
         mobalive.Humanoid.Health > 0 then
@@ -1032,7 +1034,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstC
 wait(0.2)
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end)
-until mobalive:FindFirstChild("Humanoid").Health == 0 or getgenv().Save["Auto Farm Gems"] == false
+until (mobalive:FindFirstChild("Humanoid").Health == 0) or (getgenv().Save["Auto Farm Gems"] == false) or (not mobalive:FindFirstChild("HumanoidRootPart"))
 task.wait()
 getgenv().killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 repeat wait(0.1)

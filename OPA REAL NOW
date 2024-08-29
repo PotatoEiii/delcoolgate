@@ -1033,6 +1033,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstC
 wait(0.1)
 pcall(function()
 if mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead then
+mobalive:FindFirstChild("AI"):FindFirstChild("CanJump").Value = false
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end
 end)

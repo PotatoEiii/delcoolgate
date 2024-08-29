@@ -1030,6 +1030,8 @@ if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.Dai
 game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and getgenv().Save["Auto Farm Gems"] == true then
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
+mobalive:FindFirstChild("Humanoid").WalkSpeed = 0
+mobalive:FindFirstChild("Humanoid").JumpPower = 0
 wait(0.1)
 pcall(function()
 if mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead then

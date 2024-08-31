@@ -222,15 +222,15 @@ end
 DropF:Refresh(FarmingOSDropDown)
 end)
 
-Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
-getgenv().Save["Auto Aura Finding"] = state
+FFarm2:NewToggle("Auto Farm (One Shot)" , "Automatic Farm Kills", function(state)
+getgenv().Save["Auto Farm OS"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
 end)
 
-FFarm2:NewToggle("Auto Farm (One Shot)" , "Automatic Farm Kills", function(state)
-getgenv().Save["Auto Farm OS"] = state
+Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
+getgenv().Save["Auto Aura Finding"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end

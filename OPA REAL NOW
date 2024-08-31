@@ -49,7 +49,9 @@ getgenv().Save = {
     ["Auto Stack Token"] = false,
     ["Position X"] = "",
     ["Position Y"] = "",
-    ["Position Z"] = ""
+    ["Position Z"] = "",
+    ["Chosen Farm Method"] = "",
+    ["Auto Farm OS"] = false
 }
 
 function LoadSetting()
@@ -176,7 +178,10 @@ if #FarmingOSDropDown == 0 then
 end
 
 local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", FarmingOSDropDown, function(blud)
-ChosenFarmMethod = blud
+getgenv().Save["Chosen Farm Method"] = blud
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
 end)
 
 game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Changed:Connect(function()
@@ -219,6 +224,13 @@ end)
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Aura Finding"] = state
+if getgenv().Save["AutoSave"] then
+SaveSetting()
+end
+end)
+
+FFarm2:NewToggle("Auto Farm (One Shot)" , "Automatic Farm Kills", function(state)
+getgenv().Save["Auto Farm OS"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
@@ -787,7 +799,9 @@ getgenv().Save = {
     ["Auto Stack Token"] = false,
     ["Position X"] = "",
     ["Position Y"] = "",
-    ["Position Z"] = ""
+    ["Position Z"] = "",
+    ["Chosen Farm Method"] = "",
+    ["Auto Farm OS"] = false
 }
 SaveSetting()
 LoadSetting()

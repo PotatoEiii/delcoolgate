@@ -816,6 +816,64 @@ end)
 spawn(function()
 while wait(0.1) do
 pcall(function()
+
+if getgenv().Save["Auto Farm OS"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
+repeat wait(0.1)
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if mobalive:FindFirstChild("Humanoid") and mobalive.Humanoid.Health > 0 and getgenv().Save["Auto Farm OS"] then
+if string.find(mobalive.Name, "Captain") or string.find(mobalive.Name, "Bucky") or  string.find(mobalive.Name, "Buster") or string.find(mobalive.Name, "Bruno") then
+repeat wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
+wait(0.1)
+pcall(function()
+if (mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead) and ((game:GetService('Players').LocalPlayer.Character:FindFirstChild("Head").Position - mobalive:FindFirstChild("Head").Position).Magnitude < 100) then
+mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+end
+end)
+until (mobalive:FindFirstChild("Humanoid").Health == 0) or (getgenv().Save["Auto Farm OS"] == false) or (not mobalive:FindFirstChild("HumanoidRootPart"))
+end
+task.wait()
+getgenv().killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
+repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
+task.wait()
+if getgenv().Save["Chosen Farm Method"] == "Light" then
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.07)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+end
+until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= getgenv().killstat) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed") or (getgenv().Save["Auto Farm OS"] == false)
+
+end
+end
+until not getgenv().Save["Auto Farm OS"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
+end
+
+end)
+end
+end)
+
+spawn(function()
+while wait(0.1) do
+pcall(function()
 if getgenv().Save["Auto Delete Common Box"] then
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
 if v:IsA("Tool") and v.Name == "Common Box" then
@@ -1105,7 +1163,7 @@ repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
 wait(0.1)
 pcall(function()
-if (mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead) and ((game:GetService('Players').LocalPlayer.Character:FindFirstChild("Head").Position - mobalive:FindFirstChild("Head").Position).Magnitude < 50) then
+if (mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead) and ((game:GetService('Players').LocalPlayer.Character:FindFirstChild("Head").Position - mobalive:FindFirstChild("Head").Position).Magnitude < 100) then
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end
 end)
@@ -1225,7 +1283,7 @@ end)
 spawn(function() -- autofarm velocity
     while wait() do
         pcall(function()
-            if getgenv().Save["Auto Farm Gems"] == true or getgenv().SmokeLure == true then
+            if getgenv().Save["Auto Farm Gems"] == true or getgenv().SmokeLure == true or getgenv().Save["Auto Farm OS"] == true then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -1234,7 +1292,7 @@ spawn(function() -- autofarm velocity
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif getgenv().Save["Auto Farm Gems"] == false or getgenv().SmokeLure == false then
+            elseif getgenv().Save["Auto Farm Gems"] == false or getgenv().SmokeLure == false or getgenv().Save["Auto Farm OS"] == false then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 wait(1)
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50

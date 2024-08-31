@@ -1032,7 +1032,7 @@ repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
 wait(0.1)
 pcall(function()
-if mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead then
+if (mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead) and ((game:GetService('Players').LocalPlayer.Character:FindFirstChild("Head").Position - mobalive:FindFirstChild("Head").Position).Magnitude < 50) then
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end
 end)

@@ -123,6 +123,7 @@ local Server = Window:NewTab("Server")
 local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
+local FFarm2 = FFarm:NewSection(" -- One Shot Farming -- ")
 local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
 local Dupe3 = Dupe:NewSection(" -- Compass Dupe -- ")
@@ -156,6 +157,64 @@ getgenv().Save["Auto Get Expertise"] = state
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
+end)
+
+local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
+local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
+local FarmingOSDropDown = {}
+
+if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
+    table.insert(FarmingOSDropDown,"Light")
+end
+
+if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
+    table.insert(FarmingOSDropDown,"Quake")
+end
+
+if #FarmingOSDropDown == 0 then
+    table.insert(FarmingOSDropDown,"Sword")
+end
+
+local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", FarmingOSDropDown, function(blud)
+ChosenFarmMethod = blud
+end)
+
+game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Changed:Connect(function()
+local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
+local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
+local FarmingOSDropDown = {}
+
+if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
+    table.insert(FarmingOSDropDown,"Light")
+end
+
+if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
+    table.insert(FarmingOSDropDown,"Quake")
+end
+
+if #FarmingOSDropDown == 0 then
+    table.insert(FarmingOSDropDown,"Sword")
+end
+DropF:Refresh(FarmingOSDropDown)
+end)
+
+game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Changed:Connect(function()
+local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
+local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
+local FarmingOSDropDown = {}
+
+if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
+    table.insert(FarmingOSDropDown,"Light")
+end
+
+if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
+    table.insert(FarmingOSDropDown,"Quake")
+end
+
+if #FarmingOSDropDown == 0 then
+    table.insert(FarmingOSDropDown,"Sword")
+end
+DropF:Refresh(FarmingOSDropDown)
 end)
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)

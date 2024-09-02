@@ -493,6 +493,33 @@ SaveSetting()
 end
 end)
 
+local Playerslist = {}
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    table.insert(Playerslist,v.Name)
+end
+
+local PLRLISTED = Player1:NewDropdown("Choose Player", "Choose Player To Do Something", Playerslist, function(nah)
+getgenv().ChosenPlayer = nah
+end)
+
+game:GetService("Players").PlayerAdded:Connect(function()
+wait()
+table.clear(Playerslist)
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+table.insert(Playerslist,v.Name)
+end
+PLRLISTED::Refresh(PLRS)
+end)  
+
+game:GetService("Players").PlayerRemoving:Connect(function()
+wait()
+table.clear(Playerslist)
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+table.insert(Playerslist,v.Name)
+end
+PLRLISTED::Refresh(PLRS)
+end)  
+
 Gems1:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {

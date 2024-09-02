@@ -828,11 +828,10 @@ task.wait(0.5)
 end
 end)
 end
-task.wait()
-getgenv().killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
+_G.killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 repeat task.wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
 if getgenv().Save["Chosen Farm Method"] == "Light" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
@@ -847,20 +846,36 @@ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
+    [4] = mobalive:FindFirstChild("HumanoidRootPart").CFrame,
     [5] = workspace.IslandCaver.Stones.Stone,
     [6] = 100
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+elseif getgenv().Save["Chosen Farm Method"] == "Quake" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.0743713, 282.310211, -36.9613533, 0.136958227, -1.5720218e-08, 0.990576804, 4.45528325e-09, 1, 1.52537698e-08, -0.990576804, 2.3241713e-09, 0.136958227)
+if game.Workspace.Camera.CameraSubject ~= mobalive:FindFirstChild("Humanoid") then
+game.Workspace.Camera.CameraSubject = mobalive:FindFirstChild("Humanoid")
 end
-until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= getgenv().killstat) or (getgenv().Save["Auto Farm OS"] == false)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
+    [2] = "QuakePower4",
+    [3] = "StopCharging",
+    [4] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [5] = mobalive:FindFirstChild("HumanoidRootPart").CFrame,
+    [6] = 100,
+    [7] = mobalive:FindFirstChild("HumanoidRootPart").CFrame.Position
+}
 
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+task.wait(0.1)
+end
+until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= _G.killstat) or (getgenv().Save["Auto Farm OS"] == false)
 end
 end
 until not getgenv().Save["Auto Farm OS"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 end
-
 end)
 end
 end)
@@ -1165,10 +1180,10 @@ end
 end)
 until (mobalive:FindFirstChild("Humanoid").Health == 0) or (getgenv().Save["Auto Farm Gems"] == false) or (not mobalive:FindFirstChild("HumanoidRootPart"))
 task.wait()
-getgenv().killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
+_G.killstat = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value
 repeat wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 3)
-until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= getgenv().killstat) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed") or (getgenv().Save["Auto Farm Gems"] == false)
+until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= _G.killstat) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed") or (getgenv().Save["Auto Farm Gems"] == false)
 end
 end
 end

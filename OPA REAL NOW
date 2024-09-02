@@ -503,7 +503,7 @@ end
 
 local PLRINFO = Player1:NewDropdown2("Player's Information", "Show The Information Of The Choosen Player", {}, function()
 end)
-Player1:NewLabel3("♥♥♥")
+Player1:NewLabel3("--> ♥♥♥ <--")
 local PLRLISTED = Player1:NewDropdown("Choose Player", "Choose Player To Do Something", Playerslist, function(nah)
 getgenv().ChosenPlayer = nah
 end)

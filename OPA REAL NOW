@@ -508,7 +508,7 @@ table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)
 end
-PLRLISTED:Refresh(PLRS)
+PLRLISTED:Refresh(Playerslist)
 end)  
 
 game:GetService("Players").PlayerRemoving:Connect(function()
@@ -517,7 +517,7 @@ table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)
 end
-PLRLISTED:Refresh(PLRS)
+PLRLISTED:Refresh(Playerslist)
 end)  
 
 Gems1:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()

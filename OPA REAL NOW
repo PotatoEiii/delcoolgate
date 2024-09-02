@@ -681,7 +681,7 @@ for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
         mobalive:FindFirstChild("Humanoid") and 
         mobalive.Humanoid.Health > 0 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 15, 0)
-wait(0.3)
+wait(0.5)
     end
 end
 getgenv().SmokeLure = false

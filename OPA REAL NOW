@@ -141,7 +141,9 @@ local Player1 = PlayerTab:NewSection(" -- Player -- ")
 local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
-local Realtimecheck = Stats1:NewLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
+local RRGG = Stats1:NewLabel2("Time-Tracking")
+local Realtimecheck = Stats1:NewLabel("Real-Time: "..os.date("%A %x %X (%Z)"))
+local PlayingTime = Stats1:NewLabel("Play Time: "..workspace.DistributedGameTime)
 local PlayerStat1 = Stats1:NewLabel2("Player Stats")
 local PlayerStat2 = Stats1:NewLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
 local PlayerStat3 = Stats1:NewLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
@@ -1361,7 +1363,21 @@ end)
 
 spawn(function()
 while wait(0.25) do
-Realtimecheck:UpdateLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
+    local totalSeconds = math.floor(workspace.DistributedGameTime)
+    local hours = math.floor(totalSeconds / 3600)
+    local minutes = math.floor((totalSeconds % 3600) / 60)
+    local seconds = totalSeconds % 60
+    if hours < 1 then
+        if minutes < 1 then
+            PlayingTime:UpdateLabel("Play Time: "..seconds .. " s")
+        else
+            PlayingTime:UpdateLabel("Play Time: "..minutes .. " m, " .. seconds .. " s")
+        end
+    else
+        PlayingTime:UpdateLabel("Play Time: "..hours .. " h, " .. minutes .. " m, " .. seconds .. " s")
+    end
+
+Realtimecheck:UpdateLabel("Real-Time: "..os.date("%A %x %X (%Z)"))
 PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
 PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
 PlayerStat4:UpdateLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))

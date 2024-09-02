@@ -828,7 +828,6 @@ wait(0.1)
 pcall(function()
 if (mobalive:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Dead) and ((game:GetService('Players').LocalPlayer.Character:FindFirstChild("Head").Position - mobalive:FindFirstChild("Head").Position).Magnitude < 200) then
 mobalive:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-mobalive:FindFirstChild("Head"):Destroy()
 end
 end)
 until (mobalive:FindFirstChild("Humanoid").Health == 0) or (getgenv().Save["Auto Farm OS"] == false) or (not mobalive:FindFirstChild("HumanoidRootPart"))

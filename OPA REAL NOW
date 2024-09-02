@@ -778,7 +778,7 @@ mobalive:FindFirstChild("HumanoidRootPart").CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive:FindFirstChild("Head"):Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
+task.wait(0.7)
 end
 end)
 end

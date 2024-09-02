@@ -506,7 +506,14 @@ local PLRLISTED = Player1:NewDropdown("Choose Player", "Choose Player To Do Some
 getgenv().ChosenPlayer = nah
 Hi = {
 "Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).Name,
-"Display Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).DisplayName
+"Display Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).DisplayName,
+"Combo: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.DevilFruit.Value .." & "..  game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.DevilFruit2.Value,
+"Total Level: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].TotalLevel.Value,
+"Expertise: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.ExpertiseLevel.Value,
+"Haki: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.HakiLevel.Value,
+"Compass Token: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.CompassTokens.Value,
+"Beri: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Cash.Value,
+"Gems: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Gems.Value
 }
 PLRINFO:Refresh(Hi)
 end)

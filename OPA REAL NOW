@@ -1360,7 +1360,7 @@ spawn(function() -- autofarm velocity
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.25) do
 Realtimecheck:UpdateLabel2("Real-Time \n"..os.date("%A %x %X (%Z)"))
 PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
 PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))

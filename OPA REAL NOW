@@ -136,7 +136,8 @@ local GrabDrop2 = GrabDrop:NewSection(" -- Drop Tools -- ")
 local Backpack1 = Backpack:NewSection(" -- Auto Delete Box -- ")
 local Backpack2 = Backpack:NewSection(" -- Auto Open Box -- ")
 local Backpack3 = Backpack:NewSection(" -- Auto Delete Fruit -- ")
-local Player1 = PlayerTab:NewSection(" -- Players -- ")
+local Player2 = PlayerTab:NewSection(" -- All Players Stuff -- ")
+local Player1 = PlayerTab:NewSection(" -- Player -- ")
 local Server1 = Server:NewSection("-- Server --")
 local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
@@ -498,8 +499,16 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(Playerslist,v.Name)
 end
 
+local PLRINFO = Player1:NewDropdown("Player's Information", "Show The Information Of The Choosen Player", {}, function()
+end)
+Player1:NewLabel3("♥♥♥")
 local PLRLISTED = Player1:NewDropdown("Choose Player", "Choose Player To Do Something", Playerslist, function(nah)
 getgenv().ChosenPlayer = nah
+Hi = {
+"Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).Name,
+"Display Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).DisplayName
+}
+PLRINFO:Refresh(Hi)
 end)
 
 game:GetService("Players").PlayerAdded:Connect(function()

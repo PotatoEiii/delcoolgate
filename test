@@ -1,5 +1,5 @@
-            function Elements:NewDropdown(dropname, dropinf, list, callback)
-                local DropFunction = {}
+            function Elements:NewDropdown2(dropname, dropinf, list, callback)
+                local DropFunction2 = {}
                 dropname = dropname or "Dropdown"
                 list = list or {}
                 dropinf = dropinf or "Dropdown info"
@@ -38,7 +38,7 @@
                 local btn = dropOpen
                 dropOpen.Name = "dropOpen"
                 dropOpen.Parent = dropFrame
-                dropOpen.BackgroundColor3 = themeList.ElementColor
+                dropOpen.BackgroundColor3 = themeList.Background
                 dropOpen.Size = UDim2.new(0, 352, 0, 33)
                 dropOpen.AutoButtonColor = false
                 dropOpen.Font = Enum.Font.Merriweather
@@ -334,7 +334,7 @@
                     end)()
                 end
 
-                function DropFunction:Refresh(newList)
+                function DropFunction2:Refresh2(newList)
                     newList = newList or {}
                     for i,v in next, dropFrame:GetChildren() do
                         if v.Name == "optionSelect" then
@@ -444,5 +444,5 @@
                         UpdateSize()
                     end
                 end
-                return DropFunction
+                return DropFunction2
             end

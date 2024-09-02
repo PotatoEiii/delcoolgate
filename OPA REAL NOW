@@ -162,7 +162,7 @@ end
 end)
 
 
-local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", {"Light","Magma","Flare","Quake"}, function(blud)
+local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", {"Light","Quake"}, function(blud)
 getgenv().Save["Chosen Farm Method"] = blud
 if getgenv().Save["AutoSave"] then
 SaveSetting()

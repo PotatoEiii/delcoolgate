@@ -530,6 +530,10 @@ Player1:NewToggle("View Chosen Player" , "Change Your Spec To The Chosen Player"
 getgenv().viewplrr = state
 end)
 
+Player1:NewButton("Teleport To Chosen Player", "Just A TP Button", function()
+game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = game.Players:FindFirstChild(getgenv().ChosenPlayer).Character:FindFirstChild("HumanoidRootPart").CFrame
+end)
+
 Gems1:NewButton("Lure Mobs For Farm Gems (Smoke)", "Lure Mobs", function()
 getgenv().SmokeLure = true
 local args = {

@@ -163,7 +163,7 @@ end)
 
 local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
 local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
-local FarmingOSDropDown = {}
+local FarmingOSDropDown = {"Sword"}
 
 if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
     table.insert(FarmingOSDropDown,"Light")
@@ -171,10 +171,6 @@ end
 
 if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
     table.insert(FarmingOSDropDown,"Quake")
-end
-
-if #FarmingOSDropDown == 0 then
-    table.insert(FarmingOSDropDown,"Sword")
 end
 
 local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", FarmingOSDropDown, function(blud)
@@ -187,7 +183,7 @@ end)
 game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Changed:Connect(function()
 local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
 local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
-local FarmingOSDropDown = {}
+local FarmingOSDropDown = {"Sword"}
 
 if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
     table.insert(FarmingOSDropDown,"Light")
@@ -197,9 +193,6 @@ if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
     table.insert(FarmingOSDropDown,"Quake")
 end
 
-if #FarmingOSDropDown == 0 then
-    table.insert(FarmingOSDropDown,"Sword")
-end
 DropF:Refresh(FarmingOSDropDown)
 end)
 
@@ -821,7 +814,7 @@ if getgenv().Save["Auto Farm OS"] and game.Players.LocalPlayer.Character:WaitFor
 repeat wait(0.1)
 for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
 if mobalive:FindFirstChild("Humanoid") and mobalive.Humanoid.Health > 0 and getgenv().Save["Auto Farm OS"] then
-if string.find(mobalive.Name, "Vokun") or string.find(mobalive.Name, "Captain") or string.find(mobalive.Name, "Bucky") or  string.find(mobalive.Name, "Buster") or string.find(mobalive.Name, "Bruno") then
+if string.find(mobalive.Name, "Captain") or string.find(mobalive.Name, "Bucky") or  string.find(mobalive.Name, "Buster") or string.find(mobalive.Name, "Bruno") then
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 5, 0)
 wait(0.1)
@@ -832,7 +825,7 @@ mobalive:FindFirstChild("HumanoidRootPart").CanCollide = true
 mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive:FindFirstChild("Head"):Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
+task.wait(0.3)
 end
 end)
 until (mobalive:FindFirstChild("Humanoid").Health == 0) or (getgenv().Save["Auto Farm OS"] == false) or (not mobalive:FindFirstChild("HumanoidRootPart"))
@@ -865,7 +858,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 end
-until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= getgenv().killstat) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true) or (game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed") or (getgenv().Save["Auto Farm OS"] == false)
+until (not mobalive:FindFirstChild("HumanoidRootPart")) or (workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value ~= getgenv().killstat) or (getgenv().Save["Auto Farm OS"] == false)
 
 end
 end

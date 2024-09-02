@@ -506,18 +506,6 @@ end)
 Player1:NewLabel3("♥♥♥")
 local PLRLISTED = Player1:NewDropdown("Choose Player", "Choose Player To Do Something", Playerslist, function(nah)
 getgenv().ChosenPlayer = nah
-Hi = {
-"Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).Name,
-"Display Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).DisplayName,
-"Combo: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.DevilFruit.Value .." & "..  game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.DevilFruit2.Value,
-"Total Level: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].TotalLevel.Value,
-"Expertise: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.ExpertiseLevel.Value,
-"Haki: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.HakiLevel.Value,
-"Compass Token: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.CompassTokens.Value,
-"Beri: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Cash.Value,
-"Gems: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Gems.Value
-}
-PLRINFO:Refresh2(Hi)
 end)
 
 game:GetService("Players").PlayerAdded:Connect(function()
@@ -1376,7 +1364,6 @@ while wait(0.25) do
     else
         PlayingTime:UpdateLabel("Play Time: "..hours .. " h, " .. minutes .. " m, " .. seconds .. " s")
     end
-
 Realtimecheck:UpdateLabel("Real-Time: "..os.date("%A %x %X (%Z)"))
 PlayerStat2:UpdateLabel("Gems: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Gems.Value))
 PlayerStat3:UpdateLabel("Beri: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Cash.Value))
@@ -1387,6 +1374,30 @@ PlayerStat6:UpdateLabel("Compass: "..tostring(game:GetService("Players").LocalPl
 else
 PlayerStat6:UpdateLabel("Compass: "..tostring(game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokens.Value).."/"..tostring(game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.CompassTokenLimit.Value).." (Full!)")
 end
+end
+end)
+
+spawn(function()
+while wait(0.25) do
+pcall(function()
+if getgenv().ChosenPlayer ~= nil then
+
+Hi = {
+"Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).Name,
+"Display Name: "..game.Players:FindFirstChild(getgenv().ChosenPlayer).DisplayName,
+"Combo: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.DevilFruit.Value .." & "..  game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.DevilFruit2.Value,
+"Total Level: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].TotalLevel.Value,
+"Expertise: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.ExpertiseLevel.Value,
+"Haki: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.HakiLevel.Value,
+"Compass Token: "..game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.CompassTokens.Value,
+"Beri: "..format_large_number_with_spaces(game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Cash.Value),
+"Gems: "..format_large_number_with_spaces(game.Workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Gems.Value),
+"Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players:FindFirstChild(getgenv().ChosenPlayer).UserId].Data.Kills.Value)
+}
+PLRINFO:Refresh2(Hi)
+
+end
+end)
 end
 end)
 

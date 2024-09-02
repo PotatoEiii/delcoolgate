@@ -38,7 +38,7 @@
                 local btn = dropOpen
                 dropOpen.Name = "dropOpen"
                 dropOpen.Parent = dropFrame
-                dropOpen.BackgroundColor3 = themeList.Background
+                dropOpen.BackgroundColor3 = themeList.ElementColor
                 dropOpen.Size = UDim2.new(0, 352, 0, 33)
                 dropOpen.AutoButtonColor = false
                 dropOpen.Font = Enum.Font.Merriweather
@@ -259,7 +259,7 @@
                     DropYSize = DropYSize + 33
                     optionSelect.Name = "optionSelect"
                     optionSelect.Parent = dropFrame
-                    optionSelect.BackgroundColor3 = themeList.ElementColor
+                    optionSelect.BackgroundColor3 = themeList.Background
                     optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
                     optionSelect.Size = UDim2.new(0, 352, 0, 33)
                     optionSelect.AutoButtonColor = false
@@ -318,7 +318,7 @@
                     optionSelect.MouseLeave:Connect(function()
                         if not focusing then
                             game.TweenService:Create(optionSelect, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                                BackgroundColor3 = themeList.ElementColor
+                                BackgroundColor3 = themeList.Background
                             }):Play()
                             oHover = false
                         end
@@ -326,7 +326,7 @@
                     coroutine.wrap(function()
                         while wait() do
                             if not oHover then
-                                optionSelect.BackgroundColor3 = themeList.ElementColor
+                                optionSelect.BackgroundColor3 = themeList.Background
                             end
                             optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
                             Sample1.ImageColor3 = themeList.SchemeColor
@@ -358,7 +358,7 @@
                         DropYSize = DropYSize + 33
                         optionSelect.Name = "optionSelect"
                         optionSelect.Parent = dropFrame
-                        optionSelect.BackgroundColor3 = themeList.ElementColor
+                        optionSelect.BackgroundColor3 = themeList.Background
                         optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
                         optionSelect.Size = UDim2.new(0, 352, 0, 33)
                         optionSelect.AutoButtonColor = false
@@ -417,7 +417,7 @@
                         optionSelect.MouseLeave:Connect(function()
                             if not focusing then
                                 game.TweenService:Create(optionSelect, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                                    BackgroundColor3 = themeList.ElementColor
+                                    BackgroundColor3 = themeList.Background
                                 }):Play()
                                 hov = false
                             end
@@ -425,7 +425,7 @@
                         coroutine.wrap(function()
                             while wait() do
                                 if not oHover then
-                                    optionSelect.BackgroundColor3 = themeList.ElementColor
+                                    optionSelect.BackgroundColor3 = themeList.Background
                                 end
                                 optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
                                 Sample11.ImageColor3 = themeList.SchemeColor

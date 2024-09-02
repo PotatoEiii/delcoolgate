@@ -161,58 +161,12 @@ SaveSetting()
 end
 end)
 
-local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
-local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
-local FarmingOSDropDown = {"Sword"}
 
-if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
-    table.insert(FarmingOSDropDown,"Light")
-end
-
-if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
-    table.insert(FarmingOSDropDown,"Quake")
-end
-
-local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", FarmingOSDropDown, function(blud)
+local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", {"Light","Magma","Flare","Quake"}, function(blud)
 getgenv().Save["Chosen Farm Method"] = blud
 if getgenv().Save["AutoSave"] then
 SaveSetting()
 end
-end)
-
-game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Changed:Connect(function()
-local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
-local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
-local FarmingOSDropDown = {"Sword"}
-
-if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
-    table.insert(FarmingOSDropDown,"Light")
-end
-
-if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
-    table.insert(FarmingOSDropDown,"Quake")
-end
-
-DropF:Refresh(FarmingOSDropDown)
-end)
-
-game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Changed:Connect(function()
-local OwnFirstFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit"].Value
-local OwnSecondFruit = game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["DevilFruit2"].Value
-local FarmingOSDropDown = {}
-
-if (OwnFirstFruit == "Light" or OwnSecondFruit == "Light") then
-    table.insert(FarmingOSDropDown,"Light")
-end
-
-if (OwnFirstFruit == "Quake" or OwnSecondFruit == "Quake") then
-    table.insert(FarmingOSDropDown,"Quake")
-end
-
-if #FarmingOSDropDown == 0 then
-    table.insert(FarmingOSDropDown,"Sword")
-end
-DropF:Refresh(FarmingOSDropDown)
 end)
 
 FFarm2:NewToggle("Auto Farm (One Shot)" , "Automatic Farm Kills", function(state)

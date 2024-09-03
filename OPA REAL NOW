@@ -1351,8 +1351,9 @@ pcall(function()
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
 game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
-wait(1)
+task.wait(1)
 repeat
+
 if game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == true and getgenv().Save["Auto Aura Finding"] then
 repeat
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
@@ -1361,22 +1362,25 @@ end
 wait(2)
 until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible == false or not getgenv().Save["Auto Aura Finding"]
 end
+
 if not game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end
+
 if game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])
 end
+
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v.Name == "Compass" and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
-task.wait(0.1)
+task.wait()
 end
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Aura Finding"] then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
 end
-task.wait(0.5)
+task.wait(0.4)
 until not getgenv().Save["Auto Aura Finding"] or game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0
 
 end)
@@ -1632,7 +1636,7 @@ end
 task.wait()
 
 if getgenv().Save["Auto Stack Token"] == true and game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" then
-repeat wait()
+repeat
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer:WaitForChild("Backpack")["Compass"])
 task.wait()
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and getgenv().Save["Auto Stack Token"] == true then
@@ -1640,7 +1644,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Pla
 task.wait()
 game.Players.LocalPlayer.Character:FindFirstChild("Compass"):Activate()
 end
-task.wait(0.5)
+task.wait(0.4)
 until not getgenv().Save["Auto Stack Token"] or not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") or game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true or game.Players.LocalPlayer.PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Completed"
 end
 

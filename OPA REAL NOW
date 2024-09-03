@@ -1232,7 +1232,7 @@ end
 
 if getgenv().Save["Auto Open Common Box"] then
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
-if v:IsA("Tool") and v.Name == "Common Box" then
+if v:IsA("Tool") and v.Name == "Common Box" then wait()
 v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
 end
@@ -1241,7 +1241,7 @@ end
 
 if getgenv().Save["Auto Open Uncommon Box"] then
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
-if v:IsA("Tool") and v.Name == "Uncommon Box" then
+if v:IsA("Tool") and v.Name == "Uncommon Box" then wait()
 v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
 end
@@ -1250,7 +1250,7 @@ end
 
 if getgenv().Save["Auto Open Rare/Ultra Box"] then
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
-if v:IsA("Tool") and string.find(v.Name,"Rare") then
+if v:IsA("Tool") and string.find(v.Name,"Rare") then wait()
 v.Parent = game.Players.LocalPlayer.Character
 v:Activate()
 end

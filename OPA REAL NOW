@@ -1404,7 +1404,9 @@ while wait(0.1) do
 pcall(function()
 if getgenv().viewplrr then
 repeat wait(0.1)
+pcall(function()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(getgenv().ChosenPlayer).Character:FindFirstChild("Humanoid")
+end)
 until not getgenv().viewplrr or not game.Players:FindFirstChild(getgenv().ChosenPlayer)
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 end

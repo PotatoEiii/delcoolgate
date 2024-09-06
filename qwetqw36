@@ -5397,19 +5397,6 @@ Fluent:Notify({
 
 SaveManager:LoadAutoloadConfig()
 
-if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()
-end
-
-else
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
-end
-end
-if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
-end
-
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.startspamskill == true
@@ -8794,3 +8781,16 @@ game:GetService("Players").LocalPlayer.PlayerGui.Version.Version.Text = os.date(
 end)
 end
 end)
+
+if game.placeId == 3237168 then
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()
+end
+
+else
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
+end
+end
+if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
+end

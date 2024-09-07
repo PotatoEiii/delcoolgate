@@ -1175,7 +1175,7 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                 local bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
                                 bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                                bill.Size = UDim2.new(1,200,1,50)
+                                bill.Size = UDim2.new(1,200,1,60)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
                                 local name = Instance.new('TextLabel',bill)
@@ -1193,7 +1193,7 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                     name.TextColor3 = Color3.fromRGB(0, 255, 127)
                                 end
                             else
-                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
+                                v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value .. "\n HP: " .. math.floor(v.Character.CharacterTrait.Health.Value) .."/" ..math.floor(v.Character.CharacterTrait.HealthMax.Value))
                             end
                         end
                     end

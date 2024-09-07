@@ -1182,7 +1182,7 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                                 name.FontFace = Font.fromName("Merriweather")
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true
-                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value)
+                                name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' m \n' ..game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit"].Value .. ' '.. game.Workspace.UserData["User_"..v.UserId].Data["DevilFruit2"].Value .. "\n HP: " .. math.floor(v.Character.CharacterTrait.Health.Value) .."/" ..math.floor(v.Character.CharacterTrait.HealthMax.Value))
                                 name.Size = UDim2.new(1,0,1,0)
                                 name.TextYAlignment = 'Top'
                                 name.BackgroundTransparency = 1

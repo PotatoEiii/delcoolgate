@@ -7083,7 +7083,7 @@ repeat wait(0.1)
 for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)
-wait(1.2)
+wait(1.5)
 end
 end
 until not _G.autocannon

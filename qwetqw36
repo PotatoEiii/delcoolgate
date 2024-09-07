@@ -7025,10 +7025,10 @@ Fluent:Notify({
     Duration = 5
 })
 repeat wait()
-if _G.SelectedKillPlayer ~= "" and _G.SelectedKillPlayer ~= nil then
+pcall(function()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
-end
-until getgenv().viewplrr == false or game.Players:FindFirstChild(_G.SelectedKillPlayer).Name ~= _G.SelectedKillPlayer
+end)
+until getgenv().viewplrr == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end)

@@ -197,6 +197,15 @@ DISCORD.FontFace.Bold = true
 DISCORD.FontFace = Font.fromName("Merriweather")
 
 DISCORD.MouseButton1Up:Connect(function()
+
+game.TweenService:Create(DISCORD, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0.25, 0, 0.17, 0),
+         Position = UDim2.new(
+            DISCORD.Position.X.Scale, DISCORD.Position.X.Offset + DISCORD.AbsoluteSize.X * 0.1 / 2, -- Adjust X position
+            DISCORD.Position.Y.Scale, DISCORD.Position.Y.Offset + DISCORD.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
+        )
+		}):Play()
+
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
@@ -204,6 +213,12 @@ function toClipboard(txt)
     end
 end
 toClipboard("https://discord.gg/ecpbhm8G3w")
+wait(0.1)
+game.TweenService:Create(DISCORD, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+	Size = UDim2.new(0.3, 0, 0.21, 0),
+         Position = UDim2.new(0.081, 0, 0.384, 0)
+}):Play()
+
 end)
 
 DisCorner = Instance.new("UICorner")
@@ -223,6 +238,14 @@ FACEBOOK.FontFace.Bold = true
 FACEBOOK.FontFace = Font.fromName("Merriweather")
 
 FACEBOOK.MouseButton1Up:Connect(function()
+game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0.25, 0, 0.17, 0),
+         Position = UDim2.new(
+            FACEBOOK.Position.X.Scale, FACEBOOK.Position.X.Offset + FACEBOOK.AbsoluteSize.X * 0.1 / 2, -- Adjust X position
+            FACEBOOK.Position.Y.Scale, FACEBOOK.Position.Y.Offset + FACEBOOK.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
+        )
+		}):Play()
+
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
@@ -230,6 +253,12 @@ function toClipboard(txt)
     end
 end
 toClipboard("https://www.facebook.com/IrenkissWantPeace/")
+wait(0.1)
+game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+	Size = UDim2.new(0.3, 0, 0.21, 0),
+         Position = UDim2.new(0.081, 0, 0.691, 0)
+}):Play()
+
 end)
 
 FBCorner = Instance.new("UICorner")

@@ -90,6 +90,11 @@ game.TweenService:Create(HWIDGet, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum
 		}):Play()
 end)
 
+HWIDCorner = Instance.new("UICorner")
+HWIDCorner.Name = "HWIDCorner"
+HWIDCorner.Parent = HWIDGet
+HWIDCorner.CornerRadius = UDim.new(0,05)
+
  Invalid = Instance.new("TextLabel")
 Invalid.Parent = SSS
 Invalid.Name = "Invalid"
@@ -204,7 +209,7 @@ end)
 DisCorner = Instance.new("UICorner")
 DisCorner.Name = "DisCorner"
 DisCorner.Parent = DISCORD
-DisCorner.CornerRadius = UDim.new(0,13)
+DisCorner.CornerRadius = UDim.new(0,05)
 
 FACEBOOK = Instance.new("TextButton")
 FACEBOOK.Name = "FACEBOOK"
@@ -230,7 +235,7 @@ end)
 FBCorner = Instance.new("UICorner")
 FBCorner.Name = "FBCorner"
 FBCorner.Parent = FACEBOOK
-FBCorner.CornerRadius = UDim.new(0,13)
+FBCorner.CornerRadius = UDim.new(0,05)
 
 game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 Size = UDim2.new(1,0,1,0),

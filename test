@@ -1,16 +1,16 @@
- SALUNAUI = Instance.new("ScreenGui")
+SALUNAUI = Instance.new("ScreenGui")
 SALUNAUI.Name = "SALUNAUI"
 SALUNAUI.Parent = game.CoreGui
 
 SSS = Instance.new("Frame")
 SSS.Name = "SSS"
-SSS.Parent = game.CoreGui.SALUNAUI
+SSS.Parent = SALUNAUI
 SSS.BackgroundTransparency = 1
-SSS.Size = UDim2.new(1, 0, 1, 0)
+SSS.Size = UDim2.new(0, 0, 0, 0)
 
 SALUNAFRAME = Instance.new("Frame")
 SALUNAFRAME.Name = "SALUNAFRAME"
-SALUNAFRAME.Parent = game.CoreGui.SALUNAUI.SSS
+SALUNAFRAME.Parent = SSS
 SALUNAFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SALUNAFRAME.BackgroundTransparency = 0.2
 SALUNAFRAME.ClipsDescendants = true
@@ -19,11 +19,11 @@ SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
 
  SALUNAFRAMEcorner = Instance.new("UICorner")
 SALUNAFRAMEcorner.Name = "SALUNAFRAMEcorner"
-SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+SALUNAFRAMEcorner.Parent = SALUNAFRAME
 SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)
 
  Cancel = Instance.new("ImageButton")
-Cancel.Parent = game.CoreGui.SALUNAUI.SSS
+Cancel.Parent = SSS
 Cancel.Name = "Cancel"
 Cancel.BackgroundTransparency = 1
 Cancel.Position = UDim2.new(0.814, 0, 0.06, 0)
@@ -31,11 +31,16 @@ Cancel.Size = UDim2.new(0.048, 0, 0.1, 0)
 Cancel.Image = "http://www.roblox.com/asset/?id=7729954373"
 
 Cancel.MouseButton1Up:Connect(function()
-game.CoreGui.SALUNAUI:Destroy()
+	game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0,0,0,0),
+ Position = UDim2.new(0, SSS.AbsolutePosition.X + (SSS.AbsoluteSize.X / 2), 0, SSS.AbsolutePosition.Y + (SSS.AbsoluteSize.Y / 2))
+	}):Play()
+wait(1)
+SALUNAUI:Destroy()
 end)
 
  HWIDGet = Instance.new("TextButton")
-HWIDGet.Parent = game.CoreGui.SALUNAUI.SSS
+HWIDGet.Parent = SSS
 HWIDGet.Name = "HWIDGet"
 HWIDGet.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 HWIDGet.BackgroundTransparency = 0.1
@@ -70,7 +75,7 @@ game.TweenService:Create(HWIDGet, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enu
 end)
 
  Invalid = Instance.new("TextLabel")
-Invalid.Parent = game.CoreGui.SALUNAUI.SSS
+Invalid.Parent = SSS
 Invalid.Name = "Invalid"
 Invalid.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Invalid.BackgroundTransparency = 0.2
@@ -83,7 +88,7 @@ Invalid.FontFace.Bold = true
 Invalid.FontFace = Font.fromName("Merriweather")
 
  Owner = Instance.new("ImageLabel")
-Owner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+Owner.Parent = SALUNAFRAME
 Owner.Name = "Owner"
 Owner.BackgroundTransparency = 1
 Owner.Position = UDim2.new(0.638, 0, 0.383, 0)
@@ -92,12 +97,12 @@ Owner.Image = "http://www.roblox.com/asset/?id=18274868035"
 
  OwnerCorner = Instance.new("UICorner")
 OwnerCorner.Name = "OwnerCorner"
-OwnerCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.Owner
+OwnerCorner.Parent = Owner
 OwnerCorner.CornerRadius = UDim.new(0.1,0)
 
 
  DiscordImage = Instance.new("ImageLabel")
-DiscordImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+DiscordImage.Parent = SALUNAFRAME
 DiscordImage.Name = "DiscordImage"
 DiscordImage.BackgroundTransparency = 1
 DiscordImage.Position = UDim2.new(0.397, 0, 0.403, 0)
@@ -106,11 +111,11 @@ DiscordImage.Image = "http://www.roblox.com/asset/?id=17056354120"
 
  DiscordCorner = Instance.new("UICorner")
 DiscordCorner.Name = "DiscordCorner"
-DiscordCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.DiscordImage
+DiscordCorner.Parent = DiscordImage
 DiscordCorner.CornerRadius = UDim.new(1,0)
 
  FacebookImage = Instance.new("ImageLabel")
-FacebookImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+FacebookImage.Parent = SALUNAFRAME
 FacebookImage.Name = "FacebookImage"
 FacebookImage.BackgroundTransparency = 1
 FacebookImage.Position = UDim2.new(0.397, 0, 0.71, 0)
@@ -119,12 +124,12 @@ FacebookImage.Image = "http://www.roblox.com/asset/?id=5265119620"
 
  FacebookCorner = Instance.new("UICorner")
 FacebookCorner.Name = "FacebookCorner"
-FacebookCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.FacebookImage
+FacebookCorner.Parent = FacebookImage
 FacebookCorner.CornerRadius = UDim.new(0.2,0)
 
 
  Tieude = Instance.new("TextLabel")
-Tieude.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+Tieude.Parent = SALUNAFRAME
 Tieude.Name = "Tieude"
 Tieude.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 Tieude.Position = UDim2.new(0.081, 0, 0.103, 0)
@@ -136,11 +141,11 @@ Tieude.FontFace = Font.fromName("Merriweather")
 
  TieudeCorner = Instance.new("UICorner")
 TieudeCorner.Name = "TieudeCorner"
-TieudeCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.Tieude
+TieudeCorner.Parent = Tieude
 TieudeCorner.CornerRadius = UDim.new(0,15)
 
  SALUNA = Instance.new("TextLabel")
-SALUNA.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+SALUNA.Parent = SALUNAFRAME
 SALUNA.Name = "SALUNA"
 SALUNA.BackgroundTransparency = 1
 SALUNA.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -159,7 +164,7 @@ SALUNA.FontFace = Font.fromName("Merriweather")
 
 DISCORD = Instance.new("TextButton")
 DISCORD.Name = "DISCORD"
-DISCORD.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+DISCORD.Parent = SALUNAFRAME
 DISCORD.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 DISCORD.Position = UDim2.new(0.081, 0, 0.384, 0)
 DISCORD.Size = UDim2.new(0.3, 0, 0.21, 0)
@@ -180,12 +185,12 @@ end)
 
 DisCorner = Instance.new("UICorner")
 DisCorner.Name = "DisCorner"
-DisCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.DISCORD
+DisCorner.Parent = DISCORD
 DisCorner.CornerRadius = UDim.new(0,13)
 
 FACEBOOK = Instance.new("TextButton")
 FACEBOOK.Name = "FACEBOOK"
-FACEBOOK.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+FACEBOOK.Parent = SALUNAFRAME
 FACEBOOK.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 FACEBOOK.Position = UDim2.new(0.081, 0, 0.691, 0)
 FACEBOOK.Size = UDim2.new(0.3, 0, 0.21, 0)
@@ -206,5 +211,10 @@ end)
 
 FBCorner = Instance.new("UICorner")
 FBCorner.Name = "FBCorner"
-FBCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.FACEBOOK
+FBCorner.Parent = FACEBOOK
 FBCorner.CornerRadius = UDim.new(0,13)
+
+game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+Size = UDim2.new(1,0,1,0),
+Position = UDim2.new(0, SSS.AbsolutePosition.X + (SSS.AbsoluteSize.X / 2), 0, SSS.AbsolutePosition.Y + (SSS.AbsoluteSize.Y / 2))
+}):Play()

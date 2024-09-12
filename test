@@ -1,347 +1,200 @@
-            function Elements:NewDropdown2(dropname, dropinf, list, callback)
-                local DropFunction2 = {}
-                dropname = dropname or "Dropdown"
-                list = list or {}
-                dropinf = dropinf or "Dropdown info"
-                callback = callback or function() end   
+ SALUNAUI = Instance.new("ScreenGui")
+SALUNAUI.Name = "SALUNAUI"
+SALUNAUI.Parent = game.CoreGui
 
-                local opened = false
-                local DropYSize = 33
+SSS = Instance.new("Frame")
+SSS.Name = "SSS"
+SSS.Parent = game.CoreGui.SALUNAUI
+SSS.BackgroundTransparency = 1
+SSS.Size = UDim2.new(1, 0, 1, 0)
+
+SALUNAFRAME = Instance.new("Frame")
+SALUNAFRAME.Name = "SALUNAFRAME"
+SALUNAFRAME.Parent = game.CoreGui.SALUNAUI.SSS
+SALUNAFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SALUNAFRAME.BackgroundTransparency = 0.2
+SALUNAFRAME.ClipsDescendants = true
+SALUNAFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
+SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
+
+ SALUNAFRAMEcorner = Instance.new("UICorner")
+SALUNAFRAMEcorner.Name = "SALUNAFRAMEcorner"
+SALUNAFRAMEcorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)
+
+ Cancel = Instance.new("ImageButton")
+Cancel.Parent = game.CoreGui.SALUNAUI.SSS
+Cancel.Name = "Cancel"
+Cancel.BackgroundTransparency = 1
+Cancel.Position = UDim2.new(0.814, 0, 0.06, 0)
+Cancel.Size = UDim2.new(0.048, 0, 0.1, 0)
+Cancel.Image = "http://www.roblox.com/asset/?id=7729954373"
+
+Cancel.MouseButton1Up:Connect(function()
+game.CoreGui.SALUNAUI:Destroy()
+end)
+
+ HWIDGet = Instance.new("TextButton")
+HWIDGet.Parent = game.CoreGui.SALUNAUI.SSS
+HWIDGet.Name = "HWIDGet"
+HWIDGet.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+HWIDGet.BackgroundTransparency = 0.1
+HWIDGet.Position = UDim2.new(0.014, 0, 0.309, 0)
+HWIDGet.Size = UDim2.new(0.145, 0, 0.2, 0)
+HWIDGet.TextColor3 = Color3.fromRGB(0, 0, 0)
+HWIDGet.Text = "GET YOUR HWID"
+HWIDGet.TextScaled = true
+HWIDGet.FontFace.Bold = true
+HWIDGet.FontFace = Font.fromName("Merriweather")
+
+HWIDGet.MouseButton1Up:Connect(function()
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+ gethwid = 
+game:GetService("RbxAnalyticsService"):GetClientId()
+toClipboard(gethwid)
+end)
+
+ Invalid = Instance.new("TextLabel")
+Invalid.Parent = game.CoreGui.SALUNAUI.SSS
+Invalid.Name = "Invalid"
+Invalid.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Invalid.BackgroundTransparency = 0.2
+Invalid.Position = UDim2.new(0.216, 0, 0.011, 0)
+Invalid.Size = UDim2.new(0.564, 0, 0.102, 0)
+Invalid.TextColor3 = Color3.fromRGB(255, 0, 0)
+Invalid.Text = "YOUR EXCUTOR ID IS INVALID!"
+Invalid.TextScaled = true
+Invalid.FontFace.Bold = true
+Invalid.FontFace = Font.fromName("Merriweather")
+
+ Owner = Instance.new("ImageLabel")
+Owner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+Owner.Name = "Owner"
+Owner.BackgroundTransparency = 1
+Owner.Position = UDim2.new(0.638, 0, 0.383, 0)
+Owner.Size = UDim2.new(0.276, 0, 0.518, 0)
+Owner.Image = "http://www.roblox.com/asset/?id=18274868035"
+
+ OwnerCorner = Instance.new("UICorner")
+OwnerCorner.Name = "OwnerCorner"
+OwnerCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.Owner
+OwnerCorner.CornerRadius = UDim.new(0.1,0)
 
 
-                local dropFrame = Instance.new("Frame")
-                local dropOpen = Instance.new("TextButton")
-                local listImg = Instance.new("ImageLabel")
-                local itemTextbox = Instance.new("TextLabel")
-                local viewInfo = Instance.new("ImageButton")
-                local UICorner = Instance.new("UICorner")
-                local UIListLayout = Instance.new("UIListLayout")
-                local Sample = Instance.new("ImageLabel")
+ DiscordImage = Instance.new("ImageLabel")
+DiscordImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+DiscordImage.Name = "DiscordImage"
+DiscordImage.BackgroundTransparency = 1
+DiscordImage.Position = UDim2.new(0.397, 0, 0.403, 0)
+DiscordImage.Size = UDim2.new(0.098, 0, 0.148, 0)
+DiscordImage.Image = "http://www.roblox.com/asset/?id=17056354120"
 
-                local ms = game.Players.LocalPlayer:GetMouse()
-                Sample.Name = "Sample"
-                Sample.Parent = dropOpen
-                Sample.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                Sample.BackgroundTransparency = 1.000
-                Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-                Sample.ImageColor3 = themeList.SchemeColor
-                Sample.ImageTransparency = 0.600
-                
-                dropFrame.Name = "dropFrame"
-                dropFrame.Parent = sectionInners
-                dropFrame.BackgroundColor3 = themeList.Background
-                dropFrame.BorderSizePixel = 0
-                dropFrame.Position = UDim2.new(0, 0, 1.23571432, 0)
-                dropFrame.Size = UDim2.new(0, 352, 0, 33)
-                dropFrame.ClipsDescendants = true
-                local sample = Sample
-                local btn = dropOpen
-                dropOpen.Name = "dropOpen"
-                dropOpen.Parent = dropFrame
-                dropOpen.BackgroundColor3 = themeList.ElementColor
-                dropOpen.Size = UDim2.new(0, 352, 0, 33)
-                dropOpen.AutoButtonColor = false
-                dropOpen.Font = Enum.Font.Merriweather
-                dropOpen.Text = ""
-                dropOpen.TextColor3 = Color3.fromRGB(0, 0, 0)
-                dropOpen.TextSize = 14.000
-                dropOpen.ClipsDescendants = true
-                dropOpen.MouseButton1Click:Connect(function()
-                    if not focusing then
-                        if opened then
-                            opened = false
-                            dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), "InOut", "Linear", 0.08)
-                            wait(0.1)
-                            updateSectionFrame()
-                            UpdateSize()
-                            local c = sample:Clone()
-                            c.Parent = btn
-                            local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
-                            c.Position = UDim2.new(0, x, 0, y)
-                            local len, size = 0.35, nil
-                            if btn.AbsoluteSize.X >= btn.AbsoluteSize.Y then
-                                size = (btn.AbsoluteSize.X * 1.5)
-                            else
-                                size = (btn.AbsoluteSize.Y * 1.5)
-                            end
-                            c:TweenSizeAndPosition(UDim2.new(0, size, 0, size), UDim2.new(0.5, (-size / 2), 0.5, (-size / 2)), 'Out', 'Quad', len, true, nil)
-                            for i = 1, 10 do
-                                c.ImageTransparency = c.ImageTransparency + 0.05
-                                wait(len / 12)
-                            end
-                            c:Destroy()
-                        else
-                            opened = true
-                            dropFrame:TweenSize(UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)
-                            wait(0.1)
-                            updateSectionFrame()
-                            UpdateSize()
-                            local c = sample:Clone()
-                            c.Parent = btn
-                            local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
-                            c.Position = UDim2.new(0, x, 0, y)
-                            local len, size = 0.35, nil
-                            if btn.AbsoluteSize.X >= btn.AbsoluteSize.Y then
-                                size = (btn.AbsoluteSize.X * 1.5)
-                            else
-                                size = (btn.AbsoluteSize.Y * 1.5)
-                            end
-                            c:TweenSizeAndPosition(UDim2.new(0, size, 0, size), UDim2.new(0.5, (-size / 2), 0.5, (-size / 2)), 'Out', 'Quad', len, true, nil)
-                            for i = 1, 10 do
-                                c.ImageTransparency = c.ImageTransparency + 0.05
-                                wait(len / 12)
-                            end
-                            c:Destroy()
-                        end
-                    else
-                        for i,v in next, infoContainer:GetChildren() do
-                            Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            focusing = false
-                        end
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                    end
-                end)
+ DiscordCorner = Instance.new("UICorner")
+DiscordCorner.Name = "DiscordCorner"
+DiscordCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.DiscordImage
+DiscordCorner.CornerRadius = UDim.new(1,0)
 
-                listImg.Name = "listImg"
-                listImg.Parent = dropOpen
-                listImg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                listImg.BackgroundTransparency = 1.000
-                listImg.BorderColor3 = Color3.fromRGB(27, 42, 53)
-                listImg.Position = UDim2.new(0.0199999996, 0, 0.180000007, 0)
-                listImg.Size = UDim2.new(0, 21, 0, 21)
-                listImg.Image = "rbxassetid://3926305904"
-                listImg.ImageColor3 = themeList.SchemeColor
-                listImg.ImageRectOffset = Vector2.new(644, 364)
-                listImg.ImageRectSize = Vector2.new(36, 36)
+ FacebookImage = Instance.new("ImageLabel")
+FacebookImage.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+FacebookImage.Name = "FacebookImage"
+FacebookImage.BackgroundTransparency = 1
+FacebookImage.Position = UDim2.new(0.397, 0, 0.71, 0)
+FacebookImage.Size = UDim2.new(0.098, 0, 0.148, 0)
+FacebookImage.Image = "http://www.roblox.com/asset/?id=5265119620"
 
-                itemTextbox.Name = "itemTextbox"
-                itemTextbox.Parent = dropOpen
-                itemTextbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                itemTextbox.BackgroundTransparency = 1.000
-                itemTextbox.Position = UDim2.new(0.0970000029, 0, 0.273000002, 0)
-                itemTextbox.Size = UDim2.new(0, 138, 0, 14)
-                itemTextbox.Font = Enum.Font.Merriweather
-                itemTextbox.Text = dropname
-                itemTextbox.RichText = true
-                itemTextbox.TextColor3 = themeList.TextColor
-                itemTextbox.TextSize = 14.000
-                itemTextbox.TextXAlignment = Enum.TextXAlignment.Left
+ FacebookCorner = Instance.new("UICorner")
+FacebookCorner.Name = "FacebookCorner"
+FacebookCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.FacebookImage
+FacebookCorner.CornerRadius = UDim.new(0.2,0)
 
-                viewInfo.Name = "viewInfo"
-                viewInfo.Parent = dropOpen
-                viewInfo.BackgroundTransparency = 1.000
-                viewInfo.LayoutOrder = 9
-                viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
-                viewInfo.Size = UDim2.new(0, 23, 0, 23)
-                viewInfo.ZIndex = 2
-                viewInfo.Image = "rbxassetid://3926305904"
-                viewInfo.ImageColor3 = themeList.SchemeColor
-                viewInfo.ImageRectOffset = Vector2.new(764, 764)
-                viewInfo.ImageRectSize = Vector2.new(36, 36)
 
-                UICorner.CornerRadius = UDim.new(0, 4)
-                UICorner.Parent = dropOpen
+ Tieude = Instance.new("TextLabel")
+Tieude.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+Tieude.Name = "Tieude"
+Tieude.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+Tieude.Position = UDim2.new(0.081, 0, 0.103, 0)
+Tieude.Size = UDim2.new(0.833, 0, 0.177, 0)
+Tieude.Text = "Welcome To Saluna Hub"
+Tieude.TextScaled = true
+Tieude.FontFace.Bold = true
+Tieude.FontFace = Font.fromName("Merriweather")
 
-                local Sample = Instance.new("ImageLabel")
+ TieudeCorner = Instance.new("UICorner")
+TieudeCorner.Name = "TieudeCorner"
+TieudeCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.Tieude
+TieudeCorner.CornerRadius = UDim.new(0,15)
 
-                Sample.Name = "Sample"
-                Sample.Parent = dropOpen
-                Sample.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                Sample.BackgroundTransparency = 1.000
-                Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-                Sample.ImageColor3 = themeList.SchemeColor
-                Sample.ImageTransparency = 0.600
+ SALUNA = Instance.new("TextLabel")
+SALUNA.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+SALUNA.Name = "SALUNA"
+SALUNA.BackgroundTransparency = 1
+SALUNA.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SALUNA.Position = UDim2.new(0.519, 0, 0.371, 0)
+SALUNA.Size = UDim2.new(0.119, 0, 0.537, 0)
+SALUNA.Text = [[S
+A
+L
+U
+N
+A]]
+SALUNA.TextColor3 = Color3.fromRGB(255, 255, 0)
+SALUNA.TextScaled = true
+SALUNA.FontFace.Bold = true
+SALUNA.FontFace = Font.fromName("Merriweather")
 
-                UIListLayout.Parent = dropFrame
-                UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-                UIListLayout.Padding = UDim.new(0, 3)
+DISCORD = Instance.new("TextButton")
+DISCORD.Name = "DISCORD"
+DISCORD.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+DISCORD.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+DISCORD.Position = UDim2.new(0.081, 0, 0.384, 0)
+DISCORD.Size = UDim2.new(0.3, 0, 0.21, 0)
+DISCORD.Text = "Discord"
+DISCORD.TextScaled = true
+DISCORD.FontFace.Bold = true
+DISCORD.FontFace = Font.fromName("Merriweather")
 
-                updateSectionFrame() 
-                UpdateSize()
+DISCORD.MouseButton1Up:Connect(function()
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+toClipboard("https://discord.gg/ecpbhm8G3w")
+end)
 
-                local ms = game.Players.LocalPlayer:GetMouse()
-                local uis = game:GetService("UserInputService")
-                local infBtn = viewInfo
+DisCorner = Instance.new("UICorner")
+DisCorner.Name = "DisCorner"
+DisCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.DISCORD
+DisCorner.CornerRadius = UDim.new(0,13)
 
-                local moreInfo = Instance.new("TextLabel")
-                local UICorner = Instance.new("UICorner")
+FACEBOOK = Instance.new("TextButton")
+FACEBOOK.Name = "FACEBOOK"
+FACEBOOK.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME
+FACEBOOK.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+FACEBOOK.Position = UDim2.new(0.081, 0, 0.691, 0)
+FACEBOOK.Size = UDim2.new(0.3, 0, 0.21, 0)
+FACEBOOK.Text = "Facebook"
+FACEBOOK.TextScaled = true
+FACEBOOK.FontFace.Bold = true
+FACEBOOK.FontFace = Font.fromName("Merriweather")
 
-                moreInfo.Name = "TipMore"
-                moreInfo.Parent = infoContainer
-                moreInfo.BackgroundColor3 = themeList.SchemeColor
-                moreInfo.Position = UDim2.new(0, 0, 2, 0)
-                moreInfo.Size = UDim2.new(0, 353, 0, 33)
-                moreInfo.ZIndex = 9
-                moreInfo.RichText = true
-                moreInfo.Font = Enum.Font.Merriweather
-                moreInfo.Text = "  "..dropinf
-                moreInfo.TextColor3 = themeList.TextColor
-                moreInfo.TextSize = 14.000
-                moreInfo.TextXAlignment = Enum.TextXAlignment.Left
+FACEBOOK.MouseButton1Up:Connect(function()
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+toClipboard("https://www.facebook.com/IrenkissWantPeace/")
+end)
 
-                local hovering = false
-                btn.MouseEnter:Connect(function()
-                    if not focusing then
-                        game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                            BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 + 8, themeList.ElementColor.g * 255 + 9, themeList.ElementColor.b * 255 + 10)
-                        }):Play()
-                        hovering = true
-                    end 
-                end)
-                btn.MouseLeave:Connect(function()
-                    if not focusing then
-                        game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                            BackgroundColor3 = themeList.ElementColor
-                        }):Play()
-                        hovering = false
-                    end
-                end)        
-                coroutine.wrap(function()
-                    while wait() do
-                        if not hovering then
-                            dropOpen.BackgroundColor3 = themeList.ElementColor
-                        end
-                        Sample.ImageColor3 = themeList.SchemeColor
-                        dropFrame.BackgroundColor3 = themeList.Background
-                        listImg.ImageColor3 = themeList.SchemeColor
-                        itemTextbox.TextColor3 = themeList.TextColor
-                        viewInfo.ImageColor3 = themeList.SchemeColor
-                        moreInfo.BackgroundColor3 = themeList.SchemeColor
-                        moreInfo.TextColor3 = themeList.TextColor
-                    end
-                end)()
-                UICorner.CornerRadius = UDim.new(0, 4)
-                UICorner.Parent = moreInfo
-
-                if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
-                    Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
-                end 
-                if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
-                    Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
-                end 
-
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)     
-
-                for i,v in next, list do
-                    local optionSelect = Instance.new("TextLabel")
-                    local UICorner_2 = Instance.new("UICorner")
-                    local Sample1 = Instance.new("ImageLabel")
-
-                    local ms = game.Players.LocalPlayer:GetMouse()
-                    Sample1.Name = "Sample1"
-                    Sample1.Parent = optionSelect
-                    Sample1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                    Sample1.BackgroundTransparency = 1.000
-                    Sample1.Image = "http://www.roblox.com/asset/?id=4560909609"
-                    Sample1.ImageColor3 = themeList.SchemeColor
-                    Sample1.ImageTransparency = 0.600
-
-                    local sample1 = Sample1
-                    DropYSize = DropYSize + 33
-                    optionSelect.Name = "optionSelect"
-                    optionSelect.Parent = dropFrame
-                    optionSelect.BackgroundColor3 = themeList.Background
-                    optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
-                    optionSelect.Size = UDim2.new(0, 352, 0, 33)
-                    optionSelect.Font = Enum.Font.Merriweather
-                    optionSelect.Text = "  "..v
-                    optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
-                    optionSelect.TextSize = 14.000
-                    optionSelect.TextXAlignment = Enum.TextXAlignment.Left
-                    optionSelect.ClipsDescendants = true
-    
-                    UICorner_2.CornerRadius = UDim.new(0, 4)
-                    UICorner_2.Parent = optionSelect
-
-                    local oHover = false 
-                    coroutine.wrap(function()
-                        while wait() do
-                            if not oHover then
-                                optionSelect.BackgroundColor3 = themeList.Background
-                            end
-                            optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
-                            Sample1.ImageColor3 = themeList.SchemeColor
-                        end
-                    end)()
-                end
-
-                function DropFunction2:Refresh2(newList)
-                    newList = newList or {}
-                    for i,v in next, dropFrame:GetChildren() do
-                        if v.Name == "optionSelect" then
-                            v:Destroy()
-                        end
-                    end
-                    for i,v in next, newList do
-                        local optionSelect = Instance.new("TextLabel")
-                        local UICorner_2 = Instance.new("UICorner")
-                        local Sample11 = Instance.new("ImageLabel")
-                        local ms = game.Players.LocalPlayer:GetMouse()
-                        Sample11.Name = "Sample11"
-                        Sample11.Parent = optionSelect
-                        Sample11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                        Sample11.BackgroundTransparency = 1.000
-                        Sample11.Image = "http://www.roblox.com/asset/?id=4560909609"
-                        Sample11.ImageColor3 = themeList.SchemeColor
-                        Sample11.ImageTransparency = 0.600
-    
-                        local sample11 = Sample11
-                        DropYSize = DropYSize + 33
-                        optionSelect.Name = "optionSelect"
-                        optionSelect.Parent = dropFrame
-                        optionSelect.BackgroundColor3 = themeList.Background
-                        optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
-                        optionSelect.Size = UDim2.new(0, 352, 0, 33)
-                        optionSelect.Font = Enum.Font.Merriweather
-                        optionSelect.Text = "  "..v
-                        optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
-                        optionSelect.TextSize = 14.000
-                        optionSelect.TextXAlignment = Enum.TextXAlignment.Left
-                        optionSelect.ClipsDescendants = true
-                        UICorner_2.CornerRadius = UDim.new(0, 4)
-                        UICorner_2.Parent = optionSelect
-updateSectionFrame()
-UpdateSize()  
-                        coroutine.wrap(function()
-                            while wait() do
-                                if not oHover then
-                                    optionSelect.BackgroundColor3 = themeList.Background
-                                end
-                                optionSelect.TextColor3 = Color3.fromRGB(themeList.TextColor.r * 255 - 6, themeList.TextColor.g * 255 - 6, themeList.TextColor.b * 255 - 6)
-                                Sample11.ImageColor3 = themeList.SchemeColor
-                            end
-                        end)()
-                    end
-                    if opened then 
-                        dropFrame:TweenSize(UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)
-                        wait(0.1)
-                        updateSectionFrame()
-                        UpdateSize()
-                    else
-                        dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), "InOut", "Linear", 0.08)
-                        wait(0.1)
-                        updateSectionFrame()
-                        UpdateSize()
-                    end
-                end
-                return DropFunction2
-            end
+FBCorner = Instance.new("UICorner")
+FBCorner.Name = "FBCorner"
+FBCorner.Parent = game.CoreGui.SALUNAUI.SSS.SALUNAFRAME.FACEBOOK
+FBCorner.CornerRadius = UDim.new(0,13)

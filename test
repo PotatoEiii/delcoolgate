@@ -31,6 +31,19 @@ Cancel.Size = UDim2.new(0.048, 0, 0.1, 0)
 Cancel.Image = "http://www.roblox.com/asset/?id=7729954373"
 
 Cancel.MouseButton1Up:Connect(function()
+	game.TweenService:Create(Cancel, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0.038, 0, 0.08, 0),
+         Position = UDim2.new(
+            Cancel.Position.X.Scale, Cancel.Position.X.Offset + Cancel.AbsoluteSize.X * 0.1 / 2, -- Adjust X position
+            Cancel.Position.Y.Scale, Cancel.Position.Y.Offset + Cancel.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
+        )
+	}):Play()
+wait(0.1)
+	game.TweenService:Create(Cancel, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0.048, 0, 0.1, 0),
+ Position = UDim2.new(0.814, 0, 0.06, 0)
+	}):Play()
+wait()
 	game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0,0,0,0),
  Position = UDim2.new(0, SSS.AbsolutePosition.X + (SSS.AbsoluteSize.X / 2), 0, SSS.AbsolutePosition.Y + (SSS.AbsoluteSize.Y / 2))
@@ -54,9 +67,12 @@ HWIDGet.FontFace.Bold = true
 HWIDGet.FontFace = Font.fromName("Merriweather")
 
 HWIDGet.MouseButton1Up:Connect(function()
-game.TweenService:Create(HWIDGet, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Size = UDim2.new(0.100, 0, 0.15, 0),
-			Position = UDim2.new(0.03, 0, 0.33, 0)
+game.TweenService:Create(HWIDGet, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0.130, 0, 0.15, 0),
+         Position = UDim2.new(
+            HWIDGet.Position.X.Scale, HWIDGet.Position.X.Offset + HWIDGet.AbsoluteSize.X * 0.1 / 2, -- Adjust X position
+            HWIDGet.Position.Y.Scale, HWIDGet.Position.Y.Offset + HWIDGet.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
+        )
 		}):Play()
 everyClipboard = toclipboard
 function toClipboard(txt)
@@ -67,8 +83,8 @@ end
  gethwid = 
 game:GetService("RbxAnalyticsService"):GetClientId()
 toClipboard(gethwid)
-wait(0.05)
-game.TweenService:Create(HWIDGet, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+wait(0.1)
+game.TweenService:Create(HWIDGet, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0.145, 0, 0.2, 0),
 			Position = UDim2.new(0.014, 0, 0.309, 0)
 		}):Play()

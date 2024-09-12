@@ -232,5 +232,9 @@ FBCorner.CornerRadius = UDim.new(0,13)
 
 game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 Size = UDim2.new(1,0,1,0),
-Position = UDim2.new(0, SSS.AbsolutePosition.X + (SSS.AbsoluteSize.X / 2), 0, SSS.AbsolutePosition.Y + (SSS.AbsoluteSize.Y / 2))
+         Position = UDim2.new(
+            SSS.Position.X.Scale, SSS.Position.X.Offset + SSS.AbsoluteSize.X * 0.1 / 2, -- Adjust X position
+            SSS.Position.Y.Scale, SSS.Position.Y.Offset + SSS.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
+        )
 }):Play()
+

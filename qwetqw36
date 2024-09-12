@@ -450,7 +450,6 @@ end)
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
-game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
 
 Tabs.OPA:AddSection("					    -----Dupe Mode-----")
 

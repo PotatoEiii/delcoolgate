@@ -275,3 +275,36 @@ Size = UDim2.new(1,0,1,0),
             SSS.Position.Y.Scale, SSS.Position.Y.Offset + SSS.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
         )
 }):Play()
+
+
+local alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
+local target = {"S","A","L","U","N","A"}
+
+-- Function to generate and print sequences until reaching the target, formatted with [[ ]]
+function generate_until_target(alphabet, target)
+    local current = {}
+    
+    -- Loop through each letter position of the target
+    for target_index = 1, #target do
+        for i = 1, #alphabet do wait(0.1)
+            -- Build the current sequence up to the current letter position
+            current[target_index] = alphabet[i]
+            
+            -- Output formatted with [[ and ]]
+           SALUNA.Text = table.concat(current, "\n")
+            
+            -- Stop the loop if we reach the current letter in the target
+            if alphabet[i] == target[target_index] then
+                break
+            end
+        end
+    end
+end
+spawn(function()
+while game.CoreGui:FindFirstChild("SALUNAUI") do wait(2)
+if game.CoreGui:FindFirstChild("SALUNAUI") then
+generate_until_target(alphabet, target)
+wait(3)
+end
+end
+end)

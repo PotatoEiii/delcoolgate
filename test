@@ -275,9 +275,3 @@ Size = UDim2.new(1,0,1,0),
             SSS.Position.Y.Scale, SSS.Position.Y.Offset + SSS.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
         )
 }):Play()
-
-while game.CoreGui:FindFirstChild("SALUNAUI") do wait()
-for i,v in pairs(alphabet) do
-SALUNA.Text = tostring()
-end
-end

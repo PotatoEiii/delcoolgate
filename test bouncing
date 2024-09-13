@@ -13,7 +13,7 @@ LOADINGFRAME.Name = "LOADINGFRAME"
 LOADINGFRAME.Parent = TTT
 LOADINGFRAME.BackgroundTransparency = 1
 LOADINGFRAME.ClipsDescendants = true
-LOADINGFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
+LOADINGFRAME.Position = UDim2.new(-2, 0, 0.119, 0)
 LOADINGFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
 LOADINGFRAME.Image = "http://www.roblox.com/asset/?id=103224572218936"
 
@@ -21,3 +21,7 @@ LOADINGFRAMEcorner = Instance.new("UICorner")
 LOADINGFRAMEcorner.Name = "LOADINGFRAMEcorner"
 LOADINGFRAMEcorner.Parent = LOADINGFRAME
 LOADINGFRAMEcorner.CornerRadius = UDim.new(0.05,0)
+
+game.TweenService:Create(LOADINGFRAME, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+         Position = UDim2.new(0.183, 1, 0.119, 1)
+}):Play()

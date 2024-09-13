@@ -1,1 +1,18 @@
+SALUNALOADING = Instance.new("ScreenGui")
+SALUNALOADING.Name = "SALUNALOADING"
+SALUNALOADING.Parent = game.CoreGui
 
+TTT = Instance.new("Frame")
+TTT.Name = "TTT"
+TTT.Parent = SALUNALOADING
+TTT.BackgroundTransparency = 1
+TTT.Size = UDim2.new(1, 0, 1, 0)
+
+LOADINGFRAME = Instance.new("ImageLabel")
+LOADINGFRAME.Name = "LOADINGFRAME"
+LOADINGFRAME.Parent = TTT
+LOADINGFRAME.BackgroundTransparency = 1
+LOADINGFRAME.ClipsDescendants = true
+LOADINGFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
+LOADINGFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
+LOADINGFRAME.Image = "http://www.roblox.com/asset/?id=103224572218936"

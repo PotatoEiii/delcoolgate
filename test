@@ -256,6 +256,7 @@ game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enu
 
 end)
 
+wait(0.5)
 spawn(function()
 local i = 1
 while Invalid.Text ~= "YOU ARE NOT WHITELISTED!" do
@@ -334,7 +335,7 @@ L
 U
 N
 A]], 1, rezxt)
-    wait(0.1)  
+    wait(0.2)  
     
     rezxt = rezxt + 1 
         if rezxt > #[[S

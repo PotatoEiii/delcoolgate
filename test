@@ -6,7 +6,7 @@ SSS = Instance.new("Frame")
 SSS.Name = "SSS"
 SSS.Parent = SALUNAUI
 SSS.BackgroundTransparency = 1
-SSS.Size = UDim2.new(0, 0, 0, 0)
+SSS.Size = UDim2.new(1, 0, 1, 0)
 
 SALUNAFRAME = Instance.new("Frame")
 SALUNAFRAME.Name = "SALUNAFRAME"
@@ -17,12 +17,12 @@ SALUNAFRAME.ClipsDescendants = true
 SALUNAFRAME.Position = UDim2.new(0.183, 1, 0.119, 1)
 SALUNAFRAME.Size = UDim2.new(0.631, 0, 0.756, 0)
 
- SALUNAFRAMEcorner = Instance.new("UICorner")
+SALUNAFRAMEcorner = Instance.new("UICorner")
 SALUNAFRAMEcorner.Name = "SALUNAFRAMEcorner"
 SALUNAFRAMEcorner.Parent = SALUNAFRAME
-SALUNAFRAMEcorner.CornerRadius = UDim.new(0.1,0)
+SALUNAFRAMEcorner.CornerRadius = UDim.new(0.03,0)
 
- Cancel = Instance.new("ImageButton")
+Cancel = Instance.new("ImageButton")
 Cancel.Parent = SSS
 Cancel.Name = "Cancel"
 Cancel.BackgroundTransparency = 1
@@ -52,7 +52,12 @@ wait(1)
 SALUNAUI:Destroy()
 end)
 
- HWIDGet = Instance.new("TextButton")
+Cancelcorner = Instance.new("UICorner")
+Cancelcorner.Name = "Cancelcorner"
+Cancelcorner.Parent = Cancel
+Cancelcorner.CornerRadius = UDim.new(0.1,0)
+
+local HWIDGet = Instance.new("TextButton")
 HWIDGet.Parent = SSS
 HWIDGet.Name = "HWIDGet"
 HWIDGet.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
@@ -60,11 +65,12 @@ HWIDGet.BackgroundTransparency = 0.1
 HWIDGet.Position = UDim2.new(0.014, 0, 0.309, 0)
 HWIDGet.Size = UDim2.new(0.145, 0, 0.2, 0)
 HWIDGet.TextColor3 = Color3.fromRGB(0, 0, 0)
-HWIDGet.Text = [[GET HWID]]
+HWIDGet.BorderSizePixel = 2
+HWIDGet.BorderColor3 = Color3.fromRGB(0, 200, 127) 
+HWIDGet.Text = ""
 HWIDGet.TextWrapped = true 
 HWIDGet.TextScaled = true
-HWIDGet.FontFace.Bold = true
-HWIDGet.FontFace = Font.fromName("Merriweather")
+HWIDGet.Font = Enum.Font.Merriweather
 
 HWIDGet.MouseButton1Up:Connect(function()
 game.TweenService:Create(HWIDGet, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -90,11 +96,6 @@ game.TweenService:Create(HWIDGet, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum
 		}):Play()
 end)
 
-HWIDCorner = Instance.new("UICorner")
-HWIDCorner.Name = "HWIDCorner"
-HWIDCorner.Parent = HWIDGet
-HWIDCorner.CornerRadius = UDim.new(0,05)
-
  Invalid = Instance.new("TextLabel")
 Invalid.Parent = SSS
 Invalid.Name = "Invalid"
@@ -103,10 +104,10 @@ Invalid.BackgroundTransparency = 0.2
 Invalid.Position = UDim2.new(0.216, 0, 0.011, 0)
 Invalid.Size = UDim2.new(0.564, 0, 0.102, 0)
 Invalid.TextColor3 = Color3.fromRGB(255, 0, 0)
-Invalid.Text = "You Are Not Whitelisted!"
+Invalid.Text = ""
 Invalid.TextScaled = true
 Invalid.FontFace.Bold = true
-Invalid.FontFace = Font.fromName("Merriweather")
+Invalid.Font = Enum.Font.Merriweather
 
  Owner = Instance.new("ImageLabel")
 Owner.Parent = SALUNAFRAME
@@ -156,11 +157,11 @@ Tieude.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 Tieude.BackgroundTransparency = 1
 Tieude.Position = UDim2.new(0.081, 0, 0.103, 0)
 Tieude.Size = UDim2.new(0.833, 0, 0.177, 0)
-Tieude.Text = "Contact Information"
+Tieude.Text = ""
 Tieude.TextColor3 = Color3.fromRGB(0, 255, 127)
 Tieude.TextScaled = true
 Tieude.FontFace.Bold = true
-Tieude.FontFace = Font.fromName("Merriweather")
+Tieude.Font = Enum.Font.Merriweather
 
  TieudeCorner = Instance.new("UICorner")
 TieudeCorner.Name = "TieudeCorner"
@@ -183,7 +184,7 @@ A]]
 SALUNA.TextColor3 = Color3.fromRGB(255, 255, 0)
 SALUNA.TextScaled = true
 SALUNA.FontFace.Bold = true
-SALUNA.FontFace = Font.fromName("Merriweather")
+SALUNA.Font = Enum.Font.Merriweather
 
 DISCORD = Instance.new("TextButton")
 DISCORD.Name = "DISCORD"
@@ -191,10 +192,12 @@ DISCORD.Parent = SALUNAFRAME
 DISCORD.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 DISCORD.Position = UDim2.new(0.081, 0, 0.384, 0)
 DISCORD.Size = UDim2.new(0.3, 0, 0.21, 0)
+DISCORD.BorderSizePixel = 2
+DISCORD.BorderColor3 = Color3.fromRGB(0, 200, 127) 
 DISCORD.Text = "Discord"
 DISCORD.TextScaled = true
 DISCORD.FontFace.Bold = true
-DISCORD.FontFace = Font.fromName("Merriweather")
+DISCORD.Font = Enum.Font.Merriweather
 
 DISCORD.MouseButton1Up:Connect(function()
 
@@ -221,21 +224,18 @@ game.TweenService:Create(DISCORD, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum
 
 end)
 
-DisCorner = Instance.new("UICorner")
-DisCorner.Name = "DisCorner"
-DisCorner.Parent = DISCORD
-DisCorner.CornerRadius = UDim.new(0,05)
-
 FACEBOOK = Instance.new("TextButton")
 FACEBOOK.Name = "FACEBOOK"
 FACEBOOK.Parent = SALUNAFRAME
 FACEBOOK.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 FACEBOOK.Position = UDim2.new(0.081, 0, 0.691, 0)
 FACEBOOK.Size = UDim2.new(0.3, 0, 0.21, 0)
+FACEBOOK.BorderSizePixel = 2
+FACEBOOK.BorderColor3 = Color3.fromRGB(0, 200, 127) 
 FACEBOOK.Text = "Facebook"
 FACEBOOK.TextScaled = true
 FACEBOOK.FontFace.Bold = true
-FACEBOOK.FontFace = Font.fromName("Merriweather")
+FACEBOOK.Font = Enum.Font.Merriweather
 
 FACEBOOK.MouseButton1Up:Connect(function()
 game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -261,19 +261,6 @@ game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enu
 
 end)
 
-FBCorner = Instance.new("UICorner")
-FBCorner.Name = "FBCorner"
-FBCorner.Parent = FACEBOOK
-FBCorner.CornerRadius = UDim.new(0,05)
-
-game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-Size = UDim2.new(1,0,1,0),
-         Position = UDim2.new(
-            SSS.Position.X.Scale, SSS.Position.X.Offset + SSS.AbsoluteSize.X * 0.1 / 2, -- Adjust X position
-            SSS.Position.Y.Scale, SSS.Position.Y.Offset + SSS.AbsoluteSize.Y * 0.1 / 2  -- Adjust Y position
-        )
-}):Play()
-
 
 local alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
 local target = {"S","A","L","U","N","A"}
@@ -298,11 +285,51 @@ function generate_until_target(alphabet, target)
         end
     end
 end
+
 spawn(function()
 while game.CoreGui:FindFirstChild("SALUNAUI") do wait(2)
 if game.CoreGui:FindFirstChild("SALUNAUI") then
 generate_until_target(alphabet, target)
 wait(3)
 end
+end
+end)
+
+spawn(function()
+local i = 1
+while Invalid.Text ~= "YOU ARE NOT WHITELISTED!" do
+    Invalid.Text = string.sub("YOU ARE NOT WHITELISTED!", 1, i)
+    wait(0.1)  
+    
+    i = i + 1 
+        if i > #"YOU ARE NOT WHITELISTED!" then
+        break
+    end
+end
+end)
+
+spawn(function()
+local re = 1
+while Tieude.Text ~= "Contact Information" do
+    Tieude.Text = string.sub("Contact Information", 1, re)
+    wait(0.1)  
+    
+    re = re + 1 
+        if re > #"Contact Information" then
+        break
+    end
+end
+end)
+
+spawn(function()
+local ret = 1
+while HWIDGet.Text ~= "Get HWID" do
+    HWIDGet.Text = string.sub("Get HWID", 1, ret)
+    wait(0.1)  
+    
+    ret = ret + 1 
+        if ret > #"Get HWID" then
+        break
+    end
 end
 end)

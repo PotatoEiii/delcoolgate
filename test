@@ -8,7 +8,7 @@ SSS.Parent = SALUNAUI
 SSS.BackgroundTransparency = 1 
 SSS.AnchorPoint = Vector2.new(0.5,0.5)
 SSS.Position = UDim2.new(0.5, 0, 0.5, 0)
-SSS.Size = UDim2.new(1, 0, 1, 0)
+SSS.Size = UDim2.new(0, 0, 0, 0)
 
 SALUNAFRAME = Instance.new("Frame")
 SALUNAFRAME.Name = "SALUNAFRAME"
@@ -46,12 +46,14 @@ wait(0.1)
  Position = UDim2.new(0.814, 0, 0.06, 0)
 	}):Play()
 wait()
-	game.TweenService:Create(SSS, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+local rept = game.TweenService:Create(SSS, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0,0,0,0),
  Position = UDim2.new(0, SSS.AbsolutePosition.X + (SSS.AbsoluteSize.X / 2), 0, SSS.AbsolutePosition.Y + (SSS.AbsoluteSize.Y / 2))
-	}):Play()
-wait(1)
+	})
+rept:Play()
+rept.Completed:Connect(function()
 SALUNAUI:Destroy()
+end)
 end)
 
 Cancelcorner = Instance.new("UICorner")
@@ -258,7 +260,12 @@ game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enu
 
 end)
 
-wait(0.5)
+
+local dowq= game.TweenService:Create(SSS, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(1, 0, 1, 0)
+	})
+dowq:Play()
+dowq.Completed:Connect(function()
 spawn(function()
 local i = 1
 while Invalid.Text ~= "YOU ARE NOT WHITELISTED!" do
@@ -382,4 +389,5 @@ generate_until_target(alphabet, target)
 wait(1)
 end
 end
+end)
 end)

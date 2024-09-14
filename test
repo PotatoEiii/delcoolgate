@@ -175,12 +175,7 @@ SALUNA.BackgroundTransparency = 1
 SALUNA.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SALUNA.Position = UDim2.new(0.519, 0, 0.371, 0)
 SALUNA.Size = UDim2.new(0.119, 0, 0.537, 0)
-SALUNA.Text = [[S
-A
-L
-U
-N
-A]]
+SALUNA.Text = ""
 SALUNA.TextColor3 = Color3.fromRGB(255, 255, 0)
 SALUNA.TextScaled = true
 SALUNA.FontFace.Bold = true
@@ -194,7 +189,7 @@ DISCORD.Position = UDim2.new(0.081, 0, 0.384, 0)
 DISCORD.Size = UDim2.new(0.3, 0, 0.21, 0)
 DISCORD.BorderSizePixel = 2
 DISCORD.BorderColor3 = Color3.fromRGB(0, 200, 127) 
-DISCORD.Text = "Discord"
+DISCORD.Text = ""
 DISCORD.TextScaled = true
 DISCORD.FontFace.Bold = true
 DISCORD.Font = Enum.Font.Merriweather
@@ -232,7 +227,7 @@ FACEBOOK.Position = UDim2.new(0.081, 0, 0.691, 0)
 FACEBOOK.Size = UDim2.new(0.3, 0, 0.21, 0)
 FACEBOOK.BorderSizePixel = 2
 FACEBOOK.BorderColor3 = Color3.fromRGB(0, 200, 127) 
-FACEBOOK.Text = "Facebook"
+FACEBOOK.Text = ""
 FACEBOOK.TextScaled = true
 FACEBOOK.FontFace.Bold = true
 FACEBOOK.Font = Enum.Font.Merriweather
@@ -259,40 +254,6 @@ game.TweenService:Create(FACEBOOK, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enu
          Position = UDim2.new(0.081, 0, 0.691, 0)
 }):Play()
 
-end)
-
-
-local alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
-local target = {"S","A","L","U","N","A"}
-
--- Function to generate and print sequences until reaching the target, formatted with [[ ]]
-function generate_until_target(alphabet, target)
-    local current = {}
-    
-    -- Loop through each letter position of the target
-    for target_index = 1, #target do
-        for i = 1, #alphabet do wait(0.1)
-            -- Build the current sequence up to the current letter position
-            current[target_index] = alphabet[i]
-            
-            -- Output formatted with [[ and ]]
-           SALUNA.Text = table.concat(current, "\n")
-            
-            -- Stop the loop if we reach the current letter in the target
-            if alphabet[i] == target[target_index] then
-                break
-            end
-        end
-    end
-end
-
-spawn(function()
-while game.CoreGui:FindFirstChild("SALUNAUI") do wait(2)
-if game.CoreGui:FindFirstChild("SALUNAUI") then
-generate_until_target(alphabet, target)
-wait(3)
-end
-end
 end)
 
 spawn(function()
@@ -331,5 +292,91 @@ while HWIDGet.Text ~= "Get HWID" do
         if ret > #"Get HWID" then
         break
     end
+end
+end)
+spawn(function()
+local rezt = 1
+while DISCORD.Text ~= "Discord" do
+    DISCORD.Text = string.sub("Discord", 1, rezt)
+    wait(0.1)  
+    
+    rezt = rezt + 1 
+        if rezt > #"Discord" then
+        break
+    end
+end
+end)
+
+spawn(function()
+local rezt = 1
+while FACEBOOK.Text ~= "Facebook" do
+    FACEBOOK.Text = string.sub("Facebook", 1, rezt)
+    wait(0.1)  
+    
+    rezt = rezt + 1 
+        if rezt > #"Facebook" then
+        break
+    end
+end
+end)
+
+spawn(function()
+local rezxt = 1
+while SALUNA.Text ~= [[S
+A
+L
+U
+N
+A]] do
+    SALUNA.Text = string.sub([[S
+A
+L
+U
+N
+A]], 1, rezxt)
+    wait(0.1)  
+    
+    rezxt = rezxt + 1 
+        if rezxt > #[[S
+A
+L
+U
+N
+A]] then
+        break
+    end
+end
+end)
+
+local alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
+local target = {"S","A","L","U","N","A"}
+
+-- Function to generate and print sequences until reaching the target, formatted with [[ ]]
+function generate_until_target(alphabet, target)
+    local current = {}
+    
+    -- Loop through each letter position of the target
+    for target_index = 1, #target do
+        for i = 1, #alphabet do wait(0.1)
+            -- Build the current sequence up to the current letter position
+            current[target_index] = alphabet[i]
+            
+            -- Output formatted with [[ and ]]
+           SALUNA.Text = table.concat(current, "\n")
+            
+            -- Stop the loop if we reach the current letter in the target
+            if alphabet[i] == target[target_index] then
+                break
+            end
+        end
+    end
+end
+
+spawn(function()
+while game.CoreGui:FindFirstChild("SALUNAUI") do wait(4)
+if game.CoreGui:FindFirstChild("SALUNAUI") then
+generate_until_target(alphabet, target)
+wait(1)
+end
 end
 end)

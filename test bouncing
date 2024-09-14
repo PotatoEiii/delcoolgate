@@ -26,4 +26,53 @@ game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Quad, E
          Size = UDim2.new(0.631, 0, 0.756, 0),
          Position = UDim2.new(0.5, 0, 0.5, 0)
 }):Play()
+
+Loading = Instance.new("TextLabel")
+Loading.Parent = LOADINGFRAME
+Loading.Name = "Loading"
+Loading.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Loading.BackgroundTransparency = 1
+Loading.Position = UDim2.new(0.7, 0, 0.05, 0)
+Loading.Size = UDim2.new(0.2, 0, 0.756, 0)
+Loading.TextColor3 = Color3.fromRGB(255,0,0)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+]]
+Loading.TextSize = 20
+Loading.FontFace.Bold = true
+Loading.FontFace = Font.fromName("Merriweather")
+while game.CoreGui:FindFirstChild("SALUNALOADING") do
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+.]]
+wait(0.4)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+..]]
+wait(0.4)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+...]]
+wait(1)
+end
 end)

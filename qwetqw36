@@ -839,65 +839,6 @@ _G.exchangegem = false
 end
 end)
 
-BBB = Instance.new("ScreenGui")
-BBB.Name = "BBB"
-BBB.Parent = game.CoreGui
-
-hideUI = Instance.new("ImageButton")
-hideUI.Name = "hideUI"
-hideUI.Parent = BBB
-hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
-hideUI.BackgroundTransparency = 1
-hideUI.ClipsDescendants = true
-hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
-hideUI.Position = UDim2.new(0.05, 0, 0.155, 0)
-hideUI.Size = UDim2.new(0, 60, 0, 60)
-hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
-hideUI.MouseButton1Up:Connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-end)
-
-hideUICorner = Instance.new("UICorner")
-hideUICorner.Parent = hideUI
-hideUICorner.CornerRadius = UDim.new(1,0)
-
- UIS = game:GetService('UserInputService')
- frame = hideUI
- dragToggle = nil
- dragSpeed = 0.05
- dragStart = nil
- startPos = nil
-
- function updateInput(input)
-  delta = input.Position - dragStart
-  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
- game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-end
-
-frame.InputBegan:Connect(function(input)
- if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-  dragToggle = true
-  dragStart = input.Position
-  startPos = frame.Position
-  input.Changed:Connect(function()
-   if input.UserInputState == Enum.UserInputState.End then
-    dragToggle = false
-   end
-  end)
- end
-end)
-
-UIS.InputChanged:Connect(function(input)
- if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-  if dragToggle then
-   updateInput(input)
-  end
- end
-end)
-
 Tabs.Misc:AddSection("				-----Hide/Show Image-----")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
@@ -955,12 +896,14 @@ _G.imageUrls = {
 }
 
 asdzxima:OnChanged(function(heheimage)
+pcall(function()
 if heheimage == "Random" then
 local randomIndex = math.random(1, #_G.imageUrls)
 game.CoreGui.BBB.hideUI.Image = _G.imageUrls[randomIndex]
 else
 game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
 end
+end)
 end)
 
 Tabs.Misc:AddSection("							 --FE Scripts--")
@@ -5498,7 +5441,66 @@ Fluent:Notify({
     Duration = 120
 })
 
-wait(10)
+BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+
+hideUI = Instance.new("ImageButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.BackgroundTransparency = 1
+hideUI.ClipsDescendants = true
+hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
+hideUI.Position = UDim2.new(0.05, 0, 0.155, 0)
+hideUI.Size = UDim2.new(0, 60, 0, 60)
+hideUI.Image = ""
+hideUI.MouseButton1Up:Connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
+
+hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = hideUI
+hideUICorner.CornerRadius = UDim.new(1,0)
+
+ UIS = game:GetService('UserInputService')
+ frame = hideUI
+ dragToggle = nil
+ dragSpeed = 0.05
+ dragStart = nil
+ startPos = nil
+
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+
+UIS.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  if dragToggle then
+   updateInput(input)
+  end
+ end
+end)
+
+repeat wait() until game.CoreGui:FindFirstChild("BBB")
 spawn(function()
 while wait() do
 pcall(function()

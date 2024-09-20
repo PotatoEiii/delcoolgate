@@ -898,8 +898,7 @@ _G.imageUrls = {
 asdzxima:OnChanged(function(heheimage)
 pcall(function()
 if heheimage == "Random" then
-local randomIndex = math.random(1, #_G.imageUrls)
-game.CoreGui.BBB.hideUI.Image = _G.imageUrls[randomIndex]
+game.CoreGui.BBB.hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
 else
 game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
 end
@@ -5454,7 +5453,7 @@ hideUI.ClipsDescendants = true
 hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
 hideUI.Position = UDim2.new(0.05, 0, 0.155, 0)
 hideUI.Size = UDim2.new(0, 60, 0, 60)
-hideUI.Image = ""
+hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)

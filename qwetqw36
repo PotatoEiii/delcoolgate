@@ -387,7 +387,7 @@ _G.antiusefree = true
 
 if _G.antiusefree then
 spawn(function()
-while wait(0.1) do
+while wait() do
 pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -6849,23 +6849,22 @@ end
 end)
 
 spawn(function() -- autofarm destroy seat
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
-repeat task.wait()
+if _G.startrop  or _G.startropaura then
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-repeat
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+pcall(function()
 if v.Name == "Seat" then task.wait()
 v:Destroy()
 end
+end)
 end
 wait(0.5)
-until _G.robmethod ~= "Magma" or _G.cuopfruittarget == "" or _G.cuopfruittarget == nil
 end
-until not _G.startrop and not _G.startropaura
-        end)
-    end
+end
+end)
+end
 end)
 
 spawn(function()

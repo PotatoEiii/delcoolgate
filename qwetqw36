@@ -5498,11 +5498,11 @@ Fluent:Notify({
     Duration = 120
 })
 
-wait(5)
+wait(10)
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startspamskill == true
+while wait() do
 pcall(function()
+if _G.startspamskill then
 repeat wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.07)
@@ -6711,14 +6711,15 @@ until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power5" or _G.startspamskill =
        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 end
 until _G.startspamskill == false
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true
+while wait() do
 pcall(function()
+if _G.startrop then
 repeat task.wait()
 for _, fruitz in pairs(Fruittaoew) do
 for i, player in pairs(game.Players:GetChildren()) do 
@@ -6736,7 +6737,7 @@ end
 end
 end
 until not _G.startrop
-
+end
 end)
 end
 end)

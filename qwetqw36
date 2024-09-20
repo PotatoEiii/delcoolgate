@@ -5455,11 +5455,11 @@ hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
 hideUI.Size = UDim2.new(0, 60, 0, 60)
 hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
 hideUI.MouseButton1Up:Connect(function()
-game.TweenService:Create(hideUI, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 50, 0, 50)
 	}):Play()
-wait(0.1)
-game.TweenService:Create(hideUI, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+wait(0.05)
+game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 60, 0, 60)
 	}):Play()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)

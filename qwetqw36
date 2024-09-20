@@ -6771,7 +6771,7 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-if _G.startrop or _G.startropaura
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()

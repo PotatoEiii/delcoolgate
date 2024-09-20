@@ -12,40 +12,38 @@ local Window = Fluent:CreateWindow({
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" })
 }
 local Options = Fluent.Options
-
+local ServerRiel = {}
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
-local ServerRiel = {}
-while true do
-    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
-    if foundAnything ~= "" then
-        url = url .. '&cursor=' .. foundAnything
-    end
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
 
-    local Site
-    local success, response = pcall(function()
-        return HttpService:JSONDecode(game:HttpGet(url))
-    end)
-    
-    if success then
-        Site = response
-    end
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+if foundAnything ~= "" then
+    url = url .. '&cursor=' .. foundAnything
+end
 
+-- Correct handling of pcall
+local success, Site = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+
+-- Only proceed if the pcall was successful
+if success and Site then
+    -- Handle pagination
     if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
         foundAnything = Site.nextPageCursor
     else
         foundAnything = ""
     end
 
+    -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+            table.insert(ServerRiel, server.id.." \nPing("..server.ping..") - ".."FPS("..server.fps..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
         end
-    end
-
-    if foundAnything == "" then
-        break
     end
 end
 
@@ -65,26 +63,33 @@ end)
 end)
 
 spawn(function()
-    while wait(2) do
-        pcall(function()
+while wait(1) do
+pcall(function()
+table.clear(ServerRiel)
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
-table.clear(ServerRiel)
-    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
-    if foundAnything ~= "" then
-        url = url .. '&cursor=' .. foundAnything
-    end
-        Site = pcall(function()
-        return HttpService:JSONDecode(game:HttpGet(url))
-    end)
 
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+if foundAnything ~= "" then
+    url = url .. '&cursor=' .. foundAnything
+end
+
+-- Correct handling of pcall
+local success, Site = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+
+-- Only proceed if the pcall was successful
+if success and Site then
+    -- Handle pagination
     if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
         foundAnything = Site.nextPageCursor
     else
         foundAnything = ""
     end
 
+    -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
             table.insert(ServerRiel, server.id.." \nPing("..server.ping..") - ".."FPS("..server.fps..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
@@ -92,7 +97,7 @@ table.clear(ServerRiel)
     end
 
 SVLISTED:SetValues(ServerRiel)
-
-        end)
-    end
+end
+end)
+end
 end)

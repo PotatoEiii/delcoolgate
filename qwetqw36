@@ -6743,9 +6743,9 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startropaura then
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
 if playera.Name ~= game.Players.LocalPlayer.Name and playera.Name ~= "azpro2k7" then
@@ -6763,14 +6763,15 @@ end
 end
 end
 until not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura
 repeat task.wait()
 if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6783,15 +6784,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
-
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6823,14 +6824,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6845,6 +6847,7 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
+end
 end)
 end
 end)
@@ -6853,7 +6856,7 @@ spawn(function() -- autofarm destroy seat
 while wait() do
 pcall(function()
 if _G.startrop  or _G.startropaura then
-if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
+if (_G.robmethod == "Magma" or _G.robmethod == "Flare") and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 pcall(function()
 if v.Name == "Seat" then task.wait()
@@ -6869,9 +6872,9 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6903,14 +6906,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6925,34 +6929,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
-end)
 end
 end)
-
-spawn(function() -- autofarm destroy seat
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
-pcall(function()
-repeat task.wait()
-if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-repeat
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-if v.Name == "Seat" then task.wait()
-v:Destroy()
 end
-end
-wait(0.5)
-until _G.robmethod ~= "Flare" or _G.cuopfruittarget == "" or _G.cuopfruittarget == nil
-end
-until not _G.startrop and not _G.startropaura
-        end)
-    end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait() do
 pcall(function()
-repeat wait() until ESPPlayer == true
+if ESPPlayer then
 repeat wait()
 UpdatePlayerChams()
 until not ESPPlayer
@@ -6962,16 +6947,15 @@ if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
 end
 end
-
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait() do
 pcall(function()
-
-repeat wait() until _G.Hitboxplr == true
+if _G.Hitboxplr then
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
@@ -6988,7 +6972,7 @@ v.Character.HumanoidRootPart.Transparency = 1
 v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
 end
 end
-                                          
+end
 end)
 end
 end)

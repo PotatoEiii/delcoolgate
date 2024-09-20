@@ -42,7 +42,7 @@ if success and Site then
     -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-            table.insert(ServerRiel, server.id.." \nPing("..server.ping..") - ".."FPS("..server.fps..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
         end
     end
 end
@@ -92,7 +92,7 @@ if success and Site then
     -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-            table.insert(ServerRiel, server.id.." \nPing("..server.ping..") - ".."FPS("..server.fps..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
         end
     end
 

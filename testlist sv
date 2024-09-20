@@ -1,0 +1,76 @@
+ Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+ Window = Fluent:CreateWindow({
+    Title = "SALUNA VIP ♥",
+    SubTitle = "		Made by Saluna",
+    TabWidth = 100,
+    Size = UDim2.fromOffset(475, 340),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
+})
+ Tabs = {
+    Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" })
+}
+Options = Fluent.Options
+
+local PlaceID = game.PlaceId -- Replace with your actual PlaceID
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+
+-- Create an empty table to hold the server list
+local serverList = {}
+local servertest = {}
+while true do
+    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+    if foundAnything ~= "" then
+        url = url .. '&cursor=' .. foundAnything
+    end
+
+    local Site
+    local success, response = pcall(function()
+        return HttpService:JSONDecode(game:HttpGet(url))
+    end)
+    
+    if success then
+        Site = response
+    else
+        warn("Failed to fetch server list:", response)
+        break -- Exit the loop on error
+    end
+
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
+        foundAnything = Site.nextPageCursor
+    else
+        foundAnything = ""
+    end
+
+    for _, server in ipairs(Site.data) do
+        if server.playing < server.maxPlayers then
+            local serverInfo = {
+                id = server.id,
+                playing = server.playing,
+                maxPlayers = server.maxPlayers
+            }
+
+            table.insert(serverList, serverInfo)
+            table.insert(servertest, server.id.." - "..server.playing.."/"..server.maxPlayers)
+
+        end
+    end
+
+    if foundAnything == "" then
+        break
+    end
+end
+
+SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
+    Title = "Choose Server",
+    Description = "Choose Server From The List",
+    Values = servertest,
+    Multi = false,
+    Default = "",
+})
+
+SVLISTED:OnChanged(function(variazxwt)
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, string.match(variazxwt, "^(.-) "), game.Players.LocalPlayer)
+end)

@@ -845,26 +845,26 @@ BBB.Parent = game.CoreGui
 
 hideUI = Instance.new("ImageButton")
 hideUI.Name = "hideUI"
-hideUI.Parent = game.CoreGui.BBB
+hideUI.Parent = BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.BackgroundTransparency = 1
 hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(0.02, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0, 50, 0, 50)
-hideUI.Image = ""
+hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
+hideUI.Position = UDim2.new(0.05, 0, 0.155, 0)
+hideUI.Size = UDim2.new(0, 60, 0, 60)
+hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
 
- hideUICorner = Instance.new("UICorner")
-hideUICorner.Parent = game.CoreGui.BBB.hideUI
+hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = hideUI
 hideUICorner.CornerRadius = UDim.new(1,0)
 
-
  UIS = game:GetService('UserInputService')
- frame = game.CoreGui.BBB.hideUI
+ frame = hideUI
  dragToggle = nil
  dragSpeed = 0.05
  dragStart = nil

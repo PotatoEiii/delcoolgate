@@ -1,5 +1,5 @@
- Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
- Window = Fluent:CreateWindow({
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Window = Fluent:CreateWindow({
     Title = "SALUNA VIP ♥",
     SubTitle = "		Made by Saluna",
     TabWidth = 100,
@@ -11,15 +11,12 @@
  Tabs = {
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" })
 }
-Options = Fluent.Options
+local Options = Fluent.Options
 
-local PlaceID = game.PlaceId -- Replace with your actual PlaceID
+local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
-
--- Create an empty table to hold the server list
-local serverList = {}
-local servertest = {}
+local ServerRiel = {}
 while true do
     local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
     if foundAnything ~= "" then
@@ -33,9 +30,6 @@ while true do
     
     if success then
         Site = response
-    else
-        warn("Failed to fetch server list:", response)
-        break -- Exit the loop on error
     end
 
     if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
@@ -46,15 +40,7 @@ while true do
 
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-            local serverInfo = {
-                id = server.id,
-                playing = server.playing,
-                maxPlayers = server.maxPlayers
-            }
-
-            table.insert(serverList, serverInfo)
-            table.insert(servertest, server.id.." - "..server.playing.."/"..server.maxPlayers)
-
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
         end
     end
 
@@ -66,11 +52,47 @@ end
 SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
     Title = "Choose Server",
     Description = "Choose Server From The List",
-    Values = servertest,
+    Values = ServerRiel,
     Multi = false,
     Default = "",
 })
 
-SVLISTED:OnChanged(function(variazxwt)
-game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, string.match(variazxwt, "^(.-) "), game.Players.LocalPlayer)
+SVLISTED:OnChanged(function(hellozxw)
+pcall(function()
+hmm = tostring(hellozxw)
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, string.match(hmm, "^(.-) "), game.Players.LocalPlayer)
+end)
+end)
+
+spawn(function()
+    while wait(2) do
+        pcall(function()
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+table.clear(ServerRiel)
+    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+    if foundAnything ~= "" then
+        url = url .. '&cursor=' .. foundAnything
+    end
+        Site = pcall(function()
+        return HttpService:JSONDecode(game:HttpGet(url))
+    end)
+
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
+        foundAnything = Site.nextPageCursor
+    else
+        foundAnything = ""
+    end
+
+    for _, server in ipairs(Site.data) do
+        if server.playing < server.maxPlayers then
+            table.insert(ServerRiel, server.id.." \nPing("..server.ping..") - ".."FPS("..server.fps..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+        end
+    end
+
+SVLISTED:SetValues(ServerRiel)
+
+        end)
+    end
 end)

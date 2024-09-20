@@ -7671,37 +7671,31 @@ until not _G.autocannonslow
 end)
 
 spawn(function()
-while wait(0.3) do
-if getgenv().chawq then
-repeat wait()
+while wait() do
 pcall(function()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-getgenv().tpchaiq = true
-else
+if getgenv().chawq then
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tpchaiq = false
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
+elseif not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+getgenv().tpchaiq = true
 end
-end)
-until not getgenv().chawq
 else
 getgenv().tpchaiq = false
 end
+end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-if getgenv().tpchaiq then
+while wait() do
 pcall(function()
-repeat wait()
-if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 end
-until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
-end
 end
 end)
 

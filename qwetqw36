@@ -4603,11 +4603,27 @@ SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
 })
 
 SVLISTED:OnChanged(function(hellozxw)
-pcall(function()
 hmm = tostring(hellozxw)
+end)
+
+    Tabs.Server:AddButton({
+        Title = "Join Chosen Server",
+        Description = "Join The Chosen Server",
+        Callback = function()
+pcall(function()
+if string.match(hmm, "^(.-) ") == game.JobId and #game.Players:GetChildren() == 1 then
+Fluent:Notify({
+    Title = "Saluna Server Notify",
+    Content = "Cannot Rejoin The Current Server",
+    Duration = 5
+})
+else
+game.Players.LocalPlayer:Kick("Joining Server, Please Wait...")
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, string.match(hmm, "^(.-) "), game.Players.LocalPlayer)
+end
 end)
-end)
+        end
+    })
 
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",

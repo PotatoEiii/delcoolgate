@@ -4560,6 +4560,49 @@ end
     })
 
 Tabs.Server:AddSection("				--Join Server With JobID--")
+local ServerRiel = {}
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+if foundAnything ~= "" then
+    url = url .. '&cursor=' .. foundAnything
+end
+
+-- Correct handling of pcall
+local success, Site = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+
+-- Only proceed if the pcall was successful
+if success and Site then
+    -- Handle pagination
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
+        foundAnything = Site.nextPageCursor
+    else
+        foundAnything = ""
+    end
+
+    -- Iterate over servers and collect data
+    for _, server in ipairs(Site.data) do
+        if server.playing < server.maxPlayers then
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+        end
+    end
+end
+
+SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
+    Title = "Choose Server",
+    Description = "Choose Server From The List",
+    Values = ServerRiel,
+    Multi = false,
+    Default = "",
+})
+
+SVLISTED:OnChanged(function(hellozxw)
+pcall(function()
+hmm = tostring(hellozxw)
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, string.match(hmm, "^(.-) "), game.Players.LocalPlayer)
+end)
+end)
+
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",
 	Default = "",
@@ -8858,6 +8901,46 @@ end
 until _G.fruitfarmz ~= "Rumble" or _G.farmfruit == false
 end
 until _G.farmfruit == false
+end)
+end
+end)
+
+spawn(function()
+while wait(1) do
+pcall(function()
+table.clear(ServerRiel)
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+if foundAnything ~= "" then
+    url = url .. '&cursor=' .. foundAnything
+end
+
+-- Correct handling of pcall
+local success, Site = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+
+-- Only proceed if the pcall was successful
+if success and Site then
+    -- Handle pagination
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
+        foundAnything = Site.nextPageCursor
+    else
+        foundAnything = ""
+    end
+
+    -- Iterate over servers and collect data
+    for _, server in ipairs(Site.data) do
+        if server.playing < server.maxPlayers then
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+        end
+    end
+
+SVLISTED:SetValues(ServerRiel)
+end
 end)
 end
 end)

@@ -7136,15 +7136,9 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 pcall(function()
-repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
-task.wait()
-Fluent:Notify({
-    Title = "Players Notify",
-    Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
-    Duration = 5
-})
+repeat wait() until getgenv().viewplrr == true
 repeat wait()
 pcall(function()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
@@ -7157,7 +7151,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
@@ -7178,7 +7172,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 repeat wait() until _G.aurasto == true
 pcall(function()
 repeat task.wait()

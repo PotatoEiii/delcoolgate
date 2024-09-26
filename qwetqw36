@@ -4560,7 +4560,7 @@ end
     })
 
 Tabs.Server:AddSection("				--Join Specific Server--")
-ServerRiel = {}
+ServerRiel = {" "}
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
@@ -8932,7 +8932,7 @@ end)
 spawn(function()
 while wait(1) do
 pcall(function()
-table.clear(ServerRiel)
+ServerRiel = {" "}
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")

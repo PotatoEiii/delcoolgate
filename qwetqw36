@@ -4561,6 +4561,12 @@ end
 
 Tabs.Server:AddSection("				--Join Server With JobID--")
 local ServerRiel = {}
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
 local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
 if foundAnything ~= "" then
     url = url .. '&cursor=' .. foundAnything

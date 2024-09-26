@@ -7053,9 +7053,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
-pcall(function()
-repeat wait() until _G.CampString == true
+while wait() do
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 pcall(function()
@@ -7070,7 +7068,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait()
-until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or _G.SelectedKillPlayer == "azpro2k7"
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game.Players:FindFirstChild(_G.SelectedKillPlayer)) or _G.SelectedKillPlayer == "azpro2k7"
 wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
@@ -7081,42 +7079,39 @@ game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireS
 end)
 end
 end)
-
-end)
 end
 end)
 
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
+while wait() do
 pcall(function()
+if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 wait(0.1)
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true or _G.SelectedKillPlayer == "azpro2k7"
+end
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
 pcall(function()
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if _G.CampString == true then
+if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat wait()
+pcall(function()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
+end)
 until not _G.CampString or _G.SelectedKillPlayer == "azpro2k7"
 end
-end
-
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 pcall(function()
 repeat wait() until _G.wqesorry == true
 repeat wait()

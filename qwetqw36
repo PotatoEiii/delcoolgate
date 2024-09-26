@@ -514,48 +514,9 @@ end)
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
-    nonez = Window:AddTab({ Title = "-----------------------------", Icon = "" }),
-    OPA = Window:AddTab({ Title = "(OPA)", Icon = "rbxassetid://13553932740" }),
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
-
-Tabs.OPA:AddSection("					    -----Dupe Mode-----")
-
-Tabs.OPA:AddButton({
-        Title = "Dupe Mode",
-        Description = "Not Save Data Since Used",
-        Callback = function()
-game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Dupe Mode Turned On"
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-end
-    })
-
-Tabs.OPA:AddButton({
-        Title = "Save Data",
-        Description = "Use To Save Data If On Dupe Mode",
-        Callback = function()
-game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","None",34)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Saved Data"
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-end
-    })
-
 
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")

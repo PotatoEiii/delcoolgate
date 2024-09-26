@@ -4559,8 +4559,8 @@ end
 end
     })
 
-Tabs.Server:AddSection("				--Join Server With JobID--")
-local ServerRiel = {}
+Tabs.Server:AddSection("				--Join Specific Server--")
+ServerRiel = {}
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
@@ -4625,6 +4625,8 @@ end)
         end
     })
 
+
+Tabs.Server:AddSection("					    Join Server With JobID")
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",
 	Default = "",

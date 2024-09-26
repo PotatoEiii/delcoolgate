@@ -1,15 +1,84 @@
-task.wait(1)
+SALUNALOADING = Instance.new("ScreenGui")
+SALUNALOADING.Name = "SALUNALOADING"
+SALUNALOADING.Parent = game.CoreGui
+
+LOADINGFRAME = Instance.new("ImageLabel")
+LOADINGFRAME.Name = "LOADINGFRAME"
+LOADINGFRAME.Parent = SALUNALOADING
+LOADINGFRAME.BackgroundTransparency = 1
+LOADINGFRAME.ClipsDescendants = true
+LOADINGFRAME.AnchorPoint = Vector2.new(0.5, 0.5)
+LOADINGFRAME.Position = UDim2.new(-2, 0, 0.5, 0)
+LOADINGFRAME.Size = UDim2.new(0.2, 0, 0.2, 0)
+LOADINGFRAME.Image = "http://www.roblox.com/asset/?id=18866462306"
+
+LOADINGFRAMEcorner = Instance.new("UICorner")
+LOADINGFRAMEcorner.Name = "LOADINGFRAMEcorner"
+LOADINGFRAMEcorner.Parent = LOADINGFRAME
+LOADINGFRAMEcorner.CornerRadius = UDim.new(0.05,0)
+
+local v = game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+         Position = UDim2.new(0.5, 0, 0.5, 0)
+})
+v:Play()
+v.Completed:Connect(function()
+game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+         Size = UDim2.new(0.631, 0, 0.756, 0),
+         Position = UDim2.new(0.5, 0, 0.5, 0)
+}):Play()
+
+Loading = Instance.new("TextLabel")
+Loading.Parent = LOADINGFRAME
+Loading.Name = "Loading"
+Loading.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Loading.BackgroundTransparency = 1
+Loading.Position = UDim2.new(0.7, 0, 0.05, 0)
+Loading.Size = UDim2.new(0.2, 0, 0.756, 0)
+Loading.TextColor3 = Color3.fromRGB(255,0,0)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+]]
+Loading.TextSize = 20
+Loading.FontFace.Bold = true
+Loading.FontFace = Font.fromName("Merriweather")
+while game.CoreGui:FindFirstChild("SALUNALOADING") do
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+.]]
+wait(0.4)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+..]]
+wait(0.4)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+...]]
+wait(1)
+end
+end)
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Loading Script, Please Wait..."
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+task.wait(4)
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -318,7 +387,7 @@ _G.antiusefree = true
 
 if _G.antiusefree then
 spawn(function()
-while wait(0.1) do
+while wait() do
 pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -345,7 +414,7 @@ end)
 end
 end)
 end
-
+SALUNALOADING:Destroy()
 if _G.asdwqelist then
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
@@ -445,49 +514,9 @@ end)
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
-    nonez = Window:AddTab({ Title = "-----------------------------", Icon = "" }),
-    OPA = Window:AddTab({ Title = "(OPA)", Icon = "rbxassetid://13553932740" }),
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
-game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaFluent"
-
-Tabs.OPA:AddSection("					    -----Dupe Mode-----")
-
-Tabs.OPA:AddButton({
-        Title = "Dupe Mode",
-        Description = "Not Save Data Since Used",
-        Callback = function()
-game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","\255",34)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Dupe Mode Turned On"
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-end
-    })
-
-Tabs.OPA:AddButton({
-        Title = "Save Data",
-        Description = "Use To Save Data If On Dupe Mode",
-        Callback = function()
-game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","None",34)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "Saluna Notify: Saved Data"
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace = Font.fromName("Merriweather")
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.FontFace.Bold = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-end
-    })
-
 
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")
@@ -771,65 +800,6 @@ _G.exchangegem = false
 end
 end)
 
-BBB = Instance.new("ScreenGui")
-BBB.Name = "BBB"
-BBB.Parent = game.CoreGui
-
-hideUI = Instance.new("ImageButton")
-hideUI.Name = "hideUI"
-hideUI.Parent = game.CoreGui.BBB
-hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
-hideUI.BackgroundTransparency = 1
-hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(0.02, 1, 0.155, 1)
-hideUI.Size = UDim2.new(0, 50, 0, 50)
-hideUI.Image = ""
-hideUI.MouseButton1Up:Connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-end)
-
- hideUICorner = Instance.new("UICorner")
-hideUICorner.Parent = game.CoreGui.BBB.hideUI
-hideUICorner.CornerRadius = UDim.new(1,0)
-
-
- UIS = game:GetService('UserInputService')
- frame = game.CoreGui.BBB.hideUI
- dragToggle = nil
- dragSpeed = 0.05
- dragStart = nil
- startPos = nil
-
- function updateInput(input)
-  delta = input.Position - dragStart
-  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
- game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-end
-
-frame.InputBegan:Connect(function(input)
- if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-  dragToggle = true
-  dragStart = input.Position
-  startPos = frame.Position
-  input.Changed:Connect(function()
-   if input.UserInputState == Enum.UserInputState.End then
-    dragToggle = false
-   end
-  end)
- end
-end)
-
-UIS.InputChanged:Connect(function(input)
- if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-  if dragToggle then
-   updateInput(input)
-  end
- end
-end)
-
 Tabs.Misc:AddSection("				-----Hide/Show Image-----")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
@@ -887,12 +857,13 @@ _G.imageUrls = {
 }
 
 asdzxima:OnChanged(function(heheimage)
+pcall(function()
 if heheimage == "Random" then
-local randomIndex = math.random(1, #_G.imageUrls)
-game.CoreGui.BBB.hideUI.Image = _G.imageUrls[randomIndex]
+game.CoreGui.BBB.hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
 else
 game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
 end
+end)
 end)
 
 Tabs.Misc:AddSection("							 --FE Scripts--")
@@ -4549,7 +4520,74 @@ end
 end
     })
 
-Tabs.Server:AddSection("				--Join Server With JobID--")
+Tabs.Server:AddSection("				  --Join Specific Server--")
+ServerRiel = {" "}
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+if foundAnything ~= "" then
+    url = url .. '&cursor=' .. foundAnything
+end
+
+-- Correct handling of pcall
+local success, Site = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+
+-- Only proceed if the pcall was successful
+if success and Site then
+    -- Handle pagination
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
+        foundAnything = Site.nextPageCursor
+    else
+        foundAnything = ""
+    end
+
+    -- Iterate over servers and collect data
+    for _, server in ipairs(Site.data) do
+        if server.playing < server.maxPlayers then
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+        end
+    end
+end
+
+SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
+    Title = "Choose Server",
+    Description = "Choose Server From The List",
+    Values = ServerRiel,
+    Multi = false,
+    Default = "",
+})
+
+SVLISTED:OnChanged(function(hellozxw)
+hmm = tostring(hellozxw)
+end)
+
+    Tabs.Server:AddButton({
+        Title = "Join Chosen Server",
+        Description = "Join The Chosen Server",
+        Callback = function()
+pcall(function()
+if string.match(hmm, "^(.-) ") == game.JobId and #game.Players:GetChildren() == 1 then
+Fluent:Notify({
+    Title = "Saluna Server Notify",
+    Content = "Cannot Rejoin The Current Server",
+    Duration = 5
+})
+else
+game.Players.LocalPlayer:Kick("Joining Server, Please Wait...")
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, string.match(hmm, "^(.-) "), game.Players.LocalPlayer)
+end
+end)
+        end
+    })
+
+
+Tabs.Server:AddSection("				  Join Server With JobID")
 joinjobid = Tabs.Server:AddInput("joinjobid", {
 	Title = "Server JobID:",
 	Default = "",
@@ -5430,12 +5468,77 @@ Fluent:Notify({
     Duration = 120
 })
 
-SaveManager:LoadAutoloadConfig()
+BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
 
+hideUI = Instance.new("ImageButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.BackgroundTransparency = 1
+hideUI.ClipsDescendants = true
+hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
+hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
+hideUI.Size = UDim2.new(0, 60, 0, 60)
+hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
+hideUI.MouseButton1Up:Connect(function()
+game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0, 50, 0, 50)
+	}):Play()
+wait(0.05)
+game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0, 60, 0, 60)
+	}):Play()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
+
+hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = hideUI
+hideUICorner.CornerRadius = UDim.new(1,0)
+
+ UIS = game:GetService('UserInputService')
+ frame = hideUI
+ dragToggle = nil
+ dragSpeed = 0.05
+ dragStart = nil
+ startPos = nil
+
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+
+UIS.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  if dragToggle then
+   updateInput(input)
+  end
+ end
+end)
+
+repeat wait() until game.CoreGui:FindFirstChild("BBB")
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startspamskill == true
+while wait() do
 pcall(function()
+if _G.startspamskill then
 repeat wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.07)
@@ -6644,14 +6747,15 @@ until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power5" or _G.startspamskill =
        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 end
 until _G.startspamskill == false
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true
+while wait() do
 pcall(function()
+if _G.startrop then
 repeat task.wait()
 for _, fruitz in pairs(Fruittaoew) do
 for i, player in pairs(game.Players:GetChildren()) do 
@@ -6669,15 +6773,15 @@ end
 end
 end
 until not _G.startrop
-
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startropaura then
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
 if playera.Name ~= game.Players.LocalPlayer.Name and playera.Name ~= "azpro2k7" then
@@ -6695,14 +6799,15 @@ end
 end
 end
 until not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Quake" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6715,15 +6820,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
-
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6755,14 +6860,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6777,34 +6883,34 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function() -- autofarm destroy seat
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
-repeat task.wait()
-if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-repeat
+if _G.startrop  or _G.startropaura then
+if (_G.robmethod == "Magma" or _G.robmethod == "Flare") and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+pcall(function()
 if v.Name == "Seat" then task.wait()
 v:Destroy()
 end
+end)
 end
 wait(0.5)
-until _G.robmethod ~= "Magma" or _G.cuopfruittarget == "" or _G.cuopfruittarget == nil
 end
-until not _G.startrop and not _G.startropaura
-        end)
-    end
+end
+end)
+end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6836,14 +6942,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
+while wait() do
 pcall(function()
+if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
@@ -6858,34 +6965,15 @@ _G.cuopfruittarget = ""
 end)
 end
 until not _G.startrop and not _G.startropaura
-end)
 end
 end)
-
-spawn(function() -- autofarm destroy seat
-while wait(0.3) do
-repeat wait() until _G.startrop == true or _G.startropaura == true
-pcall(function()
-repeat task.wait()
-if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-repeat
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-if v.Name == "Seat" then task.wait()
-v:Destroy()
 end
-end
-wait(0.5)
-until _G.robmethod ~= "Flare" or _G.cuopfruittarget == "" or _G.cuopfruittarget == nil
-end
-until not _G.startrop and not _G.startropaura
-        end)
-    end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait() do
 pcall(function()
-repeat wait() until ESPPlayer == true
+if ESPPlayer then
 repeat wait()
 UpdatePlayerChams()
 until not ESPPlayer
@@ -6895,16 +6983,15 @@ if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
 end
 end
-
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait() do
 pcall(function()
-
-repeat wait() until _G.Hitboxplr == true
+if _G.Hitboxplr then
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
@@ -6921,15 +7008,13 @@ v.Character.HumanoidRootPart.Transparency = 1
 v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
 end
 end
-                                          
+end
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-pcall(function()
-repeat wait() until _G.CampString == true
+while wait() do
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 pcall(function()
@@ -6944,7 +7029,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait()
-until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or not _G.CampString or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or _G.SelectedKillPlayer == "azpro2k7"
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game.Players:FindFirstChild(_G.SelectedKillPlayer)) or _G.SelectedKillPlayer == "azpro2k7"
 wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
@@ -6955,42 +7040,39 @@ game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireS
 end)
 end
 end)
-
-end)
 end
 end)
 
 
 spawn(function()
-while wait(0.3) do
-repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
+while wait() do
 pcall(function()
+if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 wait(0.1)
 until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true or _G.SelectedKillPlayer == "azpro2k7"
+end
 end)
 end
 end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7"
 pcall(function()
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if _G.CampString == true then
+if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat wait()
+pcall(function()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
+end)
 until not _G.CampString or _G.SelectedKillPlayer == "azpro2k7"
 end
-end
-
 end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 pcall(function()
 repeat wait() until _G.wqesorry == true
 repeat wait()
@@ -7015,15 +7097,9 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 pcall(function()
-repeat wait() until getgenv().viewplrr == true and game.Players:FindFirstChild(_G.SelectedKillPlayer).Name == _G.SelectedKillPlayer
-task.wait()
-Fluent:Notify({
-    Title = "Players Notify",
-    Content = "Viewing " ..game.Players:FindFirstChild(_G.SelectedKillPlayer).Name,
-    Duration = 5
-})
+repeat wait() until getgenv().viewplrr == true
 repeat wait()
 pcall(function()
 game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
@@ -7036,7 +7112,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
@@ -7057,7 +7133,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.1) do
 repeat wait() until _G.aurasto == true
 pcall(function()
 repeat task.wait()
@@ -7604,37 +7680,31 @@ until not _G.autocannonslow
 end)
 
 spawn(function()
-while wait(0.3) do
-if getgenv().chawq then
-repeat wait()
+while wait() do
 pcall(function()
-if not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-getgenv().tpchaiq = true
-else
+if getgenv().chawq then
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tpchaiq = false
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 game.Players.LocalPlayer.Character.Humanoid.Sit = false
 end
+elseif not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+getgenv().tpchaiq = true
 end
-end)
-until not getgenv().chawq
 else
 getgenv().tpchaiq = false
 end
+end)
 end
 end)
 
 spawn(function()
-while wait(0.3) do
-if getgenv().tpchaiq then
+while wait() do
 pcall(function()
-repeat wait()
-if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 end
-until not getgenv().tpchaiq or game.Players.LocalPlayer.Character.Humanoid.Sit == true
 end)
-end
 end
 end)
 
@@ -8810,12 +8880,54 @@ end
 end)
 
 spawn(function()
+while wait(1) do
+pcall(function()
+ServerRiel = {" "}
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
+
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+if foundAnything ~= "" then
+    url = url .. '&cursor=' .. foundAnything
+end
+
+-- Correct handling of pcall
+local success, Site = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+
+-- Only proceed if the pcall was successful
+if success and Site then
+    -- Handle pagination
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
+        foundAnything = Site.nextPageCursor
+    else
+        foundAnything = ""
+    end
+
+    -- Iterate over servers and collect data
+    for _, server in ipairs(Site.data) do
+        if server.playing < server.maxPlayers then
+            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
+        end
+    end
+
+SVLISTED:SetValues(ServerRiel)
+end
+end)
+end
+end)
+
+spawn(function()
 while wait(0.25) do
 pcall(function()
 game:GetService("Players").LocalPlayer.PlayerGui.Version.Version.Text = os.date("%x %X (%Z)")
 end)
 end
 end)
+
+SaveManager:LoadAutoloadConfig()
 
 if game.placeId == 3237168 then
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()

@@ -1,3 +1,6 @@
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+pcall(function()
 SALUNALOADING = Instance.new("ScreenGui")
 SALUNALOADING.Name = "SALUNALOADING"
 SALUNALOADING.Parent = game.CoreGui
@@ -76,8 +79,7 @@ G
 wait(1)
 end
 end)
-repeat wait() until game:IsLoaded() 
-repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+end)
 task.wait(4)
 Fruittaoew = {}
 Mobsszz = {}

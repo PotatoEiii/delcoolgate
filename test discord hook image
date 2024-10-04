@@ -1,0 +1,20 @@
+local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nWelcome To Saluna Hub \nHave A Nice Day â™¥ \n============================================ \nHWID: " ..game:GetService("RbxAnalyticsService"):GetClientId(),
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)

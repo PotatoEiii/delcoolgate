@@ -6,7 +6,10 @@ local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ79
                 ["title"] = " Saluna Notify",
                 ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nWelcome To Saluna Hub \nHave A Nice Day â™¥ \n============================================ \nHWID: " ..game:GetService("RbxAnalyticsService"):GetClientId(),
                 ["type"] = "rich",
-                ["color"] = tonumber(0x00FF7F)
+                ["color"] = tonumber(0x00FF7F),
+                ["image"] = {
+["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=2000&height=2000&format=png"
+            }
             }
         }
         }

@@ -1,24 +1,30 @@
-local cvv = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
-local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
-        local data = {
-        ["content"] = "",
-        ["embeds"] = {
-            {
-                ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nWelcome To Saluna Hub \nHave A Nice Day â™¥ \n============================================ \nHWID: " ..game:GetService("RbxAnalyticsService"):GetClientId(),
-                ["type"] = "rich",
-                ["color"] = tonumber(0x00FF7F),
-                ["image"] = {
-["url"] = cvv
+local HttpService = game:GetService("HttpService")
+local webhookURL = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
+local player = game.Players.LocalPlayer
+local avatarUrl = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. player.UserId .. "&width=512&height=512&format=png"
+local data = {
+    ["content"] = "",  -- You can leave content blank for just an embed
+    ["embeds"] = {
+        {
+            ["title"] = "Roblox Avatar Info",
+            ["description"] = "Username: " .. player.Name .. "\nUserID: " .. player.UserId,
+            ["type"] = "rich",
+            ["color"] = tonumber(0x00FF7F),  -- Color of the embed
+            ["image"] = {
+                ["url"] = avatarUrl  -- Embed the avatar image
             }
-            }
         }
-        }
-        local newdata = game:GetService("HttpService"):JSONEncode(data)
-    
-        local headers = {
-        ["content-type"] = "application/json"
-        }
-        request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-        request(abcdef)
+    }
+}
+local jsonData = HttpService:JSONEncode(data)
+local headers = {
+    ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local requestData = {
+    Url = webhookURL,
+    Method = "POST",
+    Headers = headers,
+    Body = jsonData
+}
+request(requestData)

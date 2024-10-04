@@ -416,7 +416,7 @@ end)
 end
 end)
 end
-SALUNALOADING:Destroy()
+
 if _G.asdwqelist then
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
@@ -457,11 +457,14 @@ local vu = game:GetService("VirtualUser")
     safezonedestroyspace:Destroy() 
     end 
     end
+do
         if game.CoreGui:FindFirstChild("BBB") then
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
-
-
+if game.CoreGui:FindFirstChild("SALUNALOADING") then
+SALUNALOADING:Destroy()
+end
+end
      SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)

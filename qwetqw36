@@ -5495,9 +5495,9 @@ wait(0.05)
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 60, 0, 60)
 	}):Play()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game)
+task.wait()
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game)
 end)
 
 hideUICorner = Instance.new("UICorner")

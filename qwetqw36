@@ -1,5 +1,6 @@
 repeat wait() until game:IsLoaded() 
-repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
+repeat wait() until game.Players.LocalPlayer:FindFirstChild("Backpack")
+task.wait(1)
 pcall(function()
 SALUNALOADING = Instance.new("ScreenGui")
 SALUNALOADING.Name = "SALUNALOADING"
@@ -82,7 +83,7 @@ until not game.CoreGui:FindFirstChild("SALUNALOADING")
 end)
 end)
 end)
-task.wait(4)
+task.wait(6)
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -420,6 +421,7 @@ end)
 end
 
 if _G.asdwqelist then
+pcall(function()
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
 if v.Name == "condimemay" then
@@ -429,7 +431,7 @@ end
 end
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
-
+end)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"

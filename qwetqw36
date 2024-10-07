@@ -533,14 +533,18 @@ Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu Island",
         Description = "TP To Island",
         Callback = function()
+pcall(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1575.16821, 215.999954, 9946.87207, 0.980506063, -4.32691003e-08, 0.196488753, 3.53463392e-08, 1, 4.38284715e-08, -0.196488753, -3.60289221e-08, 0.980506063)
+end)
 end
     })
 Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu",
         Description = "TP To Kaizu Boss",
         Callback = function()
+pcall(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame
+end)
 end
     })
 Tabs.Boss:AddSection("								  --View--")
@@ -548,13 +552,16 @@ Tabs.Boss:AddButton({
         Title = "View Kaizu",
         Description = "View Kaizu Boss",
         Callback = function()
+pcall(function()
 game.Workspace.Camera.CameraSubject = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid")
+end)
 end
     })
 Tabs.Boss:AddButton({
         Title = "Fix Cam",
         Description = "Reset Camera",
         Callback = function()
+pcall(function()
 	workspace.CurrentCamera:remove()
 	wait(.1)
 	repeat wait() until game.Players.LocalPlayer.Character ~= nil
@@ -563,7 +570,8 @@ Tabs.Boss:AddButton({
 	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
 	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
 	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = false       
+	game.Players.LocalPlayer.Character.Head.Anchored = false   
+end)
 end
     })
 
@@ -607,6 +615,7 @@ Tabs.Boss:AddButton({
         Title = "1-Shot Kaizu",
         Description = "Kill Kaizu With A Click",
         Callback = function()
+pcall(function()
 for _,kaizu in pairs(game.Workspace.IslandKai:GetChildren()) do
 if kaizu.Name == "Kaizu" then
 pcall(function()
@@ -620,6 +629,7 @@ kaizu:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end)
 end
 end
+end)
 end
     })
 
@@ -734,7 +744,9 @@ Tabs.Info:AddButton({
         Title = "Discord Saluna Hub",
         Description = "Copy Discord Invite Link",
         Callback = function()
+pcall(function()
 toClipboard("https://discord.gg/ecpbhm8G3w")    
+end)
 end
     })
 
@@ -752,7 +764,9 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
         Title = "Dupe Gems Script",
         Description = "Copy Script To ClipBoard",
         Callback = function()
+pcall(function()
 toClipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/ultimate'))()")
+end)
 end
     })
 
@@ -881,16 +895,20 @@ Tabs.Misc:AddSection("							 --FE Scripts--")
         Title = "Infinite Yield",
         Description = "Open Infinite Yield Script",
         Callback = function()
+pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-        end
+end)
+end
     })
 
     Tabs.Misc:AddButton({
         Title = "Remote Spy",
         Description = "Open Remote Spy Script",
         Callback = function()
+pcall(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
-        end
+        end)
+end
     })
 
 Tabs.Misc:AddSection("						    --Old Scripts--")
@@ -906,7 +924,9 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb16
         Title = "Nothing Hub",
         Description = "Open Nothing Hub Script",
         Callback = function()
+pcall(function()
 loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdaeb8c720eac056eff0d9e74d5087e6/chhickendiu"))()
+end)
 end
     })
 

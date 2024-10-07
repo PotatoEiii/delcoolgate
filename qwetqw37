@@ -5565,7 +5565,7 @@ end)
 
 repeat wait() until game.CoreGui:FindFirstChild("BBB")
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startspamskill then
 repeat wait()
@@ -6782,7 +6782,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop then
 repeat task.wait()
@@ -6808,7 +6808,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startropaura then
 repeat task.wait()
@@ -6834,7 +6834,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6855,7 +6855,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6895,7 +6895,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6918,7 +6918,7 @@ end
 end)
 
 spawn(function() -- autofarm destroy seat
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop  or _G.startropaura then
 if (_G.robmethod == "Magma" or _G.robmethod == "Flare") and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
@@ -6937,7 +6937,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6977,7 +6977,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -7000,7 +7000,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if ESPPlayer then
 repeat wait()
@@ -7018,7 +7018,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.Hitboxplr then
 repeat wait()
@@ -7043,7 +7043,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 pcall(function()
@@ -7074,7 +7074,7 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat wait()
@@ -7101,7 +7101,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 repeat wait() until _G.wqesorry == true
 repeat wait()
@@ -7126,7 +7126,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 repeat wait() until getgenv().viewplrr == true
 repeat wait()
@@ -7141,7 +7141,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
@@ -7160,7 +7160,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 repeat wait() until _G.aurasto == true
 pcall(function()
 repeat task.wait()
@@ -7705,7 +7705,7 @@ until not _G.autocannonslow
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().chawq then
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
@@ -8554,7 +8554,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 repeat wait() until _G.farmfruit == true
 pcall(function()
 repeat wait()

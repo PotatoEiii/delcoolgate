@@ -465,9 +465,9 @@ do
         if game.CoreGui:FindFirstChild("BBB") then
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
-if game.CoreGui:FindFirstChild("SALUNALOADING") then
-SALUNALOADING:Destroy()
-end
+        if game.CoreGui:FindFirstChild("SALUNALOADING") then
+            game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
+        end
 end
      SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"

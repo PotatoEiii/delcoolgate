@@ -538,7 +538,6 @@ pcall(function()
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
 if v.Name == "ClickDetector" then wait()
 fireclickdetector(v)
-print("Hello World")
 end
 end
 end)

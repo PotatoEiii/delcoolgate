@@ -547,6 +547,46 @@ _G.wqezombie = false
 end
 end)
 
+zxcwqe = Tabs.Boss:AddSlider("zxcwqe", {
+    Title = "Bring Distance",
+    Description = "Adjust bring distance",
+    Default = 10,
+    Min = -20,
+    Max = 20,
+    Rounding = 0,
+    Callback = function(zxcw)
+            zombringdis = tonumber(zxcw)*(-1)
+        end
+    })
+
+zxcwqet = Tabs.Boss:AddToggle("zxcwqettoggle", {Title = "Auto Bring Zombie", Default = false })
+zxcwqet:OnChanged(function()
+if Options.zxcwqettoggle.Value == true then
+_G.bringzomis = true
+while _G.bringzomis do wait()
+pcall(function()
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
+if v.Name == "Zombie" then
+v.HumanoidRootPart.CanCollide = false
+v.HumanoidRootPart.Size = Vector3.new(5, 5, 5)
+v:FindFirstChild("HumanoidRootPart").Anchored = true
+v:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,zombringdis)
+v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+end
+end
+end)
+end
+else
+_G.bringzomis = false
+end
+end)
+
+
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")
 Tabs.Boss:AddButton({
@@ -617,7 +657,7 @@ pcall(function()
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = false
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Size = Vector3.new(5, 5, 5)
 game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = true
-game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,mobbringdis)
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,kaizubringdis)
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 0.9
 end)
@@ -3673,7 +3713,7 @@ Tabs.Mobs:AddSection("						    --Bring Mobs--")
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
         Title = "Select Mobs",
         Description = "Select Mobs To Bring.",
-        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},
 })
@@ -3732,7 +3772,7 @@ Tabs.Mobs:AddSection("				  --Mobs Farming (Fruit)--")
 mobsfarmse = Tabs.Mobs:AddDropdown("mobsfarmse", {
         Title = "Select Mobs",
         Description = "Select Mobs To Farm.",
-        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},
 })
@@ -7736,7 +7776,8 @@ repeat wait()
                 end
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Angry") 
-                    or string.find(v.Name, "Bandit") 
+                    or string.find(v.Name, "Bandit")
+                    or string.find(v.Name, "Gua")
                     or string.find(v.Name, "Thief")
                     or string.find(v.Name, "Bruno") 
                     or string.find(v.Name, "Bucky") 

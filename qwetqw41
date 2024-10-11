@@ -527,7 +527,26 @@ end)
 }
 Options = Fluent.Options
 
-Tabs.Boss:AddSection("					   -----Halloween-----")
+Tabs.Boss:AddSection("					    -----Halloween-----")
+
+tqwexc2z = Tabs.Boss:AddToggle("tqwexc2ztoggle", {Title = "Auto Summon Zombie", Default = false })
+tqwexc2z:OnChanged(function()
+if Options.tqwexc2ztoggle.Value == true then
+_G.wqezombie = true
+while _G.wqezombie do wait(0.3)
+pcall(function()
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
+if v.Name == "ClickDetector" then wait()
+fireclickdetector(v)
+print("Hello World")
+end
+end
+end)
+end
+else
+_G.wqezombie = false
+end
+end)
 
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")

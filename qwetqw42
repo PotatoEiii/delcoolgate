@@ -7746,7 +7746,7 @@ spawn(function() -- autofarm cannon
 repeat wait()
 pcall(function()
                 for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
-                    if v.Name == "Zombie" then
+                    if v.Name == "Zombie"
                     and v:FindFirstChild("HumanoidRootPart") then
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)

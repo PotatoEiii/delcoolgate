@@ -1,1 +1,5 @@
-
+for i,v in pairs(game.Workspace:GetDescendants()) do
+if string.find(v.Name, "Lucky") then
+print(v.Name)
+end
+end

@@ -515,7 +515,7 @@ end)
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://18518485889" }),
     Mobs = Window:AddTab({ Title = "Mobs", Icon = "rbxassetid://13957749947" }),
-    Boss = Window:AddTab({ Title = "Boss", Icon = "rbxassetid://12487510294" }),
+    Boss = Window:AddTab({ Title = "Boss/Event", Icon = "rbxassetid://12487510294" }),
     Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
@@ -526,6 +526,8 @@ end)
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
+
+Tabs.Boss:AddSection("					   -----Halloween-----")
 
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")

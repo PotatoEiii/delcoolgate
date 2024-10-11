@@ -7744,6 +7744,7 @@ spawn(function() -- autofarm cannon
         pcall(function()
             if _G.autocannonslow then
 repeat wait()
+pcall(function()
                 for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
                     if v.Name == "Zombie" then
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -7818,6 +7819,7 @@ repeat wait()
                         end
                     end
                 end
+end)
 until not _G.autocannonslow
             end
         end)

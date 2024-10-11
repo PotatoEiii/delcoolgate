@@ -7731,8 +7731,16 @@ spawn(function() -- autofarm cannon
         pcall(function()
             if _G.autocannonslow then
 repeat wait()
+pcall(function()
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
+if v.Name == "ClickDetector" then wait()
+fireclickdetector(v)
+end
+end
+wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-wait(5)
+wait(2)
+end)
 until not _G.autocannonslow
 end
 end)

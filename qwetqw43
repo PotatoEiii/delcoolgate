@@ -712,7 +712,7 @@ Content = "Only Quake-Robbing can use with Random Teleport"
 fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
         Title = "Fruit Targeting (Normal)",
         Description = "Select fruits for \"Normal Fruits\" Robbing.",
-        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Values = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
         Default = {},
 })
@@ -887,7 +887,7 @@ Tabs.Misc:AddSection("				-----Hide/Show Image-----")
 
 asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
         Title = "Select Display Image",
-        Values = {" ","Random","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"},
+        Values = {"Random","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"},
         Multi = false,
         Default = "Random",
     })
@@ -3145,7 +3145,7 @@ Tabs.Teleport:AddSection("							  --Teleport--")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
-        Values = {" ","Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flail Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
+        Values = {"Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flail Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
         Default = " ",
     })
@@ -3255,7 +3255,7 @@ end)
 
 IslandTP = Tabs.Teleport:AddDropdown("IslandTP", {
         Title = "Island Teleport",
-        Values = {" ","Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snowy Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
+        Values = {"Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snowy Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
         Multi = false,
         Default = " ",
     })
@@ -3713,7 +3713,7 @@ Tabs.Mobs:AddSection("						    --Bring Mobs--")
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
         Title = "Select Mobs",
         Description = "Select Mobs To Bring.",
-        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Values = {"Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},
 })
@@ -3772,7 +3772,7 @@ Tabs.Mobs:AddSection("				  --Mobs Farming (Fruit)--")
 mobsfarmse = Tabs.Mobs:AddDropdown("mobsfarmse", {
         Title = "Select Mobs",
         Description = "Select Mobs To Farm.",
-        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Values = {"Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},
 })
@@ -3787,7 +3787,7 @@ end)
 
 jmkoertz = Tabs.Mobs:AddDropdown("jmkoertz", {
         Title = "Select Fruit",
-        Values = {" ","Light","Magma","Gravity","Rumble","Bomb"},
+        Values = {"Light","Magma","Gravity","Rumble","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -4610,44 +4610,10 @@ end
     })
 
 Tabs.Server:AddSection("				  --Join Specific Server--")
-pcall(function()
-ServerRiel = {" "}
-local PlaceID = game.PlaceId
-local foundAnything = ""
-local HttpService = game:GetService("HttpService")
-local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
-if foundAnything ~= "" then
-    url = url .. '&cursor=' .. foundAnything
-end
-
--- Correct handling of pcall
-local success, Site = pcall(function()
-    return HttpService:JSONDecode(game:HttpGet(url))
-end)
-
--- Only proceed if the pcall was successful
-if success and Site then
-    -- Handle pagination
-    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
-        foundAnything = Site.nextPageCursor
-    else
-        foundAnything = ""
-    end
-
-    -- Iterate over servers and collect data
-    for _, server in ipairs(Site.data) do
-        if server.playing < server.maxPlayers then
-local ping = tonumber(server.ping) or 0
-local fps = tonumber(server.fps) or 0
-table.insert(ServerRiel, server.id .. " \nPing(" .. math.floor(ping) .. ") - " .."FPS(" .. math.floor(fps) .. ") - " .."Players(" .. server.playing .. "/" .. server.maxPlayers .. ")")
-end
-end
-end
-end)
 SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
     Title = "Choose Server",
     Description = "Choose Server From The List",
-    Values = ServerRiel,
+    Values = {},
     Multi = false,
     Default = "",
 })
@@ -4661,7 +4627,7 @@ end)
         Description = "Refresh The Server List",
         Callback = function()
 pcall(function()
-ServerRiel = {" "}
+ServerRiel = {}
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
@@ -5517,7 +5483,7 @@ end)
 Tabs.Skill:AddSection("					  --Auto Spam Fruit--")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
+        Values = {"Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
         Multi = false,
         Default = "",
     })

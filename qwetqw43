@@ -7662,6 +7662,22 @@ spawn(function()
                             end
                         end)
                     end
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
+		if v.Name == "Zombie" then
+			pcall(function()
+                            if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
+                                for i = 1,5 do wait(0.02)
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.automobtpcn then
+                                            q.CFrame = v.HumanoidRootPart.CFrame
+                                                q.CanCollide = false
+                                        end
+                                    end
+                                end
+                            end
+			end)
+		end
+end
                 until not _G.autocannonplrbring and not _G.autocannonslow
             end
         end)

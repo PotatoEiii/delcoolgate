@@ -829,10 +829,9 @@ Title = "User Information",
 Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
 })
 
-Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
+Content = "\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
 Tabs.Info:AddSection("						  	 --Discord--")

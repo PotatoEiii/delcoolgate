@@ -7648,18 +7648,21 @@ spawn(function()
         pcall(function()
             if _G.automobtpcn then
                 repeat task.wait(0.2)
-for _,c in pairs(game.Workspace.Enemies:GetChildren()) do
-if c.Humanoid.Health > 0 and _G.automobtpcn then
-                    for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-                        if v.Name == "CannonBall" and _G.automobtpcn then
-                            v.CFrame = c:FindFirstChild("HumanoidRootPart").CFrame
-                            v.CanCollide = false
-                        end
-wait(0.1)
+                    for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        pcall(function()
+                            if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
+                                for i = 1,5 do wait(0.02)
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.automobtpcn then
+                                            q.CFrame = v.HumanoidRootPart.CFrame
+                                                q.CanCollide = false
+                                        end
+                                    end
+                                end
+                            end
+                        end)
                     end
-end
-end
-                until _G.autocannonplrbring == false and _G.autocannonslow == false
+                until not _G.autocannonplrbring and not _G.autocannonslow
             end
         end)
     end

@@ -831,7 +831,7 @@ Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId()
 
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
+Content = "Place ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
 Tabs.Info:AddSection("						  	 --Discord--")

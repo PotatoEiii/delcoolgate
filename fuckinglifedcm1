@@ -5511,7 +5511,7 @@ hideUI.ClipsDescendants = true
 hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
 hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
 hideUI.Size = UDim2.new(0, 60, 0, 60)
-hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
+hideUI.Image = "http://www.roblox.com/asset/?id=16039945586"
 hideUI.MouseButton1Up:Connect(function()
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 50, 0, 50)

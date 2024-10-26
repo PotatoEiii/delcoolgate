@@ -7668,7 +7668,23 @@ spawn(function()
             if _G.autocannonslow or _G.autocannonplrbring then
 repeat wait(4)
 for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
-if c.Name == ("CannonBall") then
+if c.Name == "CannonBall" then
+c:Destroy()
+end
+end
+until not _G.autocannonslow and not _G.autocannonplrbring
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait(0.3) do
+        pcall(function()
+            if _G.automobtpcn or _G.autocannonfling then
+repeat wait(10)
+for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
+if c.Name == "CannonBall" then
 c:Destroy()
 end
 end

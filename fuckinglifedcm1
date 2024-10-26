@@ -2762,7 +2762,7 @@ end
 end)
 
 Tabs.Expertise:AddSection("						-----Expertise-----")
-AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = true })
+AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
     AutogetexpToggle:OnChanged(function()
 if Options.Autogetexp1Toggle.Value == true then
 _G.autogetexp = true
@@ -2929,7 +2929,7 @@ end
 end)
 
 Tabs.Automatic:AddSection("					   --Game Function--")
-AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = true })
+AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -2954,7 +2954,7 @@ _G.autospawn = false
 end
 end)
 
-autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = true })
+autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = false })
     autoclaimchal:OnChanged(function()
 if Options.autoclaimchalToggle.Value == true then
 _G.autochallenge = true

@@ -2697,12 +2697,21 @@ _G.automobtpcn = false
 end
 end)
 
-autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "Auto Kill All Player (Bring + Chair)", Default = false })
+autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "Auto Kill All Player (Bring Method)", Default = false })
 autocannonplrbring:OnChanged(function()
 if Options.autocannonplrbringtoggle.Value == true then
 _G.autocannonplrbring = true
 else
 _G.autocannonplrbring = false
+end
+end)
+
+autocannonfling = Tabs.Farm:AddToggle("autocannonflingtoggle", {Title = "Auto Kill All Player (Fling Method)", Default = false })
+autocannonfling:OnChanged(function()
+if Options.autocannonflingtoggle.Value == true then
+_G.autocannonfling = true
+else
+_G.autocannonfling = false
 end
 end)
 
@@ -7312,6 +7321,32 @@ wait()
     end
 end)
 
+spawn(function() -- autofarm emphasize
+while wait(0.3) do
+repeat wait() until _G.autocannonfling == true
+pcall(function()
+repeat wait()
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                        v.Character.HumanoidRootPart.Transparency = 0.7
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.Character.HumanoidRootPart.CanCollide = true
+                        v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                    end
+                end
+until not _G.autocannonfling
+wait()
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                	    v.Character.HumanoidRootPart.CanCollide = true
+                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                            v.Character.HumanoidRootPart.Transparency = 1
+		   end
+		end
+        end)
+    end
+end)
+
 spawn(function() -- autofarm destroy seat
 while wait(0.3) do
 repeat wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
@@ -7593,7 +7628,7 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() 
-until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false) or (_G.automobtpcn == true and _G.autocannon == false)
+until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false) or (_G.automobtpcn == true and _G.autocannon == false) or (_G.autocannonfling == true and _G.autocannon == false)
 pcall(function()
 repeat wait(0.05)
 for _, cannonz in pairs(Rarefruit) do
@@ -7601,7 +7636,7 @@ if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 2
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end
 end
-until (_G.autocannon == true) or (not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn)
+until (_G.autocannon == true) or (not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn and not _G.autocannonfling)
       end)
    end
 end)
@@ -7609,7 +7644,7 @@ end)
 spawn(function()
     while wait(0.3) do
         pcall(function()
-            if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn then
+            if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn or _G.autocannonfling then
 repeat wait()
                 local args = {
                     [1] = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
@@ -7621,7 +7656,7 @@ repeat wait()
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
 
-until not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn
+until not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn and not _G.autocannonfling
             end
         end)
     end
@@ -7647,7 +7682,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.automobtpcn then
-                repeat task.wait(0.2)
+                repeat wait()
                     for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
                         pcall(function()
                             if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
@@ -7663,9 +7698,8 @@ spawn(function()
                         end)
                     end
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
-		if v.Name == "Zombie" then
-			pcall(function()
-                            if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
+pcall(function()
+		if v.Name == "Zombie" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
                                 for i = 1,5 do wait(0.02)
                                     for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.automobtpcn then
@@ -7674,16 +7708,39 @@ for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetD
                                         end
                                     end
                                 end
-                            end
-			end)
 		end
+end)
 end
-                until not _G.autocannonplrbring and not _G.autocannonslow
+                until not _G.automobtpcn
             end
         end)
     end
 end)
 
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.autocannonfling then
+                repeat wait()
+                    for i, v in pairs(game.Players:GetChildren()) do
+pcall(function()
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
+                                for i = 1,10 do wait(0.02)
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.autocannonfling then
+                                            q.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
+                                                q.CanCollide = true
+                                        end
+                                    end
+                                end
+end
+                        end)
+                    end
+                until not _G.autocannonfling
+            end
+        end)
+    end
+end)
 
 spawn(function() -- autofarm velocity
     while wait(0.3) do

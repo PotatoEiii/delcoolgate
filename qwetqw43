@@ -2642,7 +2642,7 @@ fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Def
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
-for i = 1,2 do wait(0.2)
+for i = 1,5 do wait(0.2)
 if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
 task.wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
@@ -7269,7 +7269,7 @@ for i= 1,5 do
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
 repeat wait()
-until not _G.autocannon or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 211000
+until not _G.autocannon or game.Players.LocalPlayer.Character.Humanoid.Health == 0
         end)
     end
 end)

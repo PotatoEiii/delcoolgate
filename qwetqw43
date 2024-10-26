@@ -7630,18 +7630,41 @@ end)
 spawn(function()
     while wait(0.3) do
         pcall(function()
-            if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn then
+            if _G.autocannonslow or _G.autocannonplrbring then
 repeat wait(4)
 for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
 if c.Name == ("CannonBall") then
 c:Destroy()
 end
 end
-until not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn
+until not _G.autocannonslow and not _G.autocannonplrbring
             end
         end)
     end
 end)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.automobtpcn then
+                repeat task.wait(0.2)
+for _,c in pairs(game.Workspace.Enemies:GetChildren()) do
+if c.Humanoid.Health > 0 and _G.automobtpcn then
+                    for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                        if v.Name == "CannonBall" and _G.automobtpcn then
+                            v.CFrame = c:FindFirstChild("HumanoidRootPart").CFrame
+                            v.CanCollide = false
+                        end
+wait(0.1)
+                    end
+end
+end
+                until _G.autocannonplrbring == false and _G.autocannonslow == false
+            end
+        end)
+    end
+end)
+
 
 spawn(function() -- autofarm velocity
     while wait(0.3) do

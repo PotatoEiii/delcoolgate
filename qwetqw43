@@ -83,6 +83,7 @@ until not game.CoreGui:FindFirstChild("SALUNALOADING")
 end)
 end)
 end)
+pcall(function()
 workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
 	workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
@@ -121,7 +122,8 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 				child:Destroy()
 			end
 		end)()
-	end)     
+	end)    
+end)
 task.wait(6)
 Fruittaoew = {}
 Mobsszz = {}

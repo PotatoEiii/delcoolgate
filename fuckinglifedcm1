@@ -924,72 +924,6 @@ _G.exchangegem = false
 end
 end)
 
-Tabs.Misc:AddSection("				-----Hide/Show Image-----")
-
-asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
-        Title = "Select Display Image",
-        Values = {"Random","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"},
-        Multi = false,
-        Default = "Random",
-    })
-
-_G.imageUrls = {
-"http://www.roblox.com/asset/?id=9434974330", --1
-"http://www.roblox.com/asset/?id=18809926638", --2
-"http://www.roblox.com/asset/?id=14208692008", --3
-"http://www.roblox.com/asset/?id=16607424856", --4
-"http://www.roblox.com/asset/?id=13703042399", --5
-"http://www.roblox.com/asset/?id=15992747200", --6
-"http://www.roblox.com/asset/?id=16039945586", --7 
-"http://www.roblox.com/asset/?id=9124649710", --8
-"http://www.roblox.com/asset/?id=5594451067", --9
-"http://www.roblox.com/asset/?id=17836568522", --10
-"http://www.roblox.com/asset/?id=7028310152", --11
-"http://www.roblox.com/asset/?id=7505699541", --12
-"http://www.roblox.com/asset/?id=18470271790", --13
-"http://www.roblox.com/asset/?id=6404803553", --14
-"http://www.roblox.com/asset/?id=6717696974", --15
-"http://www.roblox.com/asset/?id=18470282120", --16
-"http://www.roblox.com/asset/?id=18463157903", --17
-"http://www.roblox.com/asset/?id=8032194497", --18
-"http://www.roblox.com/asset/?id=15332983254", --19
-"http://www.roblox.com/asset/?id=11041446512", --20
-"http://www.roblox.com/asset/?id=600803939", --21
-"http://www.roblox.com/asset/?id=903318290", --22
-"http://www.roblox.com/asset/?id=10842366977", --23
-"http://www.roblox.com/asset/?id=13448937007", --24
-"http://www.roblox.com/asset/?id=12810822812", --25
-"http://www.roblox.com/asset/?id=16105197154", --26
-"http://www.roblox.com/asset/?id=16053681504", --27
-"http://www.roblox.com/asset/?id=15890986090", --28
-"http://www.roblox.com/asset/?id=16173517892", --29
-"http://www.roblox.com/asset/?id=7617067045", --30
-"http://www.roblox.com/asset/?id=6859342076", --31
-"http://www.roblox.com/asset/?id=14613789931", --32
-"http://www.roblox.com/asset/?id=15399456436", --33
-"http://www.roblox.com/asset/?id=12744741181", --34
-"http://www.roblox.com/asset/?id=15392784585", --35
-"http://www.roblox.com/asset/?id=13836053875", --36
-"http://www.roblox.com/asset/?id=7853514116", --37
-"http://www.roblox.com/asset/?id=6942501524", --38
-"http://www.roblox.com/asset/?id=6522457335", --39
-"http://www.roblox.com/asset/?id=15288241266", --40
-"http://www.roblox.com/asset/?id=18602648450", --41
-"http://www.roblox.com/asset/?id=13999153827", --42
-"http://www.roblox.com/asset/?id=12550364500", --43
-"http://www.roblox.com/asset/?id=15755889896" --44
-}
-
-asdzxima:OnChanged(function(heheimage)
-pcall(function()
-if heheimage == "Random" then
-game.CoreGui.BBB.hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
-else
-game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
-end
-end)
-end)
-
 Tabs.Misc:AddSection("							 --FE Scripts--")
 
     Tabs.Misc:AddButton({
@@ -2828,7 +2762,7 @@ end
 end)
 
 Tabs.Expertise:AddSection("						-----Expertise-----")
-AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
+AutogetexpToggle = Tabs.Expertise:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = true })
     AutogetexpToggle:OnChanged(function()
 if Options.Autogetexp1Toggle.Value == true then
 _G.autogetexp = true
@@ -2995,7 +2929,7 @@ end
 end)
 
 Tabs.Automatic:AddSection("					   --Game Function--")
-AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = true })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -3020,7 +2954,7 @@ _G.autospawn = false
 end
 end)
 
-autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = false })
+autoclaimchal = Tabs.Automatic:AddToggle("autoclaimchalToggle", {Title = "Auto Claim Challenge", Default = true })
     autoclaimchal:OnChanged(function()
 if Options.autoclaimchalToggle.Value == true then
 _G.autochallenge = true
@@ -5578,7 +5512,7 @@ hideUI.ClipsDescendants = true
 hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
 hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
 hideUI.Size = UDim2.new(0, 60, 0, 60)
-hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
+hideUI.Image = "http://www.roblox.com/asset/?id=14208692008"
 hideUI.MouseButton1Up:Connect(function()
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 50, 0, 50)

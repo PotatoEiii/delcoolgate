@@ -1,0 +1,35 @@
+local Players = game:GetService("Players")
+local Workspace = game.Workspace
+
+-- Function to connect ChildAdded events for a player's Quake powers
+local function connectQuakeHandlers(player)
+    local success, quakeFolder = pcall(function()
+        return Workspace[tostring(player.Name)].Powers.Quake
+    end)
+    
+    if not success or not quakeFolder then return end
+
+    local function onChildAdded(child)
+        if string.find(child.Name, "Quake") then
+            child:Destroy()
+        end
+    end
+
+    if quakeFolder:FindFirstChild("CutEffects") then
+        quakeFolder.CutEffects.ChildAdded:Connect(onChildAdded)
+    end
+    if quakeFolder:FindFirstChild("GlowEffects") then
+        quakeFolder.GlowEffects.ChildAdded:Connect(onChildAdded)
+    end
+    if quakeFolder:FindFirstChild("P4") then
+        quakeFolder.P4.ChildAdded:Connect(onChildAdded)
+    end
+end
+
+-- Connect handlers for existing players
+for _, player in pairs(Players:GetPlayers()) do
+    connectQuakeHandlers(player)
+end
+
+-- Connect handlers for new players
+Players.PlayerAdded:Connect(connectQuakeHandlers)

@@ -1,6 +1,6 @@
 for _, v in pairs(game:GetService("Players"):GetPlayers()) do
 game.Workspace[tostring(v.Name)].Powers.Quake.DescendantAdded:Connect(function(child)
-if child.Name == "QuakeHand" and child.Name == "QuakeBreak" then
+if child.Name == "QuakeHand" or child.Name == "QuakeBreak" then
 child:Destroy()
 end
 end)

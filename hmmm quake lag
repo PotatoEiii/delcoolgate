@@ -1,5 +1,15 @@
 for _, v in pairs(game:GetService("Players"):GetPlayers()) do
-game.Workspace[tostring(v.Name)].Powers.Quake.DescendantAdded:Connect(function(child)
+game.Workspace[tostring(v.Name)].Powers.Quake.CutEffects.ChildAdded:Connect(function(child)
+if string.find(child.Name, "Quake") then
+child:Destroy()
+end
+end)
+game.Workspace[tostring(v.Name)].Powers.Quake.GlowEffects.ChildAdded:Connect(function(child)
+if string.find(child.Name, "Quake") then
+child:Destroy()
+end
+end)
+game.Workspace[tostring(v.Name)].Powers.Quake.P4.ChildAdded:Connect(function(child)
 if string.find(child.Name, "Quake") then
 child:Destroy()
 end

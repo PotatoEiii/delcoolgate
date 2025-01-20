@@ -1,35 +1,41 @@
 for _, v in pairs(game:GetService("Players"):GetPlayers()) do
 game.Workspace[tostring(v.Name)].Powers.Quake.CutEffects.ChildAdded:Connect(function(child)
-if string.find(child.Name, "Quake") then
+task.wait()
+pcall(function()
 child:Destroy()
-end
+end)
 end)
 game.Workspace[tostring(v.Name)].Powers.Quake.GlowEffects.ChildAdded:Connect(function(child)
-if string.find(child.Name, "Quake") then
+task.wait()
+pcall(function()
 child:Destroy()
-end
+end)
 end)
 game.Workspace[tostring(v.Name)].Powers.Quake.P4.ChildAdded:Connect(function(child)
-if string.find(child.Name, "Quake") then
+task.wait()
+pcall(function()
 child:Destroy()
-end
+end)
 end)
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(v)
 game.Workspace[tostring(v.Name)].Powers.Quake.CutEffects.ChildAdded:Connect(function(child)
-if string.find(child.Name, "Quake") then
+task.wait()
+pcall(function()
 child:Destroy()
-end
+end)
 end)
 game.Workspace[tostring(v.Name)].Powers.Quake.GlowEffects.ChildAdded:Connect(function(child)
-if string.find(child.Name, "Quake") then
+task.wait()
+pcall(function()
 child:Destroy()
-end
+end)
 end)
 game.Workspace[tostring(v.Name)].Powers.Quake.P4.ChildAdded:Connect(function(child)
-if string.find(child.Name, "Quake") then
+task.wait()
+pcall(function()
 child:Destroy()
-end
+end)
 end)
 end)

@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer:FindFirstChild("Backpack")
-task.wait(1)
+task.wait()
 pcall(function()
 SALUNALOADING = Instance.new("ScreenGui")
 SALUNALOADING.Name = "SALUNALOADING"
@@ -124,7 +124,7 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 		end)()
 	end)    
 end)
-task.wait(6)
+task.wait()
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -543,6 +543,7 @@ end)
 })
  Tabs = {
     Info = Window:AddTab({ Title = "About", Icon = "rbxassetid://4871684504" }),
+    Edge = Window:AddTab({ Title = "Edge", Icon = "rbxassetid://10844111750" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Sam", Icon = "rbxassetid://13492316250" }),
     Robbing = Window:AddTab({ Title = "Robbing", Icon = "rbxassetid://6947202399" }),
@@ -567,6 +568,42 @@ end)
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
+
+Tabs.Edge:AddSection("					 -----GOD MODE-----")
+qwefczxcve2 = Tabs.Boss:AddToggle("qwefczxcve2toggle", {Title = "GOD MODE (Bomb Method)", Default = false })
+qwefczxcve2:OnChanged(function()
+if Options.qwefczxcve2toggle.Value == true then
+_G.godmode = true
+while _G.godmode do wait(4)
+pcall(function()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower6",
+    [3] = "StartCharging",
+    [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [7] = "Right"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
+    [2] = "BombPower6",
+    [3] = "StopCharging",
+    [4] = CFrame.new(736.8218994140625, 238.20001220703125, 1188.099609375, 0.21035535633563995, 0.1760607212781906, -0.9616410136222839, 2.9102698029248586e-09, 0.983650267124176, 0.18009023368358612, 0.9776250123977661, -0.03788295015692711, 0.20691607892513275),
+    [5] = workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("Path"):WaitForChild("Union"),
+    [6] = 0/0
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+end)
+end
+else
+_G.wqezombie = false
+end
+end)
+
 
 Tabs.Boss:AddSection("					    -----Halloween-----")
 
@@ -9108,15 +9145,6 @@ end
 until _G.fruitfarmz ~= "Rumble" or _G.farmfruit == false
 end
 until _G.farmfruit == false
-end)
-end
-end)
-
-
-spawn(function()
-while wait(0.25) do
-pcall(function()
-game:GetService("Players").LocalPlayer.PlayerGui.Version.Version.Text = os.date("%x %X (%Z)")
 end)
 end
 end)

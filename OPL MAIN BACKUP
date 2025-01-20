@@ -1,3 +1,7 @@
+repeat wait() until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer:FindFirstChild("Backpack")
+task.wait(1)
+pcall(function()
 SALUNALOADING = Instance.new("ScreenGui")
 SALUNALOADING.Name = "SALUNALOADING"
 SALUNALOADING.Parent = game.CoreGui
@@ -46,7 +50,8 @@ G
 Loading.TextSize = 20
 Loading.FontFace.Bold = true
 Loading.FontFace = Font.fromName("Merriweather")
-while game.CoreGui:FindFirstChild("SALUNALOADING") do
+pcall(function()
+repeat
 Loading.Text = [[L
 O
 A
@@ -74,11 +79,52 @@ N
 G
 ...]]
 wait(1)
-end
+until not game.CoreGui:FindFirstChild("SALUNALOADING")
 end)
-repeat wait() until game:IsLoaded() 
-repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil
-task.wait(4)
+end)
+end)
+pcall(function()
+workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterTransparency = 0
+	game:GetService("Lighting").GlobalShadows = false
+	game:GetService("Lighting").FogEnd = 9e9
+	settings().Rendering.QualityLevel = 1
+	for i,v in pairs(game:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") then
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+			v.Lifetime = NumberRange.new(0)
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1
+			v.BlastRadius = 1
+		end
+	end
+	for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
+		if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
+			v.Enabled = false
+		end
+	end
+	workspace.DescendantAdded:Connect(function(child)
+		coroutine.wrap(function()
+			if child:IsA('ForceField') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Sparkles') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Smoke') or child:IsA('Fire') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			end
+		end)()
+	end)    
+end)
+task.wait(6)
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -414,8 +460,9 @@ end)
 end
 end)
 end
-SALUNALOADING:Destroy()
+
 if _G.asdwqelist then
+pcall(function()
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do
 if v.Name == "condimemay" then
@@ -425,7 +472,7 @@ end
 end
 game:GetService("Workspace").Island8.Table.Chair.Seat.Name = "condimemay"
 _G.chaircframeh = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame
-
+end)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.fromRGB(0, 255, 127)
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
@@ -455,11 +502,14 @@ local vu = game:GetService("VirtualUser")
     safezonedestroyspace:Destroy() 
     end 
     end
+do
         if game.CoreGui:FindFirstChild("BBB") then
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
-
-
+        if game.CoreGui:FindFirstChild("SALUNALOADING") then
+            game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
+        end
+end
      SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
@@ -506,7 +556,7 @@ end)
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Skill = Window:AddTab({ Title = "Skill", Icon = "rbxassetid://18518485889" }),
     Mobs = Window:AddTab({ Title = "Mobs", Icon = "rbxassetid://13957749947" }),
-    Boss = Window:AddTab({ Title = "Boss", Icon = "rbxassetid://12487510294" }),
+    Boss = Window:AddTab({ Title = "Boss/Event", Icon = "rbxassetid://12487510294" }),
     Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
@@ -518,20 +568,84 @@ end)
 }
 Options = Fluent.Options
 
+Tabs.Boss:AddSection("					    -----Halloween-----")
+
+tqwexc2z = Tabs.Boss:AddToggle("tqwexc2ztoggle", {Title = "Auto Summon Zombie", Default = false })
+tqwexc2z:OnChanged(function()
+if Options.tqwexc2ztoggle.Value == true then
+_G.wqezombie = true
+while _G.wqezombie do wait(0.3)
+pcall(function()
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
+if v.Name == "ClickDetector" then wait()
+fireclickdetector(v)
+end
+end
+end)
+end
+else
+_G.wqezombie = false
+end
+end)
+
+zxcwqe = Tabs.Boss:AddSlider("zxcwqe", {
+    Title = "Bring Distance",
+    Description = "Adjust bring distance",
+    Default = 10,
+    Min = -20,
+    Max = 20,
+    Rounding = 0,
+    Callback = function(zxcw)
+            zombringdis = tonumber(zxcw)*(-1)
+        end
+    })
+
+zxcwqet = Tabs.Boss:AddToggle("zxcwqettoggle", {Title = "Auto Bring Zombie", Default = false })
+zxcwqet:OnChanged(function()
+if Options.zxcwqettoggle.Value == true then
+_G.bringzomis = true
+while _G.bringzomis do wait()
+pcall(function()
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
+if v.Name == "Zombie" then
+v.HumanoidRootPart.CanCollide = false
+v.HumanoidRootPart.Size = Vector3.new(5, 5, 5)
+v:FindFirstChild("HumanoidRootPart").Anchored = true
+v:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,zombringdis)
+v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+end
+end
+end)
+end
+else
+_G.bringzomis = false
+end
+end)
+
+
 Tabs.Boss:AddSection("					   -----Kaizu Boss-----")
 Tabs.Boss:AddSection("							   --Teleport--")
 Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu Island",
         Description = "TP To Island",
         Callback = function()
+pcall(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1575.16821, 215.999954, 9946.87207, 0.980506063, -4.32691003e-08, 0.196488753, 3.53463392e-08, 1, 4.38284715e-08, -0.196488753, -3.60289221e-08, 0.980506063)
+end)
 end
     })
 Tabs.Boss:AddButton({
         Title = "Teleport To Kaizu",
         Description = "TP To Kaizu Boss",
         Callback = function()
+pcall(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame
+end)
 end
     })
 Tabs.Boss:AddSection("								  --View--")
@@ -539,13 +653,16 @@ Tabs.Boss:AddButton({
         Title = "View Kaizu",
         Description = "View Kaizu Boss",
         Callback = function()
+pcall(function()
 game.Workspace.Camera.CameraSubject = game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("Humanoid")
+end)
 end
     })
 Tabs.Boss:AddButton({
         Title = "Fix Cam",
         Description = "Reset Camera",
         Callback = function()
+pcall(function()
 	workspace.CurrentCamera:remove()
 	wait(.1)
 	repeat wait() until game.Players.LocalPlayer.Character ~= nil
@@ -554,7 +671,8 @@ Tabs.Boss:AddButton({
 	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
 	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
 	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = false       
+	game.Players.LocalPlayer.Character.Head.Anchored = false   
+end)
 end
     })
 
@@ -580,7 +698,7 @@ pcall(function()
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = false
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Size = Vector3.new(5, 5, 5)
 game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").Anchored = true
-game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,mobbringdis)
+game.Workspace.IslandKai:WaitForChild("Kaizu"):FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,kaizubringdis)
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 game.Workspace.IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Transparency = 0.9
 end)
@@ -598,6 +716,7 @@ Tabs.Boss:AddButton({
         Title = "1-Shot Kaizu",
         Description = "Kill Kaizu With A Click",
         Callback = function()
+pcall(function()
 for _,kaizu in pairs(game.Workspace.IslandKai:GetChildren()) do
 if kaizu.Name == "Kaizu" then
 pcall(function()
@@ -611,6 +730,7 @@ kaizu:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 end)
 end
 end
+end)
 end
     })
 
@@ -633,7 +753,7 @@ Content = "Only Quake-Robbing can use with Random Teleport"
 fruitzmpa = Tabs.Robbing:AddDropdown("fruitzmpa", {
         Title = "Fruit Targeting (Normal)",
         Description = "Select fruits for \"Normal Fruits\" Robbing.",
-        Values = {" ","Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
+        Values = {"Dark Fruit", "Phoenix Fruit", "Quake Fruit", "Vampire Fruit", "Magma Fruit", "Light Fruit", "Rumble Fruit", "Flare Fruit", "Chilly Fruit", "Gas Fruit", "Candy Fruit", "Snow Fruit", "Smoke Fruit", "Sand Fruit", "Venom Fruit", "Plasma Fruit", "Ope Fruit", "Hollow Fruit","Gravity Fruit"},
         Multi = true,
         Default = {},
 })
@@ -709,10 +829,9 @@ Title = "User Information",
 Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
 })
 
-Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
+Content = "Place ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
 Tabs.Info:AddSection("						  	 --Discord--")
@@ -725,7 +844,9 @@ Tabs.Info:AddButton({
         Title = "Discord Saluna Hub",
         Description = "Copy Discord Invite Link",
         Callback = function()
+pcall(function()
 toClipboard("https://discord.gg/ecpbhm8G3w")    
+end)
 end
     })
 
@@ -743,7 +864,9 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
         Title = "Dupe Gems Script",
         Description = "Copy Script To ClipBoard",
         Callback = function()
+pcall(function()
 toClipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/ultimate'))()")
+end)
 end
     })
 
@@ -800,88 +923,26 @@ _G.exchangegem = false
 end
 end)
 
-Tabs.Misc:AddSection("				-----Hide/Show Image-----")
-
-asdzxima = Tabs.Misc:AddDropdown("asdzxima", {
-        Title = "Select Display Image",
-        Values = {" ","Random","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"},
-        Multi = false,
-        Default = "Random",
-    })
-
-_G.imageUrls = {
-"http://www.roblox.com/asset/?id=9434974330", --1
-"http://www.roblox.com/asset/?id=18809926638", --2
-"http://www.roblox.com/asset/?id=14208692008", --3
-"http://www.roblox.com/asset/?id=16607424856", --4
-"http://www.roblox.com/asset/?id=13703042399", --5
-"http://www.roblox.com/asset/?id=15992747200", --6
-"http://www.roblox.com/asset/?id=16039945586", --7 
-"http://www.roblox.com/asset/?id=9124649710", --8
-"http://www.roblox.com/asset/?id=5594451067", --9
-"http://www.roblox.com/asset/?id=17836568522", --10
-"http://www.roblox.com/asset/?id=7028310152", --11
-"http://www.roblox.com/asset/?id=7505699541", --12
-"http://www.roblox.com/asset/?id=18470271790", --13
-"http://www.roblox.com/asset/?id=6404803553", --14
-"http://www.roblox.com/asset/?id=6717696974", --15
-"http://www.roblox.com/asset/?id=18470282120", --16
-"http://www.roblox.com/asset/?id=18463157903", --17
-"http://www.roblox.com/asset/?id=8032194497", --18
-"http://www.roblox.com/asset/?id=15332983254", --19
-"http://www.roblox.com/asset/?id=11041446512", --20
-"http://www.roblox.com/asset/?id=600803939", --21
-"http://www.roblox.com/asset/?id=903318290", --22
-"http://www.roblox.com/asset/?id=10842366977", --23
-"http://www.roblox.com/asset/?id=13448937007", --24
-"http://www.roblox.com/asset/?id=12810822812", --25
-"http://www.roblox.com/asset/?id=16105197154", --26
-"http://www.roblox.com/asset/?id=16053681504", --27
-"http://www.roblox.com/asset/?id=15890986090", --28
-"http://www.roblox.com/asset/?id=16173517892", --29
-"http://www.roblox.com/asset/?id=7617067045", --30
-"http://www.roblox.com/asset/?id=6859342076", --31
-"http://www.roblox.com/asset/?id=14613789931", --32
-"http://www.roblox.com/asset/?id=15399456436", --33
-"http://www.roblox.com/asset/?id=12744741181", --34
-"http://www.roblox.com/asset/?id=15392784585", --35
-"http://www.roblox.com/asset/?id=13836053875", --36
-"http://www.roblox.com/asset/?id=7853514116", --37
-"http://www.roblox.com/asset/?id=6942501524", --38
-"http://www.roblox.com/asset/?id=6522457335", --39
-"http://www.roblox.com/asset/?id=15288241266", --40
-"http://www.roblox.com/asset/?id=18602648450", --41
-"http://www.roblox.com/asset/?id=13999153827", --42
-"http://www.roblox.com/asset/?id=12550364500", --43
-"http://www.roblox.com/asset/?id=15755889896" --44
-}
-
-asdzxima:OnChanged(function(heheimage)
-pcall(function()
-if heheimage == "Random" then
-game.CoreGui.BBB.hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
-else
-game.CoreGui.BBB.hideUI.Image = _G.imageUrls[tonumber(heheimage)]
-end
-end)
-end)
-
 Tabs.Misc:AddSection("							 --FE Scripts--")
 
     Tabs.Misc:AddButton({
         Title = "Infinite Yield",
         Description = "Open Infinite Yield Script",
         Callback = function()
+pcall(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-        end
+end)
+end
     })
 
     Tabs.Misc:AddButton({
         Title = "Remote Spy",
         Description = "Open Remote Spy Script",
         Callback = function()
+pcall(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
-        end
+        end)
+end
     })
 
 Tabs.Misc:AddSection("						    --Old Scripts--")
@@ -897,72 +958,13 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb16
         Title = "Nothing Hub",
         Description = "Open Nothing Hub Script",
         Callback = function()
+pcall(function()
 loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdaeb8c720eac056eff0d9e74d5087e6/chhickendiu"))()
+end)
 end
     })
 
 Tabs.Misc:AddSection("						    -----Boost-----")
-    Tabs.Misc:AddButton({
-        Title = "Low-Graphic Mode",
-        Description = "Use to reduce lag",
-        Callback = function()
-            Window:Dialog({
-                Title = "Low-Graphic Mode",
-                Content = "Do you want to use?",
-                Buttons = {
-                    {
-                        Title = "OK",
-                        Callback = function()
-workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
-	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
-	workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
-	workspace:FindFirstChildOfClass('Terrain').WaterTransparency = 0
-	game:GetService("Lighting").GlobalShadows = false
-	game:GetService("Lighting").FogEnd = 9e9
-	settings().Rendering.QualityLevel = 1
-	for i,v in pairs(game:GetDescendants()) do
-		if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-			v.Material = "Plastic"
-			v.Reflectance = 0
-		elseif v:IsA("Decal") then
-			v.Transparency = 1
-		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-			v.Lifetime = NumberRange.new(0)
-		elseif v:IsA("Explosion") then
-			v.BlastPressure = 1
-			v.BlastRadius = 1
-		end
-	end
-	for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
-		if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
-			v.Enabled = false
-		end
-	end
-	workspace.DescendantAdded:Connect(function(child)
-		coroutine.wrap(function()
-			if child:IsA('ForceField') then
-				game:GetService('RunService').Heartbeat:Wait()
-				child:Destroy()
-			elseif child:IsA('Sparkles') then
-				game:GetService('RunService').Heartbeat:Wait()
-				child:Destroy()
-			elseif child:IsA('Smoke') or child:IsA('Fire') then
-				game:GetService('RunService').Heartbeat:Wait()
-				child:Destroy()
-			end
-		end)()
-	end)                        end
-                    },
-                    {
-                        Title = "Cancel",
-                        Callback = function()
-                        end
-                    }
-                }
-            })
-        end
-    })
-
 offrender = Tabs.Misc:AddToggle("offrendertoggle", {Title = "Off 3D-Render", Default = false })
 offrender:OnChanged(function()
 if Options.offrendertoggle.Value == true then
@@ -2573,7 +2575,7 @@ fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Def
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
-for i = 1,2 do wait(0.2)
+for i = 1,5 do wait(0.2)
 if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
 task.wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
@@ -2619,12 +2621,30 @@ _G.autocannonslow = false
 end
 end)
 
-autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "Auto Kill All Player (Bring + Chair)", Default = false })
+autocannonmobaz = Tabs.Farm:AddToggle("cannonmobaztoggle", {Title = "Auto Farm Mobs (TP Cannon)", Default = false })
+autocannonmobaz:OnChanged(function()
+if Options.cannonmobaztoggle.Value == true then
+_G.automobtpcn = true
+else
+_G.automobtpcn = false
+end
+end)
+
+autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "Auto Kill All Player (Bring Method)", Default = false })
 autocannonplrbring:OnChanged(function()
 if Options.autocannonplrbringtoggle.Value == true then
 _G.autocannonplrbring = true
 else
 _G.autocannonplrbring = false
+end
+end)
+
+autocannonfling = Tabs.Farm:AddToggle("autocannonflingtoggle", {Title = "Auto Kill All Player (Fling Method)", Default = false })
+autocannonfling:OnChanged(function()
+if Options.autocannonflingtoggle.Value == true then
+_G.autocannonfling = true
+else
+_G.autocannonfling = false
 end
 end)
 
@@ -3056,7 +3076,7 @@ Tabs.Teleport:AddSection("							  --Teleport--")
 
 MobsTP = Tabs.Teleport:AddDropdown("MobsTPdr", {
         Title = "NPC Teleport",
-        Values = {" ","Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flail Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
+        Values = {"Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flail Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
         Default = " ",
     })
@@ -3166,7 +3186,7 @@ end)
 
 IslandTP = Tabs.Teleport:AddDropdown("IslandTP", {
         Title = "Island Teleport",
-        Values = {" ","Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snowy Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
+        Values = {"Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snowy Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"},
         Multi = false,
         Default = " ",
     })
@@ -3624,7 +3644,7 @@ Tabs.Mobs:AddSection("						    --Bring Mobs--")
 mobbakaak = Tabs.Mobs:AddDropdown("mobbakaak", {
         Title = "Select Mobs",
         Description = "Select Mobs To Bring.",
-        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Values = {"Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},
 })
@@ -3683,7 +3703,7 @@ Tabs.Mobs:AddSection("				  --Mobs Farming (Fruit)--")
 mobsfarmse = Tabs.Mobs:AddDropdown("mobsfarmse", {
         Title = "Select Mobs",
         Description = "Select Mobs To Farm.",
-        Values = {" ","Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
+        Values = {"Crab","Boar","Bandit","Thief","Thug","Fr","Angry Bob","Gunslinger","Cave Demon","Guard","Vokun","Bruno","Buster","Bucky","Gunner Captain"},
         Multi = true,
         Default = {},
 })
@@ -3698,7 +3718,7 @@ end)
 
 jmkoertz = Tabs.Mobs:AddDropdown("jmkoertz", {
         Title = "Select Fruit",
-        Values = {" ","Light","Magma","Gravity","Rumble","Bomb"},
+        Values = {"Light","Magma","Gravity","Rumble","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -4521,13 +4541,28 @@ end
     })
 
 Tabs.Server:AddSection("				  --Join Specific Server--")
-ServerRiel = {" "}
+SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
+    Title = "Choose Server",
+    Description = "Choose Server From The List",
+    Values = {},
+    Multi = false,
+    Default = "",
+})
+
+SVLISTED:OnChanged(function(hellozxw)
+hmm = tostring(hellozxw)
+end)
+
+    Tabs.Server:AddButton({
+        Title = "Refresh Server List",
+        Description = "Refresh The Server List",
+        Callback = function()
+pcall(function()
+ServerRiel = {}
 local PlaceID = game.PlaceId
 local foundAnything = ""
 local HttpService = game:GetService("HttpService")
-local PlaceID = game.PlaceId
-local foundAnything = ""
-local HttpService = game:GetService("HttpService")
+
 local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
 if foundAnything ~= "" then
     url = url .. '&cursor=' .. foundAnything
@@ -4550,22 +4585,17 @@ if success and Site then
     -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
-        end
-    end
+local ping = tonumber(server.ping) or 0
+local fps = tonumber(server.fps) or 0
+table.insert(ServerRiel, server.id .. " \nPing(" .. math.floor(ping) .. ") - " .."FPS(" .. math.floor(fps) .. ") - " .."Players(" .. server.playing .. "/" .. server.maxPlayers .. ")")
 end
+    end
 
-SVLISTED = Tabs.Server:AddDropdown("SVLISTED", {
-    Title = "Choose Server",
-    Description = "Choose Server From The List",
-    Values = ServerRiel,
-    Multi = false,
-    Default = "",
-})
-
-SVLISTED:OnChanged(function(hellozxw)
-hmm = tostring(hellozxw)
+SVLISTED:SetValues(ServerRiel)
+end
 end)
+        end
+    })
 
     Tabs.Server:AddButton({
         Title = "Join Chosen Server",
@@ -5384,7 +5414,7 @@ end)
 Tabs.Skill:AddSection("					  --Auto Spam Fruit--")
 skillldrop = Tabs.Skill:AddDropdown("skillldrop", {
         Title = "Fruit Spam",
-        Values = {" ","Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
+        Values = {"Quake","Dark","Phoenix","Vampire","Light","Magma","Flare","Chilly","Candy","Gravity","Plasma","Venom","Hollow","Bomb"},
         Multi = false,
         Default = "",
     })
@@ -5481,7 +5511,7 @@ hideUI.ClipsDescendants = true
 hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
 hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
 hideUI.Size = UDim2.new(0, 60, 0, 60)
-hideUI.Image = _G.imageUrls[math.random(1, #_G.imageUrls)]
+hideUI.Image = "http://www.roblox.com/asset/?id=16039945586"
 hideUI.MouseButton1Up:Connect(function()
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 50, 0, 50)
@@ -5490,9 +5520,9 @@ wait(0.05)
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 60, 0, 60)
 	}):Play()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-wait(0.1)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game)
+task.wait()
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game)
 end)
 
 hideUICorner = Instance.new("UICorner")
@@ -5536,7 +5566,7 @@ end)
 
 repeat wait() until game.CoreGui:FindFirstChild("BBB")
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startspamskill then
 repeat wait()
@@ -6753,7 +6783,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop then
 repeat task.wait()
@@ -6779,7 +6809,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startropaura then
 repeat task.wait()
@@ -6805,7 +6835,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6826,7 +6856,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6866,7 +6896,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6889,7 +6919,7 @@ end
 end)
 
 spawn(function() -- autofarm destroy seat
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop  or _G.startropaura then
 if (_G.robmethod == "Magma" or _G.robmethod == "Flare") and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
@@ -6908,7 +6938,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6948,7 +6978,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -6971,7 +7001,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if ESPPlayer then
 repeat wait()
@@ -6989,7 +7019,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.Hitboxplr then
 repeat wait()
@@ -7014,7 +7044,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 pcall(function()
@@ -7045,7 +7075,7 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
 repeat wait()
@@ -7072,7 +7102,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 repeat wait() until _G.wqesorry == true
 repeat wait()
@@ -7097,7 +7127,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 pcall(function()
 repeat wait() until getgenv().viewplrr == true
 repeat wait()
@@ -7112,7 +7142,7 @@ end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 repeat wait() until _G.storeffrt == true
 pcall(function()
 repeat task.wait()
@@ -7125,15 +7155,13 @@ storedf()
 end
 end
 end
-task.wait()
-storedf()
 until not _G.storeffrt
 end)
 end
 end)
 
 spawn(function()
-while wait(0.1) do
+while wait(0.3) do
 repeat wait() until _G.aurasto == true
 pcall(function()
 repeat task.wait()
@@ -7144,8 +7172,6 @@ task.wait()
 storedf()
 end
 end
-task.wait()
-storedf()
 until not _G.aurasto
 end)
 end
@@ -7176,7 +7202,7 @@ for i= 1,5 do
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
 repeat wait()
-until not _G.autocannon or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 211000
+until not _G.autocannon or game.Players.LocalPlayer.Character.Humanoid.Health == 0
         end)
     end
 end)
@@ -7222,6 +7248,32 @@ wait()
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1
         	            v.Character.HumanoidRootPart.Anchored = false
+		   end
+		end
+        end)
+    end
+end)
+
+spawn(function() -- autofarm emphasize
+while wait(0.3) do
+repeat wait() until _G.autocannonfling == true
+pcall(function()
+repeat wait()
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                        v.Character.HumanoidRootPart.Transparency = 0.7
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.Character.HumanoidRootPart.CanCollide = true
+                        v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                    end
+                end
+until not _G.autocannonfling
+wait()
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                	    v.Character.HumanoidRootPart.CanCollide = true
+                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                            v.Character.HumanoidRootPart.Transparency = 1
 		   end
 		end
         end)
@@ -7509,7 +7561,7 @@ end)
 spawn(function()
 while wait(0.3) do
 repeat wait() 
-until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false)
+until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.autocannon == false) or (_G.automobtpcn == true and _G.autocannon == false) or (_G.autocannonfling == true and _G.autocannon == false)
 pcall(function()
 repeat wait(0.05)
 for _, cannonz in pairs(Rarefruit) do
@@ -7517,7 +7569,7 @@ if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 2
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end
 end
-until (_G.autocannon == true) or (not _G.autocannonslow and not _G.autocannonplrbring)
+until (_G.autocannon == true) or (not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn and not _G.autocannonfling)
       end)
    end
 end)
@@ -7525,7 +7577,7 @@ end)
 spawn(function()
     while wait(0.3) do
         pcall(function()
-            if _G.autocannonslow or _G.autocannonplrbring then
+            if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn or _G.autocannonfling then
 repeat wait()
                 local args = {
                     [1] = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
@@ -7537,7 +7589,7 @@ repeat wait()
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
 
-until not _G.autocannonslow and not _G.autocannonplrbring
+until not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn and not _G.autocannonfling
             end
         end)
     end
@@ -7549,11 +7601,91 @@ spawn(function()
             if _G.autocannonslow or _G.autocannonplrbring then
 repeat wait(4)
 for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
-if c.Name == ("CannonBall") then
+if c.Name == "CannonBall" then
 c:Destroy()
 end
 end
 until not _G.autocannonslow and not _G.autocannonplrbring
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait(0.3) do
+        pcall(function()
+            if _G.automobtpcn or _G.autocannonfling then
+repeat wait(10)
+for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
+if c.Name == "CannonBall" then
+c:Destroy()
+end
+end
+until not _G.autocannonslow and not _G.autocannonplrbring
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.automobtpcn then
+                repeat wait()
+                    for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        pcall(function()
+                            if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
+                                for i = 1,5 do wait(0.02)
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.automobtpcn then
+                                            q.CFrame = v.HumanoidRootPart.CFrame
+                                                q.CanCollide = false
+                                        end
+                                    end
+                                end
+                            end
+                        end)
+                    end
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
+pcall(function()
+		if v.Name == "Zombie" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
+                                for i = 1,5 do wait(0.02)
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.automobtpcn then
+                                            q.CFrame = v.HumanoidRootPart.CFrame
+                                                q.CanCollide = false
+                                        end
+                                    end
+                                end
+		end
+end)
+end
+                until not _G.automobtpcn
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.autocannonfling then
+                repeat wait()
+                    for i, v in pairs(game.Players:GetChildren()) do
+pcall(function()
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
+                                for i = 1,10 do wait(0.02)
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.autocannonfling then
+                                            q.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
+                                                q.CanCollide = true
+                                        end
+                                    end
+                                end
+end
+                        end)
+                    end
+                until not _G.autocannonfling
             end
         end)
     end
@@ -7600,11 +7732,19 @@ end)
 spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
-            if _G.autocannonslow then
+            if _G.autocannonslow or _G.automobtpcn then
 repeat wait()
+pcall(function()
+for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
+if v.Name == "ClickDetector" then wait()
+fireclickdetector(v)
+end
+end
+wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-wait(5)
-until not _G.autocannonslow
+wait(2)
+end)
+until not _G.autocannonslow and not _G.automobtpcn
 end
 end)
 end
@@ -7613,8 +7753,103 @@ end)
 spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
+            if _G.automobtpcn then
+repeat wait()
+pcall(function()
+                for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
+                    if v.Name == "Zombie"
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if string.find(v.Name, "Boar")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if string.find(v.Name, "Crab")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if string.find(v.Name, "Angry") 
+                    or string.find(v.Name, "Bandit")
+                    or string.find(v.Name, "Gua")
+                    or string.find(v.Name, "Thief")
+                    or string.find(v.Name, "Bruno") 
+                    or string.find(v.Name, "Bucky") 
+                    or string.find(v.Name, "Vokun") 
+                    or string.find(v.Name, "Fr")  
+                    or string.find(v.Name, "Cave") 
+                    or string.find(v.Name, "Thug") 
+                    or string.find(v.Name, "Gunslinger")
+                    or string.find(v.Name, "Gunner") 
+                    or string.find(v.Name, "Buster") 
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                    end
+                end
+end)
+until not _G.automobtpcn
+            end
+        end)
+    end
+end)
+
+spawn(function() -- autofarm cannon
+    while wait(0.3) do
+        pcall(function()
             if _G.autocannonslow then
 repeat wait()
+pcall(function()
+                for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
+                    if v.Name == "Zombie"
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -7647,7 +7882,8 @@ repeat wait()
                 end
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Angry") 
-                    or string.find(v.Name, "Bandit") 
+                    or string.find(v.Name, "Bandit")
+                    or string.find(v.Name, "Gua")
                     or string.find(v.Name, "Thief")
                     or string.find(v.Name, "Bruno") 
                     or string.find(v.Name, "Bucky") 
@@ -7667,12 +7903,9 @@ repeat wait()
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
                         end
-                        if v.Humanoid.Health == 0 then
-                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
-                            v:Destroy()
-                        end
                     end
                 end
+end)
 until not _G.autocannonslow
             end
         end)
@@ -7680,7 +7913,7 @@ until not _G.autocannonslow
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().chawq then
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
@@ -8529,7 +8762,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 repeat wait() until _G.farmfruit == true
 pcall(function()
 repeat wait()
@@ -8879,45 +9112,6 @@ end)
 end
 end)
 
-spawn(function()
-while wait(1) do
-pcall(function()
-ServerRiel = {" "}
-local PlaceID = game.PlaceId
-local foundAnything = ""
-local HttpService = game:GetService("HttpService")
-
-local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
-if foundAnything ~= "" then
-    url = url .. '&cursor=' .. foundAnything
-end
-
--- Correct handling of pcall
-local success, Site = pcall(function()
-    return HttpService:JSONDecode(game:HttpGet(url))
-end)
-
--- Only proceed if the pcall was successful
-if success and Site then
-    -- Handle pagination
-    if Site.nextPageCursor and Site.nextPageCursor ~= "null" then
-        foundAnything = Site.nextPageCursor
-    else
-        foundAnything = ""
-    end
-
-    -- Iterate over servers and collect data
-    for _, server in ipairs(Site.data) do
-        if server.playing < server.maxPlayers then
-            table.insert(ServerRiel, server.id.." \nPing("..math.floor(server.ping)..") - ".."FPS("..math.floor(server.fps)..") - ".."Players("..server.playing.."/"..server.maxPlayers..")")
-        end
-    end
-
-SVLISTED:SetValues(ServerRiel)
-end
-end)
-end
-end)
 
 spawn(function()
 while wait(0.25) do

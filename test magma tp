@@ -1,0 +1,14 @@
+for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+game.Workspace[tostring(v.Name)].Powers.String.Strings.ChildAdded:Connect(function(child)
+task.wait()
+child:Destroy()
+end)
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(v)
+game.Workspace[tostring(v.Name)].Powers.String.Strings.ChildAdded:Connect(function(child)
+task.wait()
+child:Destroy()
+end)
+end)
+

@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded() 
 repeat wait() until game.Players.LocalPlayer:FindFirstChild("Backpack")
-task.wait()
+task.wait(1)
 pcall(function()
 SALUNALOADING = Instance.new("ScreenGui")
 SALUNALOADING.Name = "SALUNALOADING"
@@ -124,7 +124,7 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 		end)()
 	end)    
 end)
-task.wait()
+task.wait(5)
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -600,10 +600,66 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 end)
 end
 else
-_G.wqezombie = false
+_G.godmode = false
 end
 end)
+qweasddex = Tabs.Edge:AddDropdown("qweasddex", {
+        Title = "Sword Process",
+        Values = {""},
+        Multi = false,
+        Default = "",
+    })
 
+spawn(function()
+while wait(4) do
+pcall(function()
+local swordtablepro = {}
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Divine Axe"].Value == false then
+divineprocess = tostring("Divine Axe: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Expert"].Value.."/100")
+else
+divineprocess = "Divine Axe: (Completed)"
+end
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Kanshou and Bakuya"].Value == false then
+kanandbaprocess = tostring("Kanshou and Bakuya: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Lucy"].Value.."/100000000")
+else
+kanandbaprocess = "Kanshou and Bakuya: (Completed)"
+end
+
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Scissor Blade"].Value == false then
+scissorprocess = tostring("Scissor Blade: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Drinks"].Value.."/50000000")
+else
+scissorprocess = "Scissor Blade: (Completed)"
+end
+
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Lightning Sword"].Value == false then
+lightningprocess = tostring("Lightning Sword: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Merlin"].Value.."/200")
+else
+lightningprocess = "Lightning Sword: (Completed)"
+end
+
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Aqua Staff"].Value == false then
+aquaprocess = tostring("Aqua Staff: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Chef"].Value.."/1000000")
+else
+aquaprocess = "Aqua Staff: (Completed)"
+end
+
+if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Meteorite Sword"].Value == false then
+meteprocess = tostring("Meteorite Sword: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Sam"].Value.."/1000")
+else
+meteprocess = "Meteorite Sword: (Completed)"
+end
+
+table.insert(swordtablepro,divineprocess)
+table.insert(swordtablepro,kanandbaprocess)
+table.insert(swordtablepro,scissorprocess)
+table.insert(swordtablepro,lightningprocess)
+table.insert(swordtablepro,aquaprocess)
+table.insert(swordtablepro,meteprocess)
+
+qweasddex:SetValues(swordtablepro)
+end)
+end
+end)
 
 Tabs.Boss:AddSection("					    -----Halloween-----")
 

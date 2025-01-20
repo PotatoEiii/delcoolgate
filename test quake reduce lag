@@ -1,35 +1,39 @@
-local Players = game:GetService("Players")
-local Workspace = game.Workspace
+local function connectChildDestroy(folder)
+    if folder then
+        folder.ChildAdded:Connect(function(child)
+            task.wait() -- Allow time for the child to initialize
+            pcall(function()
+                if child then
+                    child:Destroy()
+                end
+            end)
+        end)
+    end
+end
 
--- Function to connect ChildAdded events for a player's Quake powers
-local function connectQuakeHandlers(player)
-    local success, quakeFolder = pcall(function()
-        return Workspace[tostring(player.Name)].Powers.Quake
+local function setupQuakeHandlers(player)
+    local playerWorkspace = game.Workspace:FindFirstChild(player.Name)
+    if not playerWorkspace then return end
+
+    local powers = playerWorkspace:FindFirstChild("Powers")
+    if not powers then return end
+
+    local quake = powers:FindFirstChild("Quake")
+    if not quake then return end
+
+    connectChildDestroy(quake:FindFirstChild("CutEffects"))
+    connectChildDestroy(quake:FindFirstChild("GlowEffects"))
+    connectChildDestroy(quake:FindFirstChild("P4"))
+    connectChildDestroy(quake:FindFirstChild("Rocks"))
+end
+
+for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+    setupQuakeHandlers(player)
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        task.wait() -- Allow the character to appear in the workspace
+        setupQuakeHandlers(player)
     end)
-    
-    if not success or not quakeFolder then return end
-
-    local function onChildAdded(child)
-        if string.find(child.Name, "Quake") then
-            child:Destroy()
-        end
-    end
-
-    if quakeFolder:FindFirstChild("CutEffects") then
-        quakeFolder.CutEffects.ChildAdded:Connect(onChildAdded)
-    end
-    if quakeFolder:FindFirstChild("GlowEffects") then
-        quakeFolder.GlowEffects.ChildAdded:Connect(onChildAdded)
-    end
-    if quakeFolder:FindFirstChild("P4") then
-        quakeFolder.P4.ChildAdded:Connect(onChildAdded)
-    end
-end
-
--- Connect handlers for existing players
-for _, player in pairs(Players:GetPlayers()) do
-    connectQuakeHandlers(player)
-end
-
--- Connect handlers for new players
-Players.PlayerAdded:Connect(connectQuakeHandlers)
+end)

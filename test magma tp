@@ -1,14 +1,8 @@
-for _, v in pairs(game:GetService("Players"):GetPlayers()) do
-game.Workspace[tostring(v.Name)].Powers.String.Strings.ChildAdded:Connect(function(child)
+game.Workspace[tostring(game.Players.LocalPlayer.Name)].Powers.Magma.Shots.ChildAdded:Connect(function(child)
 task.wait()
-child:Destroy()
+repeat task.wait()
+pcall(function()
+child.CFrame = game.Players.azpro2k7.Character.HumanoidRootPart.CFrame
 end)
-end
-
-game:GetService("Players").PlayerAdded:Connect(function(v)
-game.Workspace[tostring(v.Name)].Powers.String.Strings.ChildAdded:Connect(function(child)
-task.wait()
-child:Destroy()
+until not child
 end)
-end)
-

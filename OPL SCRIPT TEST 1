@@ -1109,6 +1109,13 @@ SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
 SelectedPly:OnChanged(function(variazxwt)
 if not table.find(anticamplisted,variazxwt) then
     _G.SelectedKillPlayer = variazxwt
+else
+_G.SelectedKillPlayer = ""
+Fluent:Notify({
+    Title = "Saluna  Notify",
+    Content = "Anti-Camp Player",
+    Duration = 5
+})
 end
 end)
 

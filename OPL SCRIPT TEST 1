@@ -421,7 +421,7 @@ asdwqelist = true
 
 userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
         for _, v2 in pairs(userlistedzxwc) do
-            if game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2 then
+            if (game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2) and game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name) then
 asdwqelist = true
             end
         end

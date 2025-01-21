@@ -7031,29 +7031,6 @@ end)
 end
 end)
 
-spawn(function()
-while wait(0.3) do
-pcall(function()
-if _G.startrop or _G.startropaura then
-repeat task.wait()
-if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-pcall(function()
-repeat task.wait()
-game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
-if game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored == false then
-game.Players:FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored = true
-end
-until game.Players:FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game.Players:FindFirstChild(_G.cuopfruittarget)
-wait()
-_G.cuopfruittarget = ""
-end)
-end
-until not _G.startrop and not _G.startropaura
-end
-end)
-end
-end)
-
 spawn(function() -- autofarm destroy seat
 while wait(0.3) do
 pcall(function()

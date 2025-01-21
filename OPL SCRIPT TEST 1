@@ -1386,13 +1386,12 @@ quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Quake C
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
-while _G.AutoQuake do wait(0.1)
+while _G.AutoQuake do 
 pcall(function()
-if not table.find(anticamplisted,_G.SelectedKillPlayer) then
 repeat task.wait(0.07)
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame.Position)
-until _G.AutoQuake == false or table.find(anticamplisted,_G.SelectedKillPlayer)
-end
+until _G.AutoQuake == false or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+wait(0.1)
 end)
 end
 else
@@ -1409,7 +1408,62 @@ _G.CampString = false
 end
 end)
 
+magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", Default = false })
+magmamgggg:OnChanged(function()
+if Options.magmamggggtoggle.Value == true then
+_G.CampMagma = true
+while _G.CampMagma do
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
+    pcall(function()
+repeat task.wait(0.07)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-123.28974914550781, 213, -871.10595703125, 0.9992225766181946, -0.009072019718587399, 0.038368139415979385, -0, 0.9731666445732117, 0.23010201752185822, -0.03942607715725899, -0.22992312908172607, 0.9724099040031433),
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Right"
+}
 
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+task.wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
+    [2] = "MagmaPower1",
+    [3] = "StopCharging",
+    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
+    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [6] = 100
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+wait(0.1)
+end)
+end
+end
+end)
+end
+else
+_G.CampMagma = false
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.CampMagma and _G.SelectedKillPlayer ~= nil and _G.SelectedKillPlayer ~= "" and game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+repeat wait()
+for i, v in pairs(game.Workspace[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
+v.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
+end
+until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
+end
+end)
+end
+end)
 
 
 Tabs.Player:AddSection("					    --Teleport Camp--")
@@ -1546,63 +1600,6 @@ end)
 end
 else
 _G.CampVamp = false
-end
-end)
-
-magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", Default = false })
-magmamgggg:OnChanged(function()
-if Options.magmamggggtoggle.Value == true then
-_G.CampMagma = true
-while _G.CampMagma do wait(0.1)
-pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
-    pcall(function()
-repeat task.wait(0.07)
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StartCharging",
-    [4] = CFrame.new(-123.28974914550781, 213, -871.10595703125, 0.9992225766181946, -0.009072019718587399, 0.038368139415979385, -0, 0.9731666445732117, 0.23010201752185822, -0.03942607715725899, -0.22992312908172607, 0.9724099040031433),
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [7] = "Right"
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-task.wait()
-local args = {
-    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
-    [2] = "MagmaPower1",
-    [3] = "StopCharging",
-    [4] = game:GetService("Workspace"):FindFirstChild(_G.SelectedKillPlayer).HumanoidRootPart.CFrame,
-    [5] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach"),
-    [6] = 100
-}
-
-game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
-end)
-end
-end
-end)
-end
-else
-_G.CampMagma = false
-end
-end)
-
-
-spawn(function()
-while wait(0.3) do
-pcall(function()
-if _G.CampMagma and _G.SelectedKillPlayer ~= nil and _G.SelectedKillPlayer ~= "" and game.Players:FindFirstChild(_G.SelectedKillPlayer) then
-repeat wait()
-for i, v in pairs(game.Workspace[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
-v.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
-end
-until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
-end
-end)
 end
 end)
 

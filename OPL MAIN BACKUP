@@ -408,7 +408,7 @@ end)
 
 _G.asdwqelist = false
 _G.antiusefree = false
-
+anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp'))()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -1138,7 +1138,7 @@ pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 for i,c in pairs(game.Workspace:GetChildren()) do
-if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Name ~= "azpro2k7" then
+if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and not table.find(anticamplisted,c.Name) then
 repeat wait()
 _G.SelectedKillPlayer = c.Name
 until not getgenv().targeting or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
@@ -1314,7 +1314,7 @@ if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
 while _G.BringPlayer do wait(0.1)
 pcall(function()
-if _G.SelectedKillPlayer ~= "azpro2k7" then
+if not table.find(anticamplisted,_G.SelectedKillPlayer) then
 repeat task.wait()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == false then
@@ -1340,7 +1340,7 @@ while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted,v.Name) then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if v.Character.HumanoidRootPart.Anchored == false then
 v.Character.HumanoidRootPart.Anchored = true
@@ -1376,10 +1376,10 @@ if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
 while _G.AutoQuake do wait(0.1)
 pcall(function()
-if _G.SelectedKillPlayer ~= "azpro2k7" then
+if not table.find(anticamplisted,_G.SelectedKillPlayer) then
 repeat task.wait(0.07)
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame.Position)
-until _G.AutoQuake == false or _G.SelectedKillPlayer == "azpro2k7"
+until _G.AutoQuake == false or table.find(anticamplisted,_G.SelectedKillPlayer)
 end
 end)
 end
@@ -1431,7 +1431,7 @@ if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
 while _G.wqesorry do task.wait()
 pcall(function()
-if game.Players:FindFirstChild(_G.SelectedKillPlayer) and _G.SelectedKillPlayer ~= "azpro2k7" then
+if game.Players:FindFirstChild(_G.SelectedKillPlayer) and not table.find(anticamplisted,_G.SelectedKillPlayer) then
 if game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
@@ -6882,7 +6882,7 @@ if _G.startrop then
 repeat task.wait()
 for _, fruitz in pairs(Fruittaoew) do
 for i, player in pairs(game.Players:GetChildren()) do 
-if player.Name ~= game.Players.LocalPlayer.Name and player.Name ~= "azpro2k7" then
+if player.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted,player.Name) then
 for i, backpack in pairs(player:GetChildren()) do
 if backpack.Name == "Backpack" then 
 for i, v in pairs(backpack:GetChildren()) do
@@ -6907,7 +6907,7 @@ pcall(function()
 if _G.startropaura then
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
-if playera.Name ~= game.Players.LocalPlayer.Name and playera.Name ~= "azpro2k7" then
+if playera.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted,playera.Name) then
 for i, backpacka in pairs(playera:GetChildren()) do
 if backpacka.Name == "Backpack" then 
 for i, v in pairs(backpacka:GetChildren()) do
@@ -7117,7 +7117,7 @@ pcall(function()
 if _G.Hitboxplr then
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
 v.Character.HumanoidRootPart.Transparency = 0.7
 v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
@@ -7139,7 +7139,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and _G.SelectedKillPlayer ~= "azpro2k7" then
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
 pcall(function()
 repeat task.wait(0.07)
 local args = {
@@ -7152,7 +7152,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait()
-until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game.Players:FindFirstChild(_G.SelectedKillPlayer)) or _G.SelectedKillPlayer == "azpro2k7"
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game.Players:FindFirstChild(_G.SelectedKillPlayer)) or table.find(anticamplisted,_G.SelectedKillPlayer)
 wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
@@ -7170,11 +7170,11 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
+if _G.CampString == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
 wait(0.1)
-until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true or _G.SelectedKillPlayer == "azpro2k7"
+until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true or table.find(anticamplisted, _G.SelectedKillPlayer)
 end
 end)
 end
@@ -7183,12 +7183,12 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString == true and _G.SelectedKillPlayer ~= "azpro2k7" then
+if _G.CampString == true and not table.find(anticamplisted,_G.SelectedKillPlayer) then
 repeat wait()
 pcall(function()
 game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
 end)
-until not _G.CampString or _G.SelectedKillPlayer == "azpro2k7"
+until not _G.CampString or table.find(anticamplisted, _G.SelectedKillPlayer)
 end
 end)
 end
@@ -7324,7 +7324,7 @@ repeat wait() until _G.autocannonplrbring == true
 pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
                         v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
@@ -7336,7 +7336,7 @@ repeat wait()
 until not _G.autocannonplrbring
 wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
                 	    v.Character.HumanoidRootPart.CanCollide = true
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1
@@ -7353,7 +7353,7 @@ repeat wait() until _G.autocannonfling == true
 pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
                         v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = true
@@ -7363,7 +7363,7 @@ repeat wait()
 until not _G.autocannonfling
 wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "azpro2k7" then
+                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
                 	    v.Character.HumanoidRootPart.CanCollide = true
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1

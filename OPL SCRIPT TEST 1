@@ -1593,7 +1593,7 @@ repeat wait()
 for i, v in pairs(game.Workspace[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
 v.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
-until not _G.CampMagma or not game.Players:FindFirstChild("_G.SelectedKillPlayer)
+until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
 end
 end)
 end

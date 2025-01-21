@@ -435,7 +435,7 @@ antiusefree = true
 
 if antiusefree then
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -1580,6 +1580,21 @@ end)
 end
 else
 _G.CampMagma = false
+end
+end)
+
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.CampMagma and _G.SelectedKillPlayer ~= nil and _G.SelectedKillPlayer ~= "" and game.Players:FindFirstChild("_G.SelectedKillPlayer) then
+repeat wait()
+for i, v in pairs(game.Workspace[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
+v.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame
+end
+until not _G.CampMagma or not game.Players:FindFirstChild("_G.SelectedKillPlayer)
+end
+end)
 end
 end)
 
@@ -7764,7 +7779,7 @@ end
 end)
 
 spawn(function()
-    while wait() do
+    while wait(0.3) do
         pcall(function()
             if _G.autocannonfling then
                 repeat wait()
@@ -8029,7 +8044,7 @@ end
 end)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 pcall(function()
 if getgenv().tpchaiq and game.Players.LocalPlayer.Character.Humanoid.Sit == false then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)

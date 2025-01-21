@@ -1106,7 +1106,9 @@ SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
 })
 
 SelectedPly:OnChanged(function(variazxwt)
+if not table.find(anticamplisted,variazxwt) then
     _G.SelectedKillPlayer = variazxwt
+end
 end)
 
 game:GetService("Players").PlayerAdded:Connect(function()

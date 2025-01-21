@@ -125,6 +125,8 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 	end)    
 end)
 task.wait(5)
+usingname = game.Players.LocalPlayer.Name
+usingid = game.Players.LocalPlayer.UserId
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -213,78 +215,78 @@ end
 end
 
 function storedf()
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
+if game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF1"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF2"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF3"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF4"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF5"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF6"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF7"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF8"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF9"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF10"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF11"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game.Workspace.UserData["User_"..tostring(usingid)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
                 local args = {
                     [1] = "StoredDF12"
                 }
                 
-                game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].StoredDFRequest:FireServer(unpack(args))
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 end
 end
 
@@ -304,19 +306,19 @@ end
 function onhaki()
 local args = {
     [1] = "On",
-    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+    [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
 
-workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
 end
 
 function offhaki()
 local args = {
     [1] = "Off",
-    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+    [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
 
-workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
 end
 
 task.wait(0)
@@ -614,37 +616,37 @@ spawn(function()
 while wait(4) do
 pcall(function()
 local swordtablepro = {}
-if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Divine Axe"].Value == false then
-divineprocess = tostring("Divine Axe: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Expert"].Value.."/100")
+if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Divine Axe"].Value == false then
+divineprocess = tostring("Divine Axe: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Expert"].Value.."/100")
 else
 divineprocess = "Divine Axe: (Completed)"
 end
-if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Kanshou and Bakuya"].Value == false then
-kanandbaprocess = tostring("Kanshou and Bakuya: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Lucy"].Value.."/100000000")
+if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Kanshou and Bakuya"].Value == false then
+kanandbaprocess = tostring("Kanshou and Bakuya: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Lucy"].Value.."/100000000")
 else
 kanandbaprocess = "Kanshou and Bakuya: (Completed)"
 end
 
-if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Scissor Blade"].Value == false then
-scissorprocess = tostring("Scissor Blade: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Drinks"].Value.."/50000000")
+if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Scissor Blade"].Value == false then
+scissorprocess = tostring("Scissor Blade: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Drinks"].Value.."/50000000")
 else
 scissorprocess = "Scissor Blade: (Completed)"
 end
 
-if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Lightning Sword"].Value == false then
-lightningprocess = tostring("Lightning Sword: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Merlin"].Value.."/200")
+if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Lightning Sword"].Value == false then
+lightningprocess = tostring("Lightning Sword: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Merlin"].Value.."/200")
 else
 lightningprocess = "Lightning Sword: (Completed)"
 end
 
-if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Aqua Staff"].Value == false then
-aquaprocess = tostring("Aqua Staff: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Chef"].Value.."/1000000")
+if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Aqua Staff"].Value == false then
+aquaprocess = tostring("Aqua Staff: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Chef"].Value.."/1000000")
 else
 aquaprocess = "Aqua Staff: (Completed)"
 end
 
-if game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["PlayerHas_Meteorite Sword"].Value == false then
-meteprocess = tostring("Meteorite Sword: "..game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data["NPC_Activation_Sam"].Value.."/1000")
+if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Meteorite Sword"].Value == false then
+meteprocess = tostring("Meteorite Sword: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Sam"].Value.."/1000")
 else
 meteprocess = "Meteorite Sword: (Completed)"
 end
@@ -919,7 +921,7 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 Tabs.Info:AddSection("		   			     --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(game.Players.LocalPlayer.UserId)
+Content = "Current HWID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nUser Name: "..game.Players.LocalPlayer.Character.Name .."\nUser ID: "..tostring(usingid)
 })
 
 Tabs.Info:AddParagraph({
@@ -989,7 +991,7 @@ _G.exchangegem = true
 while _G.exchangegem do task.wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
-workspace.UserData["User_".. tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge12")
+workspace.UserData["User_".. tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge12")
 end
 repeat wait() 
 until game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == false
@@ -1136,7 +1138,7 @@ end
 while getgenv().targeting do wait(0.1)
 pcall(function()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Name ~= usingname then
 for i,c in pairs(game.Workspace:GetChildren()) do
 if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and not table.find(anticamplisted,c.Name) then
 repeat wait()
@@ -1233,7 +1235,7 @@ end
 Number = math.random(1, 1000000)
 function UpdatePlayerChams()
 for i,v in pairs(game:GetService'Players':GetChildren()) do
- if v.Name ~= game.Players.LocalPlayer.Name then
+ if v.Name ~= usingname then
                 pcall(function()
                     if not isnil(v.Character) then
                         if ESPPlayer then
@@ -1340,7 +1342,7 @@ while _G.BringAllPlayer do wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted,v.Name) then
+if v.Name ~= usingname and not table.find(anticamplisted,v.Name) then
 v.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if v.Character.HumanoidRootPart.Anchored == false then
 v.Character.HumanoidRootPart.Anchored = true
@@ -2076,10 +2078,10 @@ Tabs.Shop:AddButton({
         Description = "Requires 500 Melee",
         Callback = function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Melee") or game.Players.LocalPlayer.Backpack:FindFirstChild("Table Kick") or game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game.Players.LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.MeleeLevel.Value >= 500 then
+if game.Workspace.UserData["User_"..tostring(usingid)].Data.MeleeLevel.Value >= 500 then
 pcall(function()
     local A_1 = "Seastone Cestus"
-    local Event = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateMelee
+    local Event = game:GetService("Workspace").UserData["User_"..usingid].UpdateMelee
     Event:FireServer(A_1)
 end)
 Fluent:Notify({
@@ -2109,10 +2111,10 @@ end
         Description = "Requires 500 Melee",
         Callback = function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Melee") or game.Players.LocalPlayer.Backpack:FindFirstChild("Table Kick") or game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game.Players.LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.MeleeLevel.Value >= 500 then
+if game.Workspace.UserData["User_"..tostring(usingid)].Data.MeleeLevel.Value >= 500 then
 pcall(function()
     local A_1 = "Aqua Staff"
-    local Event = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateMelee
+    local Event = game:GetService("Workspace").UserData["User_"..usingid].UpdateMelee
     Event:FireServer(A_1)
 end)
 Fluent:Notify({
@@ -2143,9 +2145,9 @@ Tabs.Shop:AddSection("						  	  --Sword--")
         Title = "Dagger",
         Description = "Requires 1,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Dagger.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Dagger.Value == false then
 
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 1000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 1000 then
         local A_1 = "Dagger"
         local A_2 = 1000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -2179,9 +2181,9 @@ end
         Title = "Wakizashi",
         Description = "Requires 5,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Wakizashi.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Wakizashi.Value == false then
 
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 5000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 5000 then
         local A_1 = "Wakizashi"
         local A_2 = 5000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -2215,9 +2217,9 @@ end
         Title = "Tachi",
         Description = "Requires 7,500 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Tachi.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Tachi.Value == false then
 
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 7500 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 7500 then
         local A_1 = "Tachi"
         local A_2 = 7500
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -2253,8 +2255,8 @@ end
         Title = "Katana",
         Description = "Requires 10,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Katana.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 10000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Katana.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 10000 then
 
         local A_1 = "Katana"
         local A_2 = 10000
@@ -2289,8 +2291,8 @@ end
         Title = "Flail",
         Description = "Requires 50,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Flail.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 50000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Flail.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 50000 then
 
         local A_1 = "Flail"
         local A_2 = 50000
@@ -2325,8 +2327,8 @@ end
         Title = "Krizma",
         Description = "Requires 80,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Krizma.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 80000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Krizma.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 80000 then
 
         local A_1 = "Krizma"
         local A_2 = 80000
@@ -2363,8 +2365,8 @@ Tabs.Shop:AddSection("						  	  --Sniper--")
         Title = "Slingshot",
         Description = "Requires 1,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Slingshot.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 1000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Slingshot.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 1000 then
 
         local A_1 = "Slingshot"
         local A_2 = 1000
@@ -2399,8 +2401,8 @@ end
         Title = "Stars",
         Description = "Requires 5,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Stars.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 5000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Stars.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 5000 then
 
         local A_1 = "Stars"
         local A_2 = 5000
@@ -2435,8 +2437,8 @@ end
         Title = "Crossbow",
         Description = "Requires 7,500 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Crossbow.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 7500 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Crossbow.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 7500 then
 
         local A_1 = "Crossbow"
         local A_2 = 7500
@@ -2471,8 +2473,8 @@ end
         Title = "Flintlock",
         Description = "Requires 10,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.PlayerHas_Flintlock.Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 10000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Flintlock.Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 10000 then
 
         local A_1 = "Flintlock"
         local A_2 = 10000
@@ -2507,8 +2509,8 @@ end
         Title = "Cannon Ball",
         Description = "Requires 400,000 Beries",
         Callback = function()
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data["PlayerHas_Cannon Ball"].Value == false then
-if game:GetService("Workspace").UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.Cash.Value >= 400000 then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data["PlayerHas_Cannon Ball"].Value == false then
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 400000 then
 
         local A_1 = "Cannon Ball"
         local A_2 = 400000
@@ -2751,11 +2753,11 @@ _G.autohakibuso = true
 repeat wait()
                 if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
                     wait(0.5)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                    game.workspace.UserData["User_" .. usingid].UpdateHaki:FireServer()
                 end
                 if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
                     wait(0.5)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                    game.workspace.UserData["User_" .. usingid].UpdateHaki:FireServer()
                 end
 until not _G.autohakibuso
         end)
@@ -2796,13 +2798,13 @@ autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
 _G.offhaki = true
-hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+hakigoc = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 hakiuse = hakigoc/100*regentarget
 task.wait()
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > hakiuse then
+if game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value > hakiuse then
 _G.onhaki = true
 _G.regenhaki = false
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= hakiuse then
+elseif game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value <= hakiuse then
 _G.onhaki = false
 _G.regenhaki = true
 end
@@ -3058,49 +3060,49 @@ Fluent:Notify({
 while _G.autochallenge do wait()
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily1")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Daily1")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily2")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Daily2")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily3")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Daily3")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Daily4")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Daily4")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Weekly1")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Weekly1")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Weekly2")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Weekly2")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.WeeklyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Weekly3")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Weekly3")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.MonthlyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Monthly1")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Monthly1")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.MonthlyFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Monthly2")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Monthly2")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge1")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge1")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_2"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge2")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge2")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge3")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge3")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_4"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge4")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge4")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_6"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge6")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge6")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_7"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge7")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge7")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_8"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge8")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge8")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_9"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge9")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge9")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_10"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge10")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge10")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_11"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge11")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge11")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge12")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge12")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge13")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge13")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge14")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
 end)
 end
@@ -3853,9 +3855,9 @@ _G.rejoinifhaki0 = true
 while _G.rejoinifhaki0 do wait()
 pcall(function()
 repeat wait()
-local zxm = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local zxm = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local zcc = zxm/100*2
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < zcc then
+if game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value < zcc then
 game.Players.LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
@@ -3918,505 +3920,505 @@ function hakiauto()
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+    workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
     
     
     
@@ -4608,10 +4610,10 @@ for i = 1,30 do
 while wait() do
 local args = {
     [1] = "On",
-    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+    [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
 
-workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
 end
 end
 end
@@ -4624,10 +4626,10 @@ for i = 1,30 do
 while wait() do
 local args = {
     [1] = "Off",
-    [2] = game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].Data.HakiLevel.Value
+    [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
 
-workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III:FireServer(unpack(args))
+workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
 end
 end
 end
@@ -5083,81 +5085,81 @@ _G.quayfirstdf = true
 else
 _G.quayfirstdf = false
 end
-if _G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo then
+if _G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo then
 _G.defspin = true
 else
 _G.defspin = false
 end
-if _G.targetmelee == true and _G.targetdef == false and _G.targetsword == false and _G.targetsnip == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo then
+if _G.targetmelee == true and _G.targetdef == false and _G.targetsword == false and _G.targetsnip == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo then
 _G.meleespin = true
 else
 _G.meleespin = false
 end
-if _G.targetsnip == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo then
+if _G.targetsnip == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo then
 _G.sniperspin = true
 
 else
 _G.sniperspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo then
 _G.swordspin = true
 
 else
 _G.swordspin = false
 end
-if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo then
+if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo then
 _G.defmeleespin = true
 
 else
 _G.defmeleespin = false
 end
-if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo then
+if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo then
 _G.defsnipspin = true
 else
 _G.defsnipspin = false
 
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo then
 _G.defswordspin = true
 else
 _G.defswordspin = false
 end
-if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo then
+if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo then
 _G.meleesnipspin = true
 else
 _G.meleesnipspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo then
 _G.meleeswordspin = true
 else
 _G.meleeswordspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo then
 _G.swordsnipspin = true
 else
 _G.swordsnipspin = false
 end
-if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo then
+if _G.targetsword == false and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo then
 _G.defmeleesnipspin = true
 else
 _G.defmeleesnipspin = false
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo then
 _G.defmeleeswordspin = true
 else
 _G.defmeleeswordspin = false
 end
-if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == false and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo then
 _G.meleesnipswordspin = true
 else
 _G.meleesnipswordspin = false
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == false and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo then
 _G.defswordsnip = true
 else
 _G.defswordsnip = false
 end
-if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.trqpwo then
+if _G.targetsword == true and _G.targetdef == true and _G.targetmelee == true and _G.targetsnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.trqpwo and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.trqpwo then
 _G.allspin = true
 else
 _G.allspin = false
@@ -5276,77 +5278,77 @@ _G.quayfirstdf2 = true
 else
 _G.quayfirstdf2 = false
 end
-if _G.targetdef2 == true and _G.targetsnip2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 then
+if _G.targetdef2 == true and _G.targetsnip2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.defspin2 = true
 else
 _G.defspin2 = false
 end
-if _G.targetmelee2 == true and _G.targetdef2 == false and _G.targetsword2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 then
+if _G.targetmelee2 == true and _G.targetdef2 == false and _G.targetsword2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.meleespin2 = true
 else
 _G.meleespin2 = false
 end
-if _G.targetsnip2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 then
+if _G.targetsnip2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsword2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.sniperspin2 = true
 else
 _G.sniperspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.swordspin2 = true
 else
 _G.swordspin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 then
+if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleespin2 = true
 else
 _G.defmeleespin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 then
+if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.defsnipspin2 = true
 else
 _G.defsnipspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.defswordspin2 = true
 else
 _G.defswordspin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 then
+if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 then
 _G.meleesnipspin2 = true
 else
 _G.meleesnipspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.meleeswordspin2 = true
 else
 _G.meleeswordspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 then
 _G.swordsnipspin2 = true
 else
 _G.swordsnipspin2 = false
 end
-if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 then
+if _G.targetsword2 == false and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleesnipspin2 = true
 else
 _G.defmeleesnipspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == false and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.defmeleeswordspin2 = true
 else
 _G.defmeleeswordspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == false and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 then
 _G.meleesnipswordspin2 = true
 else
 _G.meleesnipswordspin2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == false and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.defswordsnip2 = true
 else
 _G.defswordsnip2 = false
 end
-if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.trqpwo2 then
+if _G.targetsword2 == true and _G.targetdef2 == true and _G.targetmelee2 == true and _G.targetsnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.trqpwo2 and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.trqpwo2 then
 _G.allspin2 = true
 else
 _G.allspin2 = false
@@ -6882,7 +6884,7 @@ if _G.startrop then
 repeat task.wait()
 for _, fruitz in pairs(Fruittaoew) do
 for i, player in pairs(game.Players:GetChildren()) do 
-if player.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted,player.Name) then
+if player.Name ~= usingname and not table.find(anticamplisted,player.Name) then
 for i, backpack in pairs(player:GetChildren()) do
 if backpack.Name == "Backpack" then 
 for i, v in pairs(backpack:GetChildren()) do
@@ -6907,7 +6909,7 @@ pcall(function()
 if _G.startropaura then
 repeat task.wait()
 for i, playera in pairs(game.Players:GetChildren()) do 
-if playera.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted,playera.Name) then
+if playera.Name ~= usingname and not table.find(anticamplisted,playera.Name) then
 for i, backpacka in pairs(playera:GetChildren()) do
 if backpacka.Name == "Backpack" then 
 for i, v in pairs(backpacka:GetChildren()) do
@@ -7117,7 +7119,7 @@ pcall(function()
 if _G.Hitboxplr then
 repeat wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
+if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
 v.Character.HumanoidRootPart.Transparency = 0.7
 v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
@@ -7126,7 +7128,7 @@ end
 until not _G.Hitboxplr
 wait()
 for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Name ~= usingname then
 v.Character.HumanoidRootPart.Transparency = 1
 v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
 end
@@ -7324,7 +7326,7 @@ repeat wait() until _G.autocannonplrbring == true
 pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                         v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = false
@@ -7336,7 +7338,7 @@ repeat wait()
 until not _G.autocannonplrbring
 wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                 	    v.Character.HumanoidRootPart.CanCollide = true
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1
@@ -7353,7 +7355,7 @@ repeat wait() until _G.autocannonfling == true
 pcall(function()
 repeat wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                         v.Character.HumanoidRootPart.Transparency = 0.7
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
                         v.Character.HumanoidRootPart.CanCollide = true
@@ -7363,7 +7365,7 @@ repeat wait()
 until not _G.autocannonfling
 wait()
                 for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name and not table.find(anticamplisted, v.Name) then
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                 	    v.Character.HumanoidRootPart.CanCollide = true
                             v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
                             v.Character.HumanoidRootPart.Transparency = 1
@@ -7408,13 +7410,13 @@ while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
 repeat wait()
-local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local hakigoc = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 repeat wait()
 until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > hakiuse then
+if game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value > hakiuse then
 _G.onhaki = true
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= hakiuse then
+elseif game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value <= hakiuse then
 _G.regenhaki = true
 end
 until not _G.autohakicannon
@@ -7432,11 +7434,11 @@ while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
 repeat wait()
-local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local hakigoc = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
-game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+game.workspace.UserData["User_" ..usingid].UpdateHaki:FireServer()
 end
 _G.onhaki = false
 _G.regenhaki = true
@@ -7450,12 +7452,12 @@ while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
 repeat wait()
-local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local hakigoc = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 
-if _G.offhaki == true and game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < hakiuse and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+if _G.offhaki == true and game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value < hakiuse and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
-game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+game.workspace.UserData["User_" .. usingid].UpdateHaki:FireServer()
 wait()
 end
 
@@ -7469,10 +7471,10 @@ while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
 repeat wait()
-local hakigoc = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local hakigoc = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 hakimuon = hakiuse + 10
-if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value < hakimuon and not _G.onhaki then
+if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value < hakimuon and not _G.onhaki then
 wait()
 for i = 1, regenspeed do wait()
     local args = {
@@ -7480,13 +7482,13 @@ for i = 1, regenspeed do wait()
         [2] = hakigoc
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = hakigoc
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
     end
 task.wait(2)
         local args = {
@@ -7494,17 +7496,17 @@ task.wait(2)
         [2] = hakigoc
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
         [2] = hakigoc
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 repeat wait()
-until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= hakigoc and _G.regenhaki == true then 
+until game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+if game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc and _G.regenhaki == true then 
 wait()
 _G.onhaki = true
 _G.regenhaki = false
@@ -7658,7 +7660,7 @@ until (_G.autocannon == false and _G.autocannonslow == true) or (_G.autocannonpl
 pcall(function()
 repeat wait(0.05)
 for _, cannonz in pairs(Rarefruit) do
-if game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(cannonz) then
+if game.Workspace[usingname].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game.Players.LocalPlayer.Character
 end
 end
@@ -7693,7 +7695,7 @@ spawn(function()
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
 repeat wait(4)
-for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
+for i,c in pairs(workspace.ResourceHolder["Resources_"..usingid]:GetDescendants()) do
 if c.Name == "CannonBall" then
 c:Destroy()
 end
@@ -7709,7 +7711,7 @@ spawn(function()
         pcall(function()
             if _G.automobtpcn or _G.autocannonfling then
 repeat wait(10)
-for i,c in pairs(workspace.ResourceHolder["Resources_"..game.Players.LocalPlayer.UserId]:GetDescendants()) do
+for i,c in pairs(workspace.ResourceHolder["Resources_"..usingid]:GetDescendants()) do
 if c.Name == "CannonBall" then
 c:Destroy()
 end
@@ -7729,7 +7731,7 @@ spawn(function()
                         pcall(function()
                             if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
                                 for i = 1,5 do wait(0.02)
-                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.automobtpcn then
                                             q.CFrame = v.HumanoidRootPart.CFrame
                                                 q.CanCollide = false
@@ -7743,7 +7745,7 @@ for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetD
 pcall(function()
 		if v.Name == "Zombie" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
                                 for i = 1,5 do wait(0.02)
-                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.automobtpcn then
                                             q.CFrame = v.HumanoidRootPart.CFrame
                                                 q.CanCollide = false
@@ -7766,9 +7768,9 @@ spawn(function()
                 repeat wait()
                     for i, v in pairs(game.Players:GetChildren()) do
 pcall(function()
-if v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
+if v.Name ~= usingname and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
                                 for i = 1,10 do wait(0.02)
-                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                                    for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.autocannonfling then
                                             q.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
                                                 q.CanCollide = true
@@ -7810,7 +7812,7 @@ spawn(function()
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
                 repeat task.wait()
-                    for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                    for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
                             v.CanCollide = false
@@ -8106,9 +8108,9 @@ while wait(0.5) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge13")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge13")
 elseif game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge14")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
 end)
 end
@@ -8122,7 +8124,7 @@ pcall(function()
 repeat task.wait()
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" and getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+game.workspace[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 task.wait()
 amongus()
 task.wait()
@@ -8130,14 +8132,14 @@ end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" and getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+game.workspace[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 task.wait()
 amongus()
 task.wait()
 end
 end
 if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+game.workspace[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 amongus()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end
@@ -8155,7 +8157,7 @@ pcall(function()
 repeat
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" and getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+game.workspace[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 task.wait()
 amongus()
 task.wait(0.05)
@@ -8163,14 +8165,14 @@ end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" and getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
-game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+game.workspace[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 task.wait()
 amongus()
 task.wait(0.05)
 end
 end
 if getgenv().farmslowstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then task.wait()
-game.workspace[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+game.workspace[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 amongus()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end
@@ -8188,33 +8190,33 @@ if _G.farmhakinek then
 pcall(function()
 _G.concu = true
 while _G.concu do wait()
-local slv = game.workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.HakiLevel.Value
+local slv = game.workspace.UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local sss = slv/100*hakitarget
 local sll =  slv/100*90
-if game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value > sss and _G.farmhakinek == true then
+if game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
 for i = 1, hakispeed do
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 end
-elseif game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value <= sss and _G.farmhakinek == true then
+elseif game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value <= sss and _G.farmhakinek == true then
         local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 repeat wait()
-until game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].HakiBar.Value >= sll or game.Workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.Position.Y > 211000
+until game.Workspace.UserData["User_"..tostring(usingid)].HakiBar.Value >= sll or game.Workspace[usingname].HumanoidRootPart.Position.Y > 211000
 elseif _G.farmhakinek == false then
 _G.concu = false
         local args = {
@@ -8222,7 +8224,7 @@ _G.concu = false
         [2] = 1
     }
     
-    workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].III:FireServer(unpack(args))
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 end
 end
 
@@ -8237,111 +8239,111 @@ while wait(0.5) do
 pcall(function()
 if _G.farmadvanced then
 pcall(function()
-x = game.Players.LocalPlayer.UserId
+x = usingid
 haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
 for i = 1, speedyadvance do
             local args = {
                 [1] = "On",
                 [2] = haki
             }
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "On",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "On",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "On",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "On",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
             local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
 end
 task.wait(12)
 end)
@@ -8715,7 +8717,7 @@ while wait(0.3) do
 if _G.quayfirstdf2 or _G.quayfirstdf then
 pcall(function()
 if game.Players[""..tostring(game.Players.LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
-workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].ChallengesRemote:FireServer("Claim","Challenge12")
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge12")
 end
 end)		
 end
@@ -8726,10 +8728,10 @@ spawn(function()
 while wait(2) do
 if _G.rolznewaff == true then
 pcall(function()
-if _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value < _G.affpointnew then
+if _G.keendef == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.affpointnew then
 _G.rundef = true
 _G.trykeepdef = false
-elseif _G.keendef == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Defense.Value >= _G.affpointnew then
+elseif _G.keendef == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value >= _G.affpointnew then
 _G.rundef = false
 _G.trykeepdef = true
 elseif _G.keendef == false then
@@ -8737,10 +8739,10 @@ _G.trykeepdef = false
 _G.rundef = false
 end
 task.wait()
-if _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value < _G.affpointnew then
+if _G.keenmelee == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value < _G.affpointnew then
 _G.runmelee = true
 _G.trykeepmelee = false
-elseif _G.keenmelee == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Melee.Value >= _G.affpointnew then
+elseif _G.keenmelee == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Melee.Value >= _G.affpointnew then
 _G.runmelee = false
 _G.trykeepmelee = true
 elseif _G.keenmelee == false then
@@ -8748,10 +8750,10 @@ _G.trykeepmelee = false
 _G.runmelee = false
 end
 task.wait()
-if _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value < _G.affpointnew then
+if _G.keensnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value < _G.affpointnew then
 _G.runsnip = true
 _G.trykeepsnip = false
-elseif _G.keensnip == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sniper.Value >= _G.affpointnew then
+elseif _G.keensnip == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sniper.Value >= _G.affpointnew then
 _G.runsnip = false
 _G.trykeepsnip = true
 elseif _G.keensnip == false then
@@ -8759,10 +8761,10 @@ _G.runsnip = false
 _G.trykeepsnip = false
 end
 task.wait()
-if _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value < _G.affpointnew then
+if _G.keensw == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value < _G.affpointnew then
 _G.runsw = true
 _G.trykeepsw = false
-elseif _G.keensw == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT1Sword.Value >= _G.affpointnew then
+elseif _G.keensw == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Sword.Value >= _G.affpointnew then
 _G.runsw = false
 _G.trykeepsw = true
 elseif _G.keensw == false then
@@ -8792,10 +8794,10 @@ spawn(function()
 while wait(2) do
 if _G.rolznewaff2 == true then
 pcall(function()
-if _G.keendef2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value < _G.affpointnew2 then
+if _G.keendef2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.affpointnew2 then
 _G.rundef2 = true
 _G.trykeepdef2 = false
-elseif _G.keendef2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Defense.Value >= _G.affpointnew2 then
+elseif _G.keendef2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value >= _G.affpointnew2 then
 _G.rundef2 = false
 _G.trykeepdef2 = true
 elseif _G.keendef2 == false then
@@ -8803,10 +8805,10 @@ _G.rundef2 = false
 _G.trykeepdef2 = false
 end
 task.wait()
-if _G.keenmelee2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value < _G.affpointnew2 then
+if _G.keenmelee2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value < _G.affpointnew2 then
 _G.runmelee2 = true
 _G.trykeepmelee2 = false
-elseif _G.keenmelee2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Melee.Value >= _G.affpointnew2 then
+elseif _G.keenmelee2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Melee.Value >= _G.affpointnew2 then
 _G.runmelee2 = false
 _G.trykeepmelee2 = true
 elseif _G.keenmelee2 == false then
@@ -8814,10 +8816,10 @@ _G.runmelee2 = false
 _G.trykeepmelee2 = false
 end
 task.wait()
-if _G.keensnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value < _G.affpointnew2 then
+if _G.keensnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value < _G.affpointnew2 then
 _G.runsnip2 = true
 _G.trykeepsnip2 = false
-elseif _G.keensnip2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sniper.Value >= _G.affpointnew2 then
+elseif _G.keensnip2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sniper.Value >= _G.affpointnew2 then
 _G.runsnip2 = false
 _G.trykeepsnip2 = true
 elseif _G.keensnip2 == false then
@@ -8825,10 +8827,10 @@ _G.trykeepsnip2 = false
 _G.runsnip2 = false
 end
 task.wait()
-if _G.keensw2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value < _G.affpointnew2 then
+if _G.keensw2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value < _G.affpointnew2 then
 _G.runsw2 = true
 _G.trykeepsw2 = false
-elseif _G.keensw2 == true and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.DFT2Sword.Value >= _G.affpointnew2 then
+elseif _G.keensw2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Sword.Value >= _G.affpointnew2 then
 _G.runsw2 = false
 _G.trykeepsw2 = true
 elseif _G.keensw2 == false then

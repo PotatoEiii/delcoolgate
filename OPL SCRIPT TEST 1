@@ -576,7 +576,7 @@ qwefczxcve2 = Tabs.Edge:AddToggle("qwefczxcve2toggle", {Title = "GOD MODE (Bomb 
 qwefczxcve2:OnChanged(function()
 if Options.qwefczxcve2toggle.Value == true then
 _G.godmode = true
-while _G.godmode do wait(4)
+while _G.godmode do
 pcall(function()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
@@ -599,6 +599,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+wait(2)
 end)
 end
 else

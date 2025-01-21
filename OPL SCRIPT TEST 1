@@ -1043,7 +1043,7 @@ Tabs.Misc:AddSection("						    --Old Scripts--")
         Title = "Saluna Old",
         Description = "Open Saluna Old Script",
         Callback = function()
-loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb1640c549df25cafbedc4fb868ea87a/zxww"))()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/zuwx.lua"))()
         end
     })
 
@@ -1052,7 +1052,7 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/6f5eb318bb16
         Description = "Open Nothing Hub Script",
         Callback = function()
 pcall(function()
-loadstring(game:HttpGet("https://bitbucket.org/hehehezz/hellowz/raw/af0a0174fdaeb8c720eac056eff0d9e74d5087e6/chhickendiu"))()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/chick.lua"))()
 end)
 end
     })
@@ -9208,7 +9208,7 @@ end)
 SaveManager:LoadAutoloadConfig()
 
 if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/hellowz/raw/ee153aeb755fe6039f2aaf31e6c848fafbbb97f9/frzxhoo.lua'))()
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/fruithook.lua'))()
 end
 
 else

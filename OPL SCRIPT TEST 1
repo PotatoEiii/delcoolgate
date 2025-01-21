@@ -1588,7 +1588,7 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampMagma and _G.SelectedKillPlayer ~= nil and _G.SelectedKillPlayer ~= "" and game.Players:FindFirstChild("_G.SelectedKillPlayer) then
+if _G.CampMagma and _G.SelectedKillPlayer ~= nil and _G.SelectedKillPlayer ~= "" and game.Players:FindFirstChild(_G.SelectedKillPlayer) then
 repeat wait()
 for i, v in pairs(game.Workspace[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
 v.CFrame = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame

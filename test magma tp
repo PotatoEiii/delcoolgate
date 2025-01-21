@@ -1,8 +1,0 @@
-game.Workspace[tostring(game.Players.LocalPlayer.Name)].Powers.Magma.Shots.ChildAdded:Connect(function(child)
-task.wait()
-repeat task.wait()
-pcall(function()
-child.CFrame = game.Players.azpro2k7.Character.HumanoidRootPart.CFrame
-end)
-until not child
-end)

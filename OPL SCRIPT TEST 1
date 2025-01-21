@@ -7768,7 +7768,7 @@ spawn(function()
                 repeat wait()
                     for i, v in pairs(game.Players:GetChildren()) do
 pcall(function()
-if v.Name ~= usingname and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
+if v.Name ~= usingname and not table.find(anticamplisted, v.Name) and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
                                 for i = 1,10 do wait(0.02)
                                     for i, q in pairs(game.Workspace.ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.autocannonfling then

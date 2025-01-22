@@ -21,10 +21,19 @@ task.wait()
 repeat task.wait()
 pcall(function()
 if child.Name == "CandyJawbreaker" then
-child.CFrame = game.Players["asdfghjklzxcvbnmdz"].Character.HumanoidRootPart.CFrame
+child.CFrame = game.Players["DarkEsper_057"].Character.HumanoidRootPart.CFrame
 child.CanCollide = false
 child.CanTouch = false
 end
+end)
+until not child
+end)
+
+game.Workspace[tostring(game.Players.LocalPlayer.Name)].Powers.Venom.Explosions.ChildAdded:Connect(function(child)
+task.wait()
+repeat task.wait()
+pcall(function()
+child.CFrame = game.Players["DarkEsper_057"].Character.HumanoidRootPart.CFrame
 end)
 until not child
 end)

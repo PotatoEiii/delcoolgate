@@ -9230,6 +9230,9 @@ end)
 
 SaveManager:LoadAutoloadConfig()
 
+if game.CoreGui:FindFirstChild("SALUNALOADING") then
+game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
+end
 if game.placeId == 3237168 then
 loadstring(game:HttpGet('https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/fruithook.lua'))()
 end
@@ -9242,6 +9245,4 @@ end
 if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
-        if game.CoreGui:FindFirstChild("SALUNALOADING") then
-            game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
-        end
+

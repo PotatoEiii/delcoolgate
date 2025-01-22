@@ -43,7 +43,10 @@ game.Workspace.ResourceHolder["Resources_1322815101].OpeRoom.CFrame = game.Playe
 game.Workspace[tostring(game.Players.LocalPlayer.Name)].Powers.Vampire.Shots.ChildAdded:Connect(function(child)
 task.wait()
 pcall(function()
+child.Rocket:Destroy()
+repeat task.wait()
 child.CFrame = game.Players["DarkEsper_057"].Character.HumanoidRootPart.CFrame
+until not child
 end)
 end)
 

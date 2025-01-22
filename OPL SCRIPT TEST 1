@@ -514,9 +514,6 @@ do
         if game.CoreGui:FindFirstChild("BBB") then
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
-        if game.CoreGui:FindFirstChild("SALUNALOADING") then
-            game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
-        end
 end
      SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
@@ -1117,7 +1114,7 @@ if not table.find(anticamplisted,variazxwt) then
     _G.SelectedKillPlayer = variazxwt
 Fluent:Notify({
     Title = "Saluna  Notify",
-    Content = "Selected"..tostring(_G.SelectedKillPlayer),
+    Content = "Selected "..tostring(_G.SelectedKillPlayer),
     Duration = 5
 })
 else
@@ -9245,3 +9242,6 @@ end
 if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
+        if game.CoreGui:FindFirstChild("SALUNALOADING") then
+            game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
+        end

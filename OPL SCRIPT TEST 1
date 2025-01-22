@@ -410,29 +410,7 @@ end)
 
 asdwqelist = false
 antiusefree = false
-anticamplisted = {
-"DarkEsper_057",
-"accquaydffirstsea1", 
-"ACE_xXAZPROGOD123Xx", 
-"acclaybounty01",
-"dangw0",
-"acclaybounty07",
-"asdfghjklzxcvbnmdz", -- Dương 1
-"3066114825", -- Dương 2
-"Anhlapro7890a", -- Khôi 1
-"darkbluedrag", -- Khôi 2
-"LHPGamingVN", -- Khôi 3
-"longxauqa", -- Khôi 4
-"Farquaneta", -- Khôi 5
-"SML_SsBettSenpaoxX", -- Khôi 6
-"azdfghjklzxcvbnmdz", -- Khôi 7
-"kaloss13", -- Khôi 8
-"T05_7", -- Khôi 9
-"Tuasjebf", -- Khôi 10
-"WinterAndEvil", -- Khôi 11
-"phuongcute2k2" -- Khôi 12
-}
-
+anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -440,10 +418,16 @@ gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
 asdwqelist = true
             end
         end
-
 userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
         for _, v2 in pairs(userlistedzxwc) do
             if (game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2) and game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name) then
+asdwqelist = true
+            end
+        end
+
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
+        for _, v3 in pairs(khoilistedzxwc) do
+            if (game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v3) and game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name) then
 asdwqelist = true
             end
         end

@@ -1478,7 +1478,7 @@ if v.Name == "MagmaBall" then
 v.CFrame = game.Players:FindFirstChild(tostring(_G.SelectedKillPlayer)).Character.HumanoidRootPart.CFrame
 end
 end
-until not _G.TPMAGMABALL or not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or game.Players:FindFirstChild(tostring((_G.SelectedKillPlayer)).Character.Humanoid.Health == 0
+until not _G.TPMAGMABALL or not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
 end
 end)
 end

@@ -1416,7 +1416,7 @@ _G.CampString = false
 end
 end)
 
-magmatpball = Tabs.Player:AddToggle("magmatpballtoggle", {Title = "Magma Camp", Default = false })
+magmatpball = Tabs.Player:AddToggle("magmatpballtoggle", {Title = "TP Magma Ball (Optional)", Default = false })
 magmatpball:OnChanged(function()
 if Options.magmatpballtoggle.Value == true then
 _G.TPMAGMABALL = true
@@ -1434,7 +1434,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
     pcall(function()
-repeat task.wait(0.07)
+repeat task.wait(0.15)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",

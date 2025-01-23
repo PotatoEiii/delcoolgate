@@ -9234,7 +9234,7 @@ if game.CoreGui:FindFirstChild("SALUNALOADING") then
 game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
 end
 if game.placeId == 3237168 then
-loadstring(game:HttpGet('https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/fruithook.lua'))()
+loadstring(game:HttpGet('https://bitbucket.org/hehehezz/zomwg/raw/af5946e9bfb32815f8a4fbbc2574ea8075237790/fruithook.lua'))()
 end
 
 else

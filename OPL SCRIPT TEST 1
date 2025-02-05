@@ -219,7 +219,8 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 				child:Destroy()
 			end
 		end)()
-	end)  
+	end) 
+end)
 wait()
 usingname = game.Players.LocalPlayer.Name
 usingid = game.Players.LocalPlayer.UserId

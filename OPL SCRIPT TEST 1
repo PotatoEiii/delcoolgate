@@ -3710,8 +3710,8 @@ for i,v in pairs(getconnections(game.Players.LocalPlayer.Character:FindFirstChil
 yorucode = getsenv(game.Players.LocalPlayer.Character:FindFirstChild("Yoru").AnimationController).PlaceId
 end
 end
+if yorucode ~= "" and yorucode ~= nil then
 repeat task.wait()
-if yorucode ~= "" then
 for i = 1, yoruspeedzx do
 local args = {
 [1] = yorucode
@@ -3719,8 +3719,8 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Yoru.RequestAnimation:FireServer(unpack(args))
 end
+until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 end
-until not _G.yoruonrt or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
 yorucode = ""
 end)
 end

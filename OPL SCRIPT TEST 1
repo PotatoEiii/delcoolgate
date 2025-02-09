@@ -622,7 +622,7 @@ while wait(4) do
 pcall(function()
 local swordtablepro = {}
 if game.Workspace.UserData["User_"..usingid].Data["PlayerHas_Divine Axe"].Value == false then
-divineprocess = tostring("Divine Axe: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Expert"].Value.."/100")
+divineprocess = tostring("Divine Axe: "..game.Workspace.UserData["User_"..usingid].Data["NPC_Activation_Expert"].Value.."/1000")
 else
 divineprocess = "Divine Axe: (Completed)"
 end

@@ -7310,14 +7310,18 @@ end)
 
 spawn(function()
     while wait(0.3) do
-repeat wait() until _G.fastcannon == true
+repeat wait(0.1) until _G.fastcannon == true
         pcall(function()
-repeat wait(0.1)
+repeat wait()
+    local cannonBalls = {}
 for i,tuy in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(tuy)
-wait(1.5)
+table.insert(cannonBalls, tuy)
 end
+end
+for i, asd in pairs(cannonBalls) do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(asd)
+wait(0.75)
 end
 until not _G.autocannon
         end)
@@ -7326,21 +7330,22 @@ end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.fastcannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
+if _G.fastcannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
 pcall(function()
 wait(1)
 for i= 1,5 do
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
+end)
+end
 repeat wait()
-until not _G.fastcannon or game.Players.LocalPlayer.Character.Humanoid.Health == 0
-        end)
+until (not _G.fastcannon) or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 2110000)
     end
 end)
 
 spawn(function()
     while wait(0.3) do
-repeat wait() until _G.fastcannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000
+if _G.fastcannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
 pcall(function()
 wait(1)
 for i = 1,10 do wait(1)
@@ -7350,9 +7355,10 @@ v:Destroy()
 end
 end
 end
-repeat wait()
-until not _G.fastcannon  or game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 211000
         end)
+end
+repeat wait()
+until (not _G.fastcannon)  or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 2110000)
     end
 end)
 

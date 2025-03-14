@@ -7330,35 +7330,26 @@ end)
 
 spawn(function()
 while wait(0.3) do
-if _G.fastcannon == true and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
-repeat wait()
-until game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") or game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball")
+if _G.fastcannon == true then wait(4)
 pcall(function()
-wait(1)
-for i= 1,5 do
+for i= 1,10 do
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
 end)
-end
 repeat wait()
-until (not _G.fastcannon) or (game.Players.LocalPlayer.Character.Humanoid.Health == 0)
-    end
-end)
-
-spawn(function()
-    while wait(0.3) do
-if _G.fastcannon == true then
 pcall(function()
 wait(1)
 for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
+if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" and not string.find(v.Name, "Box") and not string.find(v.Name, "Compass") then
 v:Destroy()
 end
 end
-        end)
-end
-    end
 end)
+until (not _G.fastcannon) or (game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health == 0) or (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y > 211000) or (game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):GetState() == Enum.HumanoidStateType.Dead)
+end
+end
+end)
+
 
 spawn(function() -- autofarm bring cannon
 while wait(0.3) do

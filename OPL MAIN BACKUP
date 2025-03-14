@@ -521,6 +521,7 @@ end
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
+pcall(function()
 local mta = getrawmetatable(game)
 local namecall = mta.__namecall
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
@@ -534,7 +535,7 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     end
     return aaxc(self, ...)
 end)
-
+end)
  Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
  SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Configuration.lua"))()
  InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()

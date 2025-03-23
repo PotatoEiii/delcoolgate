@@ -3102,7 +3102,7 @@ Fluent:Notify({
 })
             while _G.autospawnnew do wait()
                     pcall(function()
-                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then wait()
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then wait(0.1)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
 game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
@@ -3117,10 +3117,11 @@ pcall(function()
 	game.Players.LocalPlayer.CameraMode = "Classic"
 	game.Players.LocalPlayer.Character.Head.Anchored = false   
 end)
-wait()
+wait(0.1)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-repeat wait()
+repeat wait(0.1)
 until #game:GetService("Players").LocalPlayer.Backpack:GetChildren() > 0
+wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
                         end
                     end)

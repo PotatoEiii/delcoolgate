@@ -3066,7 +3066,7 @@ end
 end)
 
 Tabs.Automatic:AddSection("					   --Game Function--")
-AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn (Currently Down)", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -3088,6 +3088,45 @@ Fluent:Notify({
             end
 else
 _G.autospawn = false
+end
+end)
+
+AutospawnnewToggle = Tabs.Automatic:AddToggle("Autospawnnew1Toggle", {Title = "Auto Spawn (New)", Default = false })
+    AutospawnnewToggle:OnChanged(function()
+if Options.Autospawnnew1Toggle.Value == true then
+_G.autospawnnew = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn (New) Is Turned On",
+    Duration = 5
+})
+            while _G.autospawnnew do wait()
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then wait()
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
+game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
+pcall(function()
+	workspace.CurrentCamera:remove()
+	wait(.1)
+	repeat wait() until game.Players.LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+	game.Players.LocalPlayer.CameraMode = "Classic"
+	game.Players.LocalPlayer.Character.Head.Anchored = false   
+end)
+wait()
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+repeat wait()
+until #game:GetService("Players").LocalPlayer.Backpack:GetChildren() > 0
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+                        end
+                    end)
+            end
+else
+_G.autospawnnew = false
 end
 end)
 

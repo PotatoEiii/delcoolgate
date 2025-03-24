@@ -12,23 +12,23 @@ repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
-_G.WhiteListed = false
+asdwqelist = false
 listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listed) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
-_G.WhiteListed = true
+asdwqelist = true
             end
         end
 
-userlisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/world2.lua'))()
-        for _, v2 in pairs(userlisted) do
-            if game.Players.LocalPlayer.UserId == v2 then
-_G.WhiteListed = true
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
+        for _, v2 in pairs(userlistedzxwc) do
+            if (game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2) and game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name) then
+asdwqelist = true
             end
         end
-SALUNALOADING:Destroy()
-if _G.WhiteListed then
+
+if asdwqelist then
 _G.dupegem = true
 
 spawn(function()

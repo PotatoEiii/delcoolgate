@@ -49,6 +49,7 @@ game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
 game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.BoundUnlock11.Value == true or
 game.Workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.BoundUnlock12.Value == true then
 _G.startdupe = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = false
 else
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true

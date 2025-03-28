@@ -162,6 +162,30 @@ Rarefruit = {
 "Quake Fruit",
 "Vampire Fruit"
 }
+
+StoreRarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit"
+}
+StoreUltrafruit = {
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
 MeleeTTT = {
 "Melee",
 "Table Kick",
@@ -2639,12 +2663,21 @@ end)
 
 Tabs.Fruit:AddSection("			   --Auto Store Devil Fruits--")
 
-storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
-storefruit:OnChanged(function()
-if Options.storefruittoggle.Value == true then
-_G.storeffrt = true
+storefruitrare = Tabs.Fruit:AddToggle("storefruitraretoggle", {Title = "Auto Store Rare Fruit", Default = false })
+storefruitrare:OnChanged(function()
+if Options.storefruitraretoggle.Value == true then
+_G.storeffrtrare = true
 else
-_G.storeffrt = false
+_G.storeffrtrare = false
+end
+end)
+
+storefruitultra = Tabs.Fruit:AddToggle("storefruitultratoggle", {Title = "Auto Store Ultra Fruit", Default = false })
+storefruitultra:OnChanged(function()
+if Options.storefruitultratoggle.Value == true then
+_G.storeffrtultra = true
+else
+_G.storeffrtultra = false
 end
 end)
 
@@ -7314,10 +7347,10 @@ end)
 
 spawn(function()
 while wait(0.3) do
-repeat wait() until _G.storeffrt == true
+repeat wait() until _G.storeffrtrare == true
 pcall(function()
 repeat task.wait()
-for i, t in pairs(Rarefruit) do
+for i, t in pairs(StoreRarefruit) do
 for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if u.Name == t then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
@@ -7326,7 +7359,26 @@ storedf()
 end
 end
 end
-until not _G.storeffrt
+until not _G.storeffrtrare
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+repeat wait() until _G.storeffrtultra == true
+pcall(function()
+repeat task.wait()
+for i, t in pairs(StoreUltrafruit) do
+for i, u in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if u.Name == t then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(u)
+task.wait()
+storedf()
+end
+end
+end
+until not _G.storeffrtultra
 end)
 end
 end)

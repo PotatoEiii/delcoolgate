@@ -3156,10 +3156,12 @@ until (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Pos
 wait(0.1)
 if _G.autospawnnew == true then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+for i = 1,5 do wait(0.1)
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 v:Destroy()
 end
-game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+end
 end
                         end
                     end)

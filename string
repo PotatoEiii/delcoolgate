@@ -1,9 +1,10 @@
 _G.CampString = true
 _G.SelectedKillPlayer = "Input UserName here"
+
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then 
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then
 pcall(function()
 repeat task.wait(0.15)
 local args = {
@@ -30,10 +31,11 @@ end)
 end
 end)
 
+
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.CampString == true then
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == false then
 repeat wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0,-1,0)
 wait(0.1)

@@ -1,1 +1,58 @@
+_G.CampString = true
+_G.SelectedKillPlayer = "Input UserName here"
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.CampString == true and game.Players.LocalPlayer.Character.Humanoid.Sit == true then 
+pcall(function()
+repeat task.wait(0.15)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
+    [2] = "StringPower8",
+    [3] = "Start",
+    [4] = game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Torso.CFrame,
+    [5] = game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.Torso
+}
 
+game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
+task.wait()
+until game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game.Players:FindFirstChild(_G.SelectedKillPlayer))
+wait()
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
+    [2] = "StringPower7"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.CampString == true then
+repeat wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.Seat.CFrame * CFrame.new(0,-1,0)
+wait(0.1)
+until not _G.CampString or game.Players.LocalPlayer.Character.Humanoid.Sit == true
+end
+end)
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+pcall(function()
+if _G.CampString == true then
+repeat wait()
+pcall(function()
+game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
+end)
+until not _G.CampString
+end
+end)
+end
+end)

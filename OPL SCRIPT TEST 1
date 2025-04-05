@@ -1456,11 +1456,11 @@ magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", De
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
-while _G.CampMagma do
+while _G.CampMagma do wait(0.1)
 pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do wait()
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
-    pcall(function()
+pcall(function()
 repeat task.wait(0.15)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
@@ -1483,8 +1483,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
-until not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer)
-wait(0.1)
+until (not _G.CampMagma) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer))
 end)
 end
 end
@@ -1498,14 +1497,14 @@ end)
 spawn(function()
 while wait(0.3) do
 pcall(function()
-if _G.TPMAGMABALL and _G.CampMagma and _G.SelectedKillPlayer ~= nil and _G.SelectedKillPlayer ~= "" and game.Players:FindFirstChild(_G.SelectedKillPlayer) then
+if _G.TPMAGMABALL and _G.CampMagma and game.Players:FindFirstChild(_G.SelectedKillPlayer) then
 repeat task.wait(0.1)
 for i, v in pairs(game.Workspace[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
-if v.Name == "MagmaBall" then
+if v.Name == "MagmaBall" then wait()
 v.CFrame = game.Players:FindFirstChild(tostring(_G.SelectedKillPlayer)).Character.HumanoidRootPart.CFrame
 end
 end
-until not _G.TPMAGMABALL or not _G.CampMagma or not game.Players:FindFirstChild(_G.SelectedKillPlayer) or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or game.Players:FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
+until (not _G.TPMAGMABALL) or (not _G.CampMagma) or (not game.Players:FindFirstChild(_G.SelectedKillPlayer)) or (game.Players.LocalPlayer.Character.Humanoid.Health == 0) or (game.Players:WaitForChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0)
 end
 end)
 end

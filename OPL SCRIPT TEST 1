@@ -1473,6 +1473,7 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
+if game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
@@ -1483,6 +1484,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+end
 until (not _G.CampMagma) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer))
 end)
 end

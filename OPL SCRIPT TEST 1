@@ -942,9 +942,16 @@ Title = "User Information",
 Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor) .."\nProtocol IP: " ..tostring(protocol) .."\nHWID: " ..tostring(hardware)
 })
 
+local placeNames = {
+    [3237168] = "One Piece Legendary",
+    [8569358381] = "OPL: Anarchy"
+}
+local currentPlaceId = game.PlaceId
+local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
+
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "Place ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game:GetService("Players").MaxPlayers
+Content = "Game Name"..currentPlaceName .."\nGame ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game:GetService("Players").MaxPlayers
 })
 
 Tabs.Info:AddSection("						  	 --Discord--")

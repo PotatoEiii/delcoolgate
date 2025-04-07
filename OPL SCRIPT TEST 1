@@ -371,7 +371,7 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\n Admin or Staff: " .. v.Name .. "\nIs Online" .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId,
+                ["description"] = "\n Admin or Staff: " .. v.Name .. " Is Online" .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId,
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff8200),
             }

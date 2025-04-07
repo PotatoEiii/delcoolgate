@@ -404,21 +404,21 @@ asdwqelist = true
         end
 userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
         for _, v2 in pairs(userlistedzxwc) do
-            if (game:GetService("Players").LocalPlayer.UserId and game:GetService("Players").LocalPlayer.Name == v2) and game:GetService("Workspace"):FindFirstChild(game:GetService("Players").LocalPlayer.Name) then
+            if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
             end
         end
 
 khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
         for _, v3 in pairs(khoilistedzxwc) do
-            if (game:GetService("Players").LocalPlayer.UserId and game:GetService("Players").LocalPlayer.Name == v3) and game:GetService("Workspace"):FindFirstChild(game:GetService("Players").LocalPlayer.Name) then
+            if (usingid and usingname == v3) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
             end
         end
 
 antifreezsc = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/whocares/main/rat.lua'))()
         for _, v3 in pairs(antifreezsc) do
-            if game:GetService("Players").LocalPlayer.Name == v3 then
+            if usingname == v3 then
 antiusefree = true
             end
         end
@@ -428,7 +428,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
-if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+if v.Name ~= usingname then
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c:IsA("Model") and c.Name == v.Name then
 local args = {

@@ -9319,3 +9319,9 @@ if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
 
+while realtimechecking do wait(5)
+if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name and game:GetService("Players").LocalPlayer.UserId) and not table.find(khoilistedzxwc, game:GetService("Players").LocalPlayer.Name and game:GetService("Players").LocalPlayer.UserId) then
+game:GetService("Players").LocalPlayer:Kick("What are you doing bruh?")
+end
+end
+

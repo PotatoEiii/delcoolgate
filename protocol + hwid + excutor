@@ -1,0 +1,33 @@
+local _X3N9P5M2L7 = ""
+local _M8Y1X2N3L5 = game:GetService("HttpService")
+local _Q7X9N6M2L4 = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
+
+if not _Q7X9N6M2L4 then return end
+
+local function _F2X7M9N3L1(_P6X8N5M2L9)
+    local _D4X1M7N2L3, _K9X5M2N8L7 = pcall(function()
+        return _Q7X9N6M2L4({ Url = _P6X8N5M2L9, Method = "GET" })
+    end)
+    return (_D4X1M7N2L3 and _K9X5M2N8L7 and _K9X5M2N8L7.Body) and _M8Y1X2N3L5:JSONDecode(_K9X5M2N8L7.Body) or {}
+end
+
+local _W9N3M2X7L5 = game:GetService("Players").LocalPlayer
+local protocol, excutor, hardware = nil, nil, nil
+
+task.spawn(function()
+    protocol = _F2X7M9N3L1("https://ipinfo.io/json").ip or "Unknown IP"
+end)
+
+task.spawn(function()
+    excutor = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
+end)
+
+task.spawn(function()
+    hardware = (gethwid and gethwid()) or "Unknown HWID"
+end)
+
+repeat task.wait() until protocol and excutor and hardware
+
+print(protocol)
+print(excutor)
+print(hardware)

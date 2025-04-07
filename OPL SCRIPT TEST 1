@@ -951,7 +951,7 @@ local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
 
 Tabs.Info:AddParagraph({
 Title = "Server Information",
-Content = "Game Name"..currentPlaceName .."\nGame ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game:GetService("Players").MaxPlayers
+Content = "Game Name: "..currentPlaceName .."\nGame ID: " ..game.PlaceId .. "\nServer JobID: ".. game.JobId .."\nMax Players: "..game:GetService("Players").MaxPlayers
 })
 
 Tabs.Info:AddSection("						  	 --Discord--")

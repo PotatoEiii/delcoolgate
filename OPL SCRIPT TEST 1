@@ -406,6 +406,7 @@ userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Depa
         for _, v2 in pairs(userlistedzxwc) do
             if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
+realtimechecking = true
             end
         end
 
@@ -413,6 +414,7 @@ khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Depa
         for _, v3 in pairs(khoilistedzxwc) do
             if (usingid and usingname == v3) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
+realtimechecking = true
             end
         end
 

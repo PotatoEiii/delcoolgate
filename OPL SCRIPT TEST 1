@@ -420,9 +420,9 @@ local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8b
 end)  
 
 asdwqelist = false
-antiusefree = false
 anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
 anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer'))()
+antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/risk/main/anti%20spy%20(risk)'))()
 for _, v in pairs(anticamplisted2) do
     table.insert(anticamplisted, v)
 end
@@ -448,43 +448,6 @@ asdwqelist = true
 realtimechecking = true
             end
         end
-
-antifreezsc = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/whocares/main/rat.lua'))()
-        for _, v4 in pairs(antifreezsc) do
-            if usingname == v4 then
-antiusefree = true
-            end
-        end
-
-if antiusefree then
-spawn(function()
-while wait(0.3) do
-pcall(function()
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
-if v.Name ~= usingname then
-for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
-if c:IsA("Model") and c.Name == v.Name then
-local args = {
-    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
-    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
-}
-
-c.Shave:FireServer(unpack(args))
-local args = {
-    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
-    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
-}
-
-c.Dash:FireServer(unpack(args))
-wait()
-end
-end
-end
-end
-end)
-end
-end)
-end
 
 if asdwqelist then
 pcall(function()
@@ -10364,3 +10327,34 @@ game:GetService("Players").LocalPlayer:Kick("What are you doing bruh?")
 end
 end
 
+while true do wait(5)
+if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
+spawn(function()
+while wait(0.3) do
+pcall(function()
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v.Name ~= usingname then
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if c:IsA("Model") and c.Name == v.Name then
+local args = {
+    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
+    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
+}
+
+c.Shave:FireServer(unpack(args))
+local args = {
+    [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
+    [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
+}
+
+c.Dash:FireServer(unpack(args))
+wait()
+end
+end
+end
+end
+end)
+end
+end)
+end
+end

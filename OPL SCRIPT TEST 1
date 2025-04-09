@@ -10313,6 +10313,9 @@ end)
 end
 
 else
+if game.CoreGui:FindFirstChild("SALUNALOADING") then
+game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
+end
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end

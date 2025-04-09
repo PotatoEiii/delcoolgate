@@ -422,6 +422,10 @@ end)
 asdwqelist = false
 antiusefree = false
 anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
+anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer'))()
+for _, v in pairs(anticamplisted2) do
+    table.insert(anticamplisted, v)
+end
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listedaxw) do
 gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -446,8 +450,8 @@ realtimechecking = true
         end
 
 antifreezsc = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/whocares/main/rat.lua'))()
-        for _, v3 in pairs(antifreezsc) do
-            if usingname == v3 then
+        for _, v4 in pairs(antifreezsc) do
+            if usingname == v4 then
 antiusefree = true
             end
         end

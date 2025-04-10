@@ -1,3 +1,4 @@
+local SalunaVersion = "4/10/2025"
 repeat task.wait() until game:IsLoaded()
 if not game:IsLoaded() then game:IsLoaded():Wait(7) end
 repeat task.wait()
@@ -9392,7 +9393,7 @@ local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ79
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .."\nPlayers: "..tostring(#game.Players:GetChildren()) .."/" ..tostring(game.Players.MaxPlayers) .."\nCurrent Ping: "..tostring(pingsv) .. "\nCurrent FPS: " ..tostring(fpssv) .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\nKey Type: "..whitelistkeytype .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
+                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .."\nPlayers: "..tostring(#game.Players:GetChildren()) .."/" ..tostring(game.Players.MaxPlayers) .."\nCurrent Ping: "..tostring(pingsv) .. "\nCurrent FPS: " ..tostring(fpssv) .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\nKey Type: "..whitelistkeytype .."\nScript Version: "..SalunaVersion .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

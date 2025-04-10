@@ -4645,7 +4645,7 @@ end)
         Description = "Farm Haki With 1 Click",
         Callback = function()
 if _G.hakimetohdf == "1112222" then
-while task.wait() do
+while task.wait(0.1) do
 for i = 1,999 do
 onhaki()
 onhaki()
@@ -4672,7 +4672,7 @@ end
 task.wait(20)
 end
 elseif _G.hakimetohdf == "122122" then
-while task.wait() do
+while task.wait(0.1) do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -4693,7 +4693,7 @@ end
 task.wait(11)
 end
 elseif _G.hakimetohdf == "1221212122" then
-while task.wait() do
+while task.wait(0.1) do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -4713,7 +4713,7 @@ end
 task.wait(10)
 end
 elseif _G.hakimetohdf == "1221212212" then
-while task.wait() do
+while task.wait(0.1) do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -4745,7 +4745,7 @@ Tabs.Haki:AddSection("				    --Other Haki Method--")
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
 for i = 1,30 do
-while task.wait() do
+while task.wait(0.1) do
 local args = {
     [1] = "On",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
@@ -4761,7 +4761,7 @@ end
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
 for i = 1,30 do
-while task.wait() do
+while task.wait(0.1) do
 local args = {
     [1] = "Off",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
@@ -5027,7 +5027,7 @@ game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
                 end
             end
             function Teleport() 
-                while task.wait() do
+                while task.wait(0.1) do
                     pcall(function()
                         TPReturner()
                         if foundAnything ~= "" then
@@ -7868,7 +7868,7 @@ until not _G.autocannonslow and not _G.autocannonplrbring
 end)
 
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         pcall(function()
             if _G.automobtpcn then
                 repeat task.wait()

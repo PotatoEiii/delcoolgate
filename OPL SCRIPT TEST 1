@@ -452,6 +452,7 @@ khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Depa
         for _, v3 in pairs(khoilistedzxwc) do
             if gethwid == v3 then
 asdwqelist = true
+whitelistkeytype = "Saluna and friends"
             end
         end
 

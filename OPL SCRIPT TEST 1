@@ -1,7 +1,10 @@
 repeat task.wait() until game:IsLoaded()
 if not game:IsLoaded() then game:IsLoaded():Wait(7) end
-repeat wait() until game:GetService("Players").LocalPlayer:FindFirstChild("Backpack")
-task.wait(2)
+repeat task.wait()
+until game.Workspace:FindFirstChild("UserData")
+	and game.Workspace.UserData:FindFirstChild("User_" .. game.Players.LocalPlayer.UserId)
+	and game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("Data")
+	and game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].Data:FindFirstChild("MissionObjective")
 pcall(function()
 SALUNALOADING = Instance.new("ScreenGui")
 SALUNALOADING.Name = "SALUNALOADING"
@@ -745,7 +748,7 @@ Tabs.Boss:AddButton({
 pcall(function()
 	workspace.CurrentCamera:remove()
 	wait(.1)
-	repeat wait() until game:GetService("Players").LocalPlayer.Character ~= nil
+	repeat task.wait() until game:GetService("Players").LocalPlayer.Character ~= nil
 	workspace.CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
 	workspace.CurrentCamera.CameraType = "Custom"
 	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5

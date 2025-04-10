@@ -429,13 +429,14 @@ antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department1
 for _, v in pairs(anticamplisted2) do
     table.insert(anticamplisted, v)
 end
+gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
         for _, v1 in pairs(listedaxw) do
-gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
             if gethwid == v1 then
 asdwqelist = true
             end
         end
+
 userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
         for _, v2 in pairs(userlistedzxwc) do
             if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
@@ -446,9 +447,8 @@ realtimechecking = true
 
 khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
         for _, v3 in pairs(khoilistedzxwc) do
-            if (usingid and usingname == v3) and game:GetService("Workspace"):FindFirstChild(usingname) then
+            if gethwid == v3 then
 asdwqelist = true
-realtimechecking = true
             end
         end
 

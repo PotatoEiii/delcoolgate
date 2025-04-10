@@ -10380,7 +10380,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 end
 
 while realtimechecking do task.wait(5)
-if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) and not table.find(khoilistedzxwc, game:GetService("Players").LocalPlayer.Name) then
+if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) then
 game:GetService("Players").LocalPlayer:Kick("What are you doing bruh?")
 end
 end

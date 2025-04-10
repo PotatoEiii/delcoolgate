@@ -597,7 +597,7 @@ qweasddex = Tabs.Edge:AddDropdown("qweasddex", {
         Default = "",
     })
 
-spawn(function()
+task.spawn(function()
 while wait(4) do
 pcall(function()
 local swordtablepro = {}
@@ -1504,7 +1504,7 @@ _G.CampMagma = false
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.TPMAGMABALL and _G.CampMagma and game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
@@ -5793,7 +5793,7 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 repeat wait() until game.CoreGui:FindFirstChild("BBB")
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startspamskill then
@@ -7010,7 +7010,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startrop then
@@ -7036,7 +7036,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startropaura then
@@ -7062,7 +7062,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
@@ -7083,7 +7083,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
@@ -7123,7 +7123,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
@@ -7139,7 +7139,7 @@ end)
 end
 end)
 
-spawn(function() -- autofarm destroy seat
+task.spawn(function() -- autofarm destroy seat
 while wait(0.3) do
 pcall(function()
 if _G.startrop  or _G.startropaura then
@@ -7158,7 +7158,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
@@ -7198,7 +7198,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
@@ -7221,7 +7221,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if ESPPlayer then
@@ -7239,7 +7239,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.Hitboxplr then
@@ -7264,7 +7264,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.CampString == true and game:GetService("Players").LocalPlayer.Character.Humanoid.Sit == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
@@ -7295,7 +7295,7 @@ end
 end)
 
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.CampString == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
@@ -7308,7 +7308,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.CampString == true and not table.find(anticamplisted,_G.SelectedKillPlayer) then
@@ -7322,7 +7322,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 repeat wait() until _G.wqesorry == true
@@ -7347,7 +7347,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 repeat wait() until getgenv().viewplrr == true
@@ -7362,7 +7362,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.storeffrtrare == true
 pcall(function()
@@ -7381,7 +7381,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.storeffrtultra == true
 pcall(function()
@@ -7400,7 +7400,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.aurasto == true
 pcall(function()
@@ -7417,7 +7417,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
 repeat wait(0.1) until _G.fastcannon == true
         pcall(function()
@@ -7437,7 +7437,7 @@ until not _G.autocannon
     end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if _G.fastcannon == true then wait(4)
 pcall(function()
@@ -7460,7 +7460,7 @@ end
 end)
 
 
-spawn(function() -- autofarm bring cannon
+task.spawn(function() -- autofarm bring cannon
 while wait(0.3) do
 repeat wait() until _G.autocannonplrbring == true
 pcall(function()
@@ -7489,7 +7489,7 @@ wait()
     end
 end)
 
-spawn(function() -- autofarm emphasize
+task.spawn(function() -- autofarm emphasize
 while wait(0.3) do
 repeat wait() until _G.autocannonfling == true
 pcall(function()
@@ -7515,7 +7515,7 @@ wait()
     end
 end)
 
-spawn(function() -- autofarm destroy seat
+task.spawn(function() -- autofarm destroy seat
 while wait(0.3) do
 repeat wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
 pcall(function()
@@ -7530,7 +7530,7 @@ until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
     end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.resetzxcm == true
 pcall(function()
@@ -7545,7 +7545,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
@@ -7569,7 +7569,7 @@ end
 end)
 
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
@@ -7587,7 +7587,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
@@ -7606,7 +7606,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.autohakicannon == true
 pcall(function()
@@ -7657,7 +7657,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until getgenv().grillsell == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
 pcall(function()
@@ -7681,7 +7681,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
 pcall(function()
@@ -7697,7 +7697,7 @@ end
 end)
 
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
 repeat wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
         pcall(function()
@@ -7708,7 +7708,7 @@ until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:F
    end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
 repeat wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
         pcall(function()
@@ -7745,7 +7745,7 @@ until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:F
    end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until getgenv().tret == true
 pcall(function()
@@ -7756,7 +7756,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until getgenv().tret == true
 pcall(function()
@@ -7793,7 +7793,7 @@ end
 end)
 
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() 
 until (_G.fastcannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.fastcannon == false) or (_G.automobtpcn == true and _G.fastcannon == false) or (_G.autocannonfling == true and _G.fastcannon == false)
@@ -7809,7 +7809,7 @@ until (_G.fastcannon == true) or (not _G.autocannonslow and not _G.autocannonplr
    end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn or _G.autocannonfling then
@@ -7830,7 +7830,7 @@ until not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
@@ -7846,7 +7846,7 @@ until not _G.autocannonslow and not _G.autocannonplrbring
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.automobtpcn or _G.autocannonfling then
@@ -7862,7 +7862,7 @@ until not _G.autocannonslow and not _G.autocannonplrbring
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while task.wait() do
         pcall(function()
             if _G.automobtpcn then
@@ -7901,7 +7901,7 @@ end
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannonfling then
@@ -7926,7 +7926,7 @@ end
     end
 end)
 
-spawn(function() -- autofarm velocity
+task.spawn(function() -- autofarm velocity
     while wait(0.3) do
         pcall(function()
             if _G.farmfruit or _G.wqesorry or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or getgenv().bgtyhn or getgenv().fishing or getgenv().tret then
@@ -7947,7 +7947,7 @@ spawn(function() -- autofarm velocity
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
@@ -7964,7 +7964,7 @@ spawn(function()
     end
 end)
 
-spawn(function() -- autofarm cannon
+task.spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.automobtpcn then
@@ -7985,7 +7985,7 @@ end)
 end
 end)
 
-spawn(function() -- autofarm cannon
+task.spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
             if _G.automobtpcn then
@@ -8064,7 +8064,7 @@ until not _G.automobtpcn
     end
 end)
 
-spawn(function() -- autofarm cannon
+task.spawn(function() -- autofarm cannon
     while wait(0.3) do
         pcall(function()
             if _G.autocannonslow then
@@ -8147,7 +8147,7 @@ until not _G.autocannonslow
     end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if getgenv().chawq then
@@ -8166,7 +8166,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if getgenv().tpchaiq and game:GetService("Players").LocalPlayer.Character.Humanoid.Sit == false then
@@ -8178,7 +8178,7 @@ end)
 
 
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if getgenv().vtt then
 repeat wait()
@@ -8196,7 +8196,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if getgenv().tprandom then
 pcall(function()
@@ -8208,7 +8208,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if getgenv().banana then
 repeat wait()
@@ -8227,7 +8227,7 @@ end
 end)
 
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if getgenv().bgtyhn then
 repeat wait()
@@ -8243,7 +8243,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.5) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
@@ -8257,7 +8257,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
@@ -8290,7 +8290,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if getgenv().farmslowstats then
 pcall(function()
@@ -8323,7 +8323,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 if _G.farmhakinek then
@@ -8374,7 +8374,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.5) do
 pcall(function()
 if _G.farmadvanced then
@@ -8492,7 +8492,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if _G.quayfirstdf then
 pcall(function()
@@ -8672,7 +8672,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if _G.quayfirstdf2 then
 pcall(function()
@@ -8852,7 +8852,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 if _G.quayfirstdf2 or _G.quayfirstdf then
 pcall(function()
@@ -8864,7 +8864,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(2) do
 if _G.rolznewaff == true then
 pcall(function()
@@ -8930,7 +8930,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(2) do
 if _G.rolznewaff2 == true then
 pcall(function()
@@ -8996,7 +8996,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 repeat wait() until _G.farmfruit == true
 pcall(function()
@@ -9659,7 +9659,7 @@ end
 end)
 end)  
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
@@ -9712,7 +9712,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
@@ -9763,7 +9763,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF3
     
@@ -9828,7 +9828,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF4
     
@@ -9893,7 +9893,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF5
     
@@ -9958,7 +9958,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF6
     
@@ -10023,7 +10023,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF7
     
@@ -10088,7 +10088,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         local success, errorMsg = pcall(function()
             -- Store initial fruit data
@@ -10148,7 +10148,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             -- Store the initial value
@@ -10197,7 +10197,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             -- Fetching initial data
@@ -10256,7 +10256,7 @@ spawn(function()
 end)
 
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             local playerId = tostring(game.Players.LocalPlayer.UserId)
@@ -10310,7 +10310,7 @@ spawn(function()
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait(0.3) do
         pcall(function()
             _G.fruitdata12 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
@@ -10381,7 +10381,7 @@ end
 
 while true do wait(5)
 if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
-spawn(function()
+task.spawn(function()
 while wait(0.3) do
 pcall(function()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do

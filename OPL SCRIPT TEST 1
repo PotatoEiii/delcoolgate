@@ -64,7 +64,7 @@ I
 N
 G
 .]]
-wait(0.4)
+task.wait(0.4)
 Loading.Text = [[L
 O
 A
@@ -73,7 +73,7 @@ I
 N
 G
 ..]]
-wait(0.4)
+task.wait(0.4)
 Loading.Text = [[L
 O
 A
@@ -82,12 +82,12 @@ I
 N
 G
 ...]]
-wait(1)
+task.wait(1)
 until not game.CoreGui:FindFirstChild("SALUNALOADING")
 end)
 end)
 end)
-wait()
+task.wait()
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
 local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
@@ -471,7 +471,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text 
 local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-       wait(1)
+       task.wait(1)
        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     end)
 
@@ -586,7 +586,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-wait(2)
+task.wait(2)
 end)
 end
 else
@@ -601,7 +601,7 @@ qweasddex = Tabs.Edge:AddDropdown("qweasddex", {
     })
 
 task.spawn(function()
-while wait(4) do
+while task.wait(4) do
 pcall(function()
 local swordtablepro = {}
 if game:GetService("Workspace").UserData["User_"..usingid].Data["PlayerHas_Divine Axe"].Value == false then
@@ -657,10 +657,10 @@ tqwexc2z = Tabs.Boss:AddToggle("tqwexc2ztoggle", {Title = "Auto Summon Zombie", 
 tqwexc2z:OnChanged(function()
 if Options.tqwexc2ztoggle.Value == true then
 _G.wqezombie = true
-while _G.wqezombie do wait(0.3)
+while _G.wqezombie do task.wait(0.3)
 pcall(function()
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
-if v.Name == "ClickDetector" then wait()
+if v.Name == "ClickDetector" then task.wait()
 fireclickdetector(v)
 end
 end
@@ -687,7 +687,7 @@ zxcwqet = Tabs.Boss:AddToggle("zxcwqettoggle", {Title = "Auto Bring Zombie", Def
 zxcwqet:OnChanged(function()
 if Options.zxcwqettoggle.Value == true then
 _G.bringzomis = true
-while _G.bringzomis do wait()
+while _G.bringzomis do task.wait()
 pcall(function()
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
 if v.Name == "Zombie" then
@@ -747,7 +747,7 @@ Tabs.Boss:AddButton({
         Callback = function()
 pcall(function()
 	workspace.CurrentCamera:remove()
-	wait(.1)
+	task.wait(.1)
 	repeat task.wait() until game:GetService("Players").LocalPlayer.Character ~= nil
 	workspace.CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
 	workspace.CurrentCamera.CameraType = "Custom"
@@ -776,7 +776,7 @@ wekpoxzmkl = Tabs.Boss:AddToggle("wekpoxzmkltoggle", {Title = "Auto Bring Kaizu"
 wekpoxzmkl:OnChanged(function()
 if Options.wekpoxzmkltoggle.Value == true then
 _G.bringkaizuz = true
-while _G.bringkaizuz do wait()
+while _G.bringkaizuz do task.wait()
 pcall(function()
 game:GetService("Workspace").IslandKai:WaitForChild("Kaizu").HumanoidRootPart.CanCollide = false
 game:GetService("Workspace").IslandKai:WaitForChild("Kaizu").HumanoidRootPart.Size = Vector3.new(5, 5, 5)
@@ -803,7 +803,7 @@ pcall(function()
 for _,kaizu in pairs(game:GetService("Workspace").IslandKai:GetChildren()) do
 if kaizu.Name == "Kaizu" then
 pcall(function()
-wait()
+task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = kaizu:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,5,0)
 kaizu:FindFirstChild("HumanoidRootPart").Anchored = false
 kaizu.HumanoidRootPart.CanCollide = true
@@ -887,7 +887,7 @@ else
 getgenv().pickkk = false
 end
 
-while getgenv().pickkk do wait(0.1)
+while getgenv().pickkk do task.wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
@@ -988,7 +988,7 @@ pcall(function()
 if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
 workspace.UserData["User_".. tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge12")
 end
-repeat wait() 
+repeat task.wait() 
 until game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == false
 
 for i = 1,50 do
@@ -1004,7 +1004,7 @@ local args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
 
-repeat wait() 
+repeat task.wait() 
 until game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true
 end)
 end
@@ -1059,7 +1059,7 @@ Tabs.Misc:AddSection("						    -----Boost-----")
 reducelag = Tabs.Misc:AddToggle("reducelagtoggle", {Title = "Fast Mode (Can only be turned on)", Default = false })
 reducelag:OnChanged(function()
 if Options.reducelagtoggle.Value == true then
-wait(1)
+task.wait(1)
 pcall(function()
 workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
@@ -1118,7 +1118,7 @@ miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", D
 miscquake:OnChanged(function()
 if Options.miscquaketoggle.Value == true then
 _G.quakelagmisc = true
-while _G.quakelagmisc do wait(0.1)
+while _G.quakelagmisc do task.wait(0.1)
 pcall(function()
 repeat
 local args = {
@@ -1168,7 +1168,7 @@ end
 end)
 
 game:GetService("Players").PlayerAdded:Connect(function()
-wait()
+task.wait()
 table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)
@@ -1177,7 +1177,7 @@ SelectedPly:SetValues(Playerslist)
 end)  
 
 game:GetService("Players").PlayerRemoving:Connect(function()
-wait()
+task.wait()
 table.clear(Playerslist)
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 table.insert(Playerslist,v.Name)
@@ -1193,13 +1193,13 @@ else
 getgenv().targeting = false
 end
 
-while getgenv().targeting do wait(0.1)
+while getgenv().targeting do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname then
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if getgenv().targeting == true and c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and not table.find(anticamplisted,c.Name) then
-repeat wait()
+repeat task.wait()
 _G.SelectedKillPlayer = c.Name
 until not getgenv().targeting or not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) or game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
 end
@@ -1226,8 +1226,8 @@ Tabs.Player:AddButton({
         Description = "Reset Camera (If Error)",
         Callback = function()
 	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game:GetService("Players").LocalPlayer.Character ~= nil
+	task.wait(.1)
+	repeat task.wait() until game:GetService("Players").LocalPlayer.Character ~= nil
 	workspace.CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
 	workspace.CurrentCamera.CameraType = "Custom"
 	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5
@@ -1248,7 +1248,7 @@ antistunz = Tabs.PVP:AddToggle("antistunztoggle", {Title = "Anti DF_Disabled", D
 antistunz:OnChanged(function()
 if Options.antistunztoggle.Value == true then
 _G.autostun = true
-while _G.autostun do wait()
+while _G.autostun do task.wait()
 pcall(function()
 game:GetService("Players").LocalPlayer.Character.HMS.Value = false
 game:GetService("Players").LocalPlayer.Character["DF_Disabled"].Value = false
@@ -1257,7 +1257,7 @@ end)
 end
 else
 _G.autostun = false
-for i = 1,2 do wait(0.2)
+for i = 1,2 do task.wait(0.2)
 game:GetService("Players").LocalPlayer.Character.SanguineVampiris.Value = false
 end
 end
@@ -1372,7 +1372,7 @@ disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Chosen 
 disbring1aa:OnChanged(function()
 if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
-while _G.BringPlayer do wait(0.1)
+while _G.BringPlayer do task.wait(0.1)
 pcall(function()
 if not table.find(anticamplisted,_G.SelectedKillPlayer) then
 repeat task.wait()
@@ -1396,7 +1396,7 @@ disbringallplr = Tabs.Player:AddToggle("disbringallplrtoggle", {Title = "Bring A
 disbringallplr:OnChanged(function()
 if Options.disbringallplrtoggle.Value == true then
 _G.BringAllPlayer = true
-while _G.BringAllPlayer do wait(0.1)
+while _G.BringAllPlayer do task.wait(0.1)
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
@@ -1439,7 +1439,7 @@ pcall(function()
 repeat task.wait(0.15)
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame,100,game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame.Position)
 until _G.AutoQuake == false or not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)
-wait(0.1)
+task.wait(0.1)
 end)
 end
 else
@@ -1469,9 +1469,9 @@ magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", De
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
-while _G.CampMagma do wait(0.1)
+while _G.CampMagma do task.wait(0.1)
 pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do wait()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do task.wait()
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
 pcall(function()
 repeat task.wait(0.15)
@@ -1508,10 +1508,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.TPMAGMABALL and _G.CampMagma and game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
-repeat wait()
+repeat task.wait()
 for i, v in pairs(game:GetService("Workspace")[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
 if v.Name == "MagmaBall" then
 v.CFrame = game:GetService("Players"):FindFirstChild(tostring(_G.SelectedKillPlayer)).Character.HumanoidRootPart.CFrame
@@ -1580,7 +1580,7 @@ darksec = Tabs.Player:AddToggle("darksectoggle", {Title = "Dark Camp", Default =
 darksec:OnChanged(function()
 if Options.darksectoggle.Value == true then
 _G.CampDark = true
-while _G.CampDark do wait(0.1)
+while _G.CampDark do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampDark == true then
@@ -1623,7 +1623,7 @@ vamppppp = Tabs.Player:AddToggle("vamppppptoggle", {Title = "Vamp Camp", Default
 vamppppp:OnChanged(function()
 if Options.vamppppptoggle.Value == true then
 _G.CampVamp = true
-while _G.CampVamp do wait(0.1)
+while _G.CampVamp do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
@@ -1665,7 +1665,7 @@ flareee = Tabs.Player:AddToggle("flareeetoggle", {Title = "Flare Camp", Default 
 flareee:OnChanged(function()
 if Options.flareeetoggle.Value == true then
 _G.CampFlare = true
-while _G.CampFlare do wait(0.1)
+while _G.CampFlare do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampFlare == true then
@@ -1707,7 +1707,7 @@ snowww = Tabs.Player:AddToggle("snowwwtoggle", {Title = "Snow Camp", Default = f
 snowww:OnChanged(function()
 if Options.snowwwtoggle.Value == true then
 _G.CampSnow = true
-while _G.CampSnow do wait(0.1)
+while _G.CampSnow do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampSnow == true then
@@ -1750,7 +1750,7 @@ chilll = Tabs.Player:AddToggle("chillltoggle", {Title = "Chilly Camp", Default =
 chilll:OnChanged(function()
 if Options.chillltoggle.Value == true then
 _G.CampChilly = true
-while _G.CampChilly do wait(0.1)
+while _G.CampChilly do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
@@ -1793,7 +1793,7 @@ bombbbb = Tabs.Player:AddToggle("bombbbbtoggle", {Title = "Bomb Camp", Default =
 bombbbb:OnChanged(function()
 if Options.bombbbbtoggle.Value == true then
 _G.CampBomb = true
-while _G.CampBomb do wait(0.1)
+while _G.CampBomb do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampBomb == true then
@@ -1835,7 +1835,7 @@ gassss = Tabs.Player:AddToggle("gasssstoggle", {Title = "Gas Camp", Default = fa
 gassss:OnChanged(function()
 if Options.gasssstoggle.Value == true then
 _G.CampGas = true
-while _G.CampGas do wait(0.1)
+while _G.CampGas do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampGas == true then
@@ -1877,7 +1877,7 @@ lightsec = Tabs.Player:AddToggle("lightsectoggle", {Title = "Light Camp", Defaul
 lightsec:OnChanged(function()
 if Options.lightsectoggle.Value == true then
 _G.CampLight = true
-while _G.CampLight do wait(0.1)
+while _G.CampLight do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
@@ -1919,7 +1919,7 @@ plasmasec = Tabs.Player:AddToggle("plasmasectoggle", {Title = "Plasma Camp", Def
 plasmasec:OnChanged(function()
 if Options.plasmasectoggle.Value == true then
 _G.CampPlasma = true
-while _G.CampPlasma do wait(0.1)
+while _G.CampPlasma do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
@@ -1977,7 +1977,7 @@ phoenixsec = Tabs.Player:AddToggle("phoenixsectoggle", {Title = "Phoenix Camp", 
 phoenixsec:OnChanged(function()
 if Options.phoenixsectoggle.Value == true then
 _G.CampPhoenix = true
-while _G.CampPhoenix do wait(0.1)
+while _G.CampPhoenix do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
@@ -2640,7 +2640,7 @@ openboxunc = Tabs.Fruit:AddToggle("openboxunctoggle", {Title = "Auto Open Common
 openboxunc:OnChanged(function()
 if Options.openboxunctoggle.Value == true then
 _G.opencommon = true
-while _G.opencommon do wait()
+while _G.opencommon do task.wait()
 pcall(function()
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "ommon") then
@@ -2659,7 +2659,7 @@ openboxrare = Tabs.Fruit:AddToggle("openboxraretoggle", {Title = "Auto Open Rare
 openboxrare:OnChanged(function()
 if Options.openboxraretoggle.Value == true then
 _G.openrare = true
-while _G.openrare do wait()
+while _G.openrare do task.wait()
 pcall(function()
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Rare") then
@@ -2713,7 +2713,7 @@ else
 getgenv().claim = false
 end
 
-while getgenv().claim do wait()
+while getgenv().claim do task.wait()
 pcall(function()
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end)
@@ -2729,7 +2729,7 @@ else
 getgenv().find = false
 end
 
-while getgenv().find do wait()
+while getgenv().find do task.wait()
 pcall(function()
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") then
 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass"))
@@ -2759,7 +2759,7 @@ fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Def
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.fastcannon = true
-for i = 1,5 do wait(0.2)
+for i = 1,5 do task.wait(0.2)
 if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball") then
 task.wait()
 game:GetService("Players").LocalPlayer.Character.Humanoid:UnequipTools()
@@ -2775,12 +2775,12 @@ end)
         Description = "Refresh Your BackPack",
         Callback = function()
 game:GetService("Players").LocalPlayer.Character.Humanoid:UnequipTools()
-wait(0.1)
+task.wait(0.1)
 if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y < 211000 then
 for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 v:Destroy()
 end
-wait(0.1)
+task.wait(0.1)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
         end
@@ -2837,15 +2837,15 @@ autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On
 autobusohaki:OnChanged(function()
 if Options.autobusohakitoggle.Value == true then
 _G.autohakibuso = true
-    while _G.autohakibuso do wait()
+    while _G.autohakibuso do task.wait()
         pcall(function()
-repeat wait()
+repeat task.wait()
                 if not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(0.5)
+                    task.wait(0.5)
                     game:GetService("Workspace").UserData["User_" .. usingid].UpdateHaki:FireServer()
                 end
                 if game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(0.5)
+                    task.wait(0.5)
                     game:GetService("Workspace").UserData["User_" .. usingid].UpdateHaki:FireServer()
                 end
 until not _G.autohakibuso
@@ -2954,9 +2954,9 @@ Fluent:Notify({
     Content = "Auto Get Expertise Quest Is Turned On",
     Duration = 5
 })
-while _G.autogetexp do wait()
+while _G.autogetexp do task.wait()
 pcall(function()
-wait(5)
+task.wait(5)
 workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end)
 end
@@ -2978,7 +2978,7 @@ Fluent:Notify({
     Content = "Auto Reconnect Is Turned On",
     Duration = 5
 })
-while _G.autorj do wait(3)
+while _G.autorj do task.wait(3)
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
 TeleportService = game:GetService("TeleportService")
@@ -3051,9 +3051,9 @@ Fluent:Notify({
     Content = "Auto Hop If Fewer Player Is Turned On",
     Duration = 5
 })
-while _G.fewhopsv do wait(2)
+while _G.fewhopsv do task.wait(2)
 pcall(function()
-if #game:GetService("Players"):GetChildren() < plrnumforhop then wait()
+if #game:GetService("Players"):GetChildren() < plrnumforhop then task.wait()
 
 game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
 local PlaceID = game.PlaceId
@@ -3121,10 +3121,10 @@ Fluent:Notify({
     Content = "Auto Spawn Is Turned On",
     Duration = 5
 })
-            while _G.autospawn do wait()
+            while _G.autospawn do task.wait()
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
-                            repeat wait(4)
+                            repeat task.wait(4)
                                 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
                                     v.Function()
                                 end
@@ -3146,16 +3146,16 @@ Fluent:Notify({
     Content = "Auto Spawn (New) Is Turned On",
     Duration = 5
 })
-            while _G.autospawnnew do wait()
+            while _G.autospawnnew do task.wait()
                     pcall(function()
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then wait(3)
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(3)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
 game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
 pcall(function()
 	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game:GetService("Players").LocalPlayer.Character ~= nil
+	task.wait(.1)
+	repeat task.wait() until game:GetService("Players").LocalPlayer.Character ~= nil
 	workspace.CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
 	workspace.CurrentCamera.CameraType = "Custom"
 	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5
@@ -3163,14 +3163,14 @@ pcall(function()
 	game:GetService("Players").LocalPlayer.CameraMode = "Classic"
 	game:GetService("Players").LocalPlayer.Character.Head.Anchored = false   
 end)
-wait(0.1)
-repeat wait(0.1)
+task.wait(0.1)
+repeat task.wait(0.1)
 until (game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000) or (_G.autospawnnew == false)
-wait(0.1)
+task.wait(0.1)
 if _G.autospawnnew == true then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-for i = 1,5 do wait(0.5)
+for i = 1,5 do task.wait(0.5)
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 v:Destroy()
 end
@@ -3193,7 +3193,7 @@ Fluent:Notify({
     Content = "Auto Claim Challenge Is Turned On",
     Duration = 5
 })
-while _G.autochallenge do wait()
+while _G.autochallenge do task.wait()
 pcall(function()
 if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_1"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Daily1")
@@ -3650,7 +3650,7 @@ getgenv().eqqqqq = true
 else
 getgenv().eqqqqq = false
 end
-while getgenv().eqqqqq do wait()
+while getgenv().eqqqqq do task.wait()
 pcall(function()
 if _G.weponity == "Melee" then
 for _, c in pairs(MeleeTTT) do
@@ -3692,7 +3692,7 @@ getgenv().useweapon = true
 else
 getgenv().useweapon = false
 end
-while getgenv().useweapon do wait()
+while getgenv().useweapon do task.wait()
 pcall(function()
 for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
 for i,c in pairs(MeleeTTT) do
@@ -3738,7 +3738,7 @@ tyoru = Tabs.Weapon:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default =
 tyoru:OnChanged(function()
 if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
-while _G.yoruonrt do wait()
+while _G.yoruonrt do task.wait()
 pcall(function()
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yoru") then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yoru").RequestAnimation.OnClientEvent)) do 
@@ -3786,7 +3786,7 @@ tcestus = Tabs.Weapon:AddToggle("tcestustoggle", {Title = "Cestus Spamming", Def
 tcestus:OnChanged(function()
 if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
-while _G.cestusonrt do wait()
+while _G.cestusonrt do task.wait()
 pcall(function()
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") then
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Seastone Cestus").RequestAnimation.OnClientEvent)) do 
@@ -3843,7 +3843,7 @@ else
 getgenv().autodrinkmixer = false
 end
 
-while getgenv().autodrinkmixer do wait(2)
+while getgenv().autodrinkmixer do task.wait(2)
 pcall(function()
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
@@ -3904,7 +3904,7 @@ bringmzos = Tabs.Mobs:AddToggle("bringmzostoggle", {Title = "Auto Bring Mobs", D
 bringmzos:OnChanged(function()
 if Options.bringmzostoggle.Value == true then
 _G.bringmzowpa = true
-while _G.bringmzowpa do wait()
+while _G.bringmzowpa do task.wait()
 pcall(function()
 for _, mobs in pairs(Mobsszz) do
 for _, bringz in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3973,10 +3973,10 @@ gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Defa
 gethaki:OnChanged(function()
 if Options.hakiget.Value == true then
 _G.gethakiqwe = true
-while _G.gethakiqwe do wait()
+while _G.gethakiqwe do task.wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-wait(3)
+task.wait(3)
 end)
 end
 else
@@ -3988,9 +3988,9 @@ hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki",
 hakirjoin:OnChanged(function()
 if Options.hakirjointoggle.Value == true then
 _G.rejoinifhaki0 = true
-while _G.rejoinifhaki0 do wait()
+while _G.rejoinifhaki0 do task.wait()
 pcall(function()
-repeat wait()
+repeat task.wait()
 local zxm = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local zcc = zxm/100*2
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < zcc then
@@ -4559,7 +4559,7 @@ function hakiauto()
     
     
     end
-wait()
+task.wait()
 for i = 1, 10 do
 hakiauto()
 end
@@ -4643,7 +4643,7 @@ end)
         Description = "Farm Haki With 1 Click",
         Callback = function()
 if _G.hakimetohdf == "1112222" then
-while wait() do
+while task.wait() do
 for i = 1,999 do
 onhaki()
 onhaki()
@@ -4670,7 +4670,7 @@ end
 task.wait(20)
 end
 elseif _G.hakimetohdf == "122122" then
-while wait() do
+while task.wait() do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -4691,7 +4691,7 @@ end
 task.wait(11)
 end
 elseif _G.hakimetohdf == "1221212122" then
-while wait() do
+while task.wait() do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -4711,7 +4711,7 @@ end
 task.wait(10)
 end
 elseif _G.hakimetohdf == "1221212212" then
-while wait() do
+while task.wait() do
 for i = 1,999 do
 onhaki()
 offhaki()
@@ -4743,7 +4743,7 @@ Tabs.Haki:AddSection("				    --Other Haki Method--")
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
 for i = 1,30 do
-while wait() do
+while task.wait() do
 local args = {
     [1] = "On",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
@@ -4759,7 +4759,7 @@ end
         Description = "Dum's Method But Saluna Adjusted",
         Callback = function()
 for i = 1,30 do
-while wait() do
+while task.wait() do
 local args = {
     [1] = "Off",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
@@ -5013,19 +5013,19 @@ game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
                         end
                         if Possible == true then
                             table.insert(AllIDs, ID)
-                            wait()
+                            task.wait()
                             pcall(function()
                                 -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-                                wait()
+                                task.wait()
                                 game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game:GetService("Players").LocalPlayer)
                             end)
-                            wait(.1)
+                            task.wait(.1)
                         end
                     end
                 end
             end
             function Teleport() 
-                while wait() do
+                while task.wait() do
                     pcall(function()
                         TPReturner()
                         if foundAnything ~= "" then
@@ -5214,7 +5214,7 @@ end)
 
 DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
 DF11Toggle:OnChanged(function(gg)
-while Options.DF1Toggle.Value do wait()
+while Options.DF1Toggle.Value do task.wait()
 pcall(function()
 if Options.DF1Toggle.Value == true then
 _G.quayfirstdf = true
@@ -5335,7 +5335,7 @@ _G.keepmelee2 = false
 _G.keepsnip2 = false
 _G.keepsword2 = false
 table.clear(Values2)
-wait()
+task.wait()
 for Valuer2, State in next, Valuer2 do
 table.insert(Values2, Valuer2)
 end
@@ -5372,7 +5372,7 @@ _G.targetmelee2 = false
 _G.targetsnip2 = false
 _G.targetsword2 = false
 table.clear(Valuess2)
-wait()
+task.wait()
 for Valuerr2, State in next, Valuerr2 do
 table.insert(Valuess2, Valuerr2)
 end
@@ -5407,7 +5407,7 @@ end)
 
 DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
 DF22Toggle:OnChanged(function(tt)
-while Options.DF2Toggle.Value do wait()
+while Options.DF2Toggle.Value do task.wait()
 pcall(function()
 if Options.DF2Toggle.Value == true then
 _G.quayfirstdf2 = true
@@ -5747,7 +5747,7 @@ hideUI.MouseButton1Up:Connect(function()
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 50, 0, 50)
 	}):Play()
-wait(0.05)
+task.wait(0.05)
 game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
  Size = UDim2.new(0, 60, 0, 60)
 	}):Play()
@@ -5795,12 +5795,12 @@ UIS.InputChanged:Connect(function(input)
  end
 end)
 
-repeat wait() until game.CoreGui:FindFirstChild("BBB")
+repeat task.wait() until game.CoreGui:FindFirstChild("BBB")
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startspamskill then
-repeat wait()
+repeat task.wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
 local args = {
@@ -7014,7 +7014,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startrop then
 repeat task.wait()
@@ -7040,7 +7040,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startropaura then
 repeat task.wait()
@@ -7066,7 +7066,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -7076,7 +7076,7 @@ repeat
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 task.wait(0.06)
 until game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game:GetService("Players"):FindFirstChild(_G.cuopfruittarget)
-wait()
+task.wait()
 _G.cuopfruittarget = ""
 end)
 end
@@ -7087,7 +7087,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -7116,7 +7116,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game:GetService("Players"):FindFirstChild(_G.cuopfruittarget)
-wait()
+task.wait()
 _G.cuopfruittarget = ""
 end)
 end
@@ -7127,10 +7127,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-repeat wait()
+repeat task.wait()
 for i, v in pairs(game:GetService("Workspace")[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
 if v.Name == "MagmaBall" then
 v.CFrame = game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.CFrame
@@ -7143,7 +7143,7 @@ end
 end)
 
 task.spawn(function() -- autofarm destroy seat
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startrop  or _G.startropaura then
 if (_G.robmethod == "Magma" or _G.robmethod == "Flare") and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
@@ -7154,7 +7154,7 @@ v:Destroy()
 end
 end)
 end
-wait(0.5)
+task.wait(0.5)
 end
 end
 end)
@@ -7162,7 +7162,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -7191,7 +7191,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game:GetService("Players"):FindFirstChild(_G.cuopfruittarget)
-wait()
+task.wait()
 _G.cuopfruittarget = ""
 end)
 end
@@ -7202,7 +7202,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.startrop or _G.startropaura then
 repeat task.wait()
@@ -7214,7 +7214,7 @@ if game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.Human
 game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.HumanoidRootPart.Anchored = true
 end
 until game:GetService("Players"):FindFirstChild(_G.cuopfruittarget).Character.Humanoid.Health == 0 or not game:GetService("Players"):FindFirstChild(_G.cuopfruittarget)
-wait()
+task.wait()
 _G.cuopfruittarget = ""
 end)
 end
@@ -7225,13 +7225,13 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if ESPPlayer then
-repeat wait()
+repeat task.wait()
 UpdatePlayerChams()
 until not ESPPlayer
-wait()
+task.wait()
 for i,v in pairs(game:GetService'Players':GetChildren()) do
 if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
@@ -7243,10 +7243,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.Hitboxplr then
-repeat wait()
+repeat task.wait()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
 v.Character.HumanoidRootPart.Size = Vector3.new(fathitbox, fathitbox, fathitbox)
@@ -7255,7 +7255,7 @@ v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
 end
 end
 until not _G.Hitboxplr
-wait()
+task.wait()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname then
 v.Character.HumanoidRootPart.Transparency = 1
@@ -7268,7 +7268,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.CampString == true and game:GetService("Players").LocalPlayer.Character.Humanoid.Sit == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
 pcall(function()
@@ -7284,7 +7284,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)) or table.find(anticamplisted,_G.SelectedKillPlayer)
-wait()
+task.wait()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower7"
@@ -7299,12 +7299,12 @@ end)
 
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.CampString == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
-repeat wait()
+repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
-wait(0.1)
+task.wait(0.1)
 until not _G.CampString or game:GetService("Players").LocalPlayer.Character.Humanoid.Sit == true or table.find(anticamplisted, _G.SelectedKillPlayer)
 end
 end)
@@ -7312,10 +7312,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.CampString == true and not table.find(anticamplisted,_G.SelectedKillPlayer) then
-repeat wait()
+repeat task.wait()
 pcall(function()
 game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
 end)
@@ -7326,10 +7326,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
-repeat wait() until _G.wqesorry == true
-repeat wait()
+repeat task.wait() until _G.wqesorry == true
+repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = false
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = false
@@ -7338,7 +7338,7 @@ game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 until _G.wqesorry == false
-wait()
+task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Torso.CanCollide = true
 game:GetService("Players").LocalPlayer.Character.Head.CanCollide = true
@@ -7351,23 +7351,23 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
-repeat wait() until getgenv().viewplrr == true
-repeat wait()
+repeat task.wait() until getgenv().viewplrr == true
+repeat task.wait()
 pcall(function()
 game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid
 end)
 until getgenv().viewplrr == false or not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)
-wait()
+task.wait()
 game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
 end)
 end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.storeffrtrare == true
+while task.wait(0.3) do
+repeat task.wait() until _G.storeffrtrare == true
 pcall(function()
 repeat task.wait()
 for i, t in pairs(StoreRarefruit) do
@@ -7385,8 +7385,8 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.storeffrtultra == true
+while task.wait(0.3) do
+repeat task.wait() until _G.storeffrtultra == true
 pcall(function()
 repeat task.wait()
 for i, t in pairs(StoreUltrafruit) do
@@ -7404,8 +7404,8 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.aurasto == true
+while task.wait(0.3) do
+repeat task.wait() until _G.aurasto == true
 pcall(function()
 repeat task.wait()
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
@@ -7421,10 +7421,10 @@ end
 end)
 
 task.spawn(function()
-    while wait(0.3) do
-repeat wait(0.1) until _G.fastcannon == true
+    while task.wait(0.3) do
+repeat task.wait(0.1) until _G.fastcannon == true
         pcall(function()
-repeat wait()
+repeat task.wait()
     local cannonBalls = {}
 for i,tuy in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
@@ -7433,7 +7433,7 @@ end
 end
 for i, asd in pairs(cannonBalls) do
 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(asd)
-wait(0.75)
+task.wait(0.75)
 end
 until not _G.autocannon
         end)
@@ -7441,16 +7441,16 @@ until not _G.autocannon
 end)
 
 task.spawn(function()
-while wait(0.3) do
-if _G.fastcannon == true then wait(4)
+while task.wait(0.3) do
+if _G.fastcannon == true then task.wait(4)
 pcall(function()
 for i= 1,10 do
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
 end)
-repeat wait()
+repeat task.wait()
 pcall(function()
-wait(1)
+task.wait(1)
 for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" and not string.find(v.Name, "Box") and not string.find(v.Name, "Compass") then
 v:Destroy()
@@ -7464,10 +7464,10 @@ end)
 
 
 task.spawn(function() -- autofarm bring cannon
-while wait(0.3) do
-repeat wait() until _G.autocannonplrbring == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autocannonplrbring == true
 pcall(function()
-repeat wait()
+repeat task.wait()
                 for i,v in pairs(game:GetService("Players"):GetChildren()) do
                     if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                         v.Character.HumanoidRootPart.Transparency = 0.7
@@ -7479,7 +7479,7 @@ repeat wait()
                     end
                 end
 until not _G.autocannonplrbring
-wait()
+task.wait()
                 for i,v in pairs(game:GetService("Players"):GetChildren()) do
                     if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                 	    v.Character.HumanoidRootPart.CanCollide = true
@@ -7493,10 +7493,10 @@ wait()
 end)
 
 task.spawn(function() -- autofarm emphasize
-while wait(0.3) do
-repeat wait() until _G.autocannonfling == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autocannonfling == true
 pcall(function()
-repeat wait()
+repeat task.wait()
                 for i,v in pairs(game:GetService("Players"):GetChildren()) do
                     if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                         v.Character.HumanoidRootPart.Transparency = 0.7
@@ -7506,7 +7506,7 @@ repeat wait()
                     end
                 end
 until not _G.autocannonfling
-wait()
+task.wait()
                 for i,v in pairs(game:GetService("Players"):GetChildren()) do
                     if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
                 	    v.Character.HumanoidRootPart.CanCollide = true
@@ -7519,10 +7519,10 @@ wait()
 end)
 
 task.spawn(function() -- autofarm destroy seat
-while wait(0.3) do
-repeat wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
 pcall(function()
-repeat wait(0.5)
+repeat task.wait(0.5)
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 if v.Name == "Seat" then task.wait()
 v:Destroy()
@@ -7534,8 +7534,8 @@ until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.resetzxcm == true
+while task.wait(0.3) do
+repeat task.wait() until _G.resetzxcm == true
 pcall(function()
 repeat
 task.wait(rstimehaha)
@@ -7549,13 +7549,13 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.autohakicannon == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autohakicannon == true
 pcall(function()
-repeat wait()
+repeat task.wait()
 local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
-repeat wait()
+repeat task.wait()
 until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > hakiuse then
 _G.onhaki = true
@@ -7563,7 +7563,7 @@ elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar
 _G.regenhaki = true
 end
 until not _G.autohakicannon
-wait()
+task.wait()
 _G.offhaki = false
 _G.onhaki = false
 _G.regenhaki = false
@@ -7573,14 +7573,14 @@ end)
 
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.autohakicannon == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autohakicannon == true
 pcall(function()
-repeat wait()
+repeat task.wait()
 local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 if _G.onhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait(0.5)
+task.wait(0.5)
 game:GetService("Workspace").UserData["User_" ..usingid].UpdateHaki:FireServer()
 end
 _G.onhaki = false
@@ -7591,17 +7591,17 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.autohakicannon == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autohakicannon == true
 pcall(function()
-repeat wait()
+repeat task.wait()
 local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 
 if _G.offhaki == true and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakiuse and game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait(0.5)
+task.wait(0.5)
 game:GetService("Workspace").UserData["User_" .. usingid].UpdateHaki:FireServer()
-wait()
+task.wait()
 end
 
 until not _G.autohakicannon
@@ -7610,16 +7610,16 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.autohakicannon == true
+while task.wait(0.3) do
+repeat task.wait() until _G.autohakicannon == true
 pcall(function()
-repeat wait()
+repeat task.wait()
 local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
 hakimuon = hakiuse + 10
 if _G.regenhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakimuon and not _G.onhaki then
-wait()
-for i = 1, regenspeed do wait()
+task.wait()
+for i = 1, regenspeed do task.wait()
     local args = {
         [1] = "Off",
         [2] = hakigoc
@@ -7640,7 +7640,7 @@ task.wait(2)
     }
     
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-wait()
+task.wait()
         local args = {
         [1] = "Off",
         [2] = hakigoc
@@ -7650,7 +7650,7 @@ wait()
 repeat wait()
 until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc and _G.regenhaki == true then 
-wait()
+task.wait()
 _G.onhaki = true
 _G.regenhaki = false
 end
@@ -7661,10 +7661,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until getgenv().grillsell == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
+while task.wait(0.3) do
+repeat task.wait() until getgenv().grillsell == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
 pcall(function()
-repeat wait()
+repeat task.wait()
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Medium") or string.find(v.Name, "Small") or string.find(v.Name, "Large") then
 v.Parent = game:GetService("Players").LocalPlayer.Character
@@ -7685,10 +7685,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
+while task.wait(0.3) do
+repeat task.wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
 pcall(function()
-repeat wait(0.3)
+repeat task.wait(0.3)
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if string.find(v.Name, "Rod") then
 v.Parent = game:GetService("Players").LocalPlayer.Character
@@ -7701,8 +7701,8 @@ end)
 
 
 task.spawn(function()
-    while wait(0.3) do
-repeat wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
+    while task.wait(0.3) do
+repeat task.wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
         pcall(function()
 repeat task.wait(0.1)
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
@@ -7712,8 +7712,8 @@ until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:F
 end)
 
 task.spawn(function()
-    while wait(0.3) do
-repeat wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
+    while task.wait(0.3) do
+repeat task.wait() until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
         pcall(function()
 repeat task.wait(0.1)
 for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
@@ -7723,7 +7723,7 @@ if string.find(x.Name, "Rod") then
 for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
 if v:FindFirstChild("Bobber") then
 if v.Bobber.Effect.Enabled == true then
-wait(0.1)
+task.wait(0.1)
 
 local args = {
 [1] = Vector3.new(20837,-3017,-4390)
@@ -7731,12 +7731,12 @@ local args = {
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
 end
 elseif v.Name == "Cast" and not v:FindFirstChild("Bobber") then
-wait(0.6)
+task.wait(0.6)
 local args = {
 [1] = Vector3.new(20837,-3017,-4390)
 }
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
-wait(0.3)
+task.wait(0.3)
 end
 end
 end
@@ -7749,10 +7749,10 @@ until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:F
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until getgenv().tret == true
+while task.wait(0.3) do
+repeat task.wait() until getgenv().tret == true
 pcall(function()
-repeat wait(1)
+repeat task.wait(1)
 workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 until not getgenv().tret
 end)
@@ -7760,10 +7760,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until getgenv().tret == true
+while task.wait(0.3) do
+repeat task.wait() until getgenv().tret == true
 pcall(function()
-repeat wait()
+repeat task.wait()
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Package") then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package").Parent = game:GetService("Players").LocalPlayer.Character
 elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
@@ -7776,7 +7776,7 @@ if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
 game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = false
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 end
-wait(0.3)
+task.wait(0.3)
 
 end
 end
@@ -7797,11 +7797,11 @@ end)
 
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() 
+while task.wait(0.3) do
+repeat task.wait() 
 until (_G.fastcannon == false and _G.autocannonslow == true) or (_G.autocannonplrbring == true and _G.fastcannon == false) or (_G.automobtpcn == true and _G.fastcannon == false) or (_G.autocannonfling == true and _G.fastcannon == false)
 pcall(function()
-repeat wait(0.05)
+repeat task.wait(0.05)
 for _, cannonz in pairs(Rarefruit) do
 if game:GetService("Workspace")[usingname].HumanoidRootPart.Position.Y < 211000 and not game:GetService("Players").LocalPlayer.Character:FindFirstChild(cannonz) then
 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Cannon Ball").Parent = game:GetService("Players").LocalPlayer.Character
@@ -7813,15 +7813,15 @@ until (_G.fastcannon == true) or (not _G.autocannonslow and not _G.autocannonplr
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn or _G.autocannonfling then
-repeat wait()
+repeat task.wait()
                 local args = {
                     [1] = CFrame.new(Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
-                wait()
+                task.wait()
                 local args = {
                     [1] = CFrame.new(Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
@@ -7834,10 +7834,10 @@ until not _G.autocannonslow and not _G.autocannonplrbring and not _G.automobtpcn
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
-repeat wait(4)
+repeat task.wait(4)
 for i,c in pairs(workspace.ResourceHolder["Resources_"..usingid]:GetDescendants()) do
 if c.Name == "CannonBall" then
 c:Destroy()
@@ -7850,10 +7850,10 @@ until not _G.autocannonslow and not _G.autocannonplrbring
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.automobtpcn or _G.autocannonfling then
-repeat wait(10)
+repeat task.wait(10)
 for i,c in pairs(workspace.ResourceHolder["Resources_"..usingid]:GetDescendants()) do
 if c.Name == "CannonBall" then
 c:Destroy()
@@ -7869,11 +7869,11 @@ task.spawn(function()
     while task.wait() do
         pcall(function()
             if _G.automobtpcn then
-                repeat wait()
+                repeat task.wait()
                     for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                         pcall(function()
                             if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
-                                for i = 1,5 do wait(0.02)
+                                for i = 1,5 do task.wait(0.02)
                                     for i, q in pairs(game:GetService("Workspace").ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.automobtpcn then
                                             q.CFrame = v.HumanoidRootPart.CFrame
@@ -7887,7 +7887,7 @@ task.spawn(function()
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
 pcall(function()
 		if v.Name == "Zombie" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 and _G.automobtpcn then
-                                for i = 1,5 do wait(0.02)
+                                for i = 1,5 do task.wait(0.02)
                                     for i, q in pairs(game:GetService("Workspace").ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.automobtpcn then
                                             q.CFrame = v.HumanoidRootPart.CFrame
@@ -7905,14 +7905,14 @@ end
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.autocannonfling then
-                repeat wait()
+                repeat task.wait()
                     for i, v in pairs(game:GetService("Players"):GetChildren()) do
 pcall(function()
 if v.Name ~= usingname and not table.find(anticamplisted, v.Name) and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
-                                for i = 1,10 do wait(0.02)
+                                for i = 1,10 do task.wait(0.02)
                                     for i, q in pairs(game:GetService("Workspace").ResourceHolder["Resources_" .. usingid]:GetChildren()) do
                                         if q.Name == "CannonBall" and _G.autocannonfling then
                                             q.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
@@ -7930,7 +7930,7 @@ end
 end)
 
 task.spawn(function() -- autofarm velocity
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.farmfruit or _G.wqesorry or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or getgenv().bgtyhn or getgenv().fishing or getgenv().tret then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
@@ -7943,7 +7943,7 @@ task.spawn(function() -- autofarm velocity
                 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 0
             elseif _G.farmfruit == false and _G.wqesorry == false and getgenv().vtt == false and getgenv().farmslowstats == false and getgenv().farmstats == false and getgenv().bgtyhn == false and getgenv().fishing == false and getgenv().tret == false then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
-                wait(1)
+                task.wait(1)
                 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 50
             end
         end)
@@ -7951,7 +7951,7 @@ task.spawn(function() -- autofarm velocity
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring then
                 repeat task.wait()
@@ -7968,19 +7968,19 @@ task.spawn(function()
 end)
 
 task.spawn(function() -- autofarm cannon
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.autocannonslow or _G.automobtpcn then
-repeat wait()
+repeat task.wait()
 pcall(function()
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
-if v.Name == "ClickDetector" then wait()
+if v.Name == "ClickDetector" then task.wait()
 fireclickdetector(v)
 end
 end
-wait()
+task.wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-wait(2)
+task.wait(2)
 end)
 until not _G.autocannonslow and not _G.automobtpcn
 end
@@ -7989,10 +7989,10 @@ end
 end)
 
 task.spawn(function() -- autofarm cannon
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.automobtpcn then
-repeat wait()
+repeat task.wait()
 pcall(function()
                 for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
                     if v.Name == "Zombie"
@@ -8068,10 +8068,10 @@ until not _G.automobtpcn
 end)
 
 task.spawn(function() -- autofarm cannon
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             if _G.autocannonslow then
-repeat wait()
+repeat task.wait()
 pcall(function()
                 for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
                     if v.Name == "Zombie"
@@ -8151,7 +8151,7 @@ until not _G.autocannonslow
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if getgenv().chawq then
 if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
@@ -8170,7 +8170,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if getgenv().tpchaiq and game:GetService("Players").LocalPlayer.Character.Humanoid.Sit == false then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
@@ -8182,9 +8182,9 @@ end)
 
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if getgenv().vtt then
-repeat wait()
+repeat task.wait()
 pcall(function()
 if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().tprandom = true
@@ -8200,10 +8200,10 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if getgenv().tprandom then
 pcall(function()
-repeat wait()
+repeat task.wait()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 until not getgenv().tprandom
 end)
@@ -8212,9 +8212,9 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if getgenv().banana then
-repeat wait()
+repeat task.wait()
 pcall(function()
 if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 getgenv().bgtyhn = true
@@ -8231,11 +8231,11 @@ end)
 
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if getgenv().bgtyhn then
-repeat wait()
+repeat task.wait()
 pcall(function()
-repeat wait()
+repeat task.wait()
 if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") or not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
 end
@@ -8247,7 +8247,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.5) do
+while task.wait(0.5) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
 if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
@@ -8261,7 +8261,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
 repeat task.wait()
@@ -8294,7 +8294,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if getgenv().farmslowstats then
 pcall(function()
 repeat
@@ -8327,12 +8327,12 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 if _G.farmhakinek then
 pcall(function()
 _G.concu = true
-while _G.concu do wait()
+while _G.concu do task.wait()
 local slv = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local sss = slv/100*hakitarget
 local sll =  slv/100*90
@@ -8358,7 +8358,7 @@ elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar
     }
     
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-repeat wait()
+repeat task.wait()
 until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= sll or game:GetService("Workspace")[usingname].HumanoidRootPart.Position.Y > 211000
 elseif _G.farmhakinek == false then
 _G.concu = false
@@ -8378,7 +8378,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.5) do
+while task.wait(0.5) do
 pcall(function()
 if _G.farmadvanced then
 pcall(function()
@@ -8496,7 +8496,7 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if _G.quayfirstdf then
 pcall(function()
 if _G.defswordsnip == true then
@@ -8669,14 +8669,14 @@ local args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
-wait(11)
+task.wait(11)
 end)
 end
 end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if _G.quayfirstdf2 then
 pcall(function()
 if _G.defswordsnip2 == true then
@@ -8849,14 +8849,14 @@ local args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
-wait(11)
+task.wait(11)
 end)
 end
 end
 end)
 
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 if _G.quayfirstdf2 or _G.quayfirstdf then
 pcall(function()
 if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
@@ -8868,7 +8868,7 @@ end
 end)
 
 task.spawn(function()
-while wait(2) do
+while task.wait(2) do
 if _G.rolznewaff == true then
 pcall(function()
 if _G.keendef == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT1Defense.Value < _G.affpointnew then
@@ -8926,7 +8926,7 @@ local args = {
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
-wait(9)
+task.wait(9)
 end
 end)
 end
@@ -8934,7 +8934,7 @@ end
 end)
 
 task.spawn(function()
-while wait(2) do
+while task.wait(2) do
 if _G.rolznewaff2 == true then
 pcall(function()
 if _G.keendef2 == true and workspace.UserData["User_"..tostring(usingid)].Data.DFT2Defense.Value < _G.affpointnew2 then
@@ -8992,7 +8992,7 @@ local args = {
 }
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
-wait(9)
+task.wait(9)
 end
 end)
 end
@@ -9000,12 +9000,12 @@ end
 end)
 
 task.spawn(function()
-while wait(0.3) do
-repeat wait() until _G.farmfruit == true
+while task.wait(0.3) do
+repeat task.wait() until _G.farmfruit == true
 pcall(function()
-repeat wait()
+repeat task.wait()
 if _G.fruitfarmz == "Light" and _G.farmfruit == true then
-repeat wait()
+repeat task.wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
@@ -9094,7 +9094,7 @@ end
 end
 until _G.fruitfarmz ~= "Light" or _G.farmfruit == false
 elseif _G.fruitfarmz == "Magma" and _G.farmfruit == true then
-repeat wait()
+repeat task.wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
@@ -9183,7 +9183,7 @@ end
 end
 until _G.fruitfarmz ~= "Magma" or _G.farmfruit == false
 elseif _G.fruitfarmz == "Bomb" and _G.farmfruit == true then
-repeat wait()
+repeat task.wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
@@ -9272,7 +9272,7 @@ end
 end
 until _G.fruitfarmz ~= "Bomb" or _G.farmfruit == false
 elseif _G.fruitfarmz == "Gravity" and _G.farmfruit == true then
-repeat wait()
+repeat task.wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
@@ -9319,7 +9319,7 @@ end
 end
 until _G.fruitfarmz ~= "Gravity" or _G.farmfruit == false
 elseif _G.fruitfarmz == "Rumble" and _G.farmfruit == true then
-repeat wait()
+repeat task.wait()
 for _,moblist in pairs(Mobsfarmz) do
 for _,mobalive in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 if string.find(mobalive.Name,moblist) then
@@ -9578,7 +9578,7 @@ end)
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(tpb)
-wait(6)
+task.wait(6)
 tpb.Character.ChildAdded:Connect(function(y)
 if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") or string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
 pcall(function()
@@ -9663,13 +9663,13 @@ end)
 end)  
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
             local initialFruitData = playerData.StoredDF1.Value
 
             repeat 
-                wait(0.5) 
+                task.wait(0.5) 
             until playerData.StoredDF1.Value ~= initialFruitData and playerData.StoredDF1.Value ~= "None"
 
             local newFruitData = playerData.StoredDF1.Value
@@ -9716,13 +9716,13 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
             local initialFruitData = playerData.StoredDF2.Value
 
             repeat 
-                wait(0.5) 
+                task.wait(0.5) 
             until playerData.StoredDF2.Value ~= initialFruitData and playerData.StoredDF2.Value ~= "None"
 
             local newFruitData = playerData.StoredDF2.Value
@@ -9770,13 +9770,13 @@ task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF3
     
-    while wait(0.3) do
+    while task.wait(0.3) do
         local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata3 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat wait(0.5) until userDataPath.Value ~= _G.fruitdata3 and userDataPath.Value ~= "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata3 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatac = userDataPath.Value
@@ -9835,13 +9835,13 @@ task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF4
     
-    while wait(0.3) do
+    while task.wait(0.3) do
         local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata4 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat wait(0.5) until userDataPath.Value ~= _G.fruitdata4 and userDataPath.Value ~= "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata4 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatav = userDataPath.Value
@@ -9900,13 +9900,13 @@ task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF5
     
-    while wait(0.3) do
+    while task.wait(0.3) do
         local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata5 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat wait(0.5) until userDataPath.Value ~= _G.fruitdata5 and userDataPath.Value ~= "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata5 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatab = userDataPath.Value
@@ -9965,13 +9965,13 @@ task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF6
     
-    while wait(0.3) do
+    while task.wait(0.3) do
         local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata6 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat wait(0.5) until userDataPath.Value ~= _G.fruitdata6 and userDataPath.Value ~= "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata6 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatan = userDataPath.Value
@@ -10030,13 +10030,13 @@ task.spawn(function()
     local userId = tostring(game.Players.LocalPlayer.UserId)
     local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF7
     
-    while wait(0.3) do
+    while task.wait(0.3) do
         local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata7 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat wait(0.5) until userDataPath.Value ~= _G.fruitdata7 and userDataPath.Value ~= "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata7 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatam = userDataPath.Value
@@ -10092,7 +10092,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         local success, errorMsg = pcall(function()
             -- Store initial fruit data
             local userId = tostring(game.Players.LocalPlayer.UserId)
@@ -10100,7 +10100,7 @@ task.spawn(function()
             _G.fruitdata8 = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat wait(0.5) until workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= _G.fruitdata8 
+            repeat task.wait(0.5) until workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= _G.fruitdata8 
                 and workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= "None"
             
             -- Retrieve updated fruit data
@@ -10152,7 +10152,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             -- Store the initial value
             local userId = tostring(game.Players.LocalPlayer.UserId)
@@ -10160,7 +10160,7 @@ task.spawn(function()
             _G.fruitdata9 = userDataPath.Value
             
             -- Wait for the value to change and ensure it's not "None"
-            repeat wait(0.5) until userDataPath.Value ~= _G.fruitdata9 and userDataPath.Value ~= "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata9 and userDataPath.Value ~= "None"
             
             -- Retrieve the updated value
             local fruitdataa = userDataPath.Value
@@ -10201,7 +10201,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             -- Fetching initial data
             local playerId = tostring(game.Players.LocalPlayer.UserId)
@@ -10209,7 +10209,7 @@ task.spawn(function()
             _G.fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
 
             -- Waiting for the value to change
-            repeat wait(0.5) until workspace.UserData["User_" .. playerId].Data[key].Value ~= _G.fruitdata10 and workspace.UserData["User_" .. playerId].Data[key].Value ~= "None"
+            repeat task.wait(0.5) until workspace.UserData["User_" .. playerId].Data[key].Value ~= _G.fruitdata10 and workspace.UserData["User_" .. playerId].Data[key].Value ~= "None"
 
             -- Process the new data
             local fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
@@ -10260,13 +10260,13 @@ end)
 
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             local playerId = tostring(game.Players.LocalPlayer.UserId)
             local key = "StoredDF11"
             _G.fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
             
-            repeat wait(0.5) until workspace.UserData["User_"..playerId].Data[key].Value ~= _G.fruitdata11 and workspace.UserData["User_"..playerId].Data[key].Value ~= "None"
+            repeat task.wait(0.5) until workspace.UserData["User_"..playerId].Data[key].Value ~= _G.fruitdata11 and workspace.UserData["User_"..playerId].Data[key].Value ~= "None"
             
             local fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
             local fruitparts11 = {}
@@ -10314,10 +10314,10 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    while wait(0.3) do
+    while task.wait(0.3) do
         pcall(function()
             _G.fruitdata12 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
-            repeat wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
+            repeat task.wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
             local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
             local fruitparts12 = {}
             for part12 in string.gmatch(fruitdataa, "[^,]+") do
@@ -10376,16 +10376,16 @@ if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
 
-while realtimechecking do wait(5)
+while realtimechecking do task.wait(5)
 if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) and not table.find(khoilistedzxwc, game:GetService("Players").LocalPlayer.Name) then
 game:GetService("Players").LocalPlayer:Kick("What are you doing bruh?")
 end
 end
 
-while true do wait(5)
+while true do task.wait(5)
 if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
 task.spawn(function()
-while wait(0.3) do
+while task.wait(0.3) do
 pcall(function()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname then
@@ -10403,7 +10403,7 @@ local args = {
 }
 
 c.Dash:FireServer(unpack(args))
-wait()
+task.wait()
 end
 end
 end

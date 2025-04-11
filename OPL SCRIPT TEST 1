@@ -1275,6 +1275,31 @@ _G.SelectedKillPlayer = ""
 end)
 end
 
+targetcannon = Tabs.Player:AddToggle("targetcannontoggle", {Title = "Target Player Who Holding Cannon", Default = false })
+targetcannon:OnChanged(function()
+if Options.targetcannontoggle.Value == true then
+getgenv().targetingcannon = true
+else
+getgenv().targetingcannon = false
+end
+
+while getgenv().targetingcannon do task.wait(0.1)
+pcall(function()
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v.Name ~= usingname then
+for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
+if getgenv().targetingcannon == true and c:IsA("Model") and c.Name == v.Name and v.Character:FindFirstChild("Cannon Ball") and not table.find(anticamplisted,c.Name) then
+repeat task.wait()
+_G.SelectedKillPlayer = c.Name
+until not getgenv().targetingcannon or not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) or game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0
+end
+end
+end
+end
+_G.SelectedKillPlayer = ""
+end)
+end
+
 end)
 Tabs.Player:AddSection("						 --Players' Stuff--")
 viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })

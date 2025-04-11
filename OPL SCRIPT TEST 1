@@ -3156,7 +3156,7 @@ Fluent:Notify({
 })
             while _G.autospawnnew do task.wait()
                     pcall(function()
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(3)
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(5)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
 game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true

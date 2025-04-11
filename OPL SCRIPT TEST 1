@@ -3145,18 +3145,18 @@ _G.autospawn = false
 end
 end)
 
-AutospawnnewToggle = Tabs.Automatic:AddToggle("Autospawnnew1Toggle", {Title = "Auto Spawn (New)", Default = false })
+AutospawnnewToggle = Tabs.Automatic:AddToggle("Autospawnnew1Toggle", {Title = "Auto Spawn (If Not Auto TP)", Default = false })
     AutospawnnewToggle:OnChanged(function()
 if Options.Autospawnnew1Toggle.Value == true then
 _G.autospawnnew = true
 Fluent:Notify({
     Title = "Auto Function Notify",
-    Content = "Auto Spawn (New) Is Turned On",
+    Content = "Auto Spawn (Not TP) Is Turned On",
     Duration = 5
 })
             while _G.autospawnnew do task.wait()
                     pcall(function()
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(5)
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(3)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
 game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
@@ -3171,24 +3171,58 @@ pcall(function()
 	game:GetService("Players").LocalPlayer.CameraMode = "Classic"
 	game:GetService("Players").LocalPlayer.Character.Head.Anchored = false   
 end)
-task.wait(0.1)
 repeat task.wait(0.1)
 until (game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000) or (_G.autospawnnew == false)
 task.wait(0.1)
 if _G.autospawnnew == true then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-for i = 1,5 do task.wait(0.5)
-for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-v:Destroy()
-end
-end
 end
                         end
                     end)
             end
 else
 _G.autospawnnew = false
+end
+end)
+
+AutospawntpToggle = Tabs.Automatic:AddToggle("Autospawntp1Toggle", {Title = "Auto Spawn (If Auto TP)", Default = false })
+AutospawntpToggle:OnChanged(function()
+if Options.Autospawntp1Toggle.Value == true then
+_G.autospawntp = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn (TP) Is Turned On",
+    Duration = 5
+})
+            while _G.autospawntp do task.wait()
+                    pcall(function()
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(3)
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
+game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
+pcall(function()
+	workspace.CurrentCamera:remove()
+	task.wait(.1)
+	repeat task.wait() until game:GetService("Players").LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5
+	game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 400
+	game:GetService("Players").LocalPlayer.CameraMode = "Classic"
+	game:GetService("Players").LocalPlayer.Character.Head.Anchored = false   
+end)
+repeat task.wait(0.1)
+until (game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000) or (_G.autospawntp == false)
+task.wait(0.1)
+if _G.autospawntp == true then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end
+                        end
+                    end)
+            end
+else
+_G.autospawntp = false
 end
 end)
 

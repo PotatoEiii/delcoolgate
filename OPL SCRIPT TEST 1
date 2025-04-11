@@ -9387,7 +9387,7 @@ if success and response then
     end
 end
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
-if not table.find(antitable,game.Players.LocalPlayer.Name) then
+if not table.find(antitable,game.Players.LocalPlayer.Name) and (whitelistkeytype ~= "Saluna and friends") then
 local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
         local data = {
         ["content"] = "",

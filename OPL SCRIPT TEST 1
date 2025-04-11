@@ -3171,12 +3171,13 @@ pcall(function()
 	game:GetService("Players").LocalPlayer.CameraMode = "Classic"
 	game:GetService("Players").LocalPlayer.Character.Head.Anchored = false   
 end)
+task.wait(0.5)
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 repeat task.wait(0.1)
 until (game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000) or (_G.autospawnnew == false)
 task.wait(0.1)
 if _G.autospawnnew == true then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
                         end
                     end)

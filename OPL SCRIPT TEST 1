@@ -430,11 +430,16 @@ antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department1
 for _, v in pairs(anticamplisted2) do
     table.insert(anticamplisted, v)
 end
-gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
+getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
+for _, v in pairs(khoilistedzxwc) do
+    table.insert(listedaxw, v)
+end
         for _, v1 in pairs(listedaxw) do
-            if gethwid == v1 then
+            if getexecutorid == v1 then
 asdwqelist = true
+realtimechecking = "HWID Check"
 whitelistkeytype = "Whitelisted Excutor ID"
             end
         end
@@ -447,18 +452,11 @@ end
         for _, v2 in pairs(userlistedzxwc) do
             if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
-realtimechecking = true
+realtimechecking = "Acc Check"
 whitelistkeytype = "Whitelisted Account"
             end
         end
 
-khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
-        for _, v3 in pairs(khoilistedzxwc) do
-            if gethwid == v3 then
-asdwqelist = true
-whitelistkeytype = "Saluna and friends"
-            end
-        end
 
 if asdwqelist then
 pcall(function()
@@ -10499,9 +10497,20 @@ if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
 
-while realtimechecking do task.wait(5)
+while true do task.wait(5)
+if realtimechecking == "Acc Check" then
 if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) then
-game:GetService("Players").LocalPlayer:Kick("What are you doing bruh?")
+game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
+end
+elseif realtimechecking == "HWID Check" then
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
+for _, v in pairs(khoilistedzxwc) do
+    table.insert(listedaxw, v)
+end
+if not not table.find(listedaxw, getexecutorid) then
+game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
+end
 end
 end
 

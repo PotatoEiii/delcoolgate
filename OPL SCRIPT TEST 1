@@ -10498,6 +10498,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 end
 
 while true do task.wait(5)
+task.spawn(function()
 if realtimechecking == "Acc Check" then
 if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) then
 game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
@@ -10512,13 +10513,12 @@ if not not table.find(listedaxw, getexecutorid) then
 game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
 end
 end
+end)
 end
 
 while true do task.wait(5)
-if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
 task.spawn(function()
-while task.wait(0.3) do
-pcall(function()
+if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname then
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -10540,8 +10540,6 @@ end
 end
 end
 end
-end)
 end
 end)
-end
 end

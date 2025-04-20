@@ -10503,15 +10503,6 @@ if realtimechecking == "Acc Check" then
 if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) then
 game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
 end
-elseif realtimechecking == "HWID Check" then
-listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
-for _, v in pairs(khoilistedzxwc) do
-    table.insert(listedaxw, v)
-end
-if not not table.find(listedaxw, getexecutorid) then
-game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
-end
 end
 end)
 end

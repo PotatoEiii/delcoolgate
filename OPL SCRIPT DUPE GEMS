@@ -14,17 +14,25 @@ repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
 asdwqelist = false
-listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-        for _, v1 in pairs(listed) do
-gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
-            if gethwid == v1 then
+getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
+for _, v in pairs(khoilistedzxwc) do
+    table.insert(listedaxw, v)
+end
+        for _, v1 in pairs(listedaxw) do
+            if getexecutorid == v1 then
 asdwqelist = true
             end
         end
 
 userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
+userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid'))()
+for _, c in pairs(userlistedzxwc2) do
+    table.insert(userlistedzxwc, c)
+end
         for _, v2 in pairs(userlistedzxwc) do
-            if (game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2) and game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name) then
+            if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
             end
         end

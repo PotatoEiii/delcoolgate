@@ -3847,9 +3847,9 @@ Tabs.Weapon:AddSection("							--Yoru Spam--")
 yorusmazz = Tabs.Weapon:AddSlider("yorusmazz", {
     Title = "Yoru Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
-    Default = 15,
+    Default = 50,
     Min = 1,
-    Max = 100,
+    Max = 500,
     Rounding = 0,
     Callback = function(zxceyoz)
             yoruspeedzx = tonumber(zxceyoz)
@@ -3895,9 +3895,9 @@ Tabs.Weapon:AddSection("						 --Cestus Spam--")
 cestussmazz = Tabs.Weapon:AddSlider("cestussmazz", {
     Title = "Cestus Speed",
     Description = "Recommend: \nCamp:15 ; Farm:25->50",
-    Default = 15,
+    Default = 50,
     Min = 1,
-    Max = 100,
+    Max = 500,
     Rounding = 0,
     Callback = function(zxceyoz)
             cestusspeedzx = tonumber(zxceyoz)

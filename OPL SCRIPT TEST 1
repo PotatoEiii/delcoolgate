@@ -10496,14 +10496,14 @@ if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "This Game Is Not Supported"
 end
 
+if realtimechecking then
 while true do task.wait(5)
 task.spawn(function()
-if realtimechecking then
 if (not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name)) and (not game.Workspace:FindFirstChild(game:GetService("Players").LocalPlayer.Name)) then
 game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
 end
-end
 end)
+end
 end
 
 while true do task.wait(5)

@@ -369,7 +369,7 @@ for _, v in pairs(game:GetService("Players"):GetPlayers()) do
         if v.UserId == v1 then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
 task.wait()
-local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8bAE8cjyhyBUix9GjZMO4QLmZhdjAEn2HPORUc4L5cEA99sHiNKpMS1r"
+local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
         local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
@@ -399,7 +399,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         if r.UserId == v then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
 task.wait()
-local url = "https://discord.com/api/webhooks/1268351413751120002/YX_I7VpV7ECm8bAE8cjyhyBUix9GjZMO4QLmZhdjAEn2HPORUc4L5cEA99sHiNKpMS1r"
+local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
         local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
@@ -9506,7 +9506,7 @@ if success and response then
 end
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) and (whitelistkeytype ~= "Saluna and friends") then
-local url = "https://discord.com/api/webhooks/1268134529567297629/oYa9cB697UfQ797-lSRVuN68pLb6Cmo0pi84bdRhCKU1eh-qHG4bsKJ3GctgR9nIcElz"
+local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
         local data = {
         ["content"] = "",
         ["embeds"] = {
@@ -9558,7 +9558,7 @@ end
 
 
 task.wait()
-local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+local url = "https://discord.com/api/webhooks/1364580768784978002/36Jy20F6iYnm4rM3_K6rcmZrUwBSa3CkYkEER5QH7Dm49jDjyBwEb7iAypmZse8SRe0E"
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9587,7 +9587,7 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+local url = "https://discord.com/api/webhooks/1364580768784978002/36Jy20F6iYnm4rM3_K6rcmZrUwBSa3CkYkEER5QH7Dm49jDjyBwEb7iAypmZse8SRe0E"
         local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
@@ -9642,7 +9642,7 @@ end
 end
 
 task.wait()
-local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+local url = "https://discord.com/api/webhooks/1364580768784978002/36Jy20F6iYnm4rM3_K6rcmZrUwBSa3CkYkEER5QH7Dm49jDjyBwEb7iAypmZse8SRe0E"
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9671,7 +9671,7 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+local url = "https://discord.com/api/webhooks/1364580768784978002/36Jy20F6iYnm4rM3_K6rcmZrUwBSa3CkYkEER5QH7Dm49jDjyBwEb7iAypmZse8SRe0E"
         local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
@@ -9728,7 +9728,7 @@ end
 end
 
 task.wait()
-local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+local url = "https://discord.com/api/webhooks/1364580768784978002/36Jy20F6iYnm4rM3_K6rcmZrUwBSa3CkYkEER5QH7Dm49jDjyBwEb7iAypmZse8SRe0E"
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9757,7 +9757,7 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-local url = "https://discord.com/api/webhooks/1267824938006483034/UUeyjuyqw7mTm-RERUYvotVvB5f27Ab4fA8Wn1QkMfLEuW7N33Pgd0JGFOH5XkVCjLLw"
+local url = "https://discord.com/api/webhooks/1364580768784978002/36Jy20F6iYnm4rM3_K6rcmZrUwBSa3CkYkEER5QH7Dm49jDjyBwEb7iAypmZse8SRe0E"
         local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {

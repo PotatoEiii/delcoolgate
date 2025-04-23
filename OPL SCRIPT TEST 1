@@ -439,7 +439,6 @@ end
         for _, v1 in pairs(listedaxw) do
             if getexecutorid == v1 then
 asdwqelist = true
-realtimechecking = "HWID Check"
 whitelistkeytype = "Whitelisted Excutor ID"
             end
         end
@@ -452,7 +451,7 @@ end
         for _, v2 in pairs(userlistedzxwc) do
             if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
-realtimechecking = "Acc Check"
+realtimechecking = true
 whitelistkeytype = "Whitelisted Account"
             end
         end
@@ -10499,8 +10498,8 @@ end
 
 while true do task.wait(5)
 task.spawn(function()
-if realtimechecking == "Acc Check" then
-if not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name) then
+if realtimechecking then
+if (not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name)) and (not game.Workspace:FindFirstChild(game:GetService("Players").LocalPlayer.Name)) then
 game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
 end
 end

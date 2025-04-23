@@ -9802,7 +9802,7 @@ task.spawn(function()
 
             local fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
 
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 ["content"] = "",
                 ["embeds"] = {
@@ -9855,7 +9855,7 @@ task.spawn(function()
 
             local fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
 
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 ["content"] = "",
                 ["embeds"] = {
@@ -9912,7 +9912,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts3[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -9977,7 +9977,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts4[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -10042,7 +10042,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts5[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -10107,7 +10107,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts6[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -10172,7 +10172,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts7[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -10236,7 +10236,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts8[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -10295,7 +10295,7 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts9[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 content = "",
                 embeds = {{
@@ -10348,7 +10348,7 @@ task.spawn(function()
             end
 
             -- Sending notification to Discord webhook
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 ["content"] = "",
                 ["embeds"] = {
@@ -10403,7 +10403,7 @@ task.spawn(function()
                 _G.fruitauraistrue = "(Normal Fruit)"
             end
 
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 ["content"] = "",
                 ["embeds"] = {
@@ -10452,7 +10452,7 @@ task.spawn(function()
                 _G.fruitauraistrue = "(Normal Fruit)"
             end
 
-            local url = "https://discord.com/api/webhooks/1271382277649207326/L_h91B7SwkWtPyCOldaTkPzv1CibW8jNVg9-aVOzqBEY8fj1qzHREvwwc_N3Hwm3JsLz"
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
             local data = {
                 ["content"] = "",
                 ["embeds"] = {

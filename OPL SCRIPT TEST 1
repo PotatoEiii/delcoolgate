@@ -424,15 +424,15 @@ local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dU
 end)  
 
 asdwqelist = false
-anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
-anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer'))()
+anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
+anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer.lua'))()
 antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/risk/main/anti%20spy%20(risk)'))()
 for _, v in pairs(anticamplisted2) do
     table.insert(anticamplisted, v)
 end
 getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist.lua'))()
 for _, v in pairs(khoilistedzxwc) do
     table.insert(listedaxw, v)
 end
@@ -444,8 +444,8 @@ whitelistkeytype = "Whitelisted Excutor ID"
             end
         end
 
-userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
-userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid'))()
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list.lua'))()
+userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid.lua'))()
 for _, c in pairs(userlistedzxwc2) do
     table.insert(userlistedzxwc, c)
 end
@@ -9504,7 +9504,7 @@ if success and response then
         end
     end
 end
-local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp'))()
+local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) and (whitelistkeytype ~= "Saluna and friends") then
 local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
         local data = {

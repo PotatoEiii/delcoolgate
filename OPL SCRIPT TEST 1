@@ -1,4 +1,4 @@
-local SalunaVersion = "Saluna 006 (23/04/2025)"
+local SalunaVersion = "Saluna 007 (24/04/2025)"
 repeat task.wait() until game:IsLoaded()
 if not game:IsLoaded() then game:IsLoaded():Wait(7) end
 repeat task.wait()

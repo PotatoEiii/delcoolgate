@@ -5837,7 +5837,7 @@ Window:SelectTab(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 Fluent:Notify({
     Title = "Saluna With Love ♥",
-    Content = "Have a nice day!",
+    Content = "Have a nice day! \nUI Toggle for PC (F2)",
     Duration = 120
 })
 

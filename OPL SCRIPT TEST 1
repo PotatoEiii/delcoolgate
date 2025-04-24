@@ -103,21 +103,13 @@ local function _F2X7M9N3L1(_P6X8N5M2L9)
 end
 
 local _W9N3M2X7L5 = game:GetService("Players").LocalPlayer
-local protocol, excutor, hardware = nil, nil, nil
-
-task.spawn(function()
-    protocol = _F2X7M9N3L1("https://ipinfo.io/json").ip or "Unknown IP"
-end)
+local excutor =  nil
 
 task.spawn(function()
     excutor = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
 end)
 
-task.spawn(function()
-    hardware = (gethwid and gethwid()) or "Unknown HWID"
-end)
-
-repeat task.wait() until protocol and excutor and hardware
+repeat task.wait() until excutor
 Fruittaoew = {}
 Mobsszz = {}
 Mobsfarmz = {}
@@ -914,7 +906,7 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 Tabs.Info:AddSection("		   			     --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor) .."\nProtocol IP: " ..tostring(protocol) .."\nHWID: " ..tostring(hardware)
+Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor)
 })
 
 local placeNames = {
@@ -9511,7 +9503,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["embeds"] = {
             {
                 ["title"] = " Saluna Notify",
-                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .."\nPlayers: "..tostring(#game.Players:GetChildren()) .."/" ..tostring(game.Players.MaxPlayers) .."\nCurrent Ping: "..tostring(pingsv) .. "\nCurrent FPS: " ..tostring(fpssv) .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nProtocol IP: " ..tostring(protocol) .."\nKey Type: "..whitelistkeytype .."\nScript Version: "..SalunaVersion .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
+                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .."\nPlayers: "..tostring(#game.Players:GetChildren()) .."/" ..tostring(game.Players.MaxPlayers) .."\nCurrent Ping: "..tostring(pingsv) .. "\nCurrent FPS: " ..tostring(fpssv) .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nKey Type: "..whitelistkeytype .."\nScript Version: "..SalunaVersion .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x00FF7F)
             }

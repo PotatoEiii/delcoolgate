@@ -1,4 +1,4 @@
-local SalunaVersion = "Saluna 005 (20/04/2025)"
+local SalunaVersion = "Saluna 006 (23/04/2025)"
 repeat task.wait() until game:IsLoaded()
 if not game:IsLoaded() then game:IsLoaded():Wait(7) end
 repeat task.wait()
@@ -9505,7 +9505,7 @@ if success and response then
 end
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) and (whitelistkeytype ~= "Saluna and friends") then
-local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
         local data = {
         ["content"] = "",
         ["embeds"] = {

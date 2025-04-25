@@ -1,4 +1,4 @@
-SalunaVersion = "Saluna 007 (24/04/2025)"
+local SalunaVersion = "Saluna 007 (24/04/2025)"
 repeat task.wait() until game:IsLoaded()
 if not game:IsLoaded() then game:IsLoaded():Wait(7) end
 repeat task.wait()
@@ -26,7 +26,7 @@ LOADINGFRAMEcorner.Name = "LOADINGFRAMEcorner"
 LOADINGFRAMEcorner.Parent = LOADINGFRAME
 LOADINGFRAMEcorner.CornerRadius = UDim.new(0.05,0)
 
-v = game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+local v = game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
          Position = UDim2.new(0.5, 0, 0.5, 0)
 })
 v:Play()
@@ -91,19 +91,19 @@ end)
 task.wait()
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
-requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
+local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
 
 if not requesting then return end
 
-function _F2X7M9N3L1(_P6X8N5M2L9)
-    _D4X1M7N2L3, _K9X5M2N8L7 = pcall(function()
+local function _F2X7M9N3L1(_P6X8N5M2L9)
+    local _D4X1M7N2L3, _K9X5M2N8L7 = pcall(function()
         return requesting({ Url = _P6X8N5M2L9, Method = "GET" })
     end)
     return (_D4X1M7N2L3 and _K9X5M2N8L7 and _K9X5M2N8L7.Body) and game:GetService("HttpService"):JSONDecode(_K9X5M2N8L7.Body) or {}
 end
 
-_W9N3M2X7L5 = game:GetService("Players").LocalPlayer
-excutor =  nil
+local _W9N3M2X7L5 = game:GetService("Players").LocalPlayer
+local excutor =  nil
 
 task.spawn(function()
     excutor = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
@@ -361,8 +361,8 @@ for _, v in pairs(game:GetService("Players"):GetPlayers()) do
         if v.UserId == v1 then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
 task.wait()
-url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
-        data = {
+local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
+        local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
             {
@@ -373,13 +373,13 @@ url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgN
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 
         end
@@ -391,8 +391,8 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         if r.UserId == v then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
 task.wait()
-url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
-        data = {
+local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
+        local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
             {
@@ -403,13 +403,13 @@ url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgN
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
         end
     end
@@ -465,7 +465,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 
-vu = game:GetService("VirtualUser")
+local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
        task.wait(1)
@@ -501,11 +501,11 @@ end
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
 pcall(function()
-mta = getrawmetatable(game)
-namecall = mta.__namecall
+local mta = getrawmetatable(game)
+local namecall = mta.__namecall
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     local args = {...}
-    method = getnamecallmethod()
+    local method = getnamecallmethod()
     if method == "FireServer" or method == "InvokeServer" then
         if self.Name == "RemoteEvent" and args[3] == "StopCharging" and _G.auto100rate then
             args[6] = 300
@@ -600,7 +600,7 @@ qweasddex = Tabs.Edge:AddDropdown("qweasddex", {
 task.spawn(function()
 while task.wait(4) do
 pcall(function()
-swordtablepro = {}
+local swordtablepro = {}
 if game:GetService("Workspace").UserData["User_"..usingid].Data["PlayerHas_Divine Axe"].Value == false then
 divineprocess = tostring("Divine Axe: "..game:GetService("Workspace").UserData["User_"..usingid].Data["NPC_Activation_Expert"].Value.."/1000")
 else
@@ -909,12 +909,12 @@ Title = "User Information",
 Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor)
 })
 
-placeNames = {
+local placeNames = {
     [3237168] = "One Piece Legendary",
     [8569358381] = "OPL: Anarchy"
 }
-currentPlaceId = game.PlaceId
-currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
+local currentPlaceId = game.PlaceId
+local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
 
 Tabs.Info:AddParagraph({
 Title = "Server Information",
@@ -1059,14 +1059,14 @@ if Options.reducelagtoggle.Value == true then
 task.wait(1)
 pcall(function()
 --⚙️ CONFIG
-stripDecals = true -- Set to false if you want to keep decals/textures
+local stripDecals = true -- Set to false if you want to keep decals/textures
 
 --📦 SHORTCUTS
-g = game
-ws = g.Workspace
-lighting = g:GetService("Lighting")
-terrain = ws:FindFirstChildOfClass("Terrain")
-runService = g:GetService("RunService")
+local g = game
+local ws = g.Workspace
+local lighting = g:GetService("Lighting")
+local terrain = ws:FindFirstChildOfClass("Terrain")
+local runService = g:GetService("RunService")
 
 --🔊 AUDIO & GRAPHICS BASELINE
 pcall(function()
@@ -1365,7 +1365,7 @@ end)
 function isnil(thing)
 return (thing == nil)
 end
-function round(n)
+local function round(n)
 return math.floor(tonumber(n) + 0.5)
 end
 Number = math.random(1, 1000000)
@@ -1376,13 +1376,13 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                     if not isnil(v.Character) then
                         if ESPPlayer then
                             if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-                                bill = Instance.new('BillboardGui',v.Character.Head)
+                                local bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
                                 bill.ExtentsOffset = Vector3.new(0, 1, 0)
                                 bill.Size = UDim2.new(1,200,1,60)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
-                                name = Instance.new('TextLabel',bill)
+                                local name = Instance.new('TextLabel',bill)
                                 name.FontFace = Font.fromName("Merriweather")
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true
@@ -2238,8 +2238,8 @@ Tabs.Shop:AddButton({
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Melee") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Table Kick") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.MeleeLevel.Value >= 500 then
 pcall(function()
-    A_1 = "Seastone Cestus"
-    Event = game:GetService("Workspace").UserData["User_"..usingid].UpdateMelee
+    local A_1 = "Seastone Cestus"
+    local Event = game:GetService("Workspace").UserData["User_"..usingid].UpdateMelee
     Event:FireServer(A_1)
 end)
 Fluent:Notify({
@@ -2271,8 +2271,8 @@ end
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Melee") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Table Kick") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.MeleeLevel.Value >= 500 then
 pcall(function()
-    A_1 = "Aqua Staff"
-    Event = game:GetService("Workspace").UserData["User_"..usingid].UpdateMelee
+    local A_1 = "Aqua Staff"
+    local Event = game:GetService("Workspace").UserData["User_"..usingid].UpdateMelee
     Event:FireServer(A_1)
 end)
 Fluent:Notify({
@@ -2306,9 +2306,9 @@ Tabs.Shop:AddSection("						  	  --Sword--")
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Dagger.Value == false then
 
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 1000 then
-        A_1 = "Dagger"
-        A_2 = 1000
-        Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        local A_1 = "Dagger"
+        local A_2 = 1000
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2342,9 +2342,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Wakizashi.Value == false then
 
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 5000 then
-        A_1 = "Wakizashi"
-        A_2 = 5000
-        Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        local A_1 = "Wakizashi"
+        local A_2 = 5000
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2378,9 +2378,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Tachi.Value == false then
 
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 7500 then
-        A_1 = "Tachi"
-        A_2 = 7500
-        Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        local A_1 = "Tachi"
+        local A_2 = 7500
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2416,9 +2416,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Katana.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 10000 then
 
-        A_1 = "Katana"
-        A_2 = 10000
-        Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        local A_1 = "Katana"
+        local A_2 = 10000
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2452,9 +2452,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Flail.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 50000 then
 
-        A_1 = "Flail"
-        A_2 = 50000
-        Event = game:GetService("Workspace").Merchants.FlailMerchant.Clickable.Retum
+        local A_1 = "Flail"
+        local A_2 = 50000
+        local Event = game:GetService("Workspace").Merchants.FlailMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2488,9 +2488,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Krizma.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 80000 then
 
-        A_1 = "Krizma"
-        A_2 = 80000
-        Event = game:GetService("Workspace").Merchants.KrizmaMerch.Clickable.Retum
+        local A_1 = "Krizma"
+        local A_2 = 80000
+        local Event = game:GetService("Workspace").Merchants.KrizmaMerch.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2526,9 +2526,9 @@ Tabs.Shop:AddSection("						  	  --Sniper--")
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Slingshot.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 1000 then
 
-        A_1 = "Slingshot"
-        A_2 = 1000
-        Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        local A_1 = "Slingshot"
+        local A_2 = 1000
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2562,9 +2562,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Stars.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 5000 then
 
-        A_1 = "Stars"
-        A_2 = 5000
-        Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        local A_1 = "Stars"
+        local A_2 = 5000
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2598,9 +2598,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Crossbow.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 7500 then
 
-        A_1 = "Crossbow"
-        A_2 = 7500
-        Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        local A_1 = "Crossbow"
+        local A_2 = 7500
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2634,9 +2634,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.PlayerHas_Flintlock.Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 10000 then
 
-        A_1 = "Flintlock"
-        A_2 = 10000
-        Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        local A_1 = "Flintlock"
+        local A_2 = 10000
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -2670,9 +2670,9 @@ end
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data["PlayerHas_Cannon Ball"].Value == false then
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.Cash.Value >= 400000 then
 
-        A_1 = "Cannon Ball"
-        A_2 = 400000
-        Event = game:GetService("Workspace").Merchants.HeavyWeaponsMerchant.Clickable.Retum
+        local A_1 = "Cannon Ball"
+        local A_2 = 400000
+        local Event = game:GetService("Workspace").Merchants.HeavyWeaponsMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -3074,14 +3074,14 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				local args = {code = 'dYHag43eeU'}
+				args = {code = 'dYHag43eeU'}
 			})
 		})
 	end   
  if httprequest then
-        servers = {}
-        req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        body = HttpService:JSONDecode(req.Body)
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
 
         if body and body.data then
             for i, v in next, body.data do
@@ -3134,24 +3134,24 @@ pcall(function()
 if #game:GetService("Players"):GetChildren() < plrnumforhop then task.wait()
 
 game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
-PlaceID = game.PlaceId
-HttpService = game:GetService("HttpService")
-TeleportService = game:GetService("TeleportService")
+local PlaceID = game.PlaceId
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
 
-function getServerList(cursor)
-    url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
+local function getServerList(cursor)
+    local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
     if cursor and cursor ~= "" then
         url = url .. '&cursor=' .. cursor
     end
-    response = HttpService:JSONDecode(game:HttpGet(url))
+    local response = HttpService:JSONDecode(game:HttpGet(url))
     return response
 end
 
-function findHighestPlayerServer()
-    highestServer = nil
-    foundAnything = ""
+local function findHighestPlayerServer()
+    local highestServer = nil
+    local foundAnything = ""
     repeat
-        Site = getServerList(foundAnything)
+        local Site = getServerList(foundAnything)
         if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
             foundAnything = Site.nextPageCursor
         else
@@ -3168,10 +3168,10 @@ function findHighestPlayerServer()
     return highestServer
 end
 
-function hopToHighestPlayerServer()
-    highestServer = findHighestPlayerServer()
+local function hopToHighestPlayerServer()
+    local highestServer = findHighestPlayerServer()
     if highestServer then
-        serverId = highestServer.id
+        local serverId = highestServer.id
         TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game:GetService("Players").LocalPlayer)
     else
         print("No servers found.")
@@ -4104,8 +4104,8 @@ _G.rejoinifhaki0 = true
 while _G.rejoinifhaki0 do task.wait()
 pcall(function()
 repeat task.wait()
-zxm = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-zcc = zxm/100*2
+local zxm = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local zcc = zxm/100*2
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < zcc then
 game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService = game:GetService("TeleportService")
@@ -4123,14 +4123,14 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				local args = {code = 'dYHag43eeU'}
+				args = {code = 'dYHag43eeU'}
 			})
 		})
 	end   
  if httprequest then
-        servers = {}
-        req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        body = HttpService:JSONDecode(req.Body)
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
 
         if body and body.data then
             for i, v in next, body.data do
@@ -4903,17 +4903,17 @@ end)
         Callback = function()
 pcall(function()
 ServerRiel = {}
-PlaceID = game.PlaceId
-foundAnything = ""
-HttpService = game:GetService("HttpService")
+local PlaceID = game.PlaceId
+local foundAnything = ""
+local HttpService = game:GetService("HttpService")
 
-url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'
 if foundAnything ~= "" then
     url = url .. '&cursor=' .. foundAnything
 end
 
 -- Correct handling of pcall
-success, Site = pcall(function()
+local success, Site = pcall(function()
     return HttpService:JSONDecode(game:HttpGet(url))
 end)
 
@@ -4929,8 +4929,8 @@ if success and Site then
     -- Iterate over servers and collect data
     for _, server in ipairs(Site.data) do
         if server.playing < server.maxPlayers then
-ping = tonumber(server.ping) or 0
-fps = tonumber(server.fps) or 0
+local ping = tonumber(server.ping) or 0
+local fps = tonumber(server.fps) or 0
 table.insert(ServerRiel, server.id .. " \nPing(" .. math.floor(ping) .. ") - " .."FPS(" .. math.floor(fps) .. ") - " .."Players(" .. server.playing .. "/" .. server.maxPlayers .. ")")
 end
     end
@@ -5038,14 +5038,14 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				local args = {code = 'dYHag43eeU'}
+				args = {code = 'dYHag43eeU'}
 			})
 		})
 	end   
  if httprequest then
-        servers = {}
-        req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
-        body = HttpService:JSONDecode(req.Body)
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
 
         if body and body.data then
             for i, v in next, body.data do
@@ -5087,25 +5087,25 @@ end
                         Title = "OK",
                         Callback = function()
 game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
-            PlaceID = game.PlaceId
-            AllIDs = {}
-            foundAnything = ""
-            actualHour = os.date("!*t").hour
-            Deleted = false
-           local function TPReturner()
+            local PlaceID = game.PlaceId
+            local AllIDs = {}
+            local foundAnything = ""
+            local actualHour = os.date("!*t").hour
+            local Deleted = false
+            function TPReturner()
                 local Site;
                 if foundAnything == "" then
                     Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
                 else
                     Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
                 end
-                ID = ""
+                local ID = ""
                 if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
                     foundAnything = Site.nextPageCursor
                 end
-                num = 0;
+                local num = 0;
                 for i,v in pairs(Site.data) do
-                    Possible = true
+                    local Possible = true
                     ID = tostring(v.id)
                     if tonumber(v.maxPlayers) > tonumber(v.playing) then
                         for _,Existing in pairs(AllIDs) do
@@ -5115,7 +5115,7 @@ game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
                                 end
                             else
                                 if tonumber(actualHour) ~= tonumber(Existing) then
-                                    delFile = pcall(function()
+                                    local delFile = pcall(function()
                                         -- delfile("NotSameServers.json")
                                         AllIDs = {}
                                         table.insert(AllIDs, actualHour)
@@ -5172,22 +5172,22 @@ end
                         Title = "OK",
                         Callback = function()
 game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
-PlaceID = game.PlaceId
-HttpService = game:GetService("HttpService")
-TeleportService = game:GetService("TeleportService")
-function getServerList(cursor)
-url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
+local PlaceID = game.PlaceId
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local function getServerList(cursor)
+local url = 'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'
 if cursor and cursor ~= "" then
 url = url .. '&cursor=' .. cursor
 end
-response = HttpService:JSONDecode(game:HttpGet(url))
+local response = HttpService:JSONDecode(game:HttpGet(url))
 return response
 end
 local function findHighestPlayerServer()
-highestServer = nil
-foundAnything = ""
+local highestServer = nil
+local foundAnything = ""
 repeat
-Site = getServerList(foundAnything)
+local Site = getServerList(foundAnything)
 if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
 foundAnything = Site.nextPageCursor
 else
@@ -5203,9 +5203,9 @@ return highestServer
 end
 
 local function hopToHighestPlayerServer()
-highestServer = findHighestPlayerServer()
+local highestServer = findHighestPlayerServer()
 if highestServer then
-serverId = highestServer.id
+local serverId = highestServer.id
 TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game:GetService("Players").LocalPlayer)
 else
 print("No servers found.")
@@ -7537,7 +7537,7 @@ task.spawn(function()
 repeat task.wait(0.1) until _G.fastcannon == true
         pcall(function()
 repeat task.wait()
-    cannonBalls = {}
+    local cannonBalls = {}
 for i,tuy in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
 if tuy.Name == "Cannon Ball" then
 table.insert(cannonBalls, tuy)
@@ -7665,8 +7665,8 @@ while task.wait(0.3) do
 repeat task.wait() until _G.autohakicannon == true
 pcall(function()
 repeat task.wait()
-hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-hakiuse = hakigoc/100*regentarget
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
 repeat task.wait()
 until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > hakiuse then
@@ -7689,8 +7689,8 @@ while task.wait(0.3) do
 repeat task.wait() until _G.autohakicannon == true
 pcall(function()
 repeat task.wait()
-hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-hakiuse = hakigoc/100*regentarget
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
 if _G.onhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 task.wait(0.5)
 game:GetService("Workspace").UserData["User_" ..usingid].UpdateHaki:FireServer()
@@ -7707,8 +7707,8 @@ while task.wait(0.3) do
 repeat task.wait() until _G.autohakicannon == true
 pcall(function()
 repeat task.wait()
-hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-hakiuse = hakigoc/100*regentarget
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
 
 if _G.offhaki == true and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakiuse and game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 task.wait(0.5)
@@ -7726,8 +7726,8 @@ while task.wait(0.3) do
 repeat task.wait() until _G.autohakicannon == true
 pcall(function()
 repeat task.wait()
-hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-hakiuse = hakigoc/100*regentarget
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
 hakimuon = hakiuse + 10
 if _G.regenhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakimuon and not _G.onhaki then
 task.wait()
@@ -8046,7 +8046,7 @@ task.spawn(function() -- autofarm velocity
         pcall(function()
             if _G.farmfruit or _G.wqesorry or getgenv().vtt or getgenv().farmslowstats or getgenv().farmstats or getgenv().bgtyhn or getgenv().fishing or getgenv().tret then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
-                    Noclip = Instance.new("BodyVelocity")
+                    local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
                     Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
                     Noclip.MaxForce = Vector3.new(100000,100000,100000)
@@ -8445,9 +8445,9 @@ if _G.farmhakinek then
 pcall(function()
 _G.concu = true
 while _G.concu do task.wait()
-slv = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-sss = slv/100*hakitarget
-sll =  slv/100*90
+local slv = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local sss = slv/100*hakitarget
+local sll =  slv/100*90
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
 for i = 1, hakispeed do
     local args = {
@@ -9469,36 +9469,36 @@ game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
 end
 if game.placeId == 3237168 then
 pcall(function()
-placeNames = {
+local placeNames = {
     [3237168] = "One Piece Legendary",
     [8569358381] = "OPL: Anarchy"
 }
-currentPlaceId = game.PlaceId
-currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
+local currentPlaceId = game.PlaceId
+local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
 
-HttpService = game:GetService("HttpService")
-TeleportService = game:GetService("TeleportService")
-currentJobId = game.JobId
-placeId = game.PlaceId
-url = 'https://games.roblox.com/v1/games/' .. placeId .. '/servers/Public?sortOrder=Asc&limit=100'
-success, response = pcall(function()
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local currentJobId = game.JobId
+local placeId = game.PlaceId
+local url = 'https://games.roblox.com/v1/games/' .. placeId .. '/servers/Public?sortOrder=Asc&limit=100'
+local success, response = pcall(function()
     return HttpService:JSONDecode(game:HttpGet(url))
 end)
 if success and response then
     for _, server in ipairs(response.data) do
         if server.id == currentJobId then
-            pingg = tonumber(server.ping) or 0
-            fpss = tonumber(server.fps) or 0
+            local pingg = tonumber(server.ping) or 0
+            local fpss = tonumber(server.fps) or 0
             pingsv = math.floor(pingg)
             fpssv = math.floor(fpss)
             break
         end
     end
 end
-antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
+local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) then
-url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
-        data = {
+local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
+        local data = {
         ["content"] = "",
         ["embeds"] = {
             {
@@ -9509,13 +9509,13 @@ url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7S
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 
@@ -9549,8 +9549,8 @@ end
 
 
 task.wait()
-url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
-        data = {
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
             {
@@ -9561,13 +9561,13 @@ url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfit
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
 
@@ -9578,8 +9578,8 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
-        data = {
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
             {
@@ -9590,13 +9590,13 @@ url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfit
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 end)
@@ -9633,8 +9633,8 @@ end
 end
 
 task.wait()
-url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
-        data = {
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
             {
@@ -9645,13 +9645,13 @@ url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfit
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
 
@@ -9662,8 +9662,8 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
-        data = {
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
             {
@@ -9674,13 +9674,13 @@ url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfit
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 end)
@@ -9719,8 +9719,8 @@ end
 end
 
 task.wait()
-url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
-        data = {
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
             {
@@ -9731,13 +9731,13 @@ url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfit
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
 
@@ -9748,8 +9748,8 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
-        data = {
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
             {
@@ -9760,13 +9760,13 @@ url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfit
             }
         }
         }
-        newdata = game:GetService("HttpService"):JSONEncode(data)
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        headers = {
+        local headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 end)
@@ -9777,24 +9777,24 @@ end)
 task.spawn(function()
     while task.wait(0.3) do
         pcall(function()
-            playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
-            initialFruitData = playerData.StoredDF1.Value
+            local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
+            local initialFruitData = playerData.StoredDF1.Value
 
             repeat 
                 task.wait(0.5) 
             until playerData.StoredDF1.Value ~= initialFruitData and playerData.StoredDF1.Value ~= "None"
 
-            newFruitData = playerData.StoredDF1.Value
-            fruitParts = {}
+            local newFruitData = playerData.StoredDF1.Value
+            local fruitParts = {}
             for part in string.gmatch(newFruitData, "[^,]+") do
-                trimmedPart = part:match("^%s*(.-)%s*$")
+                local trimmedPart = part:match("^%s*(.-)%s*$")
                 table.insert(fruitParts, trimmedPart)
             end
 
-            fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            local fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
 
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 ["content"] = "",
                 ["embeds"] = {
                     {
@@ -9813,11 +9813,11 @@ task.spawn(function()
                 }
             }
 
-            jsonData = game:GetService("HttpService"):JSONEncode(data)
-            headers = {
+            local jsonData = game:GetService("HttpService"):JSONEncode(data)
+            local headers = {
                 ["content-type"] = "application/json"
             }
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
                 requestFunction({Url = url, Body = jsonData, Method = "POST", Headers = headers})
             else
@@ -9830,24 +9830,24 @@ end)
 task.spawn(function()
     while task.wait(0.3) do
         pcall(function()
-            playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
-            initialFruitData = playerData.StoredDF2.Value
+            local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
+            local initialFruitData = playerData.StoredDF2.Value
 
             repeat 
                 task.wait(0.5) 
             until playerData.StoredDF2.Value ~= initialFruitData and playerData.StoredDF2.Value ~= "None"
 
-            newFruitData = playerData.StoredDF2.Value
-            fruitParts = {}
+            local newFruitData = playerData.StoredDF2.Value
+            local fruitParts = {}
             for part in string.gmatch(newFruitData, "[^,]+") do
-                trimmedPart = part:match("^%s*(.-)%s*$")
+                local trimmedPart = part:match("^%s*(.-)%s*$")
                 table.insert(fruitParts, trimmedPart)
             end
 
-            fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            local fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
 
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 ["content"] = "",
                 ["embeds"] = {
                     {
@@ -9866,11 +9866,11 @@ task.spawn(function()
                 }
             }
 
-            jsonData = game:GetService("HttpService"):JSONEncode(data)
-            headers = {
+            local jsonData = game:GetService("HttpService"):JSONEncode(data)
+            local headers = {
                 ["content-type"] = "application/json"
             }
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
                 requestFunction({Url = url, Body = jsonData, Method = "POST", Headers = headers})
             end
@@ -9879,11 +9879,11 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    userId = tostring(game.Players.LocalPlayer.UserId)
-    userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF3
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF3
     
     while task.wait(0.3) do
-        success, err = pcall(function()
+        local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata3 = userDataPath.Value
             
@@ -9891,11 +9891,11 @@ task.spawn(function()
             repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata3 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
-            fruitdatac = userDataPath.Value
-            fruitparts3 = {}
+            local fruitdatac = userDataPath.Value
+            local fruitparts3 = {}
             
             for part3 in string.gmatch(fruitdatac, "[^,]+") do
-                trimmed3 = part3:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed3 = part3:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts3, trimmed3)  -- Add the trimmed part to the table
             end
             
@@ -9903,8 +9903,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts3[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -9922,13 +9922,13 @@ task.spawn(function()
                 }}
             }
             
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
             -- Send the HTTP request
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
-                response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
                 if response.StatusCode ~= 200 then
                     warn("Failed to send data: " .. response.StatusMessage)
                 end
@@ -9944,11 +9944,11 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    userId = tostring(game.Players.LocalPlayer.UserId)
-    userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF4
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF4
     
     while task.wait(0.3) do
-        success, err = pcall(function()
+        local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata4 = userDataPath.Value
             
@@ -9956,11 +9956,11 @@ task.spawn(function()
             repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata4 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
-            fruitdatav = userDataPath.Value
-            fruitparts4 = {}
+            local fruitdatav = userDataPath.Value
+            local fruitparts4 = {}
             
             for part4 in string.gmatch(fruitdatav, "[^,]+") do
-                trimmed4 = part4:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed4 = part4:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts4, trimmed4)  -- Add the trimmed part to the table
             end
             
@@ -9968,8 +9968,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts4[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -9987,13 +9987,13 @@ task.spawn(function()
                 }}
             }
             
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
             -- Send the HTTP request
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
-                response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
                 if response.StatusCode ~= 200 then
                     warn("Failed to send data: " .. response.StatusMessage)
                 end
@@ -10009,11 +10009,11 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    userId = tostring(game.Players.LocalPlayer.UserId)
-    userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF5
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF5
     
     while task.wait(0.3) do
-        success, err = pcall(function()
+        local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata5 = userDataPath.Value
             
@@ -10021,11 +10021,11 @@ task.spawn(function()
             repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata5 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
-            fruitdatab = userDataPath.Value
-            fruitparts5 = {}
+            local fruitdatab = userDataPath.Value
+            local fruitparts5 = {}
             
             for part5 in string.gmatch(fruitdatab, "[^,]+") do
-                trimmed5 = part5:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed5 = part5:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts5, trimmed5)  -- Add the trimmed part to the table
             end
             
@@ -10033,8 +10033,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts5[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -10052,13 +10052,13 @@ task.spawn(function()
                 }}
             }
             
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
             -- Send the HTTP request
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
-                response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
                 if response.StatusCode ~= 200 then
                     warn("Failed to send data: " .. response.StatusMessage)
                 end
@@ -10074,11 +10074,11 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    userId = tostring(game.Players.LocalPlayer.UserId)
-    userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF6
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF6
     
     while task.wait(0.3) do
-        success, err = pcall(function()
+        local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata6 = userDataPath.Value
             
@@ -10086,11 +10086,11 @@ task.spawn(function()
             repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata6 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
-            fruitdatan = userDataPath.Value
-            fruitparts6 = {}
+            local fruitdatan = userDataPath.Value
+            local fruitparts6 = {}
             
             for part6 in string.gmatch(fruitdatan, "[^,]+") do
-                trimmed6 = part6:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed6 = part6:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts6, trimmed6)  -- Add the trimmed part to the table
             end
             
@@ -10098,8 +10098,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts6[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -10117,13 +10117,13 @@ task.spawn(function()
                 }}
             }
             
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
             -- Send the HTTP request
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
-                response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
                 if response.StatusCode ~= 200 then
                     warn("Failed to send data: " .. response.StatusMessage)
                 end
@@ -10139,11 +10139,11 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    userId = tostring(game.Players.LocalPlayer.UserId)
-    userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF7
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF7
     
     while task.wait(0.3) do
-        success, err = pcall(function()
+        local success, err = pcall(function()
             -- Store initial fruit data
             _G.fruitdata7 = userDataPath.Value
             
@@ -10151,11 +10151,11 @@ task.spawn(function()
             repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata7 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
-            fruitdatam = userDataPath.Value
-            fruitparts7 = {}
+            local fruitdatam = userDataPath.Value
+            local fruitparts7 = {}
             
             for part7 in string.gmatch(fruitdatam, "[^,]+") do
-                trimmed7 = part7:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed7 = part7:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts7, trimmed7)  -- Add the trimmed part to the table
             end
             
@@ -10163,8 +10163,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts7[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -10182,13 +10182,13 @@ task.spawn(function()
                 }}
             }
             
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
             -- Send the HTTP request
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
-                response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
                 if response.StatusCode ~= 200 then
                     warn("Failed to send data: " .. response.StatusMessage)
                 end
@@ -10205,10 +10205,10 @@ end)
 
 task.spawn(function()
     while task.wait(0.3) do
-        success, errorMsg = pcall(function()
+        local success, errorMsg = pcall(function()
             -- Store initial fruit data
-            userId = tostring(game.Players.LocalPlayer.UserId)
-            fruitDataKey = "StoredDF8"
+            local userId = tostring(game.Players.LocalPlayer.UserId)
+            local fruitDataKey = "StoredDF8"
             _G.fruitdata8 = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
             
             -- Wait until the fruit data changes and is not "None"
@@ -10216,10 +10216,10 @@ task.spawn(function()
                 and workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= "None"
             
             -- Retrieve updated fruit data
-            fruitdataa = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
-            fruitparts8 = {}
+            local fruitdataa = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
+            local fruitparts8 = {}
             for part8 in string.gmatch(fruitdataa, "[^,]+") do
-                trimmed8 = part8:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed8 = part8:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts8, trimmed8)  -- Add the trimmed part to the table
             end
             
@@ -10227,8 +10227,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts8[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -10245,11 +10245,11 @@ task.spawn(function()
                     color = tonumber(0x00FF7F)
                 }}
             }
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
             -- Send the HTTP request
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
                 requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
             else
@@ -10267,16 +10267,16 @@ task.spawn(function()
     while task.wait(0.3) do
         pcall(function()
             -- Store the initial value
-            userId = tostring(game.Players.LocalPlayer.UserId)
-            userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF9
+            local userId = tostring(game.Players.LocalPlayer.UserId)
+            local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF9
             _G.fruitdata9 = userDataPath.Value
             
             -- Wait for the value to change and ensure it's not "None"
             repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata9 and userDataPath.Value ~= "None"
             
             -- Retrieve the updated value
-            fruitdataa = userDataPath.Value
-            fruitparts9 = {}
+            local fruitdataa = userDataPath.Value
+            local fruitparts9 = {}
             
             for part9 in string.gmatch(fruitdataa, "[^,]+") do
                 table.insert(fruitparts9, part9:match("^%s*(.-)%s*$")) -- Trim spaces
@@ -10286,8 +10286,8 @@ task.spawn(function()
             _G.fruitauraistrue = (fruitparts9[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
             
             -- Prepare data for Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 content = "",
                 embeds = {{
                     title = "Saluna Notify",
@@ -10299,10 +10299,10 @@ task.spawn(function()
                 }}
             }
             
-            newdata = game:GetService("HttpService"):JSONEncode(data)
-            headers = { ["content-type"] = "application/json" }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
             
-            requestFunction = http_request or request or HttpPost or syn.request
+            local requestFunction = http_request or request or HttpPost or syn.request
             if requestFunction then
                 requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
             else
@@ -10316,18 +10316,18 @@ task.spawn(function()
     while task.wait(0.3) do
         pcall(function()
             -- Fetching initial data
-            playerId = tostring(game.Players.LocalPlayer.UserId)
-            key = "StoredDF10"
+            local playerId = tostring(game.Players.LocalPlayer.UserId)
+            local key = "StoredDF10"
             _G.fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
 
             -- Waiting for the value to change
             repeat task.wait(0.5) until workspace.UserData["User_" .. playerId].Data[key].Value ~= _G.fruitdata10 and workspace.UserData["User_" .. playerId].Data[key].Value ~= "None"
 
             -- Process the new data
-            fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
-            fruitparts10 = {}
+            local fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
+            local fruitparts10 = {}
             for part10 in string.gmatch(fruitdata10, "[^,]+") do
-                trimmed10 = part10:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed10 = part10:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts10, trimmed10)  -- Add the trimmed part to the table
             end
 
@@ -10339,8 +10339,8 @@ task.spawn(function()
             end
 
             -- Sending notification to Discord webhook
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 ["content"] = "",
                 ["embeds"] = {
                     {
@@ -10358,13 +10358,13 @@ task.spawn(function()
                     }
                 }
             }
-            newdata = game:GetService("HttpService"):JSONEncode(data)
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
 
-            headers = {
+            local headers = {
                 ["content-type"] = "application/json"
             }
-            requestFunction = http_request or request or HttpPost or syn.request
-            abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+            local requestFunction = http_request or request or HttpPost or syn.request
+            local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
             requestFunction(abcdef)
         end)
     end
@@ -10374,17 +10374,17 @@ end)
 task.spawn(function()
     while task.wait(0.3) do
         pcall(function()
-            playerId = tostring(game.Players.LocalPlayer.UserId)
-            key = "StoredDF11"
+            local playerId = tostring(game.Players.LocalPlayer.UserId)
+            local key = "StoredDF11"
             _G.fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
             
             repeat task.wait(0.5) until workspace.UserData["User_"..playerId].Data[key].Value ~= _G.fruitdata11 and workspace.UserData["User_"..playerId].Data[key].Value ~= "None"
             
-            fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
-            fruitparts11 = {}
+            local fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
+            local fruitparts11 = {}
             
             for part11 in string.gmatch(fruitdata11, "[^,]+") do
-                trimmed11 = part11:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed11 = part11:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts11, trimmed11)  -- Add the trimmed part to the table
             end
 
@@ -10394,8 +10394,8 @@ task.spawn(function()
                 _G.fruitauraistrue = "(Normal Fruit)"
             end
 
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 ["content"] = "",
                 ["embeds"] = {
                     {
@@ -10413,13 +10413,13 @@ task.spawn(function()
                     }
                 }
             }
-            newdata = game:GetService("HttpService"):JSONEncode(data)
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
             
-            headers = {
+            local headers = {
                 ["content-type"] = "application/json"
             }
-            requestFunction = http_request or request or HttpPost or syn.request
-            abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+            local requestFunction = http_request or request or HttpPost or syn.request
+            local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
             requestFunction(abcdef)
         end)
     end
@@ -10430,10 +10430,10 @@ task.spawn(function()
         pcall(function()
             _G.fruitdata12 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
             repeat task.wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
-            fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
-            fruitparts12 = {}
+            local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
+            local fruitparts12 = {}
             for part12 in string.gmatch(fruitdataa, "[^,]+") do
-                trimmed12 = part12:match("^%s*(.-)%s*$")  -- Trim spaces
+                local trimmed12 = part12:match("^%s*(.-)%s*$")  -- Trim spaces
                 table.insert(fruitparts12, trimmed12)  -- Add the trimmed part to the table
             end
 
@@ -10443,8 +10443,8 @@ task.spawn(function()
                 _G.fruitauraistrue = "(Normal Fruit)"
             end
 
-            url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
-            data = {
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
                 ["content"] = "",
                 ["embeds"] = {
                     {
@@ -10462,13 +10462,13 @@ task.spawn(function()
                     }
                 }
             }
-            newdata = game:GetService("HttpService"):JSONEncode(data)
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
 
-            headers = {
+            local headers = {
                 ["content-type"] = "application/json"
             }
             request = http_request or request or HttpPost or syn.request
-            abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+            local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
             request(abcdef)
         end)
     end

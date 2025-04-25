@@ -1,4 +1,4 @@
-local SalunaVersion = "Saluna 007 (24/04/2025)"
+SalunaVersion = "Saluna 007 (24/04/2025)"
 repeat task.wait() until game:IsLoaded()
 if not game:IsLoaded() then game:IsLoaded():Wait(7) end
 repeat task.wait()
@@ -26,7 +26,7 @@ LOADINGFRAMEcorner.Name = "LOADINGFRAMEcorner"
 LOADINGFRAMEcorner.Parent = LOADINGFRAME
 LOADINGFRAMEcorner.CornerRadius = UDim.new(0.05,0)
 
-local v = game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+v = game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
          Position = UDim2.new(0.5, 0, 0.5, 0)
 })
 v:Play()
@@ -91,19 +91,19 @@ end)
 task.wait()
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
-local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
+requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
 
 if not requesting then return end
 
-local function _F2X7M9N3L1(_P6X8N5M2L9)
-    local _D4X1M7N2L3, _K9X5M2N8L7 = pcall(function()
+function _F2X7M9N3L1(_P6X8N5M2L9)
+    _D4X1M7N2L3, _K9X5M2N8L7 = pcall(function()
         return requesting({ Url = _P6X8N5M2L9, Method = "GET" })
     end)
     return (_D4X1M7N2L3 and _K9X5M2N8L7 and _K9X5M2N8L7.Body) and game:GetService("HttpService"):JSONDecode(_K9X5M2N8L7.Body) or {}
 end
 
-local _W9N3M2X7L5 = game:GetService("Players").LocalPlayer
-local excutor =  nil
+_W9N3M2X7L5 = game:GetService("Players").LocalPlayer
+excutor =  nil
 
 task.spawn(function()
     excutor = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
@@ -361,8 +361,8 @@ for _, v in pairs(game:GetService("Players"):GetPlayers()) do
         if v.UserId == v1 then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
 task.wait()
-local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
-        local data = {
+url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
+        data = {
         ["content"] = "@everyone",
         ["embeds"] = {
             {
@@ -373,13 +373,13 @@ local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dU
             }
         }
         }
-        local newdata = game:GetService("HttpService"):JSONEncode(data)
+        newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        local headers = {
+        headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 
         end
@@ -391,8 +391,8 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         if r.UserId == v then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
 task.wait()
-local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
-        local data = {
+url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
+        data = {
         ["content"] = "@everyone",
         ["embeds"] = {
             {
@@ -403,13 +403,13 @@ local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dU
             }
         }
         }
-        local newdata = game:GetService("HttpService"):JSONEncode(data)
+        newdata = game:GetService("HttpService"):JSONEncode(data)
     
-        local headers = {
+        headers = {
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
         end
     end
@@ -465,7 +465,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 
-local vu = game:GetService("VirtualUser")
+vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
        task.wait(1)
@@ -501,8 +501,8 @@ end
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
 pcall(function()
-local mta = getrawmetatable(game)
-local namecall = mta.__namecall
+mta = getrawmetatable(game)
+namecall = mta.__namecall
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     local args = {...}
     local method = getnamecallmethod()
@@ -600,7 +600,7 @@ qweasddex = Tabs.Edge:AddDropdown("qweasddex", {
 task.spawn(function()
 while task.wait(4) do
 pcall(function()
-local swordtablepro = {}
+swordtablepro = {}
 if game:GetService("Workspace").UserData["User_"..usingid].Data["PlayerHas_Divine Axe"].Value == false then
 divineprocess = tostring("Divine Axe: "..game:GetService("Workspace").UserData["User_"..usingid].Data["NPC_Activation_Expert"].Value.."/1000")
 else
@@ -909,12 +909,12 @@ Title = "User Information",
 Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor)
 })
 
-local placeNames = {
+placeNames = {
     [3237168] = "One Piece Legendary",
     [8569358381] = "OPL: Anarchy"
 }
-local currentPlaceId = game.PlaceId
-local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
+currentPlaceId = game.PlaceId
+currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
 
 Tabs.Info:AddParagraph({
 Title = "Server Information",
@@ -1059,14 +1059,14 @@ if Options.reducelagtoggle.Value == true then
 task.wait(1)
 pcall(function()
 --⚙️ CONFIG
-local stripDecals = true -- Set to false if you want to keep decals/textures
+stripDecals = true -- Set to false if you want to keep decals/textures
 
 --📦 SHORTCUTS
-local g = game
-local ws = g.Workspace
-local lighting = g:GetService("Lighting")
-local terrain = ws:FindFirstChildOfClass("Terrain")
-local runService = g:GetService("RunService")
+g = game
+ws = g.Workspace
+lighting = g:GetService("Lighting")
+terrain = ws:FindFirstChildOfClass("Terrain")
+runService = g:GetService("RunService")
 
 --🔊 AUDIO & GRAPHICS BASELINE
 pcall(function()
@@ -1365,7 +1365,7 @@ end)
 function isnil(thing)
 return (thing == nil)
 end
-local function round(n)
+function round(n)
 return math.floor(tonumber(n) + 0.5)
 end
 Number = math.random(1, 1000000)
@@ -1376,13 +1376,13 @@ for i,v in pairs(game:GetService'Players':GetChildren()) do
                     if not isnil(v.Character) then
                         if ESPPlayer then
                             if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-                                local bill = Instance.new('BillboardGui',v.Character.Head)
+                                bill = Instance.new('BillboardGui',v.Character.Head)
                                 bill.Name = 'NameEsp'..Number
                                 bill.ExtentsOffset = Vector3.new(0, 1, 0)
                                 bill.Size = UDim2.new(1,200,1,60)
                                 bill.Adornee = v.Character.Head
                                 bill.AlwaysOnTop = true
-                                local name = Instance.new('TextLabel',bill)
+                                name = Instance.new('TextLabel',bill)
                                 name.FontFace = Font.fromName("Merriweather")
                                 name.FontSize = "Size14"
                                 name.TextWrapped = true

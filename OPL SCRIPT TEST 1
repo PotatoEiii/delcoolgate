@@ -223,73 +223,73 @@ end
 
 function storedf()
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF1"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF2"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF3"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF4"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF5"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF6"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF7"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF8"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF9"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF10"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF11"
                 }
                 
                 game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
-                args = {
+                local args = {
                     [1] = "StoredDF12"
                 }
                 
@@ -311,7 +311,7 @@ end
 end
 
 function onhaki()
-args = {
+local args = {
     [1] = "On",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
@@ -320,7 +320,7 @@ workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
 end
 
 function offhaki()
-args = {
+local args = {
     [1] = "Off",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
@@ -504,7 +504,7 @@ pcall(function()
 mta = getrawmetatable(game)
 namecall = mta.__namecall
 aaxc = hookmetamethod(game, "__namecall", function(self, ...)
-    args = {...}
+    local args = {...}
     method = getnamecallmethod()
     if method == "FireServer" or method == "InvokeServer" then
         if self.Name == "RemoteEvent" and args[3] == "StopCharging" and _G.auto100rate then
@@ -562,7 +562,7 @@ if Options.qwefczxcve2toggle.Value == true then
 _G.godmode = true
 while _G.godmode do
 pcall(function()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower6",
     [3] = "StartCharging",
@@ -573,7 +573,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower6",
     [3] = "StopCharging",
@@ -989,7 +989,7 @@ repeat task.wait()
 until game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == false
 
 for i = 1,50 do
-args = {
+local args = {
     [1] = _G.fruitexchange,
     [2] = false,
     [3] = false,
@@ -1175,7 +1175,7 @@ _G.quakelagmisc = true
 while _G.quakelagmisc do task.wait(0.1)
 pcall(function()
 repeat
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
     [2] = "QuakePower1",
     [3] = "StopCharging",
@@ -1553,7 +1553,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do task.wait()
 if v.Name == _G.SelectedKillPlayer and _G.CampMagma == true then
 pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
@@ -1564,7 +1564,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
@@ -1664,7 +1664,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampDark == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StartCharging",
@@ -1675,7 +1675,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StopCharging",
@@ -1707,7 +1707,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampVamp == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StartCharging",
@@ -1718,7 +1718,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StopCharging",
@@ -1749,7 +1749,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampFlare == true then
 pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StartCharging",
@@ -1760,7 +1760,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StopCharging",
@@ -1791,7 +1791,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampSnow == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
     [3] = "StartCharging",
@@ -1802,7 +1802,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Snow.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Snow).VTCqkxtn,
     [2] = "SnowPower9",
     [3] = "StopCharging",
@@ -1834,7 +1834,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampChilly == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
     [3] = "StartCharging",
@@ -1845,7 +1845,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
     [3] = "StopCharging",
@@ -1877,7 +1877,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampBomb == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
     [3] = "StartCharging",
@@ -1888,7 +1888,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower5",
     [3] = "StopCharging",
@@ -1919,7 +1919,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampGas == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
     [3] = "StartCharging",
@@ -1930,7 +1930,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gas.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas).VTCtb,
     [2] = "GasPower4",
     [3] = "StopCharging",
@@ -1961,7 +1961,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampLight == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StartCharging",
@@ -1972,7 +1972,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
@@ -2003,7 +2003,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPlasma == true then
     pcall(function()
 repeat task.wait()
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "StartCharging",
@@ -2011,7 +2011,7 @@ repeat task.wait()
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.15)
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
@@ -2021,7 +2021,7 @@ task.wait(0.15)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
@@ -2031,7 +2031,7 @@ task.wait()
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
@@ -2061,7 +2061,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == _G.SelectedKillPlayer and _G.CampPhoenix == true then
     pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StartCharging",
@@ -2072,7 +2072,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StopCharging",
@@ -2133,7 +2133,7 @@ Tabs.Shop:AddButton({
         Callback = function()
 if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
 for i = 1, _G.tretgmm do
-    args = {
+    local args = {
         [1] = _G.drinktret
     }
     
@@ -2141,7 +2141,7 @@ workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
 end
 elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
 for i = 1, _G.tretgmm do
-    args = {
+    local args = {
         [1] = _G.drinktret
     }
     
@@ -2157,7 +2157,7 @@ Tabs.Shop:AddButton({
         Callback = function()
 if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
 for i = 1, tonumber(_G.tretgmm) do task.wait()
-    args = {
+    local args = {
         [1] = _G.drinktret
     }
     
@@ -2165,7 +2165,7 @@ workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
 end
 elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
 for i = 1,tonumber(_G.tretgmm) do task.wait()
-    args = {
+    local args = {
         [1] = _G.drinktret
     }
     
@@ -3074,7 +3074,7 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
+				local args = {code = 'dYHag43eeU'}
 			})
 		})
 	end   
@@ -3865,7 +3865,7 @@ end
 if yorucode ~= "" and yorucode ~= nil then
 repeat task.wait()
 for i = 1, yoruspeedzx do
-args = {
+local args = {
 [1] = yorucode
 }
 
@@ -3912,7 +3912,7 @@ end
 end
 repeat task.wait()
 for i = 1, cestusspeedzx do
-args = {
+local args = {
 [1] = cestuscode
 }
 
@@ -4123,7 +4123,7 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
+				local args = {code = 'dYHag43eeU'}
 			})
 		})
 	end   
@@ -4164,505 +4164,505 @@ Tabs.Haki:AddButton({
         Description = "Click To Drain Haki To 0",
         Callback = function()
 function hakiauto()
-        args = {
+        local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
@@ -4857,7 +4857,7 @@ Tabs.Haki:AddSection("				    --Other Haki Method--")
         Callback = function()
 for i = 1,30 do
 while task.wait(0.1) do
-args = {
+local args = {
     [1] = "On",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
@@ -4873,7 +4873,7 @@ end
         Callback = function()
 for i = 1,30 do
 while task.wait(0.1) do
-args = {
+local args = {
     [1] = "Off",
     [2] = game:GetService("Workspace").UserData["User_"..usingid].Data.HakiLevel.Value
 }
@@ -5038,7 +5038,7 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
+				local args = {code = 'dYHag43eeU'}
 			})
 		})
 	end   
@@ -5915,7 +5915,7 @@ if _G.startspamskill then
 repeat task.wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower1",
     [3] = "Fly"
@@ -5926,7 +5926,7 @@ task.wait()
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Flare" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StartCharging",
@@ -5937,7 +5937,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StopCharging",
@@ -5950,7 +5950,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireSe
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Flare" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower3",
     [3] = "Status",
@@ -5959,7 +5959,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait(1)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower3",
     [3] = "Status",
@@ -5970,7 +5970,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireSe
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Flare" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower4"
 }
@@ -5980,7 +5980,7 @@ task.wait(0.1)
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Flare" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower5",
     [3] = "StartCharging",
@@ -5991,7 +5991,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower5",
     [3] = "StopCharging",
@@ -6004,7 +6004,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireSe
 until _G.skilltype ~= "Flare" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Magma" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
@@ -6015,7 +6015,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
@@ -6029,7 +6029,7 @@ until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power1" or _G.startspamskill =
 elseif _G.skilltype == "Magma" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
 if game:GetService("Players").LocalPlayer.Character.UsingMagmaBody.Value == false then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower8"
 }
@@ -6040,7 +6040,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Magma" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower9",
     [3] = "Create",
@@ -6053,7 +6053,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Magma" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
     [2] = "GravityPower7"
 }
@@ -6062,7 +6062,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:Fire
 until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
 [3] = "StartCharging"
@@ -6070,7 +6070,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
 [3] = "StartCharging",
@@ -6080,7 +6080,7 @@ args = {
                         
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait(0.15)
-args = {
+local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
 [3] = "StopCharging",
@@ -6093,7 +6093,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:Fire
 until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
     [2] = "GravityPower11",
     [3] = "StartCharging",
@@ -6103,7 +6103,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
     [2] = "GravityPower11",
     [3] = "StopCharging",
@@ -6116,7 +6116,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:Fire
 until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Gravity" and _G.skillnumz == "Power6" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
     [2] = "GravityPower12",
     [3] = "StartCharging"
@@ -6124,7 +6124,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
     [2] = "GravityPower12",
     [3] = "StartCharging",
@@ -6134,7 +6134,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
     [2] = "GravityPower12",
     [3] = "StopCharging",
@@ -6147,7 +6147,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:Fire
 until _G.skilltype ~= "Gravity" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower7",
     [3] = "StartCharging",
@@ -6158,7 +6158,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower7",
     [3] = "StopCharging",
@@ -6171,7 +6171,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StartCharging",
@@ -6182,7 +6182,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StopCharging",
@@ -6195,7 +6195,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower9",
     [3] = "StartCharging",
@@ -6206,7 +6206,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower9",
     [3] = "StopCharging",
@@ -6219,7 +6219,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower10",
     [3] = "StartCharging",
@@ -6230,7 +6230,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower10",
     [3] = "StopCharging",
@@ -6243,7 +6243,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower11",
     [3] = "StartCharging",
@@ -6254,7 +6254,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower11",
     [3] = "StopCharging",
@@ -6267,7 +6267,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Bomb" and _G.skillnumz == "Power6" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower6",
     [3] = "StartCharging",
@@ -6278,7 +6278,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower6",
     [3] = "StopCharging",
@@ -6291,7 +6291,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireSer
 until _G.skilltype ~= "Bomb" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Quake" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-            args = {
+            local args = {
                 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
                 [2] = "QuakePower1",
                 [3] = "StopCharging",
@@ -6305,7 +6305,7 @@ repeat task.wait(0.15)
 until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Quake" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
     [2] = "QuakePower2",
     [3] = "StopCharging",
@@ -6319,7 +6319,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireSe
 until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Quake" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
     [2] = "QuakePower3",
     [3] = "StopCharging",
@@ -6333,7 +6333,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireSe
 until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Quake" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake).VTCebvc,
     [2] = "QuakePower4",
     [3] = "StopCharging",
@@ -6347,7 +6347,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireSe
 until _G.skilltype ~= "Quake" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Dark" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower1",
     [3] = "Begin"
@@ -6358,7 +6358,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Dark" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower2",
     [3] = "Create",
@@ -6371,7 +6371,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Dark" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Dark" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower3",
     [3] = "Create",
@@ -6392,7 +6392,7 @@ game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StartCharging",
@@ -6403,7 +6403,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Dark.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark).VTCjebaj,
     [2] = "DarkPower4",
     [3] = "StopCharging",
@@ -6424,7 +6424,7 @@ game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
 elseif _G.skilltype == "Phoenix" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower1",
     [3] = "Fly"
@@ -6434,7 +6434,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:Fire
 until _G.skilltype ~= "Phoenix" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Phoenix" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower2",
     [3] = "Off",
@@ -6447,7 +6447,7 @@ task.wait()
 until _G.skilltype ~= "Phoenix" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Phoenix" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StartCharging",
@@ -6458,7 +6458,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower9",
     [3] = "StopCharging",
@@ -6471,7 +6471,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Phoenix.RemoteEvent:Fire
 until _G.skilltype ~= "Phoenix" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Phoenix" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix).VTCytb,
     [2] = "PhoenixPower4"
 }
@@ -6481,7 +6481,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Phoenix" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower1",
     [3] = "",
@@ -6493,7 +6493,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower2",
     [3] = "",
@@ -6505,7 +6505,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower3",
     [3] = "",
@@ -6517,7 +6517,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StartCharging",
@@ -6528,7 +6528,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower5",
     [3] = "StopCharging",
@@ -6541,7 +6541,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:Fire
 until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Vampire" and _G.skillnumz == "Power6" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire).VTCjwf,
     [2] = "VampirePower6",
     [3] = "",
@@ -6553,7 +6553,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Vampire" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
     [2] = "PlasmaPower1"
 }
@@ -6562,7 +6562,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireS
 task.wait(0.5)
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power2" and _G.startspamskill == true then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
     [2] = "PlasmaPower2",
     [3] = "TurnOn"
@@ -6570,7 +6570,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
     [2] = "PlasmaPower2",
     [3] = "Attack",
@@ -6580,7 +6580,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
     [2] = "PlasmaPower2",
     [3] = "TurnOff"
@@ -6589,7 +6589,7 @@ args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
     [2] = "PlasmaPower3",
     [3] = "Attack"
@@ -6600,7 +6600,7 @@ task.wait(0.5)
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Plasma" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait()
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "StartCharging",
@@ -6608,7 +6608,7 @@ repeat task.wait()
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.15)
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
@@ -6618,7 +6618,7 @@ task.wait(0.15)
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
@@ -6628,7 +6628,7 @@ task.wait()
                     }
                     game:GetService("Players").LocalPlayer.Character.Powers.Plasma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-                    args = {
+                    local args = {
                         [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Plasma).VTCpwd,
                         [2] = "PlasmaPower4",
                         [3] = "Attack",
@@ -6640,7 +6640,7 @@ task.wait()
 until _G.skilltype ~= "Plasma" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Venom" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower1",
     [3] = "Start",
@@ -6649,7 +6649,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower1",
     [3] = "Fire",
@@ -6658,7 +6658,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower1",
     [3] = "Stop"
@@ -6668,7 +6668,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireSe
 elseif _G.skilltype == "Venom" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
 if game:GetService("Players").LocalPlayer.Character.UsingVenomBody.Value == false then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower8"
 }
@@ -6679,7 +6679,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Venom" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower9",
     [3] = "StartCharging",
@@ -6690,7 +6690,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower9",
     [3] = "StopCharging",
@@ -6705,7 +6705,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireSe
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Venom" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower10",
     [3] = "StartCharging",
@@ -6716,7 +6716,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Venom.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower10",
     [3] = "StopCharging",
@@ -6730,7 +6730,7 @@ until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power4" or _G.startspamskill =
 elseif _G.skilltype == "Venom" and _G.skillnumz == "Power6" and _G.startspamskill == true then
 repeat task.wait()
 if game:GetService("Players").LocalPlayer.Character.UsingVenomDemon.Value == false then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Venom).VTCiuew,
     [2] = "VenomPower12"
 }
@@ -6740,7 +6740,7 @@ end
 task.wait(0.2)
 until _G.skilltype ~= "Venom" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power1" and _G.startspamskill == true then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower7",
     [3] = true
@@ -6748,7 +6748,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyAnim1"
 }
@@ -6756,7 +6756,7 @@ args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower7",
     [3] = false
@@ -6766,7 +6766,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireSe
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
 if game:GetService("Players").LocalPlayer.Character.UsingCandyBody.Value == false then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower8"
 }
@@ -6785,7 +6785,7 @@ game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower9",
     [3] = "StartCharging",
@@ -6796,7 +6796,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Candy.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower9",
     [3] = "StopCharging",
@@ -6817,7 +6817,7 @@ game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power4" and _G.startspamskill == true then
 repeat task.wait()
- args = {
+ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower4",
     [3] = "Start"
@@ -6828,7 +6828,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power4" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower5",
     [3] = "",
@@ -6841,7 +6841,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Candy" and _G.skillnumz == "Power6" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Candy).VTCdhabvd,
     [2] = "CandyPower6",
     [3] = "",
@@ -6855,7 +6855,7 @@ until _G.skilltype ~= "Candy" or _G.skillnumz ~= "Power6" or _G.startspamskill =
 elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait()
 if game:GetService("Players").LocalPlayer.Character.Projecting.Value == false then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower7"
 }
@@ -6866,7 +6866,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
 elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower8"
 }
@@ -6876,7 +6876,7 @@ task.wait(0.2)
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower9",
     [3] = "CreateHollows"
@@ -6884,7 +6884,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower9",
     [3] = "SendHollows"
@@ -6894,7 +6894,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireS
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower11",
     [3] = "CreateHollows"
@@ -6902,7 +6902,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower11",
     [3] = "SendHollows"
@@ -6912,7 +6912,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireS
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 elseif _G.skilltype == "Hollow" and _G.skillnumz == "Power6" and _G.startspamskill == true then
 repeat task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hollow).VTCrx,
     [2] = "HollowPower12"
 }
@@ -6921,7 +6921,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Hollow.RemoteEvent:FireS
 task.wait(0.2)
 until _G.skilltype ~= "Hollow" or _G.skillnumz ~= "Power6" or _G.startspamskill == false
 elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power1" and _G.startspamskill == true then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower7",
     [3] = true
@@ -6929,7 +6929,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyAnim1"
 }
@@ -6937,7 +6937,7 @@ args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower7",
     [3] = false
@@ -6954,7 +6954,7 @@ game:GetService("Players").LocalPlayer.Character["Left Arm"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = false
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = false
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower8",
     [3] = "StartCharging",
@@ -6965,7 +6965,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower8",
     [3] = "StopCharging",
@@ -6986,7 +6986,7 @@ game:GetService("Players").LocalPlayer.Character["Right Leg"].CanCollide = true
 game:GetService("Players").LocalPlayer.Character["Left Leg"].CanCollide = true
 elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower9",
     [3] = true,
@@ -6999,7 +6999,7 @@ task.wait()
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Chilly" and _G.skillnumz == "Power5" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
     [3] = "StartCharging",
@@ -7010,7 +7010,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly).VTCewddsfe,
     [2] = "ChillyPower5",
     [3] = "StopCharging",
@@ -7023,7 +7023,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Chilly.RemoteEvent:FireS
 until _G.skilltype ~= "Chilly" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
 
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power1" and _G.startspamskill == true then
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower7",
     [3] = true
@@ -7031,7 +7031,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightAnim1"
 }
@@ -7039,7 +7039,7 @@ args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power1" or _G.startspamskill == false
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower7",
     [3] = false
@@ -7048,7 +7048,7 @@ args = {
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power2" and _G.startspamskill == true then
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StartCharging",
@@ -7059,7 +7059,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
@@ -7072,7 +7072,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireSe
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power2" or _G.startspamskill == false
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power3" and _G.startspamskill == true then
 repeat task.wait(0.15)
- args = {
+ local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower9",
     [3] = "StopCharging",
@@ -7085,7 +7085,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireSe
 task.wait()
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power3" or _G.startspamskill == false
 elseif _G.skilltype == "Light" and _G.skillnumz == "Power5" and _G.startspamskill == true then
-       args = {
+       local args = {
            [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
            [2] = "LightPower5",
            [3] = "Start"
@@ -7093,7 +7093,7 @@ elseif _G.skilltype == "Light" and _G.skillnumz == "Power5" and _G.startspamskil
        
        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-       args = {
+       local args = {
            [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
            [2] = "LightPower5",
            [3] = "Fire",
@@ -7103,7 +7103,7 @@ repeat task.wait(0.15)
        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
 until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power5" or _G.startspamskill == false
-       args = {
+       local args = {
            [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
            [2] = "LightPower5",
            [3] = "End"
@@ -7111,7 +7111,7 @@ until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power5" or _G.startspamskill =
        
        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
        
-       args = {
+       local args = {
            [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
            [2] = "LightPower5",
            [3] = "Stop"
@@ -7205,7 +7205,7 @@ if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Magma" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
@@ -7216,7 +7216,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
@@ -7280,7 +7280,7 @@ if _G.startrop or _G.startropaura then
 repeat task.wait()
 if _G.robmethod == "Flare" and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
 pcall(function()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StartCharging",
@@ -7291,7 +7291,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Flare.RemoteEvent:FireServer(unpack(args))
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare).VTCmgwcm,
     [2] = "FlarePower2",
     [3] = "StopCharging",
@@ -7385,7 +7385,7 @@ pcall(function()
 if _G.CampString == true and game:GetService("Players").LocalPlayer.Character.Humanoid.Sit == true and not table.find(anticamplisted, _G.SelectedKillPlayer) then
 pcall(function()
 repeat task.wait(0.15)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower8",
     [3] = "Start",
@@ -7397,7 +7397,7 @@ game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireS
 task.wait()
 until game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)) or table.find(anticamplisted,_G.SelectedKillPlayer)
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower7"
 }
@@ -7732,13 +7732,13 @@ hakimuon = hakiuse + 10
 if _G.regenhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakimuon and not _G.onhaki then
 task.wait()
 for i = 1, regenspeed do task.wait()
-    args = {
+    local args = {
         [1] = "Off",
         [2] = hakigoc
     }
     
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = hakigoc
     }
@@ -7746,14 +7746,14 @@ for i = 1, regenspeed do task.wait()
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
     end
 task.wait(2)
-        args = {
+        local args = {
         [1] = "Off",
         [2] = hakigoc
     }
     
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 task.wait()
-        args = {
+        local args = {
         [1] = "Off",
         [2] = hakigoc
     }
@@ -7781,7 +7781,7 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) 
 if string.find(v.Name, "Medium") or string.find(v.Name, "Small") or string.find(v.Name, "Large") then
 v.Parent = game:GetService("Players").LocalPlayer.Character
 task.wait()
-args = {
+local args = {
     [1] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame,
     [2] = workspace:WaitForChild("Firepit"):WaitForChild("Part")
 }
@@ -7837,14 +7837,14 @@ if v:FindFirstChild("Bobber") then
 if v.Bobber.Effect.Enabled == true then
 task.wait(0.1)
 
-args = {
+local args = {
 [1] = Vector3.new(20837,-3017,-4390)
 }
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
 end
 elseif v.Name == "Cast" and not v:FindFirstChild("Bobber") then
 task.wait(0.6)
-args = {
+local args = {
 [1] = Vector3.new(20837,-3017,-4390)
 }
 game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
@@ -7929,12 +7929,12 @@ task.spawn(function()
         pcall(function()
             if _G.autocannonslow or _G.autocannonplrbring or _G.automobtpcn or _G.autocannonfling then
 repeat task.wait()
-                args = {
+                local args = {
                     [1] = CFrame.new(Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
                 task.wait()
-                args = {
+                local args = {
                     [1] = CFrame.new(Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame))
                 }
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
@@ -8450,13 +8450,13 @@ sss = slv/100*hakitarget
 sll =  slv/100*90
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
 for i = 1, hakispeed do
-    args = {
+    local args = {
         [1] = "Off",
         [2] = 1
     }
     
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-    args = {
+    local args = {
         [1] = "On",
         [2] = 1
     }
@@ -8464,7 +8464,7 @@ for i = 1, hakispeed do
     workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
 end
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= sss and _G.farmhakinek == true then
-        args = {
+        local args = {
         [1] = "Off",
         [2] = 1
     }
@@ -8474,7 +8474,7 @@ repeat task.wait()
 until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= sll or game:GetService("Workspace")[usingname].HumanoidRootPart.Position.Y > 211000
 elseif _G.farmhakinek == false then
 _G.concu = false
-        args = {
+        local args = {
         [1] = "Off",
         [2] = 1
     }
@@ -8497,103 +8497,103 @@ pcall(function()
 x = usingid
 haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
 for i = 1, speedyadvance do
-            args = {
+            local args = {
                 [1] = "On",
                 [2] = haki
             }
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
-                [1] = "On",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            args = {
+            local args = {
                 [1] = "On",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "On",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "On",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
             
-            args = {
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
                 [1] = "Off",
                 [2] = haki
             }
@@ -8612,7 +8612,7 @@ while task.wait(0.3) do
 if _G.quayfirstdf then
 pcall(function()
 if _G.defswordsnip == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8624,7 +8624,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.allspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8636,7 +8636,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.meleesnipswordspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8647,7 +8647,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defmeleeswordspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8659,7 +8659,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.defmeleesnipspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8671,7 +8671,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.swordsnipspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8682,7 +8682,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.meleeswordspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8693,7 +8693,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.meleesnipspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8704,7 +8704,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defswordspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8715,7 +8715,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defsnipspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8726,7 +8726,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defmeleespin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8737,7 +8737,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.swordspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8748,7 +8748,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.sniperspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8759,7 +8759,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.meleespin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8770,7 +8770,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defspin == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.keepdef,
     [3] = _G.keepmelee,
@@ -8792,7 +8792,7 @@ while task.wait(0.3) do
 if _G.quayfirstdf2 then
 pcall(function()
 if _G.defswordsnip2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8804,7 +8804,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.allspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8816,7 +8816,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.meleesnipswordspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8827,7 +8827,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defmeleeswordspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8839,7 +8839,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.defmeleesnipspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8851,7 +8851,7 @@ args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 
 elseif _G.swordsnipspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8862,7 +8862,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.meleeswordspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8873,7 +8873,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.meleesnipspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8884,7 +8884,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defswordspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8895,7 +8895,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defsnipspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8906,7 +8906,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defmeleespin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8917,7 +8917,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.swordspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8928,7 +8928,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.sniperspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8939,7 +8939,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.meleespin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -8950,7 +8950,7 @@ args = {
 
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 elseif _G.defspin2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.keepdef2,
     [3] = _G.keepmelee2,
@@ -9028,7 +9028,7 @@ _G.trykeepsw = false
 end
 task.wait()
 if _G.rundef == true or _G.runmelee == true or _G.runsnip == true or _G.runsw == true then
-args = {
+local args = {
     [1] = "DFT1",
     [2] = _G.trykeepdef,
     [3] = _G.trykeepmelee,
@@ -9094,7 +9094,7 @@ _G.runsw2 = false
 end
 task.wait()
 if _G.rundef2 == true or _G.runmelee2 == true or _G.runsnip2 == true or _G.runsw2 == true then
-args = {
+local args = {
     [1] = "DFT2",
     [2] = _G.trykeepdef2,
     [3] = _G.trykeepmelee2,
@@ -9130,7 +9130,7 @@ mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.5)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StartCharging",
@@ -9141,7 +9141,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
@@ -9156,7 +9156,7 @@ else
 task.wait(0.05)
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 task.wait(0.05)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StartCharging",
@@ -9167,7 +9167,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
@@ -9178,7 +9178,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StartCharging",
@@ -9189,7 +9189,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light).VTCrv,
     [2] = "LightPower2",
     [3] = "StopCharging",
@@ -9219,7 +9219,7 @@ mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.5)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
@@ -9230,7 +9230,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
@@ -9245,7 +9245,7 @@ else
 task.wait(0.05)
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 task.wait(0.05)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
@@ -9256,7 +9256,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
@@ -9267,7 +9267,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StartCharging",
@@ -9278,7 +9278,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma).VTCmel,
     [2] = "MagmaPower1",
     [3] = "StopCharging",
@@ -9308,7 +9308,7 @@ mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.5)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StartCharging",
@@ -9319,7 +9319,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StopCharging",
@@ -9334,7 +9334,7 @@ else
 task.wait(0.05)
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = mobalive.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 task.wait(0.05)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StartCharging",
@@ -9345,7 +9345,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StopCharging",
@@ -9356,7 +9356,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait(0.09)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StartCharging",
@@ -9367,7 +9367,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
     [2] = "BombPower8",
     [3] = "StopCharging",
@@ -9396,7 +9396,7 @@ mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.5)
-args = {
+local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
 [3] = "StartCharging"
@@ -9404,7 +9404,7 @@ args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
 [3] = "StartCharging",
@@ -9414,7 +9414,7 @@ args = {
                         
 game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
 task.wait()
-args = {
+local args = {
 [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gravity).VTCjh,
 [2] = "GravityPower4",
 [3] = "StopCharging",
@@ -9443,7 +9443,7 @@ mobalive:FindFirstChild("Humanoid").Health = 0
 mobalive.Head:Destroy()
 mobalive:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
 task.wait(0.5)
-args = {
+local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Rumble).VTCzyhf,
     [2] = "RumblePower4",
     [3] = "Create"
@@ -10505,13 +10505,13 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname then
 for i,c in pairs(game:GetService("Workspace"):GetChildren()) do
 if c:IsA("Model") and c.Name == v.Name then
-args = {
+local args = {
     [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
     [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
 }
 
 c.Shave:FireServer(unpack(args))
-args = {
+local args = {
     [1] = c.HumanoidRootPart.CFrame * CFrame.new(0,-25,0),
     [2] = workspace:WaitForChild("IslandTown"):WaitForChild("Beach"):WaitForChild("Beach")
 }

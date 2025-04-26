@@ -327,15 +327,15 @@ local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dU
 end)  
 
 asdwqelist = false
-anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
-anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer.lua'))()
-antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/risk/main/anti%20spy%20(risk)'))()
+anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua',true))()
+anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer.lua',true))()
+antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/risk/main/anti%20spy%20(risk)',true))()
 for _, v in pairs(anticamplisted2) do
     table.insert(anticamplisted, v)
 end
 getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
-listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist.lua'))()
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua',true))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist.lua',true))()
 for _, v in pairs(khoilistedzxwc) do
     table.insert(listedaxw, v)
 end
@@ -346,8 +346,8 @@ whitelistkeytype = "Whitelisted Excutor ID"
             end
         end
 
-userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list.lua'))()
-userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid.lua'))()
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list.lua',true))()
+userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid.lua',true))()
 for _, c in pairs(userlistedzxwc2) do
     table.insert(userlistedzxwc, c)
 end
@@ -406,7 +406,6 @@ do
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
 end
-game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaGUI"
      SafeZoneOuterSpace = Instance.new("Part",game:GetService("Workspace"))
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
@@ -427,9 +426,9 @@ aaxc = hookmetamethod(game, "__namecall", function(self, ...)
     return aaxc(self, ...)
 end)
 end)
- Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
- SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Configuration.lua"))()
- InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua"))()
+ Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua",true))()
+ SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Configuration.lua",true))()
+ InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamcutehehe/UI_Interface/main/Fluent.lua",true))()
  Window = Fluent:CreateWindow({
     Title = "SALUNA VIP ♥",
     SubTitle = "		Made by Saluna",
@@ -864,7 +863,7 @@ Thus, when you reset stats and rejoin, you will get refund again.]]
         Description = "Copy Script To ClipBoard",
         Callback = function()
 pcall(function()
-toClipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/ultimate'))()")
+toClipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/ultimate',true))()")
 end)
 end
     })
@@ -929,7 +928,7 @@ Tabs.Misc:AddSection("							 --FE Scripts--")
         Description = "Open Infinite Yield Script",
         Callback = function()
 pcall(function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source',true))()
 end)
 end
     })
@@ -939,7 +938,7 @@ end
         Description = "Open Remote Spy Script",
         Callback = function()
 pcall(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua",true))()
         end)
 end
     })
@@ -949,7 +948,7 @@ Tabs.Misc:AddSection("						    --Old Scripts--")
         Title = "Saluna Old",
         Description = "Open Saluna Old Script",
         Callback = function()
-loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/zuwx.lua"))()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/zuwx.lua",true))()
         end
     })
 
@@ -958,7 +957,7 @@ loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa15028715
         Description = "Open Nothing Hub Script",
         Callback = function()
 pcall(function()
-loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/chick.lua"))()
+loadstring(game:HttpGet("https://bitbucket.org/hehehezz/zomwg/raw/51b6fa150287156e6f52228771b2284985d8e787/chick.lua",true))()
 end)
 end
     })
@@ -9412,7 +9411,7 @@ if success and response then
         end
     end
 end
-local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua'))()
+local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua',true))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) then
 local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
         local data = {
@@ -10397,7 +10396,7 @@ else
 if game.CoreGui:FindFirstChild("SALUNALOADING") then
 game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
 end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua',true))()
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
 end
 end

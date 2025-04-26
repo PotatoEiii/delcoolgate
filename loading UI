@@ -1,1 +1,83 @@
+repeat task.wait() until game:IsLoaded()
+if not game:IsLoaded() then game:IsLoaded():Wait(7) end
+repeat task.wait()
+until game.Workspace:FindFirstChild("UserData")
+	and game.Workspace.UserData:FindFirstChild("User_" .. game.Players.LocalPlayer.UserId)
+	and game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("Data")
+	and game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].Data:FindFirstChild("MissionObjective")
+pcall(function()
+SALUNALOADING = Instance.new("ScreenGui")
+SALUNALOADING.Name = "SALUNALOADING"
+SALUNALOADING.Parent = game.CoreGui
 
+LOADINGFRAME = Instance.new("ImageLabel")
+LOADINGFRAME.Name = "LOADINGFRAME"
+LOADINGFRAME.Parent = SALUNALOADING
+LOADINGFRAME.BackgroundTransparency = 1
+LOADINGFRAME.ClipsDescendants = true
+LOADINGFRAME.AnchorPoint = Vector2.new(0.5, 0.5)
+LOADINGFRAME.Position = UDim2.new(0.5, 0, 0.5, 0)
+LOADINGFRAME.Size = UDim2.new(0.2, 0, 0.2, 0)
+LOADINGFRAME.Image = "http://www.roblox.com/asset/?id=18866462306"
+
+LOADINGFRAMEcorner = Instance.new("UICorner")
+LOADINGFRAMEcorner.Name = "LOADINGFRAMEcorner"
+LOADINGFRAMEcorner.Parent = LOADINGFRAME
+LOADINGFRAMEcorner.CornerRadius = UDim.new(0.05,0)
+
+game.TweenService:Create(LOADINGFRAME, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+         Size = UDim2.new(0.631, 0, 0.756, 0),
+         Position = UDim2.new(0.5, 0, 0.5, 0)
+}):Play()
+
+Loading = Instance.new("TextLabel")
+Loading.Parent = LOADINGFRAME
+Loading.Name = "Loading"
+Loading.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Loading.BackgroundTransparency = 1
+Loading.Position = UDim2.new(0.7, 0, 0.05, 0)
+Loading.Size = UDim2.new(0.2, 0, 0.756, 0)
+Loading.TextColor3 = Color3.fromRGB(255,0,0)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+]]
+Loading.TextSize = 20
+Loading.FontFace.Bold = true
+Loading.FontFace = Font.fromName("Merriweather")
+pcall(function()
+repeat
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+.]]
+task.wait(0.4)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+..]]
+task.wait(0.4)
+Loading.Text = [[L
+O
+A
+D
+I
+N
+G
+...]]
+task.wait(1)
+until not game.CoreGui:FindFirstChild("SALUNALOADING")
+end)
+end)

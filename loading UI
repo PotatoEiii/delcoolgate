@@ -81,11 +81,11 @@ until not game.CoreGui:FindFirstChild("SALUNALOADING")
 end)
 end)
 pcall(function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/Fluent/main/g%40%40%40', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/Fluent/main/g%40%40%40.lua', true))()
 end)
 task.wait(7)
         if not game.CoreGui:FindFirstChild("Finish") then
 pcall(function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/Fluent/main/h%40%40%40', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/Fluent/main/h%40%40%40.lua', true))()
 end)
 end

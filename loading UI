@@ -49,7 +49,7 @@ Loading.TextSize = 20
 Loading.FontFace.Bold = true
 Loading.FontFace = Font.fromName("Merriweather")
 pcall(function()
-repeat
+while game.CoreGui:FindFirstChild("SALUNALOADING") do task.wait(1)
 Loading.Text = [[L
 O
 A
@@ -76,8 +76,7 @@ I
 N
 G
 ...]]
-task.wait(1)
-until not game.CoreGui:FindFirstChild("SALUNALOADING")
+end
 end)
 end)
 pcall(function()

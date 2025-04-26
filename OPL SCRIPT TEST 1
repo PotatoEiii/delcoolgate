@@ -406,6 +406,7 @@ do
             game.CoreGui:FindFirstChild("BBB"):Destroy()
         end
 end
+game.CoreGui:FindFirstChild("ScreenGui").Name = "SalunaGUI"
      SafeZoneOuterSpace = Instance.new("Part",game:GetService("Workspace"))
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)

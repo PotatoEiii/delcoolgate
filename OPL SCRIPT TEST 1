@@ -10392,6 +10392,10 @@ end)
 end)
 end
 
+Finish = Instance.new("ScreenGui")
+Finish.Name = "Finish"
+Finish.Parent = game.CoreGui
+
 else
 if game.CoreGui:FindFirstChild("SALUNALOADING") then
 game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()

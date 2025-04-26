@@ -1452,14 +1452,12 @@ if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
 while _G.BringPlayer do task.wait(0.1)
 pcall(function()
-if not table.find(anticamplisted,_G.SelectedKillPlayer) then
 repeat task.wait()
 game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
 if game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == false then
 game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = true
 end
 until not _G.BringPlayer
-end
 if game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored == true then
 game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Anchored = false
 end
@@ -1641,7 +1639,7 @@ if Options.aweopcztoggle.Value == true then
 _G.wqesorry = true
 while _G.wqesorry do task.wait()
 pcall(function()
-if game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) and not table.find(anticamplisted,_G.SelectedKillPlayer) then
+if game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
 if game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Behind" then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame * CFrame.new(0,0,campdis)
 elseif game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.Position.Y > 200 and _G.telecamethod == "Above" then
@@ -7433,7 +7431,7 @@ end)
 task.spawn(function()
 while task.wait(0.3) do
 pcall(function()
-if _G.CampString == true and not table.find(anticamplisted,_G.SelectedKillPlayer) then
+if _G.CampString == true then
 repeat task.wait()
 pcall(function()
 game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)

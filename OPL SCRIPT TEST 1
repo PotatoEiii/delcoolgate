@@ -1586,6 +1586,14 @@ end
 end)
 
 task.spawn(function()
+while task.wait(0.1) do 
+pcall(function()
+game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh 
+end)
+end
+end)
+
+task.spawn(function()
 while task.wait(0.3) do
 pcall(function()
 if _G.TPMAGMABALL and _G.CampMagma and game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
@@ -2862,14 +2870,6 @@ task.wait(0.1)
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
         end
-    })
-
-Tabs.Farm:AddButton({
-        Title = "Fix Chair's CFrame",
-        Description = "Reset Chair's CFrame",
-        Callback = function()
-game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh
-end
     })
 
 Tabs.Farm:AddSection("	     Off Farm Before Off Fast-Cannon")
@@ -7395,8 +7395,15 @@ local args = {
 
 game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
 task.wait()
-until game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0 or (not _G.CampString) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)) or table.find(anticamplisted,_G.SelectedKillPlayer)
-task.wait()
+until (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character:FindFirstChild("HumanoidRootPart")) or (game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0) or (not _G.CampString) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)) or table.find(anticamplisted,_G.SelectedKillPlayer)
+task.wait(0.15)
+local args = {
+    [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
+    [2] = "StringPower7"
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.String.RemoteEvent:FireServer(unpack(args))
+task.wait(0.15)
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.String).VTCjwbvx,
     [2] = "StringPower7"
@@ -10489,7 +10496,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Te
 end
 
 if realtimechecking then
-while true do task.wait(5)
+while task.wait(5) do 
 task.spawn(function()
 if (not table.find(userlistedzxwc, game:GetService("Players").LocalPlayer.Name)) and (not game.Workspace:FindFirstChild(game:GetService("Players").LocalPlayer.Name)) then
 game:GetService("Players").LocalPlayer:Kick("Not Whitelisted")
@@ -10498,7 +10505,7 @@ end)
 end
 end
 
-while true do task.wait(5)
+while task.wait(5) do 
 task.spawn(function()
 if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
 for i,v in pairs(game:GetService("Players"):GetChildren()) do

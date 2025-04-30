@@ -1,4 +1,4 @@
-local SalunaVersion = "Saluna 007 (24/04/2025)"
+local SalunaVersion = "Saluna 008 (01/05/2025)"
 task.wait()
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
@@ -820,7 +820,7 @@ Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: Iren
 Tabs.Info:AddSection("		   			     --Information--")
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor)
+Content = "Executor ID: "..game:GetService("RbxAnalyticsService"):GetClientId() .."\nExcutor Name: "..tostring(excutor) .."\nScript Version: ".. tostring(SalunaVersion)
 })
 
 local placeNames = {

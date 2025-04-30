@@ -3044,8 +3044,6 @@ Fluent:Notify({
 while _G.fewhopsv do task.wait(2)
 pcall(function()
 if #game:GetService("Players"):GetChildren() < plrnumforhop then task.wait()
-
-game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
 local PlaceID = game.PlaceId
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
@@ -3084,9 +3082,8 @@ local function hopToHighestPlayerServer()
     local highestServer = findHighestPlayerServer()
     if highestServer then
         local serverId = highestServer.id
-        TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game:GetService("Players").LocalPlayer)
-    else
-        print("No servers found.")
+game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
+TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game:GetService("Players").LocalPlayer)
     end
 end
 

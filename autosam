@@ -10,6 +10,10 @@ _G.autostoreaura = true
 _G.autoreset = true
 _G.resettime = 660 --second
 
+local SalunaVersion = "Saluna 008 (01/05/2025)"
+usingname = game:GetService("Players").LocalPlayer.Name
+usingid = game:GetService("Players").LocalPlayer.UserId
+local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
 asdwqelist = false
 getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua',true))()

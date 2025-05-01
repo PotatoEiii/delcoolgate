@@ -19,7 +19,7 @@ local Window = Library.CreateLib("Saluna VIP | OPL | Version: Auto Sam Settings"
 local HiTab = Window:NewTab("Sam Settings")
 local RejoinTab = Window:NewTab("Server")
 local Settings = HiTab:NewSection(" -- Sam Settings -- ")
-local Rejoin = RejoinTab:NewTab("-- Rejoin Server --")
+local Rejoin = RejoinTab:NewSection("-- Rejoin Server --")
 
 Rejoin:NewButton("Rejoin Server", "Rejoin The Current Server", function()
 game.Players.LocalPlayer:Kick("Rejoining Server, Please Wait...")

@@ -10,6 +10,126 @@ _G.autostoreaura = true
 _G.autoreset = true
 _G.resettime = 660 --second
 
+Rarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit",
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+
+StoreRarefruit = {
+"Candy Fruit",
+"Chilly Fruit",
+"Flare Fruit",
+"Gas Fruit",
+"Gravity Fruit",
+"Hollow Fruit",
+"Light Fruit",
+"Magma Fruit",
+"Ope Fruit",
+"Plasma Fruit",
+"Rumble Fruit",
+"Sand Fruit",
+"Smoke Fruit",
+"Snow Fruit",
+"Venom Fruit"
+}
+StoreUltrafruit = {
+"Dark Fruit",
+"Phoenix Fruit",
+"Quake Fruit",
+"Vampire Fruit"
+}
+function storedf()
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF1Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF1.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF1.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF1"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF2Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF2.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF2.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF2"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF3Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF3.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF3.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF3"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF4Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF4.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF4.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF4"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF5Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF5.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF5.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF5"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF6Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF6.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF6.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF6"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF7Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF7.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF7.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF7"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF8Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF8.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF8.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF8"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF9Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF9.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF9.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF9"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF10Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF10.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF10.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF10"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF11Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF11.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF11.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF11"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.StoredDF12Unlocked.Value == true and workspace.UserData["User_"..tostring(usingid)].Data.StoredDF12.Value == "None" and game:GetService("Players").LocalPlayer.PlayerGui.Storage.Frame.StoredDF12.Button.Text == "Store" then
+                local args = {
+                    [1] = "StoredDF12"
+                }
+                
+                game:GetService("Workspace").UserData["User_"..usingid].StoredDFRequest:FireServer(unpack(args))
+end
+end
 local SalunaVersion = "Saluna Fast Mode"
 local placeNames = {
     [3237168] = "One Piece Legendary",
@@ -245,18 +365,21 @@ task.spawn(function()
 while task.wait(0.1) do
 pcall(function()
 if _G.findsam then
+
 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") then
 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass"))
 end
-task.wait()
-if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass").Poser.Value
+
+for i,c in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if c.Name == "Compass" then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(c.Poser.Value)
 end
-task.wait()
 if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 game:GetService("Players").LocalPlayer.Character.Compass:Activate()
 end
-task.wait(0.5)
+end
+
+task.wait(0.4)
 end
 end)
 end

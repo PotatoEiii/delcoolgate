@@ -11,6 +11,12 @@ _G.autoreset = true
 _G.resettime = 660 --second
 
 local SalunaVersion = "Saluna Fast Mode"
+local placeNames = {
+    [3237168] = "One Piece Legendary",
+    [8569358381] = "OPL: Anarchy"
+}
+local currentPlaceId = game.PlaceId
+local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
 local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)

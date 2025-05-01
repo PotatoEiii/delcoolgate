@@ -32,104 +32,63 @@ end)
 Settings:NewToggle("Low Mode" , "Automatic Spawn If Die", function(state)
 _G.lowmode = state
 if _G.lowmode then
-task.wait(1)
-pcall(function()
---⚙️ CONFIG
-local stripDecals = true -- Set to false if you want to keep decals/textures
+local Terrain = workspace:FindFirstChildOfClass("Terrain")
+local Lighting = game:GetService("Lighting")
+local RunService = game:GetService("RunService")
+local Settings = settings()
 
---📦 SHORTCUTS
-local g = game
-local ws = g.Workspace
-local lighting = g:GetService("Lighting")
-local terrain = ws:FindFirstChildOfClass("Terrain")
-local runService = g:GetService("RunService")
+-- Configure terrain water settings
+if Terrain then
+	Terrain.WaterWaveSize = 0
+	Terrain.WaterWaveSpeed = 0
+	Terrain.WaterReflectance = 0
+	Terrain.WaterTransparency = 0
+end
 
---🔊 AUDIO & GRAPHICS BASELINE
+-- Configure lighting settings
+Lighting.GlobalShadows = false
+Lighting.FogEnd = 1e9  -- You had 9e9, which is fine, but 1e9 is commonly used for "no fog"
+
+-- Set rendering quality
 pcall(function()
-	UserSettings():GetService("UserGameSettings").MasterVolume = 0
-	settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+	Settings.Rendering.QualityLevel = Enum.QualityLevel.Level01
 end)
 
---🌊 WATER & FOG
-if terrain then
-	terrain.WaterWaveSize = 0
-	terrain.WaterWaveSpeed = 0
-	terrain.WaterReflectance = 0
-	terrain.WaterTransparency = 0
-	pcall(function() sethiddenproperty(terrain, "Decoration", false) end)
-end
-
---🌤 LIGHTING STRIP
-lighting.GlobalShadows = false
-lighting.FogEnd = math.huge
-lighting.Brightness = 0
-pcall(function() sethiddenproperty(lighting, "Technology", Enum.Technology.Compatibility) end)
-
---🎥 REMOVE POST EFFECTS
-for _, effect in ipairs(lighting:GetDescendants()) do
-	if effect:IsA("BlurEffect") or effect:IsA("SunRaysEffect")
-	or effect:IsA("ColorCorrectionEffect") or effect:IsA("BloomEffect")
-	or effect:IsA("DepthOfFieldEffect") then
-		effect.Enabled = false
-	end
-end
-
---🧹 CLEAN EXISTING OBJECTS
-for _, v in ipairs(ws:GetDescendants()) do
+-- Optimize all game descendants
+for _, v in pairs(game:GetDescendants()) do
 	if v:IsA("BasePart") then
 		v.Material = Enum.Material.Plastic
 		v.Reflectance = 0
-	elseif v:IsA("Decal") or v:IsA("Texture") then
-		if stripDecals then v.Transparency = 1 end
+	elseif v:IsA("Decal") then
+		v.Transparency = 1
 	elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
 		v.Lifetime = NumberRange.new(0)
 	elseif v:IsA("Explosion") then
 		v.BlastPressure = 1
 		v.BlastRadius = 1
-	elseif v:IsA("Fire") or v:IsA("Smoke") or v:IsA("Sparkles") or v:IsA("SpotLight") then
-		v.Enabled = false
-	elseif v:IsA("MeshPart") then
-		v.Material = Enum.Material.Plastic
-		v.Reflectance = 0
-		if stripDecals then v.TextureID = "" end
-	elseif v:IsA("SpecialMesh") and stripDecals then
-		v.TextureId = ""
-	elseif v:IsA("ShirtGraphic") and stripDecals then
-		v.Graphic = ""
-	elseif (v:IsA("Shirt") or v:IsA("Pants")) and stripDecals then
-		pcall(function() v[v.ClassName.."Template"] = "" end)
 	end
 end
 
---🧲 HANDLE NEW OBJECTS
-ws.DescendantAdded:Connect(function(v)
+-- Disable post-processing effects
+for _, v in pairs(Lighting:GetDescendants()) do
+	if v:IsA("BlurEffect") or v:IsA("SunRaysEffect")
+		or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect")
+		or v:IsA("DepthOfFieldEffect") then
+		v.Enabled = false
+	end
+end
+
+-- Remove visual effects when added
+workspace.DescendantAdded:Connect(function(child)
 	task.spawn(function()
-		runService.Heartbeat:Wait()
-		if v:IsA("ForceField") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
-			v:Destroy()
-		elseif v:IsA("BasePart") then
-			v.Material = Enum.Material.Plastic
-			v.Reflectance = 0
-		elseif (v:IsA("Decal") or v:IsA("Texture")) and stripDecals then
-			v.Transparency = 1
-		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-			v.Lifetime = NumberRange.new(0)
-		elseif v:IsA("Explosion") then
-			v.BlastPressure = 1
-			v.BlastRadius = 1
-		elseif v:IsA("MeshPart") then
-			v.Material = Enum.Material.Plastic
-			v.Reflectance = 0
-			if stripDecals then v.TextureID = "" end
-		elseif v:IsA("SpecialMesh") and stripDecals then
-			v.TextureId = ""
-		elseif v:IsA("ShirtGraphic") and stripDecals then
-			v.Graphic = ""
-		elseif (v:IsA("Shirt") or v:IsA("Pants")) and stripDecals then
-			pcall(function() v[v.ClassName.."Template"] = "" end)
+		if child:IsA("ForceField")
+			or child:IsA("Sparkles")
+			or child:IsA("Smoke")
+			or child:IsA("Fire") then
+			RunService.Heartbeat:Wait()
+			child:Destroy()
 		end
 	end)
-end)
 end)
 end
 end)
@@ -332,104 +291,63 @@ task.spawn(function()
 end)
 
 if _G.lowmode then
-task.wait(1)
-pcall(function()
---⚙️ CONFIG
-local stripDecals = true -- Set to false if you want to keep decals/textures
+local Terrain = workspace:FindFirstChildOfClass("Terrain")
+local Lighting = game:GetService("Lighting")
+local RunService = game:GetService("RunService")
+local Settings = settings()
 
---📦 SHORTCUTS
-local g = game
-local ws = g.Workspace
-local lighting = g:GetService("Lighting")
-local terrain = ws:FindFirstChildOfClass("Terrain")
-local runService = g:GetService("RunService")
+-- Configure terrain water settings
+if Terrain then
+	Terrain.WaterWaveSize = 0
+	Terrain.WaterWaveSpeed = 0
+	Terrain.WaterReflectance = 0
+	Terrain.WaterTransparency = 0
+end
 
---🔊 AUDIO & GRAPHICS BASELINE
+-- Configure lighting settings
+Lighting.GlobalShadows = false
+Lighting.FogEnd = 1e9  -- You had 9e9, which is fine, but 1e9 is commonly used for "no fog"
+
+-- Set rendering quality
 pcall(function()
-	UserSettings():GetService("UserGameSettings").MasterVolume = 0
-	settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+	Settings.Rendering.QualityLevel = Enum.QualityLevel.Level01
 end)
 
---🌊 WATER & FOG
-if terrain then
-	terrain.WaterWaveSize = 0
-	terrain.WaterWaveSpeed = 0
-	terrain.WaterReflectance = 0
-	terrain.WaterTransparency = 0
-	pcall(function() sethiddenproperty(terrain, "Decoration", false) end)
-end
-
---🌤 LIGHTING STRIP
-lighting.GlobalShadows = false
-lighting.FogEnd = math.huge
-lighting.Brightness = 0
-pcall(function() sethiddenproperty(lighting, "Technology", Enum.Technology.Compatibility) end)
-
---🎥 REMOVE POST EFFECTS
-for _, effect in ipairs(lighting:GetDescendants()) do
-	if effect:IsA("BlurEffect") or effect:IsA("SunRaysEffect")
-	or effect:IsA("ColorCorrectionEffect") or effect:IsA("BloomEffect")
-	or effect:IsA("DepthOfFieldEffect") then
-		effect.Enabled = false
-	end
-end
-
---🧹 CLEAN EXISTING OBJECTS
-for _, v in ipairs(ws:GetDescendants()) do
+-- Optimize all game descendants
+for _, v in pairs(game:GetDescendants()) do
 	if v:IsA("BasePart") then
 		v.Material = Enum.Material.Plastic
 		v.Reflectance = 0
-	elseif v:IsA("Decal") or v:IsA("Texture") then
-		if stripDecals then v.Transparency = 1 end
+	elseif v:IsA("Decal") then
+		v.Transparency = 1
 	elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
 		v.Lifetime = NumberRange.new(0)
 	elseif v:IsA("Explosion") then
 		v.BlastPressure = 1
 		v.BlastRadius = 1
-	elseif v:IsA("Fire") or v:IsA("Smoke") or v:IsA("Sparkles") or v:IsA("SpotLight") then
-		v.Enabled = false
-	elseif v:IsA("MeshPart") then
-		v.Material = Enum.Material.Plastic
-		v.Reflectance = 0
-		if stripDecals then v.TextureID = "" end
-	elseif v:IsA("SpecialMesh") and stripDecals then
-		v.TextureId = ""
-	elseif v:IsA("ShirtGraphic") and stripDecals then
-		v.Graphic = ""
-	elseif (v:IsA("Shirt") or v:IsA("Pants")) and stripDecals then
-		pcall(function() v[v.ClassName.."Template"] = "" end)
 	end
 end
 
---🧲 HANDLE NEW OBJECTS
-ws.DescendantAdded:Connect(function(v)
+-- Disable post-processing effects
+for _, v in pairs(Lighting:GetDescendants()) do
+	if v:IsA("BlurEffect") or v:IsA("SunRaysEffect")
+		or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect")
+		or v:IsA("DepthOfFieldEffect") then
+		v.Enabled = false
+	end
+end
+
+-- Remove visual effects when added
+workspace.DescendantAdded:Connect(function(child)
 	task.spawn(function()
-		runService.Heartbeat:Wait()
-		if v:IsA("ForceField") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
-			v:Destroy()
-		elseif v:IsA("BasePart") then
-			v.Material = Enum.Material.Plastic
-			v.Reflectance = 0
-		elseif (v:IsA("Decal") or v:IsA("Texture")) and stripDecals then
-			v.Transparency = 1
-		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-			v.Lifetime = NumberRange.new(0)
-		elseif v:IsA("Explosion") then
-			v.BlastPressure = 1
-			v.BlastRadius = 1
-		elseif v:IsA("MeshPart") then
-			v.Material = Enum.Material.Plastic
-			v.Reflectance = 0
-			if stripDecals then v.TextureID = "" end
-		elseif v:IsA("SpecialMesh") and stripDecals then
-			v.TextureId = ""
-		elseif v:IsA("ShirtGraphic") and stripDecals then
-			v.Graphic = ""
-		elseif (v:IsA("Shirt") or v:IsA("Pants")) and stripDecals then
-			pcall(function() v[v.ClassName.."Template"] = "" end)
+		if child:IsA("ForceField")
+			or child:IsA("Sparkles")
+			or child:IsA("Smoke")
+			or child:IsA("Fire") then
+			RunService.Heartbeat:Wait()
+			child:Destroy()
 		end
 	end)
-end)
 end)
 end
 

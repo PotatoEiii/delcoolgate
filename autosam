@@ -2,6 +2,7 @@ _G.autospawn = true
 _G.lowmode = true
 _G.claimsam = true
 _G.findsam = true
+_G.bringfruit = true
 _G.autoopencommonanduncommon = true
 _G.autoopenrareandultra = true
 _G.autoteleportsafe = true
@@ -316,6 +317,22 @@ local vu = game:GetService("VirtualUser")
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
+
+task.spawn(function()
+while task.wait(0.1) do
+pcall(function()
+if _G.bringfruit then
+repeat task.wait()
+for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+until not _G.bringfruit
+end
+end)
+end
+end)
 
 task.spawn(function()
 while task.wait(0.1) do

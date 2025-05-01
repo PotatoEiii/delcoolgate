@@ -10,7 +10,7 @@ _G.autostoreaura = true
 _G.autoreset = true
 _G.resettime = 660 --second
 
-local SalunaVersion = "Saluna 008 (01/05/2025)"
+local SalunaVersion = "Saluna Fast Mode"
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
 local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)

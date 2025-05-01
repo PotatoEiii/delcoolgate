@@ -13,7 +13,6 @@ _G.autostoreaura = true -- auto store aura fruits (include common and uncommon)
 _G.autoreset = true -- auto reset after (x) time for refresh ping
 _G.resettime = 660 --second
 
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
 local Window = Library.CreateLib("Saluna VIP | OPL | Version: Auto Sam Settings", "Serpent", colors)
 local HiTab = Window:NewTab("Sam Settings")

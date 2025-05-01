@@ -506,7 +506,7 @@ end)
 task.spawn(function()
     while task.wait(0.1) do
         pcall(function()
-            if _G.claimsam or _G.findsam or _G.autoteleportsafe then
+            if _G.findsam or _G.autoteleportsafe then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -515,7 +515,7 @@ task.spawn(function()
                     Noclip.Velocity = Vector3.new(0,0,0)
                 end
                 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.claimsam == false and _G.findsam == false and _G.autoteleportsafe == false then
+            elseif _G.findsam == false and _G.autoteleportsafe == false then
                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
                 task.wait(1)
                 game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 50
@@ -559,7 +559,7 @@ if _G.claimsam then
 if game:GetService("Players").LocalPlayer.Character.Humanoid.Health ~= 0 then
 workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
 end
-task.wait(2)
+task.wait(5)
 end
 end)
 end

@@ -1,6 +1,6 @@
 --automatic set, can change by adjust UI's toggles
 _G.autospawn = true -- auto spawn
-_G.lowmode = false -- low graphic mode
+_G.lowmode = true -- low graphic mode
 _G.claimsam = true -- claim sam
 _G.findsam = true -- find sam
 _G.bringfruit = true -- bring fruit

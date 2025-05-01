@@ -1,6 +1,6 @@
 --automatic set, can change by adjust UI's toggles
 _G.autospawn = true -- auto spawn
-_G.lowmode = true -- low graphic mode
+_G.lowmode = false -- low graphic mode
 _G.claimsam = true -- claim sam
 _G.findsam = true -- find sam
 _G.bringfruit = true -- bring fruit
@@ -19,7 +19,7 @@ local Window = Library.CreateLib("Saluna VIP | OPL | Version: Auto Sam Settings"
 local HiTab = Window:NewTab("Sam Settings")
 local RejoinTab = Window:NewTab("Server")
 local Settings = HiTab:NewSection(" -- Sam Settings -- ")
-local Rejoin = Window:NewTab("-- Rejoin Server --")
+local Rejoin = RejoinTab:NewTab("-- Rejoin Server --")
 
 Rejoin:NewButton("Rejoin Server", "Rejoin The Current Server", function()
 game.Players.LocalPlayer:Kick("Rejoining Server, Please Wait...")

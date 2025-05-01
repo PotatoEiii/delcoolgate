@@ -1,8 +1,71 @@
 _G.claimsam = true
 _G.findsam = true
+_G.autoteleportsafe = true
 _G.autostorerare = true
 _G.autostoreultra = true
 _G.autostoreaura = true
+
+  do  
+    safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
+    if safezonedestroyspace then 
+    safezonedestroyspace:Destroy() 
+    end 
+  end
+
+     SafeZoneOuterSpace = Instance.new("Part",game:GetService("Workspace"))
+    SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
+    SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
+    SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
+    SafeZoneOuterSpace.Anchored = true
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.claimsam or _G.findsam or _G.autoteleportsafe then
+                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+                    local Noclip = Instance.new("BodyVelocity")
+                    Noclip.Name = "BodyClip"
+                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                    Noclip.Velocity = Vector3.new(0,0,0)
+                end
+                game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 0
+            elseif _G.claimsam == false and _G.findsam == false and _G.autoteleportsafe == false then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+                task.wait(1)
+                game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 50
+            end
+        end)
+    end
+end)
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.autoteleportsafe then
+repeat task.wait()
+if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+getgenv().tprandom = true
+else
+getgenv().tprandom = false
+end
+until not _G.autoteleportsafe
+else
+getgenv().tprandom = false
+end
+end)
+end
+end)
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if getgenv().tprandom then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end
+end)
+end
+end)
 
 task.spawn(function()
 while task.wait() do

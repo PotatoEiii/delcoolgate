@@ -1,16 +1,175 @@
-_G.autospawn = true
-_G.lowmode = true
-_G.claimsam = true
-_G.findsam = true
-_G.bringfruit = true
-_G.autoopencommonanduncommon = true
-_G.autoopenrareandultra = true
-_G.autoteleportsafe = true
-_G.autostorerare = true
-_G.autostoreultra = true
-_G.autostoreaura = true
-_G.autoreset = true
+--automatic set, can change by adjust UI's toggles
+_G.autospawn = true -- auto spawn
+_G.lowmode = true -- low graphic mode
+_G.claimsam = true -- claim sam
+_G.findsam = true -- find sam
+_G.bringfruit = true -- bring fruit
+_G.autoopencommonanduncommon = true -- auto open common and uncommon boxes
+_G.autoopenrareandultra = true -- auto open rare and ultra boxes
+_G.autoteleportsafe = true -- auto teleport to safe zone
+_G.autostorerare = true -- auto store rare fruits
+_G.autostoreultra = true -- auto store ultra fruits 
+_G.autostoreaura = true -- auto store aura fruits (include common and uncommon)
+_G.autoreset = true -- auto reset after (x) time for refresh ping
 _G.resettime = 660 --second
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
+local Window = Library.CreateLib("Saluna VIP | OPL | Version: Auto Sam Settings", "Serpent", colors)
+local HiTab = Window:NewTab("Sam Settings")
+local Settings = HiTab:NewSection(" -- Sam Settings -- ")
+
+Settings:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
+_G.autospawn = state
+end)
+Settings:NewToggle("Low Mode" , "Automatic Spawn If Die", function(state)
+_G.lowmode = state
+if _G.lowmode then
+task.wait(1)
+pcall(function()
+--⚙️ CONFIG
+local stripDecals = true -- Set to false if you want to keep decals/textures
+
+--📦 SHORTCUTS
+local g = game
+local ws = g.Workspace
+local lighting = g:GetService("Lighting")
+local terrain = ws:FindFirstChildOfClass("Terrain")
+local runService = g:GetService("RunService")
+
+--🔊 AUDIO & GRAPHICS BASELINE
+pcall(function()
+	UserSettings():GetService("UserGameSettings").MasterVolume = 0
+	settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+end)
+
+--🌊 WATER & FOG
+if terrain then
+	terrain.WaterWaveSize = 0
+	terrain.WaterWaveSpeed = 0
+	terrain.WaterReflectance = 0
+	terrain.WaterTransparency = 0
+	pcall(function() sethiddenproperty(terrain, "Decoration", false) end)
+end
+
+--🌤 LIGHTING STRIP
+lighting.GlobalShadows = false
+lighting.FogEnd = math.huge
+lighting.Brightness = 0
+pcall(function() sethiddenproperty(lighting, "Technology", Enum.Technology.Compatibility) end)
+
+--🎥 REMOVE POST EFFECTS
+for _, effect in ipairs(lighting:GetDescendants()) do
+	if effect:IsA("BlurEffect") or effect:IsA("SunRaysEffect")
+	or effect:IsA("ColorCorrectionEffect") or effect:IsA("BloomEffect")
+	or effect:IsA("DepthOfFieldEffect") then
+		effect.Enabled = false
+	end
+end
+
+--🧹 CLEAN EXISTING OBJECTS
+for _, v in ipairs(ws:GetDescendants()) do
+	if v:IsA("BasePart") then
+		v.Material = Enum.Material.Plastic
+		v.Reflectance = 0
+	elseif v:IsA("Decal") or v:IsA("Texture") then
+		if stripDecals then v.Transparency = 1 end
+	elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+		v.Lifetime = NumberRange.new(0)
+	elseif v:IsA("Explosion") then
+		v.BlastPressure = 1
+		v.BlastRadius = 1
+	elseif v:IsA("Fire") or v:IsA("Smoke") or v:IsA("Sparkles") or v:IsA("SpotLight") then
+		v.Enabled = false
+	elseif v:IsA("MeshPart") then
+		v.Material = Enum.Material.Plastic
+		v.Reflectance = 0
+		if stripDecals then v.TextureID = "" end
+	elseif v:IsA("SpecialMesh") and stripDecals then
+		v.TextureId = ""
+	elseif v:IsA("ShirtGraphic") and stripDecals then
+		v.Graphic = ""
+	elseif (v:IsA("Shirt") or v:IsA("Pants")) and stripDecals then
+		pcall(function() v[v.ClassName.."Template"] = "" end)
+	end
+end
+
+--🧲 HANDLE NEW OBJECTS
+ws.DescendantAdded:Connect(function(v)
+	task.spawn(function()
+		runService.Heartbeat:Wait()
+		if v:IsA("ForceField") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
+			v:Destroy()
+		elseif v:IsA("BasePart") then
+			v.Material = Enum.Material.Plastic
+			v.Reflectance = 0
+		elseif (v:IsA("Decal") or v:IsA("Texture")) and stripDecals then
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+			v.Lifetime = NumberRange.new(0)
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1
+			v.BlastRadius = 1
+		elseif v:IsA("MeshPart") then
+			v.Material = Enum.Material.Plastic
+			v.Reflectance = 0
+			if stripDecals then v.TextureID = "" end
+		elseif v:IsA("SpecialMesh") and stripDecals then
+			v.TextureId = ""
+		elseif v:IsA("ShirtGraphic") and stripDecals then
+			v.Graphic = ""
+		elseif (v:IsA("Shirt") or v:IsA("Pants")) and stripDecals then
+			pcall(function() v[v.ClassName.."Template"] = "" end)
+		end
+	end)
+end)
+end)
+end
+end)
+
+Settings:NewToggle("Claim Sam" , "Automatic Claim Sam", function(state)
+_G.claimsam = state
+end)
+
+Settings:NewToggle("Find Sam" , "Automatic Find Sam", function(state)
+_G.findsam = state
+end)
+
+Settings:NewToggle("Bring Fruit" , "Automatic Bring Fruit", function(state)
+_G.bringfruit = state
+end)
+
+Settings:NewToggle("Auto Open Common/Uncommon" , "Automatic Open Common/Uncommon Boxes", function(state)
+_G.autoopencommonanduncommon = state
+end)
+
+Settings:NewToggle("Auto Open Rare/Ultra" , "Automatic Open Rare/Ultra Boxes", function(state)
+_G.autoopenrareandultra = state
+end)
+
+Settings:NewToggle("Auto TP Safe Zone" , "Automatic Teleport To Safe Zone", function(state)
+_G.autoteleportsafe = state
+end)
+
+Settings:NewToggle("Auto Store Rare" , "Automatic Store Rare Fruits", function(state)
+_G.autostorerare = state
+end)
+
+Settings:NewToggle("Auto Store Ultra" , "Automatic Store Ultra Rare Fruits", function(state)
+_G.autostoreultra = state
+end)
+
+Settings:NewToggle("Auto Store Aura" , "Automatic Store Aura Fruits", function(state)
+_G.autostoreaura = state
+end)
+
+Settings:NewToggle("Auto Reset" , "Automatic Reset For Refresh Ping", function(state)
+_G.autoreset = state
+end)
+
+Settings:NewSlider("Time For Reset", "Increase/Decrease", 999, 100, function(sd)
+_G.resettime = sd
+end)
 
 Rarefruit = {
 "Candy Fruit",

@@ -17,6 +17,31 @@ local placeNames = {
 }
 local currentPlaceId = game.PlaceId
 local currentPlaceName = placeNames[currentPlaceId] or "Unknown Place"
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local currentJobId = game.JobId
+local placeId = game.PlaceId
+local url = 'https://games.roblox.com/v1/games/' .. placeId .. '/servers/Public?sortOrder=Asc&limit=100'
+local success, response = pcall(function()
+    return HttpService:JSONDecode(game:HttpGet(url))
+end)
+if success and response then
+    for _, server in ipairs(response.data) do
+        if server.id == currentJobId then
+            local pingg = tonumber(server.ping) or 0
+            local fpss = tonumber(server.fps) or 0
+            pingsv = math.floor(pingg)
+            fpssv = math.floor(fpss)
+            break
+        end
+    end
+end
+local _W9N3M2X7L5 = game:GetService("Players").LocalPlayer
+local excutor =  nil
+
+task.spawn(function()
+    excutor = (identifyexecutor and identifyexecutor()) or "Unknown Executor"
+end)
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
 local requesting = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)

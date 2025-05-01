@@ -1264,6 +1264,7 @@ task.spawn(function()
     end
 end)
 end)
+end
 
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/rllysus.lua',true))()

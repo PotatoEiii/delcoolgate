@@ -1,1 +1,97 @@
+_G.claimsam = true
+_G.findsam = true
+_G.autostorerare = true
+_G.autostoreultra = true
+_G.autostoreaura = true
 
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.claimsam then
+if game:GetService("Players").LocalPlayer.Character.Humanoid.Health ~= 0 then
+workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+end
+task.wait(2)
+end
+end)
+end
+end)
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.findsam then
+if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") then
+game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass"))
+end
+task.wait()
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass").Poser.Value
+end
+task.wait()
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Players").LocalPlayer.Character.Compass:Activate()
+end
+task.wait(0.5)
+end
+end)
+end
+end)
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.autostorerare then
+repeat task.wait()
+for i, t in pairs(StoreRarefruit) do
+for i, u in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if u.Name == t then
+game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(u)
+task.wait()
+storedf()
+end
+end
+end
+until not _G.autostorerare
+end
+end)
+end
+end)
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.autostoreultra then
+repeat task.wait()
+for i, t in pairs(StoreUltrafruit) do
+for i, u in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if u.Name == t then
+game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(u)
+task.wait()
+storedf()
+end
+end
+end
+until not _G.autostoreultra
+end
+end)
+end
+end)
+
+task.spawn(function()
+while task.wait() do
+pcall(function()
+if _G.autostoreaura then
+repeat task.wait()
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name,"Fruit") and string.sub(v.Data.Value,tonumber(string.len(v.Data.Value)) - 1) == ",1" then
+game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+storedf()
+end
+end
+until not _G.autostoreaura
+end
+end)
+end
+end)

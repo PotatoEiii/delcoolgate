@@ -1,6 +1,6 @@
 --automatic set, can change by adjust UI's toggles
 _G.autospawn = true -- auto spawn
-_G.lowmode = true -- low graphic mode
+_G.lowmode = false -- low graphic mode
 _G.claimsam = true -- claim sam
 _G.findsam = true -- find sam
 _G.bringfruit = true -- bring fruit
@@ -17,7 +17,14 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
 local Window = Library.CreateLib("Saluna VIP | OPL | Version: Auto Sam Settings", "Serpent", colors)
 local HiTab = Window:NewTab("Sam Settings")
+local RejoinTab = Window:NewTab("Server")
 local Settings = HiTab:NewSection(" -- Sam Settings -- ")
+local Rejoin = Window:NewTab("-- Rejoin Server --")
+
+Rejoin:NewButton("Rejoin Server", "Rejoin The Current Server", function()
+game.Players.LocalPlayer:Kick("Rejoining Server, Please Wait...")
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+end)
 
 Settings:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
 _G.autospawn = state

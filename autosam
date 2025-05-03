@@ -449,7 +449,7 @@ until (game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid
 task.wait(0.1)
 
 if _G.autospawn == true then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1589.06714, 215.996826, 9941.59766, -0.0209177006, -8.029496e-08, -0.999781191, 4.5499128e-08, 1, -8.12644743e-08, 0.999781191, -4.71890402e-08, -0.0209177006)
 end
 
 end

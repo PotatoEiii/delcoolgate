@@ -3044,6 +3044,8 @@ Fluent:Notify({
 while _G.fewhopsv do task.wait(2)
 pcall(function()
 if #game:GetService("Players"):GetChildren() < plrnumforhop then task.wait()
+
+game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
 local PlaceID = game.PlaceId
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
@@ -3082,8 +3084,9 @@ local function hopToHighestPlayerServer()
     local highestServer = findHighestPlayerServer()
     if highestServer then
         local serverId = highestServer.id
-game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
-TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game:GetService("Players").LocalPlayer)
+        TeleportService:TeleportToPlaceInstance(PlaceID, serverId, game:GetService("Players").LocalPlayer)
+    else
+        print("No servers found.")
     end
 end
 
@@ -4017,7 +4020,7 @@ local zxm = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Da
 local zcc = zxm/100*2
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < zcc then
 if #game.Players:GetChildren() > 1 then
-game:GetService("Players").LocalPlayer:Kick("Rejoining Server, Please Wait...")
+game:GetService("Players").LocalPlayer:Kick("Rejoing Server, Please Wait...")
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
 else
 TeleportService = game:GetService("TeleportService")
@@ -4038,8 +4041,8 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
 				args = {code = 'dYHag43eeU'}
 			})
 		})
-	end   
- if httprequest then
+	end  
+if httprequest then
         local servers = {}
         local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
         local body = HttpService:JSONDecode(req.Body)
@@ -4057,7 +4060,7 @@ game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
 TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game:GetService("Players").LocalPlayer)
         end
 end
-
+end
 end
 until not _G.rejoinifhaki0
 end)
@@ -4909,6 +4912,12 @@ Tabs.Server:AddSection("						   --Rejoin/Hop--")
 if #game.Players:GetChildren() > 1 then
 game:GetService("Players").LocalPlayer:Kick("Rejoining Server, Please Wait...")
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+else 
+Fluent:Notify({
+    Title = "Saluna Notify",
+    Content = "Cannot rejoin, you will lose the current server after leave",
+    Duration = 120
+})
 end
 end
                     },
@@ -4966,9 +4975,13 @@ httprequest = (syn and syn.request) or (http and http.request) or http_request o
         end
 
         if #servers > 0 then
-game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
-TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game:GetService("Players").LocalPlayer)
+            game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game:GetService("Players").LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
         end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
     end          
 end
                     },
@@ -5036,8 +5049,8 @@ end
                             pcall(function()
                                 -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
                                 task.wait()
-game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
-game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game:GetService("Players").LocalPlayer)
+                                game:GetService("Players").LocalPlayer:Kick("Hoping Server, Please Wait...")
+                                game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game:GetService("Players").LocalPlayer)
                             end)
                             task.wait(.1)
                         end

@@ -459,6 +459,7 @@ end)
     Mobs = Window:AddTab({ Title = "Mobs", Icon = "rbxassetid://13957749947" }),
     Boss = Window:AddTab({ Title = "Boss/Event", Icon = "rbxassetid://12487510294" }),
     Gems = Window:AddTab({ Title = "Gems (Risky)", Icon = "rbxassetid://6788518051" }),
+    Alts = Window:AddTab({ Title = "Alts", Icon = "rbxassetid://82427272158061" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
@@ -468,6 +469,15 @@ end)
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
+Tabs.Alts:AddSection("					 -----Auto Sam-----")
+resetafterfindsam = Tabs.Alts:AddToggle("resetafterfindsamtoggle", {Title = "Auto Reset 5s After Find Sam", Default = false })
+resetafterfindsam:OnChanged(function()
+if Options.resetafterfindsamtoggle.Value == true then
+_G.resetaftersam = true
+else
+_G.resetaftersam = false
+end
+end)
 
 Tabs.Edge:AddSection("					 -----GOD MODE-----")
 qwefczxcve2 = Tabs.Edge:AddToggle("qwefczxcve2toggle", {Title = "GOD MODE (Bomb Method)", Default = false })

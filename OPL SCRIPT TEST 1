@@ -8374,7 +8374,7 @@ _G.concu = true
 while _G.concu do task.wait()
 local slv = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
 local sss = slv/100*hakitarget
-local sll =  slv/100*50
+local sll =  slv/100*70
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
 for i = 1, hakispeed do
     local args = {

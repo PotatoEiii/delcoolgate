@@ -470,7 +470,7 @@ end)
 }
 Options = Fluent.Options
 Tabs.Alts:AddSection("					 -----Auto Sam-----")
-resetafterfindsam = Tabs.Alts:AddToggle("resetafterfindsamtoggle", {Title = "Auto Reset 5s After Find Sam", Default = false })
+resetafterfindsam = Tabs.Alts:AddToggle("resetafterfindsamtoggle", {Title = "Auto Reset 5s After Find Sam + Open Box", Default = false })
 resetafterfindsam:OnChanged(function()
 if Options.resetafterfindsamtoggle.Value == true then
 _G.resetaftersam = true
@@ -7053,6 +7053,41 @@ until _G.startspamskill == false
 end
 end)
 end
+end)
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.resetaftersam then
+                task.wait()
+                local targetPart = nil
+
+                repeat
+                    task.wait()
+                    local character = game.Players.LocalPlayer.Character
+                    for _, child in ipairs(character:GetChildren()) do
+                        if string.find(child.Name, "Box") then
+                            targetPart = child
+                            break
+                        end
+                    end
+                until targetPart or not _G.resetaftersam
+
+                repeat
+                    task.wait()
+                until not game.Players.LocalPlayer.Backpack:FindFirstChild(targetPart.Name)
+                   and not game.Players.LocalPlayer.Character:FindFirstChild(targetPart.Name)
+
+                if _G.resetaftersam then
+                    wait(5)
+                    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                    if humanoid then
+                        humanoid.Health = 0
+                    end
+                end
+            end
+        end)
+    end
 end)
 
 task.spawn(function()

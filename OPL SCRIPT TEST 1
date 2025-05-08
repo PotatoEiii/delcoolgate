@@ -469,8 +469,6 @@ end)
     nonet = Window:AddTab({ Title = " ", Icon = "" })
 }
 Options = Fluent.Options
-Tabs.Alts:AddSection("	  		 -----Auto Beries Farm-----")
-
 Tabs.Alts:AddSection("					 -----Auto Sam-----")
 
 AutospawnsamToggle = Tabs.Alts:AddToggle("Autospawnsam1Toggle", {Title = "Auto Spawn (If Having Sam)", Default = false })

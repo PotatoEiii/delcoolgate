@@ -8472,12 +8472,6 @@ local sll =  slv/100*70
 if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
 for i = 1, hakispeed do
     local args = {
-        [1] = "On",
-        [2] = slv
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-    local args = {
         [1] = "Off",
         [2] = slv
     }

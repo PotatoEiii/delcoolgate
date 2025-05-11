@@ -55,29 +55,6 @@ getgenv().Save = {
     ["Auto Shave + Dash Players"] = false
 }
 
-function LoadSetting()
-    if isfile("SALUNA_OPA.json") then
-            vb = game:GetService("HttpService"):JSONDecode(readfile("SALUNA_OPA.json"))
-            getgenv().Save = vb
-                return vb
-        else
-            loadcheck()
-        return
-    end
-end
-
-
-function SaveSetting()
-    if isfile("SALUNA_OPA.json") then
-            f = writefile
-            writefile("SALUNA_OPA.json",game:GetService("HttpService"):JSONEncode(getgenv().Save))
-                return f
-        else
-            loadcheck()
-        return
-    end
-end
-
 function format_large_number_with_spaces(n)
     local str = tostring(n)
     local reversed = str:reverse()
@@ -150,7 +127,6 @@ local Backpack = Window:NewTab("Backpack")
 local Tele = Window:NewTab("Teleport")
 local PlayerTab = Window:NewTab("Players")
 local Server = Window:NewTab("Server")
-local Settings = Window:NewTab("Settings")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
 local FFarm2 = FFarm:NewSection(" -- One Shot Farming -- ")
@@ -169,7 +145,6 @@ local Tele1 = Tele:NewSection(" -- Teleport -- ")
 local Tele2 = Tele:NewSection(" -- Special Teleport -- ")
 local Player1 = PlayerTab:NewSection(" -- Player -- ")
 local Server1 = Server:NewSection("-- Server --")
-local SettingsSection1 = Settings:NewSection(" -- Auto Save -- ")
 
 local RRGG = Stats1:NewLabel2("Time-Tracking")
 local Realtimecheck = Stats1:NewLabel("Real-Time: "..os.date("%A %x %X (%Z)"))
@@ -183,38 +158,23 @@ local PlayerStat6 = Stats1:NewLabel("Compass: "..tostring(game:GetService("Playe
 
 FFarm1:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
 getgenv().Save["Auto Spawn"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 FFarm1:NewToggle("Auto Get Expertise" , "Automatic Get Expertise Quest", function(state)
 getgenv().Save["Auto Get Expertise"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 
 local DropF = FFarm2:NewDropdown("Farming Methods", "Choose Method To Farm (One Shot)", {"Light","Quake"}, function(blud)
 getgenv().Save["Chosen Farm Method"] = blud
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 FFarm2:NewToggle("Auto Farm (One Shot)" , "Automatic Farm Kills", function(state)
 getgenv().Save["Auto Farm OS"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Dupe1:NewToggle("Auto Aura Finding" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Aura Finding"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Dupe2:NewButton("Dupe Mode", "Not Save Data Progress", function()
@@ -243,39 +203,8 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Fo
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 end)
 
-if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
-DupePos = Dupe3:NewLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().Save["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Z"])))
-else
-DupePos = Dupe3:NewLabel("Current Position: nil")
-end
-
-Dupe3:NewButton("Set Postion For Duping (Work Without Save Position)", "Set The Current Standing Position", function()
-getgenv().Save["Position X"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.X
-getgenv().Save["Position Y"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Y
-getgenv().Save["Position Z"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position.Z
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
-DupePos:UpdateLabel("Current Position: "..formatToOneDecimal(tonumber(getgenv().Save["Position X"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Y"]))..", "..formatToOneDecimal(tonumber(getgenv().Save["Position Z"])))
-end)
-
-Dupe3:NewButton("Teleport To Saved Position", "Teleport To Saved Position", function()
-if getgenv().Save["Position X"] ~= "" and getgenv().Save["Position Y"] ~= "" and getgenv().Save["Position Z"] ~= "" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(getgenv().Save["Position X"], getgenv().Save["Position Y"], getgenv().Save["Position Z"]))
-else
-Fluent:Notify({
-    Title = "Saluna Notify",
-    Content = "Not Found Any Saved Position",
-    Duration = 5
-})
-end
-end)
-
 Dupe3:NewToggle("Auto Compass Dupe" , "Require A Lot Of Compass Tokens", function(state)
 getgenv().Save["Auto Compass Dupe"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Dupe4:NewButton("Lure Mobs For Stack Token (Smoke)", "Lure Mobs", function()
@@ -451,79 +380,46 @@ end)
 
 Dupe4:NewToggle("Auto Stack Token" , "Require A Lot Of Compass In Inventory", function(state)
 getgenv().Save["Auto Stack Token"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 GrabDrop1:NewToggle("Auto Bring Compass" , "Auto Bring Compass", function(state)
 getgenv().Save["Auto Bring Compass"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack1:NewToggle("Auto Delete Common Box" , "Delete Common Box", function(state)
 getgenv().Save["Auto Delete Common Box"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack1:NewToggle("Auto Delete Uncommon Box" , "Delete Uncommon Box", function(state)
 getgenv().Save["Auto Delete Uncommon Box"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack2:NewToggle("Auto Open Common Box" , "Open Common Box", function(state)
 getgenv().Save["Auto Open Common Box"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack2:NewToggle("Auto Open Uncommon Box" , "Open Uncommon Box", function(state)
 getgenv().Save["Auto Open Uncommon Box"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack2:NewToggle("Auto Open Rare/Ultra Box" , "Open Rare/Ultra Box", function(state)
 getgenv().Save["Auto Open Rare/Ultra Box"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack3:NewToggle("Auto Delete Non-Aura Common Fruit" , "Delete Common Fruits Which Have No Aura", function(state)
 getgenv().Save["Auto Delete Non-Aura Common Fruit"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack3:NewToggle("Auto Delete Non-Aura Uncommon Fruit" , "Delete Uncommon Fruits Which Have No Aura", function(state)
 getgenv().Save["Auto Delete Non-Aura Uncommon Fruit"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack3:NewToggle("Auto Delete Non-Aura Rare Fruit" , "Delete Rare Fruits Which Have No Aura", function(state)
 getgenv().Save["Auto Delete Non-Aura Rare Fruit"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Backpack3:NewToggle("Auto Delete Non-Aura Ultra Rare Fruit" , "Delete Ultra Rare Fruits Which Have No Aura", function(state)
 getgenv().Save["Auto Delete Non-Aura Ultra Rare Fruit"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 Tele1:NewDropdown("Island TP", "TP To Island In The List", {"Sam Island", "Sand/Windmill", "Cave", "Near-Bar Island", "Bar","Boss-5K/Tornado Island","Kaizu/Aura Boss Island","Krizma Island", "Sand Castle", "Purple Island", "Merlin/Boar Island","Flail Island","Snowy Island","Big Snow Mountain","Big Black Mountain","Marine Ford","Forest","Green Rock/Cannon Island","Race/New Island","Pyramid","Mansion","Moon Island","Vokun Island"}, function(zxcrris)
@@ -801,9 +697,6 @@ end)
 
 Player2:NewToggle("Auto Shave + Dash Players" , "Auto Make Players Dash and Shave Into Sea", function(state)
 getgenv().Save["Auto Shave + Dash Players"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 local Playerslist = {}
@@ -1042,9 +935,6 @@ end)
 
 Gems1:NewToggle("Auto Farm Gems (Better Use In 1-Player Server)" , "Require: Compass Token", function(state)
 getgenv().Save["Auto Farm Gems"] = state
-if getgenv().Save["AutoSave"] then
-SaveSetting()
-end
 end)
 
 
@@ -1100,42 +990,6 @@ Fluent:Notify({
 })
         end
     end          
-end)
-
-SettingsSection1:NewButton("Reset Config", "Reset The Auto Save Config", function()
-getgenv().Save = {
-    ["AutoSave"] = false,
-    ["Auto Aura Finding"] = false,
-    ["Auto Delete Common Box"] = false,
-    ["Auto Delete Uncommon Box"] = false,
-    ["Auto Open Common Box"] = false,
-    ["Auto Open Uncommon Box"] = false,
-    ["Auto Open Rare/Ultra Box"] = false,
-    ["Auto Delete Non-Aura Common Fruit"] = false,
-    ["Auto Delete Non-Aura Uncommon Fruit"] = false,
-    ["Auto Delete Non-Aura Rare Fruit"] = false,
-    ["Auto Delete Non-Aura Ultra Rare Fruit"] = false,
-    ["Auto Farm Gems"] = false,
-    ["Auto Spawn"] = false,
-    ["Auto Get Expertise"] = false,
-    ["Auto Bring Compass"] = false,
-    ["Auto Compass Dupe"] = false,
-    ["Auto Stack Token"] = false,
-    ["Position X"] = "",
-    ["Position Y"] = "",
-    ["Position Z"] = "",
-    ["Chosen Farm Method"] = "",
-    ["Auto Farm OS"] = false,
-    ["Auto Shave + Dash Players"] = false
-}
-SaveSetting()
-LoadSetting()
-DupePos:UpdateLabel("Current Position: nil")
-end)
-
-SettingsSection1:NewToggle("Auto Save Config" , "Auto Save Config", function(state)
-getgenv().Save["AutoSave"] = state
-SaveSetting()
 end)
 
 spawn(function()

@@ -52,6 +52,7 @@ getgenv().Save = {
     ["Position Z"] = "",
     ["Chosen Farm Method"] = "",
     ["Auto Farm OS"] = false,
+    ["Auto Stats Farming"] = false,
     ["Auto Shave + Dash Players"] = false
 }
 
@@ -70,9 +71,6 @@ function formatToOneDecimal(value)
     local roundedValue = math.floor(value * 10 + 0.5) / 10
     return string.format("%.1f", roundedValue)
 end
-
-loadcheck()
-LoadSetting()
 
 local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -115,7 +113,6 @@ end
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
 
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PotatoEiii/whocares/main/thisdamn/SalunaKavoUI7"))()
 local Window = Library.CreateLib("Saluna VIP | OPL: ARNACHY | Version: A2", "Serpent", colors)
 local Stats = Window:NewTab("Stats")
@@ -129,6 +126,7 @@ local PlayerTab = Window:NewTab("Players")
 local Server = Window:NewTab("Server")
 local Stats1 = Stats:NewSection(" -- Statistics -- ")
 local FFarm1 = FFarm:NewSection(" -- Must Turn On -- ")
+local FFarm3 = FFarm:NewSection(" -- Stats Farming -- ")
 local FFarm2 = FFarm:NewSection(" -- One Shot Farming -- ")
 local Gems1 = Gems:NewSection(" -- Farm Gems -- ")
 local Dupe1 = Dupe:NewSection(" -- Aura Finding -- ")
@@ -155,6 +153,10 @@ local PlayerStat3 = Stats1:NewLabel("Beri: "..format_large_number_with_spaces(wo
 local PlayerStat4 = Stats1:NewLabel("Bounty: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Bounty.Value))
 local PlayerStat5 = Stats1:NewLabel("Kills: "..format_large_number_with_spaces(workspace.UserData["User_"..game.Players.LocalPlayer.UserId].Data.Kills.Value))
 local PlayerStat6 = Stats1:NewLabel("Compass: "..tostring(game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Sam.SamTimer.Text))
+
+FFarm3:NewToggle("Auto Stats Farming" , "Automatically Farm Stats", function(state)
+getgenv().Save["Auto Stats Farming"] = state
+end)
 
 FFarm1:NewToggle("Auto Spawn" , "Automatic Spawn If Die", function(state)
 getgenv().Save["Auto Spawn"] = state
@@ -992,7 +994,67 @@ Fluent:Notify({
     end          
 end)
 
-spawn(function()
+function amongus()
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+end
+
+task.spawn(function()
+while task.wait(0.1) do
+if getgenv().Save["Auto Stats Farming"] then
+pcall(function()
+if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge13")
+elseif game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge14")
+end
+end)
+end
+end
+end)
+
+task.spawn(function()
+while task.wait(0.1) do
+if getgenv().Save["Auto Stats Farming"] then
+pcall(function()
+repeat task.wait()
+for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
+if v.Name == "Barrel" and getgenv().Save["Auto Stats Farming"] == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
+amongus()
+task.wait()
+end
+end
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v.Name == "Crate" and getgenv().Save["Auto Stats Farming"] == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
+amongus()
+task.wait()
+end
+end
+if getgenv().Save["Auto Stats Farming"] == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+amongus()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+task.wait(15)
+until not getgenv().Save["Auto Stats Farming"] or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+end)
+end
+end
+end)
+
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 
@@ -1065,7 +1127,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 if getgenv().Save["Auto Delete Common Box"] then
@@ -1154,7 +1216,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait() do
 if getgenv().Save["Auto Bring Compass"] then
  pcall(function()
@@ -1170,7 +1232,7 @@ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Huma
             end
             end)
 
-            spawn(function()
+            task.spawn(function()
             while wait() do
                 if getgenv().Save["Auto Spawn"] then
                     pcall(function()
@@ -1185,7 +1247,7 @@ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Huma
             end
             end)
 
-            spawn(function()
+            task.spawn(function()
             while wait(2) do
                 if getgenv().Save["Auto Get Expertise"] then
                     pcall(function()
@@ -1197,7 +1259,7 @@ workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChi
             end
             end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 if getgenv().Save["Auto Aura Finding"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
 pcall(function()
@@ -1242,7 +1304,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 if getgenv().Save["Auto Aura Finding"] then
 pcall(function()
@@ -1256,7 +1318,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 if getgenv().Save["Auto Farm Gems"] then
@@ -1396,7 +1458,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 if _G.checkdiegem and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health <= 0 then
@@ -1409,7 +1471,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(1) do
 pcall(function()
 if getgenv().Save["Auto Farm Gems"] then
@@ -1421,7 +1483,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 if game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.AutoButtonColor == false and game.Players.LocalPlayer:WaitForChild("PlayerGui").Challenges.Frame.Frame.DailyFrame.ScrollingFrame["Challenge_3"].Claim.TextLabel.Text == "Claim" and _G.swingsword == true and getgenv().Save["Auto Farm Gems"] == true then
@@ -1442,7 +1504,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait() do
         pcall(function()
             if getgenv().Save["Auto Compass Dupe"] and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
@@ -1475,7 +1537,7 @@ until not getgenv().Save["Auto Compass Dupe"] or game.Players.LocalPlayer.Charac
     end
 end)
 
-spawn(function()
+task.spawn(function()
     while wait() do
         pcall(function()
             if getgenv().Save["Auto Stack Token"] == true and game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health ~= 0 and #game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren() ~= 0 then
@@ -1507,7 +1569,7 @@ until not getgenv().Save["Auto Stack Token"] or game.Players.LocalPlayer.Charact
         end)
     end
 end)
-spawn(function() -- autofarm velocity
+task.spawn(function() -- autofarm velocity
     while wait() do
         pcall(function()
             if getgenv().Save["Auto Farm Gems"] == true or getgenv().SmokeLure == true or getgenv().Save["Auto Farm OS"] == true then
@@ -1528,7 +1590,7 @@ spawn(function() -- autofarm velocity
     end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 if getgenv().Save["Auto Shave + Dash Players"] then
@@ -1559,7 +1621,7 @@ end
 end)
 
 
-spawn(function()
+task.spawn(function()
 while wait(0.1) do
 pcall(function()
 if getgenv().viewplrr then
@@ -1574,7 +1636,7 @@ end)
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.25) do
     local totalSeconds = math.floor(workspace.DistributedGameTime)
     local hours = math.floor(totalSeconds / 3600)
@@ -1602,7 +1664,7 @@ end
 end
 end)
 
-spawn(function()
+task.spawn(function()
 while wait(0.25) do
 pcall(function()
 if getgenv().ChosenPlayer ~= nil then

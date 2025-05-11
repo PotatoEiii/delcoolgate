@@ -231,7 +231,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Vi
 end)
 
 Dupe2:NewButton("Save Data", "Save The Current Data Progress", function()
-game:GetService("Workspace").UserData["User_"..plr.UserId].UpdateClothing_Extras:FireServer("A","None",34)
+game:GetService("Workspace").UserData["User_"..game.Players.LocalPlayer.UserId].UpdateClothing_Extras:FireServer("A","None",34)
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.BackgroundTransparency = 0.5
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextScaled = true

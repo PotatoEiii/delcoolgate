@@ -45,6 +45,7 @@ getgenv().Save = {
     ["Auto Spawn"] = false,
     ["Auto Get Expertise"] = false,
     ["Auto Bring Compass"] = false,
+    ["Auto Bring Drink"] = false,
     ["Auto Compass Dupe"] = false,
     ["Auto Stack Token"] = false,
     ["Position X"] = "",
@@ -387,6 +388,11 @@ end)
 GrabDrop1:NewToggle("Auto Bring Compass" , "Auto Bring Compass", function(state)
 getgenv().Save["Auto Bring Compass"] = state
 end)
+
+GrabDrop1:NewToggle("Auto Bring Drink" , "Auto Bring Drink", function(state)
+getgenv().Save["Auto Bring Drink"] = state
+end)
+
 
 Backpack1:NewToggle("Auto Delete Common Box" , "Delete Common Box", function(state)
 getgenv().Save["Auto Delete Common Box"] = state
@@ -1231,6 +1237,23 @@ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Huma
                 end
             end
             end)
+
+task.spawn(function()
+while wait() do
+if getgenv().Save["Auto Bring Drink"] then
+ pcall(function()
+local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+	for _, child in ipairs(workspace:GetChildren()) do
+		if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and (string.find(child.Name, "Cider") or string.find(child.Name, "Smoothie") or string.find(child.Name, "Lemon") or string.find(child.Name, "Juice") or string.find(child.Name, "Milk"))  and child:FindFirstChild("Handle") then
+			humanoid:EquipTool(child)
+			wait()
+		end
+		end
+	end)
+                end
+            end
+            end)
+
 
             task.spawn(function()
             while wait() do

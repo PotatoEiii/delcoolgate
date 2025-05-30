@@ -15,25 +15,28 @@ repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"
     SafeZoneOuterSpace.Anchored = true
 asdwqelist = false
 getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
-listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua'))()
-khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist'))()
+listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua',true))()
+khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist.lua',true))()
 for _, v in pairs(khoilistedzxwc) do
     table.insert(listedaxw, v)
 end
         for _, v1 in pairs(listedaxw) do
             if getexecutorid == v1 then
 asdwqelist = true
+whitelistkeytype = "Whitelisted Excutor ID"
             end
         end
 
-userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list'))()
-userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid'))()
+userlistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/list.lua',true))()
+userlistedzxwc2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/userid.lua',true))()
 for _, c in pairs(userlistedzxwc2) do
     table.insert(userlistedzxwc, c)
 end
         for _, v2 in pairs(userlistedzxwc) do
             if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
 asdwqelist = true
+realtimechecking = true
+whitelistkeytype = "Whitelisted Account"
             end
         end
 

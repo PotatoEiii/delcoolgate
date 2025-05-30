@@ -33,7 +33,7 @@ for _, c in pairs(userlistedzxwc2) do
     table.insert(userlistedzxwc, c)
 end
         for _, v2 in pairs(userlistedzxwc) do
-            if (usingid and usingname == v2) and game:GetService("Workspace"):FindFirstChild(usingname) then
+            if game.Players.LocalPlayer.UserId and game.Players.LocalPlayer.Name == v2 then
 asdwqelist = true
 realtimechecking = true
 whitelistkeytype = "Whitelisted Account"
@@ -68,6 +68,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Ac
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "SALUNA NOTIFY: YOU DON'T HAVE BOUND SLOT"
 game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.TextColor3 = Color3.fromRGB(0, 255, 127)
+_G.dupegem = false
 end
 end)
 end
@@ -103,6 +104,9 @@ game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 repeat wait(0.1)
 until #game:GetService("Players").LocalPlayer.Backpack:GetChildren() > 0
 wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 end)

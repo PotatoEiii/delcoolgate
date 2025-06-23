@@ -1,4 +1,6 @@
 local SalunaVersion = "Saluna 009 (08/05/2025)"
+local qweur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/a',true))()
+local retur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/b',true))()
 task.wait()
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
@@ -260,7 +262,6 @@ for _, v in pairs(game:GetService("Players"):GetPlayers()) do
         if v.UserId == v1 then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
 task.wait()
-local qweur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/a',true))()
         local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
@@ -290,7 +291,6 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
         if r.UserId == v then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
 task.wait()
-local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
         local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
@@ -308,7 +308,7 @@ local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dU
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = qweur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
         end
     end
@@ -9558,7 +9558,6 @@ end
 
 
 task.wait()
-local retur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/b',true))()
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9587,7 +9586,6 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
         local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
@@ -9605,7 +9603,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = retur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 end)
@@ -9642,7 +9640,6 @@ end
 end
 
 task.wait()
-local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9660,7 +9657,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = retur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
 
@@ -9671,7 +9668,6 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
         local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
@@ -9689,7 +9685,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = retur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 end)
@@ -9728,7 +9724,6 @@ end
 end
 
 task.wait()
-local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9746,7 +9741,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = retur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
 
@@ -9757,7 +9752,6 @@ _G.auraisgood = " (Aura Fruit!!!)"
 _G.auranotify = "<@&1268083055701266515>" -- Aura Uncoomon/Common Ping
 _G.colorside = tonumber(0x00FF7F)
 task.wait()
-local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
         local data = {
         ["content"] = _G.auranotify,
         ["embeds"] = {
@@ -9775,7 +9769,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = retur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 end)

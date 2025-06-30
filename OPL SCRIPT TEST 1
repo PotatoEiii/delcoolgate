@@ -645,7 +645,7 @@ qweasddex = Tabs.Edge:AddDropdown("qweasddex", {
     })
 
 task.spawn(function()
-while task.wait(4) do
+while task.wait(10) do
 pcall(function()
 local swordtablepro = {}
 if game:GetService("Workspace").UserData["User_"..usingid].Data["PlayerHas_Divine Axe"].Value == false then
@@ -1583,6 +1583,23 @@ magmatpball = Tabs.Player:AddToggle("magmatpballtoggle", {Title = "TP Magma Ball
 magmatpball:OnChanged(function()
 if Options.magmatpballtoggle.Value == true then
 _G.TPMAGMABALL = true
+
+task.spawn(function()
+while _G.TPMAGMABALL do task.wait(0.3)
+pcall(function()
+if _G.CampMagma and game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
+repeat task.wait()
+for i, v in pairs(game:GetService("Workspace")[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
+if v.Name == "MagmaBall" then
+v.CFrame = game:GetService("Players"):FindFirstChild(tostring(_G.SelectedKillPlayer)).Character.HumanoidRootPart.CFrame
+end
+end
+until (not _G.TPMAGMABALL) or (not _G.CampMagma) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)) or (game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0) or (game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0)
+end
+end)
+end
+end)
+
 else
 _G.TPMAGMABALL = false
 end
@@ -1592,6 +1609,8 @@ magmamgggg = Tabs.Player:AddToggle("magmamggggtoggle", {Title = "Magma Camp", De
 magmamgggg:OnChanged(function()
 if Options.magmamggggtoggle.Value == true then
 _G.CampMagma = true
+
+task.spawn(function()
 while _G.CampMagma do task.wait(0.1)
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do task.wait()
@@ -1625,35 +1644,19 @@ end
 end
 end)
 end
+end)
 else
 _G.CampMagma = false
 end
 end)
 
 task.spawn(function()
-while task.wait(0.1) do 
+while task.wait(1) do 
 pcall(function()
 game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame = _G.chaircframeh 
 end)
 end
 end)
-
-task.spawn(function()
-while task.wait(0.3) do
-pcall(function()
-if _G.TPMAGMABALL and _G.CampMagma and game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer) then
-repeat task.wait()
-for i, v in pairs(game:GetService("Workspace")[tostring(usingname)]:WaitForChild("Powers"):FindFirstChild("Magma"):FindFirstChild("Shots"):GetChildren()) do
-if v.Name == "MagmaBall" then
-v.CFrame = game:GetService("Players"):FindFirstChild(tostring(_G.SelectedKillPlayer)).Character.HumanoidRootPart.CFrame
-end
-end
-until (not _G.TPMAGMABALL) or (not _G.CampMagma) or (not game:GetService("Players"):FindFirstChild(_G.SelectedKillPlayer)) or (game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0) or (game:GetService("Players"):WaitForChild(_G.SelectedKillPlayer).Character.Humanoid.Health == 0)
-end
-end)
-end
-end)
-
 
 Tabs.Player:AddSection("					    --Teleport Camp--")
 cvbvfsx = Tabs.Player:AddSlider("gkhlsmxxx", {

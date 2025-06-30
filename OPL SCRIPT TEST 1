@@ -595,6 +595,41 @@ resetafterfindsam = Tabs.Alts:AddToggle("resetafterfindsamtoggle", {Title = "Aut
 resetafterfindsam:OnChanged(function()
 if Options.resetafterfindsamtoggle.Value == true then
 _G.resetaftersam = true
+
+task.spawn(function()
+    while _G.resetaftersam do task.wait()
+        pcall(function()
+                local targetPart = nil
+
+                repeat
+                    task.wait()
+                    local character = game.Players.LocalPlayer.Character
+                    for _, child in ipairs(character:GetChildren()) do
+                        if string.find(child.Name, "Box") then
+                            targetPart = child
+                            break
+                        end
+                    end
+                until targetPart or not _G.resetaftersam
+
+                repeat
+                    task.wait()
+                until not game.Players.LocalPlayer.Backpack:FindFirstChild(targetPart.Name)
+                   and not game.Players.LocalPlayer.Character:FindFirstChild(targetPart.Name)
+                   and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
+                   and not game.Players.LocalPlayer.Character:FindFirstChild("Compass")
+
+                if _G.resetaftersam then
+                    wait(5)
+                    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                    if humanoid then
+                        humanoid.Health = 0
+                    end
+                end
+        end)
+    end
+end)
+
 else
 _G.resetaftersam = false
 end
@@ -7181,43 +7216,6 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 repeat task.wait() until game.CoreGui:FindFirstChild("BBB")
-
-task.spawn(function()
-    while task.wait() do
-        pcall(function()
-            if _G.resetaftersam then
-                task.wait()
-                local targetPart = nil
-
-                repeat
-                    task.wait()
-                    local character = game.Players.LocalPlayer.Character
-                    for _, child in ipairs(character:GetChildren()) do
-                        if string.find(child.Name, "Box") then
-                            targetPart = child
-                            break
-                        end
-                    end
-                until targetPart or not _G.resetaftersam
-
-                repeat
-                    task.wait()
-                until not game.Players.LocalPlayer.Backpack:FindFirstChild(targetPart.Name)
-                   and not game.Players.LocalPlayer.Character:FindFirstChild(targetPart.Name)
-                   and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass")
-                   and not game.Players.LocalPlayer.Character:FindFirstChild("Compass")
-
-                if _G.resetaftersam then
-                    wait(5)
-                    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-                    if humanoid then
-                        humanoid.Health = 0
-                    end
-                end
-            end
-        end)
-    end
-end)
 
 task.spawn(function()
 while task.wait(0.3) do

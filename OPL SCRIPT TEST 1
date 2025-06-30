@@ -480,6 +480,11 @@ do
             game.CoreGui:FindFirstChild("Finish"):Destroy()
         end
 end
+do
+if game.CoreGui:FindFirstChild("SALUNALOADING") then
+game.CoreGui:FindFirstChild("SALUNALOADING"):Destroy()
+end
+end
      SafeZoneOuterSpace = Instance.new("Part",game:GetService("Workspace"))
     SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)

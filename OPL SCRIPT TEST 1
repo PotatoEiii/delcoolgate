@@ -5850,124 +5850,10 @@ spamskillz = Tabs.Skill:AddToggle("spamskillztoggle", {Title = "Auto Spam Fruit"
 spamskillz:OnChanged(function()
 if Options.spamskillztoggle.Value == true then
 _G.startspamskill = true
-else
-_G.startspamskill = false
-end
-end)
 
-SaveManager:SetLibrary(Fluent)
-InterfaceManager:SetLibrary(Fluent)
-SaveManager:IgnoreThemeSettings()
-SaveManager:SetIgnoreIndexes({})
-InterfaceManager:SetFolder("FluentScriptHub")
-SaveManager:SetFolder("FluentScriptHub/specific-game")
-
-InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-SaveManager:BuildConfigSection(Tabs.Settings)
-
-Tabs.Info:AddSection(" ")
-Tabs.Farm:AddSection(" ")
-Tabs.Fruit:AddSection(" ")
-Tabs.Robbing:AddSection(" ")
-Tabs.Player:AddSection(" ")
-Tabs.Teleport:AddSection(" ")
-Tabs.Main:AddSection(" ")
-Tabs.Haki:AddSection(" ")
-Tabs.Weapon:AddSection(" ")
-Tabs.Affinity:AddSection(" ")
-Tabs.Expertise:AddSection(" ")
-Tabs.PVP:AddSection(" ")
-Tabs.Skill:AddSection(" ")
-Tabs.Mobs:AddSection(" ")
-Tabs.Boss:AddSection(" ")
-Tabs.Gems:AddSection(" ")
-Tabs.Automatic:AddSection(" ")
-Tabs.Misc:AddSection(" ")
-Tabs.Shop:AddSection(" ")
-Tabs.Server:AddSection(" ")
-Tabs.Webhook:AddSection(" ")
-Tabs.Settings:AddSection(" ")
-
-Window:SelectTab(1)
-
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
-Fluent:Notify({
-    Title = "Saluna With Love ♥",
-    Content = "Have a nice day! \nUI Toggle for PC (F2)",
-    Duration = 120
-})
-
-BBB = Instance.new("ScreenGui")
-BBB.Name = "BBB"
-BBB.Parent = game.CoreGui
-
-hideUI = Instance.new("ImageButton")
-hideUI.Name = "hideUI"
-hideUI.Parent = BBB
-hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
-hideUI.BackgroundTransparency = 1
-hideUI.ClipsDescendants = true
-hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
-hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
-hideUI.Size = UDim2.new(0, 60, 0, 60)
-hideUI.Image = "http://www.roblox.com/asset/?id=16039945586"
-hideUI.MouseButton1Up:Connect(function()
-game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
- Size = UDim2.new(0, 50, 0, 50)
-	}):Play()
-task.wait(0.05)
-game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
- Size = UDim2.new(0, 60, 0, 60)
-	}):Play()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game)
-task.wait()
-game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game)
-end)
-
-hideUICorner = Instance.new("UICorner")
-hideUICorner.Parent = hideUI
-hideUICorner.CornerRadius = UDim.new(1,0)
-
- UIS = game:GetService('UserInputService')
- frame = hideUI
- dragToggle = nil
- dragSpeed = 0.05
- dragStart = nil
- startPos = nil
-
- function updateInput(input)
-  delta = input.Position - dragStart
-  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
- game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-end
-
-frame.InputBegan:Connect(function(input)
- if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-  dragToggle = true
-  dragStart = input.Position
-  startPos = frame.Position
-  input.Changed:Connect(function()
-   if input.UserInputState == Enum.UserInputState.End then
-    dragToggle = false
-   end
-  end)
- end
-end)
-
-UIS.InputChanged:Connect(function(input)
- if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-  if dragToggle then
-   updateInput(input)
-  end
- end
-end)
-
-repeat task.wait() until game.CoreGui:FindFirstChild("BBB")
 task.spawn(function()
-while task.wait(0.3) do
+while _G.startspamskill do task.wait(0.3)
 pcall(function()
-if _G.startspamskill then
 repeat task.wait()
 if _G.skilltype == "Flare" and _G.skillnumz == "Power1" and _G.startspamskill == true then
 repeat task.wait(0.15)
@@ -7176,10 +7062,125 @@ until _G.skilltype ~= "Light" or _G.skillnumz ~= "Power5" or _G.startspamskill =
        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
 end
 until _G.startspamskill == false
-end
 end)
 end
 end)
+
+
+else
+_G.startspamskill = false
+end
+end)
+
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+Tabs.Info:AddSection(" ")
+Tabs.Farm:AddSection(" ")
+Tabs.Fruit:AddSection(" ")
+Tabs.Robbing:AddSection(" ")
+Tabs.Player:AddSection(" ")
+Tabs.Teleport:AddSection(" ")
+Tabs.Main:AddSection(" ")
+Tabs.Haki:AddSection(" ")
+Tabs.Weapon:AddSection(" ")
+Tabs.Affinity:AddSection(" ")
+Tabs.Expertise:AddSection(" ")
+Tabs.PVP:AddSection(" ")
+Tabs.Skill:AddSection(" ")
+Tabs.Mobs:AddSection(" ")
+Tabs.Boss:AddSection(" ")
+Tabs.Gems:AddSection(" ")
+Tabs.Automatic:AddSection(" ")
+Tabs.Misc:AddSection(" ")
+Tabs.Shop:AddSection(" ")
+Tabs.Server:AddSection(" ")
+Tabs.Webhook:AddSection(" ")
+Tabs.Settings:AddSection(" ")
+
+Window:SelectTab(1)
+
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = false
+Fluent:Notify({
+    Title = "Saluna With Love ♥",
+    Content = "Have a nice day! \nUI Toggle for PC (F2)",
+    Duration = 120
+})
+
+BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+
+hideUI = Instance.new("ImageButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.BackgroundTransparency = 1
+hideUI.ClipsDescendants = true
+hideUI.AnchorPoint = Vector2.new(0.5, 0.5)
+hideUI.Position = UDim2.new(0.07, 0, 0.155, 0)
+hideUI.Size = UDim2.new(0, 60, 0, 60)
+hideUI.Image = "http://www.roblox.com/asset/?id=16039945586"
+hideUI.MouseButton1Up:Connect(function()
+game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0, 50, 0, 50)
+	}):Play()
+task.wait(0.05)
+game.TweenService:Create(hideUI, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+ Size = UDim2.new(0, 60, 0, 60)
+	}):Play()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game)
+task.wait()
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game)
+end)
+
+hideUICorner = Instance.new("UICorner")
+hideUICorner.Parent = hideUI
+hideUICorner.CornerRadius = UDim.new(1,0)
+
+ UIS = game:GetService('UserInputService')
+ frame = hideUI
+ dragToggle = nil
+ dragSpeed = 0.05
+ dragStart = nil
+ startPos = nil
+
+ function updateInput(input)
+  delta = input.Position - dragStart
+  position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+  startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+ game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+ if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+  dragToggle = true
+  dragStart = input.Position
+  startPos = frame.Position
+  input.Changed:Connect(function()
+   if input.UserInputState == Enum.UserInputState.End then
+    dragToggle = false
+   end
+  end)
+ end
+end)
+
+UIS.InputChanged:Connect(function(input)
+ if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+  if dragToggle then
+   updateInput(input)
+  end
+ end
+end)
+
+repeat task.wait() until game.CoreGui:FindFirstChild("BBB")
 
 task.spawn(function()
     while task.wait() do

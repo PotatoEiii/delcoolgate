@@ -422,37 +422,16 @@ while task.wait(0.1) do
                     pcall(function()
 if _G.autospawn then
 
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then task.wait(3)
-game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible = false
-game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+                            repeat task.wait(4)
+                                for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+                                    v.Function()
+                                end
+                            until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
+                        end
+                    end)
 
-pcall(function()
-	workspace.CurrentCamera:remove()
-	task.wait(.1)
-	repeat task.wait() until game:GetService("Players").LocalPlayer.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5
-	game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 400
-	game:GetService("Players").LocalPlayer.CameraMode = "Classic"
-	game:GetService("Players").LocalPlayer.Character.Head.Anchored = false   
-end)
-
-task.wait(0.5)
-
-game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-
-repeat task.wait(0.1)
-until (game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000) or (_G.autospawn == false)
-
-task.wait(0.1)
-
-if _G.autospawn == true then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1589.06714, 215.996826, 9941.59766, -0.0209177006, -8.029496e-08, -0.999781191, 4.5499128e-08, 1, -8.12644743e-08, 0.999781191, -4.71890402e-08, -0.0209177006)
-end
-
-end
 end
 end)
 end

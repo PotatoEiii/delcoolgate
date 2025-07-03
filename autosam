@@ -483,27 +483,6 @@ end
 end)
 
 task.spawn(function()
-    while task.wait(0.1) do
-        pcall(function()
-            if _G.findsam or _G.autoteleportsafe then
-                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
-                    local Noclip = Instance.new("BodyVelocity")
-                    Noclip.Name = "BodyClip"
-                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
-                    Noclip.Velocity = Vector3.new(0,0,0)
-                end
-                game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 0
-            elseif _G.findsam == false and _G.autoteleportsafe == false then
-                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
-                task.wait(1)
-                game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 50
-            end
-        end)
-    end
-end)
-
-task.spawn(function()
 while task.wait(0.1) do
 pcall(function()
 if _G.autoteleportsafe then

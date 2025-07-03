@@ -470,7 +470,7 @@ end)
 task.spawn(function()
 while task.wait(0.1) do
 pcall(function()
-if _G.resetzxcm then
+if _G.resettime then
 repeat task.wait(_G.resettime)
 if _G.autoreset and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0

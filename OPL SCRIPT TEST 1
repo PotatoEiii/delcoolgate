@@ -3416,6 +3416,7 @@ regenspeedslider = Tabs.Farm:AddSlider("Autorzsli", {
 autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso Fast Regen", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
+pcall(function()
 _G.autohakicannon = true
 _G.offhaki = true
 hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
@@ -3427,6 +3428,113 @@ _G.regenhaki = false
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= hakiuse then
 _G.onhaki = false
 _G.regenhaki = true
+end)
+
+task.spawn(function()
+while _G.autohakicannon do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
+repeat task.wait(0.1)
+until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > hakiuse then
+_G.onhaki = true
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= hakiuse then
+_G.regenhaki = true
+end
+until not _G.autohakicannon
+task.wait()
+_G.offhaki = false
+_G.onhaki = false
+_G.regenhaki = false
+end)
+end
+end)
+
+task.spawn(function()
+while _G.autohakicannon do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
+if _G.onhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+task.wait(0.5)
+game:GetService("Workspace").UserData["User_" ..usingid].UpdateHaki:FireServer()
+end
+_G.onhaki = false
+_G.regenhaki = true
+until not _G.autohakicannon
+end)
+end
+end)
+
+task.spawn(function()
+while _G.autohakicannon do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
+if _G.offhaki == true and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakiuse and game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+task.wait(0.5)
+game:GetService("Workspace").UserData["User_" .. usingid].UpdateHaki:FireServer()
+task.wait()
+end
+until not _G.autohakicannon
+end)
+end
+end)
+
+task.spawn(function()
+while _G.autohakicannon do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
+hakimuon = hakiuse + 10
+if _G.regenhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakimuon and not _G.onhaki then
+task.wait()
+for i = 1, regenspeed do task.wait()
+    local args = {
+        [1] = "Off",
+        [2] = hakigoc
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = hakigoc
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+    end
+task.wait(2)
+        local args = {
+        [1] = "Off",
+        [2] = hakigoc
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+task.wait()
+        local args = {
+        [1] = "Off",
+        [2] = hakigoc
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+repeat wait()
+until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc and _G.regenhaki == true then 
+task.wait()
+_G.onhaki = true
+_G.regenhaki = false
+end
+end
+until not _G.autohakicannon
+end)
+end
+end)
+
 end
 else
 _G.autohakicannon = false
@@ -3831,6 +3939,20 @@ autoreset = Tabs.Automatic:AddToggle("autoresettoggle", {Title = "Auto Reset (Di
 autoreset:OnChanged(function()
 if Options.autoresettoggle.Value == true then
 _G.resetzxcm = true
+
+task.spawn(function()
+while _G.resetzxcm do task.wait(0.1)
+pcall(function()
+repeat task.wait(rstimehaha)
+if _G.resetzxcm then
+game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
+end
+until not _G.resetzxcm
+end)
+end
+end)
+
 Fluent:Notify({
     Title = "Auto Function Notify",
     Content = "Auto Reset Is Turned On",
@@ -7759,133 +7881,6 @@ end
 until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
         end)
     end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.resetzxcm == true
-pcall(function()
-repeat
-task.wait(rstimehaha)
-if _G.resetzxcm then
-game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
-game:GetService("Workspace").LocalPlayer.CharacterTrait.Health = 0
-end
-until not _G.resetzxcm
-end)
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autohakicannon == true
-pcall(function()
-repeat task.wait(0.1)
-local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-local hakiuse = hakigoc/100*regentarget
-repeat task.wait(0.1)
-until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
-if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > hakiuse then
-_G.onhaki = true
-elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= hakiuse then
-_G.regenhaki = true
-end
-until not _G.autohakicannon
-task.wait()
-_G.offhaki = false
-_G.onhaki = false
-_G.regenhaki = false
-end)
-end
-end)
-
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autohakicannon == true
-pcall(function()
-repeat task.wait(0.1)
-local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-local hakiuse = hakigoc/100*regentarget
-if _G.onhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-task.wait(0.5)
-game:GetService("Workspace").UserData["User_" ..usingid].UpdateHaki:FireServer()
-end
-_G.onhaki = false
-_G.regenhaki = true
-until not _G.autohakicannon
-end)
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autohakicannon == true
-pcall(function()
-repeat task.wait(0.1)
-local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-local hakiuse = hakigoc/100*regentarget
-
-if _G.offhaki == true and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakiuse and game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-task.wait(0.5)
-game:GetService("Workspace").UserData["User_" .. usingid].UpdateHaki:FireServer()
-task.wait()
-end
-
-until not _G.autohakicannon
-end)
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autohakicannon == true
-pcall(function()
-repeat task.wait(0.1)
-local hakigoc = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-local hakiuse = hakigoc/100*regentarget
-hakimuon = hakiuse + 10
-if _G.regenhaki == true and not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value < hakimuon and not _G.onhaki then
-task.wait()
-for i = 1, regenspeed do task.wait()
-    local args = {
-        [1] = "Off",
-        [2] = hakigoc
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-    local args = {
-        [1] = "On",
-        [2] = hakigoc
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-    end
-task.wait(2)
-        local args = {
-        [1] = "Off",
-        [2] = hakigoc
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-task.wait()
-        local args = {
-        [1] = "Off",
-        [2] = hakigoc
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-repeat wait()
-until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
-if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= hakigoc and _G.regenhaki == true then 
-task.wait()
-_G.onhaki = true
-_G.regenhaki = false
-end
-end
-until not _G.autohakicannon
-end)
-end
 end)
 
 task.spawn(function()

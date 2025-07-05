@@ -1,7 +1,7 @@
-repeat task.wait() until game:IsLoaded()
-repeat task.wait() until game.Players
-repeat task.wait() until game.Players.LocalPlayer ~= nil
-repeat task.wait()
+repeat task.wait(0.1) until game:IsLoaded()
+repeat task.wait(0.1) until game.Players
+repeat task.wait(0.1) until game.Players.LocalPlayer ~= nil
+repeat task.wait(0.1)
 until game.Workspace:FindFirstChild("UserData")
 	and game.Workspace.UserData:FindFirstChild("User_" .. game.Players.LocalPlayer.UserId)
 	and game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("Data")

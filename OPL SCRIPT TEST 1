@@ -3183,10 +3183,11 @@ game:GetService("Players").LocalPlayer.Character.Humanoid:UnequipTools()
 
 task.spawn(function()
 while _G.fastcannon do task.wait(0.1)
+pcall(function()
 repeat task.wait(0.1) until game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health ~= 0
 and #game.Players.LocalPlayer.Backpack:GetChildren() > 0
 pcall(function()
-for i = 1,10 do
+for i = 1,10 do task.wait()
 game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
 end
 end)
@@ -3200,14 +3201,14 @@ end
 end
 end)
 until (not _G.fastcannon) or (game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health == 0) or (game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y > 211000) or (game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):GetState() == Enum.HumanoidStateType.Dead)
-end
+end)
 end
 end)
 
 
 task.spawn(function()
-    while _G.fastcannon do task.wait(0.1)
-        pcall(function()
+while _G.fastcannon do task.wait(0.1)
+pcall(function()
 repeat task.wait(0.1)
     local cannonBalls = {}
 for i,tuy in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
@@ -3625,6 +3626,7 @@ _G.regenhaki = false
 elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= hakiuse then
 _G.onhaki = false
 _G.regenhaki = true
+end
 end)
 
 task.spawn(function()
@@ -3732,7 +3734,6 @@ end)
 end
 end)
 
-end
 else
 _G.autohakicannon = false
 end
@@ -6070,7 +6071,7 @@ if Options.advaerqwetoggle.Value == true then
 _G.farmadvanced = true
 
 task.spawn(function()
-while_G.farmadvanced do task.wait(0.1)
+while _G.farmadvanced do task.wait(0.1)
 pcall(function()
 x = usingid
 haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
@@ -8750,7 +8751,7 @@ pcall(function()
 if _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true then
 repeat task.wait(0.5)
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do task.wait()
-if v.Name == "Seat"
+if v.Name == "Seat" then
 v:Destroy()
 end
 end

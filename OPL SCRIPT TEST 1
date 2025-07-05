@@ -3252,6 +3252,88 @@ autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs 
 autocannonmob:OnChanged(function()
 if Options.cannonmobtoggle.Value == true then
 _G.autocannonslow = true
+
+task.spawn(function() -- autofarm cannon
+    while _G.autocannonslow do task.wait(0.1)
+        pcall(function()
+repeat task.wait(0.1)
+pcall(function()
+                for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do task.wait()
+                    if v.Name == "Zombie"
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do task.wait()
+                    if string.find(v.Name, "Boar")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do task.wait()
+                    if string.find(v.Name, "Crab")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do task.wait()
+                    if string.find(v.Name, "Angry") 
+                    or string.find(v.Name, "Bandit")
+                    or string.find(v.Name, "Gua")
+                    or string.find(v.Name, "Thief")
+                    or string.find(v.Name, "Bruno") 
+                    or string.find(v.Name, "Bucky") 
+                    or string.find(v.Name, "Vokun") 
+                    or string.find(v.Name, "Fr")  
+                    or string.find(v.Name, "Cave") 
+                    or string.find(v.Name, "Thug") 
+                    or string.find(v.Name, "Gunslinger")
+                    or string.find(v.Name, "Gunner") 
+                    or string.find(v.Name, "Buster") 
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                    end
+                end
+end)
+until not _G.autocannonslow
+        end)
+    end
+end)
+
 else
 _G.autocannonslow = false
 end
@@ -4759,6 +4841,34 @@ statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer (Fast)"
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
 getgenv().farmstats = true
+
+task.spawn(function()
+while getgenv().farmstats do task.wait(0.1)
+pcall(function()
+repeat task.wait()
+for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
+if v.Name == "Barrel" and getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
+end
+end
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v.Name == "Crate" and getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
+end
+end
+if getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+amongus()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+task.wait(15)
+until not getgenv().farmstats or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+end)
+end
+end)
+
 else
 getgenv().farmstats = false
 end
@@ -5535,6 +5645,54 @@ farmhaki = Tabs.Haki:AddToggle("hakifarmtoggle", {Title = "Auto Farm Haki", Defa
 farmhaki:OnChanged(function()
 if Options.hakifarmtoggle.Value == true then
 _G.farmhakinek = true
+
+task.spawn(function()
+while _G.farmhakinek do task.wait(0.1)
+pcall(function()
+_G.concu = true
+while _G.concu do task.wait(0.1)
+local slv = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
+local sss = slv/100*hakitarget
+local sll =  slv/100*75
+if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
+for i = 1, hakispeed do
+    local args = {
+        [1] = "Off",
+        [2] = slv
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = slv
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+end
+elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= sss and _G.farmhakinek == true then
+        local args = {
+        [1] = "Off",
+        [2] = slv
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+repeat task.wait()
+until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= sll or game:GetService("Workspace")[usingname].HumanoidRootPart.Position.Y > 211000
+elseif _G.farmhakinek == false then
+_G.concu = false
+        local args = {
+        [1] = "Off",
+        [2] = slv
+    }
+    
+    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
+end
+end
+
+end)
+end
+end)
+
 else
 _G.farmhakinek = false
 end
@@ -8266,89 +8424,6 @@ end)
 end
 end)
 
-task.spawn(function() -- autofarm cannon
-    while task.wait(0.3) do
-        pcall(function()
-            if _G.autocannonslow then
-repeat task.wait(0.1)
-pcall(function()
-                for _,v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Zombies:GetDescendants()) do
-                    if v.Name == "Zombie"
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
-                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        if v.Humanoid.Health == 0 then
-                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
-                            v:Destroy()
-                        end
-                     end
-                end
-                for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                    if string.find(v.Name, "Boar")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
-                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        if v.Humanoid.Health == 0 then
-                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
-                            v:Destroy()
-                        end
-                     end
-                end
-                for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                    if string.find(v.Name, "Crab")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        v.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
-                        if v.Humanoid.Health == 0 then
-                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
-                            v:Destroy()
-                        end
-                     end
-                end
-                for _,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                    if string.find(v.Name, "Angry") 
-                    or string.find(v.Name, "Bandit")
-                    or string.find(v.Name, "Gua")
-                    or string.find(v.Name, "Thief")
-                    or string.find(v.Name, "Bruno") 
-                    or string.find(v.Name, "Bucky") 
-                    or string.find(v.Name, "Vokun") 
-                    or string.find(v.Name, "Fr")  
-                    or string.find(v.Name, "Cave") 
-                    or string.find(v.Name, "Thug") 
-                    or string.find(v.Name, "Gunslinger")
-                    or string.find(v.Name, "Gunner") 
-                    or string.find(v.Name, "Buster") 
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
-                        if v.Humanoid.Health == 0 then
-                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
-                            v:Destroy()
-                        end
-                    end
-                end
-end)
-until not _G.autocannonslow
-            end
-        end)
-    end
-end)
-
 task.spawn(function()
 while task.wait(0.3) do
 pcall(function()
@@ -8446,7 +8521,7 @@ end
 end)
 
 task.spawn(function()
-while task.wait(0.5) do
+while task.wait(1) do
 if getgenv().farmstats or getgenv().farmslowstats then
 pcall(function()
 if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true then
@@ -8454,39 +8529,6 @@ workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Clai
 elseif game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_14"].Claim.AutoButtonColor == true then
 workspace.UserData["User_"..tostring(usingid)].ChallengesRemote:FireServer("Claim","Challenge14")
 end
-end)
-end
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-if getgenv().farmstats then
-pcall(function()
-repeat task.wait()
-for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
-if v.Name == "Barrel" and getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
-task.wait()
-amongus()
-task.wait()
-end
-end
-for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
-if v.Name == "Crate" and getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
-task.wait()
-amongus()
-task.wait()
-end
-end
-if getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-amongus()
-workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-end
-task.wait(15)
-until not getgenv().farmstats or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
 end)
 end
 end
@@ -8522,57 +8564,6 @@ task.wait(15)
 until not getgenv().farmslowstats or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
 end)
 end
-end
-end)
-
-task.spawn(function()
-while task.wait(0.1) do
-pcall(function()
-if _G.farmhakinek then
-pcall(function()
-_G.concu = true
-while _G.concu do task.wait(0.1)
-local slv = game:GetService("Workspace").UserData["User_"..tostring(usingid)].Data.HakiLevel.Value
-local sss = slv/100*hakitarget
-local sll =  slv/100*75
-if game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value > sss and _G.farmhakinek == true then
-for i = 1, hakispeed do
-    local args = {
-        [1] = "Off",
-        [2] = slv
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-    local args = {
-        [1] = "On",
-        [2] = slv
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-end
-elseif game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value <= sss and _G.farmhakinek == true then
-        local args = {
-        [1] = "Off",
-        [2] = slv
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-repeat task.wait()
-until game:GetService("Workspace").UserData["User_"..tostring(usingid)].HakiBar.Value >= sll or game:GetService("Workspace")[usingname].HumanoidRootPart.Position.Y > 211000
-elseif _G.farmhakinek == false then
-_G.concu = false
-        local args = {
-        [1] = "Off",
-        [2] = slv
-    }
-    
-    workspace.UserData["User_"..tostring(usingid)].III:FireServer(unpack(args))
-end
-end
-
-end)
-end
-end)
 end
 end)
 

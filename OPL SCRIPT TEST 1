@@ -3270,6 +3270,35 @@ autocannonplrbring = Tabs.Farm:AddToggle("autocannonplrbringtoggle", {Title = "A
 autocannonplrbring:OnChanged(function()
 if Options.autocannonplrbringtoggle.Value == true then
 _G.autocannonplrbring = true
+
+task.spawn(function() -- autofarm bring cannon
+while _G.autocannonplrbring do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+                for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
+                        v.Character.HumanoidRootPart.Transparency = 0.7
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.Character.HumanoidRootPart.CanCollide = false
+                        v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
+                        v.Character.HumanoidRootPart.Anchored = true
+                    end
+                end
+until not _G.autocannonplrbring
+task.wait()
+                for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
+                	    v.Character.HumanoidRootPart.CanCollide = true
+                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                            v.Character.HumanoidRootPart.Transparency = 1
+        	            v.Character.HumanoidRootPart.Anchored = false
+		   end
+		end
+        end)
+    end
+end)
+
 else
 _G.autocannonplrbring = false
 end
@@ -3279,6 +3308,56 @@ autocannonfling = Tabs.Farm:AddToggle("autocannonflingtoggle", {Title = "Auto Ki
 autocannonfling:OnChanged(function()
 if Options.autocannonflingtoggle.Value == true then
 _G.autocannonfling = true
+
+task.spawn(function() -- autofarm emphasize
+while _G.autocannonfling do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+                for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
+                        v.Character.HumanoidRootPart.Transparency = 0.7
+                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
+                        v.Character.HumanoidRootPart.CanCollide = true
+                        v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                    end
+                end
+until not _G.autocannonfling
+task.wait()
+                for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
+                	    v.Character.HumanoidRootPart.CanCollide = true
+                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                            v.Character.HumanoidRootPart.Transparency = 1
+		   end
+		end
+        end)
+    end
+end)
+
+task.spawn(function()
+    while _G.autocannonfling do task.wait(0.1)
+        pcall(function()
+                repeat task.wait(0.1)
+                    for i, v in pairs(game:GetService("Players"):GetChildren()) do
+pcall(function()
+task.wait(0.1)
+if v.Name ~= usingname and not table.find(anticamplisted, v.Name) and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
+                                for i = 1,5 do task.wait(0.05)
+                                    for i, q in pairs(game:GetService("Workspace").ResourceHolder["Resources_" .. usingid]:GetChildren()) do
+                                        if q.Name == "CannonBall" and _G.autocannonfling then
+                                            q.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
+                                                q.CanCollide = true
+                                        end
+                                    end
+                                end
+end
+                        end)
+                    end
+                until not _G.autocannonfling
+        end)
+    end
+end)
+
 else
 _G.autocannonfling = false
 end
@@ -7667,61 +7746,6 @@ end)
 end
 end)
 
-task.spawn(function() -- autofarm bring cannon
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autocannonplrbring == true
-pcall(function()
-repeat task.wait()
-                for i,v in pairs(game:GetService("Players"):GetChildren()) do
-                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
-                        v.Character.HumanoidRootPart.Transparency = 0.7
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-                        v.Character.HumanoidRootPart.CanCollide = false
-                        v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        v.Character.HumanoidRootPart.CFrame = CFrame.new(100, 3000, 800)
-                        v.Character.HumanoidRootPart.Anchored = true
-                    end
-                end
-until not _G.autocannonplrbring
-task.wait()
-                for i,v in pairs(game:GetService("Players"):GetChildren()) do
-                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
-                	    v.Character.HumanoidRootPart.CanCollide = true
-                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-                            v.Character.HumanoidRootPart.Transparency = 1
-        	            v.Character.HumanoidRootPart.Anchored = false
-		   end
-		end
-        end)
-    end
-end)
-
-task.spawn(function() -- autofarm emphasize
-while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autocannonfling == true
-pcall(function()
-repeat task.wait(0.1)
-                for i,v in pairs(game:GetService("Players"):GetChildren()) do
-                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
-                        v.Character.HumanoidRootPart.Transparency = 0.7
-                    	v.Character.HumanoidRootPart.Color = Color3.fromRGB(0, 255, 127)
-                        v.Character.HumanoidRootPart.CanCollide = true
-                        v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                    end
-                end
-until not _G.autocannonfling
-task.wait()
-                for i,v in pairs(game:GetService("Players"):GetChildren()) do
-                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
-                	    v.Character.HumanoidRootPart.CanCollide = true
-                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-                            v.Character.HumanoidRootPart.Transparency = 1
-		   end
-		end
-        end)
-    end
-end)
-
 task.spawn(function() -- autofarm destroy seat
 while task.wait(0.3) do
 repeat task.wait(0.1) until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
@@ -8106,31 +8130,6 @@ pcall(function()
 end)
 end
                 until not _G.automobtpcn
-            end
-        end)
-    end
-end)
-
-task.spawn(function()
-    while task.wait(0.3) do
-        pcall(function()
-            if _G.autocannonfling then
-                repeat task.wait(0.1)
-                    for i, v in pairs(game:GetService("Players"):GetChildren()) do
-pcall(function()
-if v.Name ~= usingname and not table.find(anticamplisted, v.Name) and v.Character:FindFirstChild("HumanoidRootPart").Position.Y < 211000 and _G.autocannonfling then
-                                for i = 1,10 do task.wait(0.02)
-                                    for i, q in pairs(game:GetService("Workspace").ResourceHolder["Resources_" .. usingid]:GetChildren()) do
-                                        if q.Name == "CannonBall" and _G.autocannonfling then
-                                            q.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
-                                                q.CanCollide = true
-                                        end
-                                    end
-                                end
-end
-                        end)
-                    end
-                until not _G.autocannonfling
             end
         end)
     end

@@ -5717,6 +5717,121 @@ advaerqwe = Tabs.Haki:AddToggle("advaerqwetoggle", {Title = "Advance Haki Farmin
 advaerqwe:OnChanged(function()
 if Options.advaerqwetoggle.Value == true then
 _G.farmadvanced = true
+
+task.spawn(function()
+while_G.farmadvanced do task.wait(0.1)
+pcall(function()
+x = usingid
+haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
+for i = 1, speedyadvance do
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
+end
+task.wait(12)
+end)
+end
+end)
+
 else
 _G.farmadvanced = false
 end
@@ -8568,125 +8683,7 @@ end
 end)
 
 task.spawn(function()
-while task.wait(0.5) do
-pcall(function()
-if _G.farmadvanced then
-pcall(function()
-x = usingid
-haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-for i = 1, speedyadvance do
-            local args = {
-                [1] = "On",
-                [2] = haki
-            }
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "On",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "On",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "On",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "On",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. usingid):WaitForChild("III"):FireServer(unpack(args))
-end
-task.wait(12)
-end)
-end
-end)
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
+while task.wait(2) do
 if _G.quayfirstdf then
 pcall(function()
 if _G.defswordsnip == true then
@@ -8866,7 +8863,7 @@ end
 end)
 
 task.spawn(function()
-while task.wait(0.3) do
+while task.wait(2) do
 if _G.quayfirstdf2 then
 pcall(function()
 if _G.defswordsnip2 == true then
@@ -9046,7 +9043,7 @@ end
 end)
 
 task.spawn(function()
-while task.wait(0.3) do
+while task.wait(2) do
 if _G.quayfirstdf2 or _G.quayfirstdf then
 pcall(function()
 if game:GetService("Players")[""..tostring(game:GetService("Players").LocalPlayer)].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then

@@ -8667,9 +8667,9 @@ while task.wait(0.3) do
 pcall(function()
 if _G.startrop  or _G.startropaura then
 if (_G.robmethod == "Magma" or _G.robmethod == "Flare") and _G.cuopfruittarget ~= "" and _G.cuopfruittarget ~= nil then
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do task.wait()
 pcall(function()
-if v.Name == "Seat" then task.wait(0.1)
+if v.Name == "Seat" then
 v:Destroy()
 end
 end)
@@ -8746,17 +8746,18 @@ end)
 
 task.spawn(function() -- autofarm destroy seat
 while task.wait(0.3) do
-repeat task.wait(0.1) until _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true
 pcall(function()
+if _G.autocannonplrbring == true or _G.BringPlayer == true or _G.BringAllPlayer == true then
 repeat task.wait(0.5)
-for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-if v.Name == "Seat" then task.wait(0.1)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do task.wait()
+if v.Name == "Seat"
 v:Destroy()
 end
 end
 until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
-        end)
-    end
+end
+end)
+end
 end)
 
 task.spawn(function()
@@ -9849,7 +9850,7 @@ task.spawn(function()
             local initialFruitData = playerData.StoredDF1.Value
 
             repeat 
-                task.wait(0.5) 
+                task.wait(1) 
             until playerData.StoredDF1.Value ~= initialFruitData and playerData.StoredDF1.Value ~= "None"
 
             local newFruitData = playerData.StoredDF1.Value
@@ -9901,7 +9902,7 @@ task.spawn(function()
             local initialFruitData = playerData.StoredDF2.Value
 
             repeat 
-                task.wait(0.5) 
+                task.wait(1) 
             until playerData.StoredDF2.Value ~= initialFruitData and playerData.StoredDF2.Value ~= "None"
 
             local newFruitData = playerData.StoredDF2.Value
@@ -9954,7 +9955,7 @@ task.spawn(function()
             _G.fruitdata3 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata3 and userDataPath.Value ~= "None"
+            repeat task.wait(1) until userDataPath.Value ~= _G.fruitdata3 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatac = userDataPath.Value
@@ -10018,7 +10019,7 @@ task.spawn(function()
             _G.fruitdata4 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata4 and userDataPath.Value ~= "None"
+            repeat task.wait(1) until userDataPath.Value ~= _G.fruitdata4 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatav = userDataPath.Value
@@ -10082,7 +10083,7 @@ task.spawn(function()
             _G.fruitdata5 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata5 and userDataPath.Value ~= "None"
+            repeat task.wait(1) until userDataPath.Value ~= _G.fruitdata5 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatab = userDataPath.Value
@@ -10146,7 +10147,7 @@ task.spawn(function()
             _G.fruitdata6 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata6 and userDataPath.Value ~= "None"
+            repeat task.wait(1) until userDataPath.Value ~= _G.fruitdata6 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatan = userDataPath.Value
@@ -10210,7 +10211,7 @@ task.spawn(function()
             _G.fruitdata7 = userDataPath.Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata7 and userDataPath.Value ~= "None"
+            repeat task.wait(1) until userDataPath.Value ~= _G.fruitdata7 and userDataPath.Value ~= "None"
             
             -- Retrieve updated fruit data
             local fruitdatam = userDataPath.Value
@@ -10273,7 +10274,7 @@ task.spawn(function()
             _G.fruitdata8 = workspace.UserData["User_" .. userId].Data[fruitDataKey].Value
             
             -- Wait until the fruit data changes and is not "None"
-            repeat task.wait(0.5) until workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= _G.fruitdata8 
+            repeat task.wait(1) until workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= _G.fruitdata8 
                 and workspace.UserData["User_" .. userId].Data[fruitDataKey].Value ~= "None"
             
             -- Retrieve updated fruit data
@@ -10332,7 +10333,7 @@ task.spawn(function()
             _G.fruitdata9 = userDataPath.Value
             
             -- Wait for the value to change and ensure it's not "None"
-            repeat task.wait(0.5) until userDataPath.Value ~= _G.fruitdata9 and userDataPath.Value ~= "None"
+            repeat task.wait(1) until userDataPath.Value ~= _G.fruitdata9 and userDataPath.Value ~= "None"
             
             -- Retrieve the updated value
             local fruitdataa = userDataPath.Value
@@ -10380,7 +10381,7 @@ task.spawn(function()
             _G.fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
 
             -- Waiting for the value to change
-            repeat task.wait(0.5) until workspace.UserData["User_" .. playerId].Data[key].Value ~= _G.fruitdata10 and workspace.UserData["User_" .. playerId].Data[key].Value ~= "None"
+            repeat task.wait(1) until workspace.UserData["User_" .. playerId].Data[key].Value ~= _G.fruitdata10 and workspace.UserData["User_" .. playerId].Data[key].Value ~= "None"
 
             -- Process the new data
             local fruitdata10 = workspace.UserData["User_" .. playerId].Data[key].Value
@@ -10436,7 +10437,7 @@ task.spawn(function()
             local key = "StoredDF11"
             _G.fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
             
-            repeat task.wait(0.5) until workspace.UserData["User_"..playerId].Data[key].Value ~= _G.fruitdata11 and workspace.UserData["User_"..playerId].Data[key].Value ~= "None"
+            repeat task.wait(1) until workspace.UserData["User_"..playerId].Data[key].Value ~= _G.fruitdata11 and workspace.UserData["User_"..playerId].Data[key].Value ~= "None"
             
             local fruitdata11 = workspace.UserData["User_"..playerId].Data[key].Value
             local fruitparts11 = {}
@@ -10486,7 +10487,7 @@ task.spawn(function()
     while task.wait(0.3) do
         pcall(function()
             _G.fruitdata12 = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
-            repeat task.wait(0.5) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
+            repeat task.wait(1) until workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= _G.fruitdata12 and workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value ~= "None"
             local fruitdataa = workspace.UserData["User_"..tostring(game.Players.LocalPlayer.UserId)].Data.StoredDF12.Value
             local fruitparts12 = {}
             for part12 in string.gmatch(fruitdataa, "[^,]+") do

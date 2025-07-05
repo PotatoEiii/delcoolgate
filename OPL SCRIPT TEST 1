@@ -10558,8 +10558,9 @@ end)
 end
 end
 
-while task.wait(5) do 
 task.spawn(function()
+while task.wait(5) do 
+pcall(function()
 if table.find(antispy, game:GetService("Players").LocalPlayer.Name) then
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
 if v.Name ~= usingname then
@@ -10585,3 +10586,4 @@ end
 end
 end)
 end
+end)

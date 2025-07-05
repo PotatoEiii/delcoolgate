@@ -3671,6 +3671,50 @@ autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package", Defa
 autopackage:OnChanged(function()
 if Options.packagetoggle.Value == true then
 getgenv().tret = true
+
+task.spawn(function()
+while getgenv().tret do task.wait(0.1)
+pcall(function()
+repeat task.wait(1)
+workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+until not getgenv().tret
+end)
+end
+end)
+
+task.spawn(function()
+while getgenv().tret do task.wait(0.1)
+pcall(function()
+repeat task.wait()
+if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Package") then
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package").Parent = game:GetService("Players").LocalPlayer.Character
+elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+for _,v in pairs(game:GetService("Workspace").Merchants:GetChildren()) do
+if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.Name, "Drink") or string.find(v.Name, "Boat") or string.find(v.Name, "Emote") or string.find(v.Name, "Exp") or string.find(v.Name, "Fish") or string.find(v.Name, "Flail") or string.find(v.Name, "Krizma") or string.find(v.Name, "QuestFish") or string.find(v.Name, "QuestMe") or string.find(v.Name, "Friend") or string.find(v.Name, "Sniper") or string.find(v.Name, "Sword") then
+if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Players").LocalPlayer.Character.Package:Activate()
+if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = false
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+end
+task.wait(0.3)
+end
+end
+end
+elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+if _G.resttypezx == "Random TP" then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
+elseif _G.resttypezx == "Safe Zone" then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+elseif _G.resttypezx == "Chair" then
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
+end
+end
+until not getgenv().tret
+end)
+end
+end)
+
 else
 getgenv().tret = false
 end
@@ -7975,54 +8019,6 @@ until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
         end)
     end
 end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until getgenv().tret == true
-pcall(function()
-repeat task.wait(1)
-workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-until not getgenv().tret
-end)
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until getgenv().tret == true
-pcall(function()
-repeat task.wait()
-if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Package") then
-game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package").Parent = game:GetService("Players").LocalPlayer.Character
-elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-
-for _,v in pairs(game:GetService("Workspace").Merchants:GetChildren()) do
-if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.Name, "Drink") or string.find(v.Name, "Boat") or string.find(v.Name, "Emote") or string.find(v.Name, "Exp") or string.find(v.Name, "Fish") or string.find(v.Name, "Flail") or string.find(v.Name, "Krizma") or string.find(v.Name, "QuestFish") or string.find(v.Name, "QuestMe") or string.find(v.Name, "Friend") or string.find(v.Name, "Sniper") or string.find(v.Name, "Sword") then
-if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Players").LocalPlayer.Character.Package:Activate()
-if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = false
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
-end
-task.wait(0.3)
-
-end
-end
-end
-elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Package") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-if _G.resttypezx == "Random TP" then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-50000, 50000)), 10000, (math.random(-50000, 50000)))
-elseif _G.resttypezx == "Safe Zone" then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-elseif _G.resttypezx == "Chair" then
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Island8.Table.Chair.condimemay.CFrame * CFrame.new(0,-1,0)
-end
-end
-until not getgenv().tret
-end)
-end
-end)
-
 
 task.spawn(function()
 while task.wait(0.3) do

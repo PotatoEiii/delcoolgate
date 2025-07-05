@@ -3550,6 +3550,73 @@ autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fishing", Default =
 autofish:OnChanged(function()
 if Options.fishytoggle.Value == true then
 getgenv().fishing = true
+
+task.spawn(function()
+while getgenv().fishing do task.wait(0.1)
+pcall(function()
+if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+repeat task.wait(0.3)
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name, "Rod") then
+v.Parent = game:GetService("Players").LocalPlayer.Character
+end
+end
+until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
+end
+end)
+end
+end)
+
+task.spawn(function()
+while getgenv().fishing do task.wait(0.1)
+pcall(function()
+if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+repeat task.wait(0.1)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
+until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
+end
+end)
+end
+end)
+
+task.spawn(function()
+while getgenv().fishing do task.wait(0.1)
+pcall(function()
+if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+repeat task.wait(0.1)
+for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if string.find(v.Name, "Rod") then
+for _, x in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+if string.find(x.Name, "Rod") then
+for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+if v:FindFirstChild("Bobber") then
+if v.Bobber.Effect.Enabled == true then
+task.wait(0.1)
+
+local args = {
+[1] = Vector3.new(20837,-3017,-4390)
+}
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
+end
+elseif v.Name == "Cast" and not v:FindFirstChild("Bobber") then
+task.wait(0.6)
+local args = {
+[1] = Vector3.new(20837,-3017,-4390)
+}
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
+task.wait(0.3)
+end
+end
+end
+end
+end
+end
+until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
+end
+end)
+end
+end)
+
 else
 getgenv().fishing = false
 end
@@ -3559,6 +3626,32 @@ zxcautofi = Tabs.Farm:AddToggle("zxcautofitoggle", {Title = "Auto Grill + Sell F
 zxcautofi:OnChanged(function()
 if Options.zxcautofitoggle.Value == true then
 getgenv().grillsell = true
+
+task.spawn(function()
+while getgenv().grillsell do task.wait(0.1)
+pcall(function()
+if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+repeat task.wait(0.1)
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do task.wait(0.1)
+if string.find(v.Name, "Medium") or string.find(v.Name, "Small") or string.find(v.Name, "Large") then
+v.Parent = game:GetService("Players").LocalPlayer.Character
+task.wait()
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame,
+    [2] = workspace:WaitForChild("Firepit"):WaitForChild("Part")
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(v.Name).Click:FireServer(unpack(args))
+task.wait()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+end
+until not getgenv().grillsell or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
+end
+end)
+end
+end)
+
 else
 getgenv().grillsell = false
 end
@@ -7881,94 +7974,6 @@ end
 until not _G.autocannonplrbring and not _G.BringPlayer and not _G.BringAllPlayer
         end)
     end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until getgenv().grillsell == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
-pcall(function()
-repeat task.wait(0.1)
-for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name, "Medium") or string.find(v.Name, "Small") or string.find(v.Name, "Large") then
-v.Parent = game:GetService("Players").LocalPlayer.Character
-task.wait()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame,
-    [2] = workspace:WaitForChild("Firepit"):WaitForChild("Part")
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild(v.Name).Click:FireServer(unpack(args))
-task.wait()
-workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-end
-end
-until not getgenv().grillsell or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
-end)
-end
-end)
-
-task.spawn(function()
-while task.wait(0.3) do
-repeat task.wait(0.1) until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
-pcall(function()
-repeat task.wait(0.3)
-for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-if string.find(v.Name, "Rod") then
-v.Parent = game:GetService("Players").LocalPlayer.Character
-end
-end
-until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
-end)
-end
-end)
-
-
-task.spawn(function()
-    while task.wait(0.3) do
-repeat task.wait(0.1) until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
-        pcall(function()
-repeat task.wait(0.1)
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
-until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
-      end)
-   end
-end)
-
-task.spawn(function()
-    while task.wait(0.3) do
-repeat task.wait(0.1) until getgenv().fishing == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass")
-        pcall(function()
-repeat task.wait(0.1)
-for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
-if string.find(v.Name, "Rod") then
-for _, x in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
-if string.find(x.Name, "Rod") then
-for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
-if v:FindFirstChild("Bobber") then
-if v.Bobber.Effect.Enabled == true then
-task.wait(0.1)
-
-local args = {
-[1] = Vector3.new(20837,-3017,-4390)
-}
-game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
-end
-elseif v.Name == "Cast" and not v:FindFirstChild("Bobber") then
-task.wait(0.6)
-local args = {
-[1] = Vector3.new(20837,-3017,-4390)
-}
-game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
-task.wait(0.3)
-end
-end
-end
-end
-end
-end
-until not getgenv().fishing or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass")
-      end)
-   end
 end)
 
 task.spawn(function()

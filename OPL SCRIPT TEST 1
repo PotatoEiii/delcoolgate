@@ -644,7 +644,7 @@ qwefczxcve2 = Tabs.Edge:AddToggle("qwefczxcve2toggle", {Title = "GOD MODE (Bomb 
 qwefczxcve2:OnChanged(function()
 if Options.qwefczxcve2toggle.Value == true then
 _G.godmode = true
-while _G.godmode do
+while _G.godmode do task.wait(0.1)
 pcall(function()
 local args = {
     [1] = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb).VTCcpkghc,
@@ -667,7 +667,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
-task.wait(2)
+task.wait(10)
 end)
 end
 else
@@ -738,13 +738,14 @@ tqwexc2z = Tabs.Boss:AddToggle("tqwexc2ztoggle", {Title = "Auto Summon Zombie", 
 tqwexc2z:OnChanged(function()
 if Options.tqwexc2ztoggle.Value == true then
 _G.wqezombie = true
-while _G.wqezombie do task.wait(0.3)
+while _G.wqezombie do task.wait(0.1)
 pcall(function()
 for i, v in pairs(game:GetService("Workspace").WorldEvent.Halloween.Pumpkin:GetDescendants()) do
 if v.Name == "ClickDetector" then task.wait(0.1)
 fireclickdetector(v)
 end
 end
+task.wait(10)
 end)
 end
 else

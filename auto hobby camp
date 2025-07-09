@@ -1,1 +1,44 @@
+_G.CampHobbyAllServer = true
 
+task.spawn(function() -- autofarm bring hobby
+while _G.CampHobbyAllServer do task.wait(0.1)
+pcall(function()
+repeat task.wait(0.1)
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v.Name ~= usingname and 
+not table.find(anticamplisted, v.Name) and
+not v.Character.Hobbied.Value then
+                        v.Character.HumanoidRootPart.CanCollide = false
+                        v.Character.HumanoidRootPart.Size = Vector3.new(20, 20, 20)
+                        v.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-10)
+                        v.Character.HumanoidRootPart.Anchored = true
+end
+end
+until not _G.CampHobbyAllServer
+task.wait()
+                for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                    if v.Name ~= usingname and not table.find(anticamplisted, v.Name) then
+                	    v.Character.HumanoidRootPart.CanCollide = true
+                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                            v.Character.HumanoidRootPart.Transparency = 1
+        	            v.Character.HumanoidRootPart.Anchored = false
+		   end
+		end
+        end)
+    end
+end)
+
+task.spawn(function()
+while _G.CampHobbyAllServer do task.wait(0.1)
+pcall(function()
+local args = {
+	getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Hobby).VTCoa,
+	"HobbyPower2",
+	"Contract",
+	CFrame.new(690.4608764648438, 238, 1203.1435546875, 0.513081431388855, -0.3475956618785858, 0.7848087549209595, -0, 0.9143332839012146, 0.4049626588821411, -0.8583400249481201, -0.20777882635593414, 0.4691273868083954),
+	workspace:WaitForChild("IslandGrassy"):WaitForChild("Base"):WaitForChild("DirtGrass"):WaitForChild("Grass"):WaitForChild("Grass")
+}
+game:GetService("Players").LocalPlayer.Character:WaitForChild("Powers"):WaitForChild("Hobby"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end)
+end
+end)

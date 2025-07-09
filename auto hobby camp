@@ -1,4 +1,5 @@
 _G.CampHobbyAllServer = true
+usingname = game.Players.LocalPlayer.Name
 
 task.spawn(function() -- autofarm bring hobby
 while _G.CampHobbyAllServer do task.wait(0.1)

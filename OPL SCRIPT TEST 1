@@ -4086,7 +4086,7 @@ end
 end)
 
 Tabs.Automatic:AddSection("					   --Game Function--")
-AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn (Currently Down)", Default = false })
+AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn (Normal)", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -4111,7 +4111,7 @@ _G.autospawn = false
 end
 end)
 
-AutospawnnewToggle = Tabs.Automatic:AddToggle("Autospawnnew1Toggle", {Title = "Auto Spawn (If Not Auto TP)", Default = false })
+AutospawnnewToggle = Tabs.Automatic:AddToggle("Autospawnnew1Toggle", {Title = "Auto Spawn At Safe (If Not Auto TP)", Default = false })
     AutospawnnewToggle:OnChanged(function()
 if Options.Autospawnnew1Toggle.Value == true then
 _G.autospawnnew = true
@@ -4153,7 +4153,7 @@ _G.autospawnnew = false
 end
 end)
 
-AutospawntpToggle = Tabs.Automatic:AddToggle("Autospawntp1Toggle", {Title = "Auto Spawn (If Auto TP)", Default = false })
+AutospawntpToggle = Tabs.Automatic:AddToggle("Autospawntp1Toggle", {Title = "Auto Spawn At Safe (If Auto TP)", Default = false })
 AutospawntpToggle:OnChanged(function()
 if Options.Autospawntp1Toggle.Value == true then
 _G.autospawntp = true

@@ -4903,16 +4903,19 @@ for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) 
 if v.Name == "Barrel" and getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 task.wait()
+amongus()
 end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" and getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 task.wait()
+amongus()
 end
 end
 if getgenv().farmstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
 game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+task.wait()
 amongus()
 workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end
@@ -4931,6 +4934,39 @@ statsfarmslow = Tabs.Main:AddToggle("statsfarmslowtoggle", {Title = "Auto Farm M
 statsfarmslow:OnChanged(function()
 if Options.statsfarmslowtoggle.Value == true then
 getgenv().farmslowstats = true
+
+task.spawn(function()
+while getgenv().farmslowstats do task.wait(0.1)
+pcall(function()
+repeat
+for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
+if v.Name == "Barrel" and getgenv().farmslowstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
+amongus()
+task.wait(0.05)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v.Name == "Crate" and getgenv().farmslowstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
+game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+task.wait()
+amongus()
+task.wait(0.05)
+end
+end
+if getgenv().farmslowstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then task.wait()
+game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+task.wait()
+amongus()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+task.wait(15)
+until not getgenv().farmslowstats or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+end)
+end
+end)
+
 else
 getgenv().farmslowstats = false
 end
@@ -9054,38 +9090,6 @@ end
 end
 end)
 
-task.spawn(function()
-while task.wait(0.3) do
-if getgenv().farmslowstats then
-pcall(function()
-repeat
-for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
-if v.Name == "Barrel" and getgenv().farmslowstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
-task.wait()
-amongus()
-task.wait(0.05)
-end
-end
-for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
-if v.Name == "Crate" and getgenv().farmslowstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then
-game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
-task.wait()
-amongus()
-task.wait(0.05)
-end
-end
-if getgenv().farmslowstats == true and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Compass") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass") then task.wait()
-game:GetService("Workspace")[""..usingname].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
-amongus()
-workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-end
-task.wait(15)
-until not getgenv().farmslowstats or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
-end)
-end
-end
-end)
 
 task.spawn(function()
 while task.wait(2) do

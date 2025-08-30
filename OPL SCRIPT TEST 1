@@ -315,7 +315,7 @@ workspace.UserData["User_"..usingid].III:FireServer(unpack(args))
 end
 
 task.wait(0)
-if game.placeId == 3237168 or game.placeId == 8569358381 then
+if game.placeId ~= 3237168 or game.placeId ~= 8569358381 then
 
 Pedo = {
     1135910299, -- Havelic

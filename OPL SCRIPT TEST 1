@@ -399,7 +399,7 @@ task.wait()
     end
 end)  
 
-asdwqelist = false
+asdwqelist = true
 anticamplisted = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/anticamp.lua',true))()
 anticamplisted2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/hello/main/anticamp%20buyer.lua',true))()
 antispy = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/risk/main/anti%20spy%20(risk)',true))()

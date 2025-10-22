@@ -13,7 +13,7 @@ repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"
     SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
     SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, -50000)), 10000, (math.random(-100000, -50000)))
     SafeZoneOuterSpace.Anchored = true
-asdwqelist = false
+asdwqelist = true
 getexecutorid = game:GetService("RbxAnalyticsService"):GetClientId()
 listedaxw = loadstring(game:HttpGet('https://raw.githubusercontent.com/Iamcutehehe/hehehe/main/whitelist.lua',true))()
 khoilistedzxwc = loadstring(game:HttpGet('https://raw.githubusercontent.com/Department123zxc/list/main/whitelist.lua',true))()
